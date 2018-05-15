@@ -1,0 +1,25 @@
+digraph n0 {
+fontcolor="blue"
+remincross="true"
+label="wes_pds__encounter_by_pkpatid.csv"
+subgraph cluster {
+label="model"
+n2[style="filled",color="white",fillcolor="lightgray",label="TURBO_00005031"];
+n3[style="filled",color="white",fillcolor="lightgray",label="TURBO_00005081"];
+n4[shape="plaintext",style="filled",fillcolor="gold",label="RAWTOHEX.PK_PATIENT_ENCOUNTER_ID."];
+n5[shape="plaintext",style="filled",fillcolor="gold",label="encoutner_reg_uri_string"];
+n6[shape="plaintext",style="filled",fillcolor="gold",label="bb_enc_crid_uri"];
+n7[shape="plaintext",style="filled",fillcolor="gold",label="consenter_crid_uri"];
+n8[shape="plaintext",style="filled",fillcolor="gold",label="PK_PATIENT_ID"];
+n9[shape="plaintext",style="filled",fillcolor="gold",label="consenter_reg_uri_string"];
+n10[shape="plaintext",style="filled",fillcolor="#CC7799",label="wes_pds__encounter_by_pkpatid.csv"];
+}
+n2 -> n3[color="brown",fontcolor="black",label="TURBO_0000302"]
+n3 -> n4[color="brown",fontcolor="black",label="TURBO_0002608"]
+n3 -> n5[color="brown",fontcolor="black",label="TURBO_0002610"]
+n3 -> n6[color="brown",fontcolor="black",label="classLink"]
+n2 -> n7[color="brown",fontcolor="black",label="classLink"]
+n2 -> n8[color="brown",fontcolor="black",label="TURBO_0003608"]
+n2 -> n9[color="brown",fontcolor="black",label="TURBO_0003610"]
+n2 -> n10[color="brown",fontcolor="black",label="TURBO_0003603"]
+}

@@ -1,0 +1,618 @@
+{
+    "id": "wes_pds__encounter_by_pkpatid.csv",
+    "name": "wes_pds__encounter_by_pkpatid.csv",
+    "description": null,
+    "sourceColumns": [
+        {
+            "id": "HN16",
+            "hNodeId": "HN16",
+            "columnName": "PK_PATIENT_ID"
+        },
+        {
+            "id": "HN9",
+            "hNodeId": "HN9",
+            "columnName": "RAWTOHEX.PK_PATIENT_ENCOUNTER_ID."
+        },
+        {
+            "id": "HN1183116",
+            "hNodeId": "HN1183116",
+            "columnName": "consenter_reg_uri_string"
+        },
+        {
+            "id": "HN1084508",
+            "hNodeId": "HN1084508",
+            "columnName": "consenter_crid_uri"
+        },
+        {
+            "id": "HN1281716",
+            "hNodeId": "HN1281716",
+            "columnName": "encoutner_reg_uri_string"
+        },
+        {
+            "id": "HN985872",
+            "hNodeId": "HN985872",
+            "columnName": "hc_enc_crid_UUID_uri"
+        }
+    ],
+    "mappingToSourceColumns": [
+        {
+            "id": "HN9",
+            "sourceColumnId": "HN9"
+        },
+        {
+            "id": "HN1183116",
+            "sourceColumnId": "HN1183116"
+        },
+        {
+            "id": "HN1281716",
+            "sourceColumnId": "HN1281716"
+        },
+        {
+            "id": "HN16",
+            "sourceColumnId": "HN16"
+        },
+        {
+            "id": "HN1084508",
+            "sourceColumnId": "HN1084508"
+        },
+        {
+            "id": "HN985872",
+            "sourceColumnId": "HN985872"
+        }
+    ],
+    "graph": {
+        "nodes": [
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005031",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                    "rdfsLabel": null
+                },
+                "type": "InternalNode",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005081",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0000508",
+                    "rdfsLabel": null
+                },
+                "type": "InternalNode",
+                "modelIds": null
+            },
+            {
+                "id": "HN16",
+                "label": {
+                    "uri": "HN16",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN16",
+                "columnName": "PK_PATIENT_ID",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0003608",
+                            "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter CRID symbol"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0003608",
+                            "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter CRID symbol"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": "biobank consenter CRID"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0003608",
+                            "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter CRID symbol"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/OGMS_0000097",
+                            "rdfsLabel": "health care encounter"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000655",
+                            "rdfsLabel": "shortcut health care encounter to BMI"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.0
+                    },
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/OGMS_0000097",
+                            "rdfsLabel": "health care encounter"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000647",
+                            "rdfsLabel": "shortcut health care encounter to weight in kg"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.0
+                    },
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/OGMS_0000097",
+                            "rdfsLabel": "health care encounter"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000646",
+                            "rdfsLabel": "shortcut health care encounter to height in cm"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.0
+                    },
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/PDRO_0000024",
+                            "rdfsLabel": "drug prescription"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0005601",
+                            "rdfsLabel": "shortcut prescription to prescription CRID symbol"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.0
+                    },
+                    {
+                        "hNodeId": "HN16",
+                        "domain": {
+                            "uri": "http://www.ebi.ac.uk/efo/EFO_0004340",
+                            "rdfsLabel": "body mass index"
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.0
+                    }
+                ],
+                "modelIds": null
+            },
+            {
+                "id": "HN9",
+                "label": {
+                    "uri": "HN9",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN9",
+                "columnName": "RAWTOHEX.PK_PATIENT_ENCOUNTER_ID.",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN9",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000508",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0002608",
+                            "rdfsLabel": "shortcut health care encounter CRID to health care encounter CRID symbol"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN9",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000508",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0002608",
+                            "rdfsLabel": "shortcut health care encounter CRID to health care encounter CRID symbol"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [],
+                "modelIds": null
+            },
+            {
+                "id": "HN1183116",
+                "label": {
+                    "uri": "HN1183116",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN1183116",
+                "columnName": "consenter_reg_uri_string",
+                "rdfLiteralType": {
+                    "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+                    "rdfsLabel": null
+                },
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN1183116",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0003610",
+                            "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter identifier registry URI string"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN1183116",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0003610",
+                            "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter identifier registry URI string"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN1183116",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": "biobank consenter CRID"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0003610",
+                            "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter identifier registry URI string"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.6877234137967044
+                    },
+                    {
+                        "hNodeId": "HN1183116",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/OGMS_0000097",
+                            "rdfsLabel": "health care encounter"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000650",
+                            "rdfsLabel": "shortcut health care encounter to encounter identifier registry URI string"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.26267006630397755
+                    },
+                    {
+                        "hNodeId": "HN1183116",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/PDRO_0000024",
+                            "rdfsLabel": "drug prescription"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0005612",
+                            "rdfsLabel": "shortcut prescription to drug uri string"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.049606519899318045
+                    }
+                ],
+                "modelIds": null
+            },
+            {
+                "id": "HN1084508",
+                "label": {
+                    "uri": "HN1084508",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN1084508",
+                "columnName": "consenter_crid_uri",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN1084508",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN1084508",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [],
+                "modelIds": null
+            },
+            {
+                "id": "HN1281716",
+                "label": {
+                    "uri": "HN1281716",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN1281716",
+                "columnName": "encoutner_reg_uri_string",
+                "rdfLiteralType": {
+                    "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+                    "rdfsLabel": null
+                },
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN1281716",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000508",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0002610",
+                            "rdfsLabel": "shortcut health care encounter CRID to health care encounter identifier registry URI string"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN1281716",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000508",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0002610",
+                            "rdfsLabel": "shortcut health care encounter CRID to health care encounter identifier registry URI string"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN1281716",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/OGMS_0000097",
+                            "rdfsLabel": "health care encounter"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000650",
+                            "rdfsLabel": "shortcut health care encounter to encounter identifier registry URI string"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.7315412520727177
+                    },
+                    {
+                        "hNodeId": "HN1281716",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000503",
+                            "rdfsLabel": "biobank consenter CRID"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0003610",
+                            "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter identifier registry URI string"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.2261814102409287
+                    },
+                    {
+                        "hNodeId": "HN1281716",
+                        "domain": {
+                            "uri": "http://purl.obolibrary.org/obo/PDRO_0000024",
+                            "rdfsLabel": "drug prescription"
+                        },
+                        "type": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0005612",
+                            "rdfsLabel": "shortcut prescription to drug uri string"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.04227733768635356
+                    }
+                ],
+                "modelIds": null
+            },
+            {
+                "id": "HN985872",
+                "label": {
+                    "uri": "HN985872",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN985872",
+                "columnName": "hc_enc_crid_UUID_uri",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN985872",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000508",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN985872",
+                        "domain": {
+                            "uri": "http://transformunify.org/ontologies/TURBO_0000508",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [],
+                "modelIds": null
+            },
+            {
+                "id": "wes_pds__encounter_by_pkpatid.csv1",
+                "label": {
+                    "uri": "",
+                    "rdfsLabel": null
+                },
+                "type": "LiteralNode",
+                "value": "wes_pds__encounter_by_pkpatid.csv",
+                "datatype": {
+                    "uri": "",
+                    "rdfsLabel": null
+                },
+                "language": "",
+                "isUri": "false",
+                "modelIds": null
+            }
+        ],
+        "links": [
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005031---http://transformunify.org/ontologies/TURBO_0000302---http://transformunify.org/ontologies/TURBO_00005081",
+                "weight": 0.009999999776482582,
+                "type": "ObjectPropertyLink",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0000302",
+                    "rdfsLabel": null
+                },
+                "objectPropertyType": "Indirect",
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005031---http://transformunify.org/ontologies/TURBO_0003608---HN16",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0003608",
+                    "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter CRID symbol"
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005081---http://transformunify.org/ontologies/TURBO_0002608---HN9",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0002608",
+                    "rdfsLabel": "shortcut health care encounter CRID to health care encounter CRID symbol"
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005031---http://transformunify.org/ontologies/TURBO_0003610---HN1183116",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0003610",
+                    "rdfsLabel": "shortcut biobank consenter CRID to biobank consenter identifier registry URI string"
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005031---http://isi.edu/integration/karma/dev#classLink---HN1084508",
+                "weight": 0.01,
+                "type": "ClassInstanceLink",
+                "label": {
+                    "uri": "http://isi.edu/integration/karma/dev#classLink",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "UriOfInstance",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005081---http://transformunify.org/ontologies/TURBO_0002610---HN1281716",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0002610",
+                    "rdfsLabel": "shortcut health care encounter CRID to health care encounter identifier registry URI string"
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005081---http://isi.edu/integration/karma/dev#classLink---HN985872",
+                "weight": 0.01,
+                "type": "ClassInstanceLink",
+                "label": {
+                    "uri": "http://isi.edu/integration/karma/dev#classLink",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "UriOfInstance",
+                "modelIds": null
+            },
+            {
+                "id": "http://transformunify.org/ontologies/TURBO_00005031---http://transformunify.org/ontologies/TURBO_0003603---wes_pds__encounter_by_pkpatid.csv1",
+                "weight": 0.01,
+                "type": "ObjectPropertyLink",
+                "label": {
+                    "uri": "http://transformunify.org/ontologies/TURBO_0003603",
+                    "rdfsLabel": "shortcut biobank consenter CRID to dataset title"
+                },
+                "objectPropertyType": "None",
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            }
+        ]
+    }
+}

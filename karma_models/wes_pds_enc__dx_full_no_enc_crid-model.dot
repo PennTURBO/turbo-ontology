@@ -1,0 +1,46 @@
+digraph n0 {
+fontcolor="blue"
+remincross="true"
+label="wes_pds_enc__dx_anon_partial_Sheet1"
+subgraph cluster {
+label="model"
+n2[style="filled",color="white",fillcolor="lightgray",label="TURBO_00005531"];
+n3[style="filled",color="white",fillcolor="lightgray",label="OGMS_00000731"];
+n4[style="filled",color="white",fillcolor="lightgray",label="TURBO_00005541"];
+n5[style="filled",color="white",fillcolor="lightgray",label="IAO_00001001"];
+n6[style="filled",color="white",fillcolor="lightgray",label="OGMS_00000971"];
+n7[shape="plaintext",style="filled",fillcolor="gold",label="hc_enc_uri"];
+n8[style="filled",color="white",fillcolor="lightgray",label="TURBO_00005551"];
+n9[shape="plaintext",style="filled",fillcolor="gold",label="diag_reg_den_uri"];
+n10[shape="plaintext",style="filled",fillcolor="gold",label="diag_uri"];
+n11[shape="plaintext",style="filled",fillcolor="gold",label="dataset_uri"];
+n12[shape="plaintext",style="filled",fillcolor="gold",label="CODE_STANDARD_NAME"];
+n13[style="filled",color="white",fillcolor="lightgray",label="TURBO_00005561"];
+n14[shape="plaintext",style="filled",fillcolor="gold",label="icd10_reg_uri_str"];
+n15[shape="plaintext",style="filled",fillcolor="gold",label="diag_crid_uri"];
+n16[shape="plaintext",style="filled",fillcolor="gold",label="CODE"];
+n17[style="filled",color="white",fillcolor="lightgray",label="TURBO_00005562"];
+n18[shape="plaintext",style="filled",fillcolor="gold",label="diag_symb_uri"];
+n19[shape="plaintext",style="filled",fillcolor="gold",label="icd9_reg_uri_str"];
+n20[shape="plaintext",style="filled",fillcolor="#CC7799",label="wes_pds_enc__dx_anon_partial.csv"];
+}
+n2 -> n3[color="brown",fontcolor="black",label="IAO_0000219"]
+n4 -> n5[color="brown",fontcolor="black",label="BFO_0000050"]
+n6 -> n7[color="brown",fontcolor="black",label="classLink"]
+n4 -> n2[color="brown",fontcolor="black",label="BFO_0000050"]
+n8 -> n9[color="brown",fontcolor="black",label="classLink"]
+n8 -> n5[color="brown",fontcolor="black",label="BFO_0000050"]
+n3 -> n10[color="brown",fontcolor="black",label="classLink"]
+n5 -> n11[color="brown",fontcolor="black",label="classLink"]
+n8 -> n12[color="brown",fontcolor="black",label="TURBO_0006512"]
+n13 -> n14[color="brown",fontcolor="black",label="classLink"]
+n2 -> n15[color="brown",fontcolor="black",label="classLink"]
+n8 -> n13[color="brown",fontcolor="black",label="IAO_0000219"]
+n4 -> n16[color="brown",fontcolor="black",label="TURBO_0006510"]
+n8 -> n17[color="brown",fontcolor="black",label="IAO_0000219"]
+n4 -> n18[color="brown",fontcolor="black",label="classLink"]
+n17 -> n19[color="brown",fontcolor="black",label="classLink"]
+n6 -> n3[color="brown",fontcolor="black",label="RO_0002234"]
+n5 -> n20[color="brown",fontcolor="black",label="title"]
+n8 -> n2[color="brown",fontcolor="black",label="BFO_0000050"]
+}

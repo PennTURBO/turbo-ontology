@@ -1,0 +1,1301 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix pato: <http://purl.obolibrary.org/obo/pato#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix efo: <http://www.ebi.ac.uk/efo/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix subsets: <http://purl.obolibrary.org/obo/ro/subsets#> .
+@prefix turbo: <http://transformunify.org/ontologies/> .
+@prefix ncbitaxon: <http://purl.obolibrary.org/obo/ncbitaxon#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1c9kf718rx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "wes_pmbb__enc.csv" ;
+	km-dev:modelPublicationTime "1522179212571"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"CALCULATEDBMI\"}],[{\"columnName\":\"PACKETID\"}],[{\"columnName\":\"HEIGHTINCHES\"}],[{\"columnName\":\"ENCOUNTERDATE\"}],[{\"columnName\":\"PROTOCOL\"}],[{\"columnName\":\"WEIGHTLBS\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"karma_weight_kg\"}],[{\"columnName\":\"CALCULATEDBMI\"}],[{\"columnName\":\"karma_height_cm\"}],[{\"columnName\":\"karma_bmi\"}],[{\"columnName\":\"PACKETID\"}],[{\"columnName\":\"enc_uri\"}],[{\"columnName\":\"encoutner_reg_uri_string\"}],[{\"columnName\":\"encounter_date_xsd\"}],[{\"columnName\":\"ENCOUNTERDATE\"}],[{\"columnName\":\"PROTOCOL\"}]]" ;
+	km-dev:hasModelLabel "wes_pmbb__enc_remove_reused_props_sc" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"ENCOUNTER_PACK_ID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"enc_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"import uuid\\r\\ntemp = uuid.uuid4().hex\\r\\nreturn \\\"encounter/\\\" + temp\\r\\n\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"enc_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"PROTOCOL\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"encoutner_reg_uri_string\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"# return(\\\"http://transformunify.org/ontologies/TURBO_0000421\\\")\\r\\n\\r\\nbb_protocol = getValue(\\\"PROTOCOL\\\")\\r\\nif (bb_protocol == \\\"CGI\\\") :\\r\\n    return(\\\"http://transformunify.org/ontologies/TURBO_0000420\\\")\\r\\nelif (bb_protocol == \\\"PmbbBlood\\\") :\\r\\n    return(\\\"http://transformunify.org/ontologies/TURBO_0000422\\\")\\r\\nelif (bb_protocol == \\\"PmbbTissue\\\") :\\r\\n    return(\\\"http://transformunify.org/ontologies/TURBO_0000423\\\")\\r\\nelse:\\r\\n    return(\\\"\\\")\\r\\n\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PROTOCOL\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"encoutner_reg_uri_string\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"HEIGHT_STANDARD_FEET\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"karma_height_cm\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"inpart = float(getValue(\\\"HEIGHTINCHES\\\"))\\r\\n\\r\\n#footpart = float(getValue(\\\"HEIGHT_STANDARD_FEET\\\"))\\r\\nfootpart = 0\\r\\n\\r\\ntotinches = inpart  + (footpart * 12)\\r\\n\\r\\ncm = totinches * 2.54\\r\\n\\r\\nreturn(str(cm))\\r\\n\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"HEIGHTINCHES\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"karma_height_cm\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"WEIGHT_STANDARD\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"karma_weight_kg\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"lbs = float(getValue(\\\"WEIGHTLBS\\\"))\\n\\nkgs = lbs / 2.205\\n\\nreturn(str(kgs))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"WEIGHTLBS\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"karma_weight_kg\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"WEIGHT_STANDARD\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"karma_bmi\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"inval = str(getValue(\\\"HEIGHT_STANDARD_INCHES\\\"))\\nif inval.isnumeric():\\n    inpart = float(inval)\\nelse:\\n    inpart = 0.0\\nfootpart = float(getValue(\\\"HEIGHT_STANDARD_FEET\\\"))\\ntotinches = inpart  + (footpart * 12)\\ncm = totinches * 2.54\\n\\nlbs = float(getValue(\\\"WEIGHT_STANDARD\\\"))\\nkgs = lbs / 2.20462262185\\n\\nbmi = kgs * 10000 / ( cm * cm )\\nreturn(str(bmi))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"HEIGHT_STANDARD_FEET\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"karma_bmi\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"recruitment_date_shift\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"encounter_date_xsd\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"from datetime import datetime\\ndatestring = getValue(\\\"ENCOUNTERDATE\\\")\\n#return(datestring)\\ndatetime_object = datetime.strptime(datestring, '%m/%d/%Y')\\n# xsd = datetime_object.isoformat()\\n# return xsd\\njustDate = datetime_object.strftime(\\\"%Y-%m-%d\\\")\\nreturn justDate\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ENCOUNTERDATE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"encounter_date_xsd\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"encounters_bb_1_encounter_pack_id_sc_edited\",
+                    \"hasBaseURI\": false,
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"wes_pmbb__enc_sc\",
+                    \"hasBaseURI\": false,
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": false,
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/pennbiobank/turbo/tree/master/karma_models\",
+                    \"baseURI\": \"\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"wes_pmbb__enc_remove_reused_props_sc\",
+                    \"hasBaseURI\": false,
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"enc_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://transformunify.org/ontologies/TURBO_0000527\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://transformunify.org/ontologies/TURBO_00005271\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"enc_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"enc_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"encoutner_reg_uri_string\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000630\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:anyURI\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"encoutner_reg_uri_string\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"encoutner_reg_uri_string\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"encounter_date_xsd\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000625\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:date\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"encounter_date_xsd\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"encounter_date_xsd\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"karma_height_cm\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000626\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:float\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"karma_height_cm\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"karma_height_cm\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"karma_weight_kg\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000627\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:float\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"karma_weight_kg\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"karma_weight_kg\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"PACKETID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000628\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PACKETID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PACKETID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"PROTOCOL\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000629\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PROTOCOL\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PROTOCOL\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"ENCOUNTERDATE\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000624\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ENCOUNTERDATE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ENCOUNTERDATE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"CALCULATEDBMI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://transformunify.org/ontologies/TURBO_0000527\",
+                    \"DomainId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0000635\",
+                    \"DomainLabel\": \"turbo:TURBO_00005271\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:float\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"CALCULATEDBMI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"CALCULATEDBMI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLiteralNodeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"literalValue\",
+                \"type\": \"other\",
+                \"value\": \"wes_pmbb__enc.csv\"
+            },
+            {
+                \"name\": \"literalType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"nodeId\",
+                \"type\": \"other\",
+                \"value\": \"encounters_bb_1_encounter_pack_id.csv1\"
+            },
+            {
+                \"name\": \"isUri\",
+                \"type\": \"other\",
+                \"value\": false
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeId\": \"http://transformunify.org/ontologies/TURBO_0000623\",
+                    \"edgeTargetId\": \"encounters_bb_1_encounter_pack_id.csv1\",
+                    \"edgeTargetUri\": \"encounters_bb_1_encounter_pack_id.csv\",
+                    \"isProvenance\": false,
+                    \"edgeSourceId\": \"http://transformunify.org/ontologies/TURBO_00005271\",
+                    \"edgeSourceUri\": \"http://transformunify.org/ontologies/TURBO_0000527\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f a rr:TriplesMap .
+
+_:node1c9kf718rx1 km-dev:hasTriplesMap km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx2 rr:tableName "wes_pmbb__enc.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasLogicalTable _:node1c9kf718rx2 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:logicalTable _:node1c9kf718rx2 ;
+	rr:subjectMap _:node1c9kf718rx3 .
+
+_:node1c9kf718rx1 km-dev:hasSubjectMap _:node1c9kf718rx3 .
+
+_:node1c9kf718rx3 km-dev:isPartOfMapping _:node1c9kf718rx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://transformunify.org/ontologies/TURBO_00005271" ;
+	rr:class turbo:TURBO_0000527 ;
+	rr:template "{enc_uri}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_3d70a19e-ac13-416d-8f97-42c3566d4d0f rr:predicate turbo:TURBO_0000635 .
+
+_:node1c9kf718rx4 rr:column "CALCULATEDBMI" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#float" ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx4 .
+
+km-dev:PredicateObjectMap_3d70a19e-ac13-416d-8f97-42c3566d4d0f rr:objectMap _:node1c9kf718rx4 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_3d70a19e-ac13-416d-8f97-42c3566d4d0f .
+
+km-dev:PredicateObjectMap_3d70a19e-ac13-416d-8f97-42c3566d4d0f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_3d70a19e-ac13-416d-8f97-42c3566d4d0f .
+
+km-dev:PredicateObjectMap_ad9e7021-dfa4-4d8e-a8c5-545f471007dc rr:predicate turbo:TURBO_0000627 .
+
+_:node1c9kf718rx5 rr:column "karma_weight_kg" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#float" ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx5 .
+
+km-dev:PredicateObjectMap_ad9e7021-dfa4-4d8e-a8c5-545f471007dc rr:objectMap _:node1c9kf718rx5 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_ad9e7021-dfa4-4d8e-a8c5-545f471007dc .
+
+km-dev:PredicateObjectMap_ad9e7021-dfa4-4d8e-a8c5-545f471007dc a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ad9e7021-dfa4-4d8e-a8c5-545f471007dc .
+
+km-dev:PredicateObjectMap_b940769a-a024-4f61-a3d6-5664a25dad21 rr:predicate turbo:TURBO_0000626 .
+
+_:node1c9kf718rx6 rr:column "karma_height_cm" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#float" ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx6 .
+
+km-dev:PredicateObjectMap_b940769a-a024-4f61-a3d6-5664a25dad21 rr:objectMap _:node1c9kf718rx6 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_b940769a-a024-4f61-a3d6-5664a25dad21 .
+
+km-dev:PredicateObjectMap_b940769a-a024-4f61-a3d6-5664a25dad21 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b940769a-a024-4f61-a3d6-5664a25dad21 .
+
+km-dev:PredicateObjectMap_e6a2dfe9-d7c7-4d4f-adf3-3f4eecc842ca rr:predicate turbo:TURBO_0000628 .
+
+_:node1c9kf718rx7 rr:column "PACKETID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx7 .
+
+km-dev:PredicateObjectMap_e6a2dfe9-d7c7-4d4f-adf3-3f4eecc842ca rr:objectMap _:node1c9kf718rx7 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_e6a2dfe9-d7c7-4d4f-adf3-3f4eecc842ca .
+
+km-dev:PredicateObjectMap_e6a2dfe9-d7c7-4d4f-adf3-3f4eecc842ca a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e6a2dfe9-d7c7-4d4f-adf3-3f4eecc842ca .
+
+km-dev:PredicateObjectMap_cae2be94-979e-4024-bd0b-5e8c65b5b002 rr:predicate turbo:TURBO_0000630 .
+
+_:node1c9kf718rx8 rr:column "encoutner_reg_uri_string" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx8 .
+
+km-dev:PredicateObjectMap_cae2be94-979e-4024-bd0b-5e8c65b5b002 rr:objectMap _:node1c9kf718rx8 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_cae2be94-979e-4024-bd0b-5e8c65b5b002 .
+
+km-dev:PredicateObjectMap_cae2be94-979e-4024-bd0b-5e8c65b5b002 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_cae2be94-979e-4024-bd0b-5e8c65b5b002 .
+
+km-dev:PredicateObjectMap_d2fc3d05-b96f-41cd-ac56-f5bdce229d89 rr:predicate turbo:TURBO_0000625 .
+
+_:node1c9kf718rx9 rr:column "encounter_date_xsd" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#date" ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx9 .
+
+km-dev:PredicateObjectMap_d2fc3d05-b96f-41cd-ac56-f5bdce229d89 rr:objectMap _:node1c9kf718rx9 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_d2fc3d05-b96f-41cd-ac56-f5bdce229d89 .
+
+km-dev:PredicateObjectMap_d2fc3d05-b96f-41cd-ac56-f5bdce229d89 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d2fc3d05-b96f-41cd-ac56-f5bdce229d89 .
+
+km-dev:PredicateObjectMap_9f3a555e-644f-4fe2-9112-60223927b8d0 rr:predicate turbo:TURBO_0000624 .
+
+_:node1c9kf718rx10 rr:column "ENCOUNTERDATE" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx10 .
+
+km-dev:PredicateObjectMap_9f3a555e-644f-4fe2-9112-60223927b8d0 rr:objectMap _:node1c9kf718rx10 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_9f3a555e-644f-4fe2-9112-60223927b8d0 .
+
+km-dev:PredicateObjectMap_9f3a555e-644f-4fe2-9112-60223927b8d0 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9f3a555e-644f-4fe2-9112-60223927b8d0 .
+
+km-dev:PredicateObjectMap_4dfb016e-f5e4-4b45-b9af-b8f83cd9dcd2 rr:predicate turbo:TURBO_0000629 .
+
+_:node1c9kf718rx11 rr:column "PROTOCOL" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx11 .
+
+km-dev:PredicateObjectMap_4dfb016e-f5e4-4b45-b9af-b8f83cd9dcd2 rr:objectMap _:node1c9kf718rx11 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_4dfb016e-f5e4-4b45-b9af-b8f83cd9dcd2 .
+
+km-dev:PredicateObjectMap_4dfb016e-f5e4-4b45-b9af-b8f83cd9dcd2 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4dfb016e-f5e4-4b45-b9af-b8f83cd9dcd2 .
+
+km-dev:PredicateObjectMap_200fdbc5-7445-497a-b5b7-f0f55ef8ea22 rr:predicate turbo:TURBO_0000623 .
+
+_:node1c9kf718rx12 rr:constant "wes_pmbb__enc.csv" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasObjectMap _:node1c9kf718rx12 .
+
+km-dev:PredicateObjectMap_200fdbc5-7445-497a-b5b7-f0f55ef8ea22 rr:objectMap _:node1c9kf718rx12 .
+
+km-dev:TriplesMap_80ee2f7a-8d22-4fbf-9465-b4bae371f27f rr:predicateObjectMap km-dev:PredicateObjectMap_200fdbc5-7445-497a-b5b7-f0f55ef8ea22 .
+
+km-dev:PredicateObjectMap_200fdbc5-7445-497a-b5b7-f0f55ef8ea22 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c9kf718rx1 .
+
+_:node1c9kf718rx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_200fdbc5-7445-497a-b5b7-f0f55ef8ea22 .
