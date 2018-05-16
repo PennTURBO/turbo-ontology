@@ -1,0 +1,3184 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://transformunify.org/ontologies/turbo.owl#"
+     xml:base="http://transformunify.org/ontologies/turbo.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ns3="http://www.ebi.ac.uk/efo/"
+     xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:Thesaurus="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:faldo="http://biohackathon.org/resource/faldo#"
+     xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:ontologies="http://transformunify.org/ontologies/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://transformunify.org/ontologies/turbo.owl">
+        <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obo_ontofoxturbo_obib_ontodog.owl"/>
+        <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obo_ontofox.owl"/>
+        <dc:title>The TURBO application ontology</dc:title>
+        <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
+        <rdfs:comment>flop</rdfs:comment>
+        <dc:contributor>Chris Stoeckert</dc:contributor>
+        <dc:license></dc:license>
+        <obo:IAO_0000232>Why do some terms appear in Karma as their labels and some appear as their URIs?</obo:IAO_0000232>
+        <dc:contributor>Mark A. Miller</dc:contributor>
+        <rdfs:comment>used ontodog to extract a base ontology view from OBI
+used ontofox to get additional classes and properties from other OBO foundry ontologies
+
+no longer attempting to import RDF and RDFS.  We have created some similar terms in the turbo namespace, like turbo:Statement.  It&apos;s not straightforward to use rdfs:label, rdf:type and rdf:Statement, etc. in Protege, Karma or LodLive... GraphDB visual exploration preferable now anyway?
+
+HISTORICAL NOTES BELOW, MAY NOT BE ACCURATE ANYMORE:
+the property &quot;denotes&quot; was extracted from OBIB, and the comments annotation has been removed because of a conflict with ISI&apos;s Karma software</rdfs:comment>
+        <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobank data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000114 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000114"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0100001 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0100001"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/created_by -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/created_by"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasRelatedSynonym"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000701 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000701">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-05T17:02:53Z</dc:date>
+        <oboInOwl:shorthand>shortcutsInterdependent</oboInOwl:shorthand>
+        <rdfs:comment>it would not make sense, or may even be impossible, to expand one of these shortcuts without the other.  For example, both a ScEnc2DiagCoe and ScEnc2DiagCodeRegText shortcut are require to create a fully-formed CRID for a diagnosis code serving as the output of a health care encounter planned process
+
+In general, if a shortcut triple appears in the absence of its interdependencies, the turbo expansion method should throw an exception.</rdfs:comment>
+        <rdfs:label>interdependent with shortcut</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000702 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000702">
+        <obo:IAO_0000115>Links a &apos;retired placeholder&apos; to to the corresponding class that is subject to &apos;referent tracking&apos;
+
+X retires Y means that an instance of class Y will appear as an instance of class X after &apos;referent tracking&apos;</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-31T13:29:27Z</dc:date>
+        <rdfs:label>retires</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001700 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001700">
+        <obo:IAO_0000111 xml:lang="en">replaced with IUI</obo:IAO_0000111>
+        <obo:IAO_0000115>the subject of this property has been demoted in the course of referent tracking, and the corresponding entity in reality is now better known by the following IUI:</obo:IAO_0000115>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:contributor>suggested by Heather Williams</dc:contributor>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-12T14:00:00-05:00</dc:date>
+        <oboInOwl:shorthand>replacedWithIUI</oboInOwl:shorthand>
+        <rdfs:label xml:lang="en">replaced with IUI</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0100001"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006500 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006500">
+        <obo:IAO_0000111 xml:lang="en">referent tracked?</obo:IAO_0000111>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-12T14:00:00-05:00</dc:date>
+        <oboInOwl:shorthand>reftracked</oboInOwl:shorthand>
+        <rdfs:comment>assert as true for individuals that have been referent tracked
+
+this property should only be true for references that serve as Instance Unique Identiifiers, or IUIs</rdfs:comment>
+        <rdfs:label xml:lang="en">referent tracked?</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006501 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006501">
+        <obo:IAO_0000115>this data item is the output of a turbo conclusionation process</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-05T18:34:04Z</dc:date>
+        <oboInOwl:shorthand>conclusionated</oboInOwl:shorthand>
+        <rdfs:label>conclusionated?</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006600 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006600">
+        <oboInOwl:shorthand>previousUriText</oboInOwl:shorthand>
+        <rdfs:comment>20170905:  current intention for referent tracking:
+
+:Person1 and :PersonID1 are instantiated by Karma because there is a PersonID column in some table, with a value of 1 on some row.
+
+If there are other Persons in the triplestore denoted by IDs with the value 1, then referent tracking may say that they are, in reality, the same person. 
+
+In that case, a new URI would be created, based on a UUID.  That URI should have a &quot;previous URI string&quot; relationship with &quot;:Person1&quot;
+
+NEW URIS should be created for EACH of the Karma-instantiated person instances, with a “replaced with URI” relationship with the new UUID URI for the referent tracked Person. They should each also have &quot;previous URI string&quot; relationship with the string equivalent of whatever their URIs were, like “:Person1” or “:PersonOne”</rdfs:comment>
+        <rdfs:label>previous URI text</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006601 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006601">
+        <obo:IAO_0000115>the previousUriText value of the resource had served as input into the expansion process that resulted in this resource/URI</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-27T17:38:47Z</dc:date>
+        <oboInOwl:shorthand>preExpUriString</oboInOwl:shorthand>
+        <rdfs:label>pre-expansion URI text</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006600"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006602 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006602">
+        <obo:IAO_0000115>the previousUriText value of the resource had served as input into the referent tracking process that resulted in this resource/URI</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-27T17:39:47Z</dc:date>
+        <oboInOwl:shorthand>preReftrackUriString</oboInOwl:shorthand>
+        <rdfs:label>pre-reftracking URI text</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006600"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/ICD9_definition_citation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/ICD9_definition_citation"/>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/MSH_definition_citation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/MSH_definition_citation"/>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation"/>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation"/>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/alternative_term -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/alternative_term"/>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/definition_citation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/definition_citation"/>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/gwas_trait -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/gwas_trait"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand">
+        <oboInOwl:shorthand>shorthand</oboInOwl:shorthand>
+        <rdfs:comment>The TURBO ontology is moving away from human-readable URIs towards the OBO Foundry practice of NAMESPACE_XXXXXXX identifiers, where the X&apos;s are numerical digits.
+
+Our software developers would like to continue using mnemonics to refer to ontology terms.  Presumably this will be implemented with sameAs or equivalentClass/equivalentProperty relationships.
+
+This has_mnemonic datatype property has been created to facilitate and maintain these relationships, most likely with some SPARQL construct statements.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#qualifiedCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#qualifiedCardinality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Literal -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anyURI -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#boolean -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#boolean"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#dateTime -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#datetime -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#datetime"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#float -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#float"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#nonNegativeInteger -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#real -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2002/07/owl#real"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000054 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000054"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000055"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000219 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000219">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001938 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001938"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000053 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000056"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000057 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000057"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000059 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000059"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000086 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000087 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000087"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002223 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002223">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000301 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000301">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000087"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000054"/>
+        </owl:propertyChainAxiom>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-11T14:36:32Z</dc:date>
+        <oboInOwl:shorthand>partInVR</oboInOwl:shorthand>
+        <rdfs:label>participates in via role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000302 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000302">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000112>In some database table about employment, my social security number appears in the same row with some employer identification number.  (Alternatively, they both appear in the same XML or JSON path, etc.)  Either way, a rule could be written in (or outside of) OWL interpreting that co-occurrence to mean that I am employed by the institution denoted by that employer identification number.
+
+Applications, like Drivetrain, may perform some (closed-world?) checks before instantiating the implied relationship:  if there is, in reality, no institution denoted by the employer identification number, the system might refuse to instantiate any statement at all about who I work for.</obo:IAO_0000112>
+        <obo:IAO_0000115>A relationship between two information content entities that are connected or linked by placement in the same structural subdivision of a dataset and intended to be about entities that have some relationship in reality.</obo:IAO_0000115>
+        <dc:creator>Chris Stoeckert</dc:creator>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-23T15:00:15Z</dc:date>
+        <oboInOwl:shorthand>sharesRowWith</oboInOwl:shorthand>
+        <rdfs:comment>this is a non-owl shortcut, stating that two ICE were found on the same row of a data table.  This may lead to a conclusion that the two ICEs are values borne by two things that have some relationship in reality.
+
+For example, if a patient identifier and an encounter identifier were found in the same row, one might infer that the denoted participant participated in the denoted encounter with a participation under investigation role.</rdfs:comment>
+        <rdfs:label>linked in dataset with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000303 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000303">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
+            </rdf:Description>
+        </owl:propertyChainAxiom>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-20T14:07:39Z</dc:date>
+        <oboInOwl:shorthand>hasBirthO</oboInOwl:shorthand>
+        <rdfs:comment>lets referent track births (for which each person only has one) rather than birth dates</rdfs:comment>
+        <rdfs:label>has birth</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#code -->
+
+    <owl:DatatypeProperty rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#code">
+        <rdfs:comment>double check property type in NCIT download</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001937 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001937"/>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000601 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000601">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:48:27Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2Data</oboInOwl:shorthand>
+        <rdfs:label>biobank consenter to data shortcut</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000602 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000602">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:52:22Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2BioSexUri</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank consenter to biological sex URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000603 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000603">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:54:45Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2DataSet</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank consenter to dataset title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000604 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000604">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:55:40Z</dc:date>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:32:54Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2DOBText</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank consenter to textual date of birth text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000605 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000605">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:56:37Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2DOBXsd</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank consenter to xsd-formatted date of birth</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000606 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000606">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:57:40Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2GIDText</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank consenter to gender identity datum text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000607 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000607">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T14:03:37Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2GIDUri</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank consenter to gender identity datum URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000608 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000608">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T14:05:09Z</dc:date>
+        <oboInOwl:shorthand>ScConsenter2ConsenterCRIDsymbol</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank consenter to biobank consenter CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000609 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000609">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-24T17:46:48Z</dc:date>
+        <rdfs:label>shortcut biobank consenter to biobank consenter registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000610 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000610">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-24T17:47:54Z</dc:date>
+        <rdfs:label>shortcut biobank consenter to biobank consenter identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000621 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000621">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <oboInOwl:shorthand>ScBBEnc2Data</oboInOwl:shorthand>
+        <rdfs:comment>still working out the relationships between biobank encounters and health care encounters.  use separate properties due to domain constraint?  or make a parent class?</rdfs:comment>
+        <rdfs:label>shortcut biobank encounter to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000623 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000623">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>ScBBEnc2DataSet</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank encounter to data set title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000624 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000624">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>ScBBEnc2EncDateText</oboInOwl:shorthand>
+        <rdfs:comment>the textual representation of a date isn&apos;t technically interdependent with anything else.  However, if it was present in tabular data, it should be passed on with this shortcut, to provide provenance for the xsd representation of the date</rdfs:comment>
+        <rdfs:label>shortcut biobank encounter to textual encounter date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000625 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000625">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <oboInOwl:shorthand>ScBBEnc2EncDateXsd</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank encounter to xsd-formatted  encounter date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000626 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000626">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:05Z</dc:date>
+        <oboInOwl:shorthand>ScBBEnc2HeightCm</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank encounter to height in cm</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000627 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000627">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:25Z</dc:date>
+        <oboInOwl:shorthand>ScBBEnc2WeightKg</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank encounter to weight in kg</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000628 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000628">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>ScBBEnc2EncSymb</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank encounter to encounter CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000629 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000629">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T16:09:56Z</dc:date>
+        <rdfs:label>shortcut biobank encounter to encounter registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000630 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000630">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T16:10:39Z</dc:date>
+        <rdfs:label>shortcut biobank encounter to encounter identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000635 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000635">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-24T13:05:28Z</dc:date>
+        <oboInOwl:shorthand>ScBBEnc2BMI</oboInOwl:shorthand>
+        <rdfs:label>shortcut biobank encounter to BMI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000641 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000641">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-05T16:21:09Z</dc:date>
+        <oboInOwl:shorthand>ScHcEnc2Data</oboInOwl:shorthand>
+        <rdfs:comment>This property and any of its sub properties link an instance of &quot;biobank study participant&quot; with some literal value.  See comments on parent class.</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000643 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000643">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>ScHcEnc2DataSet</oboInOwl:shorthand>
+        <rdfs:comment>TODO:  what should the dataset contain as parts in our encounter only shortcut expansion?
+    encounter id instance
+    encounter date instance (is the fact that the text value and mapped xsd value are both values of the same instance enough to explain the conversion?  i.e., which value is actually in the data set and which is derived? is the fact that a data owner made the conversion in Karma enough justification?  as in the data owner is saying that they are identical values like 2 and two?  is this another process?)
+    diagnosis (the whole CRID? ** the code symbol and the registry denoter separately?**  what about the mapped registry URI?... No, that&apos;s not an ice in a data set.  But we might want to explain the conversion processes from string to URI, like I suggested for string to xsd date.)
+
+registry and date conversions could be rule sin the instantiation process?</rdfs:comment>
+        <rdfs:comment>This shortcut links a health care encounter ?e (OGMS_0000097) to a textual title for a dataset ?t (IAO_0000100).  Expansion involve creating a dataset instance, which will be the input into an R2R instantiation process ?i.
+
+              ?e  rdf:type         obo:OGMS_0000097 .
+              ?d  rdf:type           obo:IAO_0000100 ;
+                      obo:BFO_0000051     ?p ;
+                      dc11:title          ?dsTitle .
+            ?i
+                      rdf:type            :R2RInstantiation ;
+                      obo:OBI_0000293     ?d .
+  
+Note that the encounter and the dataset are still not bound above.  The expander must find paths (in either orientation) between the encounter and the data set, via some information content entities
+
+Here&apos;s an illustration of &quot;any path&quot; in sparql, but only going in one orientation.
+
+        ?e rdf:type  &lt;http://purl.obolibrary.org/obo/OGMS_0000097&gt; .
+        ?e (:|!:)* ?o .
+        ?o ?p ?v 
+
+That is, ?v could be the value of an identifier ?o that denotes the encounter, or it could be the value of diagnosis code that is part of a diagnosis CRID that was the output of the encounter.</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to data set title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000644 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000644">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>ScHcEnc2EncDateText</oboInOwl:shorthand>
+        <rdfs:comment>This shortcut links a health care encounter ?e (OGMS_0000097) to the textual representation ?tv of the date ?d (turbo:ProcStartTimeMeas) on which the encounter took place .  Furthermore, date ?d is about the temporal boundary ?es (turbo:HealthcareEncStart) that starts encounter ?e.  ?tv will typically part of some dataset (see ScEnc2DataSet.)
+
+            ?e  rdf:type         obo:OGMS_0000097 .
+            ?d  rdf:type           :ProcStartTimeMeas ;
+                      :hasTextualValue    ?tv ;
+                      obo:IAO_0000136     ?es .
+            ?es  rdf:type          :HealthcareEncStart ;
+                      obo:RO_0002223      ?e .
+ 
+Although not constrained at this point (?) the ?tv&apos;s type would reasonably be an xsd:string.
+
+Note that TURBO will typically expect an xsd:date literal bound to date instances like ?d.  As of the end of August 2017, that means that the textual date value will need to be converted to an xsd:date within a python transformation, in Karma.</rdfs:comment>
+        <rdfs:comment>the textual representation of a date isn&apos;t technically interdependent with anything else.  However, if it was present in tabular data, it should be passed on with this shortcut, to provide provenance for the xsd representation of the date</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to textual encounter date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000645 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000645">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <oboInOwl:shorthand>ScHcEnc2EncDateXsd</oboInOwl:shorthand>
+        <rdfs:comment>definition &quot;This shortcut links a health care encounter ?e (OGMS_0000097) to and xsd:date literal ?xv, which is the measurement value* of date ?d (turbo:ProcStartTimeMeas) on which the encounter took place .  Furthermore, date ?d is about the temporal boundary ?es (turbo:HealthcareEncStart) that starts encounter ?e
+
+?xv will typcally part of some dataset (see ScEnc2DataSet.)
+
+In semi-turtle syntax, It means that 
+
+            ?d  rdf:type           :ProcStartTimeMeas ;
+                     obo:IAO_0000004    ?xv ;
+                      obo:IAO_0000136     ?es .
+            ?e  rdf:type         obo:OGMS_0000097 .
+            ?es  rdf:type          :HealthcareEncStart ;
+                      obo:RO_0002223      ?e .
+
+As of the end of August 2017, that means that a textual date value will need to be converted to an xsd:date within a python transformation, in Karma.
+
+*oops, this violates the xsd:float range expectation of has measurement value (IAO_0000004) as defined in the IAO owl file.
+I added xsd:date to that range definition within turbo.owl and turbo_merged.owl.  Some applications seem to accept the dual range, but some (like top braid composer) only seem to consider one of the datatype ranges…  first found in the file???
+
+I have also created turbo:hasDateValue&quot;</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to xsd-formatted encounter date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000646 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000646">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:05Z</dc:date>
+        <oboInOwl:shorthand>ScHcEnc2HeightCm</oboInOwl:shorthand>
+        <rdfs:label>shortcut health care encounter to height in cm</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000647 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000647">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:25Z</dc:date>
+        <oboInOwl:shorthand>ScHcEnc2WeightKg</oboInOwl:shorthand>
+        <rdfs:label>shortcut health care encounter to weight in kg</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000648 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000648">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>ScEnc2EncID</oboInOwl:shorthand>
+        <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the value ?iv of its identifier ?i. (turbo:EncounterID).  ?i denotes ?e.
+
+            ?e  rdf:type         obo:OGMS_0000097 .
+            ?i   rdf:type            :EncounterID ;
+                      obo:IAO_0000219     ?e ;
+                      :thingLiteralValue     ? iv.</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to encounter ID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000649 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000649">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>no example of use yet... we may end up saying that encounter identifiers don&apos;t really come from registries</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to encounter registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000650 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000650">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T16:07:06Z</dc:date>
+        <rdfs:label>shortcut health care encounter to encounter identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000655 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000655">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-24T13:05:28Z</dc:date>
+        <dc:description>Used when instantiating tabular/relational data about health care encounters that includes a BMI column.
+
+Upon expansion, 
+
+:e a :healthCareEncounter ;
+:hasSpecifiedOutput ?BMI.
+:BMI a :bmiDataItem ;
+:hasLiteralValue &quot;25&quot;^^xsd:float
+
+upon participant-to-encounter joining:
+
+:BMI :isAbout :adipose .
+:adipose a :adiposeTissue ;
+:partOf :studyParticipant .</dc:description>
+        <oboInOwl:shorthand>ScHcEnc2BMI</oboInOwl:shorthand>
+        <rdfs:label>shortcut health care encounter to BMI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000661 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000661">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <ontologies:TURBO_0000701 rdf:resource="http://transformunify.org/ontologies/ScEnc2DiagCodeRegUri"/>
+        <oboInOwl:shorthand>ScHcEnc2DiagCode</oboInOwl:shorthand>
+        <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the value ?dcv of a diagnosis code symbol ?dcs. (turbo:EncounterDiagCodeSymbol).  ?dcs is part of a diagnosis CRID ?dcrid (turbo:DiagCodeRegitryID) and is typically part of some dataset (see ScEnc2DataSet.)  ?dcrid is the output of the encounter ?e.
+
+            ?e  rdf:type         obo:OGMS_0000097 ;
+                      obo:OBI_0000299     ?dcrid .
+             ?dcrid  rdf:type          :DiagCrid ;
+                      obo:BFO_0000051     ?dcs .
+             ?dcs
+                      rdf:type            :EncounterDiagCodeSymbol ;
+                      :thingLiteralValue  ?dcv .</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to diagnosis code symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000662 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000662">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>ScHcEnc2DiagCodeRegText</oboInOwl:shorthand>
+        <rdfs:comment>the textual representation of a diagnosis code registry isn&apos;t technically interdependent with anything else.  However, if it was present in tabular data, it should be passed on with this shortcut  as provenance for the diagnosis code registry URI, which is interdependent with the diagnosis code symbol.</rdfs:comment>
+        <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the value ?drnv of a diagnosis code registry denoter ?dcrn (turbo:DiagCodeRegitryID), which denotes a registry instance ?dcru like  &lt;http://purl.obolibrary.org/obo/NCIT_C71892&gt; for ICD-10. 
+ The mapping from denoters of registries to URIs that already exist in some ontology like NCIT will be the responsibility of the data owner and will be executed with a python transformation in Karma.  ?dcrn is part of a diagnosis CRID ?dcrid (turbo:DiagCrid) and ?drnv is typically part of some dataset (see ScEnc2DataSet.)  ?dcrid is the output of the encounter ?e.
+
+            ?e  rdf:type         obo:OGMS_0000097 ;
+                      obo:OBI_0000299     ?dcrid .
+             ?dcrid  rdf:type          :DiagCrid ;
+                      obo:BFO_0000051     ?dcrn .
+            ?dcrn
+                      rdf:type            :DiagCodeRegitryID ;
+                      obo:IAO_0000219     ?dcru ;
+                      :hasTextualValue    ?drnv .</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to diagnosis code registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000663 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000663">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <ontologies:TURBO_0000701 rdf:resource="http://transformunify.org/ontologies/ScEnc2DiagCode"/>
+        <oboInOwl:shorthand>ScHcEnc2DiagCodeRegUri</oboInOwl:shorthand>
+        <rdfs:comment>failed parse rules for Karma?  assumes the tabular data being instantiated by Karma has a column of strings denoting diagnosis code registries.  Ideally a Karma python transformation will convert the strings into URIs for diagnosis code registry instances from some ontology like NCIT</rdfs:comment>
+        <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the URI of an instance of a diagnosis code registry ?dcru.  
+
+the value ?drnv of a diagnosis code registry denoter ?dcrn (turbo:DiagCodeRegitryID) denotes a registry instance ?dcru like  &lt;http://purl.obolibrary.org/obo/NCIT_C71892&gt; for ICD-10.  The mapping from denoters of registries to URIs that already exist in some ontology like NCIT will be the responsibility of the data owner and will be executed with a python transformation in Karma.  ?dcrn is part of a diagnosis CRID ?dcrid (turbo:DiagCrid) and ?drnv is typically part of some dataset (see ScEnc2DataSet.)  ?dcrid is the output of the encounter ?e.
+
+            ?e  rdf:type         obo:OGMS_0000097 ;
+                      obo:OBI_0000299     ?dcrid .
+             ?dcrid  rdf:type          :DiagCrid ;
+                      obo:BFO_0000051     ?dcrn .
+            ?dcrn
+                      rdf:type            :DiagCodeRegitryID ;
+                      obo:IAO_0000219     ?dcru ;
+                      :hasTextualValue    ?drnv .</rdfs:comment>
+        <rdfs:label>shortcut health care encounter to diagnosis code registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000670 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000670">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <oboInOwl:shorthand>instantiationHybridShortcut</oboInOwl:shorthand>
+        <rdfs:comment>this property and any sub properties are used to simplify the experience of using the Karma relational to RDF software.  They link instances/individuals to data literals, even (or especially!) when the literal is about an instance of some other class, not the subject of the shortcut triple.  It is the responsibility of the turbo application to expand shortcut triples into OBO/BFO triples, based on the shortcut predicate and the class of the instance in the subject position</rdfs:comment>
+        <rdfs:label>instantiation hybrid shortcut</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001600 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001600">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-29T21:44:08Z</dc:date>
+        <rdfs:label>shortcut biobank encounter CRID to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001601 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001601">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-29T21:45:02Z</dc:date>
+        <rdfs:label>shortcut health care encounter CRID to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001603 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001603">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:21:07Z</dc:date>
+        <rdfs:label>shortcut biobank encounter CRID to dataset title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001608 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001608">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:54:17Z</dc:date>
+        <rdfs:label>shortcut biobank encounter CRID to biobank encounter CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001609 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001609">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:19:17Z</dc:date>
+        <rdfs:label>shortcut biobank encounter CRID to biobank encounter registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001610 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001610">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:17:41Z</dc:date>
+        <rdfs:label>shortcut biobank encounter CRID to biobank encounter identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001641 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001641">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-14T15:05:57Z</dc:date>
+        <rdfs:label>shortcut health care encounter to drug prescription text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001642 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0001642">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:47:38Z</dc:date>
+        <rdfs:label>shortcut health care encounter to drug prescription CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0002603 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0002603">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:22:32Z</dc:date>
+        <rdfs:label>shortcut health care encounter CRID to dataset title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0002608 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0002608">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:55:51Z</dc:date>
+        <rdfs:label>shortcut health care encounter CRID to health care encounter CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0002609 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0002609">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:23:25Z</dc:date>
+        <rdfs:label>shortcut health care encounter CRID to health care encounter registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0002610 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0002610">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001601"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:24:07Z</dc:date>
+        <rdfs:label>shortcut health care encounter CRID to health care encounter identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0003600 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0003600">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:20:12Z</dc:date>
+        <rdfs:label>shortcut biobank consenter CRID to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0003603 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0003603">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0003600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:29:11Z</dc:date>
+        <rdfs:label>shortcut biobank consenter CRID to dataset title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0003608 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0003608">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0003600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:30:55Z</dc:date>
+        <rdfs:label>shortcut biobank consenter CRID to biobank consenter CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0003609 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0003609">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0003600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:31:40Z</dc:date>
+        <rdfs:label>shortcut biobank consenter CRID to biobank consenter registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0003610 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0003610">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0003600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:30:02Z</dc:date>
+        <rdfs:label>shortcut biobank consenter CRID to biobank consenter identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0004600 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0004600">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-07T22:07:58Z</dc:date>
+        <rdfs:label>shortcut diagnosis to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0004601 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0004601">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0004600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-07T22:08:58Z</dc:date>
+        <rdfs:label>shortcut diagnosis to diagnosis code symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0004602 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0004602">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0004600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-07T22:09:53Z</dc:date>
+        <rdfs:label>shortcut diagnosis to diagnosis code registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0004603 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0004603">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0004600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-07T22:11:30Z</dc:date>
+        <rdfs:label>shortcut diagnosis to diagnosis code registry</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0005600 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0005600">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:27:03Z</dc:date>
+        <rdfs:label>shortcut prescription to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0005601 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0005601">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0005600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:27:53Z</dc:date>
+        <rdfs:label>shortcut prescription to prescription CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0005611 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0005611">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0005600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:32:40Z</dc:date>
+        <rdfs:label>shortcut prescription to prescription fullname/order_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0005612 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0005612">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0005600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:34:33Z</dc:date>
+        <rdfs:label>shortcut prescription to drug uri string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006510 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006510">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <obo:IAO_0000112>If X is a gender identity datum in a data set (and is therefore a from a subclass of owl:Thing), then it&apos;s literal value might be &apos;M&apos; or &apos;male&apos; or &apos;0&apos;, or any other value provided by the author of the data set.</obo:IAO_0000112>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-12T14:00:00-05:00</dc:date>
+        <oboInOwl:shorthand>thingLiteralValue</oboInOwl:shorthand>
+        <rdfs:comment>20170905:  see OBI discussion of specified values, e.g. tracker item 818</rdfs:comment>
+        <rdfs:comment>previous label was &apos;literal value of any owl:Thing&apos;</rdfs:comment>
+        <rdfs:comment>the creation of this data property was motivated by the observation that there was no general-purpose data property in any OBO foundry ontology that took a string range</rdfs:comment>
+        <rdfs:label xml:lang="en">has literal value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006511 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006511">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006510"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <oboInOwl:shorthand>hasDateValue</oboInOwl:shorthand>
+        <rdfs:comment>I have seen &quot;has measurement value&quot; used for dates, but it has a plain numerical range in (OBI?  OBIB?)  I had added date as a second range for hmv, but Top Braid Composer only seems to consider the “first” range when determining what relationships can be drawn between two instances in graph mode.</rdfs:comment>
+        <rdfs:label>has date value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0006512 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006512">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006510"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oboInOwl:shorthand>hasTextualValue</oboInOwl:shorthand>
+        <rdfs:comment>analogous to has specified value, but not limited to numerical ranges.  links a datum to a literal.</rdfs:comment>
+        <rdfs:label>has textual value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474 -->
+
+    <owl:Class rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000556"/>
+        <rdfs:label>International Classification of Diseases</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000035 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000035"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000104"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000109 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000109"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000408 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000408"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000416 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000416"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000577 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000578 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000579 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0020000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0020000"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ICO_0000086 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ICO_0000086"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000070 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000338 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000338"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000810 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000810"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001930 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001930"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001931"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0200000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0200000"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0600020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000073 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000097 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIABIS_0000010 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OMIABIS_0000010"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PDRO_0000024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PDRO_0000024"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001013 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001013">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000502 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000502">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ICO_0000086"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000810"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OMIABIS_0000010"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <oboInOwl:shorthand>BiBaCo</oboInOwl:shorthand>
+        <oboInOwl:shorthand>biobank_consenter</oboInOwl:shorthand>
+        <rdfs:label>biobank consenter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000503 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000503">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000504"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000505"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                        <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:06:07Z</dc:date>
+        <rdfs:label>biobank consenter CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000504 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000504">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:08:01Z</dc:date>
+        <rdfs:label>biobank consenter symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000505 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000505">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:16:34Z</dc:date>
+        <rdfs:label>biobank consenter registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000506 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000506">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:15:30Z</dc:date>
+        <rdfs:label>biobank consenter identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000508 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000508">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000509"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000510"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:39:29Z</dc:date>
+        <rdfs:label>health care encounter CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000509 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000509">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:45:42Z</dc:date>
+        <rdfs:label>health care encounter symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000510 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000510">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:42:30Z</dc:date>
+        <rdfs:label>health care encounter registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000511 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000511">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <obo:IAO_0000115>A process boundary that starts a health care encounter</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T20:54:26Z</dc:date>
+        <oboInOwl:shorthand>HealthcareEncStart</oboInOwl:shorthand>
+        <rdfs:label>health care encounter start</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000512 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000512">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://transformunify.org/ontologies/TURBO_0000530"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000530"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:00:18Z</dc:date>
+        <rdfs:label>health care encounter start date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000513 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000513">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:44:09Z</dc:date>
+        <rdfs:label>health care encounter identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000522 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000522">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
+        <obo:IAO_0000115>a data transformation in which data are consumed from tabular or relational sources and written back out in a semantic/RDF format</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <oboInOwl:shorthand>R2RInstantiation</oboInOwl:shorthand>
+        <rdfs:comment>underdefined</rdfs:comment>
+        <rdfs:label>R2R instantiation</rdfs:label>
+        <rdfs:seeAlso>https://www.w3.org/TR/r2rml/</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000527 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000527">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OMIABIS_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>a planned process in which the following two kinds of people participate:  a representative from a biobank and someone with a participant under investigation role or a donor role or a consenter role
+
+The output of this process could be demographic or vital statistics data items, like height or weight; case forms, consent documetns, etc.</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T14:33:02Z</dc:date>
+        <oboInOwl:shorthand>BBEncounter</oboInOwl:shorthand>
+        <rdfs:label>biobank encounter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000530 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000530">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000035"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>process start time measurement</obo:IAO_0000111>
+        <obo:IAO_0000112>I began collecting stamps at noon, EST on January 1st, 1980.  This is the start time measurement of my stamp collecting process.</obo:IAO_0000112>
+        <obo:IAO_0000115>A time measurement datum that is the measure of the time when some process started</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Person: Mark A. Miller, based on OBI_0001619 from Chris Stoeckert and Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-12T14:00:00-05:00</dc:date>
+        <rdfs:label>process start time measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000531 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000531">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <obo:IAO_0000115>A process boundary that starts a biobank encounter</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:11:04Z</dc:date>
+        <oboInOwl:shorthand>BbEncStart</oboInOwl:shorthand>
+        <rdfs:label>biobank encounter start</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000532 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000532">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000530"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:01:45Z</dc:date>
+        <rdfs:label>biobank encounter start date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000533 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000533">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000534"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://transformunify.org/ontologies/TURBO_0000535"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                                        <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:46:47Z</dc:date>
+        <rdfs:label>biobank encounter CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000534 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000534">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:47:32Z</dc:date>
+        <rdfs:label>biobank encounter symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000535 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000535">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:48:11Z</dc:date>
+        <rdfs:label>biobank encounter registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000543 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000543">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:49:41Z</dc:date>
+        <rdfs:label>biobank encounter identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000553 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000553">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <obo:IAO_0000115>A centrally registered identifier that is about some diagnosis, billing code, etc.  Consists of two parts:  a registry denoter string that points to a particular disease coding registry, and a symbol string like &quot;J123.5&quot; that points to a particular disease within that registry.</obo:IAO_0000115>
+        <oboInOwl:shorthand>DiagCrid</oboInOwl:shorthand>
+        <rdfs:comment>If the turbo shortcut expansion method comes across either an isolated diagnosis code shortcut or an isolated diagnosis code registry URI shortcut, an exception should be thrown (because incomplete diagnosis CRIDs are worse than absent diagnosis CRIDs?)</rdfs:comment>
+        <rdfs:label>diagnosis CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000554 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000554">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <oboInOwl:shorthand>EncounterDiagCodeSymbol</oboInOwl:shorthand>
+        <rdfs:comment>might be a billing or diagnosis code... something like an ICD9 or ICD10 code</rdfs:comment>
+        <rdfs:label>diagnosis code symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000555 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000555">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000115>A proper name string that denotes a diagnosis code/billing code registry such as ICD-9, having an URI like &lt;http://purl.obolibrary.org/obo/NCIT_C71890&gt;</obo:IAO_0000115>
+        <oboInOwl:shorthand>DiagCodeRegistryID</oboInOwl:shorthand>
+        <rdfs:label>diagnosis code registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000556 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000556">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T19:39:55Z</dc:date>
+        <rdfs:label>diagnosis code registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000561 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000561">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:30:44Z</dc:date>
+        <rdfs:label>prescription CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000562 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000562">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:31:30Z</dc:date>
+        <rdfs:label>prescription CRID symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000563 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000563">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:32:06Z</dc:date>
+        <rdfs:label>prescription registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000564 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000564">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:37:11Z</dc:date>
+        <rdfs:label>prescription registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000571 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000571">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-09T19:30:07Z</dc:date>
+        <rdfs:label>zygosity value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000572 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000572">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-09T19:31:31Z</dc:date>
+        <rdfs:label>loss of function zygosity value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000902 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000902">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:21:52Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <rdfs:label>retired placeholder for biobank consenter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000903 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000903">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:27:36Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
+        <rdfs:label>retired placeholder for biobank consenter CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000904 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000904">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:28:21Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000504"/>
+        <rdfs:label>retired placeholder for biobank consenter symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000905 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000905">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:33:51Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000505"/>
+        <rdfs:label>retired placeholder for biobank consenter registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000906 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000906">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T16:47:49Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <rdfs:label>retired placeholder for biobank consenter identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000907 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000907">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:37:32Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <oboInOwl:shorthand>RetiredHealthcareEncPlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for health care encounter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000908 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000908">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:53:16Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
+        <rdfs:label>retired placeholder for health care encounter CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000909 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000909">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:56:01Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000509"/>
+        <rdfs:label>retired placeholder for health care encounter symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000910 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000910">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T22:09:18Z</dc:date>
+        <ontologies:TURBO_0000702>http://transformunify.org/ontologies/TURBO_0000510</ontologies:TURBO_0000702>
+        <rdfs:label>retired placeholder for health care encounter registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000911 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000911">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T20:57:47Z</dc:date>
+        <ontologies:TURBO_0000702>http://transformunify.org/ontologies/TURBO_0000511</ontologies:TURBO_0000702>
+        <oboInOwl:shorthand>RetiredHCEncStart</oboInOwl:shorthand>
+        <oboInOwl:shorthand>RetiredHealthcareEncStart</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for health care encounter start</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000912 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000912">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:02:58Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000512"/>
+        <oboInOwl:shorthand>RetiredEncounterDatePlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for health care encounter start date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000913 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000913">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T16:54:15Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000513"/>
+        <rdfs:label>retired placeholder for health care encounter identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000927 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000927">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T17:18:08Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <oboInOwl:shorthand>RetiredBiobankEncPlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for biobank encounter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000931 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000931">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:12:32Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000531"/>
+        <oboInOwl:shorthand>RetiredBbEncStart</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for biobank encounter start</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000932 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000932">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:08:37Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000532"/>
+        <rdfs:label>retired placeholder for biobank encounter start date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000933 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000933">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:53:55Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
+        <rdfs:label>retired placeholder for biobank encounter CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000934 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000934">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:54:46Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000534"/>
+        <rdfs:label>retired placeholder for biobank encounter symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000935 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000935">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T19:20:03Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000535"/>
+        <rdfs:label>retired placeholder for biobank encounter registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000943 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000943">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:55:23Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
+        <rdfs:label>retired placeholder for biobank encounter identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000961 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000961">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000124"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
+        <oboInOwl:shorthand>RetiredNeonateStagePlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for neonate life stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001500 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001500">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:08:47Z</dc:date>
+        <rdfs:label>biobank consenter MRN registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001501 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001501">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:26:31Z</dc:date>
+        <rdfs:label>ENCOUNTER_PACK_ID biobank encounter registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001511 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001511">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000408"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">length measurement assay</obo:IAO_0000111>
+        <obo:IAO_0000112>In the doctors office, the nurse used a meter stick to perform a length measurement assay on the patient.  The resulting length mesurement datum, 1.5 meters, is about the patient&apos;s height.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">a process to determine the length of an evaluant</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller
+originally (for mass measurement datum) Helen Parkinson</obo:IAO_0000117>
+        <obo:IAO_0000119>Mark A. Miller
+originally (for mass measurement datum) OBI</obo:IAO_0000119>
+        <oboInOwl:shorthand>LengthMeasurementAssay</oboInOwl:shorthand>
+        <rdfs:comment>created by Mark A. Miller, based on import of mass measurement assay
+
+originally (for mass measurement datum) Philippe Rocca-Serra</rdfs:comment>
+        <rdfs:label>length measurement assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001520 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001520">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000115>A planned process that takes a datum as input and has a rdf:Statement as output</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-28T13:00:00-05:00</dc:date>
+        <oboInOwl:shorthand>RecodingAssertion</oboInOwl:shorthand>
+        <rdfs:label>TURBO assertion making process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001521 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001521">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001520"/>
+        <obo:IAO_0000112>I saw the gender identity datum &apos;M&apos; in a data set describing Joey.  I used an instance of the TURBO sex recoding process (with some plan specification) to draw the conclusion that Joey has a quality of type PATO:male.</obo:IAO_0000112>
+        <obo:IAO_0000115>A planned process that takes a gender identity datum as input and has a PATO:biological_sex as output</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Person: Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-12T14:00:00-05:00</dc:date>
+        <oboInOwl:shorthand>SexRecodingProcess</oboInOwl:shorthand>
+        <rdfs:label xml:lang="en">TURBO sex recoding process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001531 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001531">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000119>&quot;Referent Tracking is a paradigm under which it is possible to refer explicitly to all of the concrete individual entities relevant to the accurate description of each patient&apos;s condition, therapies, and outcomes through the assignment of unique identifiers.&quot;
+http://www.referent-tracking.com/RTU/?page=reftrackparadigm.phtml
+
+See also
+Clinical Data Wrangling using Ontological Realism and Referent Tracking
+http://www.referent-tracking.com/RTU/?page=papers.phtml</obo:IAO_0000119>
+        <obo:created_by>Mark A. Miller</obo:created_by>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-19T21:39:41Z</dc:date>
+        <oboInOwl:shorthand>ReferentTracking</oboInOwl:shorthand>
+        <rdfs:comment>a data transformation with the objective of referring to entities in reality with a single Instance Unique Identifier (IUI)</rdfs:comment>
+        <rdfs:label>referent tracking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001541 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001541">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0002500"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>a value specification that specifies the minumum frequency at which a value must appear in order for a comclusionation process to conclusde that it is the correct value</obo:IAO_0000115>
+        <obo:created_by>Mark A. Miller</obo:created_by>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-19T21:39:41Z</dc:date>
+        <rdfs:label>conclusionation frequency threshold value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001542 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001542">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
+        <obo:IAO_0000115>A planned process in which RDF triples are created (for example)  stating that some biobank study participant participated in some healthcare encounter, based on the co-occurrence of the participants PSC vale and the encounter&apos;s identifier value appearing on the same row of a tabular/relational data source</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-27T14:25:03Z</dc:date>
+        <ns3:alternative_term>entity linking</ns3:alternative_term>
+        <oboInOwl:shorthand>share2partInf</oboInOwl:shorthand>
+        <rdfs:label>Encounter participation inferencing</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0000302"/>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001900 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001900">
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <obo:IAO_0000111>retired placeholder</obo:IAO_0000111>
+        <obo:IAO_0000115>A class containing individuals that were made obsolete in the course of referent tracking</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Person: Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-25T16:00:00-05:00</dc:date>
+        <oboInOwl:shorthand>RetiredPlaceholder</oboInOwl:shorthand>
+        <rdfs:comment>elaborate on referent tracking mechanism</rdfs:comment>
+        <rdfs:label>retired placeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001901 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001901">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-03T20:49:12Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001013"/>
+        <oboInOwl:shorthand>RetiredAdiposePlaceholder</oboInOwl:shorthand>
+        <rdfs:comment>label was
+Placeholder for a retired adipose tissue instance</rdfs:comment>
+        <rdfs:comment>retired placeholder for adipose tissue</rdfs:comment>
+        <rdfs:label>retired placeholder for adipose tissue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001902 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001902">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <obo:IAO_0000111>retired placeholder for biological sex</obo:IAO_0000111>
+        <obo:IAO_0000115>A retired placeholder that used to refer to the biological sex of an organism found in some tabular data set</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Person: Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000119>Mark A. Miller, TURBO project</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-25T16:00:00-05:00</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000047"/>
+        <oboInOwl:shorthand>RetiredBiosexPlaceholder</oboInOwl:shorthand>
+        <rdfs:comment>elaborate on referent tracking mechanism</rdfs:comment>
+        <rdfs:label>retired placeholder for biological sex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001903 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001903">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-12-14T17:50:50Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://www.ebi.ac.uk/efo/EFO_0004340"/>
+        <oboInOwl:shorthand>RetiredBMIPlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for BMI datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001904 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001904">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-10T20:59:27Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <oboInOwl:shorthand>RetiredBMIValSpecPlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001905 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001905">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-17T15:27:16Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000119"/>
+        <oboInOwl:shorthand>RetiredHeightPlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for height quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001906 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001906">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-21T19:11:02Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <oboInOwl:shorthand>RetiredProcBoundPlaceholder</oboInOwl:shorthand>
+        <rdfs:comment>For example, after referent tracking, this class holds all of placeholders for retires instances of peoples births (the start of their neonate stages)</rdfs:comment>
+        <rdfs:comment>previous label:  Placeholder for a retired proces boundary</rdfs:comment>
+        <rdfs:label>retired placeholder for process boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001907 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001907">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000124"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000530"/>
+        <oboInOwl:shorthand>RetiredProcStartTimeMeasPlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for process start time measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001908 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001908">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001900"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-17T15:27:06Z</dc:date>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000128"/>
+        <oboInOwl:shorthand>RetiredWeightPlaceholder</oboInOwl:shorthand>
+        <rdfs:label>retired placeholder for weight quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0002500 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0002500">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000115>A planned process that takes one or more datums as input and has a single datum, statement, and or record of missing knowledge as output</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000119>Mark A. Miller, TURBO team</obo:IAO_0000119>
+        <dc:creator>Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-28T13:00:00-05:00</dc:date>
+        <oboInOwl:shorthand>Conclusionation</oboInOwl:shorthand>
+        <rdfs:comment>there may be potentially conflicting information about an entity that has gone through a referent tracking process.  For example, Joey&apos;s gender could be asserted as male, male, male and female.  Depending on the rules, conclusionating might decide that Joey is in fact male.</rdfs:comment>
+        <rdfs:label>conclusionating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0002501 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0002501">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0002500"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-17T15:15:20Z</dc:date>
+        <oboInOwl:shorthand>BMIconclProc</oboInOwl:shorthand>
+        <rdfs:label>BMI conclusionating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/EFO_0004340 -->
+
+    <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0004340">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001013"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#ObsoleteClass -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass">
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label>Obsolete Class</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71890 -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71890">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474"/>
+        <Thesaurus:code>C71890</Thesaurus:code>
+        <rdfs:label>International Classification of Diseases, Ninth Revision</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71892 -->
+
+    <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71892">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474"/>
+        <Thesaurus:code>C71892</Thesaurus:code>
+        <rdfs:label>International Classification of Diseases, Tenth Revision</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000401 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000401">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OMIABIS_0000010"/>
+        <oboInOwl:shorthand>UPBBO</oboInOwl:shorthand>
+        <rdfs:label>U. Penn Biobank Organization</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000402 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000402">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:41:32Z</dc:date>
+        <rdfs:comment>EMPI - Enterprise Master Patient Identifier - PDS generated internal patient identifier. Should be unique to a person (every person should have at most one EMPI, every EMPI belongs to only one person). This identifier is stable in that it should not change over time, however it is not complete in that not all patients are assigned an EMPI.</rdfs:comment>
+        <rdfs:comment>Heather J Williams</rdfs:comment>
+        <rdfs:label>PDS EMPI biobank consenter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000403 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000403">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:13:50Z</dc:date>
+        <rdfs:comment>Heather J Williams</rdfs:comment>
+        <rdfs:comment>PDS generated internal patient identifier. Should be unique to a person (every PK_PATIENT_ID belongs to only one person).PK_PATIENT_ID is complete in that all patients do have PK_PATIENT_IDs, however it is not stable in that the value assigned to a person will change over time. Specifically, PK_PATIENT_IDs are regenerated over the weekend, so PK_PATIENT_IDs can be used to query PDS within the same work week to get consistent results, but particular PK_PATIENT_IDs from the previous week should not be used to requery PDS.</rdfs:comment>
+        <rdfs:label>PDS PK_PATIENT_ID biobank consenter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000410 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000410">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:46:20Z</dc:date>
+        <rdfs:label>HUP MRN biobank consenter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000411 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000411">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:46:20Z</dc:date>
+        <rdfs:label>PMC MRN biobank consenter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000412 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000412">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:46:20Z</dc:date>
+        <rdfs:label>PAH MRN biobank consenter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000413 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000413">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:46:20Z</dc:date>
+        <rdfs:label>CCH MRN biobank consenter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000420 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000420">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001501"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:25:43Z</dc:date>
+        <rdfs:comment>Integer.  Generated when the CRFs are created. All CGI encounters must have this identifier. Used to link to both CRF data and inventory data.</rdfs:comment>
+        <rdfs:label>CGI ENCOUNTER_PACK_ID biobank encounter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000421 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000421">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001501"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:30:20Z</dc:date>
+        <rdfs:comment>UUID. Generated when the CRFs are created. Used to link to CRF data. All PMBB encounters must have this identifier.</rdfs:comment>
+        <rdfs:label>PMBB ENCOUNTER_PACK_ID biobank encounter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000422 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000422">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001501"/>
+        <rdfs:label>PMBB Blood ENCOUNTER_PACK_ID biobank encounter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000423 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000423">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001501"/>
+        <rdfs:label>PMBB Tissue ENCOUNTER_PACK_ID biobank encounter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000430 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000430">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:30:20Z</dc:date>
+        <rdfs:comment>Integer. Generated when blood specimens are processed. Used to link to inventory data. Not all encounters have this identifier; if no specimens are received, this identifier is not generated.</rdfs:comment>
+        <rdfs:label>PMBB ENCOUNTER_LAB_ID biobank encounter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000440 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000440">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000513"/>
+        <dc:contributor>Heather J Williams</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:47:02Z</dc:date>
+        <rdfs:comment>PDS generated internal healthcare encounter identifier. Probably not stable over time.</rdfs:comment>
+        <rdfs:label>PDS PK_Encounter_ID health care encounter identifier registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000580 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000580">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:21:43Z</dc:date>
+        <rdfs:label>-/- loss of function zygosity value specification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000581 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000581">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:03Z</dc:date>
+        <rdfs:label>-/+ loss of function zygosity value specification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000582 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000582">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:21Z</dc:date>
+        <rdfs:label>+/+ loss of function zygosity value specification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000590 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000590">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:21:43Z</dc:date>
+        <rdfs:label>-/- zygosity value specification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000591 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000591">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:03Z</dc:date>
+        <rdfs:label>-/+ zygosity value specification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000592 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000592">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:21Z</dc:date>
+        <rdfs:label>+/+ zygosity value specification</rdfs:label>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002422">
+        <rdfs:label>logical macro assertion on an object property</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
