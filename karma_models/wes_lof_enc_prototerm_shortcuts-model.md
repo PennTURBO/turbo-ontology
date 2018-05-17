@@ -3,6 +3,11 @@
 ## Add Column
 
 ## Add Node/Literal
+#### Literal Node: `eve.UPENN_Freeze_One.L2.M3.lofMatrix.txt`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `false`
+
 
 ## PyTransforms
 #### _allele_info_uri_
@@ -73,3 +78,4 @@ if zygoval == "2":
 ## Links
 | From | Property | To |
 |  --- | -------- | ---|
+| `obo:OBI_00013521` | `ontologies:TURBO_0007608` | `eve.UPENN_Freeze_One.L2.M3.lofMatrix.txt`|
