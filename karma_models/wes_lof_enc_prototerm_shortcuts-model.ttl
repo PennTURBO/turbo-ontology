@@ -16,12 +16,12 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1cdmv6qrfx1 a km-dev:R2RMLMapping ;
+_:node1cdmvsirkx1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "wes_lof_enc_prototerm.csv" ;
-	km-dev:modelPublicationTime "1526558059375"^^xsd:long ;
+	km-dev:modelPublicationTime "1526558772084"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
-	km-dev:hasInputColumns "[[{\"columnName\":\"symbol\"}],[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"ensgene\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
-	km-dev:hasOutputColumns "[[{\"columnName\":\"allele_info_uri\"}],[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"wes_lof_gene_id\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"term\"}],[{\"columnName\":\"ensgene\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"symbol\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"allele_info_uri\"}],[{\"columnName\":\"denoted_reg_uri\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"wes_lof_gene_id\"}],[{\"columnName\":\"zygo_val_spec\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
 	km-dev:hasModelLabel "wes_lof_enc_prototerm_shortcuts" ;
 	km-dev:hasBaseURI "http://localhost:8080/source/" ;
 	km-dev:hasWorksheetHistory """[
@@ -119,7 +119,7 @@ _:node1cdmv6qrfx1 a km-dev:R2RMLMapping ;
             {
                 \"name\": \"inputColumns\",
                 \"type\": \"hNodeIdList\",
-                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"symbol\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"ensgene\\\"}]}]\"
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ensgene\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"symbol\\\"}]}]\"
             },
             {
                 \"name\": \"outputColumns\",
@@ -162,6 +162,150 @@ _:node1cdmv6qrfx1 a km-dev:R2RMLMapping ;
                 \"name\": \"outputColumns\",
                 \"type\": \"hNodeIdList\",
                 \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": false,
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/PennTURBO/Turbo-Ontology/tree/master/karma_models\",
+                    \"baseURI\": \"\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"GENO_ID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"denoted_reg_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"packval = getValue(\\\"PACKET_UUID\\\")\\r\\n\\r\\ndef isint(value):\\r\\n  try:\\r\\n    int(value)\\r\\n    return True\\r\\n  except ValueError:\\r\\n    return False\\r\\n\\r\\npackint = isint(packval)\\r\\n# integer encounter IDs are indicitive of a CGI encounter\\r\\n# otherwise PMBB blood?\\r\\nif packint:\\r\\n    return(\\\"http://transformunify.org/ontologies/TURBO_0000420\\\")\\r\\nelse:\\r\\n    return(\\\"http://transformunify.org/ontologies/TURBO_0000422\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PACKET_UUID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"denoted_reg_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"zygosity\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"zygo_val_spec\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"zygoval =  getValue(\\\"zygosity\\\")\\r\\nif zygoval == \\\"1\\\":\\r\\n    return(\\\"http://transformunify.org/ontologies/TURBO_0000591\\\")\\r\\nif zygoval == \\\"2\\\":\\r\\n    return(\\\"http://transformunify.org/ontologies/TURBO_0000590\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"zygosity\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"zygo_val_spec\\\"}]}]\"
             }
         ],
         \"tags\": [\"Transformation\"]
@@ -574,115 +718,269 @@ _:node1cdmv6qrfx1 a km-dev:R2RMLMapping ;
             }
         ],
         \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"denoted_reg_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007603\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:anyURI\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"denoted_reg_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"denoted_reg_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"zygo_val_spec\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007607\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:anyURI\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"zygo_val_spec\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"zygo_val_spec\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
     }
 ]""" .
 
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc a rr:TriplesMap .
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 a rr:TriplesMap .
 
-_:node1cdmv6qrfx1 km-dev:hasTriplesMap km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc .
+_:node1cdmvsirkx1 km-dev:hasTriplesMap km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 .
 
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx2 rr:tableName "wes_lof_enc_prototerm.csv" ;
+_:node1cdmvsirkx2 rr:tableName "wes_lof_enc_prototerm.csv" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasLogicalTable _:node1cdmv6qrfx2 .
+_:node1cdmvsirkx1 km-dev:hasLogicalTable _:node1cdmvsirkx2 .
 
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:logicalTable _:node1cdmv6qrfx2 ;
-	rr:subjectMap _:node1cdmv6qrfx3 .
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:logicalTable _:node1cdmvsirkx2 ;
+	rr:subjectMap _:node1cdmvsirkx3 .
 
-_:node1cdmv6qrfx1 km-dev:hasSubjectMap _:node1cdmv6qrfx3 .
+_:node1cdmvsirkx1 km-dev:hasSubjectMap _:node1cdmvsirkx3 .
 
-_:node1cdmv6qrfx3 km-dev:isPartOfMapping _:node1cdmv6qrfx1 ;
+_:node1cdmvsirkx3 km-dev:isPartOfMapping _:node1cdmvsirkx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://purl.obolibrary.org/obo/OBI_00013521" ;
 	rr:class obo:OBI_0001352 ;
 	rr:template "{allele_info_uri}" ;
 	a km-dev:steinerTreeRootNode .
 
-km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c rr:predicate ontologies:TURBO_0007606 .
+km-dev:PredicateObjectMap_5e7d9037-1e73-4cad-807c-2611e587258e rr:predicate ontologies:TURBO_0007604 .
 
-_:node1cdmv6qrfx4 rr:column "zygosity" ;
-	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
-
-_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx4 .
-
-km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c rr:objectMap _:node1cdmv6qrfx4 .
-
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c .
-
-km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
-
-_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c .
-
-km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e rr:predicate ontologies:TURBO_0007604 .
-
-_:node1cdmv6qrfx5 rr:column "term" ;
+_:node1cdmvsirkx4 rr:column "term" ;
 	a rr:ObjectMap ;
 	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx5 .
+_:node1cdmvsirkx1 km-dev:hasObjectMap _:node1cdmvsirkx4 .
 
-km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e rr:objectMap _:node1cdmv6qrfx5 .
+km-dev:PredicateObjectMap_5e7d9037-1e73-4cad-807c-2611e587258e rr:objectMap _:node1cdmvsirkx4 .
 
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e .
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:predicateObjectMap km-dev:PredicateObjectMap_5e7d9037-1e73-4cad-807c-2611e587258e .
 
-km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+km-dev:PredicateObjectMap_5e7d9037-1e73-4cad-807c-2611e587258e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e .
+_:node1cdmvsirkx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5e7d9037-1e73-4cad-807c-2611e587258e .
 
-km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 rr:predicate ontologies:TURBO_0007602 .
+km-dev:PredicateObjectMap_f122edda-1006-450e-a87a-73d55284dc74 rr:predicate ontologies:TURBO_0007603 .
 
-_:node1cdmv6qrfx6 rr:column "GENO_ID" ;
+_:node1cdmvsirkx5 rr:column "denoted_reg_uri" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx6 .
+_:node1cdmvsirkx1 km-dev:hasObjectMap _:node1cdmvsirkx5 .
 
-km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 rr:objectMap _:node1cdmv6qrfx6 .
+km-dev:PredicateObjectMap_f122edda-1006-450e-a87a-73d55284dc74 rr:objectMap _:node1cdmvsirkx5 .
 
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 .
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:predicateObjectMap km-dev:PredicateObjectMap_f122edda-1006-450e-a87a-73d55284dc74 .
 
-km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+km-dev:PredicateObjectMap_f122edda-1006-450e-a87a-73d55284dc74 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 .
+_:node1cdmvsirkx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f122edda-1006-450e-a87a-73d55284dc74 .
 
-km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 rr:predicate ontologies:TURBO_0007601 .
+km-dev:PredicateObjectMap_4ef8bb54-79a6-452d-b826-8783ec26e9e9 rr:predicate ontologies:TURBO_0007605 .
 
-_:node1cdmv6qrfx7 rr:column "PACKET_UUID" ;
+_:node1cdmvsirkx6 rr:column "wes_lof_gene_id" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx7 .
+_:node1cdmvsirkx1 km-dev:hasObjectMap _:node1cdmvsirkx6 .
 
-km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 rr:objectMap _:node1cdmv6qrfx7 .
+km-dev:PredicateObjectMap_4ef8bb54-79a6-452d-b826-8783ec26e9e9 rr:objectMap _:node1cdmvsirkx6 .
 
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 .
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:predicateObjectMap km-dev:PredicateObjectMap_4ef8bb54-79a6-452d-b826-8783ec26e9e9 .
 
-km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+km-dev:PredicateObjectMap_4ef8bb54-79a6-452d-b826-8783ec26e9e9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 .
+_:node1cdmvsirkx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4ef8bb54-79a6-452d-b826-8783ec26e9e9 .
 
-km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 rr:predicate ontologies:TURBO_0007605 .
+km-dev:PredicateObjectMap_88a6c14e-cebf-445e-a504-df3a8b0ebaec rr:predicate ontologies:TURBO_0007607 .
 
-_:node1cdmv6qrfx8 rr:column "wes_lof_gene_id" ;
+_:node1cdmvsirkx7 rr:column "zygo_val_spec" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx8 .
+_:node1cdmvsirkx1 km-dev:hasObjectMap _:node1cdmvsirkx7 .
 
-km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 rr:objectMap _:node1cdmv6qrfx8 .
+km-dev:PredicateObjectMap_88a6c14e-cebf-445e-a504-df3a8b0ebaec rr:objectMap _:node1cdmvsirkx7 .
 
-km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 .
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:predicateObjectMap km-dev:PredicateObjectMap_88a6c14e-cebf-445e-a504-df3a8b0ebaec .
 
-km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+km-dev:PredicateObjectMap_88a6c14e-cebf-445e-a504-df3a8b0ebaec a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
 
-_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 .
+_:node1cdmvsirkx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_88a6c14e-cebf-445e-a504-df3a8b0ebaec .
+
+km-dev:PredicateObjectMap_43005903-79b0-446a-85a8-8cdccc419793 rr:predicate ontologies:TURBO_0007602 .
+
+_:node1cdmvsirkx8 rr:column "GENO_ID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
+
+_:node1cdmvsirkx1 km-dev:hasObjectMap _:node1cdmvsirkx8 .
+
+km-dev:PredicateObjectMap_43005903-79b0-446a-85a8-8cdccc419793 rr:objectMap _:node1cdmvsirkx8 .
+
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:predicateObjectMap km-dev:PredicateObjectMap_43005903-79b0-446a-85a8-8cdccc419793 .
+
+km-dev:PredicateObjectMap_43005903-79b0-446a-85a8-8cdccc419793 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
+
+_:node1cdmvsirkx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_43005903-79b0-446a-85a8-8cdccc419793 .
+
+km-dev:PredicateObjectMap_2c08b713-0eb0-4456-8004-c261e54eba1d rr:predicate ontologies:TURBO_0007606 .
+
+_:node1cdmvsirkx9 rr:column "zygosity" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
+
+_:node1cdmvsirkx1 km-dev:hasObjectMap _:node1cdmvsirkx9 .
+
+km-dev:PredicateObjectMap_2c08b713-0eb0-4456-8004-c261e54eba1d rr:objectMap _:node1cdmvsirkx9 .
+
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:predicateObjectMap km-dev:PredicateObjectMap_2c08b713-0eb0-4456-8004-c261e54eba1d .
+
+km-dev:PredicateObjectMap_2c08b713-0eb0-4456-8004-c261e54eba1d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
+
+_:node1cdmvsirkx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2c08b713-0eb0-4456-8004-c261e54eba1d .
+
+km-dev:PredicateObjectMap_bc988d5e-27f8-44e5-9cf8-95d17064ad63 rr:predicate ontologies:TURBO_0007601 .
+
+_:node1cdmvsirkx10 rr:column "PACKET_UUID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
+
+_:node1cdmvsirkx1 km-dev:hasObjectMap _:node1cdmvsirkx10 .
+
+km-dev:PredicateObjectMap_bc988d5e-27f8-44e5-9cf8-95d17064ad63 rr:objectMap _:node1cdmvsirkx10 .
+
+km-dev:TriplesMap_486eb377-30b7-433a-99e9-204952e6f1e1 rr:predicateObjectMap km-dev:PredicateObjectMap_bc988d5e-27f8-44e5-9cf8-95d17064ad63 .
+
+km-dev:PredicateObjectMap_bc988d5e-27f8-44e5-9cf8-95d17064ad63 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmvsirkx1 .
+
+_:node1cdmvsirkx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bc988d5e-27f8-44e5-9cf8-95d17064ad63 .
