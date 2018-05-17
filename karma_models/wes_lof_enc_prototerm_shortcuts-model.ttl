@@ -1,0 +1,688 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix ro: <http://www.obofoundry.org/ro/ro.owl#> .
+@prefix Thesaurus: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns3: <http://www.ebi.ac.uk/efo/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix ontologies: <http://transformunify.org/ontologies/> .
+@prefix ncbitaxon: <http://purl.obolibrary.org/obo/ncbitaxon#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1cdmv6qrfx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "wes_lof_enc_prototerm.csv" ;
+	km-dev:modelPublicationTime "1526558059375"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"symbol\"}],[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"ensgene\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"allele_info_uri\"}],[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"wes_lof_gene_id\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
+	km-dev:hasModelLabel "wes_lof_enc_prototerm_shortcuts" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"ensgene\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"allele_info_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"import uuid\\r\\ntemp = uuid.uuid4().hex\\r\\nreturn \\\"alleleInfo/\\\" + temp\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"allele_info_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"ensgene\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wes_lof_gene_id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"# \\\"TSPAN6(ENSG00000000003)\\\"\\r\\n# modify R script so that it leaves the original string in the export, instad of reconstructing it here\\r\\nensgene_part =  getValue(\\\"ensgene\\\")\\r\\nsymbol_part =  getValue(\\\"symbol\\\")\\r\\nreturn(symbol_part  + \\\"(\\\" + ensgene_part  + \\\")\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"symbol\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"ensgene\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wes_lof_gene_id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"wes_lof_enc_prototerm_shortcuts\",
+                    \"hasBaseURI\": false,
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": false,
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/PennTURBO/Turbo-Ontology/tree/master/karma_models\",
+                    \"baseURI\": \"\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"allele_info_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://purl.obolibrary.org/obo/OBI_0001352\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://purl.obolibrary.org/obo/OBI_00013521\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"obo:OBI_00013521 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"allele_info_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"allele_info_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"wes_lof_gene_id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007605\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wes_lof_gene_id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wes_lof_gene_id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"GENO_ID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007602\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"GENO_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"GENO_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"zygosity\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007606\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"zygosity\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"zygosity\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"PACKET_UUID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007601\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PACKET_UUID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PACKET_UUID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"term\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007604\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:anyURI\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"term\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"term\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc a rr:TriplesMap .
+
+_:node1cdmv6qrfx1 km-dev:hasTriplesMap km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx2 rr:tableName "wes_lof_enc_prototerm.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasLogicalTable _:node1cdmv6qrfx2 .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:logicalTable _:node1cdmv6qrfx2 ;
+	rr:subjectMap _:node1cdmv6qrfx3 .
+
+_:node1cdmv6qrfx1 km-dev:hasSubjectMap _:node1cdmv6qrfx3 .
+
+_:node1cdmv6qrfx3 km-dev:isPartOfMapping _:node1cdmv6qrfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://purl.obolibrary.org/obo/OBI_00013521" ;
+	rr:class obo:OBI_0001352 ;
+	rr:template "{allele_info_uri}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c rr:predicate ontologies:TURBO_0007606 .
+
+_:node1cdmv6qrfx4 rr:column "zygosity" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx4 .
+
+km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c rr:objectMap _:node1cdmv6qrfx4 .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c .
+
+km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_382da4fa-5633-43e9-88a4-d8da1aca576c .
+
+km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e rr:predicate ontologies:TURBO_0007604 .
+
+_:node1cdmv6qrfx5 rr:column "term" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx5 .
+
+km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e rr:objectMap _:node1cdmv6qrfx5 .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e .
+
+km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_935e50cf-9bdf-4f66-a564-4c317662dd4e .
+
+km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 rr:predicate ontologies:TURBO_0007602 .
+
+_:node1cdmv6qrfx6 rr:column "GENO_ID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx6 .
+
+km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 rr:objectMap _:node1cdmv6qrfx6 .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 .
+
+km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9f74cf0b-b954-4ccc-88ce-e260ebb72694 .
+
+km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 rr:predicate ontologies:TURBO_0007601 .
+
+_:node1cdmv6qrfx7 rr:column "PACKET_UUID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx7 .
+
+km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 rr:objectMap _:node1cdmv6qrfx7 .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 .
+
+km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b3aea8bf-399b-42af-a516-e7eb5513fac5 .
+
+km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 rr:predicate ontologies:TURBO_0007605 .
+
+_:node1cdmv6qrfx8 rr:column "wes_lof_gene_id" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasObjectMap _:node1cdmv6qrfx8 .
+
+km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 rr:objectMap _:node1cdmv6qrfx8 .
+
+km-dev:TriplesMap_ba0f2c89-f60f-416d-b698-1869977bdecc rr:predicateObjectMap km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 .
+
+km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cdmv6qrfx1 .
+
+_:node1cdmv6qrfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8051cdaa-904f-49d0-aa66-5c299de1fd51 .
