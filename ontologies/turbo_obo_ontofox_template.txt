@@ -2,6 +2,22 @@
 http://transformunify.org/ontologies/turbo_obo_ontofox.owl
 
 [Source ontology]
+EFO
+
+[Low level source term URIs]
+http://www.ebi.ac.uk/efo/EFO_0004340 # body mass index
+
+[Top level source term URIs and target direct superclass URIs]
+http://www.ebi.ac.uk/efo/EFO_0004340 # body mass index
+subClassOf http://purl.obolibrary.org/obo/IAO_0000109 # measurement datum
+
+[Source term retrieval setting]
+includeAllIntermediates 
+
+[Source annotation URIs]
+includeAllAxiomsRecursively
+
+[Source ontology]
 ICO
 # have to remove assertion that specifically dependent continuant is an entity
 
@@ -37,11 +53,17 @@ includeAllAxiomsRecursively
 UBERON
 
 [Low level source term URIs]
-http://purl.obolibrary.org/obo/UBERON_0007221
+http://purl.obolibrary.org/obo/UBERON_0007221 # neonate stage
+http://purl.obolibrary.org/obo/UBERON_0035946 # start of neonate stage
+http://purl.obolibrary.org/obo/UBERON_0035943 # life cycle temporal boundary
 
 [Top level source term URIs and target direct superclass URIs]
 http://purl.obolibrary.org/obo/UBERON_0007221
 subClassOf http://purl.obolibrary.org/obo/UBERON_0000105
+http://purl.obolibrary.org/obo/UBERON_0035946 # start of neonate stage
+subClassOf http://purl.obolibrary.org/obo/UBERON_0035943 # life cycle temporal boundary
+http://purl.obolibrary.org/obo/UBERON_0035943 # life cycle temporal boundary
+subClassOf http://purl.obolibrary.org/obo/BFO_0000035 # temporal boundary
 
 [Source term retrieval setting]
 includeAllIntermediates 
