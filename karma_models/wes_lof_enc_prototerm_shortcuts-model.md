@@ -74,6 +74,7 @@ return ("http://transformunify.org/ontologies/TURBO_0000451")
 | _GENO_ID_ | `ontologies:TURBO_0007602` | `obo:OBI_00013521`|
 | _PACKET_UUID_ | `ontologies:TURBO_0007601` | `obo:OBI_00013521`|
 | _allele_info_uri_ | `uri` | `obo:OBI_00013521`|
+| _denoted_bb_enc_id_reg_uri_ | `ontologies:TURBO_0007609` | `obo:OBI_00013521`|
 | _denoted_geno_id_reg_uri_ | `ontologies:TURBO_0007603` | `obo:OBI_00013521`|
 | _term_ | `ontologies:TURBO_0007604` | `obo:OBI_00013521`|
 | _wes_lof_gene_id_ | `ontologies:TURBO_0007605` | `obo:OBI_00013521`|
