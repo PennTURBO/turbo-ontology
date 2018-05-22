@@ -17,12 +17,12 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1ce4ki94nx1 a km-dev:R2RMLMapping ;
+_:node1ce4n1oogx1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "wes_lof_enc_prototerm.csv" ;
-	km-dev:modelPublicationTime "1527016662167"^^xsd:long ;
+	km-dev:modelPublicationTime "1527019266832"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
-	km-dev:hasInputColumns "[[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"ensgene\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"PACKET_UUID\"}],[{\"columnName\":\"symbol\"}]]" ;
-	km-dev:hasOutputColumns "[[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"denoted_bb_enc_id_reg_uri\"}],[{\"columnName\":\"denoted_geno_id_reg_uri\"}],[{\"columnName\":\"allele_info_uri\"}],[{\"columnName\":\"zygo_val_spec\"}],[{\"columnName\":\"wes_lof_gene_id\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"symbol\"}],[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"ensgene\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"zygosity\"}],[{\"columnName\":\"GENO_ID\"}],[{\"columnName\":\"zygo_val_spec\"}],[{\"columnName\":\"wes_lof_gene_id\"}],[{\"columnName\":\"denoted_bb_enc_id_reg_uri\"}],[{\"columnName\":\"denoted_geno_id_reg_uri\"}],[{\"columnName\":\"term\"}],[{\"columnName\":\"allele_info_uri\"}],[{\"columnName\":\"PACKET_UUID\"}]]" ;
 	km-dev:hasModelLabel "wes_lof_enc_prototerm_shortcuts" ;
 	km-dev:hasWorksheetHistory """[
     {
@@ -119,7 +119,7 @@ _:node1ce4ki94nx1 a km-dev:R2RMLMapping ;
             {
                 \"name\": \"inputColumns\",
                 \"type\": \"hNodeIdList\",
-                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ensgene\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"symbol\\\"}]}]\"
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"symbol\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"ensgene\\\"}]}]\"
             },
             {
                 \"name\": \"outputColumns\",
@@ -890,6 +890,65 @@ _:node1ce4ki94nx1 a km-dev:R2RMLMapping ;
         \"tags\": [\"SemanticType\"]
     },
     {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"denoted_bb_enc_id_reg_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://purl.obolibrary.org/obo/OBI_0001352\",
+                    \"DomainId\": \"http://purl.obolibrary.org/obo/OBI_00013521\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://transformunify.org/ontologies/TURBO_0007609\",
+                    \"DomainLabel\": \"obo:OBI_00013521\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:anyURI\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"denoted_bb_enc_id_reg_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"denoted_bb_enc_id_reg_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
         \"commandName\": \"AddLiteralNodeCommand\",
         \"model\": \"new\",
         \"inputParameters\": [
@@ -967,165 +1026,183 @@ _:node1ce4ki94nx1 a km-dev:R2RMLMapping ;
     }
 ]""" .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 a rr:TriplesMap .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 a rr:TriplesMap .
 
-_:node1ce4ki94nx1 km-dev:hasTriplesMap km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 .
+_:node1ce4n1oogx1 km-dev:hasTriplesMap km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx2 rr:tableName "wes_lof_enc_prototerm.csv" ;
+_:node1ce4n1oogx2 rr:tableName "wes_lof_enc_prototerm.csv" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasLogicalTable _:node1ce4ki94nx2 .
+_:node1ce4n1oogx1 km-dev:hasLogicalTable _:node1ce4n1oogx2 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:logicalTable _:node1ce4ki94nx2 ;
-	rr:subjectMap _:node1ce4ki94nx3 .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:logicalTable _:node1ce4n1oogx2 ;
+	rr:subjectMap _:node1ce4n1oogx3 .
 
-_:node1ce4ki94nx1 km-dev:hasSubjectMap _:node1ce4ki94nx3 .
+_:node1ce4n1oogx1 km-dev:hasSubjectMap _:node1ce4n1oogx3 .
 
-_:node1ce4ki94nx3 km-dev:isPartOfMapping _:node1ce4ki94nx1 ;
+_:node1ce4n1oogx3 km-dev:isPartOfMapping _:node1ce4n1oogx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://purl.obolibrary.org/obo/OBI_00013521" ;
 	rr:class obo:OBI_0001352 ;
 	rr:template "{allele_info_uri}" ;
 	a km-dev:steinerTreeRootNode .
 
-km-dev:PredicateObjectMap_2e7bd611-33a3-4f76-b2de-f8a41ac9ed4b rr:predicate ontologies:TURBO_0007606 .
+km-dev:PredicateObjectMap_1901e53a-2894-4d21-b6bb-6ee77771eb1e rr:predicate ontologies:TURBO_0007606 .
 
-_:node1ce4ki94nx4 rr:column "zygosity" ;
+_:node1ce4n1oogx4 rr:column "zygosity" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx4 .
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx4 .
 
-km-dev:PredicateObjectMap_2e7bd611-33a3-4f76-b2de-f8a41ac9ed4b rr:objectMap _:node1ce4ki94nx4 .
+km-dev:PredicateObjectMap_1901e53a-2894-4d21-b6bb-6ee77771eb1e rr:objectMap _:node1ce4n1oogx4 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_2e7bd611-33a3-4f76-b2de-f8a41ac9ed4b .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_1901e53a-2894-4d21-b6bb-6ee77771eb1e .
 
-km-dev:PredicateObjectMap_2e7bd611-33a3-4f76-b2de-f8a41ac9ed4b a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:PredicateObjectMap_1901e53a-2894-4d21-b6bb-6ee77771eb1e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2e7bd611-33a3-4f76-b2de-f8a41ac9ed4b .
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1901e53a-2894-4d21-b6bb-6ee77771eb1e .
 
-km-dev:PredicateObjectMap_f4d1a9a4-efca-4c18-8f8a-c3ff0ff4fec5 rr:predicate ontologies:TURBO_0007602 .
+km-dev:PredicateObjectMap_52607618-2460-45b0-a0e2-8cb2afdf3ca7 rr:predicate ontologies:TURBO_0007602 .
 
-_:node1ce4ki94nx5 rr:column "GENO_ID" ;
+_:node1ce4n1oogx5 rr:column "GENO_ID" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx5 .
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx5 .
 
-km-dev:PredicateObjectMap_f4d1a9a4-efca-4c18-8f8a-c3ff0ff4fec5 rr:objectMap _:node1ce4ki94nx5 .
+km-dev:PredicateObjectMap_52607618-2460-45b0-a0e2-8cb2afdf3ca7 rr:objectMap _:node1ce4n1oogx5 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_f4d1a9a4-efca-4c18-8f8a-c3ff0ff4fec5 .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_52607618-2460-45b0-a0e2-8cb2afdf3ca7 .
 
-km-dev:PredicateObjectMap_f4d1a9a4-efca-4c18-8f8a-c3ff0ff4fec5 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:PredicateObjectMap_52607618-2460-45b0-a0e2-8cb2afdf3ca7 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f4d1a9a4-efca-4c18-8f8a-c3ff0ff4fec5 .
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_52607618-2460-45b0-a0e2-8cb2afdf3ca7 .
 
-km-dev:PredicateObjectMap_c7d23250-d524-4bfb-adaa-30a0ab646cb8 rr:predicate ontologies:TURBO_0007603 .
+km-dev:PredicateObjectMap_624e38b6-be5b-406e-9648-fb076c57abeb rr:predicate ontologies:TURBO_0007607 .
 
-_:node1ce4ki94nx6 rr:column "denoted_geno_id_reg_uri" ;
-	a rr:ObjectMap ;
-	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
-
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx6 .
-
-km-dev:PredicateObjectMap_c7d23250-d524-4bfb-adaa-30a0ab646cb8 rr:objectMap _:node1ce4ki94nx6 .
-
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_c7d23250-d524-4bfb-adaa-30a0ab646cb8 .
-
-km-dev:PredicateObjectMap_c7d23250-d524-4bfb-adaa-30a0ab646cb8 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
-
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c7d23250-d524-4bfb-adaa-30a0ab646cb8 .
-
-km-dev:PredicateObjectMap_64604427-17ff-43e4-8aba-d4f6cb793bee rr:predicate ontologies:TURBO_0007607 .
-
-_:node1ce4ki94nx7 rr:column "zygo_val_spec" ;
+_:node1ce4n1oogx6 rr:column "zygo_val_spec" ;
 	a rr:ObjectMap ;
 	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx7 .
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx6 .
 
-km-dev:PredicateObjectMap_64604427-17ff-43e4-8aba-d4f6cb793bee rr:objectMap _:node1ce4ki94nx7 .
+km-dev:PredicateObjectMap_624e38b6-be5b-406e-9648-fb076c57abeb rr:objectMap _:node1ce4n1oogx6 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_64604427-17ff-43e4-8aba-d4f6cb793bee .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_624e38b6-be5b-406e-9648-fb076c57abeb .
 
-km-dev:PredicateObjectMap_64604427-17ff-43e4-8aba-d4f6cb793bee a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:PredicateObjectMap_624e38b6-be5b-406e-9648-fb076c57abeb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_64604427-17ff-43e4-8aba-d4f6cb793bee .
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_624e38b6-be5b-406e-9648-fb076c57abeb .
 
-km-dev:PredicateObjectMap_e14518a2-ee3c-4332-bdae-2b1cbc52a55e rr:predicate ontologies:TURBO_0007605 .
+km-dev:PredicateObjectMap_f37bbc85-c3d1-4b3d-9e0b-6871f68e601b rr:predicate ontologies:TURBO_0007605 .
 
-_:node1ce4ki94nx8 rr:column "wes_lof_gene_id" ;
+_:node1ce4n1oogx7 rr:column "wes_lof_gene_id" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx8 .
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx7 .
 
-km-dev:PredicateObjectMap_e14518a2-ee3c-4332-bdae-2b1cbc52a55e rr:objectMap _:node1ce4ki94nx8 .
+km-dev:PredicateObjectMap_f37bbc85-c3d1-4b3d-9e0b-6871f68e601b rr:objectMap _:node1ce4n1oogx7 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_e14518a2-ee3c-4332-bdae-2b1cbc52a55e .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_f37bbc85-c3d1-4b3d-9e0b-6871f68e601b .
 
-km-dev:PredicateObjectMap_e14518a2-ee3c-4332-bdae-2b1cbc52a55e a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:PredicateObjectMap_f37bbc85-c3d1-4b3d-9e0b-6871f68e601b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e14518a2-ee3c-4332-bdae-2b1cbc52a55e .
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f37bbc85-c3d1-4b3d-9e0b-6871f68e601b .
 
-km-dev:PredicateObjectMap_4a1b2ef3-6e17-4e26-b0c2-b76528c11078 rr:predicate ontologies:TURBO_0007604 .
+km-dev:PredicateObjectMap_2ce29280-decc-4e21-aa02-413e10120aee rr:predicate ontologies:TURBO_0007604 .
 
-_:node1ce4ki94nx9 rr:column "term" ;
+_:node1ce4n1oogx8 rr:column "term" ;
 	a rr:ObjectMap ;
 	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx9 .
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx8 .
 
-km-dev:PredicateObjectMap_4a1b2ef3-6e17-4e26-b0c2-b76528c11078 rr:objectMap _:node1ce4ki94nx9 .
+km-dev:PredicateObjectMap_2ce29280-decc-4e21-aa02-413e10120aee rr:objectMap _:node1ce4n1oogx8 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_4a1b2ef3-6e17-4e26-b0c2-b76528c11078 .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_2ce29280-decc-4e21-aa02-413e10120aee .
 
-km-dev:PredicateObjectMap_4a1b2ef3-6e17-4e26-b0c2-b76528c11078 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:PredicateObjectMap_2ce29280-decc-4e21-aa02-413e10120aee a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4a1b2ef3-6e17-4e26-b0c2-b76528c11078 .
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2ce29280-decc-4e21-aa02-413e10120aee .
 
-km-dev:PredicateObjectMap_2cb4230c-932f-49d2-abf0-e1bc6ff14da8 rr:predicate ontologies:TURBO_0007601 .
+km-dev:PredicateObjectMap_fa6cf776-d504-49c6-b0e1-98466ba72562 rr:predicate ontologies:TURBO_0007609 .
 
-_:node1ce4ki94nx10 rr:column "PACKET_UUID" ;
+_:node1ce4n1oogx9 rr:column "denoted_bb_enc_id_reg_uri" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx10 .
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx9 .
 
-km-dev:PredicateObjectMap_2cb4230c-932f-49d2-abf0-e1bc6ff14da8 rr:objectMap _:node1ce4ki94nx10 .
+km-dev:PredicateObjectMap_fa6cf776-d504-49c6-b0e1-98466ba72562 rr:objectMap _:node1ce4n1oogx9 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_2cb4230c-932f-49d2-abf0-e1bc6ff14da8 .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_fa6cf776-d504-49c6-b0e1-98466ba72562 .
 
-km-dev:PredicateObjectMap_2cb4230c-932f-49d2-abf0-e1bc6ff14da8 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:PredicateObjectMap_fa6cf776-d504-49c6-b0e1-98466ba72562 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2cb4230c-932f-49d2-abf0-e1bc6ff14da8 .
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_fa6cf776-d504-49c6-b0e1-98466ba72562 .
 
-km-dev:PredicateObjectMap_bf1baff7-bb01-4124-b0b9-34b02e6b642b rr:predicate ontologies:TURBO_0007608 .
+km-dev:PredicateObjectMap_bfccda8a-d377-49eb-a872-496fcb4ec313 rr:predicate ontologies:TURBO_0007603 .
 
-_:node1ce4ki94nx11 rr:constant "eve.UPENN_Freeze_One.L2.M3.lofMatrix.txt" ;
+_:node1ce4n1oogx10 rr:column "denoted_geno_id_reg_uri" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+	rr:datatype "http://www.w3.org/2001/XMLSchema#anyURI" ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasObjectMap _:node1ce4ki94nx11 .
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx10 .
 
-km-dev:PredicateObjectMap_bf1baff7-bb01-4124-b0b9-34b02e6b642b rr:objectMap _:node1ce4ki94nx11 .
+km-dev:PredicateObjectMap_bfccda8a-d377-49eb-a872-496fcb4ec313 rr:objectMap _:node1ce4n1oogx10 .
 
-km-dev:TriplesMap_6a04c5fe-1225-4543-ad6a-ab461be86da5 rr:predicateObjectMap km-dev:PredicateObjectMap_bf1baff7-bb01-4124-b0b9-34b02e6b642b .
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_bfccda8a-d377-49eb-a872-496fcb4ec313 .
 
-km-dev:PredicateObjectMap_bf1baff7-bb01-4124-b0b9-34b02e6b642b a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1ce4ki94nx1 .
+km-dev:PredicateObjectMap_bfccda8a-d377-49eb-a872-496fcb4ec313 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
 
-_:node1ce4ki94nx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bf1baff7-bb01-4124-b0b9-34b02e6b642b .
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bfccda8a-d377-49eb-a872-496fcb4ec313 .
+
+km-dev:PredicateObjectMap_26779570-48e0-486d-aba2-a27194d8cfca rr:predicate ontologies:TURBO_0007601 .
+
+_:node1ce4n1oogx11 rr:column "PACKET_UUID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
+
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx11 .
+
+km-dev:PredicateObjectMap_26779570-48e0-486d-aba2-a27194d8cfca rr:objectMap _:node1ce4n1oogx11 .
+
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_26779570-48e0-486d-aba2-a27194d8cfca .
+
+km-dev:PredicateObjectMap_26779570-48e0-486d-aba2-a27194d8cfca a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
+
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_26779570-48e0-486d-aba2-a27194d8cfca .
+
+km-dev:PredicateObjectMap_1f7b7155-0b6d-437a-9fcc-fdcee9f84954 rr:predicate ontologies:TURBO_0007608 .
+
+_:node1ce4n1oogx12 rr:constant "eve.UPENN_Freeze_One.L2.M3.lofMatrix.txt" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
+
+_:node1ce4n1oogx1 km-dev:hasObjectMap _:node1ce4n1oogx12 .
+
+km-dev:PredicateObjectMap_1f7b7155-0b6d-437a-9fcc-fdcee9f84954 rr:objectMap _:node1ce4n1oogx12 .
+
+km-dev:TriplesMap_6f492040-539b-4949-acdf-e7709022ff73 rr:predicateObjectMap km-dev:PredicateObjectMap_1f7b7155-0b6d-437a-9fcc-fdcee9f84954 .
+
+km-dev:PredicateObjectMap_1f7b7155-0b6d-437a-9fcc-fdcee9f84954 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ce4n1oogx1 .
+
+_:node1ce4n1oogx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1f7b7155-0b6d-437a-9fcc-fdcee9f84954 .
