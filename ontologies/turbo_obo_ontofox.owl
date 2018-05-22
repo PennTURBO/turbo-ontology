@@ -6,17 +6,14 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:efo="http://www.ebi.ac.uk/efo/"
-     xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
-     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
-     xmlns:faldo="http://biohackathon.org/resource/faldo#"
-     xmlns:span="http://www.ifomis.org/bfo/1.1/span#">
+     xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://transformunify.org/turbo_ontofox.owl"/>
     
 
@@ -29,16 +26,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/MO_definition_citation">
-        <rdfs:label>MO_definition_citation</rdfs:label>
-        <obo:IAO_0000115>Definition citation for the Microarray and Gene Expression Data Ontology</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/DOID_definition_citation">
-        <efo:DOID_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/DOID_definition_citation is an annotation property that is drawn from DOID</efo:DOID_definition_citation>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/DOID_definition_citation is an annotation property that is drawn from DOID</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#auto-generated-by"/>
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description">
         <rdfs:label>Description</rdfs:label>
         <rdfs:label xml:lang="en-us">Description</rdfs:label>
@@ -48,7 +36,30 @@
          of content or a free-text account of the content.</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/gwas_trait"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#saved-by"/>
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
+        <rdfs:label>Contributor</rdfs:label>
+        <rdfs:label xml:lang="en-us">Contributor</rdfs:label>
+        <rdfs:comment xml:lang="en-us">An entity responsible for making contributions to the
+         content of the resource.</rdfs:comment>
+        <dc:description xml:lang="en-us">Examples of a Contributor include a person, an 
+         organisation, or a service.  Typically, the name of a 
+         Contributor should be used to indicate the entity.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">database_cross_reference</rdfs:label>
+        <rdfs:label>database_cross_reference</rdfs:label>
+        <rdfs:label xml:lang="en">has_dbxref</rdfs:label>
+        <oboInOwl:hasDbXref>
+            <oboInOwl:DbXref>
+                <rdfs:label>oboFormat:xref</rdfs:label>
+                <oboInOwl:hasURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/oboInOwl/owl/oboInOwlFormat#oboInOwlFormat_xref</oboInOwl:hasURI>
+            </oboInOwl:DbXref>
+        </oboInOwl:hasDbXref>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">curator notes</rdfs:label>
         <rdfs:label>curator note</rdfs:label>
@@ -64,6 +75,14 @@
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_obo_namespace</rdfs:label>
+        <rdfs:label>has_obo_namespace</rdfs:label>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/alternative_term">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alternative_term</rdfs:label>
+        <obo:IAO_0000115>An alternative label for a given entity such as a commonly used abbreviation or synonym. </obo:IAO_0000115>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000179">
         <rdfs:label>BFO OWL specification label</rdfs:label>
         <rdfs:label xml:lang="en">BFO OWL specification label</rdfs:label>
@@ -72,7 +91,39 @@
         <obo:IAO_0000115 xml:lang="en">Relates an entity in the ontology to the name of the variable that is used to represent it in the code that generates the BFO OWL file from the lispy specification.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/organizational_class"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <rdfs:label>creator</rdfs:label>
+        <rdfs:label>Creator</rdfs:label>
+        <rdfs:label xml:lang="en-us">Creator</rdfs:label>
+        <rdfs:comment xml:lang="en-us">An entity primarily responsible for making the content 
+         of the resource.</rdfs:comment>
+        <dc:description xml:lang="en-us">Examples of a Creator include a person, an organisation,
+         or a service.  Typically, the name of a Creator should 
+         be used to indicate the entity.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ICO_0000091">
+        <rdfs:label xml:lang="en">term_mapping_to_UMLS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ICO_0000093">
+        <rdfs:label xml:lang="en">term_mapping_to_HL7v3</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ICO_0000092">
+        <rdfs:label xml:lang="en">term_mapping_to_NCIT</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000012">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external_ontology_notes</rdfs:label>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Notes on how similar or equivalent classes are represented in other ontologies.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This annotation property may be replaced with an annotation property from an external ontology such as IAO</obo:IAO_0000116>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBPROP:0000012</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external_ontology_notes</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external_ontology_notes</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject">
         <rdfs:label>Subject and Keywords</rdfs:label>
         <rdfs:label xml:lang="en-us">Subject and Keywords</rdfs:label>
@@ -84,12 +135,36 @@
          classification scheme.</dc:description>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/definition_citation">
+        <obo:IAO_0000115>A definition citation is a document, ontology class, person or organization from which the definition of the class is derived. It is used in the same sense as a citation in literature, in that the definition may have been derived from these sources or that this definition is related to these source.</obo:IAO_0000115>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/MSH_definition_citation">
         <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/MESH_definition_citation is an annotation property that is drawn from MESH</efo:MSH_definition_citation>
         <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/MSH_definition_citation is an annotation property that is drawn from MSH</efo:MSH_definition_citation>
         <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000007">
+        <rdfs:label xml:lang="en">NCBI LocusTag</rdfs:label>
+        <obo:IAO_0000115>the NCBI LocusTag name of a gene </obo:IAO_0000115>
+        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasSynonym"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000008">
+        <rdfs:label xml:lang="en">gene map location</rdfs:label>
+        <obo:IAO_0000115>the map location of a gene</obo:IAO_0000115>
+        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000009">
+        <rdfs:label xml:lang="en">modification date</rdfs:label>
+        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
+        <obo:IAO_0000115>a date of content modification</obo:IAO_0000115>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#default-namespace"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_exact_synonym</rdfs:label>
+        <rdfs:label>has_exact_synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OBI_9991118">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB alternative term</rdfs:label>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An alternative term used by the IEDB.</obo:IAO_0000115>
@@ -99,9 +174,75 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000004">
+        <rdfs:label xml:lang="en">symbol from nomenclature authority</rdfs:label>
+        <obo:IAO_0000115>the symbol assigned by the nomenclature authority</obo:IAO_0000115>
+        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000005">
+        <rdfs:label xml:lang="en">full name from nomenclature authority</rdfs:label>
+        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
+        <obo:IAO_0000115>the full name assigned by the nomenclature authority</obo:IAO_0000115>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000006">
+        <rdfs:label xml:lang="en">NCBI GeneID</rdfs:label>
+        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
+        <obo:IAO_0000115>A GeneID in the NCBI Gene database </obo:IAO_0000115>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000601">
+        <rdfs:label>has associated axiom(nl)</rdfs:label>
+        <rdfs:label xml:lang="en">has associated axiom(nl)</rdfs:label>
+        <obo:IAO_0000600 xml:lang="en">An axiom associated with a term expressed using natural language</obo:IAO_0000600>
+        <obo:IAO_0000119 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">has associated axiom(nl)</obo:IAO_0000111>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000602">
+        <rdfs:label>has associated axiom(fol)</rdfs:label>
+        <rdfs:label xml:lang="en">has associated axiom(fol)</rdfs:label>
+        <obo:IAO_0000600 xml:lang="en">An axiom expressed in first order logic using CLIF syntax</obo:IAO_0000600>
+        <obo:IAO_0000117 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000119>
+        <obo:IAO_0000111 xml:lang="en">has associated axiom(fol)</obo:IAO_0000111>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002422"/>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001900">
+        <rdfs:label xml:lang="en">temporal interpretation</rdfs:label>
+        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://code.google.com/p/obo-relations/wiki/ROAndTime</foaf:page>
+        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/oborel/obo-relations/wiki/ROAndTime</foaf:page>
+        <obo:IAO_0000115>An assertion that holds between an OWL Object Property and a temporal interpretation that elucidates how OWL Class Axioms that use this property are to be interpreted in a temporal context.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">temporal interpretation</obo:IAO_0000111>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002422"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600">
+        <rdfs:label>elucidation</rdfs:label>
+        <rdfs:label xml:lang="en">elucidation</rdfs:label>
+        <obo:IAO_0000119 xml:lang="en">Person:Barry Smith</obo:IAO_0000119>
+        <obo:IAO_0000600 xml:lang="en">Primitive terms in a highest-level ontology such as BFO are terms which are so basic to our understanding of reality that there is no way of defining them in a non-circular fashion. For these, therefore, we can provide only elucidations, supplemented by examples and by axioms</obo:IAO_0000600>
+        <obo:IAO_0000111 xml:lang="en">elucidation</obo:IAO_0000111>
+        <obo:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</obo:IAO_0000117>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_metadata_tag"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date">
+        <rdfs:label>Date</rdfs:label>
+        <rdfs:label xml:lang="en-us">Date</rdfs:label>
+        <rdfs:comment xml:lang="en-us">A date associated with an event in the life cycle of the
+         resource.</rdfs:comment>
+        <dc:description xml:lang="en-us">Typically, Date will be associated with the creation or
+         availability of the resource.  Recommended best practice
+         for encoding the date value is defined in a profile of
+         ISO 8601 [W3CDTF] and follows the YYYY-MM-DD format.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/mbox"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_narrow_synonym</rdfs:label>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_broad_synonym</rdfs:label>
     </owl:AnnotationProperty>
@@ -115,22 +256,54 @@
         <rdfs:comment xml:lang="en-us">A name given to the resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000180">
+        <rdfs:label>BFO CLIF specification label</rdfs:label>
+        <rdfs:label xml:lang="en">BFO CLIF specification label</rdfs:label>
+        <obo:IAO_0000111 xml:lang="en">BFO CLIF specification label</obo:IAO_0000111>
+        <obo:IAO_0000119>Person:Alan Ruttenberg</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">Really of interest to developers only</obo:IAO_0000232>
+        <obo:IAO_0000115 xml:lang="en">Relates an entity in the ontology to the term that is used to represent it in the the CLIF specification of BFO2</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://protege.stanford.edu/plugins/owl/protege#defaultLanguage"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shorthand</rdfs:label>
         <rdfs:label>shorthand</rdfs:label>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shorthand</obo:IAO_0000111>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#creation_date"/>
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_obo_format_version</rdfs:label>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in_subset</rdfs:label>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasRelatedSynonym"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000017">
+        <rdfs:label xml:lang="en">chromosome ID of gene</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>A chromosome ID where a gene is located.</obo:IAO_0000115>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000015">
+        <rdfs:label xml:lang="en">organism NCBITaxon ID</rdfs:label>
+        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
+        <obo:IAO_0000115>The NCBITaxon ontology ID of an organism.</obo:IAO_0000115>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/ICD9_definition_citation">
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/ICD9_definition_citation is an annotation property that is drawn from ICD9</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#created_by">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/creator"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#created_by"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000018">
+        <rdfs:label xml:lang="en">type of gene</rdfs:label>
+        <obo:IAO_0000115>an annotation property that specifies the type of a gene</obo:IAO_0000115>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000019">
+        <rdfs:label xml:lang="en">nomenclature status</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>an annotation property that specifies a nomenclature status</obo:IAO_0000115>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
@@ -196,7 +369,7 @@ We also have the outstanding issue of how to aim different definitions to differ
         <obo:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</obo:IAO_0000117>
         <obo:IAO_0000111 xml:lang="en">has curation status</obo:IAO_0000111>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/branch_class"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasExactSynonym"/>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition source</rdfs:label>
         <rdfs:label>definition source</rdfs:label>
@@ -235,6 +408,10 @@ We also have the outstanding issue of how to aim different definitions to differ
         <obo:IAO_0000111 xml:lang="en">alternative term</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasAlternativeId">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_alternative_id</rdfs:label>
+        <rdfs:label>has_alternative_id</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source">
         <rdfs:label>Source</rdfs:label>
@@ -276,6 +453,11 @@ We also have the outstanding issue of how to aim different definitions to differ
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation">
+        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation is an annotation property that is drawn from SNOMEDCT</efo:SNOMEDCT_definition_citation>
+        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001847">
         <rdfs:label xml:lang="en">ISA alternative term</rdfs:label>
         <obo:IAO_0000116>Requested by Alejandra Gonzalez-Beltran
@@ -288,10 +470,7 @@ https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/Wikipedia_definition_citation">
-        <efo:Wikipedia_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/Wikipedia_definition_citation is an annotation property that is drawn from Wikipedia</efo:Wikipedia_definition_citation>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasDbXref"/>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ncbitaxon#has_rank">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_rank</rdfs:label>
         <rdfs:label>has_rank</rdfs:label>
@@ -299,261 +478,13 @@ https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <obo:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncbi_taxonomy</obo:hasOBONamespace>
     </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasURI">
+        <rdfs:label xml:lang="en">has_URI</rdfs:label>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation">
         <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation is an annotation property that is drawn from NCI_Thesaurus</efo:NCI_Thesaurus_definition_citation>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation is an annotation property that is drawn from NCI_Thesaurus</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
-        <rdfs:label>imported from</rdfs:label>
-        <rdfs:label xml:lang="en">imported from</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">For external terms/classes, the ontology from which the term was imported</obo:IAO_0000115>
-        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000111 xml:lang="en">imported from</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/EFO_URI"/>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/BFO_definition_citation">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/BFO_definition_citation is an annotation property that is drawn from BFO</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/format">
-        <rdfs:label>Format</rdfs:label>
-        <rdfs:label xml:lang="en-us">Format</rdfs:label>
-        <rdfs:comment xml:lang="en-us">The physical or digital manifestation of the resource.</rdfs:comment>
-        <dc:description xml:lang="en-us">Typically, Format may include the media-type or dimensions of
-         the resource. Format may be used to determine the software,
-         hardware or other equipment needed to display or operate the
-         resource. Examples of dimensions include size and duration.
-         Recommended best practice is to select a value from a
-         controlled vocabulary (for example, the list of Internet Media
-         Types [MIME] defining computer media formats).</dc:description>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/source_definition"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#auto-generated-by"/>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/gwas_trait"/>
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
-        <rdfs:label>Contributor</rdfs:label>
-        <rdfs:label xml:lang="en-us">Contributor</rdfs:label>
-        <rdfs:comment xml:lang="en-us">An entity responsible for making contributions to the
-         content of the resource.</rdfs:comment>
-        <dc:description xml:lang="en-us">Examples of a Contributor include a person, an 
-         organisation, or a service.  Typically, the name of a 
-         Contributor should be used to indicate the entity.</dc:description>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">database_cross_reference</rdfs:label>
-        <rdfs:label>database_cross_reference</rdfs:label>
-        <rdfs:label xml:lang="en">has_dbxref</rdfs:label>
-        <oboInOwl:hasDbXref>
-            <oboInOwl:DbXref>
-                <rdfs:label>oboFormat:xref</rdfs:label>
-                <oboInOwl:hasURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/oboInOwl/owl/oboInOwlFormat#oboInOwlFormat_xref</oboInOwl:hasURI>
-            </oboInOwl:DbXref>
-        </oboInOwl:hasDbXref>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_obo_namespace</rdfs:label>
-        <rdfs:label>has_obo_namespace</rdfs:label>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/alternative_term">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alternative_term</rdfs:label>
-        <obo:IAO_0000115>An alternative label for a given entity such as a commonly used abbreviation or synonym. </obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">creator</rdfs:label>
-        <rdfs:label>creator</rdfs:label>
-        <rdfs:label>Creator</rdfs:label>
-        <rdfs:label xml:lang="en-us">Creator</rdfs:label>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-creator</oboInOwl:shorthand>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-creator</oboInOwl:id>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/creator</oboInOwl:hasDbXref>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
-        <rdfs:comment xml:lang="en-us">An entity primarily responsible for making the content 
-         of the resource.</rdfs:comment>
-        <dc:description xml:lang="en-us">Examples of a Creator include a person, an organisation,
-         or a service.  Typically, the name of a Creator should 
-         be used to indicate the entity.</dc:description>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ICO_0000091">
-        <rdfs:label xml:lang="en">term_mapping_to_UMLS</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ICO_0000093">
-        <rdfs:label xml:lang="en">term_mapping_to_HL7v3</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ICO_0000092">
-        <rdfs:label xml:lang="en">term_mapping_to_NCIT</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/ArrayExpress_label"/>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/definition_citation">
-        <obo:IAO_0000115>A definition citation is a document, ontology class, person or organization from which the definition of the class is derived. It is used in the same sense as a citation in literature, in that the definition may have been derived from these sources or that this definition is related to these source.</obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000007">
-        <rdfs:label xml:lang="en">NCBI LocusTag</rdfs:label>
-        <obo:IAO_0000115>the NCBI LocusTag name of a gene </obo:IAO_0000115>
-        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000008">
-        <rdfs:label xml:lang="en">gene map location</rdfs:label>
-        <obo:IAO_0000115>the map location of a gene</obo:IAO_0000115>
-        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000009">
-        <rdfs:label xml:lang="en">modification date</rdfs:label>
-        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
-        <obo:IAO_0000115>a date of content modification</obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#default-namespace"/>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/NIFSTD_definition_citation">
-        <efo:NIFSTD_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/NIFSTD_definition_citation is an annotation property that is drawn from NIFSTD</efo:NIFSTD_definition_citation>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_exact_synonym</rdfs:label>
-        <rdfs:label>has_exact_synonym</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/alternative_term"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000004">
-        <rdfs:label xml:lang="en">symbol from nomenclature authority</rdfs:label>
-        <obo:IAO_0000115>the symbol assigned by the nomenclature authority</obo:IAO_0000115>
-        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000005">
-        <rdfs:label xml:lang="en">full name from nomenclature authority</rdfs:label>
-        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
-        <obo:IAO_0000115>the full name assigned by the nomenclature authority</obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000006">
-        <rdfs:label xml:lang="en">NCBI GeneID</rdfs:label>
-        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
-        <obo:IAO_0000115>A GeneID in the NCBI Gene database </obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/GO_definition_citation">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/GO_definition_citation is an annotation property that is drawn from GO</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000601">
-        <rdfs:label>has associated axiom(nl)</rdfs:label>
-        <rdfs:label xml:lang="en">has associated axiom(nl)</rdfs:label>
-        <obo:IAO_0000600 xml:lang="en">An axiom associated with a term expressed using natural language</obo:IAO_0000600>
-        <obo:IAO_0000119 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000119>
-        <obo:IAO_0000117 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000111 xml:lang="en">has associated axiom(nl)</obo:IAO_0000111>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/format-version"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000602">
-        <rdfs:label>has associated axiom(fol)</rdfs:label>
-        <rdfs:label xml:lang="en">has associated axiom(fol)</rdfs:label>
-        <obo:IAO_0000600 xml:lang="en">An axiom expressed in first order logic using CLIF syntax</obo:IAO_0000600>
-        <obo:IAO_0000117 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">Person:Alan Ruttenberg</obo:IAO_0000119>
-        <obo:IAO_0000111 xml:lang="en">has associated axiom(fol)</obo:IAO_0000111>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002422"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001900">
-        <rdfs:label xml:lang="en">temporal interpretation</rdfs:label>
-        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://code.google.com/p/obo-relations/wiki/ROAndTime</foaf:page>
-        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/oborel/obo-relations/wiki/ROAndTime</foaf:page>
-        <obo:IAO_0000115>An assertion that holds between an OWL Object Property and a temporal interpretation that elucidates how OWL Class Axioms that use this property are to be interpreted in a temporal context.</obo:IAO_0000115>
-        <obo:IAO_0000111 xml:lang="en">temporal interpretation</obo:IAO_0000111>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002422"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600">
-        <rdfs:label>elucidation</rdfs:label>
-        <rdfs:label xml:lang="en">elucidation</rdfs:label>
-        <obo:IAO_0000119 xml:lang="en">Person:Barry Smith</obo:IAO_0000119>
-        <obo:IAO_0000600 xml:lang="en">Primitive terms in a highest-level ontology such as BFO are terms which are so basic to our understanding of reality that there is no way of defining them in a non-circular fashion. For these, therefore, we can provide only elucidations, supplemented by examples and by axioms</obo:IAO_0000600>
-        <obo:IAO_0000111 xml:lang="en">elucidation</obo:IAO_0000111>
-        <obo:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</obo:IAO_0000117>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_metadata_tag"/>
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date">
-        <rdfs:label>Date</rdfs:label>
-        <rdfs:label xml:lang="en-us">Date</rdfs:label>
-        <rdfs:comment xml:lang="en-us">A date associated with an event in the life cycle of the
-         resource.</rdfs:comment>
-        <dc:description xml:lang="en-us">Typically, Date will be associated with the creation or
-         availability of the resource.  Recommended best practice
-         for encoding the date value is defined in a profile of
-         ISO 8601 [W3CDTF] and follows the YYYY-MM-DD format.</dc:description>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_narrow_synonym</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/alternative_term"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/OMIM_definition_citation">
-        <efo:OMIM_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/OMIM_definition_citation is an annotation property that is drawn from OMIM</efo:OMIM_definition_citation>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://protege.stanford.edu/plugins/owl/protege#defaultLanguage"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000180">
-        <rdfs:label>BFO CLIF specification label</rdfs:label>
-        <rdfs:label xml:lang="en">BFO CLIF specification label</rdfs:label>
-        <obo:IAO_0000111 xml:lang="en">BFO CLIF specification label</obo:IAO_0000111>
-        <obo:IAO_0000119>Person:Alan Ruttenberg</obo:IAO_0000119>
-        <obo:IAO_0000232 xml:lang="en">Really of interest to developers only</obo:IAO_0000232>
-        <obo:IAO_0000115 xml:lang="en">Relates an entity in the ontology to the term that is used to represent it in the the CLIF specification of BFO2</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#creation_date"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in_subset</rdfs:label>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000017">
-        <rdfs:label xml:lang="en">chromosome ID of gene</rdfs:label>
-        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
-        <obo:IAO_0000115>A chromosome ID where a gene is located.</obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000015">
-        <rdfs:label xml:lang="en">organism NCBITaxon ID</rdfs:label>
-        <obo:IAO_0000117>Oliver He, Yue Liu</obo:IAO_0000117>
-        <obo:IAO_0000115>The NCBITaxon ontology ID of an organism.</obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000018">
-        <rdfs:label xml:lang="en">type of gene</rdfs:label>
-        <obo:IAO_0000115>an annotation property that specifies the type of a gene</obo:IAO_0000115>
-        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000019">
-        <rdfs:label xml:lang="en">nomenclature status</rdfs:label>
-        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
-        <obo:IAO_0000115>an annotation property that specifies a nomenclature status</obo:IAO_0000115>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasExactSynonym"/>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/bioportal_provenance"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasAlternativeId">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_alternative_id</rdfs:label>
-        <rdfs:label>has_alternative_id</rdfs:label>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/creator"/>
-    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation">
-        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation is an annotation property that is drawn from SNOMEDCT</efo:SNOMEDCT_definition_citation>
-        <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasDbXref"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasURI">
-        <rdfs:label xml:lang="en">has_URI</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
         <rdfs:label>label</rdfs:label>
@@ -569,9 +500,22 @@ where GO_ID is a GO ID, EC is the Evidence Code, Qualifier is a specific associa
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000002"/>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasOBONamespace"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_related_synonym</rdfs:label>
         <rdfs:label>has_related_synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
+        <rdfs:label>imported from</rdfs:label>
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">For external terms/classes, the ontology from which the term was imported</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000111 xml:lang="en">imported from</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#date"/>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OGG_0000000030">
@@ -583,6 +527,19 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
         <obo:IAO_0000115>An annotation property that represents a gene&#39;s association with PubMed publication(s). </obo:IAO_0000115>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hasAlternativeId"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/format">
+        <rdfs:label>Format</rdfs:label>
+        <rdfs:label xml:lang="en-us">Format</rdfs:label>
+        <rdfs:comment xml:lang="en-us">The physical or digital manifestation of the resource.</rdfs:comment>
+        <dc:description xml:lang="en-us">Typically, Format may include the media-type or dimensions of
+         the resource. Format may be used to determine the software,
+         hardware or other equipment needed to display or operate the
+         resource. Examples of dimensions include size and duration.
+         Recommended best practice is to select a value from a
+         controlled vocabulary (for example, the list of Internet Media
+         Types [MIME] defining computer media formats).</dc:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -690,14 +647,12 @@ A continuant cannot be part of an occurrent: use &#39;participates in&#39;. An o
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has part</rdfs:label>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
         <rdfs:label>has part</rdfs:label>
         <rdfs:label xml:lang="en">has part</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000051</oboInOwl:hasDbXref>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</oboInOwl:shorthand>
-        <efo:EFO_URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/has_part</efo:EFO_URI>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</oboInOwl:hasOBONamespace>
         <obo:IAO_0000116 xml:lang="en">Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
@@ -720,7 +675,6 @@ A continuant cannot have an occurrent as part: use &#39;participates in&#39;. An
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
         <owl:equivalentProperty>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1066,14 +1020,6 @@ A continuant cannot have an occurrent as part: use &#39;participates in&#39;. An
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000169"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1090,6 +1036,14 @@ A continuant cannot have an occurrent as part: use &#39;participates in&#39;. An
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1621,7 +1575,6 @@ A continuant cannot have an occurrent as part: use &#39;participates in&#39;. An
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136">
         <rdfs:label xml:lang="en">is about</rdfs:label>
-        <rdfs:label>is_about</rdfs:label>
         <obo:IAO_0000116 xml:lang="en">7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of &quot;mentions&quot; relation. Weaken the is_about relationship to be primitive. 
 
 We will try to build it back up by elaborating the various subproperties that are more precisely defined.
@@ -1638,8 +1591,6 @@ Some currently missing phenomena that should be considered &quot;about&quot; are
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-        <owl:inverseOf rdf:resource="http://www.ebi.ac.uk/efo/EFO_0006351"/>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
     </owl:ObjectProperty>
     
 
@@ -1879,33 +1830,6 @@ there is a measurement process p that has specified output m, a measurement datu
                 <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
             </rdf:Description>
         </owl:equivalentProperty>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000300 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000300">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">realized_in</rdfs:label>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between a realizable entity and a process. Reciprocal relation of realizes</obo:IAO_0000115>
-        <efo:EFO_URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/is_realized_by</efo:EFO_URI>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000308"/>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-        <rdfs:domain rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant"/>
-        <rdfs:range rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000308 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000308">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">realizes</rdfs:label>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between a process and a material fulfilling a role (i.e. realizing a role within the context of the process).  For example a human realizing role of teacher within a lesson teching process.</obo:IAO_0000115>
-        <efo:EFO_URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/realizes</efo:EFO_URI>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-        <rdfs:range rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant"/>
-        <rdfs:domain rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
     </owl:ObjectProperty>
     
 
@@ -2314,15 +2238,6 @@ there is a measurement process p that has specified output m, a measurement datu
     
 
 
-    <!-- http://www.ebi.ac.uk/efo/EFO_0006351 -->
-
-    <owl:ObjectProperty rdf:about="http://www.ebi.ac.uk/efo/EFO_0006351">
-        <rdfs:label xml:lang="en">has_about_it</rdfs:label>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.obofoundry.org/ro/ro.owl#has_proper_part -->
 
     <owl:ObjectProperty rdf:about="http://www.obofoundry.org/ro/ro.owl#has_proper_part">
@@ -2555,13 +2470,30 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000083"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:complementOf>
@@ -2582,31 +2514,12 @@ there is a measurement process p that has specified output m, a measurement datu
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:complementOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000602>(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] </obo:IAO_0000602>
         <obo:IAO_0000602>(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] </obo:IAO_0000602>
         <obo:IAO_0000602>(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] </obo:IAO_0000602>
         <obo:IAO_0000115 xml:lang="en">A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.</obo:IAO_0000115>
         <obo:IAO_0000601 xml:lang="en">For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])</obo:IAO_0000601>
         <obo:IAO_0000601 xml:lang="en">For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])</obo:IAO_0000601>
-        <obo:BFO_0000179>ic</obo:BFO_0000179>
-        <obo:BFO_0000180>IndependentContinuant</obo:BFO_0000180>
         <obo:IAO_0000112 xml:lang="en">a chair</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">a heart</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">a leg</obo:IAO_0000112>
@@ -2616,6 +2529,8 @@ there is a measurement process p that has specified output m, a measurement datu
         <obo:IAO_0000112 xml:lang="en">an orchestra.</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">an organism</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])</obo:IAO_0000115>
+        <obo:BFO_0000179>ic</obo:BFO_0000179>
+        <obo:BFO_0000180>IndependentContinuant</obo:BFO_0000180>
         <obo:IAO_0000111 xml:lang="en">independent continuant</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">the bottom right portion of a human torso</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">the interior of your mouth</obo:IAO_0000112>
@@ -2637,25 +2552,13 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000123"/>
                 <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000178"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2667,8 +2570,20 @@ there is a measurement process p that has specified output m, a measurement datu
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000178"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000083"/>
                 <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000602>(forall (x y t) (if (and (SpatialRegion x) (continuantPartOfAt y x t)) (SpatialRegion y))) // axiom label in BFO2 CLIF: [036-001] </obo:IAO_0000602>
@@ -2694,13 +2609,7 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000156"/>
-                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2712,19 +2621,25 @@ there is a measurement process p that has specified output m, a measurement datu
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000156"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000602>(forall (x) (if (TemporalRegion x) (Occurrent x))) // axiom label in BFO2 CLIF: [100-001] </obo:IAO_0000602>
         <obo:BFO_0000179>t-region</obo:BFO_0000179>
         <obo:IAO_0000602>(forall (x y) (if (and (TemporalRegion x) (occurrentPartOf y x)) (TemporalRegion y))) // axiom label in BFO2 CLIF: [101-001] </obo:IAO_0000602>
-        <obo:IAO_0000600 xml:lang="en">A temporal region is an occurrent entity that is part of time as defined relative to some reference frame. (axiom label in BFO2 Reference: [100-001])</obo:IAO_0000600>
-        <obo:IAO_0000601 xml:lang="en">All parts of temporal regions are temporal regions. (axiom label in BFO2 Reference: [101-001])</obo:IAO_0000601>
-        <obo:IAO_0000116 xml:lang="en">Temporal region doesn&#39;t have a closure axiom because the subclasses don&#39;t exhaust all possibilites. An example would be the mereological sum of a temporal instant and a temporal interval that doesn&#39;t overlap the instant. In this case the resultant temporal region is neither 0-dimensional nor 1-dimensional</obo:IAO_0000116>
         <obo:BFO_0000180>TemporalRegion</obo:BFO_0000180>
         <obo:IAO_0000602>(forall (r) (if (TemporalRegion r) (occupiesTemporalRegion r r))) // axiom label in BFO2 CLIF: [119-002] </obo:IAO_0000602>
+        <obo:IAO_0000600 xml:lang="en">A temporal region is an occurrent entity that is part of time as defined relative to some reference frame. (axiom label in BFO2 Reference: [100-001])</obo:IAO_0000600>
+        <obo:IAO_0000601 xml:lang="en">All parts of temporal regions are temporal regions. (axiom label in BFO2 Reference: [101-001])</obo:IAO_0000601>
         <obo:IAO_0000601 xml:lang="en">Every temporal region t is such that t occupies_temporal_region t. (axiom label in BFO2 Reference: [119-002])</obo:IAO_0000601>
+        <obo:IAO_0000116 xml:lang="en">Temporal region doesn&#39;t have a closure axiom because the subclasses don&#39;t exhaust all possibilites. An example would be the mereological sum of a temporal instant and a temporal interval that doesn&#39;t overlap the instant. In this case the resultant temporal region is neither 0-dimensional nor 1-dimensional</obo:IAO_0000116>
         <obo:IAO_0000111 xml:lang="en">temporal region</obo:IAO_0000111>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -2740,24 +2655,6 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000011"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000153"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000151"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000130"/>
                 <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
             </owl:Restriction>
@@ -2770,8 +2667,26 @@ there is a measurement process p that has specified output m, a measurement datu
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000153"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000126"/>
                 <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000151"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000602>(forall (r) (if (SpatioTemporalRegion r) (occupiesSpatioTemporalRegion r r))) // axiom label in BFO2 CLIF: [107-002] </obo:IAO_0000602>
@@ -2781,13 +2696,13 @@ there is a measurement process p that has specified output m, a measurement datu
         <obo:IAO_0000602>(forall (x t) (if (SpatioTemporalRegion x) (exists (y) (and (SpatialRegion y) (spatiallyProjectsOntoAt x y t))))) // axiom label in BFO2 CLIF: [099-001] </obo:IAO_0000602>
         <obo:IAO_0000601 xml:lang="en">All parts of spatiotemporal regions are spatiotemporal regions. (axiom label in BFO2 Reference: [096-001])</obo:IAO_0000601>
         <obo:IAO_0000601 xml:lang="en">Each spatiotemporal region at any time t projects_onto some spatial region at t. (axiom label in BFO2 Reference: [099-001])</obo:IAO_0000601>
-        <obo:IAO_0000601 xml:lang="en">Each spatiotemporal region projects_onto some temporal region. (axiom label in BFO2 Reference: [098-001])</obo:IAO_0000601>
         <obo:IAO_0000601 xml:lang="en">Every spatiotemporal region occupies_spatiotemporal_region itself.</obo:IAO_0000601>
         <obo:IAO_0000601 xml:lang="en">Every spatiotemporal region s is such that s occupies_spatiotemporal_region s. (axiom label in BFO2 Reference: [107-002])</obo:IAO_0000601>
         <obo:BFO_0000180>SpatiotemporalRegion</obo:BFO_0000180>
-        <obo:IAO_0000111 xml:lang="en">spatiotemporal region</obo:IAO_0000111>
         <obo:BFO_0000179>st-region</obo:BFO_0000179>
         <obo:IAO_0000600 xml:lang="en">A spatiotemporal region is an occurrent entity that is part of spacetime. (axiom label in BFO2 Reference: [095-001])</obo:IAO_0000600>
+        <obo:IAO_0000601 xml:lang="en">Each spatiotemporal region projects_onto some temporal region. (axiom label in BFO2 Reference: [098-001])</obo:IAO_0000601>
+        <obo:IAO_0000111 xml:lang="en">spatiotemporal region</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">the spatiotemporal region occupied by a human life</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">the spatiotemporal region occupied by a process of cellular meiosis.</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">the spatiotemporal region occupied by the development of a cancer tumor</obo:IAO_0000112>
@@ -2805,6 +2720,12 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000169"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
                 <owl:allValuesFrom>
                     <owl:Class>
@@ -2820,12 +2741,6 @@ there is a measurement process p that has specified output m, a measurement datu
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000169"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:BFO_0000179>process</obo:BFO_0000179>
@@ -2859,7 +2774,7 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
@@ -2869,7 +2784,7 @@ there is a measurement process p that has specified output m, a measurement datu
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
@@ -2877,11 +2792,11 @@ there is a measurement process p that has specified output m, a measurement datu
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Dispositions exist along a strength continuum. Weaker forms of disposition are realized in only a fraction of triggering cases. These forms occur in a significant number of cases of a similar type [89</obo:IAO_0000116>
         <obo:BFO_0000179>disposition</obo:BFO_0000179>
         <obo:BFO_0000180>Disposition</obo:BFO_0000180>
         <obo:IAO_0000602>(forall (x) (if (Disposition x) (and (RealizableEntity x) (exists (y) (and (MaterialEntity y) (bearerOfAt x y t)))))) // axiom label in BFO2 CLIF: [062-002] </obo:IAO_0000602>
         <obo:IAO_0000602>(forall (x t) (if (and (RealizableEntity x) (existsAt x t)) (exists (y) (and (MaterialEntity y) (specificallyDepends x y t))))) // axiom label in BFO2 CLIF: [063-002] </obo:IAO_0000602>
+        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Dispositions exist along a strength continuum. Weaker forms of disposition are realized in only a fraction of triggering cases. These forms occur in a significant number of cases of a similar type [89</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Dispositions exist along a strength continuum. Weaker forms of disposition are realized in only a fraction of triggering cases. These forms occur in a significant number of cases of a similar type.</obo:IAO_0000116>
         <obo:IAO_0000601 xml:lang="en">If b is a realizable entity then for all t at which b exists, b s-depends_on some material entity at t. (axiom label in BFO2 Reference: [063-002])</obo:IAO_0000601>
         <obo:IAO_0000112 xml:lang="en">an atom of element X has the disposition to decay to an atom of element Y</obo:IAO_0000112>
@@ -2955,7 +2870,7 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
@@ -2965,7 +2880,7 @@ there is a measurement process p that has specified output m, a measurement datu
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
@@ -2997,25 +2912,10 @@ there is a measurement process p that has specified output m, a measurement datu
     <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020">
-        <rdfs:label>specifically dependent continuant</rdfs:label>
+     <!--        <rdfs:label>specifically dependent continuant</rdfs:label> -->
         <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
-        <!-- <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/> -->
+<!--        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/> -->
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000052"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
-                            <owl:Class>
-                                <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
-                            </owl:Class>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
@@ -3050,14 +2950,29 @@ there is a measurement process p that has specified output m, a measurement datu
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000052"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000602>(iff (SpecificallyDependentContinuant a) (and (Continuant a) (forall (t) (if (existsAt a t) (exists (b) (and (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))))))) // axiom label in BFO2 CLIF: [050-003] </obo:IAO_0000602>
         <obo:BFO_0000179>sdc</obo:BFO_0000179>
         <obo:IAO_0000602>(iff (RelationalSpecificallyDependentContinuant a) (and (SpecificallyDependentContinuant a) (forall (t) (exists (b c) (and (not (SpatialRegion b)) (not (SpatialRegion c)) (not (= b c)) (not (exists (d) (and (continuantPartOfAt d b t) (continuantPartOfAt d c t)))) (specificallyDependsOnAt a b t) (specificallyDependsOnAt a c t)))))) // axiom label in BFO2 CLIF: [131-004] </obo:IAO_0000602>
-        <obo:BFO_0000180>SpecificallyDependentContinuant</obo:BFO_0000180>
-        <obo:IAO_0000115 xml:lang="en">A continuant  that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.</obo:IAO_0000115>
         <obo:IAO_0000112 xml:lang="en">Reciprocal specifically dependent continuants: the function of this key to open this lock and the mutually dependent disposition of this lock: to be opened by this key</obo:IAO_0000112>
         <obo:IAO_0000116 xml:lang="en">Specifically dependent continuant doesn&#39;t have a closure axiom because the subclasses don&#39;t necessarily exhaust all possibilites. We&#39;re not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc.</obo:IAO_0000116>
+        <obo:BFO_0000180>SpecificallyDependentContinuant</obo:BFO_0000180>
+        <obo:IAO_0000115 xml:lang="en">A continuant  that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &amp;gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &amp;lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">b is a specifically dependent continuant = Def. b is a continuant &amp; there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])</obo:IAO_0000115>
         <obo:IAO_0000112 xml:lang="en">of one-sided specifically dependent continuants: the mass of this tomato</obo:IAO_0000112>
@@ -3232,8 +3147,19 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000058"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3255,19 +3181,8 @@ there is a measurement process p that has specified output m, a measurement datu
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:complementOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000058"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:BFO_0000179>gdc</obo:BFO_0000179>
@@ -3316,19 +3231,6 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000035"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
             </owl:Restriction>
@@ -3355,6 +3257,19 @@ there is a measurement process p that has specified output m, a measurement datu
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000148"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000035"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000602>(iff (ProcessBoundary a) (exists (p) (and (Process p) (temporalPartOf a p) (not (exists (b) (properTemporalPartOf b a)))))) // axiom label in BFO2 CLIF: [084-001] </obo:IAO_0000602>
         <obo:IAO_0000602>(forall (x) (if (ProcessBoundary x) (exists (y) (and (ZeroDimensionalTemporalRegion y) (occupiesTemporalRegion x y))))) // axiom label in BFO2 CLIF: [085-002] </obo:IAO_0000602>
         <obo:IAO_0000601 xml:lang="en">Every process boundary occupies_temporal_region a zero-dimensional temporal region. (axiom label in BFO2 Reference: [085-002])</obo:IAO_0000601>
@@ -3377,18 +3292,6 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:label>material entity</rdfs:label>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000083"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000028"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000178"/>
@@ -3419,6 +3322,18 @@ there is a measurement process p that has specified output m, a measurement datu
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000186"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000176"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000083"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000040</oboInOwl:id>
@@ -3467,7 +3382,7 @@ there is a measurement process p that has specified output m, a measurement datu
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000187"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000178"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3493,7 +3408,7 @@ there is a measurement process p that has specified output m, a measurement datu
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000178"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000187"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4119,77 +4034,11 @@ TO DO: show a VCF representation of this example.</obo:IAO_0000112>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</rdfs:label>
-        <rdfs:label>biological process</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end.</obo:IAO_0000115>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end.
-</obo:IAO_0000115>
-        <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0000004</oboInOwl:hasAlternativeId>
-        <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0007582</oboInOwl:hasAlternativeId>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0008150</oboInOwl:id>
-        <efo:GO_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0008150</efo:GO_definition_citation>
-        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D055705</efo:MSH_definition_citation>
-        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C17828</efo:NCI_Thesaurus_definition_citation>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. Note that when this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code ND, no data, is used to indicate this.
-</rdfs:comment>
-        <efo:Wikipedia_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Biological_process</efo:Wikipedia_definition_citation>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological process</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological process unknown</oboInOwl:hasNarrowSynonym>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</efo:alternative_term>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</oboInOwl:hasOBONamespace>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</obo:IAO_0000111>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physiological process</oboInOwl:hasExactSynonym>
-        <efo:gwas_trait rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:gwas_trait>
-        <obo:IAO_0000115>The activities of living organisms that support life in single- or multi-cellular organisms from their origin through the progression of life.</obo:IAO_0000115>
-        <efo:alternative_term>Physiological Processes</efo:alternative_term>
-        <efo:alternative_term>physiological process</efo:alternative_term>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_aspergillus"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_candida"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_generic"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_metagenomics"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_pir"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_plant"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_pombe"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_yeast"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#gosubset_prok"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/go.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0008152 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008152">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolic process</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-Note that metabolic processes do not include single functions or processes such as protein-protein interactions, protein-nucleic acids, nor receptor-ligand interactions.
-</rdfs:comment>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-The chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation.
-</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dani Welter</obo:IAO_0000117>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0008152</oboInOwl:id>
-        <efo:GO_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0008152</efo:GO_definition_citation>
-        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D008660</efo:MSH_definition_citation>
-        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:Q000378</efo:MSH_definition_citation>
-        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C19536</efo:NCI_Thesaurus_definition_citation>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation.</obo:IAO_0000115>
-        <efo:Wikipedia_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Metabolism</efo:Wikipedia_definition_citation>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolic process resulting in cell growth</oboInOwl:hasNarrowSynonym>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolism</efo:alternative_term>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolism resulting in cell growth</oboInOwl:hasNarrowSynonym>
-        <efo:gwas_trait rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:gwas_trait>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_pir"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#goslim_plant"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/go#gosubset_prok"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/go.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
     </owl:Class>
     
 
@@ -4376,12 +4225,6 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000004"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000039"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
@@ -4390,6 +4233,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000004"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112 xml:lang="en">10 feet. 3 ml.</obo:IAO_0000112>
@@ -5403,6 +5252,22 @@ editor = PRS</obo:IAO_0000232>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
             </owl:Restriction>
@@ -5427,22 +5292,6 @@ editor = PRS</obo:IAO_0000232>
                                         </owl:intersectionOf>
                                     </owl:Class>
                                 </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -5764,14 +5613,8 @@ for now.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000113"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16991"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5782,8 +5625,14 @@ for now.</obo:IAO_0000116>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16991"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000113"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assay with the objective to determine a sequence feature of DNA</obo:IAO_0000115>
@@ -5806,12 +5655,6 @@ for now.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000113"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
             </owl:Restriction>
@@ -5820,6 +5663,12 @@ for now.</obo:IAO_0000116>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16991"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000113"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5868,12 +5717,6 @@ for now.</obo:IAO_0000116>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000441"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -5904,6 +5747,12 @@ for now.</obo:IAO_0000116>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000441"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helen Parkinson</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</rdfs:comment>
@@ -5923,6 +5772,12 @@ for now.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000079"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
@@ -5930,12 +5785,6 @@ for now.</obo:IAO_0000116>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000079"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A glucometer measures blood glucose concentration, the glucometer has a measure function.</obo:IAO_0000112>
@@ -6099,6 +5948,18 @@ for now.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ICO_0000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
                 <owl:someValuesFrom>
                     <owl:Restriction>
@@ -6117,18 +5978,6 @@ for now.</obo:IAO_0000116>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ICO_0000086"/>
                     </owl:Restriction>
                 </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ICO_0000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/28/2009 Alan Ruttenberg: This is made a subclass of the higher level processual entity in BFO because I don&#39;t want to take a stand on whether it is a process aggregate. Analogous to the situation with Material entity.</obo:IAO_0000116>
@@ -6228,14 +6077,14 @@ for now.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000085"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of &quot;device&quot;, and are enumerating the types of roles that a reagent can perform.
@@ -6518,14 +6367,14 @@ Also, OBI needs to import a class representing virions for an axiom on genetic m
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000124"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000124"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000119>Group:2013 Philly Workshop group</obo:IAO_0000119>
@@ -6634,14 +6483,14 @@ The following are NOT conclusions based on data: data themselves; results from p
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000001"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10/21/09: This is a placeholder term, that should ideally be imported from the NCBI taxonomy, but the high level hierarchy there does not suit our needs (includes plasmids and &#39;other organisms&#39;)</obo:IAO_0000116>
@@ -6846,14 +6695,14 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000001"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGG_2000000002"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000014"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000014"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGG_2000000002"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:OGG_0000000015 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</obo:OGG_0000000015>
@@ -6897,14 +6746,14 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGG_1000002759"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGG_2000009606"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000014"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OGG_0000000014"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGG_2000009606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:OGG_0000000015 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9606</obo:OGG_0000000015>
@@ -7065,16 +6914,6 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein tyrosine phosphatase, receptor type, C</dc:description>
         <obo:OGG_0000000018 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein-coding</obo:OGG_0000000018>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OGMS_0000063 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000063">
-        <rdfs:label>disease course</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
     </owl:Class>
     
 
@@ -7306,10 +7145,10 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/DRON_00000005"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="fr">Une entité textuelle qui fait référence à un type de médicament.</obo:IAO_0000115>
         <obo:IAO_0000118>drug name</obo:IAO_0000118>
         <obo:IAO_0000115 xml:lang="en">A textual entity that allows the identification of a drug product.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">Note that this is a name of a drug product, not the name of an active ingredient contained in a drug product.</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="fr">Une entité textuelle qui fait référence à un type de médicament.</obo:IAO_0000115>
         <obo:IAO_0000118>drug product identification</obo:IAO_0000118>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
@@ -7325,6 +7164,12 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/DRON_00000005"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -7334,12 +7179,6 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/DRON_00000005"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112 xml:lang="en">&quot;Aspirin 80mg oral tablet&quot;
@@ -7360,13 +7199,13 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PDRO_000019"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000127"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000127"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PDRO_000019"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">A normative specification that directs the dosing in a drug administration.</obo:IAO_0000115>
@@ -7846,7 +7685,29 @@ Elle indique :
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">life cycle stage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatiotemporal region encompassing some part of the life cycle of an organism.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BILS:0000105</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EFO:0000399</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBdv:00007012</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:24120</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HsapDv:0000000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MmusDv:0000000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OlatDv:0000010</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PdumDv:0000090</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000105</oboInOwl:id>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WBls:0000002</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:1000000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFS:0000000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFS:0100000</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developmental stage</oboInOwl:hasNarrowSynonym>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">life cycle stage</obo:IAO_0000111>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Developmental_Stage</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stage</oboInOwl:hasNarrowSynonym>
+        <obo:UBPROP_0000012 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the WBls class &#39;all stages&#39; belongs here as it is the superclass of other WBls stages</obo:UBPROP_0000012>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this class represents a proper part of the life cycle of an organism. The class &#39;life cycle&#39; should not be placed here</obo:IAO_0000116>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <obo:UBPROP_0000012 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage</obo:UBPROP_0000012>
+        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#efo_slim"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#upper_level"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </owl:Class>
@@ -7929,200 +7790,6 @@ Elle indique :
     
 
 
-    <!-- http://www.ebi.ac.uk/efo/EFO_0000001 -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0000001">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">experimental factor</rdfs:label>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An experimental factor in Array Express which are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This upper level class is really used to give a root class from which applications can rely on and not be tied to upper ontology classses which do change.</obo:IAO_0000115>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept naming convention is lower case natural naming with spaces, when necessary captials should be used, for example disease factor, HIV, breast carcinoma, Ewing&#39;s sarcoma</rdfs:comment>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperimentalFactor</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperimentalFactor[accessedResource: MO_10][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helen Parkinson</oboInOwl:created_by>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helen Parkinson</obo:IAO_0000117>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</oboInOwl:created_by>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jie Zheng</obo:IAO_0000117>
-        <efo:MO_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MO:10</efo:MO_definition_citation>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tomasz Adamusiak</obo:IAO_0000117>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tomasz Adamusiak</oboInOwl:created_by>
-        <efo:organizational_class rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:organizational_class>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ebi.ac.uk/efo/EFO_0000408 -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0000408">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Disposition"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease is a disposition that describes states of disease associated with a particular sample and/or organism.</obo:IAO_0000115>
-        <efo:DOID_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:4</efo:DOID_definition_citation>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</obo:IAO_0000117>
-        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D004194</efo:MSH_definition_citation>
-        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT:64572001</efo:SNOMEDCT_definition_citation>
-        <efo:alternative_term>Homo sapiens disease</efo:alternative_term>
-        <efo:alternative_term>human disease</efo:alternative_term>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ebi.ac.uk/efo/EFO_0000589 -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0000589">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolic disease</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/efo/EFO_0000408"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000300"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000063"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0008152"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/efo/EFO_0000408"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/efo/EFO_0000408"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000300"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000063"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0008152"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A congenital (due to inherited enzyme abnormality) or acquired (due to failure of a metabolic important organ) disorder resulting from an abnormal metabolic process. -- 2003</obo:IAO_0000115>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A congenital (due to inherited enzyme abnormality) or acquired (due to failure of a metabolic important organ) disorder resulting from an abnormal metabolic process. -- 2003[accessedResource: NCIt:C3235][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease that involving errors in metabolic processes.</obo:IAO_0000115>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease that involving errors in metabolic processes.[accessedResource: DOID:0014667][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DIS METAB</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DIS METAB[accessedResource: MSH:D008659][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:DOID_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:0014667</efo:DOID_definition_citation>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease, Metabolic</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease, Metabolic[accessedResource: MSH:D008659][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diseases, Metabolic</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diseases, Metabolic[accessedResource: MSH:D008659][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disorder of metabolism NOS</efo:alternative_term>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disorder of metabolism NOS (disorder)</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disorder of metabolism NOS (disorder)[accessedResource: SNOMEDCT:267456000][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disorder of metabolism NOS[accessedResource: SNOMEDCT:267456000][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generalised metabolic disorder</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generalised metabolic disorder[accessedResource: SNOMEDCT:30390004][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generalized metabolic disorder</efo:alternative_term>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generalized metabolic disorder (disorder)</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generalized metabolic disorder (disorder)[accessedResource: SNOMEDCT:30390004][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generalized metabolic disorder[accessedResource: SNOMEDCT:30390004][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generic term for diseases caused by an abnormal metabolic process. It can be congenital due to inherited enzyme abnormality (METABOLISM, INBORN ERRORS) or acquired due to disease of an endocrine organ or failure of a metabolically important organ such as the liver. (Stedman, 26th ed)</obo:IAO_0000115>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generic term for diseases caused by an abnormal metabolic process. It can be congenital due to inherited enzyme abnormality (METABOLISM, INBORN ERRORS) or acquired due to disease of an endocrine organ or failure of a metabolically important organ such as the liver. (Stedman, 26th ed)[accessedResource: MSH:D008659][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:ICD9_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICD9:277.9</efo:ICD9_definition_citation>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</obo:IAO_0000117>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MD - Metabolic disorders</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MD - Metabolic disorders[accessedResource: SNOMEDCT:75934005][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">METAB DIS</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">METAB DIS[accessedResource: MSH:D008659][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">METABOLISM DISORDER NOS</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">METABOLISM DISORDER NOS[accessedResource: ICD9:277.9][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D008659</efo:MSH_definition_citation>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic Diseases</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic Diseases[accessedResource: NCIt:C3235][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic Disorder</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic Disorder[accessedResource: NCIt:C3235][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic disease (disorder)</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic disease (disorder)[accessedResource: SNOMEDCT:75934005][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic disease, NOS</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic disease, NOS[accessedResource: SNOMEDCT:75934005][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic disorder, NOS</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic disorder, NOS[accessedResource: SNOMEDCT:75934005][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic disorders</efo:alternative_term>
-        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C3235</efo:NCI_Thesaurus_definition_citation>
-        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT:75934005</efo:SNOMEDCT_definition_citation>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thesaurismoses</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thesaurismoses[accessedResource: MSH:D008659][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thesaurismosis</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thesaurismosis[accessedResource: MSH:D008659][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unspecified disorder of metabolism</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unspecified disorder of metabolism[accessedResource: ICD9:277.9][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease of metabolism</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease of metabolism[accessedResource: DOID:0014667][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolic disease [accessedResource: DOID:0014667][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolism disorder</efo:alternative_term>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ebi.ac.uk/efo/EFO_0001073 -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0001073">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obesity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/efo/EFO_0000589"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ebi.ac.uk/efo/EFO_0006351"/>
-                <owl:someValuesFrom rdf:resource="http://www.ebi.ac.uk/efo/EFO_0004340"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A status with BODY WEIGHT that is grossly above the acceptable or desirable weight, usually due to accumulation of excess FATS in the body. The standards may vary with age, sex, genetic or cultural background. In the BODY MASS INDEX, a BMI greater than 30.0 kg/m2 is considered obese, and a BMI greater than 40.0 kg/m2 is considered morbidly obese (MORBID OBESITY).</obo:IAO_0000115>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A status with BODY WEIGHT that is grossly above the acceptable or desirable weight, usually due to accumulation of excess FATS in the body. The standards may vary with age, sex, genetic or cultural background. In the BODY MASS INDEX, a BMI greater than 30.0 kg/m2 is considered obese, and a BMI greater than 40.0 kg/m2 is considered morbidly obese (MORBID OBESITY).[accessedResource: MSH:D009765][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adiposis</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adiposis[accessedResource: SNOMEDCT:414916001][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adiposity</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adiposity[accessedResource: SNOMEDCT:414916001][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An eating-related disorder in which excess body fat has accumulated to such an extent that health may be negatively affected. It is commonly defined as a body mass index (weight divided by height squared) of 30 kg/m2 or higher.</obo:IAO_0000115>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An eating-related disorder in which excess body fat has accumulated to such an extent that health may be negatively affected. It is commonly defined as a body mass index (weight divided by height squared) of 30 kg/m2 or higher.[accessedResource: NIFSTD:nlx_dys_20090302][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:DOID_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:9970</efo:DOID_definition_citation>
-        <efo:ICD9_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICD9:278.0</efo:ICD9_definition_citation>
-        <efo:ICD9_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICD9:278.00</efo:ICD9_definition_citation>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</obo:IAO_0000117>
-        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D009765</efo:MSH_definition_citation>
-        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C3283</efo:NCI_Thesaurus_definition_citation>
-        <efo:NIFSTD_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIFSTD:nlx_dys_20090302</efo:NIFSTD_definition_citation>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBESITY NOS[accessedResource: ICD9:278.00][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:OMIM_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIM:601665</efo:OMIM_definition_citation>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obese</efo:alternative_term>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obese (finding)</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obese (finding)[accessedResource: SNOMEDCT:414915002][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obese[accessedResource: SNOMEDCT:414915002][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity (disorder)</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity (disorder)[accessedResource: SNOMEDCT:414916001][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity NOS</efo:alternative_term>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity [Ambiguous]</efo:alternative_term>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity, unspecified</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity, unspecified[accessedResource: ICD9:278.00][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Overweight and obesity</efo:alternative_term>
-        <efo:bioportal_provenance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Overweight and obesity[accessedResource: ICD9:278.0][accessDate: 05-04-2011]</efo:bioportal_provenance>
-        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT:414916001</efo:SNOMEDCT_definition_citation>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tomasz Adamusiak</obo:IAO_0000117>
-        <efo:gwas_trait rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:gwas_trait>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ebi.ac.uk/efo/EFO_0004340 -->
 
     <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0004340">
@@ -8149,61 +7816,6 @@ Elle indique :
         <rdfs:label xml:lang="en">database_cross_reference</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000102"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ifomis.org/bfo/1.1/snap#Disposition -->
-
-    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#Disposition">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disposition</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition is an entity that causes a specific process or transformation in an entity in which it inheres, under specific circumstances and in conjunction with the laws of nature. For example, the disposition of vegetables to decay when not refrigerated, the disposition of blood to coagulate, the disposition of a patient with a weakened immune system to contract disease.</obo:IAO_0000115>
-        <efo:source_definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A realizable entity [snap:RealizableEntity] that essentially causes a specific process or transformation in the object [snap:Object] in which it inheres, under specific circumstances and in conjunction with the laws of nature. A general formula for dispositions is: X (object [snap:Object] has the disposition D to (transform, initiate a process) R under conditions C.</efo:source_definition>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For example, the disposition of vegetables to decay when not refrigerated, the disposition of blood to coagulate, the disposition of a patient with a weakened immune system to contract disease.</obo:IAO_0000112>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone modified from original</obo:IAO_0000117>
-        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C41205</efo:NCI_Thesaurus_definition_citation>
-        <efo:ArrayExpress_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease property</efo:ArrayExpress_label>
-        <efo:EFO_URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/EFO_0001438</efo:EFO_URI>
-        <efo:branch_class rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:branch_class>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant -->
-
-    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material property</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/efo/EFO_0000001"/>
-        <efo:source_definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A continuant [snap:Continuant] that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.</efo:source_definition>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An experimental factor which is a property or characteristic of some other entity.  For example, the mouse has the colour white.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</obo:IAO_0000117>
-        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecificallyDependentContinuant</efo:alternative_term>
-        <efo:EFO_URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/EFO_0001443</efo:EFO_URI>
-        <efo:ArrayExpress_label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sample characteristic</efo:ArrayExpress_label>
-        <efo:organizational_class rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:organizational_class>
-        <obo:IAO_0000117>Sirarat Sarntivijai</obo:IAO_0000117>
-        <efo:BFO_definition_citation>BFO:0000020</efo:BFO_definition_citation>
-        <efo:alternative_term>specifically dependent continuant</efo:alternative_term>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ifomis.org/bfo/1.1/span#ProcessualEntity -->
-
-    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/efo/EFO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process is an entity that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity during the time it occurs.</obo:IAO_0000115>
-        <efo:source_definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity.</efo:source_definition>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</obo:IAO_0000117>
-        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C29862</efo:NCI_Thesaurus_definition_citation>
-        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT:415178003</efo:SNOMEDCT_definition_citation>
-        <efo:EFO_URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/EFO_0001433</efo:EFO_URI>
-        <efo:organizational_class rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:organizational_class>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
     </owl:Class>
     
 
@@ -8476,7 +8088,7 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -8485,7 +8097,58 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -8494,28 +8157,22 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
@@ -8524,13 +8181,43 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
@@ -8542,304 +8229,217 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     
 
@@ -8852,58 +8452,6 @@ This interpretation is *not* the same as an at-all-times relation
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://www.ebi.ac.uk/efo/efo.owl">
-        <obo:format-version rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.4</obo:format-version>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.93</owl:versionInfo>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018-02-15</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to BRENDA tissue / enzyme source (BTO) verunknown</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Cell type (CL) verunknown</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Chemical entities of biological interest (CHEBI) verunknown</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Drosophila gross anatomy (FBbt) ver2011-02-10</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Foundational Model of Anatomy (FMA) ver3.1</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Gene Ontology (GO) ver1.886</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Human disease (DOID) ver</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to International Classification of Diseases (ICD-9) ver9</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to MGED Ontology (MO) ver1.3.1.1</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Malaria Ontology (IDOMAL) ver1.22</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Mammalian phenotype (MP) vernull</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Medical Subject Headings (MSH) ver2011_2010_08_30</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Microarray experimental conditions (MO) ver1.3.1.1</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Minimal anatomical terminology (MAT) ver1.1</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Mosquito gross anatomy (TGMA) version unknown</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to NCBI organismal classification (NCBITaxon) ver1.2</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to NCI Thesaurus (NCIt) ver11.01e</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to NIFSTD (nif) ver2.2 - December 20, 2010</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Ontology for Biomedical Investigations (OBI) ver2010-10-26 Vancouver 2010 release, RC2</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Phenotypic quality (PATO) vernull</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to SNOMED Clinical Terms (SNOMEDCT) ver2010_07_31</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Teleost Anatomy Ontology (TAO) vernull</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Teleost anatomy and development (TAO) ver1.158</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Units of measurement (UO) vernull</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bioportal mappings to Zebrafish anatomy and development (ZFA) verunknown</rdfs:comment>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Catherine Leroy</efo:creator>
-        <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Copyright [2014] EMBL - European Bioinformatics Institute 
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the 
-License. </dc:rights>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drashtti Vasant</efo:creator>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ele Holloway</efo:creator>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emma Kate Hastings</efo:creator>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helen Parkinson</efo:creator>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Malone</efo:creator>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jon Ison</efo:creator>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mappings to Plant structure (PO)</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mappings: CRISP Thesaurus Version 2.5.2.0</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mappings: The Jackson Lab</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mappings:The Arabidopsis Information Resource (TAIR)</rdfs:comment>
-        <efo:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tomasz Adamusiak</efo:creator>
-        <terms:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">www.apache.org/licenses/LICENSE-2.0</terms:license>
-        <efo:creator>Simon Jupp</efo:creator>
-        <efo:creator>Eleanor Williams</efo:creator>
-        <rdfs:comment>Ontology containing axioms that describe relationships between orphanet disease ontology classes and efo classes.</rdfs:comment>
-        <efo:creator>Sirarat Sarntivijai</efo:creator>
-        <efo:creator>Dani Welter</efo:creator>
-        <efo:creator>Natalja Kurbatova</efo:creator>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/geno.owl">
         <rdfs:comment>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 

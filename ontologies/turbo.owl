@@ -23,7 +23,6 @@
         <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obo_ontofoxturbo_obib_ontodog.owl"/>
         <dc:title>The TURBO application ontology</dc:title>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
-        <rdfs:comment>flop</rdfs:comment>
         <dc:contributor>Chris Stoeckert</dc:contributor>
         <dc:license></dc:license>
         <obo:IAO_0000232>Why do some terms appear in Karma as their labels and some appear as their URIs?</obo:IAO_0000232>
@@ -1641,6 +1640,19 @@ the value ?drnv of a diagnosis code registry denoter ?dcrn (turbo:DiagCodeRegitr
     
 
 
+    <!-- http://transformunify.org/ontologies/TURBO_0007609 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007609">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-22T19:16:25Z</dc:date>
+        <rdfs:label>shortcut allele info to biobank encounter CRID registry</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
@@ -1871,6 +1883,20 @@ the value ?drnv of a diagnosis code registry denoter ?dcrn (turbo:DiagCodeRegitr
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035946 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035946">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <obo:IAO_0000118>birth</obo:IAO_0000118>
+    </rdf:Description>
     
 
 
@@ -3269,7 +3295,7 @@ Placeholder for a retired adipose tissue instance</rdfs:comment>
         <rdfs:label>+/+ zygosity value specification</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -3296,7 +3322,7 @@ Placeholder for a retired adipose tissue instance</rdfs:comment>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
@@ -3306,18 +3332,18 @@ Placeholder for a retired adipose tissue instance</rdfs:comment>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
