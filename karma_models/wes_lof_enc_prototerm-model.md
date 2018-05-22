@@ -203,7 +203,7 @@ return "http://transformunify.org/ontologies/TURBO_0000451"
 #### _dataset_uri_
 From column: _ensgene_
 ``` python
-return("http://transformunify.org/dataset/UUID_GOES_HERE")
+return("http://transformunify.org/dataset/wes_lof_enc_prototerm")
 ```
 
 #### _dataset_title_
@@ -257,14 +257,15 @@ return("eve.UPENN_Freeze_One.L2.M3.lofMatrix.txt")
 ## Links
 | From | Property | To |
 |  --- | -------- | ---|
+| `obo:CHEBI_169911` | `obo:BFO_0000050` | `obo:OBI_00014791`|
 | `obo:CHEBI_169911` | `obo:BFO_0000050` | `ontologies:TURBO_00005021`|
 | `obo:OBI_00002571` | `obo:OBI_0000293` | `obo:OBI_00014791`|
 | `obo:OBI_00002571` | `obo:OBI_0000299` | `obo:OBI_00010511`|
+| `obo:OBI_00013521` | `obo:BFO_0000050` | `obo:IAO_00001001`|
 | `obo:OBI_00013521` | `obo:OBI_0001938` | `ontologies:TURBO_00005712`|
 | `obo:OBI_00013521` | `obo:OBI_0001938` | `ontologies:TURBO_00005711`|
 | `obo:OBI_00013521` | `obo:IAO_0000136` | `obo:CHEBI_169911`|
 | `obo:OBI_00013521` | `obo:IAO_0000142` | `obo:PR_0000000011`|
-| `obo:OBI_00013521` | `obo:BFO_0000050` | `obo:IAO_00001001`|
 | `obo:OBI_00021181` | `obo:OBI_0000293` | `obo:OBI_00010511`|
 | `obo:OBI_00021181` | `obo:OBI_0000299` | `obo:OBI_00015731`|
 | `obo:OBI_02000001` | `obo:OBI_0000299` | `obo:OBI_00013521`|
@@ -274,8 +275,8 @@ return("eve.UPENN_Freeze_One.L2.M3.lofMatrix.txt")
 | `obo:OBI_06000051` | `obo:OBI_0000299` | `obo:OBI_00014791`|
 | `ontologies:TURBO_00005021` | `obo:RO_0000056` | `ontologies:TURBO_00005271`|
 | `ontologies:TURBO_00005331` | `obo:IAO_0000219` | `ontologies:TURBO_00005271`|
-| `ontologies:TURBO_00005341` | `obo:BFO_0000050` | `ontologies:TURBO_00005331`|
 | `ontologies:TURBO_00005341` | `obo:BFO_0000050` | `obo:IAO_00001001`|
+| `ontologies:TURBO_00005341` | `obo:BFO_0000050` | `ontologies:TURBO_00005331`|
 | `ontologies:TURBO_00005351` | `obo:BFO_0000050` | `ontologies:TURBO_00005331`|
 | `ontologies:TURBO_00005351` | `obo:IAO_0000219` | `ontologies:TURBO_00005431`|
 | `ontologies:TURBO_00005661` | `obo:IAO_0000219` | `obo:OBI_00014791`|
