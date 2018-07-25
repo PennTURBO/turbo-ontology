@@ -685,7 +685,7 @@ For example, if a patient identifier and an encounter identifier were found in t
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:54:45Z</dc:date>
-        <rdfs:label>shortcut biobank consenter to dataset title</rdfs:label>
+        <rdfs:label>shortcut biobank consenter to data set title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1335,7 +1335,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:21:07Z</dc:date>
-        <rdfs:label>shortcut biobank encounter CRID to dataset title</rdfs:label>
+        <rdfs:label>shortcut biobank encounter CRID to data set title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1431,7 +1431,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:22:32Z</dc:date>
-        <rdfs:label>shortcut health care encounter CRID to dataset title</rdfs:label>
+        <rdfs:label>shortcut health care encounter CRID to data set title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1509,7 +1509,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:29:11Z</dc:date>
-        <rdfs:label>shortcut biobank consenter CRID to dataset title</rdfs:label>
+        <rdfs:label>shortcut biobank consenter CRID to data set title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1624,12 +1624,22 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
     
 
 
+    <!-- http://transformunify.org/ontologies/TURBO_0004604 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0004604">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0004600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut diagnosis to data set title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://transformunify.org/ontologies/TURBO_0005600 -->
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0005600">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut prescription to data</obo:IAO_0000111>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
@@ -1651,6 +1661,17 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:27:53Z</dc:date>
         <rdfs:label>shortcut prescription to prescription CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0005604 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0005604">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0005600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut prescription to data set title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1871,7 +1892,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-17T11:23:59Z</dc:date>
-        <rdfs:label>shortcut allele info to dataset title</rdfs:label>
+        <rdfs:label>shortcut allele info to data set title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1888,6 +1909,94 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-22T19:16:25Z</dc:date>
         <rdfs:label>shortcut allele info to biobank encounter CRID registry</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007700 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007700">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:label>shortcut racial identity datum to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007701 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007701">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007700"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut racial identity datum to biobank consenter CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007702 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007702">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007700"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut racial identity datum to biobank consenter registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007703 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007703">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007700"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>shortcut racial identity datum to biobank consenter identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007704 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007704">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007700"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut racial identity datum to racial identity CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007705 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007705">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007700"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut racial identity datum to racial identity registry denoter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007706 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007706">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007700"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>shortcut racial identity datum to racial identity registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0007707 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007707">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007700"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>have not yet decided if this is necessary... if there is a white racial identity datum about me, is it necessary to say that that datum is true?</rdfs:comment>
+        <rdfs:label>shortcut racial identity datum to boolean</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2151,6 +2260,42 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
     
 
 
+    <!-- http://transformunify.org/ontologies/TURBO_00001501 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001501">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000115>a data item that denotes a centrally registered identifier registry</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:26:46Z</dc:date>
+        <rdfs:label>registry denoter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_00001502 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001502">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <obo:IAO_0000115>a centrally registered identifier registry that serves as a controlled vocabulary for racial identity datums</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:30:25Z</dc:date>
+        <rdfs:label>racial identity registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_00001503 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001503">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <obo:IAO_0000115>the (string value) symbol part of a racial identity CRID</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:34:36Z</dc:date>
+        <rdfs:label>racial identity CRID symbol</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://transformunify.org/ontologies/TURBO_0000502 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000502">
@@ -2242,7 +2387,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:08:01Z</dc:date>
-        <rdfs:label>biobank consenter symbol</rdfs:label>
+        <rdfs:label>biobank consenter CRID symbol</rdfs:label>
     </owl:Class>
     
 
@@ -2256,7 +2401,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
                 <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
         <obo:IAO_0000111>biobank consenter registry denoter</obo:IAO_0000111>
         <obo:IAO_0000115>a (string) denoter that denotes a biobank consenter identifier registry instance</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -2322,7 +2467,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:45:42Z</dc:date>
-        <rdfs:label>health care encounter symbol</rdfs:label>
+        <rdfs:label>health care encounter CRID symbol</rdfs:label>
     </owl:Class>
     
 
@@ -2330,7 +2475,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
     <!-- http://transformunify.org/ontologies/TURBO_0000510 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000510">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
         <obo:IAO_0000111>health care encounter registry denoter</obo:IAO_0000111>
         <obo:IAO_0000115>a (string) denoter that denotes a health care encounter identifier registry instance</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -2566,7 +2711,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:47:32Z</dc:date>
-        <rdfs:label>biobank encounter symbol</rdfs:label>
+        <rdfs:label>biobank encounter CRID symbol</rdfs:label>
     </owl:Class>
     
 
@@ -2580,7 +2725,7 @@ The output of this process could be demographic or vital statistics data items, 
                 <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
         <obo:IAO_0000111>biobank encounter registry denoter</obo:IAO_0000111>
         <obo:IAO_0000115>a (string) denoter that denotes a biobank encounter identifier registry instance</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -2628,7 +2773,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>might be a billing or diagnosis code... something like an ICD9 or ICD10 code</rdfs:comment>
-        <rdfs:label>diagnosis code symbol</rdfs:label>
+        <rdfs:label>diagnosis code CRID symbol</rdfs:label>
     </owl:Class>
     
 
@@ -2636,7 +2781,7 @@ The output of this process could be demographic or vital statistics data items, 
     <!-- http://transformunify.org/ontologies/TURBO_0000555 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000555">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
         <obo:IAO_0000111>diagnosis code registry denoter</obo:IAO_0000111>
         <obo:IAO_0000115>A proper name string that denotes a diagnosis code/billing code registry such as ICD-9, having an URI like &lt;http://purl.obolibrary.org/obo/NCIT_C71890&gt;</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -2691,7 +2836,7 @@ The output of this process could be demographic or vital statistics data items, 
     <!-- http://transformunify.org/ontologies/TURBO_0000563 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000563">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
         <obo:IAO_0000111>prescription registry denoter</obo:IAO_0000111>
         <obo:IAO_0000115>a (string) denoter that denotes a prescription registry instance</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -2747,7 +2892,7 @@ The output of this process could be demographic or vital statistics data items, 
     <!-- http://transformunify.org/ontologies/TURBO_0000567 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000567">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
         <obo:IAO_0000111>genotype identifier registry denoter</obo:IAO_0000111>
         <obo:IAO_0000115>a (string) denoter that denotes a genotype identifier registry instance</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -3123,6 +3268,29 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:26:31Z</dc:date>
         <rdfs:label>ENCOUNTER_PACK_ID biobank encounter registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001504 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001504">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <obo:IAO_0000115>a centrally registered identifier that denotes a racial identity</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:37:14Z</dc:date>
+        <rdfs:label>racial identity CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001505 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001505">
+        <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:39:42Z</dc:date>
+        <rdfs:label>racial identity registry denoter</rdfs:label>
     </owl:Class>
     
 
@@ -3743,6 +3911,24 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:21Z</dc:date>
         <rdfs:label>+/+ zygosity value specification</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001506 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0001506">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_00001502"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:55:09Z</dc:date>
+        <rdfs:comment>Requires more discussion... what are the racial identity authorities that offer values that are used in our inpout data?</rdfs:comment>
+        <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
@@ -3756,40 +3942,16 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -3807,7 +3969,25 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     
 
