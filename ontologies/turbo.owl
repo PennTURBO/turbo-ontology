@@ -23,19 +23,13 @@
         <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obib_ontodog.owl"/>
         <dc:title>The TURBO application ontology</dc:title>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
-        <rdfs:comment>flop</rdfs:comment>
         <dc:contributor>Chris Stoeckert</dc:contributor>
         <dc:license></dc:license>
-        <obo:IAO_0000232>Why do some terms appear in Karma as their labels and some appear as their URIs?</obo:IAO_0000232>
         <dc:contributor>Mark A. Miller</dc:contributor>
-        <rdfs:comment>used ontodog to extract a base ontology view from OBI
-used ontofox to get additional classes and properties from other OBO foundry ontologies
-
-no longer attempting to import RDF and RDFS.  We have created some similar terms in the turbo namespace, like turbo:Statement.  It&apos;s not straightforward to use rdfs:label, rdf:type and rdf:Statement, etc. in Protege, Karma or LodLive... GraphDB visual exploration preferable now anyway?
-
-HISTORICAL NOTES BELOW, MAY NOT BE ACCURATE ANYMORE:
-the property &quot;denotes&quot; was extracted from OBIB, and the comments annotation has been removed because of a conflict with ISI&apos;s Karma software</rdfs:comment>
+        <rdfs:comment>used ontodog to extract a base ontology view from OBIB
+used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobank data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
+        <obo:IAO_0000232>Why do some terms appear in Karma as nodes labeled their rdfs:labels while others  appear as nodes labeled their URIs?</obo:IAO_0000232>
     </owl:Ontology>
     
 
@@ -2321,7 +2315,9 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
 
     <!-- http://purl.obolibrary.org/obo/PDRO_0000024 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PDRO_0000024"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PDRO_0000024">
+        <rdfs:comment>There are prescription &quot;order names&quot; like &quot;wheelchair&quot; in PDS and upstream sources that clearly do not denote a drug.  So it may be more appropriator for Drivetrain to instantiate PDRO_0000001, &apos;health care prescription&apos;</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -2912,10 +2908,11 @@ The output of this process could be demographic or vital statistics data items, 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000561">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
         <obo:IAO_0000111>prescription CRID</obo:IAO_0000111>
-        <obo:IAO_0000115>a centrally registered identifier that denotes a (drug?) prescription</obo:IAO_0000115>
+        <obo:IAO_0000115>a centrally registered identifier that denotes a prescription</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:30:44Z</dc:date>
+        <rdfs:comment>at least for Penn Medicine Biobank data, it may be more appropriate to denote prescriptions (And possibly other classes) with a (yet-to-be modeled) prescription primary key</rdfs:comment>
         <rdfs:label>prescription CRID</rdfs:label>
     </owl:Class>
     
@@ -2954,7 +2951,7 @@ The output of this process could be demographic or vital statistics data items, 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000564">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
         <obo:IAO_0000111>prescription registry</obo:IAO_0000111>
-        <obo:IAO_0000115>a dataset of identifiers (specifically the symbol parts) that denote  (drug?) prescriptions</obo:IAO_0000115>
+        <obo:IAO_0000115>a dataset of identifiers (specifically the symbol parts) that denote prescriptions</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:37:11Z</dc:date>
@@ -4049,18 +4046,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -4071,6 +4056,18 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
