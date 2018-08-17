@@ -19,12 +19,11 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://transformunify.org/ontologies/turbo.owl">
-        <owl:imports rdf:resource="http://transformunify.org/turbo_ontofox.owl"/>
-        <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obib_ontodog.owl"/>
         <dc:title>The TURBO application ontology</dc:title>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
         <dc:contributor>Chris Stoeckert</dc:contributor>
         <dc:license></dc:license>
+        <rdfs:comment>placeholder</rdfs:comment>
         <dc:contributor>Mark A. Miller</dc:contributor>
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
@@ -2586,6 +2585,18 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000000 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000000">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
+        <obo:IAO_0000115>a &apos;has matching CV term&apos;, where the matching term is drawn from any of the versions and variants of the International Classification of Diseases.  The particular ICD falvor can be communicated with a &apos;has namespace&apos; (TURBO_0000703) triple taking an object like  &lt;http://purl.obolibrary.org/obo/NCIT_C71890&gt; for ICD-9 or &lt;http://purl.obolibrary.org/obo/NCIT_C128691&gt; for ICD-10-CM</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-08-17T13:50:36Z</dc:date>
+        <rdfs:label>has matching ICD term</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000124 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000124">
@@ -3537,6 +3548,58 @@ For example, if a patient identifier and an encounter identifier were found in t
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-20T14:07:39Z</dc:date>
         <rdfs:comment>the TURBO team referent tracks births (for which each person only has one) rather than birth dates</rdfs:comment>
         <rdfs:label>born at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000304 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000304">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
+        <obo:IAO_0000115>Given that D is a data item bearing some textual value L, T is a class or instance term from some ontology or RDF linked data set, and H is this &apos;has matching CV term&apos; property,
+
+D H T
+
+means that L was drawn from some controlled vocabulary containing term T, which has the same meaning as L.
+
+As a term, T will be represented by a URI, whereas L is a datatype literal (which was likely instantiated from a relational database or other non-semantic resource.)
+
+For example, if D is an instance of &apos;gene&apos;  (http://purl.obolibrary.org/obo/OGG_0000000002) with literal value &quot;ENSG00000081237&quot;, &lt;https://www.uniprot.org/uniprot/P08575&gt; may be selected at T.  In this case, the author of the triple is asserting that the value &quot;ENSG00000081237&quot; was drawn from the terms provided in Ensembl&apos;s RDF model.  That namespace can be communicated with a &apos;has namespace&apos; (TURBO_0000703) triple.
+
+D a &lt;http://purl.obolibrary.org/obo/OGG_0000000002&gt;
+D &lt;http://transformunify.org/ontologies/TURBO_0006512&gt; &quot;ENSG00000081237&quot;
+D &lt;http://transformunify.org/ontologies/TURBO_0000304&gt; &lt; &lt;http://rdf.ebi.ac.uk/resource/ensembl/ENSG00000000003&gt;
+D &lt;http://transformunify.org/ontologies/TURBO_0000703&gt; &lt;http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45763&gt;
+
+This property is intended to enable rapid re-representation from literal values to URI-bearing terms, so T may come from a vocabulary with weak semantics.  Statements about reality could be added in the future, like
+
+D &lt;http://purl.obolibrary.org/obo/IAO_0000142&gt; &lt;http://purl.obolibrary.org/obo/HGNC_9667&gt;
+
+Which says that allele information D mentions a particular gene modeled in the Protein Ontology.  The &apos;mentions&apos; property has stronger semantics than this &apos;has matching CV term&apos; and the Protein Ontology has a stronger commitment to reality than the Uniprot RDF model.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>has matching controlled vocabulary term</obo:IAO_0000118>
+        <rdfs:label>has matching CV term</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0000703"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000305 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000305">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
+        <rdfs:label>has matching Ensembl term</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000703 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000703">
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>This property can be used along with &apos;has matching CV term&apos; or any of its sub-properties to indicate the controlled vocabulary form which a matching terms was selected.</obo:IAO_0000117>
+        <rdfs:label>has namespace</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
     </owl:ObjectProperty>
     
 
@@ -4791,6 +4854,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <obo:IAO_0000233 rdf:resource="https://github.com/obi-ontology/obi/issues/818"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-12T14:00:00-05:00</dc:date>
+        <rdfs:comment>analogous to has specified value, but not limited to numerical ranges.  links a datum to a literal.</rdfs:comment>
         <rdfs:comment>the creation of this data property was motivated by the observation that there was no general-purpose data property in any OBO foundry ontology that took a string range.  Previous label was &apos;literal value of any owl:Thing&apos;</rdfs:comment>
         <rdfs:label xml:lang="en">has literal value</rdfs:label>
     </owl:DatatypeProperty>
@@ -4819,9 +4883,9 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>has textual value</obo:IAO_0000111>
+        <obo:IAO_0000115>has a literal value that can be mapped to an ontology term</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
-        <rdfs:comment>analogous to has specified value, but not limited to numerical ranges.  links a datum to a literal.</rdfs:comment>
         <rdfs:label>has textual value</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -14211,6 +14275,15 @@ Elle indique :
     
 
 
+    <!-- http://transformunify.org/ontologies/TURBO_00001511 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001511">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <rdfs:label>gene identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://transformunify.org/ontologies/TURBO_0000502 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000502">
@@ -14322,11 +14395,11 @@ This concept of a consenter is currently under discussion by ICO representatives
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
         <obo:IAO_0000111>biobank consenter registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>a (string) denoter that denotes a biobank consenter identifier registry instance</obo:IAO_0000115>
+        <obo:IAO_0000115>a (string) denoter that denotes a psatient identifier registry instance</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:16:34Z</dc:date>
-        <rdfs:label>biobank consenter registry denoter</rdfs:label>
+        <rdfs:label>patient registry denoter</rdfs:label>
     </owl:Class>
     
 
@@ -14336,11 +14409,11 @@ This concept of a consenter is currently under discussion by ICO representatives
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000506">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
         <obo:IAO_0000111>biobank consenter identifier registry</obo:IAO_0000111>
-        <obo:IAO_0000115>a dataset of identifiers (specifically the symbol parts) that denote biobank consenters</obo:IAO_0000115>
+        <obo:IAO_0000115>a dataset of identifiers (specifically the symbol parts) that denote people with patient roles.  These may be biobank consenters whose data appears in a health care system&apos;s (electronic) medical records.</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:15:30Z</dc:date>
-        <rdfs:label>biobank consenter identifier registry</rdfs:label>
+        <rdfs:label>patient identifier registry</rdfs:label>
     </owl:Class>
     
 
@@ -15615,6 +15688,10 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71890">
         <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474"/>
         <Thesaurus:code>C71890</Thesaurus:code>
+        <obo:IAO_0000118>ICD 9</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD-9</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD9</obo:IAO_0000118>
+        <rdfs:comment>hard-imported from NCIT into the base turbo.owl file</rdfs:comment>
         <rdfs:label>International Classification of Diseases, Ninth Revision</rdfs:label>
     </owl:NamedIndividual>
     
@@ -15625,6 +15702,10 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     <owl:NamedIndividual rdf:about="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71892">
         <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474"/>
         <Thesaurus:code>C71892</Thesaurus:code>
+        <obo:IAO_0000118>ICD 10</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD-10</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD10</obo:IAO_0000118>
+        <rdfs:comment>hard-imported from NCIT into the base turbo.owl file</rdfs:comment>
         <rdfs:label>International Classification of Diseases, Tenth Revision</rdfs:label>
     </owl:NamedIndividual>
     
@@ -15827,6 +15908,45 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C128691 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C128691">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474"/>
+        <obo:IAO_0000115>An extension of the ICD-10 created by the U.S. National Center for Health Statistics so that the system could be used to capture more morbidity data. This extension included a section of procedure codes. [def-source: NCI]</obo:IAO_0000115>
+        <obo:IAO_0000118>ICD-10-CM</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD-10CM</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD10CM</obo:IAO_0000118>
+        <rdfs:comment>hard-imported from NCIT into the base turbo.owl file</rdfs:comment>
+        <rdfs:label>International Classification of Diseases, Tenth Revision, Clinical Modification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C45763 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C45763">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_00001511"/>
+        <obo:IAO_0000115>Ensembl is a joint project between EMBL-EBI and the Sanger Institute to develop a software system which produces and maintains automatic annotation on selected eukaryotic genomes. Ensembl is primarily funded by the Wellcome Trust. The Ensembl Genome Browser can be accessed through www.ensembl.org.</obo:IAO_0000115>
+        <rdfs:comment>hard-imported from NCIT into the base turbo.owl file</rdfs:comment>
+        <rdfs:label>Ensembl</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C71891 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C71891">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474"/>
+        <obo:IAO_0000115>An extension of the ICD-9 created by the U.S. National Center for Health Statistics so that the system could be used to capture more morbidity data. This extension included a section of procedure codes. [def-source: NCI]</obo:IAO_0000115>
+        <obo:IAO_0000118>ICD-9-CM</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD-9CM</obo:IAO_0000118>
+        <obo:IAO_0000118>ICD9CM</obo:IAO_0000118>
+        <rdfs:comment>hard-imported from NCIT into the base turbo.owl file</rdfs:comment>
+        <rdfs:label>International Classification of Diseases, Ninth Revision, Clinical Modification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0001901 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/RO_0001901">
@@ -15971,7 +16091,7 @@ This interpretation is *not* the same as an at-all-times relation
         <dc:contributor>Heather J Williams</dc:contributor>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:41:32Z</dc:date>
         <rdfs:comment>EMPI - Enterprise Master Patient Identifier - PDS generated internal patient identifier. Should be unique to a person (every person should have at most one EMPI, every EMPI belongs to only one person). This identifier is stable in that it should not change over time, however it is not complete in that not all patients are assigned an EMPI.</rdfs:comment>
-        <rdfs:label>PDS EMPI biobank consenter identifier registry</rdfs:label>
+        <rdfs:label>PDS EMPI patient identifier registry</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -15986,7 +16106,7 @@ This interpretation is *not* the same as an at-all-times relation
         <dc:contributor>Heather J Williams</dc:contributor>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:13:50Z</dc:date>
         <rdfs:comment>PDS generated internal patient identifier. Should be unique to a person (every PK_PATIENT_ID belongs to only one person).PK_PATIENT_ID is complete in that all patients do have PK_PATIENT_IDs, however it is not stable in that the value assigned to a person will change over time. Specifically, PK_PATIENT_IDs are regenerated over the weekend, so PK_PATIENT_IDs can be used to query PDS within the same work week to get consistent results, but particular PK_PATIENT_IDs from the previous week should not be used to requery PDS.</rdfs:comment>
-        <rdfs:label>PDS PK_PATIENT_ID biobank consenter identifier registry</rdfs:label>
+        <rdfs:label>PDS PK_PATIENT_ID patient identifier registry</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -15996,11 +16116,12 @@ This interpretation is *not* the same as an at-all-times relation
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000410">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
         <obo:IAO_0000111>HUP MRN biobank consenter identifier registry</obo:IAO_0000111>
+        <obo:IAO_0000115>the registry of MRNs from the Hospital University of Pennsylvania</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:contributor>Heather J Williams</dc:contributor>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:46:20Z</dc:date>
-        <rdfs:label>HUP MRN biobank consenter identifier registry</rdfs:label>
+        <rdfs:label>HUP MRN patient identifier registry</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -16010,6 +16131,7 @@ This interpretation is *not* the same as an at-all-times relation
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000411">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
         <obo:IAO_0000111>PMC MRN biobank consenter identifier registry</obo:IAO_0000111>
+        <obo:IAO_0000115>the registry of MRNs from the Penn Presbyterian Medical Center</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:contributor>Heather J Williams</dc:contributor>
@@ -16024,6 +16146,7 @@ This interpretation is *not* the same as an at-all-times relation
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000412">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
         <obo:IAO_0000111>PAH MRN biobank consenter identifier registry</obo:IAO_0000111>
+        <obo:IAO_0000115>the registry of MRNs from the Pennsylvania Hospital</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:contributor>Heather J Williams</dc:contributor>
@@ -16038,11 +16161,12 @@ This interpretation is *not* the same as an at-all-times relation
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000413">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0001500"/>
         <obo:IAO_0000111>CCH MRN biobank consenter identifier registry</obo:IAO_0000111>
+        <obo:IAO_0000115>the registry of MRNs from the Chester County Hosptial</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:contributor>Heather J Williams</dc:contributor>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:46:20Z</dc:date>
-        <rdfs:label>CCH MRN biobank consenter identifier registry</rdfs:label>
+        <rdfs:label>CCH MRN patient identifier registry</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -16252,22 +16376,7 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -16276,6 +16385,18 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -16285,13 +16406,16 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
