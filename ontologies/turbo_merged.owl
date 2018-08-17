@@ -2585,18 +2585,6 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000000 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000000">
-        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
-        <obo:IAO_0000115>a &apos;has matching CV term&apos;, where the matching term is drawn from any of the versions and variants of the International Classification of Diseases.  The particular ICD falvor can be communicated with a &apos;has namespace&apos; (TURBO_0000703) triple taking an object like  &lt;http://purl.obolibrary.org/obo/NCIT_C71890&gt; for ICD-9 or &lt;http://purl.obolibrary.org/obo/NCIT_C128691&gt; for ICD-10-CM</obo:IAO_0000115>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</dc:creator>
-        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-08-17T13:50:36Z</dc:date>
-        <rdfs:label>has matching ICD term</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000124 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000124">
@@ -3568,7 +3556,7 @@ For example, if D is an instance of &apos;gene&apos;  (http://purl.obolibrary.or
 
 D a &lt;http://purl.obolibrary.org/obo/OGG_0000000002&gt;
 D &lt;http://transformunify.org/ontologies/TURBO_0006512&gt; &quot;ENSG00000081237&quot;
-D &lt;http://transformunify.org/ontologies/TURBO_0000304&gt; &lt; &lt;http://rdf.ebi.ac.uk/resource/ensembl/ENSG00000000003&gt;
+D &lt;http://transformunify.org/ontologies/TURBO_0000304&gt; &lt;http://rdf.ebi.ac.uk/resource/ensembl/ENSG00000000003&gt;
 D &lt;http://transformunify.org/ontologies/TURBO_0000703&gt; &lt;http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45763&gt;
 
 This property is intended to enable rapid re-representation from literal values to URI-bearing terms, so T may come from a vocabulary with weak semantics.  Statements about reality could be added in the future, like
@@ -3589,6 +3577,30 @@ Which says that allele information D mentions a particular gene modeled in the P
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000305">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
         <rdfs:label>has matching Ensembl term</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000306 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000306">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
+        <obo:IAO_0000115>a &apos;has matching CV term&apos;, where the matching term is drawn from any of the versions and variants of the International Classification of Diseases.  The particular ICD falvor can be communicated with a &apos;has namespace&apos; (TURBO_0000703) triple taking an object like  &lt;http://purl.obolibrary.org/obo/NCIT_C71890&gt; for ICD-9 or &lt;http://purl.obolibrary.org/obo/NCIT_C128691&gt; for ICD-10-CM</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-08-17T13:50:36Z</dc:date>
+        <rdfs:label>has matching ICD term</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000307 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000307">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
+        <rdfs:label>has  matching RxNORM term</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000001"/>
     </owl:ObjectProperty>
     
 
@@ -16376,7 +16388,7 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -16385,12 +16397,36 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -16398,30 +16434,6 @@ This interpretation is *not* the same as an at-all-times relation
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
