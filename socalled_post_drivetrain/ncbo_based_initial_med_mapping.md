@@ -6,11 +6,14 @@ The ultimate goal of this approach is to identify one high-confidence term from 
 
 The methods described here do not currently (late August 2018) complete that task, but suggestions are available for completing the last steps.  This method returns matching terms from any ontology in the BioPortal.  Those are frequently from RxNorm, and when they're not, the can frequently be mapped to RxNorm with a second API call.  Since some med_standard entries are already annotated with RxNorm values, tests are in place to determine whether APE-returned RxNorm values are identical, subClasses of the same parent class, or related in some other way by a single relationship.  Those facts could be taken as labels for training a machine learning algorithm to discriminate  correct string-to-term mappings.  It's unclear whether these techniques will work for non-medication orders like "wheelchair".
 
+Unless we specifically purge triples about non-drug prescriptions, the expanded patterns should be instantiating health care prescriptions instead of drug prescriptions (PDRO_0000024)
+
 Since DRON terms have RxNorm values, it won't be difficult to map most of the orders to DRON and then on to ChEBI.  This will mostly be limited by the age of the most recent DRON ("new" prescriptions being more likely to fall through the cracks) and by the fact that DRON created its own terms for modeling some active pharmaceutical ingredients (rosuvastatin) when a term for the same thing already existed in ChEBI.
 
 Additional benefit:  with this workflow, incremental near-real-time updates will be available for all steps beside a yet-to-be-built ML filter for valid/invalid search results.
 
 This can easily be adapted to map tissues for tumor grading & staging, etc.
+
 
 ## Ontologies and linked data sets to be loaded up front
 
@@ -36,13 +39,18 @@ print(ontology.summary[['submissionId']])
 
 http://data.bioontology.org/ontologies/RXNORM/submissions/<latest_submission>/download?apikey=<apikey_from_properties_file> into https://bioportal.bioontology.org/ontologies/RXNORM
 
-DRONs
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-chebi.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-hand.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-ingredient.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-rxnorm.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-upper.owl
+- ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi_lite.owl.gz
 
-ChEBI
+**probably not essential**
+*https://bitbucket.org/uamsdbmi/dron/raw/master/dron-ndc.owl
+https://bitbucket.org/uamsdbmi/dron/raw/master/dron-pro.owl
 
-others for non-drug prescriptions
-
-instantiate health care prescription
+Add other ontologies to account for the non-drug prescriptions?
 
 ## Workflow
 
@@ -63,7 +71,7 @@ instantiate health care prescription
     - The example code in https://github.com/PennTURBO/Turbo-Ontology/blob/master/utility_python/get_bioportal_rxnorm_mappings.py dumps the mappings to STDOUT with tab as the delimiter.  (It takes a minute or so before the first batch comes out.)  
     - Example OntoRefine graph:  http://example.com/resource/rxnorm_bioportal_mappings  
     - Example OntoRefine SPARQL: https://github.com/PennTURBO/Turbo-Ontology/blob/master/socalled_post_drivetrain/rxnorm_bioportal_mappings_ontorefine.md
-1. Create triples that say what RxNorm value is available via the search, whether it was a direct search result, or whether it was found by mapping a non-RxNorm term to RxNorm.  If no RxNorm term is available by either of those routes, use the URI for the direct search result.
+1. Create triples that say what RxNorm value is available via the search, whether it was a direct search result, or whether it was found with subsequent mapping a non-RxNorm term to RxNorm.  If no RxNorm term is available by either of those routes, use the URI for the direct search result.
     - Example **non**-OntoRefine SPARQL: https://github.com/PennTURBO/Turbo-Ontology/blob/master/socalled_post_drivetrain/RxnIfAvailable.md
     - Resulting graph: http://example.com/resource/RxnIfAvailable
 1. Insert some more triples regarding the acceptability of search results, in the cases where PDS already had a RxNorm value.  These could be used for training a ML filter.
