@@ -24,8 +24,8 @@
         <dc:title>The TURBO application ontology</dc:title>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
         <dc:contributor>Chris Stoeckert</dc:contributor>
-        <dc:license></dc:license>
         <rdfs:comment>placeholder</rdfs:comment>
+        <dc:license></dc:license>
         <dc:contributor>Mark A. Miller</dc:contributor>
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
@@ -484,6 +484,12 @@ This has_mnemonic datatype property has been created to facilitate and maintain 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0001938 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001938"/>
@@ -545,6 +551,16 @@ This has_mnemonic datatype property has been created to facilitate and maintain 
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002229 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002229">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    </rdf:Description>
     
 
 
@@ -2403,6 +2419,12 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0600002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600002"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0600020 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600020">
@@ -2426,6 +2448,12 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
     <!-- http://purl.obolibrary.org/obo/OMIABIS_0000010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OMIABIS_0000010"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMRSE_00000098 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
     
 
 
@@ -3783,6 +3811,41 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     
 
 
+    <!-- http://transformunify.org/ontologies/TURBO_0001912 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001912">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600002"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000115>a data item that is the ouput of a tumor grading process.  may be part of a tumor grading report.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <rdfs:label>tumor grading datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001913 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001913">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <rdfs:label>tumor grading start</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0001914 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001914">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <rdfs:label>tumor grading end</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://transformunify.org/ontologies/TURBO_0002500 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0002500">
@@ -4210,21 +4273,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -4237,19 +4285,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -4259,12 +4295,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -4274,6 +4304,39 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     
 
