@@ -10,6 +10,8 @@ Since DRON terms have RxNorm values, it won't be difficult to map most of the or
 
 Additional benefit:  with this workflow, incremental near-real-time updates will be available for all steps beside a yet-to-be-built ML filter for valid/invalid search results.
 
+This can easily be adapted to map tissues for tumor grading & staging, etc.
+
 ## Ontologies and linked data sets to be loaded up front
 
 (See repo med_orders_ncbo_mappings.  In general, give the graph the same name as the source file.  Obtaining RDF files from the BioPortal requires constructing a URI with the latest submission and an apikey, which has to be requested at https://bioportal.bioontology.org/help#Getting_an_API_key)
@@ -66,12 +68,14 @@ instantiate health care prescription
     - Resulting graph: http://example.com/resource/RxnIfAvailable
 1. Insert some more triples regarding the acceptability of search results, in the cases where PDS already had a RxNorm value.  These could be used for training a ML filter.
     - does the RxNorm term from the search result exactly match the PDS-provided RxNorm value, including the cases where the additional mapping was required?
+        - http://www.itmat.upenn.edu/biobank/knownToMatchedSameTerm
+        - https://github.com/PennTURBO/Turbo-Ontology/blob/master/socalled_post_drivetrain/knownToMatchedSameTerm.md
     - do the search-result RxNorm term and the PDS RxNorm value have a common parent?
+        - http://www.itmat.upenn.edu/biobank/knownToMatchedSharedType
+        - https://github.com/PennTURBO/Turbo-Ontology/blob/master/socalled_post_drivetrain/knownToMatchedSharedType.md
     - is there some other direct relationship between the two RxNorm terms?
-1. Now do some queries!
-2. http://www.itmat.upenn.edu/biobank/knownToMatchedSameTerm
-3. 
-
-
-
+        - http://www.itmat.upenn.edu/biobank/knownToMatchedRxnLinkingPred
+        - https://github.com/PennTURBO/Turbo-Ontology/blob/master/socalled_post_drivetrain/knownToMatchedRxnLinkingPred.md
+1. Now run a query to understand the path from a med_standard full_name to a matched term, along with some quality assessments
+    - https://github.com/PennTURBO/Turbo-Ontology/blob/master/socalled_post_drivetrain/explore_med_standard_full_name_search_results.md
 
