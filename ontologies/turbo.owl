@@ -545,6 +545,12 @@ This has_mnemonic datatype property has been created to facilitate and maintain 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002222 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002222"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002223 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002223">
@@ -556,11 +562,11 @@ This has_mnemonic datatype property has been created to facilitate and maintain 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002229 -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002229">
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002229">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
@@ -1447,7 +1453,6 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
     <!-- http://transformunify.org/ontologies/TURBO_0000670 -->
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000670">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <obo:IAO_0000111>instantiation hybrid shortcut</obo:IAO_0000111>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
@@ -2225,6 +2230,96 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
     
 
 
+    <!-- http://transformunify.org/ontologies/TURBO_0008600 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008600">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:label>shortcut tumor grading datum to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0008601 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008601">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0008600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label>shortcut tumor grading datum to grading process end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0008602 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008602">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0008600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut tumor grading datum to biobank consenter CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0008603 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008603">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0008600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut tumor grading datum to patient identifier registry text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0008604 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008604">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0008600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut tumor grading datum to tissue text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0008605 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008605">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0008600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>shortcut tumor grading datum to patient identifier registry URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0008606 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008606">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0008600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shortcut tumor grading datum to grade text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0008607 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0008607">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0008600"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>&apos;who&apos; is responsible for converting a grade text (like &quot;G3&quot;) into a URI (like http://purl.obolibrary.org/obo/OBI_0002208)?
+
+Carnival should take responsibility for converting the patient registry text (like &quot;HUP&quot;) into a URI, but some post-Drivetrain process will probably be responsible for converting tissue text into a FMA or Uberon URI.</rdfs:comment>
+        <rdfs:label>shortcut tumor grading datum to grade URI string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
@@ -2673,6 +2768,28 @@ This concept of a consenter is currently under discussion by ICO representatives
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:15:30Z</dc:date>
         <rdfs:label>patient identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0000507 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000507">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000115>a planned process that uses genetic data to determine the population or populations to which a person belongs
+
+has input or has participant: some person
+has output: genetic population background datum
+
+parts of the process:
+
+sample collection
+DNA extraction
+sequencing
+data transformation</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <rdfs:comment>genetic race determination process</rdfs:comment>
+        <rdfs:label></rdfs:label>
     </owl:Class>
     
 
@@ -4273,15 +4390,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -4298,24 +4406,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -4327,7 +4417,10 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -4337,6 +4430,30 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     
 
