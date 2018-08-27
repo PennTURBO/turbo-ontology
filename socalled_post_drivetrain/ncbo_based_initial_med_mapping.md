@@ -37,7 +37,7 @@ ontology.summary <-
 print(ontology.summary[['submissionId']])
 ```
 
-http://data.bioontology.org/ontologies/RXNORM/submissions/<latest_submission>/download?apikey=<apikey_from_properties_file> into https://bioportal.bioontology.org/ontologies/RXNORM
+Therefore, load the triples from http://data.bioontology.org/ontologies/RXNORM/submissions/<latest_submission>/download?apikey=<apikey_from_properties_file> into named graph https://bioportal.bioontology.org/ontologies/RXNORM
 
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-chebi.owl
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-hand.owl
