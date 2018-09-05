@@ -123,6 +123,31 @@ order by desc(count(distinct ?s3))
 
 
 
+full | expanded  |  count
+--  |  --  |  --
+`ANTITHYMOCYTE   GLOBULIN (RABBIT) IVPB 500ML *PERIPHERAL LINE* ` | ` antithymocyte   globulin (rabbit) injectable solution 500ml *peripheral line* ` | `  26  `
+`(Floorstock) ` | ` (floorstock) ` | `  16  `
+`ABSORBABLE   HEMOSTAT (SURGICEL) 2\  X 3\  PAD ` | ` absorbable   hemostat (surgicel) 2\  x 3\  pad ` | `  9  `
+`ABSORBABLE   HEMOSTAT (SURGICEL) 4\  X 8\  PAD ` | ` absorbable   hemostat (surgicel) 4\  x 8\  pad ` | `  8  `
+`ANTITHYMOCYTE   GLOBULIN (RABBIT) IVPB 500ML *CENTRAL LINE* ` | ` antithymocyte   globulin (rabbit) injectable solution 500ml *central line* ` | `  5  `
+`NEEDLE (DISP) 30G   X 5/16\  MISC ` | ` needle (disp) 30g   x 5/16\  misc ` | `  3  `
+`cholecalciferol_ ` | ` cholecalciferol_ ` | `  2  `
+`fexofenadine_ ` | ` fexofenadine_ ` | `  2  `
+`insulin glargine   injection * ` | ` insulin glargine   injection * ` | `  2  `
+`CURITY   1/2\ X10YD TAPE ` | ` curity   1/2\ x10yd tape ` | `  1  `
+`CURITY ABDOMINAL   8\ X10\  PADS ` | ` curity abdominal   8\ x10\  pads ` | `  1  `
+`darunavir_ ` | ` darunavir_ ` | `  1  `
+`GAUZE PADS &   DRESSINGS 4\ X4\  PADS ` | ` gauze pads &   dressings 4\ x4\  pads ` | `  1  `
+`INSULIN SYRINGE   30G X 1/2\  0.5 ML MISC ` | ` insulin syringe   30g x 1/2\  0.5 ml misc ` | `  1  `
+`INSULIN   SYRINGE-NEEDLE U-100 28G X 1/2\  1 ML MISC ` | ` insulin   syringe-needle u-100 28g x 1/2\  1 ml misc ` | `  1  `
+`LABWORK ` | ` labwork ` | `  1  `
+`NEEDLE (DISP) 23G   X 1\  MISC ` | ` needle (disp) 23g   x 1\  misc ` | `  1  `
+`SYRINGE/NEEDLE   (DISP) 20G X 1-1/2\  5 ML MISC ` | ` syringe/needle   (disp) 20g x 1-1/2\  5 ml misc ` | `  1  `
+`ZYPREXA PO ` | ` zyprexa oral ` | `  1  `
+
+
+
+
 ## Histogram of hit counts
 
 ```
