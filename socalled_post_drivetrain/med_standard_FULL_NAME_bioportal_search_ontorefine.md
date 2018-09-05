@@ -115,7 +115,7 @@ order by desc(?hit_count)
 > Showing results from 1 to 2 of 2. Query took 0.2s, moments ago.
 
 hit_count | count
-- | -
+-|-
 3 | 1
 10 | 3959
 
