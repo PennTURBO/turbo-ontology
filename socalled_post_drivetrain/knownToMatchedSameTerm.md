@@ -31,4 +31,4 @@ where {
 }
 ```
 
-> Added 13371 statements. Update took 0.4s, moments ago.
+> Added 15865 statements. Update took 0.6s, moments ago.
