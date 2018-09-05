@@ -91,6 +91,8 @@ WHERE {
 
 > Added 368 217 statements. Update took 16s, moments ago.
 
-There were 4101 uniqu orders after expansion and lower casing.  At elast one hit was retruned for 3960 .
+There were 4101 unique orders after expansion and lower-casing.  At least one hit was returned for 3960 .
 
 TO DO:  which orders didn't get any hits?
+
+Histogram of hit counts
