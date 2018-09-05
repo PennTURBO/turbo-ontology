@@ -119,17 +119,3 @@ hit_count | count
 3 | 1
 10 | 3959
 
-
-Showing results from 1 to 2 of 2. Query took 0.7s, moments ago.
-
-Filter query results
-hit_count	count
-1	
-3
-
-"1"^^xsd:integer
-
-2	
-10
-
-"3959"^^xsd:integer
