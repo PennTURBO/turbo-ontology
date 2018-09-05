@@ -96,3 +96,40 @@ There were 4101 unique orders after expansion and lower-casing.  At least one hi
 TO DO:  which orders didn't get any hits?
 
 Histogram of hit counts
+
+```
+PREFIX mydata: <http://example.com/resource/>
+select ?hit_count (count(distinct(?order)) as ?count) 
+where {
+    graph mydata:med_standard_FULL_NAME_bioportal_search
+    {
+        ?myRowId a mydata:Row ;
+                 mydata:order ?order ;
+                 mydata:hit.count ?hit_count .
+    }
+}
+group by ?hit_count 
+order by desc(?hit_count)
+```
+
+> Showing results from 1 to 2 of 2. Query took 0.2s, moments ago.
+
+hit_count | count
+- | -
+3 | 1
+10 | 3959
+
+
+Showing results from 1 to 2 of 2. Query took 0.7s, moments ago.
+
+Filter query results
+hit_count	count
+1	
+3
+
+"1"^^xsd:integer
+
+2	
+10
+
+"3959"^^xsd:integer
