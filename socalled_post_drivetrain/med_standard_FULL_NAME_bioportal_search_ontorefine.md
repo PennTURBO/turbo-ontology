@@ -91,11 +91,39 @@ WHERE {
 
 > Added 368 217 statements. Update took 16s, moments ago.
 
-There were 4101 unique orders after expansion and lower-casing.  At least one hit was returned for 3960 .
+There were 4101 unique full names in the med standard table, which became 3969 orders after expansion and lower-casing.  At least one search result/hit was returned for 3960 .
 
-TO DO:  which orders didn't get any hits?
+## Which orders didn't get any hits?
 
-Histogram of hit counts
+```
+PREFIX mydata: <http://example.com/resource/>
+select 
+?full ?expanded (count(distinct ?s3) as ?count)
+where {
+    graph <http://example.com/resource/med_standard_FULL_NAME_query_expansion>	{
+        ?s1 <http://example.com/resource/expanded.query> ?expanded ;
+            <http://example.com/resource/FULL_NAME> ?full ;
+            <http://example.com/resource/PK_MEDICATION_ID> ?medid .
+    } 
+    graph <http://example.com/resource/wes_pds_enc__med_order.csv> {
+        ?s3 <http://example.com/resource/FK_MEDICATION_ID> ?medid
+    }
+    minus {
+        graph mydata:med_standard_FULL_NAME_bioportal_search
+        {
+            ?s2 <http://example.com/resource/order> ?expanded .
+        }
+    }
+}
+group by ?full ?expanded 
+order by desc(count(distinct ?s3))
+```
+
+> Showing results from 1 to 19 of 19. Query took 0.2s, moments ago.
+
+
+
+## Histogram of hit counts
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -118,4 +146,5 @@ hit_count | count
 -|-
 3 | 1
 10 | 3959
+
 
