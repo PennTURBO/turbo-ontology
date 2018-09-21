@@ -273,6 +273,67 @@ where {
 > Added 522772 statements. Update took 9.1s, moments ago.
 
 
+- **http://example.com/resource/curated_roles**
+
+*To address false negatives when comparing EPIC roles to TURBO roles: ChEBI is missing some (reasoanble) analgesic roles known to EPIC.*
+
+```
+    # No path to liposomal morphine yet
+    # Benzocaine = otic analgesic ?!
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    insert data {
+        graph <http://example.com/resource/curated_roles> {
+            <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> a <http://www.w3.org/2002/07/owl#Restriction>;
+                <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/RO_0000087>;
+                <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/CHEBI_35482> ;
+                rdfs:comment "EPIC (reaonably) considers the following analgesiscs: Oxymorphone, Oxymorphone hcl, Meperidine, tapentadol, magmesium salicylate, +/- menthol, Sodium thiosalicylate, ziconotide,pentazocine.  ChEBI doesn't. " .
+            <http://purl.obolibrary.org/obo/CHEBI_7865> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_7866> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_6754> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_135935> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_6640> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_76310> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_9182> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_135912> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_7982> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+        }
+    }
+
+```
+
+- **http://example.com/resource/normalized_supplementary_mappings**
+
+*To address false negatives when comparing EPIC roles to TURBO roles:  The NCBO BioPortal mappings don't include the follwoing RxNorm/ChEBI pairs:*
+- aspirin/acetylsalicylic acid
+- acetaminophen/paracetamol
+- methol/(+/-) menthol
+
+```
+insert data {
+    graph <http://example.com/resource/normalized_supplementary_mappings> {
+        <http://example.com/resource/1f755a19-1603-4f38-a36f-8dda60f238b8> a <http://example.com/resource/Row>;
+            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
+            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_46195>;
+            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/161> .
+        <http://example.com/resource/34ad7f5f-5148-4e5d-8624-cfb059b9a86b> a <http://example.com/resource/Row>;
+            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
+            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_76310>;
+            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/6750> .
+        <http://example.com/resource/35261041-04e1-48d6-88cf-b12691b99c0b> a <http://example.com/resource/Row>;
+            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
+            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_15365>;
+            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/1191> .
+    }
+```
 
 - **http://example.com/resource/mdm_ods_merged_meds.csv**
 
@@ -382,68 +443,6 @@ insert {
 
 > Added 1536000 statements. Update took 48s, minutes ago.
 
-
-- **http://example.com/resource/curated_roles**
-
-*To address false negatives when comparing EPIC roles to TURBO roles: ChEBI is missing some (reasoanble) analgesic toles known to EPIC.*
-
-```
-    # No path to liposomal morphine yet
-    # Benzocaine = otic analgesic ?!
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    insert data {
-        graph <http://example.com/resource/curated_roles> {
-            <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> a <http://www.w3.org/2002/07/owl#Restriction>;
-                <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/RO_0000087>;
-                <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/CHEBI_35482> ;
-                rdfs:comment "EPIC (reaonably) considers the following analgesiscs: Oxymorphone, Oxymorphone hcl, Meperidine, tapentadol, magmesium salicylate, +/- menthol, Sodium thiosalicylate, ziconotide,pentazocine.  ChEBI doesn't. " .
-            <http://purl.obolibrary.org/obo/CHEBI_7865> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_7866> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_6754> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_135935> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_6640> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_76310> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_9182> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_135912> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-            <http://purl.obolibrary.org/obo/CHEBI_7982> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
-        }
-    }
-
-```
-
-- **http://example.com/resource/normalized_supplementary_mappings**
-
-*To address false negatives when comparing EPIC roles to TURBO roles:  The NCBO BioPortal mappings don't include the follwoing RxNorm/ChEBI pairs:*
-- aspirin/acetylsalicylic acid
-- acetaminophen/paracetamol
-- methol/(+/-) menthol
-
-```
-insert data {
-    graph <http://example.com/resource/normalized_supplementary_mappings> {
-        <http://example.com/resource/1f755a19-1603-4f38-a36f-8dda60f238b8> a <http://example.com/resource/Row>;
-            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
-            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_46195>;
-            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/161> .
-        <http://example.com/resource/34ad7f5f-5148-4e5d-8624-cfb059b9a86b> a <http://example.com/resource/Row>;
-            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
-            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_76310>;
-            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/6750> .
-        <http://example.com/resource/35261041-04e1-48d6-88cf-b12691b99c0b> a <http://example.com/resource/Row>;
-            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
-            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_15365>;
-            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/1191> .
-    }
-```
 
 - *http://example.com/resource/rxnorm_bioportal_mappings*
 
