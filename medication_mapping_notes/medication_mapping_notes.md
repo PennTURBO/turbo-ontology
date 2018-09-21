@@ -314,7 +314,9 @@ write.csv(x = merged,
 
 - **http://example.com/resource/bioportal_mappings.tsv**
 
-First
+First, you'll need a BioPortal API key.  See https://bioportal.bioontology.org/help#Getting_an_API_key
+
+Then pipe the output of this script to a text file.
 
 ```
 import urllib.request, urllib.error, urllib.parse
@@ -352,7 +354,7 @@ while next_page:
 		
 ```
 
-Then
+Fianlly, use that text file as the input into a OntoRefine project.  Insert the triples like this:
 
 ```
 PREFIX mydata: <http://example.com/resource/>
