@@ -465,5 +465,135 @@ insert {
 - Lucene (built into GraphDB) vs the ontologies producing the most RxNorm hits with the all-BioPortal technique
 - (External) Solr vs ontologies producing the most RxNorm hits...
 
-----
+
+
+## QC Queries
+
+### Of the medications with EPIC-known RxNorm values, which are analgesics?
+
+```
+    PREFIX lucene: <http://www.ontotext.com/connectors/lucene#>
+    PREFIX inst: <http://www.ontotext.com/connectors/lucene/instance#>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+    PREFIX umls: <http://bioportal.bioontology.org/ontologies/umls/>
+    PREFIX mydata: <http://example.com/resource/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX obo: <http://purl.obolibrary.org/obo/>
+    PREFIX : <http://www.ontotext.com/connectors/lucene#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    select  
+    distinct ?epicMedId ?epicMedName ?chebilab ?irlab
+    where {
+        graph <ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi_lite.owl.gz> {
+            ?immediateRole rdfs:subClassOf* obo:CHEBI_35480 ;
+                                          rdfs:label ?irlab .
+        }
+        {
+            {
+                graph <http://example.com/resource/curated_roles> {
+                    ?restr owl:someValuesFrom ?immediateRole ;
+                           a owl:Restriction ;
+                           owl:onProperty obo:RO_0000087 .
+                    ?chebiterm rdfs:subClassOf ?restr .
+                }
+            }
+            union
+            {
+                graph <ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi_lite.owl.gz> {
+                    ?restr owl:someValuesFrom ?immediateRole ;
+                           a owl:Restriction ;
+                           owl:onProperty obo:RO_0000087 .
+                    ?chebiterm rdfs:subClassOf ?restr .
+                }
+            }
+        }
+        graph <ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi_lite.owl.gz> {
+            ?immediateRole rdfs:label ?irlab .
+            ?chebiterm rdfs:label ?chebilab .
+        }
+        {
+            {
+                graph 	mydata:bioportal_mappings.tsv {
+                    ?bpmapped mydata:matchTerm ?chebiterm ;
+                              mydata:inputTerm ?expanded3  ;
+                              mydata:sourceOnt <http://data.bioontology.org/ontologies/RXNORM> ;
+                              mydata:matchOnt <http://data.bioontology.org/ontologies/CHEBI> .
+                } 
+            } union         {
+                graph 	<http://example.com/resource/normalized_supplementary_mappings> {
+                    ?bpmapped mydata:matchTerm ?chebiterm ;
+                              mydata:rxnormInput ?expanded3  ;
+                              mydata:matchOnt <http://data.bioontology.org/ontologies/CHEBI> .
+                } 
+            }
+        }
+        #    #    values (?userMedInput ?minLucScore) {
+        #    #        ("oxycodone tabs" 7 )
+        #    #    }
+        values (?expPred1 ?expPred2) {
+            ( rxnorm:consists_of	rxnorm:has_ingredient )
+            ( rxnorm:consists_of	rxnorm:has_precise_ingredient )
+            ( rxnorm:has_ingredient	rxnorm:has_precise_ingredient )
+            ( rxnorm:has_ingredient	rxnorm:tradename_of )
+            ( rxnorm:has_ingredients	rxnorm:has_part )
+            ( rxnorm:has_part	rxnorm:form_of )
+            ( rxnorm:has_part	rxnorm:has_form )
+            ( rxnorm:has_precise_ingredient	rxnorm:form_of )
+            #        ( rxnorm:has_tradename	rxnorm:has_precise_ingredient )
+            ( rxnorm:ingredient_of	rxnorm:has_precise_ingredient )
+            ( rxnorm:isa	rxnorm:has_ingredient )
+            ( rxnorm:precise_ingredient_of	rxnorm:has_ingredient )
+            ( rxnorm:precise_ingredient_of	rxnorm:has_precise_ingredient )
+            ( rxnorm:quantified_form_of	rxnorm:has_ingredient )
+            ( rxnorm:tradename_of	rxnorm:has_form )
+        }
+        graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+            {
+                {
+                    ?epicRxnormUri  ?expPred1 ?expanded2 ;
+                                    skos:prefLabel ?expLab1 .
+                    ?expanded2 ?expPred2 ?expanded3 ;
+                               skos:prefLabel ?expLab2 .
+                    ?expanded3 skos:prefLabel ?expLab3 .
+                }
+                union {
+                    ?epicRxnormUri  ?expPred1 ?expanded3 ;
+                                    skos:prefLabel ?expLab1 .
+                    ?expanded3 skos:prefLabel ?expLab3 .
+                }            
+                union {
+                    ?epicRxnormUri  skos:notation ?sharednotation  ;
+                                    skos:prefLabel ?expLab1 .
+                    ?expanded3   skos:notation ?sharednotation ;
+                                 skos:prefLabel ?expLab3 .
+                }
+            }
+            optional {
+                ?epicRxnormUri  umls:hasSTY ?sty1 .
+                ?sty1 skos:prefLabel ?typelab1 .
+            }
+            optional {
+                ?expanded3  umls:hasSTY ?sty3 .
+                ?sty3 skos:prefLabel ?typelab3 .
+            }
+        }
+        graph mydata:epic_meds_with_rxnorm_valcasts {
+            ?epicMed mydata:RXNORM_CODE_URI    ?epicRxnormUri ;
+                     mydata:MEDICATION_ID_INT ?epicMedId .
+        }
+        graph mydata:epic_meds_with_rxnorm  {
+            ?epicMed rdf:type mydata:epic_med ;
+                     mydata:MedicationName ?epicMedName ;
+                     mydata:RXNORM_CODE_LEVEL  ?epicMedRxnLev ;
+                     }
+        #    #    ?luceneSearch a inst:EpicMedicationName ;
+        #    #                  lucene:query ?userMedInput ;
+        #    #                  # lucene:limit "1" ;
+        #    #                  lucene:entities ?epicMed .
+        #    #    ?epicMed lucene:score ?luceneScore .
+        #    #    filter (?luceneScore > ?minLucScore)
+    }
+```
 
