@@ -448,7 +448,7 @@ insert {
 
 - *http://example.com/resource/wes_pds__med_standard.csv*
 
-*The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  My be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
+*The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  May be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
 
 - BACKED-UP/DELETED *http://example.com/resource/mdm_meds*
     subset of http://example.com/resource/normalized_supplementary_mappings)
