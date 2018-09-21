@@ -85,7 +85,7 @@ Most likely, these repos also contain medication graphs
 
 - **http://example.com/resource/epic_meds_with_rxnorm**
 
-*Didn't name the graph after the file (EPIC medication hierarchy.xlsx) dues to the spaces in the name.*
+*Didn't name the graph after the file (`EPIC medication hierarchy.xlsx`) dues to the spaces in the name.*
 
 ```
 PREFIX mydata: <http://example.com/resource/>
