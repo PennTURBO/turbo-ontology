@@ -1,6 +1,8 @@
-## Migrate **most** existing medication related graphs to repo `epic_mdm_ods_20180918`
+## Migrate *mos*t existing medication related graphs to repo `epic_mdm_ods_20180918`
 
-### Exceptions
+*The no-inference reasoning level should be fine*
+
+### *Exceptions*
 
 `epic_mdm_ods_20180918` does not yet contain any mapping results, expansion specifications, or expansion results
 
@@ -335,9 +337,9 @@ insert data {
     }
 ```
 
-- **http://example.com/resource/mdm_ods_merged_meds.csv**
+- *http://example.com/resource/mdm_ods_merged_meds.csv*
 
-*The ODS file (At least) has to be opened with codepage 1252 encoding.  Only the source column from ODS was retained.  There are 62 rows where the pre-tidied MDM medication names don't match the raw ODS medication names.*
+*The ODS file (at least) has to be opened with codepage 1252 encoding.  Only the source column from ODS was retained.  There are 62 rows where the pre-tidied MDM medication names don't match the raw ODS medication names.*
 
 
 ```
@@ -444,15 +446,14 @@ insert {
 > Added 1536000 statements. Update took 48s, minutes ago.
 
 
-- *http://example.com/resource/rxnorm_bioportal_mappings*
-
 - *http://example.com/resource/wes_pds__med_standard.csv*
 
 *The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  My be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
 
-- *http://example.com/resource/mdm_meds*
-
-
+- BACKED-UP/DELETED *http://example.com/resource/mdm_meds*
+    subset of http://example.com/resource/normalized_supplementary_mappings)
+- BACKED-UP/DELETED *http://example.com/resource/rxnorm_bioportal_mappings*
+    subset of http://example.com/resource/bioportal_mappings.tsv
 
 ----
 
