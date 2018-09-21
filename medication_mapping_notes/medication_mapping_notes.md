@@ -50,7 +50,7 @@ Most likely, these repos also contain medication graphs
 - http://data.bioontology.org/ontologies/SNOMEDCT/submissions/15/download
 - http://data.bioontology.org/ontologies/VANDF/submissions/15/download
 
-When PDS medication names were searched with the BioPortal API, there were hits against 52 different ontologies.  Thirty of those ontologies provided only one tr two hits, neither of which could be mapped to an RxNorm term via BioPortal's mapping API.  (Technically, RxNorm The DRON terms could most likely be mapped via their RxNorm literal values.)
+When PDS medication names were searched with the BioPortal API, there were hits against 52 different ontologies.  Thirty of those ontologies provided only one or two hits, neither of which could be mapped to an RxNorm term via BioPortal's mapping API.  (Technically, RxNorm can't be mapped to RxNorm.  The DRON terms could most likely be mapped via their RxNorm literal values.)
 
 ontology hit in   bioportal search | rxnorm mappable hits | total   hits
 -- | -- | --
