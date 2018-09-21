@@ -738,50 +738,54 @@ Now compare to the EPIC categories.  Could probably do that in the graph.  This 
     merged$mismatch.text[merged$mismatch.bool &
                            merged$epic.analgesic.flag] <- 'EPIC only'
     merged$mismatch.text[merged$mismatch.bool &
-                           merged$turbo.analgesic.flag] <- 'TURBO only'
-    
-    # which?
-    for.caret <-
-      table(merged$epic.analgesic.flag, merged$turbo.analgesic.flag)
-    sensitivity(for.caret)
-    specificity(for.caret)
-    for.caret <-
-      table(merged$turbo.analgesic.flag, merged$epic.analgesic.flag)
-    sensitivity(for.caret)
-    specificity(for.caret)
-    
-    
-    check.by.subclass <-
-      as.data.frame.matrix(table(merged$PharmacySubClass , merged$mismatch.text, useNA = 'ifany'))
-    
-    
-    check.by.chebi.comp <-
-      as.data.frame.matrix(table(merged$chebilab , merged$mismatch.text, useNA = 'ifany'))
-    
+                           merged$turbo.analgesic.flag] <- 'TURBO only'    
+        
     # save.image("210809201015.Rdata")
     
-    epic.detective <-
-      merged[merged$mismatch.text == "EPIC only" &
-               merged$PharmacySubClass == "Analgesics Other", ]
-    epic.detective <- table(epic.detective$RXNORM_CODE)
-    epic.detective <-
-      cbind.data.frame(names(epic.detective), as.numeric(epic.detective))
-    
-    turbo.detective <-
-      table(merged$chebilab[merged$mismatch.text == "TURBO only"])
-    
-    turbo.detective <-
-      cbind.data.frame(names(turbo.detective), as.numeric(turbo.detective))
-    
-    turbo.detective <-
-      table(merged$chebilab[merged$mismatch.text == "TURBO only"],
-            merged$PharmacySubClass[merged$mismatch.text == "TURBO only"])
-    
-    turbo.detective <- as.data.frame(turbo.detective)
-    turbo.detective <- turbo.detective[turbo.detective$Freq > 0 , ]
 ```
 
-Look for cases in which TURBO considers a medication to be an analgeic, but EPIC doesn't. (Including rows with `TURBO only` counts down to 1% of the "worst offender", paracetamol [aceaminophen].)
+Taking TURBO to be the authority, how good is EPIC at classifying analgeisics?
+
+```
+    > for.caret <-
+    +   table(merged$turbo.analgesic.flag, merged$epic.analgesic.flag)
+    > print(for.caret)
+           
+             FALSE   TRUE
+      FALSE 213106    190
+      TRUE   36617  20337
+    > sensitivity(for.caret)
+    [1] 0.8533695
+    > specificity(for.caret)
+    [1] 0.9907439
+```
+
+Taking EPIC to be the authority, how good is TURBO at classifying analgeisics?
+
+```
+    > for.caret <-
+    +   table(merged$epic.analgesic.flag, merged$turbo.analgesic.flag)
+    > print(for.caret)
+           
+             FALSE   TRUE
+      FALSE 213106  36617
+      TRUE     190  20337
+    > sensitivity(for.caret)
+    [1] 0.9991092
+    > specificity(for.caret)
+    [1] 0.3570776
+```
+
+Sensitivity is good, in part because of the curated RxNorm/ChEBI mappings and the curated analgesic roels assignments.
+
+Specificty is "poor"... why is that?
+
+Look for cases in which TURBO considers a medication to be an analgeic, but EPIC doesn't. (Including rows with `TURBO only` counts down to 1% of the "worst offender", `paracetamol` [aceaminophen].)
+
+```
+    check.by.chebi.comp <-
+        as.data.frame.matrix(table(merged$chebilab , merged$mismatch.text, useNA = 'ifany'))
+```
 
 medication | consensus | EPIC only | TURBO only
 -- | -- | -- | --
@@ -803,22 +807,106 @@ ketorolac | 0 | 0 | 207
 diclofenac | 0 | 0 | 200
 carbamazepine | 0 | 0 | 176
 
-Now look for any case in which EPIC and TURBO disagree about whether a medication is an analgesic.   (Including rows with `non-narcotic analgesic` counts down to 1% of the "worst offender", Cough/Cold/Allergy Combinations.)
+When TURBO says that a medication is an analgesic but EPIC doesn't, what is the offending active ingredient, and what PharmacySubClass does EPIC think is correct?  (Including rows with `non-narcotic analgesic` counts down to 1% of the "worst offender", `Cough/Cold/Allergy Combinations`.)
 
-EPIC PharmacySubClass | analgesic | non-narcotic analgesic | opioid analgesic
+```
+    turbo.detective <-
+      table(merged$chebilab[merged$mismatch.text == "TURBO only"])
+    turbo.detective <-
+      cbind.data.frame(names(turbo.detective), as.numeric(turbo.detective))
+    turbo.detective <-
+      table(merged$chebilab[merged$mismatch.text == "TURBO only"],
+            merged$PharmacySubClass[merged$mismatch.text == "TURBO only"])
+    turbo.detective <- as.data.frame(turbo.detective)
+    turbo.detective <- turbo.detective[turbo.detective$Freq > 0 , ]
+    names(turbo.detective) <- c("medication", "PharmacySubClass", "count")
+```
+
+medication | PharmacySubClass | count
+-- | -- | --
+paracetamol | Cough/Cold/Allergy   Combinations | 14324
+hydrocodone | Cough/Cold/Allergy   Combinations | 4302
+codeine | Cough/Cold/Allergy   Combinations | 3491
+(+-)-menthol | Liniments | 1237
+(+-)-menthol | Local Anesthetics   - Topical | 1075
+paracetamol | Antihistamine   Hypnotics | 778
+capsaicin | Local Anesthetics   - Topical | 763
+ibuprofen | Nonsteroidal   Anti-inflammatory Agents (NSAIDs) | 680
+antipyrine | Otic Combinations | 618
+(+-)-menthol | Misc. Respiratory   Inhalants | 500
+(+-)-menthol | Lozenges | 484
+ergotamine | Migraine   Combinations | 433
+magnesium sulfate | Prenatal Vitamins | 376
+ibuprofen | Cough/Cold/Allergy   Combinations | 371
+(+-)-menthol | Anesthetics   Topical Oral | 319
+naproxen | Nonsteroidal   Anti-inflammatory Agents (NSAIDs) | 311
+naproxen sodium | Nonsteroidal   Anti-inflammatory Agents (NSAIDs) | 311
+capsaicin | Liniments | 260
+lamotrigine | Anticonvulsants -   Misc. | 230
+paracetamol | Migraine   Combinations | 217
+(+-)-menthol | Misc. Topical | 207
+acetylsalicylic   acid | Cough/Cold/Allergy   Combinations | 201
+ketorolac | Nonsteroidal   Anti-inflammatory Agents (NSAIDs) | 169
+ketorolac   tromethamine | Nonsteroidal   Anti-inflammatory Agents (NSAIDs) | 169
+naproxen sodium | Antihistamines -   Ethanolamines | 147
+cimetidine | H-2 Antagonists | 144
+
+**There are a lot of drugs acetaminophen, codeine or ibuprofen-containing drugs classified by EPIC as `Cough/Cold/Allergy Combinations`, not analgesics.**
+
+*I had added methanol to a manually-curated supplemental list of analgesics, and that increased TURBO's sensitivity, but it may have hurt the specificity to a greater extent.*
+
+Now, what about TURBO's not-quite-perfect sensitivity?  What are the active ingredients in medications that only EPIC considers to be analgesics? (Showing all cases.)
+
+```
+    check.by.subclass <-
+      as.data.frame.matrix(table(merged$PharmacySubClass , merged$mismatch.text, useNA = 'ifany'))
+```
+
+medication | consensus | EPIC only | TURBO only
 -- | -- | -- | --
-Cough/Cold/Allergy   Combinations | 0 | 15154 | 7815
-Analgesic Combinations | 666 | 3948 | 144
-Opioid Combinations | 298 | 2396 | 3035
-Analgesics Other | 0 | 2042 | 13
-Nonsteroidal   Anti-inflammatory Agents (NSAIDs) | 441 | 1649 | 0
-Salicylates | 0 | 1560 | 248
-Antihistamine Hypnotics | 0 | 923 | 0
-Local Anesthetics - Topical | 0 | 787 | 1083
-Migraine Combinations | 0 | 690 | 0
-Urinary Analgesics | 0 | 424 | 0
-Otic Combinations | 0 | 309 | 309
-Anticonvulsants - Misc. | 70 | 300 | 0
-Liniments | 0 | 278 | 1243
-Muscle Relaxant Combinations | 0 | 183 | 21
+Opioid Agonists | 4607 | 78 | 0
+Opioid Combinations | 5729 | 33 | 0
+Otic Analgesics | 0 | 24 | 0
+Analgesics Other | 2055 | 18 | 0
+Salicylates | 1808 | 18 | 0
+Analgesic Combinations | 4758 | 10 | 0
+Analgesics - Topical | 523 | 7 | 0
+Analgesics -   Anti-inflammatory Combinations | 0 | 2 | 0
+
+What are the RxNorm IDs of the medications that EPIC considers to be `Opioid Agonists`s and TURBO doesn't classify as any kind of analgesic?
+
+```
+    epic.detective <-
+      merged[merged$mismatch.text == "EPIC only" &
+               merged$PharmacySubClass == "Opioid Agonists", ]
+    epic.detective <- table(epic.detective$RXNORM_CODE)
+    epic.detective <-
+      cbind.data.frame(names(epic.detective), as.numeric(epic.detective))
+    names(epic.detective) <- c("rxnorm", "count")
+```
+
+Showing RxNorm terms with a count > 2.  (That's about 1/3 of the cases)
+
+```
+    > nrow(epic.detective[epic.detective$count >2,])
+    [1] 10
+    
+    > nrow(epic.detective)
+    [1] 34
+```
+
+rxnorm | count | manually-retrieved label
+-- | -- | --
+477468 | 6 | Morphine   Liposomal
+895975 | 6 | MORPHINE   SULFATE LIPOSOMAL 10 MG/ML Injectable Solution
+895977 | 6 | OBSOLETE
+477466 | 4 | OBSOLETE
+477499 | 4 | OBSOLETE
+6378 | 4 | Levorphanol
+477397 | 3 | MORPHINE   SULFATE LIPOSOMAL
+583440 | 3 | Depodur
+616413 | 3 | OBSOLETE
+895980 | 3 | OBSOLETE
+
+`Levorphanol` (CHEBI:6444) has not been assigned the analgesic role by ChEBI.  It could be added to our curated supplemental list.  That might be harder for `Morphine Liposomal`, which doesn't seem to be in RxNORM as (as a pharmacological substance?) much less ChEBI.  Maybe running it through something like CLAMP's medication property  pipeline would map it to plain old morphine, at which point it would have a path to the analgesic role.
 
