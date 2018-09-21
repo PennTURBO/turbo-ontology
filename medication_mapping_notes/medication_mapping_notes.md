@@ -597,7 +597,7 @@ insert {
     }
 ```
 
-Now compare to the EPIC categories.  Could probably do that in the graph.  This example exports to a fiela dn does the comparison, agisnt the EPIC meds file, in R.
+Now compare to the EPIC categories.  Could probably do that in the graph.  This example exports to a and does the comparison, agisnt the EPIC meds file, in R.
 
 ```
     options(java.parameters = "- Xmx8g")
