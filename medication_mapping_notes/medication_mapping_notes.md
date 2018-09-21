@@ -469,7 +469,7 @@ insert {
 
 ## QC Queries
 
-### Of the medications with EPIC-known RxNorm values, which are analgesics?
+### Of the medications with EPIC-known RxNorm values, which have a semantic path to ChEBI's analgesic role?
 
 ```
     PREFIX lucene: <http://www.ontotext.com/connectors/lucene#>
