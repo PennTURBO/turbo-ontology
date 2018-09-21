@@ -161,14 +161,11 @@ delete {
 ```
 
 > Removed 11909031 statements. Update took 1m 41s, moments ago.
-
-
-
-- **http://example.com/resource/wes_pds__med_standard.csv**
-*The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  My be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
  
+
 - http://example.com/resource/wes_pds_enc__med_order.csv
 *Encounter IDs have been removed from the http://example.com/resource/wes_pds_enc__med_order.csv graph included in `epic_mdm_ods_20180918`, so this is a password-free, PHI-free repository.*
+
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -374,7 +371,7 @@ insert {
 
 ```
 
-- **http://example.com/resource/mdm_meds**
+
 
 - http://example.com/resource/normalized_supplementary_mappings
 
@@ -382,7 +379,6 @@ insert {
 - aspirin/acetylsalicylic acid
 - acetaminophen/paracetamol
 - methol/(+/-) menthol
-
 
 ```
 insert data {
@@ -403,6 +399,12 @@ insert data {
 ```
 
 - **http://example.com/resource/rxnorm_bioportal_mappings**
+
+- **http://example.com/resource/wes_pds__med_standard.csv**
+
+*The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  My be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
+
+- **http://example.com/resource/mdm_meds**
 
 
 
