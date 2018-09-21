@@ -124,7 +124,7 @@ The CLAMP RxNrm mappings appears to have very high precision.  However, No CLAMP
 > temp <- setdiff(submitted.strings$X1, minimal.mo$X1)
 > temp <- sort(sample(temp, 20, replace = FALSE))
 > no.CLAMP.mapping <- penn.med.mappings[penn.med.mappings$MedicationName %in% temp , ]
-
+```
 
 MedicationName | RXNORM_CODE | RXNORM_CODE_LEVEL
 -- | -- | --
