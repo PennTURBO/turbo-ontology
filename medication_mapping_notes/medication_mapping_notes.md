@@ -1,0 +1,213 @@
+Migrate **most** existing medication related graphs to repo `epic_mdm_ods_20180918`
+
+### From UMLS (MetaMorphoSys -> MySQL -> RDF conversion)
+- http://data.bioontology.org/ontologies/MDDB/submissions/15/download
+- http://data.bioontology.org/ontologies/NDDF/submissions/15/download
+- http://data.bioontology.org/ontologies/NDFRT/submissions/15/download
+- http://data.bioontology.org/ontologies/RXNORM/submissions/15/download
+- http://data.bioontology.org/ontologies/VANDF/submissions/15/download
+
+### From web downloads
+- ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi_lite.owl.gz 
+- http://data.bioontology.org/ontologies/SNOMEDCT/submissions/15/download
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-chebi.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-hand.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-ingredient.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-ndc.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-pro.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-rxnorm.owl
+- https://bitbucket.org/uamsdbmi/dron/raw/master/dron-upper.owl
+
+## Via OntoRefine
+### Directly from CSV, with zero or minimal manipulation or deviation from default OntoRefine settings.  
+*Each CSV file is obviously inserted into a separate named graph, and UUIDs are generally used for the OntoRefine row URIs instead of the suggested value-based row URIs*
+- http://example.com/resource/epic_meds_with_rxnorm
+*Didn't name the graph after the file (EPIC medication hierarchy.xlsx) dues to the spaces in the name.*
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX spif: <http://spinrdf.org/spif#>
+insert {
+    graph mydata:mdm_ods_merged_meds.csv {
+        ?myRowId a mydata:mdm_medication ;
+            mydata:PK_MEDICATION_ID ?PK_MEDICATION_ID ;
+            mydata:FULL_NAME ?FULL_NAME ;
+            mydata:PHARMACY_CLASS ?PHARMACY_CLASS ;
+            mydata:SIMPLE_GENERIC_NAME ?SIMPLE_GENERIC_NAME ;
+            mydata:GENERIC_NAME ?GENERIC_NAME ;
+            mydata:THERAPEUTIC_CLASS ?THERAPEUTIC_CLASS ;
+            mydata:PHARMACY_SUBCLASS ?PHARMACY_SUBCLASS ;
+            mydata:AMOUNT ?AMOUNT ;
+            mydata:FORM ?FORM ;
+            mydata:ROUTE_DESCRIPTION ?ROUTE_DESCRIPTION ;
+            mydata:ROUTE_TYPE ?ROUTE_TYPE ;
+            mydata:CONTROLLED_MED_YN ?CONTROLLED_MED_YN ;
+            mydata:DEA_CLASS ?DEA_CLASS ;
+            mydata:RECORD_STATE ?RECORD_STATE ;
+            mydata:FK_3M_NCID_ID ?FK_3M_NCID_ID ;
+            mydata:RXNORM ?RXNORM ;
+            mydata:RXNORM_DEFINITION ?RXNORM_DEFINITION ;
+            mydata:MDM_LAST_UPDATE_DATE ?MDM_LAST_UPDATE_DATE ;
+            mydata:MDM_INSERT_UPDATE_FLAG ?MDM_INSERT_UPDATE_FLAG ;
+            mydata:ods.SOURCE_CODE ?ods_SOURCE_CODE ;
+            mydata:mdm.ods.same.FULL_NAME ?mdm_ods_same_FULL_NAME .
+    }
+} WHERE {
+    SERVICE <ontorefine:1722969636564> {
+        ?row a mydata:Row ;
+             mydata:PK_MEDICATION_ID ?PK_MEDICATION_ID ;
+             mydata:FULL_NAME ?FULL_NAME ;
+             mydata:PHARMACY_CLASS ?PHARMACY_CLASS ;
+             mydata:SIMPLE_GENERIC_NAME ?SIMPLE_GENERIC_NAME ;
+             mydata:GENERIC_NAME ?GENERIC_NAME ;
+             mydata:THERAPEUTIC_CLASS ?THERAPEUTIC_CLASS ;
+             mydata:PHARMACY_SUBCLASS ?PHARMACY_SUBCLASS ;
+             mydata:AMOUNT ?AMOUNT ;
+             mydata:FORM ?FORM ;
+             mydata:ROUTE_DESCRIPTION ?ROUTE_DESCRIPTION ;
+             mydata:ROUTE_TYPE ?ROUTE_TYPE ;
+             mydata:CONTROLLED_MED_YN ?CONTROLLED_MED_YN ;
+             mydata:DEA_CLASS ?DEA_CLASS ;
+             mydata:RECORD_STATE ?RECORD_STATE ;
+             mydata:FK_3M_NCID_ID ?FK_3M_NCID_ID ;
+             mydata:RXNORM ?RXNORM ;
+             mydata:RXNORM_DEFINITION ?RXNORM_DEFINITION ;
+             mydata:MDM_LAST_UPDATE_DATE ?MDM_LAST_UPDATE_DATE ;
+             mydata:MDM_INSERT_UPDATE_FLAG ?MDM_INSERT_UPDATE_FLAG ;
+             mydata:ods.SOURCE_CODE ?ods_SOURCE_CODE ;
+             mydata:mdm.ods.same.FULL_NAME ?mdm_ods_same_FULL_NAME .
+        BIND(uuid() AS ?myRowId)
+    }
+}
+```
+
+> Approximately 20M statements in 40 minutes
+
+*Purged literal objects with value "-" (used to indicate NA?) after the fact.*
+
+
+```
+PREFIX mydata: <http://example.com/resource/>
+delete {
+    graph mydata:mdm_ods_merged_meds.csv {
+        ?s ?p "NA"
+    }    
+} where {
+    graph mydata:mdm_ods_merged_meds.csv {
+        ?s ?p "NA"
+    }
+}
+
+```
+
+> Removed 11909031 statements. Update took 1m 41s, moments ago.
+
+
+
+- http://example.com/resource/wes_pds__med_standard.csv
+*The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  My be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
+ 
+- http://example.com/resource/wes_pds_enc__med_order.csv
+*Encounter IDs have been removed from the http://example.com/resource/wes_pds_enc__med_order.csv graph included in `epic_mdm_ods_20180918`, so this is a password-free, PHI-free repository.*
+
+- http://example.com/resource/epic_meds_with_rxnorm_valcasts
+*Medication IDs from http://example.com/resource/epic_meds_with_rxnorm were cast to integers and RxNorm values were cast to URIs.*
+
+- http://example.com/resource/mdm_ods_merged_meds.csv
+*At least the ODS file has to be opened with codepage 1252 encoding.  Only the source column from ODS was retained.  There are 62 rows where the pre-tidied MDM medication names don't match the raw ODS medication names.*
+library(readr)
+
+```
+mdm.auth.fn <-
+  "c:/Users/Mark Miller/Desktop/med_authorities/mdm_r_medication_180917.csv"
+mdm.auth <-
+  read_csv(mdm.auth.fn, locale = locale(encoding = "WINDOWS-1252"))
+dim(mdm.auth)
+ods.auth.fn <-
+  "c:/Users/Mark Miller/Desktop/med_authorities/ods_r_medication_source_180917.csv"
+ods.auth <-
+  read_csv(ods.auth.fn, locale = locale(encoding = "WINDOWS-1252"))
+dim(ods.auth)
+ods.auth.minimal <-
+  ods.auth[, c("PK_MEDICATION_ID", "FULL_NAME", "SOURCE_CODE")]
+
+merged <-
+  merge(
+    x = mdm.auth,
+    y = ods.auth.minimal,
+    by = "PK_MEDICATION_ID",
+    all = TRUE,
+    suffixes = c(".mdm", ".ods")
+  )
+
+merged$same.text = merged$FULL_NAME.mdm == merged$FULL_NAME.ods
+
+table(merged$same.text)
+
+write.csv(x = merged,
+          file = "mdm_ods_merged_meds.csv",
+          row.names = FALSE)
+```
+
+- 
+- http://example.com/resource/bioportal_mappings.tsv
+- http://example.com/resource/curated_roles
+
+- http://example.com/resource/mdm_meds
+
+- http://example.com/resource/normalized_supplementary_mappings
+- http://example.com/resource/rxnorm_bioportal_mappings
+
+
+
+
+
+`epic_mdm_ods_20180918` does not yet contain any mapping results or expansion specifications (or expansion results)
+
+Ontologies 
+----
+
+solr vs manipulated dron
+bioportal search api vs all of bioportal
+medex
+clamp
+lucene built into graphdb vs the ontologies producing the most rxnorm hits in the all-bioportal technique (last mmdb form 2017AA?)
+external solr vs ontologies producing the most rxnorm hits
+
+----
+
+`epic_meds` still contains http://example.com/resource/EPIC_medex_result_201809161140
+
+`med_orders_ncbo_mappings` still contains
+
+- http://example.com/resource/RxnIfAvailable
+- http://example.com/resource/med_standard_FULL_NAME_bioportal_search
+- http://example.com/resource/med_standard_FULL_NAME_bioportal_search_semanticTypes
+- http://example.com/resource/med_standard_FULL_NAME_query_expansion
+- http://example.com/resource/wes_pds_enc__med_order.csv
+- http://www.itmat.upenn.edu/biobank/MedMapExpansion
+- http://www.itmat.upenn.edu/biobank/knownToMatchedRxnLinkingPred
+- http://www.itmat.upenn.edu/biobank/knownToMatchedRxnPred
+- http://www.itmat.upenn.edu/biobank/knownToMatchedSameTerm
+- http://www.itmat.upenn.edu/biobank/knownToMatchedSharedType
+
+`medications_no_phi` still contains
+
+- http://example.com/resource/fullname_blacklist.csv
+- http://example.com/resource/fullname_to_rxn_curations
+- http://example.com/resource/medex_results
+- http://example.com/resource/uphs_term_expansion.csv
+
+Most likely, these repos also contain medication graphs
+- public_for_turbo
+- public_for_turbo_20180716_scratch
+- turbo_6MillLOF_20180622_20180726
+- turbo_6MillLOF_20180622_20180726_noinf
+- turbo_6MillLOF_20180622_addl_public_rdfspo
+- turbo_6MillLOF_20180622_addl_public_rdfspo_scratch
+- turbo_6MillLOF_20180622_drivetrain_expanded
+- turbo_6MillLOF_20180622_drivetrain_expanded_scratch
+- turbo_6MillLOF_20180622_drivetrain_remainder
+- turbo_6MillLOF_20180622_drivetrain_remainder_scratch
+- turbo_6MillLOF_20180622_Hayden
+- turbo_6MillLOF_20180622_restored_20180807
