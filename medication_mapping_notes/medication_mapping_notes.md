@@ -277,9 +277,10 @@ where {
 - **http://example.com/resource/mdm_ods_merged_meds.csv**
 
 *The ODS file (At least) has to be opened with codepage 1252 encoding.  Only the source column from ODS was retained.  There are 62 rows where the pre-tidied MDM medication names don't match the raw ODS medication names.*
-library(readr)
+
 
 ```
+library(readr)
 mdm.auth.fn <-
   "c:/Users/Mark Miller/Desktop/med_authorities/mdm_r_medication_180917.csv"
 mdm.auth <-
