@@ -118,7 +118,7 @@ How many inputs?  How many got an RxNorm mapping?
 
 ```
 
-The CLAMP RxNrm mappings appears to have very high precision.  However, No CLAMP RxNorm mapping is available for half of the "medications" that already had RxNorm assignments (by Penn Med School scientists).  Show a sample:
+The CLAMP RxNorm mappings appears to have very high precision.  However, No CLAMP RxNorm mapping is available for half of the "medications" that already had RxNorm assignments (by Penn Med School scientists).  Show a sample:
 
 ```
 > temp <- setdiff(submitted.strings$X1, minimal.mo$X1)
@@ -212,4 +212,12 @@ TRIACTIN 1-6.25 MG/5ML OR SYRP | 9009 | MED_ONLY
 TRIACTIN 1-6.25 MG/5ML OR SYRP | 214394 | MED_ONLY
 TRIACTIN 1-6.25 MG/5ML OR SYRP | 220423 | MED_ONLY
 TRIACTIN 1-6.25 MG/5ML OR SYRP | 220426 | MED_ONLY
+
+At least some of those can be mapped to RxNorm with other (search) methods, such as the BioPortal search API:
+
+https://bioportal.bioontology.org/search?utf8=%E2%9C%93&query=ALECTINIB+HCL+150+MG+PO+CAPS&button=
+
+https://bioportal.bioontology.org/ontologies/RXNORM?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FRXNORM%2F1727475
+
+
 
