@@ -1,6 +1,8 @@
 ## Migrate **most** existing medication related graphs to repo `epic_mdm_ods_20180918`
 
-Exceptions:  `epic_mdm_ods_20180918` does not yet contain any mapping results, expansion specifications, or expansion results
+### Exceptions
+
+`epic_mdm_ods_20180918` does not yet contain any mapping results, expansion specifications, or expansion results
 
 `epic_meds` still contains http://example.com/resource/EPIC_medex_result_201809161140
 
