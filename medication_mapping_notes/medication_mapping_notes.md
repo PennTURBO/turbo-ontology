@@ -8,15 +8,22 @@ Migrate **most** existing medication related graphs to repo `epic_mdm_ods_201809
 - http://data.bioontology.org/ontologies/VANDF/submissions/15/download
 
 ### Minimal UMLS -> RDF instructions:
-- Get a UMLS license: https://www.nlm.nih.gov/databases/umls.html
-- Download UMLS: https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html
-- Extract the desired content to RRF with MetaMorphoSys: https://www.ncbi.nlm.nih.gov/books/NBK9683/
-- Install MySQL if necessary
-- Create an empty database: https://www.digitalocean.com/community/tutorials/how-to-create-and-manage-databases-in-mysql-and-mariadb-on-a-cloud-server
-- Create a superuserhttps://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
-- Load the RRF files into MySQL: https://www.nlm.nih.gov/research/umls/implementation_resources/scripts/README_RRF_MySQL_Output_Stream.html 
+- Get a UMLS license
+    - https://www.nlm.nih.gov/databases/umls.html
+- Download UMLS (get the latest release... except the latest release to contain MMDB was 2017AA)
+    - https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html
+- Extract the desired content to RRF with MetaMorphoSys
+    - https://www.ncbi.nlm.nih.gov/books/NBK9683/
+- Download and install MySQL if necessary
+- Create an empty database
+    - https://www.digitalocean.com/community/tutorials/how-to-create-and-manage-databases-in-mysql-and-mariadb-on-a-cloud-server
+- Create a superuser
+    - https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+- Load the RRF files into MySQL
+    - https://www.nlm.nih.gov/research/umls/implementation_resources/scripts/README_RRF_MySQL_Output_Stream.html 
 - *Despite the warning, I haven't found any problem with using the latest MySQL with the default InnoDB settings.*
-- Cun the RDF creation scripts:  https://github.com/ncbo/umls2rdf
+- Cun the RDF creation scripts
+    - https://github.com/ncbo/umls2rdf
 
 
 ## Load these via web downloads
@@ -200,8 +207,32 @@ WHERE {
 - http://example.com/resource/epic_meds_with_rxnorm_valcasts
 *Medication IDs from http://example.com/resource/epic_meds_with_rxnorm were cast to integers and RxNorm values were cast to URIs.*
 
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+insert {
+    graph mydata:epic_meds_with_rxnorm_valcasts {
+        ?s mydata:MEDICATION_ID_INT ?epicMedId ;
+            mydata:RXNORM_CODE_URI ?epicRxnUri .
+    }
+}
+where {
+    graph <http://example.com/resource/epic_meds_with_rxnorm> {
+        ?s  mydata:RXNORM_CODE ?epicRxn ;
+            mydata:MedicationName ?epicMedName ;
+            mydata:MEDICATION_ID ?epicMedIdFloat .
+        bind(xsd:integer(?epicMedIdFloat) as ?epicMedId)
+        bind(uri(concat("http://purl.bioontology.org/ontology/RXNORM/", ?epicRxn)) as ?epicRxnUri)
+    }
+}
+```
+
+> Added 522772 statements. Update took 9.1s, moments ago.
+
+
+
 - http://example.com/resource/mdm_ods_merged_meds.csv
-*At least the ODS file has to be opened with codepage 1252 encoding.  Only the source column from ODS was retained.  There are 62 rows where the pre-tidied MDM medication names don't match the raw ODS medication names.*
+*The ODS file (At least) has to be opened with codepage 1252 encoding.  Only the source column from ODS was retained.  There are 62 rows where the pre-tidied MDM medication names don't match the raw ODS medication names.*
 library(readr)
 
 ```
@@ -236,11 +267,38 @@ write.csv(x = merged,
           row.names = FALSE)
 ```
 
-- 
 - http://example.com/resource/bioportal_mappings.tsv
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX spif: <http://spinrdf.org/spif#>
+insert {
+    graph mydata:bioportal_mappings.tsv {
+        ?myRowId a <http://example.com/resource/bioportal_mapping> ;
+            mydata:inputTerm ?Column_1 ;
+            mydata:matchMeth ?Column_2 ;
+            mydata:matchOnt ?Column_3 ;
+            mydata:matchTerm ?Column_4 ;
+            mydata:sourceOnt <http://data.bioontology.org/ontologies/RXNORM> .
+    }
+} WHERE {
+    SERVICE <ontorefine:2278478571415> {
+        ?row a mydata:Row ;
+             mydata:Column_1 ?Column_1 ;
+             mydata:Column_2 ?Column_2 ;
+             mydata:Column_3 ?Column_3 ;
+             mydata:Column_4 ?Column_4 .
+        BIND(uuid() AS ?myRowId)
+    }
+}
+```
+
+> Added 1536000 statements. Update took 48s, minutes ago.
+
+
 - http://example.com/resource/curated_roles
 
-*
+*To address false negatives when comparing EPIC roles to TURBO roles: ChEBI is missing some (reasoanble) analgesic toles known to EPIC.*
 
 ```
     # No path to liposomal morphine yet
@@ -251,7 +309,7 @@ write.csv(x = merged,
             <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> a <http://www.w3.org/2002/07/owl#Restriction>;
                 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/RO_0000087>;
                 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/CHEBI_35482> ;
-                rdfs:comment "EPIC (reaonably) considers the following analgesiscs: Oxymorphone, Oxymorphone hcl, Meperidine, tapentadol, magmesium salicylate, +/- menthol, Sodium thiosalicylate, ziconotide,pentazocine.  ChEBI doesn't." .
+                rdfs:comment "EPIC (reaonably) considers the following analgesiscs: Oxymorphone, Oxymorphone hcl, Meperidine, tapentadol, magmesium salicylate, +/- menthol, Sodium thiosalicylate, ziconotide,pentazocine.  ChEBI doesn't. " .
             <http://purl.obolibrary.org/obo/CHEBI_7865> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
                     <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
             <http://purl.obolibrary.org/obo/CHEBI_7866> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
@@ -275,18 +333,37 @@ write.csv(x = merged,
 
 ```
 
-- http://example.com/resource/mdm_meds
+- **http://example.com/resource/mdm_meds**
 
 - http://example.com/resource/normalized_supplementary_mappings
-- http://example.com/resource/rxnorm_bioportal_mappings
+
+*To address false negatives when comparing EPIC roles to TURBO roles:  The NCBO BioPortal mappings don't include the follwoing RxNorm/ChEBI pairs:*
+- aspirin/acetylsalicylic acid
+- acetaminophen/paracetamol
+- methol/(+/-) menthol
 
 
+```
+insert data {
+    graph <http://example.com/resource/normalized_supplementary_mappings> {
+        <http://example.com/resource/1f755a19-1603-4f38-a36f-8dda60f238b8> a <http://example.com/resource/Row>;
+            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
+            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_46195>;
+            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/161> .
+        <http://example.com/resource/34ad7f5f-5148-4e5d-8624-cfb059b9a86b> a <http://example.com/resource/Row>;
+            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
+            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_76310>;
+            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/6750> .
+        <http://example.com/resource/35261041-04e1-48d6-88cf-b12691b99c0b> a <http://example.com/resource/Row>;
+            <http://example.com/resource/matchOnt> <http://data.bioontology.org/ontologies/CHEBI>;
+            <http://example.com/resource/matchTerm> <http://purl.obolibrary.org/obo/CHEBI_15365>;
+            <http://example.com/resource/rxnormInput> <http://purl.bioontology.org/ontology/RXNORM/1191> .
+    }
+```
+
+- **http://example.com/resource/rxnorm_bioportal_mappings**
 
 
-
-`epic_mdm_ods_20180918` does not yet contain any mapping results or expansion specifications (or expansion results)
-
-Ontologies 
 
 ----
 
@@ -298,6 +375,8 @@ lucene built into graphdb vs the ontologies producing the most rxnorm hits in th
 external solr vs ontologies producing the most rxnorm hits
 
 ----
+
+`epic_mdm_ods_20180918` does not yet contain any mapping results or expansion specifications (or expansion results)
 
 `epic_meds` still contains http://example.com/resource/EPIC_medex_result_201809161140
 
