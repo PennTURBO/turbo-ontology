@@ -1,13 +1,25 @@
 Migrate **most** existing medication related graphs to repo `epic_mdm_ods_20180918`
 
-### From UMLS (MetaMorphoSys -> MySQL -> RDF conversion)
+## Load these via UMLS/MetaMorphoSys -> MySQL -> RDF conversion
 - http://data.bioontology.org/ontologies/MDDB/submissions/15/download
 - http://data.bioontology.org/ontologies/NDDF/submissions/15/download
 - http://data.bioontology.org/ontologies/NDFRT/submissions/15/download
 - http://data.bioontology.org/ontologies/RXNORM/submissions/15/download
 - http://data.bioontology.org/ontologies/VANDF/submissions/15/download
 
-### From web downloads
+### Minimal UMLS -> RDF instructions:
+- Get a UMLS license: https://www.nlm.nih.gov/databases/umls.html
+- Download UMLS: https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html
+- Extract the desired content to RRF with MetaMorphoSys: https://www.ncbi.nlm.nih.gov/books/NBK9683/
+- Install MySQL if necessary
+- Create an empty database: https://www.digitalocean.com/community/tutorials/how-to-create-and-manage-databases-in-mysql-and-mariadb-on-a-cloud-server
+- Create a superuserhttps://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+- Load the RRF files into MySQL: https://www.nlm.nih.gov/research/umls/implementation_resources/scripts/README_RRF_MySQL_Output_Stream.html 
+- *Despite the warning, I haven't found any problem with using the latest MySQL with the default InnoDB settings.*
+- Cun the RDF creation scripts:  https://github.com/ncbo/umls2rdf
+
+
+## Load these via web downloads
 - ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi_lite.owl.gz 
 - http://data.bioontology.org/ontologies/SNOMEDCT/submissions/15/download
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-chebi.owl
@@ -18,7 +30,7 @@ Migrate **most** existing medication related graphs to repo `epic_mdm_ods_201809
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-rxnorm.owl
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-upper.owl
 
-## Via OntoRefine
+## Load these via OntoRefine
 ### Directly from CSV, with zero or minimal manipulation or deviation from default OntoRefine settings.  
 *Each CSV file is obviously inserted into a separate named graph, and UUIDs are generally used for the OntoRefine row URIs instead of the suggested value-based row URIs*
 - http://example.com/resource/epic_meds_with_rxnorm
@@ -104,11 +116,86 @@ delete {
 
 
 
-- http://example.com/resource/wes_pds__med_standard.csv
+- **http://example.com/resource/wes_pds__med_standard.csv**
 *The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  My be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
  
 - http://example.com/resource/wes_pds_enc__med_order.csv
 *Encounter IDs have been removed from the http://example.com/resource/wes_pds_enc__med_order.csv graph included in `epic_mdm_ods_20180918`, so this is a password-free, PHI-free repository.*
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX spif: <http://spinrdf.org/spif#>
+insert {
+    graph mydata:wes_pds_enc__med_order.csv   
+    {
+        ?myRowId a mydata:med_order ;
+            mydata:PK_ORDER_MED_ID ?PK_ORDER_MED_ID ;
+            mydata:ORDER_NAME ?ORDER_NAME ;
+            mydata:FK_MEDICATION_ID ?FK_MEDICATION_ID ;
+            mydata:DOSE ?DOSE ;
+            mydata:FREQUENCY_NAME ?FREQUENCY_NAME ;
+            mydata:QUANTITY ?QUANTITY ;
+            mydata:REFILLS ?REFILLS ;
+            mydata:UNIT_OF_MEASURE ?UNIT_OF_MEASURE ;
+            mydata:LOCATION_CODE ?LOCATION_CODE ;
+            mydata:LOCATION_DESCRIPTION ?LOCATION_DESCRIPTION ;
+            mydata:ORDER_DATE ?ORDER_DATE ;
+            mydata:ORDER_GROUP ?ORDER_GROUP ;
+            mydata:ORDER_PRIORITY_DESC_NONSTD ?ORDER_PRIORITY_DESC_NONSTD ;
+            mydata:ORDER_PRIORITY_DESCRIPTION ?ORDER_PRIORITY_DESCRIPTION .
+    }
+} 
+WHERE {
+    SERVICE <ontorefine:2509688580914> {
+        ?row a mydata:Row ;
+             mydata:PK_ORDER_MED_ID ?PK_ORDER_MED_ID .
+        optional {
+            ?row mydata:ORDER_NAME ?ORDER_NAME .
+        }
+        optional {
+            ?row mydata:FK_MEDICATION_ID ?FK_MEDICATION_ID .
+        }
+        optional {
+            ?row mydata:DOSE ?DOSE .
+        }
+        optional {
+            ?row mydata:FREQUENCY_NAME ?FREQUENCY_NAME .
+        }
+        optional {
+            ?row mydata:QUANTITY ?QUANTITY .
+        }
+        optional {
+            ?row mydata:REFILLS ?REFILLS .
+        }
+        optional {
+            ?row mydata:UNIT_OF_MEASURE ?UNIT_OF_MEASURE .
+        }
+        optional {
+            ?row mydata:LOCATION_CODE ?LOCATION_CODE .
+        }
+        optional {
+            ?row mydata:LOCATION_DESCRIPTION ?LOCATION_DESCRIPTION .
+        }
+        optional {
+            ?row mydata:ORDER_DATE ?ORDER_DATE .
+        }
+        optional {
+            ?row mydata:ORDER_GROUP ?ORDER_GROUP .
+        }
+        optional {
+            ?row mydata:ORDER_PRIORITY_DESC_NONSTD ?ORDER_PRIORITY_DESC_NONSTD .
+        }
+        optional {
+            ?row mydata:ORDER_PRIORITY_DESCRIPTION ?ORDER_PRIORITY_DESCRIPTION .
+        }
+        BIND(uuid() AS ?myRowId)
+    }
+}
+
+```
+
+> Added approximately 1400000 statements in 3m 
+
 
 - http://example.com/resource/epic_meds_with_rxnorm_valcasts
 *Medication IDs from http://example.com/resource/epic_meds_with_rxnorm were cast to integers and RxNorm values were cast to URIs.*
