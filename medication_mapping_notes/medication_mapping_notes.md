@@ -50,6 +50,34 @@ Most likely, these repos also contain medication graphs
 - http://data.bioontology.org/ontologies/SNOMEDCT/submissions/15/download
 - http://data.bioontology.org/ontologies/VANDF/submissions/15/download
 
+When PDS medication names were searched with the BioPortal API, there were hits against 52 different ontologies.  Thirty of those ontologies provided only one tr two hits, neither of which could be mapped to an RxNorm term via BioPortal's mapping API.  (Technically, RxNorm The DRON terms could most likely be mapped via their RxNorm literal values.)
+
+ontology hit in   bioportal search | rxnorm mappable hits | total   hits
+-- | -- | --
+http://data.bioontology.org/ontologies/RXNORM | 832 | 832
+http://data.bioontology.org/ontologies/NDDF | 524 | 578
+http://data.bioontology.org/ontologies/MDDB | 464 | 640
+http://data.bioontology.org/ontologies/SNOMEDCT | 251 | 324
+http://data.bioontology.org/ontologies/VANDF | 76 | 144
+http://data.bioontology.org/ontologies/RCD | 43 | 92
+http://data.bioontology.org/ontologies/NDFRT | 9 | 26
+http://data.bioontology.org/ontologies/SNMI | 2 | 23
+http://data.bioontology.org/ontologies/LOINC | 1 | 28
+http://data.bioontology.org/ontologies/NLMVS | 1 | 1
+http://data.bioontology.org/ontologies/DRON | 0 | 264
+http://data.bioontology.org/ontologies/HCPCS | 0 | 26
+http://data.bioontology.org/ontologies/NCIT | 0 | 25
+http://data.bioontology.org/ontologies/IOBC | 0 | 12
+http://data.bioontology.org/ontologies/MESH | 0 | 10
+http://data.bioontology.org/ontologies/HFO | 0 | 6
+http://data.bioontology.org/ontologies/MEDDRA | 0 | 5
+http://data.bioontology.org/ontologies/RADLEX | 0 | 5
+http://data.bioontology.org/ontologies/GAZ | 0 | 4
+http://data.bioontology.org/ontologies/OGG | 0 | 4
+http://data.bioontology.org/ontologies/CHEBI | 0 | 3
+http://data.bioontology.org/ontologies/HL7 | 0 | 3
+
+
 ### Minimal UMLS -> RDF instructions:
 - Get a UMLS license
     - https://www.nlm.nih.gov/databases/umls.html
@@ -464,17 +492,6 @@ insert {
     subset of http://example.com/resource/normalized_supplementary_mappings)
 - BACKED-UP/DELETED *http://example.com/resource/rxnorm_bioportal_mappings*
     subset of http://example.com/resource/bioportal_mappings.tsv
-
-----
-
-### Mapping approaches
-- Solr vs *manipulated* DRON
-- NCBO BioPortal search API vs all BioPortal content
-- medex
-- CLAMP
-- Lucene (built into GraphDB) vs the ontologies producing the most RxNorm hits with the all-BioPortal technique
-- (External) Solr vs ontologies producing the most RxNorm hits...
-
 
 
 ## QC Queries
@@ -910,3 +927,12 @@ rxnorm | count | manually-retrieved label
 
 `Levorphanol` (CHEBI:6444) has not been assigned the analgesic role by ChEBI.  It could be added to our curated supplemental list.  That might be harder for `Morphine Liposomal`, which doesn't seem to be in RxNORM as (as a pharmacological substance?) much less ChEBI.  Maybe running it through something like CLAMP's medication property  pipeline would map it to plain old morphine, at which point it would have a path to the analgesic role.
 
+## Mapping approaches
+- Solr vs *manipulated* DRON
+- NCBO BioPortal search API vs all BioPortal content
+- medex
+- CLAMP
+- Lucene (built into GraphDB) vs the ontologies producing the most RxNorm hits with the all-BioPortal technique
+- (External) Solr vs ontologies producing the most RxNorm hits...
+
+The CLAMP GUI can process roughly 1000 medication names per minute.  An initial test shows it can propose an RxNorm term for ~ 55% of the medication names that are already mapped in EPIC.  The classifications look good by eye but haven't been quantitatively assessed yet. (CLAM and EPIC are both heterogeneous in mapping to an active ingredient alone, or a medication with route, for and/or dosage.)
