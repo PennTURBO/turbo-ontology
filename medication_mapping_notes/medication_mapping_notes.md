@@ -277,7 +277,17 @@ where {
 
 - **http://example.com/resource/curated_roles**
 
-*To address false negatives when comparing EPIC roles to TURBO roles: ChEBI is missing some (reasoanble) analgesic roles known to EPIC.*
+*To address false negatives when comparing EPIC roles to TURBO roles: ChEBI is missing some (reasonable) analgesic roles known to EPIC.*
+
+- Oxymorphone
+- Oxymorphone HCl
+- Meperidine
+- tapentadol
+- magmesium salicylate
+- +/- menthol
+- Sodium thiosalicylate
+- ziconotide
+- pentazocine
 
 ```
     # No path to liposomal morphine yet
@@ -288,7 +298,7 @@ where {
             <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> a <http://www.w3.org/2002/07/owl#Restriction>;
                 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/RO_0000087>;
                 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/CHEBI_35482> ;
-                rdfs:comment "EPIC (reaonably) considers the following analgesiscs: Oxymorphone, Oxymorphone hcl, Meperidine, tapentadol, magmesium salicylate, +/- menthol, Sodium thiosalicylate, ziconotide,pentazocine.  ChEBI doesn't. " .
+                rdfs:comment "EPIC (reasonably) considers the following analgesiscs: Oxymorphone, Oxymorphone hcl, Meperidine, tapentadol, magmesium salicylate, +/- menthol, Sodium thiosalicylate, ziconotide,pentazocine.  ChEBI doesn't. " .
             <http://purl.obolibrary.org/obo/CHEBI_7865> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
                     <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
             <http://purl.obolibrary.org/obo/CHEBI_7866> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
@@ -770,4 +780,45 @@ Now compare to the EPIC categories.  Could probably do that in the graph.  This 
     turbo.detective <- as.data.frame(turbo.detective)
     turbo.detective <- turbo.detective[turbo.detective$Freq > 0 , ]
 ```
+
+Look for cases in which TURBO considers a medication to be an analgeic, but EPIC doesn't. (Including rows with `TURBO only` counts down to 1% of the "worst offender", paracetamol [aceaminophen].)
+
+medication | consensus | EPIC only | TURBO only
+-- | -- | -- | --
+paracetamol | 6372 | 0 | 15376
+hydrocodone | 1033 | 0 | 4403
+menthol | 518 | 0 | 4364
+codeine | 547 | 0 | 3542
+ibuprofen | 108 | 0 | 1148
+capsaicin | 0 | 0 | 1023
+naproxen.sodium | 0 | 0 | 698
+antipyrine | 0 | 0 | 658
+magnesium.sulfate | 0 | 0 | 593
+acetylsalicylic.acid | 3083 | 0 | 487
+naproxen | 0 | 0 | 459
+ergotamine | 0 | 0 | 454
+ketorolac.tromethamine | 0 | 0 | 452
+lamotrigine | 0 | 0 | 231
+ketorolac | 0 | 0 | 207
+diclofenac | 0 | 0 | 200
+carbamazepine | 0 | 0 | 176
+
+Now look for any case in which EPIC and TURBO disagree about whether a medication is an analgesic.   (Including rows with `non-narcotic analgesic` counts down to 1% of the "worst offender", Cough/Cold/Allergy Combinations.)
+
+EPIC PharmacySubClass | analgesic | non-narcotic analgesic | opioid analgesic
+-- | -- | -- | --
+Cough/Cold/Allergy   Combinations | 0 | 15154 | 7815
+Analgesic Combinations | 666 | 3948 | 144
+Opioid Combinations | 298 | 2396 | 3035
+Analgesics Other | 0 | 2042 | 13
+Nonsteroidal   Anti-inflammatory Agents (NSAIDs) | 441 | 1649 | 0
+Salicylates | 0 | 1560 | 248
+Antihistamine Hypnotics | 0 | 923 | 0
+Local Anesthetics - Topical | 0 | 787 | 1083
+Migraine Combinations | 0 | 690 | 0
+Urinary Analgesics | 0 | 424 | 0
+Otic Combinations | 0 | 309 | 309
+Anticonvulsants - Misc. | 70 | 300 | 0
+Liniments | 0 | 278 | 1243
+Muscle Relaxant Combinations | 0 | 183 | 21
 
