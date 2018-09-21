@@ -936,3 +936,144 @@ rxnorm | count | manually-retrieved label
 - (External) Solr vs ontologies producing the most RxNorm hits...
 
 The CLAMP GUI can process roughly 1000 medication names per minute.  An initial test shows it can propose an RxNorm term for ~ 55% of the medication names that are already mapped in EPIC.  The classifications look good by eye but haven't been quantitatively assessed yet. (CLAM and EPIC are both heterogeneous in mapping to an active ingredient alone, or a medication with route, for and/or dosage.)
+
+## Appendix:  usefulness/safety of RxNorm predicate pairs
+
+`Useful` pairs usually lead to something that can be mapped to ChEBI.  
+
+`Harmful` pairs may lead to something unrelated (acetaminophen -> combination cold remedy -> dextromethorphan)
+
+p1 | p2 | notes
+-- | -- | --
+rxnorm:has_quantified_form | rxnorm:quantified_form_of |  
+rxnorm:contains | rxnorm:has_ingredient | ?
+rxnorm:contains | rxnorm:has_ingredients | ?
+rxnorm:has_quantified_form | rxnorm:has_ingredient | ?
+rxnorm:has_quantified_form | rxnorm:has_ingredients | ?
+rxnorm:quantified_form_of | rxnorm:has_ingredients | ?
+rxnorm:contained_in | rxnorm:contains | harmful
+rxnorm:contains | rxnorm:contained_in | harmful
+rxnorm:has_ingredient | rxnorm:ingredient_of | harmful
+rxnorm:has_ingredients | rxnorm:ingredients_of | harmful
+rxnorm:has_part | rxnorm:part_of | harmful
+rxnorm:ingredient_of | rxnorm:has_ingredient | harmful
+rxnorm:ingredients_of | rxnorm:has_ingredients | harmful
+rxnorm:part_of | rxnorm:has_part | harmful
+rxnorm:consists_of | rxnorm:has_ingredient | useful
+rxnorm:consists_of | rxnorm:has_precise_ingredient | useful
+rxnorm:has_ingredient | rxnorm:has_precise_ingredient | useful
+rxnorm:has_ingredient | rxnorm:tradename_of | useful
+rxnorm:has_ingredients | rxnorm:has_part | useful
+rxnorm:has_part | rxnorm:form_of | useful
+rxnorm:has_part | rxnorm:has_form | useful
+rxnorm:has_precise_ingredient | rxnorm:form_of | useful
+rxnorm:has_tradename | rxnorm:has_precise_ingredient | useful
+rxnorm:ingredient_of | rxnorm:has_precise_ingredient | useful
+rxnorm:isa | rxnorm:has_ingredient | useful
+rxnorm:precise_ingredient_of | rxnorm:has_ingredient | useful
+rxnorm:precise_ingredient_of | rxnorm:has_precise_ingredient | useful
+rxnorm:quantified_form_of | rxnorm:has_ingredient | useful
+rxnorm:tradename_of | rxnorm:has_form | useful
+rxnorm:consists_of | rxnorm:constitutes |  
+rxnorm:consists_of | rxnorm:has_tradename |  
+rxnorm:consists_of | rxnorm:tradename_of |  
+rxnorm:contained_in | rxnorm:has_dose_form |  
+rxnorm:contained_in | rxnorm:has_tradename |  
+rxnorm:contained_in | rxnorm:tradename_of |  
+rxnorm:contains | rxnorm:consists_of |  
+rxnorm:contains | rxnorm:has_dose_form |  
+rxnorm:contains | rxnorm:has_quantified_form |  
+rxnorm:contains | rxnorm:has_tradename |  
+rxnorm:contains | rxnorm:isa |  
+rxnorm:contains | rxnorm:tradename_of |  
+rxnorm:form_of | rxnorm:has_form |  
+rxnorm:form_of | rxnorm:has_tradename |  
+rxnorm:form_of | rxnorm:ingredient_of |  
+rxnorm:form_of | rxnorm:part_of |  
+rxnorm:has_dose_form | rxnorm:dose_form_of |  
+rxnorm:has_dose_form | rxnorm:isa |  
+rxnorm:has_form | rxnorm:form_of |  
+rxnorm:has_form | rxnorm:part_of |  
+rxnorm:has_form | rxnorm:precise_ingredient_of |  
+rxnorm:has_ingredient | rxnorm:reformulated_to |  
+rxnorm:has_ingredient | rxnorm:reformulation_of |  
+rxnorm:has_part | rxnorm:has_tradename |  
+rxnorm:has_part | rxnorm:ingredient_of |  
+rxnorm:has_part | rxnorm:precise_ingredient_of |  
+rxnorm:has_precise_ingredient | rxnorm:part_of |  
+rxnorm:has_precise_ingredient | rxnorm:precise_ingredient_of |  
+rxnorm:has_quantified_form | rxnorm:consists_of |  
+rxnorm:has_quantified_form | rxnorm:has_dose_form |  
+rxnorm:has_quantified_form | rxnorm:has_tradename |  
+rxnorm:has_quantified_form | rxnorm:isa |  
+rxnorm:has_quantified_form | rxnorm:tradename_of |  
+rxnorm:has_tradename | rxnorm:consists_of |  
+rxnorm:has_tradename | rxnorm:contained_in |  
+rxnorm:has_tradename | rxnorm:contains |  
+rxnorm:has_tradename | rxnorm:has_dose_form |  
+rxnorm:has_tradename | rxnorm:has_ingredient |  
+rxnorm:has_tradename | rxnorm:has_quantified_form |  
+rxnorm:has_tradename | rxnorm:ingredient_of |  
+rxnorm:has_tradename | rxnorm:isa |  
+rxnorm:has_tradename | rxnorm:quantified_form_of |  
+rxnorm:has_tradename | rxnorm:reformulated_to |  
+rxnorm:has_tradename | rxnorm:reformulation_of |  
+rxnorm:has_tradename | rxnorm:tradename_of |  
+rxnorm:ingredient_of | rxnorm:consists_of |  
+rxnorm:ingredient_of | rxnorm:constitutes |  
+rxnorm:ingredient_of | rxnorm:contained_in |  
+rxnorm:ingredient_of | rxnorm:has_dose_form |  
+rxnorm:ingredient_of | rxnorm:has_doseformgroup |  
+rxnorm:ingredient_of | rxnorm:has_quantified_form |  
+rxnorm:ingredient_of | rxnorm:has_tradename |  
+rxnorm:ingredient_of | rxnorm:inverse_isa |  
+rxnorm:ingredient_of | rxnorm:isa |  
+rxnorm:ingredient_of | rxnorm:quantified_form_of |  
+rxnorm:ingredient_of | rxnorm:tradename_of |  
+rxnorm:ingredients_of | rxnorm:consists_of |  
+rxnorm:ingredients_of | rxnorm:contained_in |  
+rxnorm:ingredients_of | rxnorm:has_dose_form |  
+rxnorm:ingredients_of | rxnorm:has_quantified_form |  
+rxnorm:ingredients_of | rxnorm:has_tradename |  
+rxnorm:ingredients_of | rxnorm:isa |  
+rxnorm:ingredients_of | rxnorm:quantified_form_of |  
+rxnorm:isa | rxnorm:has_dose_form |  
+rxnorm:isa | rxnorm:has_doseformgroup |  
+rxnorm:isa | rxnorm:has_tradename |  
+rxnorm:isa | rxnorm:inverse_isa |  
+rxnorm:isa | rxnorm:isa |  
+rxnorm:isa | rxnorm:tradename_of |  
+rxnorm:part_of | rxnorm:ingredients_of |  
+rxnorm:precise_ingredient_of | rxnorm:constitutes |  
+rxnorm:precise_ingredient_of | rxnorm:has_tradename |  
+rxnorm:precise_ingredient_of | rxnorm:ingredient_of |  
+rxnorm:precise_ingredient_of | rxnorm:reformulated_to |  
+rxnorm:precise_ingredient_of | rxnorm:reformulation_of |  
+rxnorm:precise_ingredient_of | rxnorm:tradename_of |  
+rxnorm:quantified_form_of | rxnorm:consists_of |  
+rxnorm:quantified_form_of | rxnorm:contained_in |  
+rxnorm:quantified_form_of | rxnorm:has_dose_form |  
+rxnorm:quantified_form_of | rxnorm:has_quantified_form |  
+rxnorm:quantified_form_of | rxnorm:has_tradename |  
+rxnorm:quantified_form_of | rxnorm:isa |  
+rxnorm:quantified_form_of | rxnorm:tradename_of |  
+rxnorm:reformulated_to | rxnorm:has_precise_ingredient |  
+rxnorm:reformulated_to | rxnorm:ingredient_of |  
+rxnorm:reformulated_to | rxnorm:reformulation_of |  
+rxnorm:reformulated_to | rxnorm:tradename_of |  
+rxnorm:reformulation_of | rxnorm:has_precise_ingredient |  
+rxnorm:reformulation_of | rxnorm:ingredient_of |  
+rxnorm:reformulation_of | rxnorm:reformulated_to |  
+rxnorm:reformulation_of | rxnorm:tradename_of |  
+rxnorm:tradename_of | rxnorm:consists_of |  
+rxnorm:tradename_of | rxnorm:contained_in |  
+rxnorm:tradename_of | rxnorm:contains |  
+rxnorm:tradename_of | rxnorm:has_dose_form |  
+rxnorm:tradename_of | rxnorm:has_ingredients |  
+rxnorm:tradename_of | rxnorm:has_quantified_form |  
+rxnorm:tradename_of | rxnorm:has_tradename |  
+rxnorm:tradename_of | rxnorm:ingredient_of |  
+rxnorm:tradename_of | rxnorm:isa |  
+rxnorm:tradename_of | rxnorm:part_of |  
+rxnorm:tradename_of | rxnorm:quantified_form_of |  
+
