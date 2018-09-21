@@ -4,6 +4,8 @@ When should transformations take place?  Prescriptions, LOF, etc.?
 
 Likewise, when is a registry denoter required... any time there's a true CRID.  Some of our identifiers may not really be CRIDs?  Again, the CRID registry textual value may not be necessary.
 
+we probably wont be referring to healthcare encounters with PKs... then what?
+
 Don't forget dataset links
 
 Shortcuts and links have to be inserted into particular named graphs
@@ -29,7 +31,6 @@ turbo:TURBO_0000603 "wes_pds__patient.csv", "Carnival graph" ;
         # shortcut biobank consenter to dataset title
         # PK_PATIENT_ID	EMPI	GID	DOB
 
-
 turbo:TURBO_0000604 "3/30/70";
         # shortcut biobank consenter to textual date of birth text
 
@@ -48,8 +49,10 @@ turbo:TURBO_0000608 "HM123456" ;
 turbo:TURBO_0000609  "HUP MRN" ;
         # shortcut biobank consenter to biobank consenter registry denoter
 
-turbo:TURBO_0000610"http://transformunify.org/ontologies/TURBO_0000410"^^xsd:anyURI ;
+turbo:TURBO_0000610"http://transformunify.org/ontologies/TURBO_0000410"^^xsd:anyURI .
         # shortcut biobank consenter to biobank consenter identifier registry URI string
+
+----
 
 turbo:TURBO_0000611
         # shortcut biobank consenter to racial identity registry URI string
@@ -69,6 +72,9 @@ turbo:TURBO_0000615
 turbo:TURBO_0000616
         # shortcut biobank consenter to racial identity text
 
+----
+
+pmbb:4353f0f4-7c5b-4895-93dd-d79df614d954 a turbo:TURBO_0000502 ;
 turbo:TURBO_0000623 "wes_pmbb__enc.csv", "Carnival graph" ;
         # shortcut biobank encounter to data set title
         # PACKETID	PROTOCOL	WEIGHTLBS	HEIGHTINCHES	ENCOUNTERDATE	CALCULATEDBMI
@@ -80,7 +86,7 @@ turbo:TURBO_0000624 "6/15/18";
 turbo:TURBO_0000625  "2018-06-15"^^xsd:date ;
         # shortcut biobank encounter to xsd-formatted  encounter date
 
-# overall height string(s)
+    # ADD overall height and weight string(s) shortcuts
 
 turbo:TURBO_0000626 "175.3"^^xsd:float ;
         # shortcut biobank encounter to height in cm
@@ -97,13 +103,17 @@ turbo:TURBO_0000629 "PmbbBlood" ;
 turbo:TURBO_0000630 "http://transformunify.org/ontologies/TURBO_0000422"^^xsd:anyURI ;
         # shortcut biobank encounter to encounter identifier registry URI string
 
-turbo:TURBO_0000635 "23.6"^^xsd:float ;
+turbo:TURBO_0000635 "23.6"^^xsd:float .
         # shortcut biobank encounter to BMI
 
+----
+
+
+
+pmbb:b2c7d4b6-b625-4772-9687-53e1ef4f76b6 a obo:OGMS_0000097 ;
 turbo:TURBO_0000643 "wes_pds__encounter_by_pkpatid.csv", "Carnival graph" ;
         # shortcut health care encounter to data set title
         # EMPI	RAWTOHEX.PK_PATIENT_ENCOUNTER_ID.	ENC_TYPE_CODE	ENC_TYPE_DESCRIPTION	ENC_DATE	HEIGHT_INCHES	WEIGHT_LBS	BMI	PK_PATIENT_ID
-
 
 turbo:TURBO_0000644 "6/29/18";
         # shortcut health care encounter to textual encounter date
@@ -117,31 +127,34 @@ turbo:TURBO_0000646  "173.9"^^xsd:float ;
 turbo:TURBO_0000647 "75.2"^^xsd:float ;
         # shortcut health care encounter to weight in kg
 
-turbo:TURBO_0000648  "24.9"^^xsd:float ;
+turbo:TURBO_0000648 "HCPK987654" ;
         # shortcut health care encounter to encounter ID symbol
 
-turbo:TURBO_0000649
+turbo:TURBO_0000649 "PDS PDS PK_Encounter_ID" ;
         # shortcut health care encounter to encounter registry denoter
 
-turbo:TURBO_0000650
+turbo:TURBO_0000650 "http://transformunify.org/ontologies/TURBO_0000440"^^xsd:anyURI ;
         # shortcut health care encounter to encounter identifier registry URI string
 
-turbo:TURBO_0000655
+turbo:TURBO_0000655  "24.9"^^xsd:float ;
         # shortcut health care encounter to BMI
 
-turbo:TURBO_0000661
+turbo:TURBO_0000661 "N21.1" ;
         # shortcut health care encounter to diagnosis code symbol
 
-turbo:TURBO_0000662
+turbo:TURBO_0000662 "ICD10", "ICD-10" ;
         # shortcut health care encounter to diagnosis code registry denoter
 
-turbo:TURBO_0000663
+turbo:TURBO_0000663 "http://purl.obolibrary.org/obo/NCIT_C128691"^^xsd:anyURI .
         # shortcut health care encounter to diagnosis code registry URI string
+        # ICD 10 CM
 
-turbo:TURBO_0001603
+----
+
+turbo:TURBO_0001603 
         # shortcut biobank encounter CRID to dataset title
 
-turbo:TURBO_0001608
+turbo:TURBO_0001608 
         # shortcut biobank encounter CRID to biobank encounter CRID symbol
 
 turbo:TURBO_0001609
@@ -149,6 +162,25 @@ turbo:TURBO_0001609
 
 turbo:TURBO_0001610
         # shortcut biobank encounter CRID to biobank encounter identifier registry URI string
+
+----
+
+
+turbo:TURBO_0003603
+        # shortcut biobank consenter CRID to dataset title
+
+turbo:TURBO_0003608
+        # shortcut biobank consenter CRID to biobank consenter CRID symbol
+
+turbo:TURBO_0003609
+        # shortcut biobank consenter CRID to biobank consenter registry denoter
+
+turbo:TURBO_0003610
+        # shortcut biobank consenter CRID to biobank consenter identifier registry URI string
+
+----
+
+
 
 turbo:TURBO_0001641
         # shortcut health care encounter to drug prescription text
@@ -168,17 +200,9 @@ turbo:TURBO_0002609
 turbo:TURBO_0002610
         # shortcut health care encounter CRID to health care encounter identifier registry URI string
 
-turbo:TURBO_0003603
-        # shortcut biobank consenter CRID to dataset title
 
-turbo:TURBO_0003608
-        # shortcut biobank consenter CRID to biobank consenter CRID symbol
+----
 
-turbo:TURBO_0003609
-        # shortcut biobank consenter CRID to biobank consenter registry denoter
-
-turbo:TURBO_0003610
-        # shortcut biobank consenter CRID to biobank consenter identifier registry URI string
 
 NOT ACTUALLY USING DIAGNOSIS- OR PRESCRIPTION-BASED SHORTCUTS?  FROM HEALTH CARE ENCOUNTER INSTEAD?
 
@@ -194,6 +218,10 @@ turbo:TURBO_0004603
 turbo:TURBO_0004604
         # shortcut diagnosis to data set title
 
+
+----
+
+
 turbo:TURBO_0005601
         # shortcut prescription to prescription CRID symbol
 
@@ -205,6 +233,10 @@ turbo:TURBO_0005611
 
 turbo:TURBO_0005612
         # shortcut prescription to drug uri string
+
+
+----
+
 
 turbo:TURBO_0007601
         # shortcut allele info to biobank encounter CRID symbol
@@ -233,6 +265,10 @@ turbo:TURBO_0007608
 turbo:TURBO_0007609
         # shortcut allele info to biobank encounter CRID registry
 
+
+----
+
+
 turbo:TURBO_0007701
         # shortcut racial identity datum to biobank consenter CRID symbol
 
@@ -257,6 +293,10 @@ turbo:TURBO_0007707
 
 turbo:TURBO_0007708
         # shortcut racial identity datum to data set title
+
+
+----
+
 
 turbo:TURBO_0008601
         # shortcut tumor grading datum to grading process end date
