@@ -1,4 +1,4 @@
-## Migrate *mos*t existing medication related graphs to repo `epic_mdm_ods_20180918`
+## Migrate *most* existing medication related graphs to repo `epic_mdm_ods_20180918`
 
 *The no-inference reasoning level should be fine*
 
