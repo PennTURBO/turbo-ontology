@@ -4,7 +4,7 @@ Migrate **most** existing medication related graphs to repo `epic_mdm_ods_201809
 - http://data.bioontology.org/ontologies/MDDB/submissions/15/download
 - http://data.bioontology.org/ontologies/NDDF/submissions/15/download
 - http://data.bioontology.org/ontologies/NDFRT/submissions/15/download
-- http://data.bioontology.org/ontologies/RXNORM/submissions/15/download
+- http://data.bioontology.org/ontologies/SNOMEDCT/submissions/15/download
 - http://data.bioontology.org/ontologies/VANDF/submissions/15/download
 
 ### Minimal UMLS -> RDF instructions:
@@ -21,7 +21,6 @@ Migrate **most** existing medication related graphs to repo `epic_mdm_ods_201809
 
 ## Load these via web downloads
 - ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi_lite.owl.gz 
-- http://data.bioontology.org/ontologies/SNOMEDCT/submissions/15/download
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-chebi.owl
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-hand.owl
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-ingredient.owl
@@ -29,6 +28,7 @@ Migrate **most** existing medication related graphs to repo `epic_mdm_ods_201809
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-pro.owl
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-rxnorm.owl
 - https://bitbucket.org/uamsdbmi/dron/raw/master/dron-upper.owl
+- http://data.bioontology.org/ontologies/RXNORM/submissions/15/download
 
 ## Load these via OntoRefine
 ### Directly from CSV, with zero or minimal manipulation or deviation from default OntoRefine settings.  
@@ -240,6 +240,41 @@ write.csv(x = merged,
 - http://example.com/resource/bioportal_mappings.tsv
 - http://example.com/resource/curated_roles
 
+*
+
+```
+    # No path to liposomal morphine yet
+    # Benzocaine = otic analgesic ?!
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    insert data {
+        graph <http://example.com/resource/curated_roles> {
+            <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> a <http://www.w3.org/2002/07/owl#Restriction>;
+                <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/RO_0000087>;
+                <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/CHEBI_35482> ;
+                rdfs:comment "EPIC (reaonably) considers the following analgesiscs: Oxymorphone, Oxymorphone hcl, Meperidine, tapentadol, magmesium salicylate, +/- menthol, Sodium thiosalicylate, ziconotide,pentazocine.  ChEBI doesn't." .
+            <http://purl.obolibrary.org/obo/CHEBI_7865> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_7866> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_6754> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_135935> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_6640> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_76310> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_9182> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_135912> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+            <http://purl.obolibrary.org/obo/CHEBI_7982> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                    <http://example.com/resource/6ec7eb6e-150f-479c-9e77-f24e79ae3ba4> .
+        }
+    }
+
+```
+
 - http://example.com/resource/mdm_meds
 
 - http://example.com/resource/normalized_supplementary_mappings
@@ -252,6 +287,7 @@ write.csv(x = merged,
 `epic_mdm_ods_20180918` does not yet contain any mapping results or expansion specifications (or expansion results)
 
 Ontologies 
+
 ----
 
 solr vs manipulated dron
