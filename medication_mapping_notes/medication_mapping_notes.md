@@ -80,8 +80,11 @@ Most likely, these repos also contain medication graphs
 
 ## Load these via OntoRefine
 ### Directly from CSV, with zero or minimal manipulation or deviation from default OntoRefine settings.  
+
 *Each CSV file is obviously inserted into a separate named graph, and UUIDs are generally used for the OntoRefine row URIs instead of the suggested value-based row URIs*
-- http://example.com/resource/epic_meds_with_rxnorm
+
+- **http://example.com/resource/epic_meds_with_rxnorm**
+
 *Didn't name the graph after the file (EPIC medication hierarchy.xlsx) dues to the spaces in the name.*
 
 ```
@@ -163,7 +166,8 @@ delete {
 > Removed 11909031 statements. Update took 1m 41s, moments ago.
  
 
-- http://example.com/resource/wes_pds_enc__med_order.csv
+- **http://example.com/resource/wes_pds_enc__med_order.csv**
+
 *Encounter IDs have been removed from the http://example.com/resource/wes_pds_enc__med_order.csv graph included in `epic_mdm_ods_20180918`, so this is a password-free, PHI-free repository.*
 
 
@@ -242,7 +246,8 @@ WHERE {
 > Added approximately 1400000 statements in 3m 
 
 
-- http://example.com/resource/epic_meds_with_rxnorm_valcasts
+- **http://example.com/resource/epic_meds_with_rxnorm_valcasts**
+
 *Medication IDs from http://example.com/resource/epic_meds_with_rxnorm were cast to integers and RxNorm values were cast to URIs.*
 
 ```
@@ -269,7 +274,8 @@ where {
 
 
 
-- http://example.com/resource/mdm_ods_merged_meds.csv
+- **http://example.com/resource/mdm_ods_merged_meds.csv**
+
 *The ODS file (At least) has to be opened with codepage 1252 encoding.  Only the source column from ODS was retained.  There are 62 rows where the pre-tidied MDM medication names don't match the raw ODS medication names.*
 library(readr)
 
@@ -305,7 +311,7 @@ write.csv(x = merged,
           row.names = FALSE)
 ```
 
-- http://example.com/resource/bioportal_mappings.tsv
+- **http://example.com/resource/bioportal_mappings.tsv**
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -334,7 +340,7 @@ insert {
 > Added 1536000 statements. Update took 48s, minutes ago.
 
 
-- http://example.com/resource/curated_roles
+- **http://example.com/resource/curated_roles**
 
 *To address false negatives when comparing EPIC roles to TURBO roles: ChEBI is missing some (reasoanble) analgesic toles known to EPIC.*
 
@@ -371,9 +377,7 @@ insert {
 
 ```
 
-
-
-- http://example.com/resource/normalized_supplementary_mappings
+- **http://example.com/resource/normalized_supplementary_mappings**
 
 *To address false negatives when comparing EPIC roles to TURBO roles:  The NCBO BioPortal mappings don't include the follwoing RxNorm/ChEBI pairs:*
 - aspirin/acetylsalicylic acid
@@ -398,13 +402,13 @@ insert data {
     }
 ```
 
-- **http://example.com/resource/rxnorm_bioportal_mappings**
+- *http://example.com/resource/rxnorm_bioportal_mappings*
 
-- **http://example.com/resource/wes_pds__med_standard.csv**
+- *http://example.com/resource/wes_pds__med_standard.csv*
 
 *The CSV file has 15458 rows, many of which are duplicates (see PK_MEDICATION_ID = 98.)  The graph only contains triples about the 4104 unique rows.  Used an MD5 of the PK for the row URIs to force non-redundancy?  My be superseded by http://example.com/resource/mdm_ods_merged_meds.csv?*
 
-- **http://example.com/resource/mdm_meds**
+- *http://example.com/resource/mdm_meds*
 
 
 
