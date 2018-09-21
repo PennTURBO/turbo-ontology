@@ -1,4 +1,43 @@
-Migrate **most** existing medication related graphs to repo `epic_mdm_ods_20180918`
+## Migrate **most** existing medication related graphs to repo `epic_mdm_ods_20180918`
+
+Exceptions:  `epic_mdm_ods_20180918` does not yet contain any mapping results, expansion specifications, or expansion results
+
+`epic_meds` still contains http://example.com/resource/EPIC_medex_result_201809161140
+
+`med_orders_ncbo_mappings` still contains
+
+- http://example.com/resource/RxnIfAvailable
+- http://example.com/resource/med_standard_FULL_NAME_bioportal_search
+- http://example.com/resource/med_standard_FULL_NAME_bioportal_search_semanticTypes
+- http://example.com/resource/med_standard_FULL_NAME_query_expansion
+- http://example.com/resource/wes_pds_enc__med_order.csv
+- http://www.itmat.upenn.edu/biobank/MedMapExpansion
+- http://www.itmat.upenn.edu/biobank/knownToMatchedRxnLinkingPred
+- http://www.itmat.upenn.edu/biobank/knownToMatchedRxnPred
+- http://www.itmat.upenn.edu/biobank/knownToMatchedSameTerm
+- http://www.itmat.upenn.edu/biobank/knownToMatchedSharedType
+
+`medications_no_phi` still contains
+
+- http://example.com/resource/fullname_blacklist.csv
+- http://example.com/resource/fullname_to_rxn_curations
+- http://example.com/resource/medex_results
+- http://example.com/resource/uphs_term_expansion.csv
+
+Most likely, these repos also contain medication graphs
+- `public_for_turbo`
+- `public_for_turbo_20180716_scratch`
+- `turbo_6MillLOF_20180622_20180726`
+- `turbo_6MillLOF_20180622_20180726_noinf`
+- `turbo_6MillLOF_20180622_addl_public_rdfspo`
+- `turbo_6MillLOF_20180622_addl_public_rdfspo_scratch`
+- `turbo_6MillLOF_20180622_drivetrain_expanded`
+- `turbo_6MillLOF_20180622_drivetrain_expanded_scratch`
+- `turbo_6MillLOF_20180622_drivetrain_remainder`
+- `turbo_6MillLOF_20180622_drivetrain_remainder_scratch`
+- `turbo_6MillLOF_20180622_Hayden`
+- `turbo_6MillLOF_20180622_restored_20180807`
+
 
 ## Load these via UMLS/MetaMorphoSys -> MySQL -> RDF conversion
 - http://data.bioontology.org/ontologies/MDDB/submissions/15/download
@@ -367,49 +406,13 @@ insert data {
 
 ----
 
-solr vs manipulated dron
-bioportal search api vs all of bioportal
-medex
-clamp
-lucene built into graphdb vs the ontologies producing the most rxnorm hits in the all-bioportal technique (last mmdb form 2017AA?)
-external solr vs ontologies producing the most rxnorm hits
+### Mapping approaches
+- Solr vs *manipulated* DRON
+- NCBO BioPortal search API vs all BioPortal content
+- medex
+- CLAMP
+- Lucene (built into GraphDB) vs the ontologies producing the most RxNorm hits with the all-BioPortal technique
+- (External) Solr vs ontologies producing the most RxNorm hits...
 
 ----
 
-`epic_mdm_ods_20180918` does not yet contain any mapping results or expansion specifications (or expansion results)
-
-`epic_meds` still contains http://example.com/resource/EPIC_medex_result_201809161140
-
-`med_orders_ncbo_mappings` still contains
-
-- http://example.com/resource/RxnIfAvailable
-- http://example.com/resource/med_standard_FULL_NAME_bioportal_search
-- http://example.com/resource/med_standard_FULL_NAME_bioportal_search_semanticTypes
-- http://example.com/resource/med_standard_FULL_NAME_query_expansion
-- http://example.com/resource/wes_pds_enc__med_order.csv
-- http://www.itmat.upenn.edu/biobank/MedMapExpansion
-- http://www.itmat.upenn.edu/biobank/knownToMatchedRxnLinkingPred
-- http://www.itmat.upenn.edu/biobank/knownToMatchedRxnPred
-- http://www.itmat.upenn.edu/biobank/knownToMatchedSameTerm
-- http://www.itmat.upenn.edu/biobank/knownToMatchedSharedType
-
-`medications_no_phi` still contains
-
-- http://example.com/resource/fullname_blacklist.csv
-- http://example.com/resource/fullname_to_rxn_curations
-- http://example.com/resource/medex_results
-- http://example.com/resource/uphs_term_expansion.csv
-
-Most likely, these repos also contain medication graphs
-- public_for_turbo
-- public_for_turbo_20180716_scratch
-- turbo_6MillLOF_20180622_20180726
-- turbo_6MillLOF_20180622_20180726_noinf
-- turbo_6MillLOF_20180622_addl_public_rdfspo
-- turbo_6MillLOF_20180622_addl_public_rdfspo_scratch
-- turbo_6MillLOF_20180622_drivetrain_expanded
-- turbo_6MillLOF_20180622_drivetrain_expanded_scratch
-- turbo_6MillLOF_20180622_drivetrain_remainder
-- turbo_6MillLOF_20180622_drivetrain_remainder_scratch
-- turbo_6MillLOF_20180622_Hayden
-- turbo_6MillLOF_20180622_restored_20180807
