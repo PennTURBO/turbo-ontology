@@ -6,15 +6,17 @@ Likewise, when is a registry denoter required... any time there's a true CRID.  
 
 we probably wont be referring to healthcare encounters with PKs... then what?
 
-Don't forget dataset links
+MAM: Don't forget dataset links
 
-Shortcuts and links have to be inserted into particular named graphs
+MAM/HGF: Shortcuts and links have to be inserted into particular named graphs
 
 diagnoses AREN'T IDENTIFIED WITH CRIDS ANY MORE.  THE SYMBOL (CODE) AND REGISTRY (ICD VERSION ETC) ARE PART OF THE DIAGNOSIS ITSELF NOW.
 
 ADD TUMOR GRADING NOW AND STAGING ASAP
 
 owl actually expects date-times, not dates.
+
+what is the dataset title if triples came from Carnival?
 
 PREFIX turbo: <http://transformunify.org/ontologies/>
 PREFIX pmbb: <http://www.itmat.upenn.edu/biobank/>

@@ -1,5 +1,8 @@
 ## Best Case in Brief: Antipsychotics 
-CHEBI:35476 vs EPIC PharmacyClass == Antipsychotics 
+
+CHEBI:35476 vs EPIC PharmacyClass == Antipsychotics
+
+Using BioPortal mappings to get from a RxNorm  ingredient to a ChEBI ingredient.  (MNapping requested via BioPortal's Mapping API and then saved as a static file.)
 
 ```
 > print(for.caret)
@@ -12,6 +15,25 @@ CHEBI:35476 vs EPIC PharmacyClass == Antipsychotics
 > specificity(for.caret)
 [1] 0.7573464
 ```
+
+Why is specificity low?  ChEBI (legitimately) asserts several phenothiazine-class active ingredients to have both an antipsychotic and antiemetic role.  Gotcha!  
+
+| act.ing          | EPIC.count |
+|------------------|------------|
+| chlorpromazine   | 78         |
+| olanzapine       | 38         |
+| prochlorperazine | 33         |
+| perphenazine     | 27         |
+| haloperidol      | 24         |
+| trifluoperazine  | 12         |
+| promazine        | 10         |
+| droperidol       | 5          |
+| thiethylperazine | 4          |
+| triflupromazine  | 4          |
+
+
+[Even when the FDA has approved labeling a drug as both an antiemetic and antipsychotic](https://www.accessdata.fda.gov/drugsatfda_docs/label/2010/089903s018lbl.pdf), EPIC never seems to classify products containing that drug as an anti-emetic.
+
 
 ## Analgesics
 
