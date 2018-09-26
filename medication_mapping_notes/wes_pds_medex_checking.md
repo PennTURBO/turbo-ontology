@@ -1605,3 +1605,113 @@ write_csv(add.sem.type, path = "wes_pds_having_rxn_v_bioportal_processed.csv", c
 #                   "T116", "T121", " T109", "T109", " T121", "T200", "indirect",
 #                   "direct", "rxnifavailalbe")]
 ```
+
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX spif: <http://spinrdf.org/spif#>
+insert {
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res ;
+            mydata:FULL_NAME ?FULL_NAME ;
+            mydata:order ?order ;
+            mydata:id ?id ;
+            mydata:prefLabel ?prefLabel ;
+            mydata:matchType ?matchType ;
+            mydata:ontology ?ontology ;
+            mydata:hit.count ?hit_count ;
+            mydata:rank ?rank ;
+            mydata:lv ?lv ;
+            mydata:lcs ?lcs ;
+            mydata:qgram ?qgram ;
+            mydata:cosine ?cosine ;
+            mydata:jaccard ?jaccard ;
+            mydata:jw ?jw ;
+            mydata:T195 ?T195 ;
+            mydata:T116 ?T116 ;
+            mydata:T121 ?T121 ;
+            mydata:T109 ?T109 ;
+            mydata:T1092 ?T1092 ;
+            mydata:T1212 ?T1212 ;
+            mydata:T200 ?T200 ;
+            mydata:indirect ?indirect ;
+            mydata:direct ?direct ;
+            mydata:rxnifavailalbe ?rxnifavailalbe ;
+            mydata:FULL_NAME.lc ?FULL_NAME_lc ;
+            mydata:PDS_RXNORM ?PDS_RXNORM .
+    }
+} WHERE {
+    SERVICE <ontorefine:2531897278245> {
+        ?row a mydata:Row ;
+             mydata:FULL_NAME ?FULL_NAME ;
+             mydata:order ?order ;
+             mydata:id ?id ;
+             mydata:prefLabel ?prefLabel ;
+             mydata:matchType ?matchType ;
+             mydata:ontology ?ontology ;
+             mydata:hit.count ?hit_count ;
+             mydata:rank ?rank ;
+             mydata:lv ?lv ;
+             mydata:lcs ?lcs ;
+             mydata:qgram ?qgram ;
+             mydata:cosine ?cosine ;
+             mydata:jaccard ?jaccard ;
+             mydata:jw ?jw ;
+             mydata:T195 ?T195 ;
+             mydata:T116 ?T116 ;
+             mydata:T121 ?T121 ;
+             mydata:T109 ?T109 ;
+             mydata:T1092 ?T1092 ;
+             mydata:T1212 ?T1212 ;
+             mydata:T200 ?T200 ;
+             mydata:indirect ?indirect ;
+             mydata:direct ?direct ;
+             mydata:FULL_NAME.lc ?FULL_NAME_lc ;
+             mydata:PDS_RXNORM ?PDS_RXNORM .
+        optional {
+            ?row mydata:rxnifavailalbe ?rxnifavailalbe ;
+                 }
+        BIND(uuid() AS ?myRowId)
+    }
+}
+
+```
+
+> Added 1827900 statements. Update took 2m 48s, minutes ago. 
+
+```
+PREFIX mydata: <http://example.com/resource/>
+delete {
+    graph mydata:wes_pds_v_bioportal {
+        ?s ?p "NA" .
+    }
+}
+where {
+    graph mydata:wes_pds_v_bioportal {
+        ?s ?p "NA" .
+    }
+}
+```
+
+> Removed 78008 statements. Update took 0.8s, moments ago. 
+
+```
+> print(nrow(add.sem.type))
+[1] 68129
+```
+
+```
+PREFIX mydata: <http://example.com/resource/>
+select 
+(count(distinct ?myRowId) as ?count)
+where {
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res
+    }
+}
+```
+
+> Showing results from 1 to 1 of 1. Query took 0.1s, moments ago. 
+
+count
+"68129"^^xsd:integer
