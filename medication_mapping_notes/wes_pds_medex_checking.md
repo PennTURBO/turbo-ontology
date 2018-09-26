@@ -403,3 +403,233 @@ where {
 ```
 
 > No statements added or removed. Update took 0.1s, moments ago. 
+
+
+----
+
+## Make sure we're not looking at obsolete RxNorms
+
+| Properties          | values                     |
+|---------------------|----------------------------|
+| RxCUI               | 3486                       |
+| Concept Name        | Dioctyl Sulfosuccinic Acid |
+| Term Type           | IN                         |
+| Multiple Ingredient | No                         |
+| Branded             | No                         |
+
+
+| Metadata   | value   |
+|------------|---------|
+| Status     | Retired |
+| Source     | RXNORM  |
+| Start Date | May-06  |
+| End Date   | Oct-15  |
+| Is Current | FALSE   |
+
+Retired 'Dioctyl Sulfosuccinic Acid' is not present in current TURBO graph
+
+What kind of predicates should I expect
+
+Example: `rxnorm:220586` from `<http://data.bioontology.org/ontologies/RXNORM/submissions/15/download>`
+
+
+| predicate                     | object                                        |
+|-------------------------------|-----------------------------------------------|
+| rdf:type                      | owl:Class                                     |
+| rxnorm:has_precise_ingredient | rxnorm:2672                                   |
+| rxnorm:ingredient_of          | rxnorm:1187503                                |
+| rxnorm:ingredient_of          | rxnorm:1187505                                |
+| rxnorm:ingredient_of          | rxnorm:369248                                 |
+| rxnorm:ingredient_of          | rxnorm:993836                                 |
+| rxnorm:ingredient_of          | rxnorm:993837                                 |
+| rxnorm:ingredient_of          | rxnorm:993891                                 |
+| rxnorm:ingredient_of          | rxnorm:993892                                 |
+| rxnorm:RXAUI                  | 1184477                                       |
+| rxnorm:RXCUI                  | 220586                                        |
+| rxnorm:RXN_BN_CARDINALITY     | multi                                         |
+| rxnorm:tradename_of           | rxnorm:161                                    |
+| rxnorm:tradename_of           | rxnorm:2670                                   |
+| skos:notation                 | 220586                                        |
+| skos:prefLabel                | Tylenol with Codeine@en                       |
+
+
+### see also https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/RXNORM/stats.html
+
+### X should be of type `owl:Class` and should not have a `rxnorm:RXN_OBSOLETED` object.
+
+## compare pds and medex via ingredients?
+
+### what are the predicates used by any RxNorm statement
+
+```
+select
+?p (count(distinct ?s) as ?count)
+where {
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?s ?p ?o .
+    }
+}
+group by ?p 
+order by desc(count(distinct ?s))
+```
+
+> Showing results from 1 to 55 of 55. Query took 2.4s, moments ago. 
+
+| p                                  | count               |
+|------------------------------------|---------------------|
+| rdf:type                           | 113662^^xsd:integer |
+| skos:notation (rxnorm value) | 113617^^xsd:integer |
+| skos:prefLabel                     | 113617^^xsd:integer |
+| umls:cui (for UMLS) | 113490^^xsd:integer |
+| umls:hasSTY (a semantic type term) | 113490^^xsd:integer |
+| umls:tui (a semantic type value) | 113490^^xsd:integer |
+| rxnorm:RXAUI (RxNorm atom value... usefulness?) | 113490^^xsd:integer |
+| rxnorm:RXCUI (same as skos:notation?) | 113490^^xsd:integer |
+| rxnorm:has_ingredient              | 69532^^xsd:integer  |
+| rxnorm:has_dose_form               | 45099^^xsd:integer  |
+| rxnorm:isa                         | 44346^^xsd:integer  |
+| rxnorm:tradename_of                | 43423^^xsd:integer  |
+| rxnorm:RXN_AVAILABLE_STRENGTH      | 39536^^xsd:integer  |
+| skos:altLabel                      | 34134^^xsd:integer  |
+| rxnorm:inverse_isa                 | 34101^^xsd:integer  |
+| rxnorm:consists_of                 | 28911^^xsd:integer  |
+| rxnorm:has_tradename               | 26161^^xsd:integer  |
+| rxnorm:constitutes                 | 24896^^xsd:integer  |
+| rxnorm:RXN_HUMAN_DRUG (US or blank?) | 24635^^xsd:integer  |
+| rxnorm:RXTERM_FORM (tab, spray, sol...) | 23214^^xsd:integer  |
+| rxnorm:NDC                         | 19577^^xsd:integer  |
+| rxnorm:has_doseformgroup           | 18843^^xsd:integer  |
+| rxnorm:RXN_STRENGTH                | 15457^^xsd:integer  |
+| rxnorm:ingredient_of               | 9373^^xsd:integer   |
+| rxnorm:RXN_BN_CARDINALITY  (single or multi)| 6053^^xsd:integer   |
+| rxnorm:has_precise_ingredient      | 5391^^xsd:integer   |
+| rxnorm:RXN_ACTIVATED (date) | 5374^^xsd:integer   |
+| rxnorm:RXN_OBSOLETED (date) | 5374^^xsd:integer   |
+| rxnorm:has_ingredients             | 4691^^xsd:integer   |
+| rxnorm:RXN_QUANTITY                | 4170^^xsd:integer   |
+| rxnorm:has_part                    | 3975^^xsd:integer   |
+| rxnorm:form_of                     | 2743^^xsd:integer   |
+| rxnorm:RXN_IN_EXPRESSED_FLAG       | 2730^^xsd:integer   |
+| rxnorm:has_form                    | 1989^^xsd:integer   |
+| rxnorm:part_of                     | 1976^^xsd:integer   |
+| rxnorm:RXN_VET_DRUG                | 1790^^xsd:integer   |
+| rxnorm:ingredients_of              | 1706^^xsd:integer   |
+| rxnorm:precise_ingredient_of       | 1059^^xsd:integer   |
+| rxnorm:contains                    | 836^^xsd:integer    |
+| rxnorm:contained_in                | 634^^xsd:integer    |
+| rxnorm:RXN_QUALITATIVE_DISTINCTION | 217^^xsd:integer    |
+| rdfs:subClassOf                    | 125^^xsd:integer    |
+| rxnorm:dose_form_of                | 117^^xsd:integer    |
+| rxnorm:ORIG_CODE                   | 81^^xsd:integer     |
+| rxnorm:ORIG_SOURCE                 | 81^^xsd:integer     |
+| rxnorm:AMBIGUITY_FLAG              | 65^^xsd:integer     |
+| rdfs:comment                       | 45^^xsd:integer     |
+| rdfs:label                         | 45^^xsd:integer     |
+| rxnorm:doseformgroup_of            | 43^^xsd:integer     |
+| rxnorm:quantified_form_of          | 26^^xsd:integer     |
+| rxnorm:has_quantified_form         | 21^^xsd:integer     |
+| rxnorm:reformulated_to             | 12^^xsd:integer     |
+| rxnorm:reformulation_of            | 12^^xsd:integer     |
+| owl:imports                        | 1^^xsd:integer      |
+| owl:versionInfo                    | 1^^xsd:integer      |
+
+### What are the properties upstream of RxNorm terms used by PDS?
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select
+?p (count(distinct ?s) as ?count)
+where {
+    graph mydata:wes_pds_v_medex {
+        ?myRowId mydata:PDS_RXNORM ?pdsrxn  .
+    }
+    graph  <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?s ?p ?pdsrxn .
+    }
+}
+group by ?p 
+order by desc (count(distinct ?s))
+```
+
+> Showing results from 1 to 18 of 18. Query took 0.2s, minutes ago. 
+
+| p                             | count             |
+|-------------------------------|-------------------|
+| rxnorm:has_ingredient         | 4773^^xsd:integer |
+| rxnorm:tradename_of           | 2472^^xsd:integer |
+| rxnorm:inverse_isa            | 1409^^xsd:integer |
+| rxnorm:has_part               | 1116^^xsd:integer |
+| rxnorm:constitutes            | 850^^xsd:integer  |
+| rxnorm:isa                    | 300^^xsd:integer  |
+| rxnorm:form_of                | 162^^xsd:integer  |
+| rxnorm:contains               | 113^^xsd:integer  |
+| rxnorm:ingredient_of          | 83^^xsd:integer   |
+| rxnorm:has_precise_ingredient | 68^^xsd:integer   |
+| rxnorm:dose_form_of           | 35^^xsd:integer   |
+| rxnorm:has_ingredients        | 29^^xsd:integer   |
+| rxnorm:ingredients_of         | 27^^xsd:integer   |
+| rxnorm:part_of                | 6^^xsd:integer    |
+| rxnorm:quantified_form_of     | 5^^xsd:integer    |
+| rxnorm:has_form               | 4^^xsd:integer    |
+| rxnorm:consists_of            | 1^^xsd:integer    |
+| rxnorm:has_quantified_form    | 1^^xsd:integer    |
+
+
+### What are the types of anything in RxNorm?
+
+```
+PREFIX umls: <http://bioportal.bioontology.org/ontologies/umls/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select 
+?o ?l (count(distinct ?s) as ?count)
+where {
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?s umls:hasSTY ?o .
+        ?o skos:prefLabel ?l
+    }
+}
+group by ?o ?l
+order by desc (count(distinct ?s))
+```
+
+> Showing results from 1 to 26 of 26. Query took 0.5s, moments ago. 
+
+prefix bioportal: <http://purl.bioontology.org/ontology/STY/>
+
+| o   | l   | count   |
+|---|---|---|
+| bioportal:T200 | Clinical Drug@en                           | 88018 |
+| bioportal:T121 | Pharmacologic Substance@en                 | 20177 |
+| bioportal:T109 | Organic Chemical@en                        | 16604 |
+| bioportal:T116 | Amino Acid, Peptide, or Protein@en         | 1512  |
+| bioportal:T129 | Immunologic Factor@en                      | 1188  |
+| bioportal:T197 | Inorganic Chemical@en                      | 865   |
+| bioportal:T203 | Drug Delivery Device@en                    | 836   |
+| bioportal:T195 | Antibiotic@en                              | 635   |
+| bioportal:T130 | Indicator, Reagent, or Diagnostic Aid@en   | 456   |
+| bioportal:T122 | Biomedical or Dental Material@en           | 385   |
+| bioportal:T125 | Hormone@en                                 | 369   |
+| bioportal:T123 | Biologically Active Substance@en           | 354   |
+| bioportal:T196 | Element, Ion, or Isotope@en                | 226   |
+| bioportal:T131 | Hazardous or Poisonous Substance@en        | 187   |
+| bioportal:T127 | Vitamin@en                                 | 185   |
+| bioportal:T114 | Nucleic Acid, Nucleoside, or Nucleotide@en | 155   |
+| bioportal:T126 | Enzyme@en                                  | 132   |
+| bioportal:T007 | Bacterium@en                               | 112   |
+| bioportal:T168 | Food@en                                    | 110   |
+| bioportal:T005 | Virus@en                                   | 35    |
+| bioportal:T120 | Chemical Viewed Functionally@en            | 22    |
+| bioportal:T004 | Fungus@en                                  | 16    |
+| bioportal:T204 | Eukaryote@en                               | 14    |
+| bioportal:T074 | Medical Device@en                          | 13    |
+| bioportal:T025 | Cell@en                                    | 8     |
+| bioportal:T104 | Chemical Viewed Structurally@en            | 1     |
+
+
+
+
+
+
+
