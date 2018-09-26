@@ -1299,6 +1299,8 @@ insert {
 
 > Added 1827900 statements. Update took 2m 48s, minutes ago. 
 
+## Remove NA objects from BioPortal results
+
 ```
 PREFIX mydata: <http://example.com/resource/>
 delete {
@@ -1315,10 +1317,18 @@ where {
 
 > Removed 78008 statements. Update took 0.8s, moments ago. 
 
+## Did we retain evrything?
+
+For example, were there relationships (other than mydata:rxnifavailalbe) that should have been made optional?
+
+### According to R data frame
+
 ```
 > print(nrow(add.sem.type))
 [1] 68129
 ```
+
+### According to graph
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -1335,6 +1345,8 @@ where {
 
 count
 "68129"^^xsd:integer
+
+## Flag identical RxNorm cases
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -1353,6 +1365,58 @@ where {
 ```
 
 Added 13227 statements. Update took 0.8s, moments ago. 
+
+## Flag cases where the PDS RxNorm and the BioPortal RxNorm share a parent type
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+insert {
+    graph mydata:wes_pds_bioportal_assessments {
+        ?myRowId mydata:bioportal_pds_shared_type ?shared   
+    }
+}
+where {
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res ;
+                 mydata:rxnifavailalbe ?medex_rxn_general ;
+                 mydata:PDS_RXNORM ?PDS_RXNORM .
+    }
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?medex_rxn_general rxnorm:isa ?shared .
+        ?PDS_RXNORM  rxnorm:isa ?shared .
+    }
+}
+```
+
+> Added 67165 statements. Update took 1.7s, moments ago. 
+
+## Spot check
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select 
+?shared ?pl (count(distinct ?myRowId) as ?count)
+where
+{
+    graph mydata:wes_pds_bioportal_assessments {
+        ?myRowId mydata:bioportal_pds_shared_type ?shared   
+    }
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?shared skos:prefLabel ?pl
+    }
+}
+group by ?shared ?pl 
+order by desc (count(distinct ?myRowId))
+```
+
+> Showing results from 1 to 1,000 of 1,385. Query took 0.4s, moments ago. 
+
+
+
+## Flag binary relationship cases
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -1375,6 +1439,7 @@ where {
 
 > Added 9821 statements. Update took 2.6s, moments ago. 
 
+## What were the binary relationships?
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -1415,6 +1480,7 @@ order by desc (count(distinct ?myRowId))
 | rxnorm:has_ingredients / rxnorm:ingredients_of | 8^^xsd:integer    |
 
 
+## Spot check some selected binary relationships
 ```
 PREFIX mydata: <http://example.com/resource/>
 PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
@@ -1445,6 +1511,15 @@ where {
 
 > Showing results from 1 to 1,000 of 6,393. Query took 0.5s, today at 16:03. 
 
+## Ingredient / constitutes-consists_of situations require additional attention
+
+Still not directly address combination drugs, althogh those may get covered by RxNorm combination term hits
+
+Spot check some!
+
+Also, should look for inverse of these Ingredient / constitutes-consists_of pairs (from perspective of the ingredieant count for the RxNorm term hit in the BioPortal search
+
+Need to do more work on expansion still
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -1482,23 +1557,35 @@ order by desc (count(distinct ?pi))
 ```
 PREFIX mydata: <http://example.com/resource/>
 PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
-insert {
-    graph mydata:wes_pds_bioportal_assessments {
-        ?myRowId mydata:bioportal_pds_shared_type ?shared   
-    }
-}
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select *
 where {
-    graph mydata:wes_pds_v_bioportal {
-        ?myRowId a mydata:processed_bioportal_search_res ;
-                 mydata:rxnifavailalbe ?medex_rxn_general ;
-                 mydata:PDS_RXNORM ?PDS_RXNORM .
+    select ?FULL_NAME ?bioportal_rxn ?bpl ?lp ?PDS_RXNORM ?pl ?backlink 
+    #    ?myRowId  
+    (count(distinct ?pi) as ?picount)
+    where {
+        values (?lp ?backlink) {
+            (rxnorm:ingredient_of rxnorm:has_ingredient)
+            (rxnorm:constitutes rxnorm:consists_of)
+        }
+        graph mydata:wes_pds_v_bioportal {
+            ?myRowId a mydata:processed_bioportal_search_res ;
+                     mydata:rxnifavailalbe ?bioportal_rxn ;
+                     mydata:PDS_RXNORM ?PDS_RXNORM ;
+                     mydata:FULL_NAME ?FULL_NAME .
+        }
+        graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+            ?bioportal_rxn skos:prefLabel ?bpl ;
+                           ?lp ?PDS_RXNORM .
+            ?PDS_RXNORM skos:prefLabel ?pl .
+            optional {
+                ?PDS_RXNORM ?backlink ?pi .
+            }
+        }
     }
-    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
-        ?medex_rxn_general rxnorm:isa ?shared .
-        ?PDS_RXNORM  rxnorm:isa ?shared .
-    }
+    group by  ?FULL_NAME ?bioportal_rxn ?bpl ?lp ?PDS_RXNORM ?pl ?backlink     
+    #    ?myRowId 
+    having (count(distinct ?pi) < 2)
 }
 ```
-
-> Added 67165 statements. Update took 1.7s, moments ago. 
 
