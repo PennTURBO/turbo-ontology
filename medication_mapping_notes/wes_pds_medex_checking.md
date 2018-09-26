@@ -820,7 +820,7 @@ where {
 }
 ```
 
-## Dump medication anmes and PDS RxNorms (from the medex graph we've been working on)
+## Dump medication names and PDS RxNorms (from the medex graph we've been working on)
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -1716,4 +1716,169 @@ where {
 count
 "68129"^^xsd:integer
 
-force
+```
+PREFIX mydata: <http://example.com/resource/>
+insert {
+    graph mydata:wes_pds_bioportal_assessments {
+        ?myRowId mydata:bioportal_pds_same_term true
+    }
+}
+where {
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res ;
+                 mydata:rxnifavailalbe ?shared ;
+                 mydata:PDS_RXNORM ?shared .
+    }
+}
+```
+
+Added 13227 statements. Update took 0.8s, moments ago. 
+
+```
+PREFIX mydata: <http://example.com/resource/>
+insert {
+    graph mydata:wes_pds_bioportal_assessments {
+        ?myRowId mydata:bioportal_pds_linking_predicate ?p
+    }
+}
+where {
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res ;
+                 mydata:rxnifavailalbe ?medex_rxn_general ;
+                 mydata:PDS_RXNORM ?PDS_RXNORM .
+    }
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?medex_rxn_general ?p ?PDS_RXNORM
+    }
+}
+```
+
+> Added 9821 statements. Update took 2.6s, moments ago. 
+
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select 
+?lp (count(distinct ?myRowId  ) as ?count)
+where
+{
+    graph mydata:wes_pds_bioportal_assessments {
+        ?myRowId mydata:bioportal_pds_linking_predicate ?lp
+    }
+}
+group by ?lp 
+order by desc (count(distinct ?myRowId))
+```
+
+> Showing results from 1 to 17 of 17. Query took 0.1s, moments ago.
+
+
+| lp                            | count             |
+|-------------------------------|-------------------|
+| rxnorm:tradename_of           | 3886^^xsd:integer |
+| rxnorm:inverse_isa            | 1826^^xsd:integer |
+| rxnorm:ingredient_of  (ok as long as PDS term only has one ingredient) | 1787^^xsd:integer |
+| rxnorm:constitutes (ok as long as PDS term consists of only one "thing") | 1072^^xsd:integer |
+| rxnorm:isa / rxnorm:inverse_isa | 327^^xsd:integer  |
+| *rxnorm:has_part*               | 263^^xsd:integer  |
+| rxnorm:form_of                | 211^^xsd:integer  |
+| rxnorm:has_ingredient   (ok as long as BioPortal term only has one ingredient)  | 118^^xsd:integer  |
+| *rxnorm:dose_form_of*           | 114^^xsd:integer  |
+| rxnorm:contains / rxnorm:contained_in | 65^^xsd:integer   |
+| *rxnorm:has_precise_ingredient* | 64^^xsd:integer   |
+| rxnorm:ingredients_of / rxnorm:has_ingredients| 48^^xsd:integer   |
+| rxnorm:quantified_form_of / rxnorm:has_quantified_form | 11^^xsd:integer   |
+| *rxnorm:part_of*                | 10^^xsd:integer   |
+| rxnorm:has_form / rxnorm:form_of | 8^^xsd:integer    |
+| rxnorm:has_ingredients / rxnorm:ingredients_of | 8^^xsd:integer    |
+
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select *
+where {
+    values ?lp {
+        rxnorm:form_of rxnorm:has_form 
+        rxnorm:isa rxnorm:inverse_isa 
+        rxnorm:ingredients_of rxnorm:has_ingredients 
+        rxnorm:contains rxnorm:contained_in  
+        rxnorm:tradename_of rxnorm:has_tradename
+        rxnorm:quantified_form_of rxnorm:has_quantified_form
+    }
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res ;
+                 mydata:rxnifavailalbe ?rxnifavailalbe ;
+                 mydata:PDS_RXNORM ?PDS_RXNORM ;
+                 mydata:FULL_NAME ?FULL_NAME .
+    }
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?rxnifavailalbe skos:prefLabel ?bpl ;
+                        ?lp ?PDS_RXNORM .
+        ?PDS_RXNORM skos:prefLabel ?pl .
+    }
+}
+```
+
+> Showing results from 1 to 1,000 of 6,393. Query took 0.5s, today at 16:03. 
+
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select 
+ ?FULL_NAME ?bpl ?lp ?PDS_RXNORM  (count(distinct ?pi) as ?ing_count)
+where
+{
+    values ?lp {
+        rxnorm:ingredient_of 
+    }
+    graph mydata:wes_pds_bioportal_assessments {
+        ?myRowId mydata:bioportal_pds_linking_predicate ?lp
+    }
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res ;
+                 mydata:rxnifavailalbe ?rxnifavailalbe ;
+                 mydata:PDS_RXNORM ?PDS_RXNORM ;
+                 mydata:FULL_NAME ?FULL_NAME
+    }
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?rxnifavailalbe skos:prefLabel ?bpl .
+        ?PDS_RXNORM skos:prefLabel ?pl .
+        optional {
+            ?PDS_RXNORM   rxnorm:has_ingredient ?pi .
+        }
+    }
+}
+group by  ?FULL_NAME ?bpl ?lp ?pl ?PDS_RXNORM 
+order by desc (count(distinct ?pi))
+```
+
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+insert {
+    graph mydata:wes_pds_bioportal_assessments {
+        ?myRowId mydata:bioportal_pds_shared_type ?shared   
+    }
+}
+where {
+    graph mydata:wes_pds_v_bioportal {
+        ?myRowId a mydata:processed_bioportal_search_res ;
+                 mydata:rxnifavailalbe ?medex_rxn_general ;
+                 mydata:PDS_RXNORM ?PDS_RXNORM .
+    }
+    graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+        ?medex_rxn_general rxnorm:isa ?shared .
+        ?PDS_RXNORM  rxnorm:isa ?shared .
+    }
+}
+```
+
+> Added 67165 statements. Update took 1.7s, moments ago. 
+
