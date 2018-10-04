@@ -25,23 +25,9 @@ FALSE  TRUE  <NA>
 ```
 
 
-medex, single file input
-running in default CLI mode on Mark's laptop
-time: ~ 1.5 minutes
-Number of medications detected
 
-CLAMP and medex provide two levels of specificity for their RxNorm predictions.  Which is more similar with the MDM annotations?
 
-```
-> merged$X13.v.PDX <- merged$X13 == merged$RXNORM
-> table(merged$X13.v.PDX, useNA = 'always')
+There are 170 093 medication names in Nebo's EPIC Med Hierarchy file.
+58 282 of those have an RxNorm annotation
 
-FALSE  TRUE  <NA> 
- 1427   180     6 
-
-> merged$X12.v.PDX <- merged$X12 == merged$RXNORM
-> table(merged$X12.v.PDX, useNA = 'always')
-
-FALSE  TRUE  <NA> 
-  566  1041     6 
-```
+Timing for 5000 random RxNorm-annotated medication names from EPIC vs medex: 3 minutes

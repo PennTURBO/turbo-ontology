@@ -1317,7 +1317,7 @@ where {
 
 > Removed 78008 statements. Update took 0.8s, moments ago. 
 
-## Did we retain evrything?
+## Did we retain everything?
 
 For example, were there relationships (other than mydata:rxnifavailalbe) that should have been made optional?
 
@@ -1513,13 +1513,13 @@ where {
 
 ## Ingredient / constitutes-consists_of situations require additional attention
 
-Still not directly address combination drugs, althogh those may get covered by RxNorm combination term hits
+Still not directly addressing combination drugs, although those may get covered by RxNorm combination term hits
 
 Spot check some!
 
-Also, should look for inverse of these Ingredient / constitutes-consists_of pairs (from perspective of the ingredieant count for the RxNorm term hit in the BioPortal search
+Also, should look for the inverses of these Ingredient / constitutes-consists_of pairs (from perspective of the ingredient count for the RxNorm term hit in the BioPortal search)
 
-Need to do more work on expansion still
+Still need to do more work on expansion... compare PDS and (accepted?) BioPortal search result word frequencies
 
 ```
 PREFIX mydata: <http://example.com/resource/>
@@ -1579,6 +1579,9 @@ where {
                            ?lp ?PDS_RXNORM .
             ?PDS_RXNORM skos:prefLabel ?pl .
             optional {
+                ?PDS_RXNORM ?backlink ?pdspi .
+            }
+            optional {
                 ?PDS_RXNORM ?backlink ?pi .
             }
         }
@@ -1588,4 +1591,55 @@ where {
     having (count(distinct ?pi) < 2)
 }
 ```
+
+added BioPortal perspective into previous query:
+
+
+```
+PREFIX mydata: <http://example.com/resource/>
+PREFIX rxnorm: <http://purl.bioontology.org/ontology/RXNORM/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+select *
+where {
+    select ?FULL_NAME ?bioportal_rxn ?bpl ?lp ?PDS_RXNORM ?pl ?backlink 
+    #    ?myRowId  
+    where {
+        values (?lp ?backlink) {
+            (rxnorm:ingredient_of rxnorm:has_ingredient)
+            (rxnorm:constitutes rxnorm:consists_of)
+        }
+        graph mydata:wes_pds_v_bioportal {
+            ?myRowId a mydata:processed_bioportal_search_res ;
+                     mydata:rxnifavailalbe ?bioportal_rxn ;
+                     mydata:PDS_RXNORM ?PDS_RXNORM ;
+                     mydata:FULL_NAME ?FULL_NAME .
+        }
+        graph <http://data.bioontology.org/ontologies/RXNORM/submissions/15/download> {
+            ?bioportal_rxn skos:prefLabel ?bpl ;
+                           ?lp ?PDS_RXNORM .
+            ?PDS_RXNORM skos:prefLabel ?pl .
+            optional {
+                ?PDS_RXNORM ?backlink ?pdsing .
+            }
+            optional {
+                ?bioportal_rxn ?backlink ?bping .
+            }
+        }
+    }
+    group by  ?FULL_NAME ?bioportal_rxn ?bpl ?lp ?PDS_RXNORM ?pl ?backlink     
+    #    ?myRowId 
+    having ((count(distinct ?pdsing) < 2) && (count(distinct ?bping) < 2))
+}
+```
+
+> Showing results from 1 to 715 of 715. Query took 1s, minutes ago. 
+
+add freqeuncy and char/word cout difference back into svm?
+
+https://plancompare.medicare.gov/pfdn/Popup/CommonDrugAbbriviations
+
+TBDP - Tablet Dispersible
+or just tablet?
+
+ASPIRIN 81 MG oral Tablet Dispersible
 
