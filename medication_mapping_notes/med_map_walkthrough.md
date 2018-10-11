@@ -1,4 +1,4 @@
-solr match type na -> column V1
+MAM NOTE: solr match type NA -> column V1
 
 
 # High level medication mapping notes
@@ -8,51 +8,44 @@ Load OntoRefine repository with
 - UPHS data 
     - Nebo "EPIC medication hierarchy.xlsx" @ 25 MB from September 18th
     - Heather MDM/ODS merge, which contains EPIC, Sunrise and more
+- BioPortal RxNorm mappings retrieved with Python query
 - More...
-- bioportal mappings from Python query
-- 
 
-
-Do some reshaping
-
-Create Solr collection
+Do some reshaping and create Solr collection... see med_map_sparql_utils.R
 
 SCRIPT STARTS HERE.  SEE DEPENDENCIES above and below.
 
 Create a list of medication names
-- query the graph for names (of single-ingredient medications)
-- must have valid RXNORM annotation
+- query the graph for names (of single-ingredient medications) with a valid RXNORM annotation
 - lowercase and "expand" the UPHS medication names ("HUP" -> "", PO -> oral) 
    
 Solr query
 - returned fields -> some of the features
--  score, rank, number of hits
+- score, rank, number of hits
 
+Solr queries are normally thought of having a string query and match, but from here on out, each query can be thought of as generating pairs of RxNorm values:  the one known as truth by some UPHS authority, and the one returned via the Solr search.  Its pairs, not one pair, because Solr is asked for multiple hits... typically 30.
 
 create more features
-string dist
-Levenshtein "qgram"           "cosine"          "jaccard"         Jaro–Winkler
-**UMLS semantic types** of the hit term (non exclusive Boolean matrix)
-see https://www.nlm.nih.gov/research/umls/META3_current_semantic_types.html and https://metamap.nlm.nih.gov/Docs/SemanticTypes_2013AA.txt
-Source ontology for term (single multilevel nominal column or exclusive Boolean matrix)
-Method by which the Solr hit term was linked to RxNorm (same CUI, DRON assertion, etc.)
-Type of label hit by Solr (rdfs:label, skos:prefLable, skos:alt:label)
-number of characters and words in the query and the hit
-number of times the term was in across all of the searches
-number of times any term for the source ontology was hit across all of the searches 
+- string dist
+    - Levenshtein, "qgram", "cosine", "jaccard", Jaro–Winkler
+- **UMLS semantic types** of the hit term (non exclusive Boolean matrix)
+    - see https://www.nlm.nih.gov/research/umls/META3_current_semantic_types.html and https://metamap.nlm.nih.gov/Docs/SemanticTypes_2013AA.txt
+- Source ontology for term (single multilevel nominal column or exclusive Boolean matrix)
+- Method by which the Solr hit term was linked to RxNorm (same CUI, DRON assertion, etc.)
+- Type of label hit by Solr (rdfs:label, skos:prefLable, skos:alt:label)
+- number of characters and words in the query and the hit
+- number of times the term was in across all of the searches
+- number of times any term for the source ontology was hit across all of the searches 
 
-      
-[22] "V1"              "altLabel"        "label"           "prefLabel"       "score"           "rank"            
+Insert the Solr RxNorm pairs into a Solr results graph in GraphDB
+         
+Evaluate the pairs in the context of RxNorm as a whole and insert veracity observations into graph
 
-insert pairs into graph
+Query the veracity observations back into R
 
-insert veracity observations into graph
-
-query veracity back into R
-
-backmerge contains 
+Create a R data frame "backmerge" that contains 
 - RxNorm pairs (UPHS known & Solr proposed)...  roughly 30 for each unique expanded medication name
-- features
+- trainable features
 - veracity assessments
     - same term
     - siblings of same parent
@@ -61,12 +54,14 @@ backmerge contains
 - other housekeeping columns like the original strings
 
 remove features that are at least 0.9 correlated with other features
+
 remove features with an importance of less than 1% of the most important feature
 
 hold back all rows concerning a faction of the medication orders for coverage calculation
-then optionally ":throw out" a fraction of the rows tom improve training time during development
-then hold back some rows for validation
 
+then optionally "throw out" a fraction of the rows tom improve training time during development
+
+then hold back some rows for validation
 
 Use some ML algorithm (like SVM) to determine what pattern of features predicts each of the veracity types
 target can be a single veracity level (identical?  shared parent?) or a concatenation of multiple (all four, or few if one is found to be problematic)
