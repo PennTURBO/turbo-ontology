@@ -1,4 +1,93 @@
-Notes
+solr match type na -> column V1
+
+
+# High level medication mapping notes
+
+Load OntoRefine repository with 
+- public ontologies/RDF data sets (DRON, RXNORM...)
+- UPHS data 
+    - Nebo "EPIC medication hierarchy.xlsx" @ 25 MB from September 18th
+    - Heather MDM/ODS merge, which contains EPIC, Sunrise and more
+- More...
+- bioportal mappings from Python query
+- 
+
+
+Do some reshaping
+
+Create Solr collection
+
+SCRIPT STARTS HERE.  SEE DEPENDENCIES above and below.
+
+Create a list of medication names
+- query the graph for names (of single-ingredient medications)
+- must have valid RXNORM annotation
+- lowercase and "expand" the UPHS medication names ("HUP" -> "", PO -> oral) 
+   
+Solr query
+- returned fields -> some of the features
+-  score, rank, number of hits
+
+
+create more features
+string dist
+Levenshtein "qgram"           "cosine"          "jaccard"         Jaro–Winkler
+**UMLS semantic types** of the hit term (non exclusive Boolean matrix)
+see https://www.nlm.nih.gov/research/umls/META3_current_semantic_types.html and https://metamap.nlm.nih.gov/Docs/SemanticTypes_2013AA.txt
+Source ontology for term (single multilevel nominal column or exclusive Boolean matrix)
+Method by which the Solr hit term was linked to RxNorm (same CUI, DRON assertion, etc.)
+Type of label hit by Solr (rdfs:label, skos:prefLable, skos:alt:label)
+number of characters and words in the query and the hit
+number of times the term was in across all of the searches
+number of times any term for the source ontology was hit across all of the searches 
+
+      
+[22] "V1"              "altLabel"        "label"           "prefLabel"       "score"           "rank"            
+
+insert pairs into graph
+
+insert veracity observations into graph
+
+query veracity back into R
+
+backmerge contains 
+- RxNorm pairs (UPHS known & Solr proposed)...  roughly 30 for each unique expanded medication name
+- features
+- veracity assessments
+    - same term
+    - siblings of same parent
+    - separated by one reasonable semantic link
+    - separated by two reasonable semantic links
+- other housekeeping columns like the original strings
+
+remove features that are at least 0.9 correlated with other features
+remove features with an importance of less than 1% of the most important feature
+
+hold back all rows concerning a faction of the medication orders for coverage calculation
+then optionally ":throw out" a fraction of the rows tom improve training time during development
+then hold back some rows for validation
+
+
+Use some ML algorithm (like SVM) to determine what pattern of features predicts each of the veracity types
+target can be a single veracity level (identical?  shared parent?) or a concatenation of multiple (all four, or few if one is found to be problematic)
+
+Assess the ROC AUC and or sensitivity and specificity of the model with held-back pairs/rows
+
+really straightforward for binary classifications
+a little more complex for multilevel
+
+coverage = number of medications names that resulted in a Solr hit that the ML algorithm deemed to have any level of veracity other than false, false, false etc. / number of medications held back for coverage
+
+
+ 
+
+
+
+----
+
+
+
+Mark todo
 
 - are there any medications that don't get any Solr hits at all?
 - add first-pass removal of medication names that don't have any reasonable Solr match (where to draw cutoff on which dimension?)
@@ -485,3 +574,51 @@ frequency with which each term was returned by Solr as a hit, and frequency of e
 ----
 
 
+
+    library(readr)
+    mdm <-
+      read_csv(
+        "C:/Users/Mark Miller/Desktop/med_authorities/mdm_r_medication_180917.csv",
+        locale = locale(encoding = "WINDOWS-1252")
+      )
+    
+    ods <-
+      read_csv(
+        "C:/Users/Mark Miller/Desktop/med_authorities/ods_r_medication_source_180917.csv",
+        locale = locale(encoding = "WINDOWS-1252")
+      )
+    
+    # Mark Miller@DESKTOP-LA54B7U MINGW64 ~
+    #   $ wc -l Desktop/med_authorities/mdm_r_medication_180917.csv
+    # 938744 Desktop/med_authorities/mdm_r_medication_180917.csv
+    #
+    # Mark Miller@DESKTOP-LA54B7U MINGW64 ~
+    #   $ wc -l Desktop/med_authorities/ods_r_medication_source_180917.csv
+    # 940309 Desktop/med_authorities/ods_r_medication_source_180917.csv
+    
+    
+    # > print(nrow(mdm_r_medication_180917))
+    # [1] 937084
+    
+    # > print(nrow(mdm))
+    # [1] 937084
+    # > print(nrow(ods))
+    # [1] 937084
+    
+    
+    mdm_ods_keymerge <-
+      merge(
+        x = mdm,
+        y = ods,
+        by.x = "PK_MEDICATION_ID",
+        by.y = "PK_MEDICATION_ID",
+        all = TRUE,
+        suffixes = c(".mdm", ".ods")
+      )
+    
+    mdm_ods_keymerge$identical.name <-
+      mdm_ods_keymerge$FULL_NAME.mdm == mdm_ods_keymerge$FULL_NAME.ods
+    
+    table(mdm_ods_keymerge$identical.name)
+    
+    write.csv(mdm_ods_keymerge, file = "mdm_ods_keymerge.csv", row.names =  FALSE)
