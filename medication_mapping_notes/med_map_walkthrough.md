@@ -86,8 +86,9 @@ Mark todo
 
 - are there any medications that don't get any Solr hits at all?
 - add first-pass removal of medication names that don't have any reasonable Solr match (where to draw cutoff on which dimension?)
-- monitor factor importance
-- monitor factor independence vs correlation
+- monitor feature importance
+- monitor feature independence vs correlation
+    - if unscaled, some of the features recommended for removal due to correlation are also recommended for retention doe to importance.
 
 
 # Medication Mapping Walk-through

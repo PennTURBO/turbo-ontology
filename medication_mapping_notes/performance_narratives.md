@@ -1,4 +1,4 @@
-"EPIC medication hierarchy.xlsx" from Nebo, on 18. September 2018,at ~ 25 MB.  (He sent two files with the exact same names, one with and one without RxNorm annotations)
+"EPIC medication hierarchy.xlsx" received on 18. September 2018,at ~ 25 MB.  (Note that there are two different files with the exact same name: one with, and one without RxNorm annotations)
 
 The Medications in this file can have any number of RxNorm annotations (0 to several) at two levels of specificity:  
 - medication only
@@ -18,11 +18,11 @@ All return at least one Solr hit
 Data frame "backmerge":
 
     582 183 rows of Solr results
-     18 859 unique EPIC Medication names that resulted in a valid RxNorm prediction via Solr
-     15 328 "expanded" queries           that resulted in a valid RxNorm prediction via Solr
-     14 270 "expanded" queries           that resulted in a valid RxNorm prediction via Solr
+     18 859 unique EPIC Medication names that resulted in a active RxNorm prediction via Solr
+     15 328 "expanded" queries           that resulted in a active RxNorm prediction via Solr
+     14 270 "expanded" queries           that resulted in a active RxNorm prediction via Solr
             AND have some reasonalbe semantic path to the EPIC known RxNorm
-      1 058 "expanded" queries           that resulted in a valid RxNorm prediction via Solr
+      1 058 "expanded" queries           that resulted in a active RxNorm prediction via Solr
             BUT didn't have any reasonalbe semantic path to the EPIC known RxNorm
 
 Randomly select 20% of the EPIC Medication names and set aside all "backmerge" rows using that EPIC Medication names.  They will be used later for coverage calculation.
