@@ -27,7 +27,6 @@
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
         <foaf:homepage>https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl</foaf:homepage>
-        <obo:IAO_0000232>Why do some terms appear in Karma as nodes labeled their rdfs:labels while others  appear as nodes labeled their URIs?</obo:IAO_0000232>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
     </owl:Ontology>
     
@@ -5031,7 +5030,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
     <!-- http://transformunify.org/ontologies/TURBO_0006514 -->
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0006514">
-        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006510"/>
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006512"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dc:creator>Mark A. Miller</dc:creator>
@@ -5040,7 +5039,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
 It is used to link from an allele information instance to the gene identifier used in the source loss of function matrix file, such as eve.UPENN_Freeze_One.L2.M3.lofMatrix.txt
 
 These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs:comment>
-        <rdfs:label>has LOF style gene identifier</rdfs:label>
+        <rdfs:label>has LOF style gene hybrid identifier</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -5509,6 +5508,30 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>https://www.molinahealthcare.com/providers/wa/medicaid/comm/PDF/education-sheet-icd-10-diagnosis-code-sequencing.pdf</rdfs:comment>
         <rdfs:label xml:lang="en">order in diagnosis sequence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010015 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010015">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006512"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-12-05T14:19:57Z</dc:date>
+        <rdfs:comment>do we need to specify version?</rdfs:comment>
+        <rdfs:label>has ensembl gene ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010016 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010016">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006512"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-12-05T14:20:08Z</dc:date>
+        <rdfs:comment>Do we need to specify authority?  As in, Ensembl gets human symbols from HGNC?</rdfs:comment>
+        <rdfs:label>has gene symbol</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -20868,9 +20891,6 @@ This interpretation is *not* the same as an at-all-times relation
         <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -20895,7 +20915,31 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -20905,27 +20949,6 @@ This interpretation is *not* the same as an at-all-times relation
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
