@@ -21,8 +21,64 @@
     <owl:Ontology rdf:about="http://transformunify.org/ontologies/turbo.owl">
         <owl:imports rdf:resource="http://transformunify.org/turbo_ontofox.owl"/>
         <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obib_ontodog.owl"/>
+        <owl:imports rdf:resource="file:/C:/Users/Mark%20Miller/Turbo-Ontology/ontologies/uo_individualized.ttl"/>
         <dc:title>The TURBO application ontology</dc:title>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
+        <rdfs:comment>Converting UO terms from classes to individuals:
+
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX : &lt;http://purl.obolibrary.org/obo/uo.owl#&gt;
+insert {
+    graph :individualized {
+        ?s a ?super
+    }
+} where {
+    values ?super {
+        &lt;http://purl.obolibrary.org/obo/UO_0000001&gt;
+        &lt;http://purl.obolibrary.org/obo/UO_0000002&gt;
+    }
+    ?s rdfs:subClassOf ?super ;
+       rdfs:label ?sublab .
+    ?super rdfs:label ?superlab .
+}
+
+---
+
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX : &lt;http://purl.obolibrary.org/obo/uo.owl#&gt;
+insert {
+    graph :individualized {
+        ?s a &lt;http://purl.obolibrary.org/obo/UO_0000051&gt;
+    }
+} where {
+    values ?super {
+        &lt;http://purl.obolibrary.org/obo/UO_0000052&gt;
+    }
+    ?s rdfs:subClassOf ?super ;
+       rdfs:label ?sublab .
+    ?super rdfs:label ?superlab .
+}
+
+---
+
+PREFIX : &lt;http://purl.obolibrary.org/obo/uo.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+construct {
+    ?s ?p ?o .
+    ?s a owl:NamedIndividual .
+} where {
+    graph :individualized {
+        ?s a ?t
+    }
+    ?s ?p ?o .
+    filter(?o != owl:Class)
+    filter(?p != rdfs:subClassOf)
+}
+
+---
+
+save results of construct statement to uo_individualized.ttl and import into TURBO</rdfs:comment>
         <dc:contributor>Chris Stoeckert</dc:contributor>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
         <dc:contributor>Mark A. Miller</dc:contributor>
@@ -2727,6 +2783,20 @@ Carnival should take responsibility for converting the patient registry text (li
     
 
 
+    <!-- http://purl.obolibrary.org/obo/obi.owl/TURBO_0010018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi.owl/TURBO_0010018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000443"/>
+        <obo:IAO_0000115>an analyte assay which...</obo:IAO_0000115>
+        <obo:IAO_0000116>submit to OBI</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000119>https://www.cancer.gov/types/prostate/psa-fact-sheet</obo:IAO_0000119>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-15T19:29:19Z</dc:date>
+        <rdfs:label>prostate specific antigen assay</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://transformunify.org/ontologies/TURBO_00001501 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001501">
@@ -4524,9 +4594,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -4537,39 +4604,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -4581,7 +4615,43 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
