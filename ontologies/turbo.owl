@@ -21,7 +21,6 @@
     <owl:Ontology rdf:about="http://transformunify.org/ontologies/turbo.owl">
         <owl:imports rdf:resource="http://transformunify.org/turbo_ontofox.owl"/>
         <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obib_ontodog.owl"/>
-        <owl:imports rdf:resource="file:/C:/Users/Mark%20Miller/Turbo-Ontology/ontologies/uo_individualized.ttl"/>
         <dc:title>The TURBO application ontology</dc:title>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
         <rdfs:comment>Converting UO terms from classes to individuals:
@@ -80,12 +79,20 @@ construct {
 
 save results of construct statement to uo_individualized.ttl and import into TURBO</rdfs:comment>
         <dc:contributor>Chris Stoeckert</dc:contributor>
+        <rdfs:comment>After merging and tidying up, save as turbo_merged.owl AND turbo_merged.rdf (for TopBraid Composer)</rdfs:comment>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
         <dc:contributor>Mark A. Miller</dc:contributor>
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
         <foaf:homepage>https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl</foaf:homepage>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
+        <rdfs:comment>some manual tidying that might be required:
+
+remove chemical entitiy (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
+
+SDCs aren&apos;t directly (entities?), only continuants
+
+Haven&apos;t been using FMA anatomical region ?</rdfs:comment>
     </owl:Ontology>
     
 
@@ -2510,6 +2517,70 @@ Carnival should take responsibility for converting the patient registry text (li
     
 
 
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010019 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:31Z</dc:date>
+        <rdfs:label>shortcut PSA datum to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010020 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010020">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:53Z</dc:date>
+        <rdfs:label>shortcut PSA datum to PSA value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010021 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010021">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:28Z</dc:date>
+        <rdfs:label>shortcut PSA datum to patient CRID regden</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010022 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010022">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:47Z</dc:date>
+        <rdfs:label>shortcut PSA datum to patient CRID symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010023 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010023">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:46:11Z</dc:date>
+        <rdfs:label>shortcut PSA datum to blood draw date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
@@ -4297,6 +4368,755 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UO_0000008 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000008">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to the length of the path traveled by light in vacuum during a time interval of 1/299 792 458 of a second.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>m</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>metre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000008</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>meter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000009 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000009">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>kg</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000009</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>kilogram</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000015 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000015">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to one hundredth of a meter or 10^[-2] m.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>centimetre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>cm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000015</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>centimeter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000016 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000016">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to one thousandth of a meter or 10^[-3] m.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>micrometre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000016</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>millimeter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000017 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000017">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to one millionth of a meter or 10^[-6] m.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>micrometre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>micron</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>um</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000017</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>micrometer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000018 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000018">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to one thousandth of one millionth of a meter or 10^[-9] m.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>nanometre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>nm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000018</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>nanometer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000019 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000019">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 10 [-10] m.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>Å</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000019</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>angstrom</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000020 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000020">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 10^[-12] m.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>picometre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>pm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000020</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>picometer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000021 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000021">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to one thousandth of a kilogram or 10^[-3] kg.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>g</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000021</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>gram</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000022 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000022">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to one thousandth of a gram or 10^[-3] g.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>mg</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000022</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>milligram</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000023 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000023">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to one millionth of a gram or 10^[-6] g.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>ug</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000023</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>microgram</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000024 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000024">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to one thousandth of one millionth of a gram or 10^[-9] g.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>ng</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000024</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>nanogram</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000025 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000025">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to 10^[-12] g.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>pg</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000025</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>picogram</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000026 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000026">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to 10^[-15] g.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>fg</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000026</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>femtogram</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000055 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000055">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A unit which is a standard measure of the mass of a homogeneous substance containing 6.02 x 1023 atoms or molecules.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000055</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_group_slim"/>
+        <rdfs:label>molar mass unit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000083 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000083">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in kilograms divided by the volume in cubic meters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>kg/m^[3]</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>kilogram per cubic metre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000083</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>kilogram per cubic meter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000084 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000084">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in grams divided by the volume in cubic centimeters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>g/cm^[3]</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>gram per cubic centimetre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000084</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>gram per cubic centimeter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000173 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000173">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in grams divided by the volume in milliliter.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>g/ml</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>gram per millilitre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000173</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>gram per milliliter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000174 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000174">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in kilograms divided by the volume in liters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>kg/L</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>kilogram per litre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000174</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>kilogram per liter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000175 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000175">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in grams divided by the volume in liters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>g/L</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>gram per litre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000175</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>gram per liter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000176 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000176">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in milligrams divided by the volume in milliliters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>mg/ml</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>milligram per millilitre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000176</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>milligram per milliliter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000208 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000208">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass density unit which is equal to mass of an object in grams divided by the volume in deciliters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>g/dl</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>gram per decilitre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000208</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>gram per deciliter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000221 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000221">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An independently to the base SI units defined mass unit which is equal to one twelfth of the mass of an unbound atom of the carbon-12 nuclide, at rest and in its ground state.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>Da</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>amu</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>u</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>unified atomic mass unit</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000221</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>dalton</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000222 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000222">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to one thousand daltons.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>kDa</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000222</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>kilodalton</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000273 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000273">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in milligrams divided by the volume in liters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george</oboInOwl:created_by>
+        <oboInOwl:creation_date>2011-03-21T10:35:01Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>mg/L</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>milligram per litre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000273</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>milligram per liter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000274 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000274">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in micrograms divided by the volume in millliters.</obo:IAO_0000115>
+        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
+        <oboInOwl:creation_date>2011-03-21T10:40:21Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>ug/ml</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>microgram per millilitre</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>UO:0000274</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>microgram per milliliter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000275 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000275">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in nanograms divided by the volume in milliliters.</obo:IAO_0000115>
+        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
+        <oboInOwl:creation_date>2011-03-21T10:55:12Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>nanogram per millilitre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ng/ml</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000275</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>nanogram per milliliter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000301 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000301">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
+        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in micrograms divided by the volume in liters.</obo:IAO_0000115>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>microgram per litre</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ug/L</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000301</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>microgram per liter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000326 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000326">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A unit used to express distances on a genetic map. In genetic mapping, distances between markers are determined by measuring the rate of meoitic recombination between them, which increases proportionately with the distance separating them. A cM is defined as the length of an interval in which there is a 1% probability of recombination. On the average, 1 cM is roughly equivalent to 1 megabase (Mb) of DNA, although this can vary widely due to hot and cold spots of recombination.</obo:IAO_0000115>
+        <oboInOwl:created_by>gkoutos</oboInOwl:created_by>
+        <oboInOwl:creation_date>2013-12-06T12:25:17Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>cM</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000326</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>centiMorgan</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000327 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000327">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A unit of genetic map distance defined corresponding to an interval in which there is a 1% probability of X-irradiation induced breakage. To be completely specified, the unit must be qualified by the radiation in dosage in rads (e.g. cR8000), because this determines the actual breakage probability.</obo:IAO_0000115>
+        <oboInOwl:created_by>gkoutos</oboInOwl:created_by>
+        <oboInOwl:creation_date>2013-12-06T12:26:29Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>cR</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0000327</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>centiRay</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010009 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010009">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>A mass unit which is equal to 1/12 the mass of 12C</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>mDa</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>milli unified atomic mass unit</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>millidalton</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mmu</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010009</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>milli</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010011 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010011">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 0.0254 metres.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>in</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010011</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>inch</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010012 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010012">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 0.0254 millimetres.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>mil</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>th</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010012</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>thou</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010013 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010013">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 0.3048 metres, or 12 inches.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>ft</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010013</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>foot</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010014 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010014">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 0.9144 metres, or 3 feet.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>yd</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010014</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>yard</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010015 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010015">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 20.1168 metres, 66 feet, or 22 yards.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>ch</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010015</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>chain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010016 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010016">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 20,116.8 metres, 660 feet, or 10 chains.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>fur</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010016</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>furlong</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010017 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010017">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 1,609.344 metres, or 8 furlongs.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>mi</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010017</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>mile</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010018 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010018">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A length unit which is equal to 3 miles, or 4,828.032 metres</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>lea</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010018</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>league</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010019 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010019">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
+        <obo:IAO_0000115>A maritime length unit is one used primarily at sea.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010019</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>maritime length unit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010031 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010031">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 64.798,91 milligrams.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>gr</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010031</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>grain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010032 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010032">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 1.771,845,195,3125 grams, or 1/256 of 1 pound.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>dr</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010032</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>drachm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010033 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010033">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 28.349,523,125 grams, or 1/16 of 1 pound.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>oz</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010033</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>ounce</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010034 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010034">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 453.592,37 grams.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>lb</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010034</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>pound</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010035 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010035">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 6,350.293,18 grams, or 14 pounds.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>st</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010035</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>stone</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010036 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010036">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 12.700,586,36 kilograms, or 28 pounds.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>qr</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>qtr</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010036</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>quarter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010037 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010037">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 50.802,345,44 kilograms, 112 pounds, or 8 stone.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>cwt</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010037</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>hundredweight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0010038 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0010038">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
+        <obo:IAO_0000115>An imperial mass unit which is equivalent to 1,016.046,9088 kilograms, or 2,240 pounds.</obo:IAO_0000115>
+        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>t</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UO:0010038</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
+        <rdfs:label>ton</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://transformunify.org/ontologies/TURBO_0000401 -->
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000401">
@@ -4606,6 +5426,9 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -4615,15 +5438,6 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -4636,22 +5450,28 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
