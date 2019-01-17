@@ -19,6 +19,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://transformunify.org/ontologies/turbo.owl">
+        <owl:imports rdf:resource="file:/C:/Users/Mark%20Miller/Turbo-Ontology/ontologies/ncit_gleason_as_instances.ttl"/>
         <owl:imports rdf:resource="http://transformunify.org/turbo_ontofox.owl"/>
         <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obib_ontodog.owl"/>
         <dc:title>The TURBO application ontology</dc:title>
@@ -79,13 +80,13 @@ construct {
 
 save results of construct statement to uo_individualized.ttl and import into TURBO</rdfs:comment>
         <dc:contributor>Chris Stoeckert</dc:contributor>
-        <rdfs:comment>After merging and tidying up, save as turbo_merged.owl AND turbo_merged.rdf (for TopBraid Composer)</rdfs:comment>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
         <dc:contributor>Mark A. Miller</dc:contributor>
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
         <foaf:homepage>https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl</foaf:homepage>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
+        <rdfs:comment>After merging and tidying up, save as turbo_merged.owl AND turbo_merged.rdf (for TopBraid Composer)</rdfs:comment>
         <rdfs:comment>some manual tidying that might be required:
 
 remove chemical entitiy (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
@@ -2521,7 +2522,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:31Z</dc:date>
         <rdfs:label>shortcut PSA datum to data</rdfs:label>
@@ -2533,7 +2534,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010020">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:53Z</dc:date>
@@ -2546,11 +2547,11 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010021">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:28Z</dc:date>
-        <rdfs:label>shortcut PSA datum to patient CRID regden</rdfs:label>
+        <rdfs:label>shortcut PSA datum to patient CRID regisry denoter text</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2559,7 +2560,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010022">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:47Z</dc:date>
@@ -2572,11 +2573,37 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010023">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:46:11Z</dc:date>
         <rdfs:label>shortcut PSA datum to blood draw date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010024 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010024">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T17:34:45Z</dc:date>
+        <rdfs:label>shortcut PSA datum to patient CRID registry denoter URI as string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010026 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010026">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T18:04:01Z</dc:date>
+        <rdfs:label>shortcut PSA valspec to concentration unit URI as string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -4267,6 +4294,17 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     
 
 
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010025 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T17:35:53Z</dc:date>
+        <rdfs:label>prostate specific antigen value specification</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.ebi.ac.uk/efo/EFO_0004340 -->
 
     <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0004340">
@@ -5423,24 +5461,18 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -5448,30 +5480,36 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>

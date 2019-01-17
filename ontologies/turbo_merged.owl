@@ -19,6 +19,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://transformunify.org/ontologies/turbo.owl">
+        <owl:imports rdf:resource="http://transformunify.org/turbo_ontofox.owl"/>
+        <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obib_ontodog.owl"/>
         <dc:title>The TURBO application ontology</dc:title>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
         <rdfs:comment>Converting UO terms from classes to individuals:
@@ -78,12 +80,59 @@ construct {
 save results of construct statement to uo_individualized.ttl and import into TURBO</rdfs:comment>
         <dc:contributor>Chris Stoeckert</dc:contributor>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
+        <rdfs:comment>NCIt gleason stuff to instances (see also comment about UO terms)
+
+PREFIX : &lt;http://purl.obolibrary.org/obo/ncit.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+insert data {
+    graph :gleasonInstances {
+        &lt;http://purl.obolibrary.org/obo/NCIT_C28107&gt; rdfs:subClassOf &lt;http://purl.obolibrary.org/obo/OBI_0001930&gt; .
+        &lt;http://purl.obolibrary.org/obo/NCIT_C28084&gt; rdfs:subClassOf &lt;http://purl.obolibrary.org/obo/OBI_0001930&gt; .
+    }
+} 
+
+---
+
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX : &lt;http://purl.obolibrary.org/obo/ncit.owl#&gt;
+insert {
+    graph :gleasonInstances {
+        ?sub a ?s
+    }
+} where {
+    values ?s {
+        &lt;http://purl.obolibrary.org/obo/NCIT_C28107&gt;
+        &lt;http://purl.obolibrary.org/obo/NCIT_C28084&gt;
+    } 
+    ?sub rdfs:subClassOf ?s
+} 
+
+---
+
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX obo: &lt;http://purl.obolibrary.org/obo/&gt;
+construct {
+    ?subclass rdfs:subClassOf ?super ;
+        ?sp ?so .
+    ?instance ?ip ?io
+} where {
+    graph &lt;http://purl.obolibrary.org/obo/ncit.owl#gleasonInstances&gt; {
+        ?subclass rdfs:subClassOf ?super .
+        ?instance a ?subclass
+    }
+    ?instance ?ip ?io .
+    ?subclass ?sp ?so .
+    filter(?ip != rdfs:subClassOf)
+    filter(?io != owl:Class)
+    filter( ?so != obo:NCIT_C28076 )
+}</rdfs:comment>
         <dc:contributor>Mark A. Miller</dc:contributor>
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
         <foaf:homepage>https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl</foaf:homepage>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
-		<rdfs:comment>After merging and tidying up, save as turbo_merged.owl AND turbo_merged.rdf (for TopBraid Composer)</rdfs:comment>
+        <rdfs:comment>After merging and tidying up, save as turbo_merged.owl AND turbo_merged.rdf (for TopBraid Composer)</rdfs:comment>
         <rdfs:comment>some manual tidying that might be required:
 
 remove chemical entitiy (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
@@ -511,6 +560,48 @@ We also have the outstanding issue of how to aim different definitions to differ
         <rdfs:label xml:lang="en">term_mapping_to_HL7v3</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_NHC0 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_NHC0"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_P106 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P106"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_P108 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P108"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_P207 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P207"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_P322 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P322"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_P325 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P325"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_P366 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P366"/>
     
 
 
@@ -5674,7 +5765,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:31Z</dc:date>
         <rdfs:label>shortcut PSA datum to data</rdfs:label>
@@ -5686,7 +5777,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010020">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:53Z</dc:date>
@@ -5699,11 +5790,11 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010021">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:28Z</dc:date>
-        <rdfs:label>shortcut PSA datum to patient CRID regden</rdfs:label>
+        <rdfs:label>shortcut PSA datum to patient CRID regisry denoter text</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -5712,7 +5803,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010022">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:47Z</dc:date>
@@ -5725,11 +5816,37 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010023">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:46:11Z</dc:date>
         <rdfs:label>shortcut PSA datum to blood draw date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010024 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010024">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T17:34:45Z</dc:date>
+        <rdfs:label>shortcut PSA datum to patient CRID registry denoter URI as string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010026 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010026">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010019"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T18:04:01Z</dc:date>
+        <rdfs:label>shortcut PSA valspec to concentration unit URI as string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -6320,7 +6437,6 @@ Carnival should take responsibility for converting the patient registry text (li
     <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -9181,6 +9297,44 @@ The term is used in the following meaning of being self generated. It does not s
         <obo:IAO_0000118>Australian/New Zealand Ethnicity</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
         <rdfs:label>Australian/New Zealand Ethnicity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28084 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C28084">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
+        <obo:IAO_0000115>The score derived from universally embraced prostate cancer grading system developed by Dr. Donald F. Gleason in 1977. The system provides a reproducible description of the glandular architecture of prostate tissue to which a pathologist assigns a score depending primarily on the microscopic patterns of cancerous glands and cell morphology. The system correlates well with behavior at the extremes: Gleason 1+1 tumors are the most well differentiated, slowly growing and rarely spread; Gleason 4+5 tumors are the most poorly differentiated, often widely metastatic at the time of diagnosis. In the commoner intermediate grade tumors, however, behavior is extremely variable.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28084</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score for Prostate Cancer</obo:NCIT_P108>
+        <obo:NCIT_P207>C3203027</obo:NCIT_P207>
+        <obo:NCIT_P325>A system of grading prostate cancer tissue based on how it looks under a microscope. Gleason scores range from 2 to 10 and indicate how likely it is that a tumor will spread. A low Gleason score means the cancer tissue is similar to normal prostate tissue and the tumor is less likely to spread; a high Gleason score means the cancer tissue is very different from normal and the tumor is more likely to spread.</obo:NCIT_P325>
+        <obo:NCIT_P366>Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Score for Prostate Cancer</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Sum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason score</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score for Prostate Cancer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28107 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C28107">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
+        <obo:IAO_0000115>A grading system for prostatic carcinoma based on the microscopic glandular architectural patterns of the malignant epithelial cells. Nuclear atypia is not evaluated. It defines five patterns or grades which reflect decreasing differentiation.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28107</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Grading System</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332326</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Grade_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Grade</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Grade for Prostate Cancer</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Grading System</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Grading System</rdfs:label>
     </owl:Class>
     
 
@@ -17016,6 +17170,17 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
     
 
 
+    <!-- http://transformunify.org/ontologies/turbo.owl/TURBO_0010025 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/turbo.owl/TURBO_0010025">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T17:35:53Z</dc:date>
+        <rdfs:label>prostate specific antigen value specification</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.ebi.ac.uk/efo/EFO_0001799 -->
 
     <owl:Class rdf:about="http://www.ebi.ac.uk/efo/EFO_0001799">
@@ -17458,6 +17623,314 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000118>ICD10CM</obo:IAO_0000118>
         <rdfs:comment>hard-imported from NCIT into the base turbo.owl file</rdfs:comment>
         <rdfs:label>International Classification of Diseases, Tenth Revision, Clinical Modification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C137992 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137992">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>Only individual discrete well-formed glands.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C137992</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Grade Group 1</obo:NCIT_P108>
+        <oboInOwl:hasExactSynonym>Gleason Grade Group 1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Score Less Than or Equal to 6</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Grade Group 1</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Grade Group 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C137993 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137993">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>Predominantly well-formed glands with lesser component of poorly-formed/fused/cribriform glands.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C137993</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Grade Group 2</obo:NCIT_P108>
+        <oboInOwl:hasExactSynonym>Gleason Grade Group 2</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Score 7: (3 plus 4)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Grade Group 2</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Grade Group 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C137994 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137994">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:NCIT_NHC0>C137994</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Grade Group 3</obo:NCIT_P108>
+        <oboInOwl:hasExactSynonym>Gleason Grade Group 3</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Score 7: (4 plus 3)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Grade Group 3</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Grade Group 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C137995 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137995">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>Only poorly-formed/fused/cribriform glands or Predominantly well-formed glands and lesser component lacking glands or Predominantly lacking glands and lesser component of well-formed gland. Poorly-formed/fused/cribriform glands can be a more minor component.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C137995</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Grade Group 4</obo:NCIT_P108>
+        <oboInOwl:hasExactSynonym>Gleason Grade Group 4</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Score 8: (4 plus 4) or (3 plus 5) or (5 plus 3)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Grade Group 4</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Grade Group 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C137996 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137996">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>Lacks gland formation (or with necrosis) with or without poorly formed/fused/cribriform glands. For cases with greater than 95% poorly formed/fused/cribriform glands or lack of glands on a core or at RP, the component of less than 5% well-formed glands is not factored into the grade.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C137996</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Grade Group 5</obo:NCIT_P108>
+        <oboInOwl:hasExactSynonym>Gleason Grade Group 5</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Score 9 or 10</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Grade Group 5</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Grade Group 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28085 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28085">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of a well circumscribed nodule of separate glands which are closely packed. There is no infiltration of the surrounding parenchyma. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28085</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Pattern 1</obo:NCIT_P108>
+        <obo:NCIT_P207>C1276439</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Grade_1</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Grade 1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Pattern 1</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Pattern 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28086 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28086">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of glands that are more loosely arranged and less uniform compared to Gleason pattern 1. Minimal invasion of the surrounding parenchyma may be present. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28086</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Pattern 2</obo:NCIT_P108>
+        <obo:NCIT_P207>C1276440</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Grade_2</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Grade 2</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Pattern 2</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Pattern 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28087 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28087">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of glands that are infiltrative and vary in size and shape. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28087</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Pattern 3</obo:NCIT_P108>
+        <obo:NCIT_P207>C1276441</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Grade_3</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Grade 3</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Pattern 3</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Pattern 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28088 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28088">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of fused, cribriform, or poorly defined glands. There is partial loss of normal epithelial polarity.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28088</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Pattern 4</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332329</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Grade_4</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Grade 4</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Pattern 4</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Pattern 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28089 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28089">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
+        <obo:IAO_0000115>A pattern of prostate carcinoma characterized by almost complete loss of epithelial polarity and luminal differentiation.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28089</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Pattern 5</obo:NCIT_P108>
+        <obo:NCIT_P207>C1276443</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Grade_5</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Grade 5</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gleason Pattern 5</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Pattern 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28090 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28090">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A Gleason score that indicates a low-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28090</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 6</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332331</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_6</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 6</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28091 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28091">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A Gleason score that indicates an intermediate-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28091</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 7</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332332</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_7</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 7</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 7</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28092 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28092">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A Gleason score that indicates a histologically aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28092</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 8</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332333</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_8</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 8</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 8</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28093 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28093">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A Gleason score that indicates a high-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28093</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 9</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332334</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_9</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 9</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 9</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28094 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28094">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A Gleason score that indicates a highly aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28094</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 10</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332335</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_10</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 10</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 10</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28095 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28095">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A low Gleason score that is exceptionally uncommon and indicates a low-grade, non-aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28095</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 2</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332327</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_2</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 2</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28096 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28096">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A Gleason score that is exceptionally assigned and indicates a low-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28096</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 3</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332328</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_3</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 3</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28097 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28097">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>A Gleason score that is relatively uncommon and indicates a low-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28097</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 4</obo:NCIT_P108>
+        <obo:NCIT_P207>C1276442</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_4</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 4</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C28098 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28098">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
+        <obo:IAO_0000115>An exceptionally uncommon Gleason score that indicates a less aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C28098</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Gleason Score 5</obo:NCIT_P108>
+        <obo:NCIT_P207>C0332330</obo:NCIT_P207>
+        <obo:NCIT_P366>Gleason_Score_5</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Gleason Score 5</oboInOwl:hasExactSynonym>
+        <rdfs:label>Gleason Score 5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -21566,22 +22039,7 @@ This interpretation is *not* the same as an at-all-times relation
         <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
@@ -21599,18 +22057,6 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -21624,6 +22070,33 @@ This interpretation is *not* the same as an at-all-times relation
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -21975,6 +22448,65 @@ This interpretation is *not* the same as an at-all-times relation
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48602">
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
+        <oboInOwl:hasExactSynonym>Total Gleason Score</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Total Gleason Score for Prostate Cancer</oboInOwl:hasExactSynonym>
+        <obo:NCIT_P366>Total_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>GLEASON TOTAL SUM</oboInOwl:hasExactSynonym>
+        <obo:NCIT_NHC0>C48602</obo:NCIT_NHC0>
+        <obo:NCIT_P108>Total Gleason Score for Prostate Cancer</obo:NCIT_P108>
+        <obo:IAO_0000115>The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern.</obo:IAO_0000115>
+        <rdfs:label>Total Gleason Score for Prostate Cancer</rdfs:label>
+        <obo:NCIT_P207>C1273607</obo:NCIT_P207>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P325>The sum of the primary and secondary Gleason scores. If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
+        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48603">
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
+        <obo:NCIT_P325>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
+        <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
+        <obo:NCIT_P366>Primary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <rdfs:label>Primary Gleason Pattern</rdfs:label>
+        <obo:NCIT_P207>C1273604</obo:NCIT_P207>
+        <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
+        <obo:NCIT_NHC0>C48603</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Primary Gleason Pattern</obo:NCIT_P108>
+        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48604">
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
+        <oboInOwl:hasExactSynonym>Secondary Gleason Pattern</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
+        <obo:NCIT_P108>Secondary Gleason Pattern</obo:NCIT_P108>
+        <obo:NCIT_NHC0>C48604</obo:NCIT_NHC0>
+        <obo:NCIT_P325>The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
+        <rdfs:label>Secondary Gleason Pattern</rdfs:label>
+        <obo:NCIT_P207>C1273605</obo:NCIT_P207>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
+        <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
+        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
+        <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
+        <obo:NCIT_P207>C1273608</obo:NCIT_P207>
+        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
+        <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
+        <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Tertiary Gleason Pattern</obo:NCIT_P108>
+        <obo:NCIT_P366>Tertiary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/geno.owl">
         <rdfs:comment>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
