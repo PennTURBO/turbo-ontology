@@ -56,6 +56,8 @@ UBERON
 http://purl.obolibrary.org/obo/UBERON_0007221 # neonate stage
 http://purl.obolibrary.org/obo/UBERON_0035946 # start of neonate stage
 http://purl.obolibrary.org/obo/UBERON_0035943 # life cycle temporal boundary
+http://purl.obolibrary.org/obo/UBERON_0000061 # anatomical structure
+http://purl.obolibrary.org/obo/UBERON_0000465 # material anatomical entity
 
 [Top level source term URIs and target direct superclass URIs]
 http://purl.obolibrary.org/obo/UBERON_0000105 # life cycle stage
@@ -66,6 +68,10 @@ http://purl.obolibrary.org/obo/UBERON_0035946 # start of neonate stage
 subClassOf http://purl.obolibrary.org/obo/UBERON_0035943 # life cycle temporal boundary
 http://purl.obolibrary.org/obo/UBERON_0035943 # life cycle temporal boundary
 subClassOf http://purl.obolibrary.org/obo/BFO_0000035 # temporal boundary
+http://purl.obolibrary.org/obo/UBERON_0000061 # anatomical structure
+subClassOf  http://purl.obolibrary.org/obo/UBERON_0000465
+http://purl.obolibrary.org/obo/UBERON_0000465 # material anatomical entity
+subClassOf http://purl.obolibrary.org/obo/BFO_0000040 
 
 [Source term retrieval setting]
 includeNoIntermediates
@@ -73,8 +79,6 @@ includeNoIntermediates
 [Source annotation URIs]
 includeAllAnnotationProperties
 
-[URI of the OWL(RDF/XML) output file]
-http://transformunify.org/turbo_ontofox.owl
 
 [Source ontology]
 RO
@@ -82,11 +86,15 @@ RO
 [Low level source term URIs]
 http://purl.obolibrary.org/obo/RO_0002229
 http://purl.obolibrary.org/obo/RO_0004026
+http://purl.obolibrary.org/obo/RO_0002202
+http://purl.obolibrary.org/obo/RO_0001000
 
 
 [Top level source term URIs and target direct superclass URIs]
 http://purl.obolibrary.org/obo/RO_0002229
 http://purl.obolibrary.org/obo/RO_0004026
+http://purl.obolibrary.org/obo/RO_0002202
+http://purl.obolibrary.org/obo/RO_0001000
 
 [Source term retrieval setting]
 includeAllIntermediates 
@@ -175,9 +183,11 @@ PR
 [Low level source term URIs]
 http://purl.obolibrary.org/obo/PR_000001006 # receptor-type tyrosine-protein phosphatase C
 http://purl.obolibrary.org/obo/PR_000001962 # tumor necrosis factor receptor superfamily member 6
+http://purl.obolibrary.org/obo/CHEBI_24431 # chemical entity
 
 [Top level source term URIs and target direct superclass URIs]
 http://purl.obolibrary.org/obo/CHEBI_24431
+subClassOf http://purl.obolibrary.org/obo/BFO_0000040 # material entity
 
 [Source term retrieval setting]
 includeAllIntermediates 
@@ -211,6 +221,73 @@ http://purl.obolibrary.org/obo/OSCI_0000036 # concentration measurement datum
 [Top level source term URIs and target direct superclass URIs]
 http://purl.obolibrary.org/obo/OSCI_0000036
 subClassOf http://purl.obolibrary.org/obo/IAO_0000032 
+
+[Source term retrieval setting]
+includeAllIntermediates 
+
+[Source annotation URIs]
+includeAllAnnotationProperties
+
+
+[Source ontology]
+OGMS
+
+[Low level source term URIs]
+http://purl.obolibrary.org/obo/OGMS_0000061 # pathological bodily process
+http://purl.obolibrary.org/obo/OGMS_0000078 # pathological anatomical structure 
+
+[Top level source term URIs and target direct superclass URIs]
+http://purl.obolibrary.org/obo/BFO_0000001
+
+[Source term retrieval setting]
+includeAllIntermediates 
+
+[Source annotation URIs]
+includeAllAnnotationProperties
+
+
+[Source ontology]
+MONDO
+
+[Low level source term URIs]
+http://purl.obolibrary.org/obo/MONDO_0004992 # cancer
+
+[Top level source term URIs and target direct superclass URIs]
+http://purl.obolibrary.org/obo/BFO_0000001
+
+[Source term retrieval setting]
+includeAllIntermediates 
+
+[Source annotation URIs]
+includeAllAnnotationProperties
+
+[Source ontology]
+CL
+
+[Low level source term URIs]
+http://purl.obolibrary.org/obo/CL_0001064 # malignant cell
+http://purl.obolibrary.org/obo/CL_0000003 # native cell
+http://purl.obolibrary.org/obo/CL_0000000 # cell
+
+[Top level source term URIs and target direct superclass URIs]
+http://purl.obolibrary.org/obo/CL_0000000
+subClassOf http://purl.obolibrary.org/obo/UBERON_0000465
+
+[Source term retrieval setting]
+includeAllIntermediates 
+
+[Source annotation URIs]
+includeAllAnnotationProperties
+
+
+[Source ontology]
+DOID
+
+[Low level source term URIs]
+http://purl.obolibrary.org/obo/IDO_0000664
+
+[Top level source term URIs and target direct superclass URIs]
+http://purl.obolibrary.org/obo/IDO_0000664
 
 [Source term retrieval setting]
 includeAllIntermediates 
