@@ -20,8 +20,6 @@
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#"
      xmlns:ontologies="http://transformunify.org/ontologies/">
     <owl:Ontology rdf:about="http://transformunify.org/ontologies/turbo.owl">
-        <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obib_ontodog.owl"/>
-        <owl:imports rdf:resource="http://transformunify.org/ontologies/turbo_obo_ontofox.owl"/>
         <dc:contributor>Chris Stoeckert</dc:contributor>
         <dc:contributor>Mark A. Miller</dc:contributor>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
@@ -88,7 +86,7 @@ Used a similar strategy for Gleason terms from NCIT: asserted (though inserts in
 
 Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That&apos;s the case for any term that isn&apos;t native to TURBO or didn&apos;t come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)</rdfs:comment>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
-        <rdfs:comment>ping</rdfs:comment>
+        <rdfs:comment>flip</rdfs:comment>
         <rdfs:comment>some manual tidying that might be required:
 
 remove chemical entitiy (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
@@ -1107,6 +1105,16 @@ One X can have anywhere from one to an infinite number of Y X &apos;previous URI
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006600"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010113 -->
+
+    <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010113">
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T22:25:42Z</dc:date>
+        <rdfs:label>expands to</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -3996,12 +4004,12 @@ For example, if a patient identifier and an encounter identifier were found in t
             </rdf:Description>
         </owl:propertyChainAxiom>
         <obo:IAO_0000111>has birth</obo:IAO_0000111>
-        <obo:IAO_0000115>an object property chain &apos;shortcut&apos;:  if human H participates in a &apos;neonate stage&apos; N that is started by &apos;start of neonate stage&apos; S, then H &apos;has birth&apos; S</obo:IAO_0000115>
+        <obo:IAO_0000115>an object property chain &apos;shortcut&apos;:  if human H participates in a &apos;neonate stage&apos; N that is started by &apos;start of neonate stage&apos; S, then H &apos;born on&apos; S</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-20T14:07:39Z</dc:date>
         <rdfs:comment>the TURBO team referent tracks births (for which each person only has one) rather than birth dates</rdfs:comment>
-        <rdfs:label>born at</rdfs:label>
+        <rdfs:label>born on</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4078,6 +4086,188 @@ Which says that allele information D mentions a particular gene modeled in the P
         <obo:IAO_0000117>This property can be used along with &apos;has matching CV term&apos; or any of its sub-properties to indicate the controlled vocabulary form which a matching terms was selected.</obo:IAO_0000117>
         <rdfs:label>has namespace</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010080 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010080">
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:10Z</dc:date>
+        <rdfs:label>instantiation object shortcut</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010081 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010081">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000133"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:33Z</dc:date>
+        <rdfs:comment rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <rdfs:label>shortcut person  to object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010082 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010082">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:59Z</dc:date>
+        <rdfs:label>shortcut person to patient CRID registry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010089 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010089">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000133"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:09:01Z</dc:date>
+        <rdfs:label>shortcut person to gender identty datum</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010090 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010090">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:17:33Z</dc:date>
+        <rdfs:label>shortcut person to racial identity datum</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010091 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010091">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000100"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:19:38Z</dc:date>
+        <rdfs:label>shortcut person to ethnic identity datum</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010109 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010109">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T18:58:36Z</dc:date>
+        <rdfs:label>shortcut health care encounter to entity</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010110 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010110">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010109"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T18:59:39Z</dc:date>
+        <rdfs:label>shortcut health care encounter to encounter registry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010111 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010111">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010109"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T18:59:58Z</dc:date>
+        <rdfs:label>shortcut health care encounter to patient registry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010115 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010115">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:14:56Z</dc:date>
+        <rdfs:label>shortcut observation to entity</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010119 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010119">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:19:40Z</dc:date>
+        <rdfs:label>shortcut observation to patient registry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010120 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010120">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:20:00Z</dc:date>
+        <rdfs:label>shortcut observation to encounter registry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010123 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010123">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:22:49Z</dc:date>
+        <rdfs:label>shortcut observation to observation type registry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010126 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010126">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:26:47Z</dc:date>
+        <rdfs:label>shortcut observation to unit term</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010129 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010129">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T21:45:11Z</dc:date>
+        <rdfs:label>shortcut observation to observation type term</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4183,7 +4373,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <obo:IAO_0000111>shortcut biobank consenter to data shortcut</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter  to a/n to data shortcut</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter  to a/n to data shortcut</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:48:27Z</dc:date>
@@ -4199,7 +4389,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut biobank consenter to biological sex URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biological sex URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biological sex URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:52:22Z</dc:date>
@@ -4215,7 +4405,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter to dataset title</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a dataset title</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a dataset title</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:54:45Z</dc:date>
@@ -4231,7 +4421,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter to textual date of birth text</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a textual date of birth text</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a textual date of birth text</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:55:40Z</dc:date>
@@ -4247,7 +4437,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <obo:IAO_0000111>shortcut biobank consenter to xsd-formatted date of birth</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a xsd-formatted date of birth</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a xsd-formatted date of birth</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:56:37Z</dc:date>
@@ -4263,7 +4453,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter to gender identity datum text</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a gender identity datum text</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a gender identity datum text</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T13:57:40Z</dc:date>
@@ -4279,7 +4469,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut biobank consenter to gender identity datum URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a gender identity datum URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a gender identity datum URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T14:03:37Z</dc:date>
@@ -4295,7 +4485,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter to biobank consenter CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biobank consenter CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biobank consenter CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-22T14:05:09Z</dc:date>
@@ -4311,7 +4501,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter to biobank consenter registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biobank consenter registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biobank consenter registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-24T17:46:48Z</dc:date>
@@ -4327,7 +4517,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter to biobank consenter identifier registry URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biobank consenter identifier registry URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank consenter to a biobank consenter identifier registry URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-24T17:47:54Z</dc:date>
@@ -4433,7 +4623,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter to data set title</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a data set title</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a data set title</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:label>shortcut biobank encounter to data set title</rdfs:label>
@@ -4448,7 +4638,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter to textual encounter date</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a textual encounter date</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a textual encounter date</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>the textual representation of a date isn&apos;t technically interdependent with anything else.  However, if it was present in tabular data, it should be passed on with this shortcut, to provide provenance for the xsd representation of the date</rdfs:comment>
@@ -4464,7 +4654,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <obo:IAO_0000111>shortcut biobank encounter to xsd-formatted  encounter date</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a xsd-formatted  encounter date</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a xsd-formatted  encounter date</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:label>shortcut biobank encounter to xsd-formatted  encounter date</rdfs:label>
@@ -4479,7 +4669,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <obo:IAO_0000111>shortcut biobank encounter to height in cm</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a height in cm</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a height in cm</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:05Z</dc:date>
@@ -4495,7 +4685,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <obo:IAO_0000111>shortcut biobank encounter to weight in kg</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a weight in kg</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a weight in kg</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:25Z</dc:date>
@@ -4511,7 +4701,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter to encounter CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a encounter CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a encounter CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:label>shortcut biobank encounter to encounter CRID symbol</rdfs:label>
@@ -4526,7 +4716,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter to encounter registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a encounter registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a encounter registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T16:09:56Z</dc:date>
@@ -4542,7 +4732,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter to encounter identifier registry URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a encounter identifier registry URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a encounter identifier registry URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T16:10:39Z</dc:date>
@@ -4558,7 +4748,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <obo:IAO_0000111>shortcut biobank encounter to BMI</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a BMI</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a biobank encounter to a BMI</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-24T13:05:28Z</dc:date>
@@ -4573,7 +4763,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <obo:IAO_0000111>shortcut health care encounter to data</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter  to a/n to data</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter  to a/n to data</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-05T16:21:09Z</dc:date>
@@ -4590,7 +4780,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to data set title</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a data set title</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a data set title</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>This shortcut links a health care encounter ?e (OGMS_0000097) to a textual title for a dataset ?t (IAO_0000100).  Expansion involve creating a dataset instance, which will be the input into an R2R instantiation process ?i.
@@ -4633,7 +4823,7 @@ registry and date conversions could be rule sin the instantiation process?</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to textual encounter date</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a textual encounter date</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a textual encounter date</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>This shortcut links a health care encounter ?e (OGMS_0000097) to the textual representation ?tv of the date ?d (turbo:ProcStartTimeMeas) on which the encounter took place .  Furthermore, date ?d is about the temporal boundary ?es (turbo:HealthcareEncStart) that starts encounter ?e.  ?tv will typically part of some dataset (see ScEnc2DataSet.)
@@ -4664,7 +4854,7 @@ the textual representation of a date isn&apos;t technically interdependent with 
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <obo:IAO_0000111>shortcut health care encounter to xsd-formatted encounter date</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a xsd-formatted encounter date</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a xsd-formatted encounter date</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>definition &quot;This shortcut links a health care encounter ?e (OGMS_0000097) to and xsd:date literal ?xv, which is the measurement value* of date ?d (turbo:ProcStartTimeMeas) on which the encounter took place .  Furthermore, date ?d is about the temporal boundary ?es (turbo:HealthcareEncStart) that starts encounter ?e
@@ -4698,7 +4888,7 @@ I have also created turbo:hasDateValue&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <obo:IAO_0000111>shortcut health care encounter to height in cm</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a height in cm</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a height in cm</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:05Z</dc:date>
@@ -4714,7 +4904,7 @@ I have also created turbo:hasDateValue&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <obo:IAO_0000111>shortcut health care encounter to weight in kg</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a weight in kg</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a weight in kg</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-09T15:17:25Z</dc:date>
@@ -4730,7 +4920,7 @@ I have also created turbo:hasDateValue&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to encounter ID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a encounter ID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a encounter ID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the value ?iv of its identifier ?i. (turbo:EncounterID).  ?i denotes ?e.
@@ -4751,7 +4941,7 @@ I have also created turbo:hasDateValue&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to encounter registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a encounter registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a encounter registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>no example of use yet... we may end up saying that encounter identifiers don&apos;t really come from registries</rdfs:comment>
@@ -4767,7 +4957,7 @@ I have also created turbo:hasDateValue&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to encounter identifier registry URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a encounter identifier registry URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a encounter identifier registry URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T16:07:06Z</dc:date>
@@ -4783,7 +4973,7 @@ I have also created turbo:hasDateValue&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <obo:IAO_0000111>shortcut health care encounter to BMI</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a BMI</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a BMI</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-24T13:05:28Z</dc:date>
@@ -4813,7 +5003,7 @@ upon participant-to-encounter joining:
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to diagnosis code symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a diagnosis code symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a diagnosis code symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the value ?dcv of a diagnosis code symbol ?dcs. (turbo:EncounterDiagCodeSymbol).  ?dcs is part of a diagnosis CRID ?dcrid (turbo:DiagCodeRegitryID) and is typically part of some dataset (see ScEnc2DataSet.)  ?dcrid is the output of the encounter ?e.
@@ -4837,7 +5027,7 @@ upon participant-to-encounter joining:
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to diagnosis code registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a diagnosis code registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a diagnosis code registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the value ?drnv of a diagnosis code registry denoter ?dcrn (turbo:DiagCodeRegitryID), which denotes a registry instance ?dcru like  &lt;http://purl.obolibrary.org/obo/NCIT_C71892&gt; for ICD-10. 
@@ -4867,7 +5057,7 @@ the textual representation of a diagnosis code registry isn&apos;t technically i
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut health care encounter to diagnosis code registry URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a diagnosis code registry URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a diagnosis code registry URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>this shortcut links a health care encounter ?e (OGMS_0000097) to the URI of an instance of a diagnosis code registry ?dcru.  
@@ -4909,7 +5099,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
         <obo:IAO_0000111>shortcut biobank encounter CRID to data</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to data</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to data</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-29T21:44:08Z</dc:date>
@@ -4924,7 +5114,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
         <obo:IAO_0000111>shortcut health care encounter CRID to data</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to data</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to data</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-29T21:45:02Z</dc:date>
@@ -4940,7 +5130,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter CRID to dataset title</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to dataset title</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to dataset title</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:21:07Z</dc:date>
@@ -4956,7 +5146,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter CRID to biobank encounter CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to biobank encounter CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to biobank encounter CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:54:17Z</dc:date>
@@ -4972,7 +5162,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank encounter CRID to biobank encounter registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to biobank encounter registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to biobank encounter registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:19:17Z</dc:date>
@@ -4988,7 +5178,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut biobank encounter CRID to biobank encounter identifier registry URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to biobank encounter identifier registry URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank encounter CRID  to a/n to biobank encounter identifier registry URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:17:41Z</dc:date>
@@ -5004,7 +5194,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to drug prescription text</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter  to a/n to drug prescription text</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter  to a/n to drug prescription text</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-14T15:05:57Z</dc:date>
@@ -5020,7 +5210,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter to drug prescription CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter  to a/n to drug prescription CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter  to a/n to drug prescription CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-27T21:47:38Z</dc:date>
@@ -5036,7 +5226,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter CRID to dataset title</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to dataset title</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to dataset title</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:22:32Z</dc:date>
@@ -5052,7 +5242,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter CRID to health care encounter CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to health care encounter CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to health care encounter CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T15:55:51Z</dc:date>
@@ -5068,7 +5258,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut health care encounter CRID to health care encounter registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to health care encounter registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to health care encounter registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:23:25Z</dc:date>
@@ -5084,7 +5274,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut health care encounter CRID to health care encounter identifier registry URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to health care encounter identifier registry URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter CRID  to a/n to health care encounter identifier registry URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T14:24:07Z</dc:date>
@@ -5114,7 +5304,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter CRID to dataset title</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to dataset title</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to dataset title</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:29:11Z</dc:date>
@@ -5130,7 +5320,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter CRID to biobank consenter CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to biobank consenter CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to biobank consenter CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:30:55Z</dc:date>
@@ -5146,7 +5336,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut biobank consenter CRID to biobank consenter registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to biobank consenter registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to biobank consenter registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:31:40Z</dc:date>
@@ -5162,7 +5352,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut biobank consenter CRID to biobank consenter identifier registry URI string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to biobank consenter identifier registry URI string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n biobank consenter CRID  to a/n to biobank consenter identifier registry URI string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-30T16:30:02Z</dc:date>
@@ -5192,7 +5382,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut diagnosis to diagnosis code symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n diagnosis  to a/n to diagnosis code symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n diagnosis  to a/n to diagnosis code symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-07T22:08:58Z</dc:date>
@@ -5208,7 +5398,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut diagnosis to diagnosis code registry denoter</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n diagnosis  to a/n to diagnosis code registry denoter</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n diagnosis  to a/n to diagnosis code registry denoter</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-07T22:09:53Z</dc:date>
@@ -5224,7 +5414,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut diagnosis to diagnosis code registry</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n diagnosis  to a/n to diagnosis code registry</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n diagnosis  to a/n to diagnosis code registry</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-07T22:11:30Z</dc:date>
@@ -5265,7 +5455,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut prescription to prescription CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n prescription  to a/n to prescription CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n prescription  to a/n to prescription CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:27:53Z</dc:date>
@@ -5292,7 +5482,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut prescription to prescription fullname/order_name</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n prescription  to a/n to prescription fullname/order_name</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n prescription  to a/n to prescription fullname/order_name</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:32:40Z</dc:date>
@@ -5308,7 +5498,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000024"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut prescription to drug uri string</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n prescription  to a/n to drug uri string</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n prescription  to a/n to drug uri string</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-28T17:34:33Z</dc:date>
@@ -5425,7 +5615,7 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut allele info to biobank encounter CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to biobank encounter CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from an allele info  to a biobank encounter CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-16T20:33:06Z</dc:date>
@@ -5441,7 +5631,7 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut allele info to geno_id CRID symbol</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to geno_id CRID symbol</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from an allele info  to a genotype identifier CRID symbol</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-16T20:34:07Z</dc:date>
@@ -5457,11 +5647,11 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut allele info to geno_id registry</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to geno_id registry</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from an allele info  to a genotype identifier registry</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-16T20:35:37Z</dc:date>
-        <rdfs:label>shortcut allele info to geno_id registry</rdfs:label>
+        <rdfs:label>shortcut allele info to geno_id CRID registry URI string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -5473,11 +5663,11 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut allele info to protein</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to protein</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to protein</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-16T20:36:34Z</dc:date>
-        <rdfs:label>shortcut allele info to protein</rdfs:label>
+        <rdfs:label>shortcut allele info to protein term URI string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -5489,11 +5679,13 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut allele info to gene text</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to gene text</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from an allele info  to a gene identiifer and a zygosity level</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-16T20:37:21Z</dc:date>
-        <rdfs:label>shortcut allele info to gene text</rdfs:label>
+        <rdfs:comment>Scott Damraurer&apos;s team identifies genes like this:  SYMBOL(ENSGENEID)
+For a while, TURBO was constructing shortcuts like gene:SYMBOL(ENSGENEID);zygosity:N</rdfs:comment>
+        <rdfs:label>shortcut allele info to gene concatenated text</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -5505,7 +5697,7 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut allele info to zygosity value text</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to zygosity value text</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to zygosity value text</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-16T20:37:54Z</dc:date>
@@ -5521,7 +5713,7 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut allele info to zygosity value specification</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to zygosity value specification</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to zygosity value specification</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-16T20:38:37Z</dc:date>
@@ -5537,11 +5729,11 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000111>shortcut allele info to dataset title</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to dataset title</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from an allele info  to the title of the dataset containing (at least) sample identifiers, gene identifiers, and zygosity values</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-17T11:23:59Z</dc:date>
-        <rdfs:label>shortcut allele info to data set title</rdfs:label>
+        <rdfs:label>shortcut allele info to LOF data set title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -5553,11 +5745,11 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <obo:IAO_0000111>shortcut allele info to biobank encounter CRID registry</obo:IAO_0000111>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to biobank encounter CRID registry</obo:IAO_0000115>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a/n allele info  to a/n to biobank encounter CRID registry</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-22T19:16:25Z</dc:date>
-        <rdfs:label>shortcut allele info to biobank encounter CRID registry</rdfs:label>
+        <rdfs:label>shortcut allele info to biobank encounter CRID registry URI string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -5566,8 +5758,10 @@ These identifiers have had a format like &quot;CAPG(ENSG00000042493)&quot;</rdfs
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0007610">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
-        <obo:IAO_0000115>an &apos;instnatiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from an allele info  to a gene term</obo:IAO_0000115>
-        <rdfs:label>shortcut allele info to gene term</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from an allele info  to a gene term</obo:IAO_0000115>
+        <rdfs:label>shortcut allele info to gene term URI string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -6193,6 +6387,359 @@ Carnival should take responsibility for converting the patient registry text (li
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-06T14:58:12Z</dc:date>
         <rdfs:label>shortcut Gleason datum to data set title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010073 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010073">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T15:27:17Z</dc:date>
+        <rdfs:label>shortcut allele info to biobank encounter CRID registry text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010074 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010074">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T15:28:23Z</dc:date>
+        <rdfs:label>shortcut allele info to geno_id CRID registry text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010075 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010075">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T15:30:33Z</dc:date>
+        <rdfs:label>shortcut allele info to gene symbol text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010076 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010076">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T16:02:20Z</dc:date>
+        <rdfs:label>shortcut allele info to Ensembl gene identifier text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010077 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010077">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
+        <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a exome sequencing sample identifier to the identifier of the encounter in which the sample was colelcted</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T17:50:00Z</dc:date>
+        <rdfs:label>shortcut allele info to sample/encounter key</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010078 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010078">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:13:18Z</dc:date>
+        <rdfs:comment rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
+        <rdfs:label>shortcut person to data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010079 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010079">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:14:03Z</dc:date>
+        <rdfs:label>shortcut person to patient CRID symbol value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010084 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010084">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:43:31Z</dc:date>
+        <rdfs:label>shortcut person to dataset title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010085 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010085">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:57:02Z</dc:date>
+        <rdfs:label>shortcut person to DOB (textual)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010086 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010086">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:59:16Z</dc:date>
+        <rdfs:label>shortcut person to DOB (xsd compliant)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010087 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010087">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:03:48Z</dc:date>
+        <rdfs:label>shortcut person to first name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010088 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010088">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:04:45Z</dc:date>
+        <rdfs:label>shortcut person to last name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010094 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010094">
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:04Z</dc:date>
+        <rdfs:label>has literal representation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010095 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010095">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:27Z</dc:date>
+        <rdfs:label>has raw literal represenation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010096 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010096">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:50Z</dc:date>
+        <rdfs:label>has parsed/transformed literal representation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010098 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010098">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T18:16:29Z</dc:date>
+        <rdfs:label>shortcut person to GID text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010099 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010099">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T18:16:37Z</dc:date>
+        <rdfs:label>shortcut person to EID text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010100 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010100">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T18:16:46Z</dc:date>
+        <rdfs:label>shortcut person to RID text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010107 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010107">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T14:40:23Z</dc:date>
+        <rdfs:label>SPARQL run time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010108 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010108">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T14:40:35Z</dc:date>
+        <rdfs:label>Inserted triples count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010114 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010114">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:13:05Z</dc:date>
+        <rdfs:label>shortcut observation to data</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010116 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010116">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:18:03Z</dc:date>
+        <rdfs:label>shortcut observation to textual observation date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010117 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010117">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:18:30Z</dc:date>
+        <rdfs:label>shortcut observation to xsd formatted observation date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010118 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010118">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:19:12Z</dc:date>
+        <rdfs:label>shortcut observation to patient symbol value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010121 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010121">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:20:31Z</dc:date>
+        <rdfs:label>shortcut observation to encounter symbol value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010122 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010122">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:22:19Z</dc:date>
+        <rdfs:label>shortcut observation to observation type code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010124 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010124">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:26:07Z</dc:date>
+        <rdfs:label>shortcut observation to obsercation value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010125 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010125">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:26:25Z</dc:date>
+        <rdfs:label>shortcut observation to textual units label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010127 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010127">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T21:17:41Z</dc:date>
+        <rdfs:label>shortcut observation to data set title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010128 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010128">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T21:29:44Z</dc:date>
+        <rdfs:label>shortcut observation to unity type term</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -17246,7 +17793,7 @@ The output of this process could be demographic or vital statistics data items, 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0000571">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
         <obo:IAO_0000111>zygosity value specification</obo:IAO_0000111>
-        <obo:IAO_0000115>a value specification that indicates whether a diploid individual is homozygous wild type (0) heterozygous (1) or homozygous for some mutant</obo:IAO_0000115>
+        <obo:IAO_0000115>a value specification that indicates whether a diploid individual is homozygous wild type (0) heterozygous (1) or homozygous (2) for some mutant</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-09T19:30:07Z</dc:date>
@@ -18088,6 +18635,105 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-07T20:06:12Z</dc:date>
         <rdfs:label>secondary neoplasm (matieral entity)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010092 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010092">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:58:34Z</dc:date>
+        <rdfs:label>patient CRID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010093 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010093">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:59:03Z</dc:date>
+        <rdfs:label>patient CRID symbol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010097 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010097">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000100"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:10:17Z</dc:date>
+        <rdfs:label>named graph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010101 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010101">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0020015"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T20:00:13Z</dc:date>
+        <rdfs:label>given name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010102 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010102">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0020015"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T20:00:23Z</dc:date>
+        <rdfs:label>family name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010103 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010103">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000100"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T22:46:07Z</dc:date>
+        <rdfs:label>OntoRefine project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010104 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010104">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000100"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T22:46:55Z</dc:date>
+        <rdfs:label>CSV file</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010105 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010105">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T23:05:20Z</dc:date>
+        <rdfs:label>OntoRefine configuration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010106 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010106">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T23:05:43Z</dc:date>
+        <rdfs:label>SPARQL insert statement</rdfs:label>
     </owl:Class>
     
 
@@ -22852,8 +23498,9 @@ This interpretation is *not* the same as an at-all-times relation
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000580">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
+        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</TURBO_0006510>
         <obo:IAO_0000111>-/- loss of function zygosity value specification</obo:IAO_0000111>
-        <obo:IAO_0000115>a &apos;loss of function zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous wild-type at some locus</obo:IAO_0000115>
+        <obo:IAO_0000115>a &apos;loss of function zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous for a mutant or minor allele at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:21:43Z</dc:date>
@@ -22866,8 +23513,9 @@ This interpretation is *not* the same as an at-all-times relation
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000581">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
+        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</TURBO_0006510>
         <obo:IAO_0000111>-/+ loss of function zygosity value specification</obo:IAO_0000111>
-        <obo:IAO_0000115>a &apos;-/+ zygosity value specification&apos; instance indicating the conclusion that some diploid individual is heterozygous for loss of function alleles at some locus</obo:IAO_0000115>
+        <obo:IAO_0000115>a &apos;loss of function zygosity value specification&apos; instance indicating the conclusion that some diploid individual is heterozygous for loss of function alleles at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:03Z</dc:date>
@@ -22880,8 +23528,9 @@ This interpretation is *not* the same as an at-all-times relation
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000582">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
+        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</TURBO_0006510>
         <obo:IAO_0000111>+/+ loss of function zygosity value specification</obo:IAO_0000111>
-        <obo:IAO_0000115>a &apos;+/+ zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous for loss of function alleles at some locus</obo:IAO_0000115>
+        <obo:IAO_0000115>a &apos;loss of function zygosity value specification&apos; instance indicating the conclusion that some diploid individual is wild-type homozygous at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:21Z</dc:date>
@@ -22894,8 +23543,9 @@ This interpretation is *not* the same as an at-all-times relation
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000590">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</TURBO_0006510>
         <obo:IAO_0000111>-/- zygosity value specification</obo:IAO_0000111>
-        <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous wild-type at some locus</obo:IAO_0000115>
+        <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous for a mutant or minor allele at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:21:43Z</dc:date>
@@ -22908,6 +23558,7 @@ This interpretation is *not* the same as an at-all-times relation
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000591">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</TURBO_0006510>
         <obo:IAO_0000111>-/+ zygosity value specification</obo:IAO_0000111>
         <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is heterozygous for a mutant or minor allele at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -22922,8 +23573,9 @@ This interpretation is *not* the same as an at-all-times relation
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000592">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</TURBO_0006510>
         <obo:IAO_0000111>+/+ zygosity value specification</obo:IAO_0000111>
-        <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous for a mutant or minor allele at some locus</obo:IAO_0000115>
+        <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is wild-type homozygous at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-20T19:22:21Z</dc:date>
@@ -22941,47 +23593,30 @@ This interpretation is *not* the same as an at-all-times relation
         <rdfs:comment>Requires more discussion... what are the racial identity authorities that offer values that are used in our inpout data?</rdfs:comment>
         <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010083 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010083">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:21:15Z</dc:date>
+        <rdfs:label>Synthea patient registry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010112 -->
+
+    <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010112">
+        <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000513"/>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T19:04:43Z</dc:date>
+        <rdfs:label>Synthea health care encounter registry</rdfs:label>
+    </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
@@ -22990,142 +23625,46 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -23153,81 +23692,6 @@ This interpretation is *not* the same as an at-all-times relation
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -23254,31 +23718,73 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -23287,13 +23793,148 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -23317,12 +23958,6 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -23333,6 +23968,45 @@ This interpretation is *not* the same as an at-all-times relation
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -23372,9 +24046,9 @@ This interpretation is *not* the same as an at-all-times relation
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
         <obo:NCIT_P325>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <rdfs:label>Primary Gleason Pattern</rdfs:label>
         <obo:NCIT_P366>Primary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <obo:NCIT_P207>C1273604</obo:NCIT_P207>
         <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_NHC0>C48603</obo:NCIT_NHC0>
@@ -23402,8 +24076,8 @@ This interpretation is *not* the same as an at-all-times relation
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
         <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
-        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_P207>C1273608</obo:NCIT_P207>
+        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
@@ -23417,25 +24091,25 @@ Documentation is under development as well, and for now a slidedeck is available
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ico.owl">
         <dc:description>The Informed Consent Ontology (ICO) is an ontology for the informed consent and informed consent process in the medical field.</dc:description>
-        <dc:contributor xml:lang="en">William Duncan</dc:contributor>
         <dc:contributor>Chris Stoeckert</dc:contributor>
+        <dc:contributor xml:lang="en">William Duncan</dc:contributor>
         <dc:creator xml:lang="en">Elizabeth Eisenhauer</dc:creator>
-        <dc:creator>Alla Karnovsky</dc:creator>
         <dc:contributor xml:lang="en">Jian Guan</dc:contributor>
+        <dc:creator>Alla Karnovsky</dc:creator>
         <dc:contributor>Anna Maria Masci</dc:contributor>
         <dc:contributor xml:lang="en">Neil Otte</dc:contributor>
         <rdfs:comment>Terms were identified from a sample of informed consent templates, and definitions were selected based on concordance between the defintion and the use of the term in the source informed consent template document.  We preferentially selected defintioins from the NCI thesuarus.</rdfs:comment>
         <dc:contributor>Jonathan Bona</dc:contributor>
-        <dc:creator>Marcy Harris</dc:creator>
         <dc:creator>Yongqun &quot;Oliver&quot; He</dc:creator>
+        <dc:creator>Marcy Harris</dc:creator>
         <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-        <owl:versionInfo xml:lang="en">Arbor version; 1.0.100</owl:versionInfo>
         <dc:creator>Frank Manion</dc:creator>
+        <owl:versionInfo xml:lang="en">Arbor version; 1.0.100</owl:versionInfo>
         <dc:creator xml:lang="en">Christoph Brochhausen</dc:creator>
         <dc:date xml:lang="en">2018-03-01</dc:date>
-        <dc:contributor xml:lang="en">Cui Tao</dc:contributor>
-        <dc:creator>Jie Zheng</dc:creator>
         <rdfs:seeAlso rdf:resource="https://github.com/ICO-ontology/ICO"/>
+        <dc:creator>Jie Zheng</dc:creator>
+        <dc:contributor xml:lang="en">Cui Tao</dc:contributor>
         <dc:contributor>Jihad Obeid</dc:contributor>
         <dc:creator>Asiyah Yu Lin</dc:creator>
         <dc:contributor>Helena Ellis</dc:contributor>
@@ -23447,8 +24121,8 @@ Documentation is under development as well, and for now a slidedeck is available
         <dc:creator>Albert Goldfain</dc:creator>
         <dc:creator>Alexander Diehl</dc:creator>
         <dc:creator>Bjoern Peters</dc:creator>
-        <dc:creator>Alan Ruttenberg</dc:creator>
         <rdfs:comment xml:lang="en">The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as &apos;pathogen&apos;, &apos;host&apos;, &apos;vector&apos;, and &apos;vaccine&apos;.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. </rdfs:comment>
+        <dc:creator>Alan Ruttenberg</dc:creator>
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <dc:creator>Barry Smith</dc:creator>
@@ -23463,8 +24137,8 @@ Documentation is under development as well, and for now a slidedeck is available
         <dc:subject xml:lang="en">A biological ontology in the area of genes and genomes.</dc:subject>
         <dc:description xml:lang="en">OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. </dc:description>
         <dc:title xml:lang="en">OGG: Ontology of Genes and Genomes</dc:title>
-        <foaf:mbox rdf:resource="mailto:yongqunh@med.umich.edu"/>
         <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+        <foaf:mbox rdf:resource="mailto:yongqunh@med.umich.edu"/>
         <dc:date xml:lang="en">12-01-2016</dc:date>
         <dc:format xml:lang="en">OWL-DL</dc:format>
         <dc:creator>Bin Zhao</dc:creator>
@@ -23473,26 +24147,26 @@ Documentation is under development as well, and for now a slidedeck is available
         <dc:creator xml:lang="en">William Hogan</dc:creator>
         <rdfs:comment xml:lang="en">This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government&apos;s &quot;meaningful use&quot; criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt</rdfs:comment>
         <owl:versionInfo>2017-06-08</owl:versionInfo>
-        <dc:creator xml:lang="en">Mathias Brochhausen</dc:creator>
         <dc:creator>Amanda Hicks</dc:creator>
+        <dc:creator xml:lang="en">Mathias Brochhausen</dc:creator>
         <dc:creator xml:lang="en">Swetha Garimalla</dc:creator>
-        <rdfs:label xml:lang="en">The Ontology of Medically Related Social Entities</rdfs:label>
         <dc:contributor>Daniel Welch</dc:contributor>
+        <rdfs:label xml:lang="en">The Ontology of Medically Related Social Entities</rdfs:label>
         <dc:creator xml:lang="en">Shariq Tariq</dc:creator>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pr.owl">
-        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <oboInOwl:auto-generated-by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO dB</oboInOwl:auto-generated-by>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
         <oboInOwl:saved-by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jcowart</oboInOwl:saved-by>
         <oboInOwl:default-namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</oboInOwl:default-namespace>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Use reasoner in OBO Edit to see the correct hierarchy.</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details.</rdfs:comment>
         <oboInOwl:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">05:12:2018 09:09</oboInOwl:date>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Use reasoner in OBO Edit to see the correct hierarchy.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ro.owl">
-        <dc:title xml:lang="en">OBO Relations Ontology</dc:title>
         <dc:description xml:lang="en">The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies.</dc:description>
+        <dc:title xml:lang="en">OBO Relations Ontology</dc:title>
         <dc:source rdf:resource="http://obofoundry.org/ro"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 32 Logical Axioms: 0]</rdfs:comment>
         <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"> https://github.com/oborel/obo-relations/</foaf:homepage>
@@ -23502,5 +24176,5 @@ Documentation is under development as well, and for now a slidedeck is available
 
 
 
-<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
