@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://transformunify.org/ontologies/"
-     xml:base="http://transformunify.org/ontologies/"
+<rdf:RDF xmlns="https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl#"
+     xml:base="https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
      xmlns:ns3="http://www.ebi.ac.uk/efo/"
@@ -3278,8 +3278,16 @@ Carnival should take responsibility for converting the patient registry text (li
     <!-- http://transformunify.org/ontologies/TURBO_0010094 -->
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010094">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:04Z</dc:date>
+        <rdfs:comment>Subject of active discussion by OBI, with similar proposals from Damion Dooley and others. Intended to bind literals to data items, in a way that is more general and succincter than has value specification -&gt; has specified value.
+
+DD would give has parsed/atomic/literal value and has textual/raw value separate parents, so that classes could be cardinality constrained to take a single parsed/atomic/literal values but any number of textual/raw values.
+
+These properties can take any kind of literal as their object.  (Previous discussions had considered separate data properties for different types of literals)</rdfs:comment>
         <rdfs:label>has literal representation</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -3289,9 +3297,13 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010095">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <obo:IAO_0000115>has a value asserted directly by some external authority, like a CSV files or database table.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:27Z</dc:date>
         <rdfs:label>has raw literal represenation</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0010096"/>
     </owl:DatatypeProperty>
     
 
@@ -3300,9 +3312,13 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010096">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <obo:IAO_0000115>has a value that can be parsed or transformed from an authoritatively asserted raw values.  For example, the string &quot;9/10/71&quot; might be transformed to &quot;1971-09-10&quot;^^xsd:date OR &quot;1971-10-09&quot;^^xsd:date depending on the cultural origin of the raw data.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:50Z</dc:date>
         <rdfs:label>has parsed/transformed literal representation</rdfs:label>
+        <rdfs:seeAlso>&apos;has raw literal represenation&apos;</rdfs:seeAlso>
     </owl:DatatypeProperty>
     
 
@@ -4592,7 +4608,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:21:52Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:label>retired placeholder for biobank consenter</rdfs:label>
     </owl:Class>
     
@@ -4607,7 +4623,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:27:36Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000503"/>
         <rdfs:label>retired placeholder for biobank consenter CRID</rdfs:label>
     </owl:Class>
     
@@ -4622,7 +4638,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:28:21Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000504"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000504"/>
         <rdfs:label>retired placeholder for biobank consenter symbol</rdfs:label>
     </owl:Class>
     
@@ -4637,7 +4653,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:33:51Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000505"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000505"/>
         <rdfs:label>retired placeholder for biobank consenter registry denoter</rdfs:label>
     </owl:Class>
     
@@ -4652,7 +4668,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T16:47:49Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
         <rdfs:label>retired placeholder for biobank consenter identifier registry</rdfs:label>
     </owl:Class>
     
@@ -4667,7 +4683,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:37:32Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:label>retired placeholder for health care encounter</rdfs:label>
     </owl:Class>
     
@@ -4682,7 +4698,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:53:16Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000508"/>
         <rdfs:label>retired placeholder for health care encounter CRID</rdfs:label>
     </owl:Class>
     
@@ -4697,7 +4713,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T21:56:01Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000509"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000509"/>
         <rdfs:label>retired placeholder for health care encounter symbol</rdfs:label>
     </owl:Class>
     
@@ -4712,7 +4728,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-16T22:09:18Z</dc:date>
-        <TURBO_0000702>http://transformunify.org/ontologies/TURBO_0000510</TURBO_0000702>
+        <ontologies:TURBO_0000702>http://transformunify.org/ontologies/TURBO_0000510</ontologies:TURBO_0000702>
         <rdfs:label>retired placeholder for health care encounter registry denoter</rdfs:label>
     </owl:Class>
     
@@ -4727,7 +4743,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T20:57:47Z</dc:date>
-        <TURBO_0000702>http://transformunify.org/ontologies/TURBO_0000511</TURBO_0000702>
+        <ontologies:TURBO_0000702>http://transformunify.org/ontologies/TURBO_0000511</ontologies:TURBO_0000702>
         <rdfs:label>retired placeholder for health care encounter start</rdfs:label>
     </owl:Class>
     
@@ -4742,7 +4758,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:02:58Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000512"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000512"/>
         <rdfs:label>retired placeholder for health care encounter start date</rdfs:label>
     </owl:Class>
     
@@ -4757,7 +4773,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T16:54:15Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000513"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000513"/>
         <rdfs:label>retired placeholder for health care encounter identifier registry</rdfs:label>
     </owl:Class>
     
@@ -4772,7 +4788,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T17:18:08Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:label>retired placeholder for biobank encounter</rdfs:label>
     </owl:Class>
     
@@ -4787,7 +4803,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:12:32Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000531"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000531"/>
         <rdfs:label>retired placeholder for biobank encounter start</rdfs:label>
     </owl:Class>
     
@@ -4802,7 +4818,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:08:37Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000532"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000532"/>
         <rdfs:label>retired placeholder for biobank encounter start date</rdfs:label>
     </owl:Class>
     
@@ -4817,7 +4833,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:53:55Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000533"/>
         <rdfs:label>retired placeholder for biobank encounter CRID</rdfs:label>
     </owl:Class>
     
@@ -4832,7 +4848,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:54:46Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000534"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000534"/>
         <rdfs:label>retired placeholder for biobank encounter symbol</rdfs:label>
     </owl:Class>
     
@@ -4847,7 +4863,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T19:20:03Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000535"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000535"/>
         <rdfs:label>retired placeholder for biobank encounter registry denoter</rdfs:label>
     </owl:Class>
     
@@ -4862,7 +4878,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-18T21:55:23Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000543"/>
         <rdfs:label>retired placeholder for biobank encounter identifier registry</rdfs:label>
     </owl:Class>
     
@@ -4876,7 +4892,7 @@ The output of this process could be demographic or vital statistics data items, 
         <obo:IAO_0000115>A &apos;retired placeholder&apos; for individual whose URI terms, before referent tracking, identified individuals of class &apos;neonate life stage&apos;</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <rdfs:label>retired placeholder for neonate life stage</rdfs:label>
     </owl:Class>
     
@@ -5086,7 +5102,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-03T20:49:12Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001013"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001013"/>
         <rdfs:label>retired placeholder for adipose tissue</rdfs:label>
     </owl:Class>
     
@@ -5101,7 +5117,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-25T16:00:00-05:00</dc:date>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000047"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000047"/>
         <rdfs:label>retired placeholder for biological sex</rdfs:label>
     </owl:Class>
     
@@ -5116,7 +5132,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-12-14T17:50:50Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://www.ebi.ac.uk/efo/EFO_0004340"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://www.ebi.ac.uk/efo/EFO_0004340"/>
         <rdfs:label>retired placeholder for BMI datum</rdfs:label>
     </owl:Class>
     
@@ -5131,7 +5147,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-10T20:59:27Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
         <rdfs:label>retired placeholder for value specification</rdfs:label>
     </owl:Class>
     
@@ -5146,7 +5162,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-17T15:27:16Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000119"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000119"/>
         <rdfs:label>retired placeholder for height quality</rdfs:label>
     </owl:Class>
     
@@ -5161,7 +5177,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-21T19:11:02Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
         <rdfs:label>retired placeholder for process boundary</rdfs:label>
     </owl:Class>
     
@@ -5176,7 +5192,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000115>A &apos;retired placeholder&apos; for individual whose URI terms, before referent tracking, identified individuals of class &apos;process start time measurement&apos;</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
-        <TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000530"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://transformunify.org/ontologies/TURBO_0000530"/>
         <rdfs:label>retired placeholder for process start time measurement</rdfs:label>
     </owl:Class>
     
@@ -5191,7 +5207,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-17T15:27:06Z</dc:date>
-        <TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000128"/>
+        <ontologies:TURBO_0000702 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000128"/>
         <rdfs:label>retired placeholder for weight quality</rdfs:label>
     </owl:Class>
     
@@ -6870,7 +6886,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000580">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
-        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</TURBO_0006510>
+        <ontologies:TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ontologies:TURBO_0006510>
         <obo:IAO_0000111>-/- loss of function zygosity value specification</obo:IAO_0000111>
         <obo:IAO_0000115>a &apos;loss of function zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous for a mutant or minor allele at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -6885,7 +6901,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000581">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
-        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</TURBO_0006510>
+        <ontologies:TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ontologies:TURBO_0006510>
         <obo:IAO_0000111>-/+ loss of function zygosity value specification</obo:IAO_0000111>
         <obo:IAO_0000115>a &apos;loss of function zygosity value specification&apos; instance indicating the conclusion that some diploid individual is heterozygous for loss of function alleles at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -6900,7 +6916,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000582">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000572"/>
-        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</TURBO_0006510>
+        <ontologies:TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ontologies:TURBO_0006510>
         <obo:IAO_0000111>+/+ loss of function zygosity value specification</obo:IAO_0000111>
         <obo:IAO_0000115>a &apos;loss of function zygosity value specification&apos; instance indicating the conclusion that some diploid individual is wild-type homozygous at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -6915,7 +6931,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000590">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
-        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</TURBO_0006510>
+        <ontologies:TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ontologies:TURBO_0006510>
         <obo:IAO_0000111>-/- zygosity value specification</obo:IAO_0000111>
         <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is homozygous for a mutant or minor allele at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -6930,7 +6946,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000591">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
-        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</TURBO_0006510>
+        <ontologies:TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ontologies:TURBO_0006510>
         <obo:IAO_0000111>-/+ zygosity value specification</obo:IAO_0000111>
         <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is heterozygous for a mutant or minor allele at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -6945,7 +6961,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0000592">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
-        <TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</TURBO_0006510>
+        <ontologies:TURBO_0006510 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ontologies:TURBO_0006510>
         <obo:IAO_0000111>+/+ zygosity value specification</obo:IAO_0000111>
         <obo:IAO_0000115>a &apos;zygosity value specification&apos; instance indicating the conclusion that some diploid individual is wild-type homozygous at some locus</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
@@ -6991,40 +7007,10 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -7045,7 +7031,37 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -7077,8 +7093,8 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:NCIT_P207>C1273607</obo:NCIT_P207>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
         <obo:NCIT_P325>The sum of the primary and secondary Gleason scores. If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
+        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48603">
@@ -7108,16 +7124,16 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:NCIT_P207>C1273605</obo:NCIT_P207>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
-        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
+        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
         <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
-        <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
-        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_P207>C1273608</obo:NCIT_P207>
+        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
+        <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
         <obo:NCIT_P108>Tertiary Gleason Pattern</obo:NCIT_P108>
