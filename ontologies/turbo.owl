@@ -14,6 +14,7 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:ontoneo="http://purl.obolibrary.org/obo/ontoneo/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:Thesaurus="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#"
@@ -27,8 +28,10 @@
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
         <dc:title>The TURBO application ontology</dc:title>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
-        <rdfs:comment>After merging and tidying up, save as turbo_merged.owl AND turbo_merged.rdf (for TopBraid Composer)</rdfs:comment>
-        <rdfs:comment>Converting UO terms from classes to individuals:
+        <rdfs:comment>After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf for TopBraid Composer)</rdfs:comment>
+        <rdfs:comment>Converting UO terms from classes to individuals (offline, in a triplestore):
+
+(Most recently did mmHg with Ontofox, then converted in text editor... may not survive next merge.)
 
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX : &lt;http://purl.obolibrary.org/obo/uo.owl#&gt;
@@ -88,14 +91,16 @@ Used a similar strategy for Gleason terms from NCIT: asserted (though inserts in
 
 Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That&apos;s the case for any term that isn&apos;t native to TURBO or didn&apos;t come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)</rdfs:comment>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
-        <rdfs:comment>floppetty</rdfs:comment>
         <rdfs:comment>some manual tidying that might be required:
 
-remove chemical entitiy (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
+remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
 
 SDCs aren&apos;t directly (entities?), only continuants
 
-Haven&apos;t been using FMA anatomical region ?</rdfs:comment>
+Haven&apos;t been using FMA anatomical region ?
+
+GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI</rdfs:comment>
+        <rdfs:comment>todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals.</rdfs:comment>
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
         <foaf:homepage>https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl</foaf:homepage>
@@ -3592,6 +3597,32 @@ These properties can take any kind of literal as their object.  (Previous discus
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0005575 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HTN_00000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HTN_00000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/VSO_0000005"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/VSO_0000038"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A blood pressure measurement datum that is a quality measure of some systolic blood pressure</obo:IAO_0000115>
+        <dc:creator>Amanda Hicks</dc:creator>
+        <rdfs:comment>cut and pasted int turbo.owl with text editor</rdfs:comment>
+        <rdfs:label xml:lang="en">systolic blood pressure measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027"/>
@@ -3884,6 +3915,12 @@ These properties can take any kind of literal as their object.  (Previous discus
         </owl:equivalentClass>
         <obo:IAO_0000118>birth</obo:IAO_0000118>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VSO_0000038 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/VSO_0000038"/>
     
 
 
@@ -7026,64 +7063,10 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -7105,15 +7088,15 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <oboInOwl:hasExactSynonym>Total Gleason Score for Prostate Cancer</oboInOwl:hasExactSynonym>
         <obo:NCIT_P366>Total_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>GLEASON TOTAL SUM</oboInOwl:hasExactSynonym>
-        <obo:NCIT_P108>Total Gleason Score for Prostate Cancer</obo:NCIT_P108>
         <obo:NCIT_NHC0>C48602</obo:NCIT_NHC0>
+        <obo:NCIT_P108>Total Gleason Score for Prostate Cancer</obo:NCIT_P108>
         <obo:IAO_0000115>The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern.</obo:IAO_0000115>
         <rdfs:label>Total Gleason Score for Prostate Cancer</rdfs:label>
         <obo:NCIT_P207>C1273607</obo:NCIT_P207>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P325>The sum of the primary and secondary Gleason scores. If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
+        <obo:NCIT_P325>The sum of the primary and secondary Gleason scores. If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48603">
@@ -7121,8 +7104,8 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:NCIT_P325>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
         <obo:NCIT_P366>Primary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
-        <rdfs:label>Primary Gleason Pattern</rdfs:label>
         <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
+        <rdfs:label>Primary Gleason Pattern</rdfs:label>
         <obo:NCIT_P207>C1273604</obo:NCIT_P207>
         <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_NHC0>C48603</obo:NCIT_NHC0>
@@ -7145,14 +7128,14 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
         <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
         <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
-        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_P207>C1273608</obo:NCIT_P207>
         <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
+        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
         <obo:NCIT_P108>Tertiary Gleason Pattern</obo:NCIT_P108>
