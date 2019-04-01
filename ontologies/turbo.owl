@@ -117,7 +117,22 @@ used ontofox to get additional classes and properties from other OBO foundry ont
      -->
 
     
-
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010136">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000093"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">clinical datum about patient</rdfs:label>
+    </owl:ObjectProperty>
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
 
