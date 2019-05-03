@@ -870,6 +870,8 @@ Which says that allele information D mentions a particular gene modeled in the P
     <!-- http://transformunify.org/ontologies/TURBO_0010080 -->
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010080">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:10Z</dc:date>
         <rdfs:label>instantiation object shortcut</rdfs:label>
@@ -886,7 +888,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:33Z</dc:date>
         <rdfs:comment rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
-        <rdfs:label>shortcut person  to object</rdfs:label>
+        <rdfs:label>shortcut person  to entity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1066,6 +1068,7 @@ Which says that allele information D mentions a particular gene modeled in the P
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010132">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-05T20:38:48Z</dc:date>
         <rdfs:label>shortcut biobank encounter to entity</rdfs:label>
@@ -1115,6 +1118,37 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
         <obo:IAO_0000118>has measured value (from James Overton&apos;s 2019-04-08 proposal)</obo:IAO_0000118>
         <rdfs:label xml:lang="en">has measurement specification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010140 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010140">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
+        <rdfs:label xml:lang="en">shortcut allele information to entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010141 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010141">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010140"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0000571"/>
+        <rdfs:label xml:lang="en">shortcut allele information to zygosity value specification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transformunify.org/ontologies/TURBO_0010142 -->
+
+    <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010142">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
+        <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
+        <rdfs:label xml:lang="en">shortcut allele information to biobank encounter</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -7112,13 +7146,13 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <rdfs:label>Synthea health care encounter registry</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -7155,8 +7189,8 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
         <obo:NCIT_P325>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
-        <rdfs:label>Primary Gleason Pattern</rdfs:label>
         <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
+        <rdfs:label>Primary Gleason Pattern</rdfs:label>
         <obo:NCIT_P366>Primary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <obo:NCIT_P207>C1273604</obo:NCIT_P207>
         <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
@@ -7178,15 +7212,15 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:NCIT_P207>C1273605</obo:NCIT_P207>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
-        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
+        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
         <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
-        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_P207>C1273608</obo:NCIT_P207>
+        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
