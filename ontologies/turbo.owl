@@ -3306,6 +3306,19 @@ Carnival should take responsibility for converting the patient registry text (li
     
 
 
+    <!-- http://transformunify.org/ontologies/TURBO_0010047 -->
+
+    <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010047">
+        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010041"/>
+        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-31T16:29:47Z</dc:date>
+        <rdfs:label>shortcut summary staging datum to data set title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://transformunify.org/ontologies/TURBO_0010066 -->
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010066">
@@ -3713,19 +3726,6 @@ These properties can take any kind of literal as their object.  (Previous discus
     <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl/TURBO_0010047 -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl/TURBO_0010047">
-        <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010041"/>
-        <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
-        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-31T16:29:47Z</dc:date>
-        <rdfs:label>shortcut summary staging datum to data set title</rdfs:label>
-    </owl:DatatypeProperty>
     
 
 
@@ -7798,8 +7798,8 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:NCIT_P325>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
         <rdfs:label>Primary Gleason Pattern</rdfs:label>
-        <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <obo:NCIT_P366>Primary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <obo:NCIT_P207>C1273604</obo:NCIT_P207>
         <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_NHC0>C48603</obo:NCIT_NHC0>
@@ -7820,15 +7820,15 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:NCIT_P207>C1273605</obo:NCIT_P207>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
-        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
+        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
         <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
-        <obo:NCIT_P207>C1273608</obo:NCIT_P207>
         <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
+        <obo:NCIT_P207>C1273608</obo:NCIT_P207>
         <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
