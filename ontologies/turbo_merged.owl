@@ -2,8 +2,7 @@
 <rdf:RDF xmlns="https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl/"
      xml:base="https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
-     xmlns:ns3="http://www.ebi.ac.uk/efo/"
+     xmlns:efo="http://www.ebi.ac.uk/efo/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -12,7 +11,6 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:faldo="http://biohackathon.org/resource/faldo#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:ontoneo="http://purl.obolibrary.org/obo/ontoneo/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
@@ -107,7 +105,6 @@ GO cellular_component appearing as direct subclass of Thing... dragged into mate
         <dc:contributor>Mark A. Miller</dc:contributor>
         <dc:source>OBO foundry ontologies, especially the ontology for biobanking, OBIB.</dc:source>
         <dc:title>The TURBO application ontology</dc:title>
-        <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <rdfs:comment>This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank.</rdfs:comment>
         <rdfs:comment>used ontodog to extract a base ontology view from OBIB
 used ontofox to get additional classes and properties from other OBO foundry ontologies</rdfs:comment>
@@ -1201,8 +1198,8 @@ One X can have anywhere from one to an infinite number of Y X &apos;previous URI
     <!-- http://www.ebi.ac.uk/efo/MSH_definition_citation -->
 
     <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/MSH_definition_citation">
-        <ns3:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/MESH_definition_citation is an annotation property that is drawn from MESH</ns3:MSH_definition_citation>
-        <ns3:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/MSH_definition_citation is an annotation property that is drawn from MSH</ns3:MSH_definition_citation>
+        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/MESH_definition_citation is an annotation property that is drawn from MESH</efo:MSH_definition_citation>
+        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/MSH_definition_citation is an annotation property that is drawn from MSH</efo:MSH_definition_citation>
         <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
     </owl:AnnotationProperty>
     
@@ -1212,7 +1209,7 @@ One X can have anywhere from one to an infinite number of Y X &apos;previous URI
 
     <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation">
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation is an annotation property that is drawn from NCI_Thesaurus</obo:IAO_0000115>
-        <ns3:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation is an annotation property that is drawn from NCI_Thesaurus</ns3:NCI_Thesaurus_definition_citation>
+        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/NCI_Thesaurus_definition_citation is an annotation property that is drawn from NCI_Thesaurus</efo:NCI_Thesaurus_definition_citation>
         <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
     </owl:AnnotationProperty>
     
@@ -1221,7 +1218,7 @@ One X can have anywhere from one to an infinite number of Y X &apos;previous URI
     <!-- http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation -->
 
     <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation">
-        <ns3:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation is an annotation property that is drawn from SNOMEDCT</ns3:SNOMEDCT_definition_citation>
+        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ebi.ac.uk/efo/SNOMEDCT_definition_citation is an annotation property that is drawn from SNOMEDCT</efo:SNOMEDCT_definition_citation>
         <rdfs:subPropertyOf rdf:resource="http://www.ebi.ac.uk/efo/definition_citation"/>
     </owl:AnnotationProperty>
     
@@ -1282,6 +1279,13 @@ One X can have anywhere from one to an infinite number of Y X &apos;previous URI
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
+        <oboInOwl:hasDbXref>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.geneontology.org/formats/oboInOwl#DbXref"/>
+                <oboInOwl:hasURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/oboInOwl/owl/oboInOwlFormat#oboInOwlFormat_xref</oboInOwl:hasURI>
+                <rdfs:label>oboFormat:xref</rdfs:label>
+            </rdf:Description>
+        </oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.geneontology.org/formats/oboInOwl#DbXref"/>
@@ -20232,14 +20236,14 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dani Welter</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3038553</ontologies:TURBO_0010147>
-        <ns3:ICD9_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICD9:V85-V85.99</ns3:ICD9_definition_citation>
-        <ns3:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D015992</ns3:MSH_definition_citation>
-        <ns3:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C16358</ns3:NCI_Thesaurus_definition_citation>
-        <ns3:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT:60621009</ns3:SNOMEDCT_definition_citation>
-        <ns3:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMI</ns3:alternative_term>
-        <ns3:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quetelet&apos;s Index</ns3:alternative_term>
-        <ns3:definition_citation>https://en.wikipedia.org/wiki/Body_mass_index</ns3:definition_citation>
-        <ns3:gwas_trait rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</ns3:gwas_trait>
+        <efo:ICD9_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICD9:V85-V85.99</efo:ICD9_definition_citation>
+        <efo:MSH_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D015992</efo:MSH_definition_citation>
+        <efo:NCI_Thesaurus_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIt:C16358</efo:NCI_Thesaurus_definition_citation>
+        <efo:SNOMEDCT_definition_citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT:60621009</efo:SNOMEDCT_definition_citation>
+        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMI</efo:alternative_term>
+        <efo:alternative_term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quetelet&apos;s Index</efo:alternative_term>
+        <efo:definition_citation>https://en.wikipedia.org/wiki/Body_mass_index</efo:definition_citation>
+        <efo:gwas_trait rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</efo:gwas_trait>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body mass index</rdfs:label>
     </owl:Class>
     
@@ -20279,7 +20283,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:Class rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
-        <rdfs:label>Obsolete Class</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obsolete Class</rdfs:label>
     </owl:Class>
     
 
@@ -24019,9 +24023,9 @@ This interpretation is *not* the same as an at-all-times relation
         <obo:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000086</obo:id>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9531</ontologies:TURBO_0010147>
-        <ns3:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        <efo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
 An area density unit which is equal to the mass of an object in kilograms divided by the surface area in meters squared.
-</ns3:IAO_0000115>
+</efo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kilogram per square meter</rdfs:label>
     </owl:NamedIndividual>
     
@@ -24106,7 +24110,7 @@ An area density unit which is equal to the mass of an object in kilograms divide
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000175">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gram per liter</obo:IAO_0000111>
-        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in grams divided by the volume in liters.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass unit density which is equal to mass of an object in grams divided by the volume in liters.</obo:IAO_0000115>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">g per L</obo:IAO_0000118>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">g/L</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
@@ -24126,7 +24130,7 @@ An area density unit which is equal to the mass of an object in kilograms divide
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000176">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">milligram per milliliter</obo:IAO_0000111>
-        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in milligrams divided by the volume in milliliters.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass unit density which is equal to mass of an object in milligrams divided by the volume in milliliters.</obo:IAO_0000115>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mg per ml</obo:IAO_0000118>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mg/ml</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
@@ -24151,9 +24155,9 @@ An area density unit which is equal to the mass of an object in kilograms divide
         <obo:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000187</obo:id>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_group_slim"/>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8554</ontologies:TURBO_0010147>
-        <ns3:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        <efo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
 A dimensionless ratio unit which denotes numbers as fractions of 100.
-</ns3:IAO_0000115>
+</efo:IAO_0000115>
         <rdfs:comment>MAM manually copied class definition from UO, change from a class definition with a superclass to a named individual definition with a type, and pasted into TURBO ontology</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percent</rdfs:label>
     </owl:NamedIndividual>
@@ -24191,7 +24195,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000208">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gram per deciliter</obo:IAO_0000111>
-        <obo:IAO_0000115>A mass density unit which is equal to mass of an object in grams divided by the volume in deciliters.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass density unit which is equal to mass of an object in grams divided by the volume in deciliters.</obo:IAO_0000115>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">g/dl</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
         <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
@@ -24314,7 +24318,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000301">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microgram per liter</obo:IAO_0000111>
-        <obo:IAO_0000115>A mass unit density which is equal to mass of an object in micrograms divided by the volume in liters.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass unit density which is equal to mass of an object in micrograms divided by the volume in liters.</obo:IAO_0000115>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ng/ml</obo:IAO_0000118>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ug/L</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
@@ -25053,7 +25057,142 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
@@ -25062,36 +25201,6 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -25116,28 +25225,10 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -25147,51 +25238,6 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -25251,6 +25297,18 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -25263,7 +25321,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
@@ -25275,9 +25333,27 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -25287,16 +25363,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
@@ -25305,51 +25372,6 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -25365,13 +25387,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -25380,19 +25396,13 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -25405,18 +25415,369 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     
 
@@ -25435,8 +25796,8 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <oboInOwl:hasExactSynonym>Total Gleason Score for Prostate Cancer</oboInOwl:hasExactSynonym>
         <obo:NCIT_P366>Total_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>GLEASON TOTAL SUM</oboInOwl:hasExactSynonym>
-        <obo:NCIT_P108>Total Gleason Score for Prostate Cancer</obo:NCIT_P108>
         <obo:NCIT_NHC0>C48602</obo:NCIT_NHC0>
+        <obo:NCIT_P108>Total Gleason Score for Prostate Cancer</obo:NCIT_P108>
         <obo:IAO_0000115>The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern.</obo:IAO_0000115>
         <rdfs:label>Total Gleason Score for Prostate Cancer</rdfs:label>
         <obo:NCIT_P207>C1273607</obo:NCIT_P207>
@@ -25450,9 +25811,9 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
         <obo:NCIT_P325>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
+        <rdfs:label>Primary Gleason Pattern</rdfs:label>
         <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <obo:NCIT_P366>Primary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
-        <rdfs:label>Primary Gleason Pattern</rdfs:label>
         <obo:NCIT_P207>C1273604</obo:NCIT_P207>
         <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:NCIT_NHC0>C48603</obo:NCIT_NHC0>
@@ -25473,16 +25834,16 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:NCIT_P207>C1273605</obo:NCIT_P207>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
-        <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
         <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
         <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
         <obo:NCIT_P207>C1273608</obo:NCIT_P207>
-        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
+        <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
         <obo:NCIT_P106>Classification</obo:NCIT_P106>
         <obo:NCIT_P108>Tertiary Gleason Pattern</obo:NCIT_P108>
@@ -25490,10 +25851,10 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000272">
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000272</oboInOwl:id>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mmHg</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimeters of mercury</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000272</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimetres of mercury</rdfs:label>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimeters of mercury</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
@@ -25511,8 +25872,8 @@ Documentation is under development as well, and for now a slidedeck is available
         <dc:creator>Albert Goldfain</dc:creator>
         <dc:creator>Alexander Diehl</dc:creator>
         <dc:creator>Bjoern Peters</dc:creator>
-        <rdfs:comment xml:lang="en">The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as &apos;pathogen&apos;, &apos;host&apos;, &apos;vector&apos;, and &apos;vaccine&apos;.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. </rdfs:comment>
         <dc:creator>Alan Ruttenberg</dc:creator>
+        <rdfs:comment xml:lang="en">The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as &apos;pathogen&apos;, &apos;host&apos;, &apos;vector&apos;, and &apos;vaccine&apos;.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. </rdfs:comment>
         <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <dc:creator>Barry Smith</dc:creator>
@@ -25527,26 +25888,26 @@ Documentation is under development as well, and for now a slidedeck is available
         <dc:subject xml:lang="en">A biological ontology in the area of genes and genomes.</dc:subject>
         <dc:description xml:lang="en">OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. </dc:description>
         <dc:title xml:lang="en">OGG: Ontology of Genes and Genomes</dc:title>
-        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <foaf:mbox rdf:resource="mailto:yongqunh@med.umich.edu"/>
+        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <dc:date xml:lang="en">12-01-2016</dc:date>
         <dc:format xml:lang="en">OWL-DL</dc:format>
         <dc:creator>Bin Zhao</dc:creator>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/omrse.owl">
-        <dc:creator xml:lang="en">William Hogan</dc:creator>
         <rdfs:comment xml:lang="en">This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government&apos;s &quot;meaningful use&quot; criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt</rdfs:comment>
-        <owl:versionInfo>2017-06-08</owl:versionInfo>
-        <dc:creator>Amanda Hicks</dc:creator>
+        <dc:creator xml:lang="en">William Hogan</dc:creator>
         <dc:creator xml:lang="en">Mathias Brochhausen</dc:creator>
+        <dc:creator>Amanda Hicks</dc:creator>
+        <owl:versionInfo>2017-06-08</owl:versionInfo>
         <dc:creator xml:lang="en">Swetha Garimalla</dc:creator>
         <rdfs:label xml:lang="en">The Ontology of Medically Related Social Entities</rdfs:label>
         <dc:contributor>Daniel Welch</dc:contributor>
         <dc:creator xml:lang="en">Shariq Tariq</dc:creator>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ro.owl">
-        <dc:title xml:lang="en">OBO Relations Ontology</dc:title>
         <dc:description xml:lang="en">The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies.</dc:description>
+        <dc:title xml:lang="en">OBO Relations Ontology</dc:title>
         <dc:source rdf:resource="http://obofoundry.org/ro"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 32 Logical Axioms: 0]</rdfs:comment>
         <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"> https://github.com/oborel/obo-relations/</foaf:homepage>
@@ -25555,7 +25916,7 @@ Documentation is under development as well, and for now a slidedeck is available
     <rdf:Description rdf:about="http://www.ebi.ac.uk/efo/EFO_0004374">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">milligram per deciliter</rdfs:label>
         <rdfs:comment>NCIt:C67015</rdfs:comment>
-        <ns3:NCI_Thesaurus_definition_citation>NCIt:C67015</ns3:NCI_Thesaurus_definition_citation>
+        <efo:NCI_Thesaurus_definition_citation>NCIt:C67015</efo:NCI_Thesaurus_definition_citation>
         <obo:IAO_0000412 rdf:resource="http://www.ebi.ac.uk/efo/efo.owl"/>
     </rdf:Description>
 </rdf:RDF>
