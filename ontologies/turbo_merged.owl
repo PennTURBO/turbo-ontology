@@ -538,48 +538,6 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCIT_NHC0 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_NHC0"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCIT_P106 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P106"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCIT_P108 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P108"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCIT_P207 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P207"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCIT_P322 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P322"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCIT_P325 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P325"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCIT_P366 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_P366"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0001847 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001847">
@@ -1190,7 +1148,7 @@ One X can have anywhere from one to an infinite number of Y X &apos;previous URI
     <!-- http://transformunify.org/ontologies/TURBO_0010113 -->
 
     <owl:AnnotationProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010113">
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T22:25:42Z</dc:date>
         <rdfs:label>expands to</rdfs:label>
     </owl:AnnotationProperty>
@@ -2130,6 +2088,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000112 xml:lang="en">your heart beating from 4pm to 5pm today is a temporal part of the process of your heart beating</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">b proper_temporal_part_of c =Def. b temporal_part_of c &amp; not (b = c). (axiom label in BFO2 Reference: [116-001])</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">b temporal_part_of c =Def.b occurrent_part_of c &amp; &amp; for some temporal region t, b occupies_temporal_region t &amp; for all occurrents d, t (if d occupies_temporal_region t  &amp; t? occurrent_part_of t then (d occurrent_part_of a iff d occurrent_part_of b)). (axiom label in BFO2 Reference: [078-003])</obo:IAO_0000115>
+        <obo:IAO_0000118>TPO</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
         <obo:IAO_0000601 xml:lang="en">if b proper_temporal_part_of c, then there is some d which is a proper_temporal_part_of c and which shares no parts with b. (axiom label in BFO2 Reference: [117-002])</obo:IAO_0000601>
         <obo:IAO_0000602>(forall (x y) (if (properTemporalPartOf x y) (exists (z) (and (properTemporalPartOf z y) (not (exists (w) (and (temporalPartOf w x) (temporalPartOf w z)))))))) // axiom label in BFO2 CLIF: [117-002] </obo:IAO_0000602>
@@ -2206,6 +2165,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
         <obo:BFO_0000179>spans</obo:BFO_0000179>
         <obo:BFO_0000180>occupiesTemporalRegion</obo:BFO_0000180>
+        <obo:IAO_0000118>OTR</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
         <obo:IAO_0000600 xml:lang="en">p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])</obo:IAO_0000600>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
@@ -2928,8 +2888,8 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_specified_output_of</rdfs:label>
         <rdfs:label xml:lang="en">is_specified_output_of</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_specified_output_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4163,6 +4123,7 @@ Example 2: a collection of information entities such as a genotype being compris
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-11T14:36:32Z</dc:date>
         <rdfs:label>participates in via role</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -4197,8 +4158,12 @@ For example, if a patient identifier and an encounter identifier were found in t
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UBERON_0035946"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <rdf:Description rdf:about="http://transformunify.org/ontologies/TURBO_0010242"/>
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
+                <owl:inverseOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010245"/>
+            </rdf:Description>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010203"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
         <obo:IAO_0000111>has birth</obo:IAO_0000111>
@@ -4259,10 +4224,11 @@ Which says that allele information D mentions a particular gene modeled in the P
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000306">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
         <obo:IAO_0000115>a &apos;has matching CV term&apos;, where the matching term is drawn from any of the versions and variants of the International Classification of Diseases.  The particular ICD falvor can be communicated with a &apos;has namespace&apos; (TURBO_0000703) triple taking an object like  &lt;http://purl.obolibrary.org/obo/NCIT_C71890&gt; for ICD-9 or &lt;http://purl.obolibrary.org/obo/NCIT_C128691&gt; for ICD-10-CM</obo:IAO_0000115>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</dc:creator>
+        <dc:creator>Mark A. Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-08-17T13:50:36Z</dc:date>
         <rdfs:label>has matching ICD term</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000073"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -4273,6 +4239,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000304"/>
         <rdfs:label>has  matching RxNORM term</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000001"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -4293,7 +4260,7 @@ Which says that allele information D mentions a particular gene modeled in the P
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010080">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:10Z</dc:date>
         <rdfs:label>instantiation object shortcut</rdfs:label>
     </owl:ObjectProperty>
@@ -4306,7 +4273,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000133"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:33Z</dc:date>
         <rdfs:comment rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
         <rdfs:label>shortcut person  to entity</rdfs:label>
@@ -4320,7 +4287,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:16:59Z</dc:date>
         <rdfs:label>shortcut person to patient CRID registry</rdfs:label>
     </owl:ObjectProperty>
@@ -4333,7 +4300,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000133"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:09:01Z</dc:date>
         <rdfs:label>shortcut person to gender identty datum</rdfs:label>
     </owl:ObjectProperty>
@@ -4346,7 +4313,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:17:33Z</dc:date>
         <rdfs:label>shortcut person to racial identity datum</rdfs:label>
     </owl:ObjectProperty>
@@ -4359,7 +4326,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000100"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:19:38Z</dc:date>
         <rdfs:label>shortcut person to ethnic identity datum</rdfs:label>
     </owl:ObjectProperty>
@@ -4371,7 +4338,7 @@ Which says that allele information D mentions a particular gene modeled in the P
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010109">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T18:58:36Z</dc:date>
         <rdfs:label>shortcut health care encounter to entity</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
@@ -4384,7 +4351,7 @@ Which says that allele information D mentions a particular gene modeled in the P
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010110">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010109"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T18:59:39Z</dc:date>
         <rdfs:label>shortcut health care encounter to encounter registry</rdfs:label>
     </owl:ObjectProperty>
@@ -4397,7 +4364,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010109"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T18:59:58Z</dc:date>
         <rdfs:label>shortcut health care encounter to patient registry</rdfs:label>
     </owl:ObjectProperty>
@@ -4409,7 +4376,7 @@ Which says that allele information D mentions a particular gene modeled in the P
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010115">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:14:56Z</dc:date>
         <rdfs:label>shortcut observation to entity</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
@@ -4421,7 +4388,7 @@ Which says that allele information D mentions a particular gene modeled in the P
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010119">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:19:40Z</dc:date>
         <rdfs:label>shortcut observation to patient registry</rdfs:label>
     </owl:ObjectProperty>
@@ -4432,7 +4399,7 @@ Which says that allele information D mentions a particular gene modeled in the P
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010120">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:20:00Z</dc:date>
         <rdfs:label>shortcut observation to encounter registry</rdfs:label>
     </owl:ObjectProperty>
@@ -4443,7 +4410,7 @@ Which says that allele information D mentions a particular gene modeled in the P
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010123">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:22:49Z</dc:date>
         <rdfs:label>shortcut observation to observation type registry</rdfs:label>
     </owl:ObjectProperty>
@@ -4454,7 +4421,7 @@ Which says that allele information D mentions a particular gene modeled in the P
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010126">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:26:47Z</dc:date>
         <rdfs:label>shortcut observation to unit term</rdfs:label>
     </owl:ObjectProperty>
@@ -4465,7 +4432,7 @@ Which says that allele information D mentions a particular gene modeled in the P
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010129">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T21:45:11Z</dc:date>
         <rdfs:label>shortcut observation to observation type term</rdfs:label>
     </owl:ObjectProperty>
@@ -4478,7 +4445,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010109"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-05T20:37:24Z</dc:date>
         <rdfs:label>shortcut health care encounter to person</rdfs:label>
     </owl:ObjectProperty>
@@ -4490,7 +4457,7 @@ Which says that allele information D mentions a particular gene modeled in the P
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010132">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010080"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-05T20:38:48Z</dc:date>
         <rdfs:label>shortcut biobank encounter to entity</rdfs:label>
     </owl:ObjectProperty>
@@ -4503,7 +4470,7 @@ Which says that allele information D mentions a particular gene modeled in the P
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010132"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-05T20:38:58Z</dc:date>
         <rdfs:label>shortcut biobank encounter to person</rdfs:label>
     </owl:ObjectProperty>
@@ -4534,7 +4501,7 @@ Which says that allele information D mentions a particular gene modeled in the P
     <!-- http://transformunify.org/ontologies/TURBO_0010139 -->
 
     <owl:ObjectProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010139">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
         <obo:IAO_0000118>has measured value (from James Overton&apos;s 2019-04-08 proposal)</obo:IAO_0000118>
@@ -4669,6 +4636,16 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:domain rdf:resource="http://www.ebi.ac.uk/efo/EFO_0004950"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UBERON_0035946"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <rdf:Description rdf:about="http://transformunify.org/ontologies/TURBO_0010242"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010245"/>
+            </rdf:Description>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010203"/>
+            </rdf:Description>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://transformunify.org/ontologies/TURBO_0010198"/>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010202"/>
@@ -4700,7 +4677,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000139"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010201"/>
         <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0010199"/>
-        <rdfs:label xml:lang="en">birth instance TPO birth day</rdfs:label>
+        <rdfs:label xml:lang="en">birth instant TPO birth day</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4729,7 +4706,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
                 <owl:inverseOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010242"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
-        <rdfs:label xml:lang="en">SNS start NS</rdfs:label>
+        <rdfs:label xml:lang="en">SNS starts neonate stage</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4740,7 +4717,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000155"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0010200"/>
-        <rdfs:label xml:lang="en">NS OTR NS1DTR</rdfs:label>
+        <rdfs:label xml:lang="en">neonate stage OTR NTR</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4751,7 +4728,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000139"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010201"/>
         <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0010200"/>
-        <rdfs:label xml:lang="en">birth instant TPO neonate stage TR</rdfs:label>
+        <rdfs:label xml:lang="en">birth instant TPO NTR</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4762,7 +4739,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010201"/>
         <rdfs:range rdf:resource="http://transformunify.org/ontologies/TURBO_0010200"/>
-        <rdfs:label xml:lang="en">birth instance starts NS1DTR</rdfs:label>
+        <rdfs:label xml:lang="en">birth instant starts NTR</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -5039,7 +5016,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T14:57:55Z</dc:date>
         <rdfs:label>shortcut biobank consenter to racial identity registry URI string</rdfs:label>
     </owl:DatatypeProperty>
@@ -5052,7 +5029,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T14:59:42Z</dc:date>
         <rdfs:label>shortcut biobank consenter to racial identity registry denoter</rdfs:label>
     </owl:DatatypeProperty>
@@ -5065,7 +5042,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T15:00:20Z</dc:date>
         <rdfs:label>shortcut biobank consenter to racial identity CRID symbol</rdfs:label>
     </owl:DatatypeProperty>
@@ -5078,7 +5055,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T15:01:01Z</dc:date>
         <rdfs:label>shortcut biobank consenter to racial identity datum URI string</rdfs:label>
     </owl:DatatypeProperty>
@@ -5091,7 +5068,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000502"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T15:18:51Z</dc:date>
         <rdfs:label>shortcut biobank consenter to racial identity datum veracity</rdfs:label>
     </owl:DatatypeProperty>
@@ -5102,7 +5079,7 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0000616">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000601"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-27T22:08:20Z</dc:date>
         <rdfs:label>shortcut biobank consenter to racial identity text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6028,6 +6005,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:comment>analogous to has specified value, but not limited to numerical ranges.  links a datum to a literal.</rdfs:comment>
         <rdfs:comment>the creation of this data property was motivated by the observation that there was no general-purpose data property in any OBO foundry ontology that took a string range.  Previous label was &apos;literal value of any owl:Thing&apos;</rdfs:comment>
         <rdfs:label xml:lang="en">has literal value</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:DatatypeProperty>
     
 
@@ -6043,6 +6021,7 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
         <rdfs:comment>I have seen &quot;has measurement value&quot; used for dates, but it has a plain numerical range in (OBI?  OBIB?)  I had added date as a second range for hmv, but Top Braid Composer only seems to consider the “first” range when determining what relationships can be drawn between two instances in graph mode.</rdfs:comment>
         <rdfs:label>has date value</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:DatatypeProperty>
     
 
@@ -6057,7 +6036,9 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <obo:IAO_0000115>has a literal value that can be mapped to an ontology term</obo:IAO_0000115>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>Mark A. Miller/TURBO team</obo:IAO_0000119>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdfs:comment>
         <rdfs:label>has textual value</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:DatatypeProperty>
     
 
@@ -6068,9 +6049,10 @@ failed parse rules for Karma?  assumes the tabular data being instantiated by Ka
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0006510"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T15:18:05Z</dc:date>
         <rdfs:label>has boolean value</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:DatatypeProperty>
     
 
@@ -6468,7 +6450,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-10-04T14:27:28Z</dc:date>
         <rdfs:label>shortcut health care encounter to patient identifier symbol</rdfs:label>
     </owl:DatatypeProperty>
@@ -6481,7 +6463,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-10-04T14:29:07Z</dc:date>
         <rdfs:label>shortcut health care encounter to patient identifier registry denoter</rdfs:label>
     </owl:DatatypeProperty>
@@ -6494,7 +6476,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000641"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000097"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-10-04T14:29:28Z</dc:date>
         <rdfs:label>shortcut health care encounter to patient identifier registry URI string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6507,7 +6489,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-10-04T14:49:04Z</dc:date>
         <rdfs:label>shortcut biobank encounter to patient identifier symbol</rdfs:label>
     </owl:DatatypeProperty>
@@ -6520,7 +6502,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000621"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-10-04T14:50:58Z</dc:date>
         <rdfs:label>shortcut biobank encounter to patient identifier registry denoter</rdfs:label>
     </owl:DatatypeProperty>
@@ -6534,7 +6516,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0000527"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-10-04T14:51:55Z</dc:date>
         <rdfs:label>shortcut biobank encounter to patient identifier registry URI string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6568,7 +6550,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010015">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-12-05T14:19:57Z</dc:date>
         <rdfs:comment>do we need to specify version?</rdfs:comment>
         <rdfs:label>has ensembl gene ID</rdfs:label>
@@ -6580,7 +6562,7 @@ Carnival should take responsibility for converting the patient registry text (li
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010016">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-12-05T14:20:08Z</dc:date>
         <rdfs:comment>Do we need to specify authority?  As in, Ensembl gets human symbols from HGNC?</rdfs:comment>
         <rdfs:label>has gene symbol</rdfs:label>
@@ -6593,7 +6575,7 @@ Carnival should take responsibility for converting the patient registry text (li
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010019">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:31Z</dc:date>
         <rdfs:label>shortcut PSA datum to data</rdfs:label>
     </owl:DatatypeProperty>
@@ -6606,7 +6588,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010019"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:44:53Z</dc:date>
         <rdfs:label>shortcut PSA datum to PSA value</rdfs:label>
     </owl:DatatypeProperty>
@@ -6619,7 +6601,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010019"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:28Z</dc:date>
         <rdfs:label>shortcut PSA datum to patient CRID regisry denoter text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6632,7 +6614,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010019"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:45:47Z</dc:date>
         <rdfs:label>shortcut PSA datum to patient CRID symbol</rdfs:label>
     </owl:DatatypeProperty>
@@ -6645,7 +6627,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010019"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T15:46:11Z</dc:date>
         <rdfs:label>shortcut PSA datum to blood draw date</rdfs:label>
     </owl:DatatypeProperty>
@@ -6658,7 +6640,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010019"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T17:34:45Z</dc:date>
         <rdfs:label>shortcut PSA datum to patient CRID registry denoter URI as string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6671,7 +6653,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010019"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T18:04:01Z</dc:date>
         <rdfs:label>shortcut PSA valspec to concentration unit URI as string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6683,7 +6665,7 @@ Carnival should take responsibility for converting the patient registry text (li
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010028">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:14:52Z</dc:date>
         <rdfs:label>shortcut Gleason datum to data</rdfs:label>
     </owl:DatatypeProperty>
@@ -6696,7 +6678,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:16:18Z</dc:date>
         <rdfs:label>shortcut Gleason datum to Gleason score textual value</rdfs:label>
     </owl:DatatypeProperty>
@@ -6709,7 +6691,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:17:15Z</dc:date>
         <rdfs:label>shortcut Gleason datum to Gleason group/profile textual value</rdfs:label>
     </owl:DatatypeProperty>
@@ -6722,7 +6704,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:18:56Z</dc:date>
         <rdfs:label>shortcut Gleason datum to Gleason score URI as string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6735,7 +6717,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:19:13Z</dc:date>
         <rdfs:label>shortcut Gleason datum to Gleason group/profile URI as string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6748,7 +6730,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:19:42Z</dc:date>
         <rdfs:label>shortcut Gleason datum to biopsy date</rdfs:label>
     </owl:DatatypeProperty>
@@ -6761,7 +6743,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:20:10Z</dc:date>
         <rdfs:label>shortcut Gleason datum to histology date</rdfs:label>
     </owl:DatatypeProperty>
@@ -6774,7 +6756,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:20:50Z</dc:date>
         <rdfs:label>shortcut Gleason datum to patient CRID registry denoter text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6787,7 +6769,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:21:01Z</dc:date>
         <rdfs:label>shortcut Gleason datum to patient CRID registry denoter URI as string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6800,7 +6782,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:21:19Z</dc:date>
         <rdfs:label>shortcut Gleason datum to patient CRID symbol</rdfs:label>
     </owl:DatatypeProperty>
@@ -6812,7 +6794,7 @@ Carnival should take responsibility for converting the patient registry text (li
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010041">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-29T15:03:33Z</dc:date>
         <rdfs:comment>add some date boundary shortcut?  what date would be meaningful within summary staging shortcuts? the date of the staging process, or some upstream assay or sample collection?</rdfs:comment>
         <rdfs:label>shortcut summary staging datum to data</rdfs:label>
@@ -6826,7 +6808,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010041"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-29T15:04:35Z</dc:date>
         <rdfs:label>shortcut summary staging datum to stage string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6839,7 +6821,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010041"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-29T15:36:03Z</dc:date>
         <rdfs:label>shortcut summary staging datum to patient CRID registry denoter text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6852,7 +6834,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010041"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-29T15:36:23Z</dc:date>
         <rdfs:label>shortcut summary staging datum to regden uri string</rdfs:label>
     </owl:DatatypeProperty>
@@ -6865,7 +6847,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010041"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-29T15:36:40Z</dc:date>
         <rdfs:label>shortcut summary staging datum to patient CRID symbol</rdfs:label>
     </owl:DatatypeProperty>
@@ -6878,7 +6860,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010041"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010039"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-31T16:29:47Z</dc:date>
         <rdfs:label>shortcut summary staging datum to data set title</rdfs:label>
     </owl:DatatypeProperty>
@@ -6891,7 +6873,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010019"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010038"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-06T14:57:29Z</dc:date>
         <rdfs:label>shortcut PSA datum to data set title</rdfs:label>
     </owl:DatatypeProperty>
@@ -6904,7 +6886,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010028"/>
         <rdfs:domain rdf:resource="http://transformunify.org/ontologies/TURBO_0010027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-06T14:58:12Z</dc:date>
         <rdfs:label>shortcut Gleason datum to data set title</rdfs:label>
     </owl:DatatypeProperty>
@@ -6917,7 +6899,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T15:27:17Z</dc:date>
         <rdfs:label>shortcut allele info to biobank encounter CRID registry text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6930,7 +6912,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T15:28:23Z</dc:date>
         <rdfs:label>shortcut allele info to geno_id CRID registry text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6943,7 +6925,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T15:30:33Z</dc:date>
         <rdfs:label>shortcut allele info to gene symbol text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6956,7 +6938,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001352"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T16:02:20Z</dc:date>
         <rdfs:label>shortcut allele info to Ensembl gene identifier text</rdfs:label>
     </owl:DatatypeProperty>
@@ -6968,7 +6950,7 @@ Carnival should take responsibility for converting the patient registry text (li
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010077">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0007600"/>
         <obo:IAO_0000115>an &apos;instantiation hybrid shortcut&apos; that, after expansion by Drivetrain, enables a reasonable semantic path from a exome sequencing sample identifier to the identifier of the encounter in which the sample was colelcted</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-12T17:50:00Z</dc:date>
         <rdfs:label>shortcut allele info to sample/encounter key</rdfs:label>
     </owl:DatatypeProperty>
@@ -6980,7 +6962,7 @@ Carnival should take responsibility for converting the patient registry text (li
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010078">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:13:18Z</dc:date>
         <rdfs:comment rdf:resource="http://transformunify.org/ontologies/TURBO_0010081"/>
         <rdfs:label>shortcut person to data</rdfs:label>
@@ -6994,7 +6976,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:14:03Z</dc:date>
         <rdfs:label>shortcut person to patient CRID symbol value</rdfs:label>
     </owl:DatatypeProperty>
@@ -7007,7 +6989,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:43:31Z</dc:date>
         <rdfs:label>shortcut person to dataset title</rdfs:label>
     </owl:DatatypeProperty>
@@ -7020,7 +7002,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:57:02Z</dc:date>
         <rdfs:label>shortcut person to DOB (textual)</rdfs:label>
     </owl:DatatypeProperty>
@@ -7033,7 +7015,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:59:16Z</dc:date>
         <rdfs:label>shortcut person to DOB (xsd compliant)</rdfs:label>
     </owl:DatatypeProperty>
@@ -7046,7 +7028,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:03:48Z</dc:date>
         <rdfs:label>shortcut person to first name</rdfs:label>
     </owl:DatatypeProperty>
@@ -7059,7 +7041,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:04:45Z</dc:date>
         <rdfs:label>shortcut person to last name</rdfs:label>
     </owl:DatatypeProperty>
@@ -7076,7 +7058,7 @@ Carnival should take responsibility for converting the patient registry text (li
         <obo:IAO_0000112>?x a &apos;data item&apos;;
 &apos;has representation&apos; &apos;20 grams&apos; .</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:04Z</dc:date>
         <rdfs:comment>Subject of active discussion by OBI, with similar proposals from Damion Dooley and others. Intended to bind literals to data items, in a way that is more general and succincter than has value specification -&gt; has specified value.
 
@@ -7097,7 +7079,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <obo:IAO_0000115>has a value asserted directly by some external authority, like a CSV files or database table.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:27Z</dc:date>
         <rdfs:label>has raw literal represenation</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0010096"/>
@@ -7112,7 +7094,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <obo:IAO_0000115>has a value that can be parsed or transformed from an authoritatively asserted raw values.  For example, the string &quot;9/10/71&quot; might be transformed to &quot;1971-09-10&quot;^^xsd:date OR &quot;1971-10-09&quot;^^xsd:date depending on the cultural origin of the raw data.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:00:50Z</dc:date>
         <rdfs:label>has parsed/transformed literal representation</rdfs:label>
         <rdfs:seeAlso>&apos;has raw literal represenation&apos;</rdfs:seeAlso>
@@ -7124,7 +7106,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010098">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T18:16:29Z</dc:date>
         <rdfs:label>shortcut person to GID text</rdfs:label>
     </owl:DatatypeProperty>
@@ -7135,7 +7117,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010099">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T18:16:37Z</dc:date>
         <rdfs:label>shortcut person to EID text</rdfs:label>
     </owl:DatatypeProperty>
@@ -7146,7 +7128,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010100">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010078"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T18:16:46Z</dc:date>
         <rdfs:label>shortcut person to RID text</rdfs:label>
     </owl:DatatypeProperty>
@@ -7157,7 +7139,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010107">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:resource="http://transformunify.org/ontologies/completionTimeInSeconds"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T14:40:23Z</dc:date>
         <rdfs:label>SPARQL run time in seconds</rdfs:label>
@@ -7169,7 +7151,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010108">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010094"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T14:40:35Z</dc:date>
         <rdfs:label>Inserted triples count</rdfs:label>
     </owl:DatatypeProperty>
@@ -7180,7 +7162,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010114">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0000670"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:13:05Z</dc:date>
         <rdfs:label>shortcut observation to data</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://transformunify.org/ontologies/TURBO_0010115"/>
@@ -7192,7 +7174,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010116">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:18:03Z</dc:date>
         <rdfs:label>shortcut observation to textual observation date</rdfs:label>
     </owl:DatatypeProperty>
@@ -7203,7 +7185,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010117">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:18:30Z</dc:date>
         <rdfs:label>shortcut observation to xsd formatted observation date</rdfs:label>
     </owl:DatatypeProperty>
@@ -7214,7 +7196,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010118">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:19:12Z</dc:date>
         <rdfs:label>shortcut observation to patient symbol value</rdfs:label>
     </owl:DatatypeProperty>
@@ -7225,7 +7207,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010121">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:20:31Z</dc:date>
         <rdfs:label>shortcut observation to encounter symbol value</rdfs:label>
     </owl:DatatypeProperty>
@@ -7236,7 +7218,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010122">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:22:19Z</dc:date>
         <rdfs:label>shortcut observation to observation type code</rdfs:label>
     </owl:DatatypeProperty>
@@ -7247,7 +7229,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010124">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:26:07Z</dc:date>
         <rdfs:label>shortcut observation to observation value</rdfs:label>
     </owl:DatatypeProperty>
@@ -7258,7 +7240,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010125">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T16:26:25Z</dc:date>
         <rdfs:label>shortcut observation to textual units label</rdfs:label>
     </owl:DatatypeProperty>
@@ -7269,7 +7251,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010127">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T21:17:41Z</dc:date>
         <rdfs:label>shortcut observation to data set title</rdfs:label>
     </owl:DatatypeProperty>
@@ -7280,7 +7262,7 @@ James: broaden domain?  remove costraint?</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://transformunify.org/ontologies/TURBO_0010128">
         <rdfs:subPropertyOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010114"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-04T21:29:44Z</dc:date>
         <rdfs:label>shortcut observation to units type term</rdfs:label>
     </owl:DatatypeProperty>
@@ -10398,6 +10380,12 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     <!-- http://purl.obolibrary.org/obo/IAO_0000416 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000416">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://transformunify.org/ontologies/TURBO_0010198"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0010199"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
         <rdfs:subClassOf>
             <owl:Class>
@@ -11519,12 +11507,6 @@ The term is used in the following meaning of being self generated. It does not s
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C28084">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
         <obo:IAO_0000115>The score derived from universally embraced prostate cancer grading system developed by Dr. Donald F. Gleason in 1977. The system provides a reproducible description of the glandular architecture of prostate tissue to which a pathologist assigns a score depending primarily on the microscopic patterns of cancerous glands and cell morphology. The system correlates well with behavior at the extremes: Gleason 1+1 tumors are the most well differentiated, slowly growing and rarely spread; Gleason 4+5 tumors are the most poorly differentiated, often widely metastatic at the time of diagnosis. In the commoner intermediate grade tumors, however, behavior is extremely variable.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28084</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score for Prostate Cancer</obo:NCIT_P108>
-        <obo:NCIT_P207>C3203027</obo:NCIT_P207>
-        <obo:NCIT_P325>A system of grading prostate cancer tissue based on how it looks under a microscope. Gleason scores range from 2 to 10 and indicate how likely it is that a tumor will spread. A low Gleason score means the cancer tissue is similar to normal prostate tissue and the tumor is less likely to spread; a high Gleason score means the cancer tissue is very different from normal and the tumor is more likely to spread.</obo:NCIT_P325>
-        <obo:NCIT_P366>Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Score for Prostate Cancer</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Sum</oboInOwl:hasExactSynonym>
@@ -11539,11 +11521,6 @@ The term is used in the following meaning of being self generated. It does not s
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C28107">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
         <obo:IAO_0000115>A grading system for prostatic carcinoma based on the microscopic glandular architectural patterns of the malignant epithelial cells. Nuclear atypia is not evaluated. It defines five patterns or grades which reflect decreasing differentiation.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28107</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Grading System</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332326</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Grade_for_Prostate_Cancer</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Grade</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Grade for Prostate Cancer</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Grading System</oboInOwl:hasExactSynonym>
@@ -11574,6 +11551,25 @@ The term is used in the following meaning of being self generated. It does not s
         <obo:IAO_0000118>European</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
         <rdfs:label>European</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C53489 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C53489">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
+        <obo:IAO_0000115>
+A multiaxial, hierarchical classification system for diseases in man developed by the College of American Pathologists.
+</obo:IAO_0000115>
+        <obo:IAO_0000116>A multiaxial, hierarchical classification system for diseases in man developed by the College of American Pathologists. (NCI)</obo:IAO_0000116>
+        <obo:IAO_0000116>A structured nomenclature and classification of the terminology used in human and veterinary medicine developed by the College of Pathologists and American Veterinary Medical Association. Terms are applied to one of eleven independent systematized modules.</obo:IAO_0000116>
+        <obo:ICO_0000091>C1136257</obo:ICO_0000091>
+        <obo:ICO_0000092>C53489</obo:ICO_0000092>
+        <oboInOwl:hasExactSynonym>SNOMED</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>SNOMED (Systematized Nomenclature of Medicine)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Systematized Nomenclature of Medicine</oboInOwl:hasExactSynonym>
+        <rdfs:label>Systematized Nomenclature of Medicine</rdfs:label>
     </owl:Class>
     
 
@@ -11759,8 +11755,8 @@ objectives is a planned process.</obo:IAO_0000116>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planned process</rdfs:label>
         <rdfs:label xml:lang="en">planned process</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planned process</rdfs:label>
     </owl:Class>
     
 
@@ -18572,6 +18568,12 @@ Elle indique :
     <!-- http://purl.obolibrary.org/obo/UBERON_0007221 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007221">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://transformunify.org/ontologies/TURBO_0010242"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0010200"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Of or pertaining to the period of time immediately following birth, or to the newborn.</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">consider splitting infant/newborn</obo:IAO_0000116>
@@ -18625,8 +18627,21 @@ Elle indique :
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
             </owl:Restriction>
         </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://transformunify.org/ontologies/TURBO_0010203"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0010201"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://transformunify.org/ontologies/TURBO_0010241"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0035943"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A life cycle temporal boundary that marks the start of the neonate stage of the organism.</obo:IAO_0000115>
+        <obo:IAO_0000118>SNS</obo:IAO_0000118>
         <obo:IAO_0000118>birth</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moment of birth</oboInOwl:hasExactSynonym>
@@ -18906,7 +18921,7 @@ Elle indique :
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001501">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
         <obo:IAO_0000115>a data item that denotes a centrally registered identifier registry</obo:IAO_0000115>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:26:46Z</dc:date>
         <rdfs:label>registry denoter</rdfs:label>
     </owl:Class>
@@ -18918,7 +18933,7 @@ Elle indique :
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001502">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000579"/>
         <obo:IAO_0000115>a centrally registered identifier registry that serves as a controlled vocabulary for racial identity datums</obo:IAO_0000115>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:30:25Z</dc:date>
         <rdfs:label>racial identity registry</rdfs:label>
     </owl:Class>
@@ -18930,7 +18945,7 @@ Elle indique :
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_00001503">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
         <obo:IAO_0000115>the (string value) symbol part of a racial identity CRID</obo:IAO_0000115>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:34:36Z</dc:date>
         <rdfs:label>racial identity CRID symbol</rdfs:label>
     </owl:Class>
@@ -19954,7 +19969,7 @@ The output of this process could be demographic or vital statistics data items, 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001504">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
         <obo:IAO_0000115>a centrally registered identifier that denotes a racial identity</obo:IAO_0000115>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:37:14Z</dc:date>
         <rdfs:label>racial identity CRID</rdfs:label>
     </owl:Class>
@@ -19965,7 +19980,7 @@ The output of this process could be demographic or vital statistics data items, 
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001505">
         <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_00001501"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:39:42Z</dc:date>
         <rdfs:label>racial identity registry denoter</rdfs:label>
     </owl:Class>
@@ -20093,7 +20108,7 @@ http://www.referent-tracking.com/RTU/?page=reftrackparadigm.phtml</obo:IAO_00001
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0001551">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000098"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-30T14:42:54Z</dc:date>
         <rdfs:label>Mixed racial identity datum</rdfs:label>
     </owl:Class>
@@ -20306,7 +20321,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000443"/>
         <obo:IAO_0000115>an analyte assay which...</obo:IAO_0000115>
         <obo:IAO_0000116>submit to OBI</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119>https://www.cancer.gov/types/prostate/psa-fact-sheet</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-15T19:29:19Z</dc:date>
         <rdfs:label>prostate specific antigen assay</rdfs:label>
@@ -20318,7 +20333,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010025">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-16T17:35:53Z</dc:date>
         <rdfs:label>prostate specific antigen value specification</rdfs:label>
     </owl:Class>
@@ -20329,7 +20344,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010027">
         <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0001912"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-17T21:14:20Z</dc:date>
         <rdfs:label>prostate Gleason grading datum</rdfs:label>
     </owl:Class>
@@ -20340,7 +20355,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010038">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OSCI_0000036"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-22T16:32:44Z</dc:date>
         <rdfs:label>prostate specific antigen concentration datum</rdfs:label>
     </owl:Class>
@@ -20351,7 +20366,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010039">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000144"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-22T17:21:47Z</dc:date>
         <rdfs:label>summarized stage of cancer progression</rdfs:label>
     </owl:Class>
@@ -20362,7 +20377,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010040">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-22T17:23:27Z</dc:date>
         <rdfs:label>summarizing the stage of cancer progression</rdfs:label>
     </owl:Class>
@@ -20373,7 +20388,7 @@ Also see the &apos;replaced with IUI&apos; annotation property that documents th
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010068">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000061"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://ceur-ws.org/Vol-2137/ws_ONCONTO_paper_5.pdf"/>
         <obo:IAO_0000119>Towards an Ontology for Representing Malignant Neoplasms
 William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
@@ -20393,7 +20408,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0001063"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-07T20:00:32Z</dc:date>
         <rdfs:label>neoplasm (material entity)</rdfs:label>
     </owl:Class>
@@ -20410,7 +20425,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0001064"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-07T20:04:15Z</dc:date>
         <rdfs:label>malignant neoplasm (material entity)</rdfs:label>
     </owl:Class>
@@ -20421,7 +20436,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010071">
         <rdfs:subClassOf rdf:resource="http://transformunify.org/ontologies/TURBO_0010070"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-07T20:05:57Z</dc:date>
         <rdfs:label>primary neoplasm (material entity)</rdfs:label>
     </owl:Class>
@@ -20438,7 +20453,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
                 <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0010071"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-02-07T20:06:12Z</dc:date>
         <rdfs:label>secondary neoplasm (matieral entity)</rdfs:label>
     </owl:Class>
@@ -20449,7 +20464,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010092">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:58:34Z</dc:date>
         <rdfs:label>patient CRID</rdfs:label>
     </owl:Class>
@@ -20460,7 +20475,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010093">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T16:59:03Z</dc:date>
         <rdfs:label>patient CRID symbol</rdfs:label>
     </owl:Class>
@@ -20471,7 +20486,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010097">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000100"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T17:10:17Z</dc:date>
         <rdfs:label>named graph</rdfs:label>
     </owl:Class>
@@ -20482,7 +20497,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010101">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0020015"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T20:00:13Z</dc:date>
         <rdfs:label>given name</rdfs:label>
     </owl:Class>
@@ -20493,7 +20508,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010102">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0020015"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T20:00:23Z</dc:date>
         <rdfs:label>family name</rdfs:label>
     </owl:Class>
@@ -20504,7 +20519,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010103">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000100"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T22:46:07Z</dc:date>
         <rdfs:label>OntoRefine project</rdfs:label>
     </owl:Class>
@@ -20515,7 +20530,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010104">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000100"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T22:46:55Z</dc:date>
         <rdfs:label>CSV file</rdfs:label>
     </owl:Class>
@@ -20526,7 +20541,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010105">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T23:05:20Z</dc:date>
         <rdfs:label>OntoRefine configuration, url-encoded</rdfs:label>
     </owl:Class>
@@ -20537,7 +20552,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010106">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T23:05:43Z</dc:date>
         <rdfs:label>SPARQL insert statement, url-encoded</rdfs:label>
     </owl:Class>
@@ -20923,6 +20938,7 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010200">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <obo:IAO_0000118>NTR</obo:IAO_0000118>
         <rdfs:label xml:lang="en">neonate temporal region</rdfs:label>
     </owl:Class>
     
@@ -20931,6 +20947,12 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <!-- http://transformunify.org/ontologies/TURBO_0010201 -->
 
     <owl:Class rdf:about="http://transformunify.org/ontologies/TURBO_0010201">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://transformunify.org/ontologies/TURBO_0010245"/>
+                <owl:someValuesFrom rdf:resource="http://transformunify.org/ontologies/TURBO_0010200"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000148"/>
         <rdfs:label xml:lang="en">birth instant</rdfs:label>
     </owl:Class>
@@ -21463,9 +21485,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137992">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>Only individual discrete well-formed glands.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C137992</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Grade Group 1</obo:NCIT_P108>
         <oboInOwl:hasExactSynonym>Gleason Grade Group 1</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Score Less Than or Equal to 6</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Grade Group 1</oboInOwl:hasExactSynonym>
@@ -21479,9 +21498,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137993">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>Predominantly well-formed glands with lesser component of poorly-formed/fused/cribriform glands.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C137993</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Grade Group 2</obo:NCIT_P108>
         <oboInOwl:hasExactSynonym>Gleason Grade Group 2</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Score 7: (3 plus 4)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Grade Group 2</oboInOwl:hasExactSynonym>
@@ -21494,9 +21510,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137994">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
-        <obo:NCIT_NHC0>C137994</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Grade Group 3</obo:NCIT_P108>
         <oboInOwl:hasExactSynonym>Gleason Grade Group 3</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Score 7: (4 plus 3)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Grade Group 3</oboInOwl:hasExactSynonym>
@@ -21510,9 +21523,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137995">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>Only poorly-formed/fused/cribriform glands or Predominantly well-formed glands and lesser component lacking glands or Predominantly lacking glands and lesser component of well-formed gland. Poorly-formed/fused/cribriform glands can be a more minor component.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C137995</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Grade Group 4</obo:NCIT_P108>
         <oboInOwl:hasExactSynonym>Gleason Grade Group 4</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Score 8: (4 plus 4) or (3 plus 5) or (5 plus 3)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Grade Group 4</oboInOwl:hasExactSynonym>
@@ -21526,9 +21536,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C137996">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>Lacks gland formation (or with necrosis) with or without poorly formed/fused/cribriform glands. For cases with greater than 95% poorly formed/fused/cribriform glands or lack of glands on a core or at RP, the component of less than 5% well-formed glands is not factored into the grade.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C137996</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Grade Group 5</obo:NCIT_P108>
         <oboInOwl:hasExactSynonym>Gleason Grade Group 5</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Score 9 or 10</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Grade Group 5</oboInOwl:hasExactSynonym>
@@ -21542,11 +21549,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28085">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of a well circumscribed nodule of separate glands which are closely packed. There is no infiltration of the surrounding parenchyma. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28085</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Pattern 1</obo:NCIT_P108>
-        <obo:NCIT_P207>C1276439</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Grade_1</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Grade 1</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Pattern 1</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Pattern 1</rdfs:label>
@@ -21559,11 +21561,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28086">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of glands that are more loosely arranged and less uniform compared to Gleason pattern 1. Minimal invasion of the surrounding parenchyma may be present. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28086</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Pattern 2</obo:NCIT_P108>
-        <obo:NCIT_P207>C1276440</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Grade_2</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Grade 2</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Pattern 2</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Pattern 2</rdfs:label>
@@ -21576,11 +21573,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28087">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of glands that are infiltrative and vary in size and shape. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28087</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Pattern 3</obo:NCIT_P108>
-        <obo:NCIT_P207>C1276441</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Grade_3</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Grade 3</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Pattern 3</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Pattern 3</rdfs:label>
@@ -21593,11 +21585,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28088">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>A pattern of prostate carcinoma characterized by the presence of fused, cribriform, or poorly defined glands. There is partial loss of normal epithelial polarity.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28088</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Pattern 4</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332329</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Grade_4</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Grade 4</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Pattern 4</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Pattern 4</rdfs:label>
@@ -21610,11 +21597,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28089">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28107"/>
         <obo:IAO_0000115>A pattern of prostate carcinoma characterized by almost complete loss of epithelial polarity and luminal differentiation.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28089</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Pattern 5</obo:NCIT_P108>
-        <obo:NCIT_P207>C1276443</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Grade_5</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Grade 5</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gleason Pattern 5</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Pattern 5</rdfs:label>
@@ -21627,11 +21609,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28090">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A Gleason score that indicates a low-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28090</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 6</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332331</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_6</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 6</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 6</rdfs:label>
     </owl:NamedIndividual>
@@ -21643,11 +21620,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28091">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A Gleason score that indicates an intermediate-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28091</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 7</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332332</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_7</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 7</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 7</rdfs:label>
     </owl:NamedIndividual>
@@ -21659,11 +21631,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28092">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A Gleason score that indicates a histologically aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28092</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 8</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332333</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_8</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 8</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 8</rdfs:label>
     </owl:NamedIndividual>
@@ -21675,11 +21642,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28093">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A Gleason score that indicates a high-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28093</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 9</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332334</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_9</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 9</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 9</rdfs:label>
     </owl:NamedIndividual>
@@ -21691,11 +21653,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28094">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A Gleason score that indicates a highly aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28094</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 10</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332335</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_10</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 10</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 10</rdfs:label>
     </owl:NamedIndividual>
@@ -21707,11 +21664,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28095">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A low Gleason score that is exceptionally uncommon and indicates a low-grade, non-aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28095</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 2</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332327</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_2</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 2</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 2</rdfs:label>
     </owl:NamedIndividual>
@@ -21723,11 +21675,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28096">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A Gleason score that is exceptionally assigned and indicates a low-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28096</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 3</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332328</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_3</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 3</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 3</rdfs:label>
     </owl:NamedIndividual>
@@ -21739,11 +21686,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28097">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>A Gleason score that is relatively uncommon and indicates a low-grade prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28097</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 4</obo:NCIT_P108>
-        <obo:NCIT_P207>C1276442</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_4</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 4</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 4</rdfs:label>
     </owl:NamedIndividual>
@@ -21755,11 +21697,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl</obo:IAO_0000119>
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C28098">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28084"/>
         <obo:IAO_0000115>An exceptionally uncommon Gleason score that indicates a less aggressive prostatic adenocarcinoma. The score or sum is estimated by adding the most prevalent and the second most prevalent histopathologic pattern of the malignant infiltrate.</obo:IAO_0000115>
-        <obo:NCIT_NHC0>C28098</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Gleason Score 5</obo:NCIT_P108>
-        <obo:NCIT_P207>C0332330</obo:NCIT_P207>
-        <obo:NCIT_P366>Gleason_Score_5</obo:NCIT_P366>
         <oboInOwl:hasExactSynonym>Gleason Score 5</oboInOwl:hasExactSynonym>
         <rdfs:label>Gleason Score 5</rdfs:label>
     </owl:NamedIndividual>
@@ -24911,18 +24848,18 @@ This interpretation is *not* the same as an at-all-times relation
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000086">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000054"/>
-        <obo:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</obo:created_by>
-        <obo:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Body Mass Index (BMI)</obo:hasExactSynonym>
-        <obo:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kg/m^[2]</obo:hasExactSynonym>
-        <obo:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kilogram per square metre</obo:hasExactSynonym>
-        <obo:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</obo:hasOBONamespace>
-        <obo:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000086</obo:id>
+        <obo:created_by>george gkoutos</obo:created_by>
+        <obo:hasExactSynonym>Body Mass Index (BMI)</obo:hasExactSynonym>
+        <obo:hasExactSynonym>kg/m^[2]</obo:hasExactSynonym>
+        <obo:hasExactSynonym>kilogram per square metre</obo:hasExactSynonym>
+        <obo:hasOBONamespace>unit.ontology</obo:hasOBONamespace>
+        <obo:id>UO:0000086</obo:id>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9531</ontologies:TURBO_0010147>
-        <efo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        <efo:IAO_0000115>
 An area density unit which is equal to the mass of an object in kilograms divided by the surface area in meters squared.
 </efo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kilogram per square meter</rdfs:label>
+        <rdfs:label>kilogram per square meter</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -25045,17 +24982,17 @@ An area density unit which is equal to the mass of an object in kilograms divide
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/UO_0000187">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
-        <obo:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</obo:created_by>
-        <obo:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">%</obo:hasExactSynonym>
-        <obo:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</obo:hasOBONamespace>
-        <obo:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000187</obo:id>
+        <obo:created_by>george gkoutos</obo:created_by>
+        <obo:hasExactSynonym>%</obo:hasExactSynonym>
+        <obo:hasOBONamespace>unit.ontology</obo:hasOBONamespace>
+        <obo:id>UO:0000187</obo:id>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_group_slim"/>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8554</ontologies:TURBO_0010147>
-        <efo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        <efo:IAO_0000115>
 A dimensionless ratio unit which denotes numbers as fractions of 100.
 </efo:IAO_0000115>
         <rdfs:comment>MAM manually copied class definition from UO, change from a class definition with a superclass to a named individual definition with a type, and pasted into TURBO ontology</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percent</rdfs:label>
+        <rdfs:label>percent</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -25914,7 +25851,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0001506">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_00001502"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</dc:creator>
+        <dc:creator>Mark Miller</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-25T13:55:09Z</dc:date>
         <rdfs:comment>Requires more discussion... what are the racial identity authorities that offer values that are used in our inpout data?</rdfs:comment>
         <rdfs:label>PDS placeholder racial identity registry</rdfs:label>
@@ -25926,7 +25863,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010083">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000506"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T15:21:15Z</dc:date>
         <rdfs:label>Synthea patient registry</rdfs:label>
     </owl:NamedIndividual>
@@ -25937,7 +25874,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010112">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0000513"/>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-02T19:04:43Z</dc:date>
         <rdfs:label>Synthea health care encounter registry</rdfs:label>
     </owl:NamedIndividual>
@@ -25958,7 +25895,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010210">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <obo:RO_0000056 rdf:resource="http://transformunify.org/ontologies/TURBO_0010212"/>
-        <rdfs:label xml:lang="en">Mark</rdfs:label>
+        <rdfs:label xml:lang="en">Patient 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -25968,7 +25905,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010212">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <ontologies:TURBO_0010242 rdf:resource="http://transformunify.org/ontologies/TURBO_0010243"/>
-        <rdfs:label xml:lang="en">Marks neonate stage process</rdfs:label>
+        <rdfs:label xml:lang="en">Neonate stage (process) 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -25977,8 +25914,9 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010213">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UBERON_0035946"/>
+        <obo:BFO_0000139 rdf:resource="http://transformunify.org/ontologies/TURBO_0010212"/>
         <ontologies:TURBO_0010203 rdf:resource="http://transformunify.org/ontologies/TURBO_0010240"/>
-        <rdfs:label xml:lang="en">Marks start of neonate stage process boundary</rdfs:label>
+        <rdfs:label xml:lang="en">Start of neonate stage/birth 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -25988,7 +25926,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010238">
         <rdf:type rdf:resource="http://www.ebi.ac.uk/efo/EFO_0004950"/>
         <ontologies:TURBO_0010198 rdf:resource="http://transformunify.org/ontologies/TURBO_0010239"/>
-        <rdfs:label xml:lang="en">Marks DOB TMD</rdfs:label>
+        <rdfs:label xml:lang="en">DOB TMD 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -25997,7 +25935,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010239">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0010199"/>
-        <rdfs:label xml:lang="en">Marks day of birth</rdfs:label>
+        <rdfs:label xml:lang="en">Day of birth 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -26008,7 +25946,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0010201"/>
         <ontologies:TURBO_0010202 rdf:resource="http://transformunify.org/ontologies/TURBO_0010239"/>
         <ontologies:TURBO_0010245 rdf:resource="http://transformunify.org/ontologies/TURBO_0010243"/>
-        <rdfs:label xml:lang="en">Marks birth instant</rdfs:label>
+        <rdfs:label xml:lang="en">Birth instant 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -26017,7 +25955,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
 
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010243">
         <rdf:type rdf:resource="http://transformunify.org/ontologies/TURBO_0010200"/>
-        <rdfs:label xml:lang="en">Marks neonate stage temporal region</rdfs:label>
+        <rdfs:label xml:lang="en">Neonate stage temporal region 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -26027,7 +25965,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     <owl:NamedIndividual rdf:about="http://transformunify.org/ontologies/TURBO_0010252">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000141"/>
         <obo:IAO_0000136 rdf:resource="http://transformunify.org/ontologies/TURBO_0010210"/>
-        <rdfs:label xml:lang="en">Marks male GID</rdfs:label>
+        <rdfs:label xml:lang="en">Male GID 946</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -26038,6 +25976,213 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UO_0000051"/>
     </owl:NamedIndividual>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -26053,48 +26198,6 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -26110,7 +26213,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -26125,64 +26228,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
@@ -26191,15 +26237,6 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -26209,7 +26246,10 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -26227,10 +26267,43 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
@@ -26242,190 +26315,10 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -26440,10 +26333,19 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -26452,76 +26354,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/omrse.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -26539,19 +26372,28 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -26560,22 +26402,16 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -26590,28 +26426,7 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -26630,90 +26445,48 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
@@ -26722,6 +26495,21 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -26731,10 +26519,40 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
@@ -26746,7 +26564,37 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -26758,6 +26606,42 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -26770,7 +26654,61 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -26793,63 +26731,37 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
      -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48602">
+        <oboInOwl:hasExactSynonym>GLEASON TOTAL SUM</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern.</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
+        <rdfs:label>Total Gleason Score for Prostate Cancer</rdfs:label>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
         <oboInOwl:hasExactSynonym>Total Gleason Score</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Total Gleason Score for Prostate Cancer</oboInOwl:hasExactSynonym>
-        <obo:NCIT_P366>Total_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
-        <oboInOwl:hasExactSynonym>GLEASON TOTAL SUM</oboInOwl:hasExactSynonym>
-        <obo:NCIT_P108>Total Gleason Score for Prostate Cancer</obo:NCIT_P108>
-        <obo:NCIT_NHC0>C48602</obo:NCIT_NHC0>
-        <obo:IAO_0000115>The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern.</obo:IAO_0000115>
-        <rdfs:label>Total Gleason Score for Prostate Cancer</rdfs:label>
-        <obo:NCIT_P207>C1273607</obo:NCIT_P207>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
-        <obo:NCIT_P325>The sum of the primary and secondary Gleason scores. If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48603">
+        <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
-        <obo:NCIT_P325>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
-        <obo:NCIT_P366>Primary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
         <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <rdfs:label>Primary Gleason Pattern</rdfs:label>
-        <obo:NCIT_P207>C1273604</obo:NCIT_P207>
-        <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
-        <obo:NCIT_NHC0>C48603</obo:NCIT_NHC0>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Primary Gleason Pattern</obo:NCIT_P108>
-        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48604">
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
         <oboInOwl:hasExactSynonym>Secondary Gleason Pattern</oboInOwl:hasExactSynonym>
-        <obo:IAO_0000115>The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
-        <obo:NCIT_P108>Secondary Gleason Pattern</obo:NCIT_P108>
-        <obo:NCIT_NHC0>C48604</obo:NCIT_NHC0>
-        <obo:NCIT_P325>The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. (Gleason, D. F. (1977). The Veteran&apos;s Administration Cooperative Urologic Research Group: histologic grading and clinical staging of prostatic carcinoma. In Tannenbaum, M. Urologic Pathology: The Prostate. Philadelphia: Lea and Febiger. pp. 171-198.)</obo:NCIT_P325>
         <rdfs:label>Secondary Gleason Pattern</rdfs:label>
-        <obo:NCIT_P207>C1273605</obo:NCIT_P207>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
-        <obo:NCIT_P366>Secondary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
+        <obo:IAO_0000115>The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>GLEASON SECONDARY SCORE</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
-        <obo:NCIT_NHC0>C48605</obo:NCIT_NHC0>
-        <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
         <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
-        <obo:NCIT_P207>C1273608</obo:NCIT_P207>
+        <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
-        <obo:NCIT_P106>Classification</obo:NCIT_P106>
-        <obo:NCIT_P108>Tertiary Gleason Pattern</obo:NCIT_P108>
-        <obo:NCIT_P366>Tertiary_Gleason_Score_for_Prostate_Cancer</obo:NCIT_P366>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000272">
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth.</obo:IAO_0000115>
@@ -26882,16 +26794,16 @@ Documentation is under development as well, and for now a slidedeck is available
         <dc:creator>Yongqun &quot;Oliver&quot; He</dc:creator>
         <dc:creator>Marcy Harris</dc:creator>
         <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-        <dc:creator>Frank Manion</dc:creator>
         <owl:versionInfo xml:lang="en">Arbor version; 1.0.100</owl:versionInfo>
+        <dc:creator>Frank Manion</dc:creator>
         <dc:creator xml:lang="en">Christoph Brochhausen</dc:creator>
         <dc:date xml:lang="en">2018-03-01</dc:date>
+        <dc:creator>Jie Zheng</dc:creator>
         <rdfs:seeAlso rdf:resource="https://github.com/ICO-ontology/ICO"/>
         <dc:contributor xml:lang="en">Cui Tao</dc:contributor>
-        <dc:creator>Jie Zheng</dc:creator>
         <dc:contributor>Jihad Obeid</dc:contributor>
-        <dc:contributor>Helena Ellis</dc:contributor>
         <dc:creator>Asiyah Yu Lin</dc:creator>
+        <dc:contributor>Helena Ellis</dc:contributor>
         <dc:contributor>Mathias Brochhausen</dc:contributor>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ido.owl">
@@ -26916,14 +26828,14 @@ Documentation is under development as well, and for now a slidedeck is available
         <foaf:mbox rdf:resource="mailto:yongqunh@med.umich.edu"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/omrse.owl">
-        <dc:creator xml:lang="en">William Hogan</dc:creator>
         <rdfs:comment xml:lang="en">This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government&apos;s &quot;meaningful use&quot; criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt</rdfs:comment>
-        <dc:creator>Amanda Hicks</dc:creator>
+        <dc:creator xml:lang="en">William Hogan</dc:creator>
         <owl:versionInfo>2017-06-08</owl:versionInfo>
+        <dc:creator>Amanda Hicks</dc:creator>
         <dc:creator xml:lang="en">Mathias Brochhausen</dc:creator>
         <dc:creator xml:lang="en">Swetha Garimalla</dc:creator>
-        <dc:contributor>Daniel Welch</dc:contributor>
         <rdfs:label xml:lang="en">The Ontology of Medically Related Social Entities</rdfs:label>
+        <dc:contributor>Daniel Welch</dc:contributor>
         <dc:creator xml:lang="en">Shariq Tariq</dc:creator>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pr.owl">
@@ -26934,8 +26846,8 @@ Documentation is under development as well, and for now a slidedeck is available
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ro.owl">
-        <dc:description xml:lang="en">The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies.</dc:description>
         <dc:title xml:lang="en">OBO Relations Ontology</dc:title>
+        <dc:description xml:lang="en">The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies.</dc:description>
         <dc:source rdf:resource="http://obofoundry.org/ro"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 32 Logical Axioms: 0]</rdfs:comment>
         <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"> https://github.com/oborel/obo-relations/</foaf:homepage>
