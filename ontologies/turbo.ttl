@@ -3525,19 +3525,19 @@ ontologies:TURBO_0000503 rdf:type owl:Class ;
                                            owl:onProperty obo:IAO_0000219 ;
                                            owl:someValuesFrom ontologies:TURBO_0000502
                                          ] ;
-                         obo:IAO_0000111 "biobank consenter CRID" ;
-                         obo:IAO_0000115 "a centrally registered identifier that denotes a biobank consenter" ;
+                         obo:IAO_0000111 "patient CRID" ;
+                         obo:IAO_0000115 "a centrally registered identifier that denotes a patient" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
                          dc:date "2018-01-16T21:06:07Z"^^xsd:dateTime ;
-                         rdfs:label "biobank consenter CRID" .
+                         rdfs:label "patient CRID" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000504
 ontologies:TURBO_0000504 rdf:type owl:Class ;
                          rdfs:subClassOf obo:IAO_0000577 ;
-                         obo:IAO_0000111 "biobank consenter symbol" ;
-                         obo:IAO_0000115 "the (string value) symbol part of a biobank consenter CRID" ;
+                         obo:IAO_0000111 "patient symbol" ;
+                         obo:IAO_0000115 "the (string value) symbol part of a patient CRID" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
                          dc:date "2018-01-16T21:08:01Z"^^xsd:dateTime ;
@@ -3551,7 +3551,7 @@ ontologies:TURBO_0000505 rdf:type owl:Class ;
                                                owl:someValuesFrom ontologies:TURBO_0000506
                                              ] ;
                          rdfs:subClassOf ontologies:TURBO_00001501 ;
-                         obo:IAO_0000111 "biobank consenter registry denoter" ;
+                         obo:IAO_0000111 "patient registry denoter" ;
                          obo:IAO_0000115 "a (string) denoter that denotes a psatient identifier registry instance" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
@@ -3562,8 +3562,8 @@ ontologies:TURBO_0000505 rdf:type owl:Class ;
 ###  http://transformunify.org/ontologies/TURBO_0000506
 ontologies:TURBO_0000506 rdf:type owl:Class ;
                          rdfs:subClassOf obo:IAO_0000579 ;
-                         obo:IAO_0000111 "biobank consenter identifier registry" ;
-                         obo:IAO_0000115 "a dataset of identifiers (specifically the symbol parts) that denote people with patient roles.  These may be biobank consenters whose data appears in a health care system's (electronic) medical records." ;
+                         obo:IAO_0000111 "patient identifier registry" ;
+                         obo:IAO_0000115 "a dataset of identifiers (specifically the symbol parts) that denote people with patient roles.  These may be patients whose data appears in a health care system's (electronic) medical records." ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
                          dc:date "2018-01-16T21:15:30Z"^^xsd:dateTime ;
@@ -3628,6 +3628,10 @@ ontologies:TURBO_0000509 rdf:type owl:Class ;
 
 ###  http://transformunify.org/ontologies/TURBO_0000510
 ontologies:TURBO_0000510 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:IAO_0000219 ;
+                                               owl:someValuesFrom ontologies:TURBO_0000513
+                                             ] ;
                          rdfs:subClassOf ontologies:TURBO_00001501 ;
                          obo:IAO_0000111 "health care encounter registry denoter" ;
                          obo:IAO_0000115 "a (string) denoter that denotes a health care encounter identifier registry instance" ;
@@ -4233,7 +4237,7 @@ ontologies:TURBO_0000961 rdf:type owl:Class ;
 ###  http://transformunify.org/ontologies/TURBO_0001500
 ontologies:TURBO_0001500 rdf:type owl:Class ;
                          rdfs:subClassOf ontologies:TURBO_0000506 ;
-                         obo:IAO_0000111 "biobank consenter MRN registry" ;
+                         obo:IAO_0000111 "patient MRN registry" ;
                          obo:IAO_0000115 "a patient identifier registry in which the symbols correspond to medical record numbers" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
@@ -4245,7 +4249,7 @@ ontologies:TURBO_0001500 rdf:type owl:Class ;
 ontologies:TURBO_0001501 rdf:type owl:Class ;
                          rdfs:subClassOf ontologies:TURBO_0000543 ;
                          obo:IAO_0000111 "ENCOUNTER_PACK_ID biobank encounter registry" ;
-                         obo:IAO_0000115 "a biobank consenter identifier registry in which the symbols correspond to (biobank?) encounter packet identifiers" ;
+                         obo:IAO_0000115 "a patient identifier registry in which the symbols correspond to (biobank?) encounter packet identifiers" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
                          dc:date "2018-01-30T15:26:31Z"^^xsd:dateTime ;
@@ -5034,7 +5038,18 @@ efo:EFO_0004340 rdf:type owl:Class ;
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004950
-efo:EFO_0004950 rdf:type owl:Class .
+efo:EFO_0004950 rdf:type owl:Class ;
+                rdfs:comment """Propsed equivalency
+
+'is duration of' some 
+    (process
+     and ('ends with' some 
+        (one-dimensional temporal region'
+         and  ('has temporal part') some 
+            ('zero-dimensional temporal region'
+             and ('has temporal occupant' some 'start of neonate stage'))))))
+
+MAM:  occurent instead of process?  ends instead of has_temporal_part?""" .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#DbXref
@@ -5879,7 +5894,7 @@ ontologies:TURBO_0000401 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0000402
 ontologies:TURBO_0000402 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000506 ;
-                         obo:IAO_0000111 "PDS EMPI biobank consenter identifier registry" ;
+                         obo:IAO_0000111 "PDS EMPI patient identifier registry" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
                          dc:contributor "Heather J Williams" ;
@@ -5891,7 +5906,7 @@ ontologies:TURBO_0000402 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0000403
 ontologies:TURBO_0000403 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000506 ;
-                         obo:IAO_0000111 "PDS PK_PATIENT_ID biobank consenter identifier registry" ;
+                         obo:IAO_0000111 "PDS PK_PATIENT_ID patient identifier registry" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
                          dc:contributor "Heather J Williams" ;
@@ -5903,7 +5918,7 @@ ontologies:TURBO_0000403 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0000410
 ontologies:TURBO_0000410 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0001500 ;
-                         obo:IAO_0000111 "HUP MRN biobank consenter identifier registry" ;
+                         obo:IAO_0000111 "HUP MRN patient identifier registry" ;
                          obo:IAO_0000115 "the registry of MRNs from the Hospital University of Pennsylvania" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
@@ -5939,7 +5954,7 @@ ontologies:TURBO_0000412 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0000413
 ontologies:TURBO_0000413 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0001500 ;
-                         obo:IAO_0000111 "CCH MRN biobank consenter identifier registry" ;
+                         obo:IAO_0000111 "CCH MRN patient identifier registry" ;
                          obo:IAO_0000115 "the registry of MRNs from the Chester County Hosptial" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
@@ -6185,28 +6200,39 @@ ontologies:TURBO_0010252 rdf:type owl:NamedIndividual ,
                          rdfs:label "Male GID 946"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010255
+ontologies:TURBO_0010255 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0000505 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010083 ;
+                         rdfs:label "Synthea patient registry denoter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010256
+ontologies:TURBO_0010256 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0000510 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010112 ;
+                         rdfs:label "Synthea health care encounter registry denoter"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 ;
                 rdfs:comment "NCIt:C67015" .
 
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
 ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ontoneo.owl
@@ -6215,178 +6241,16 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:omrse.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6399,6 +6263,9 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6419,6 +6286,48 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -6432,6 +6341,24 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6443,49 +6370,121 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:pdro.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:geno.owl
  ] .
 
 [ obo:IAO_0000412 obo:geno.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6515,10 +6514,61 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6527,31 +6577,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
-[ obo:IAO_0000412 obo:omrse.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6569,9 +6598,9 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
-                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C66830 ,
+                                  obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -6580,10 +6609,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
+                oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
                 rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -6591,8 +6620,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 ,
+                                  obo:NCIT_C125922 .
 
 
 obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
@@ -6634,8 +6663,8 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasExactSynonym "mg/ml" .
 
 
-obo:UO_0000208 oboInOwl:id "UO:0000208" ;
-               oboInOwl:hasExactSynonym "g/dl" ;
+obo:UO_0000208 oboInOwl:hasExactSynonym "g/dl" ;
+               oboInOwl:id "UO:0000208" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:created_by "george gkoutos" ;
