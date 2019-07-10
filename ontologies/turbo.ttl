@@ -672,7 +672,6 @@ ontologies:TURBO_0000703 rdf:type owl:ObjectProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010080
 ontologies:TURBO_0010080 rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
-                         rdfs:domain obo:OBI_0001352 ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T15:16:10Z"^^xsd:dateTime ;
                          rdfs:label "instantiation object shortcut" .
@@ -732,10 +731,10 @@ ontologies:TURBO_0010091 rdf:type owl:ObjectProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010109
 ontologies:TURBO_0010109 rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010080 ;
-                         rdfs:domain obo:OGMS_0000097 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-02T18:58:36Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut health care encounter to entity" ;
+                         rdfs:label "shortcut health care encounter data model to entity" ;
                          rdfs:seeAlso ontologies:TURBO_0000641 .
 
 
@@ -811,11 +810,11 @@ ontologies:TURBO_0010129 rdf:type owl:ObjectProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010131
 ontologies:TURBO_0010131 rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010109 ;
-                         rdfs:domain obo:OGMS_0000097 ;
-                         rdfs:range obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
+                         rdfs:range ontologies:TURBO_0010161 ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-05T20:37:24Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut health care encounter to person" .
+                         rdfs:label "shortcut health care encounter data model to patient data model" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010132
@@ -864,6 +863,7 @@ ontologies:TURBO_0010139 rdf:type owl:ObjectProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010140
 ontologies:TURBO_0010140 rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010080 ;
+                         rdfs:domain obo:OBI_0001352 ;
                          rdfs:label "shortcut allele information to entity"@en .
 
 
@@ -1028,6 +1028,21 @@ ontologies:TURBO_0010245 rdf:type owl:ObjectProperty ;
                          rdfs:domain ontologies:TURBO_0010201 ;
                          rdfs:range ontologies:TURBO_0010200 ;
                          rdfs:label "birth instant starts NTR"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010260
+ontologies:TURBO_0010260 rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010080 ;
+                         rdfs:domain ontologies:TURBO_0010168 ;
+                         rdfs:label "shortcut person crid model to entity"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010261
+ontologies:TURBO_0010261 rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010260 ;
+                         rdfs:domain ontologies:TURBO_0010168 ;
+                         rdfs:range ontologies:TURBO_0000505 ;
+                         rdfs:label "shortcut person CRID model to singleton registry denoter"@en .
 
 
 #################################################################
@@ -1358,20 +1373,20 @@ ontologies:TURBO_0000635 rdf:type owl:DatatypeProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0000641
 ontologies:TURBO_0000641 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0000670 ;
-                         rdfs:domain obo:OGMS_0000097 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
                          obo:IAO_0000111 "shortcut health care encounter to data" ;
                          obo:IAO_0000115 "an 'instantiation hybrid shortcut' that, after expansion by Drivetrain, enables a reasonable semantic path from a/n health care encounter  to a/n to data" ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          obo:IAO_0000119 "Mark A. Miller/TURBO team" ;
                          dc:date "2017-09-05T16:21:09Z"^^xsd:dateTime ;
                          rdfs:comment "This property and any of its sub properties link an instance of \"biobank study participant\" with some literal value.  See comments on parent class." ;
-                         rdfs:label "shortcut health care encounter to data" .
+                         rdfs:label "shortcut health care encounter data model to data" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000643
 ontologies:TURBO_0000643 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0000641 ;
-                         rdfs:domain obo:OGMS_0000097 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
                          rdfs:range xsd:string ;
                          obo:IAO_0000111 "shortcut health care encounter to data set title" ;
                          obo:IAO_0000115 "an 'instantiation hybrid shortcut' that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a data set title" ;
@@ -1405,7 +1420,7 @@ TODO:  what should the dataset contain as parts in our encounter only shortcut e
     diagnosis (the whole CRID? ** the code symbol and the registry denoter separately?**  what about the mapped registry URI?... No, that's not an ice in a data set.  But we might want to explain the conversion processes from string to URI, like I suggested for string to xsd date.)
 
 registry and date conversions could be rule sin the instantiation process?""" ;
-                         rdfs:label "shortcut health care encounter to data set title" .
+                         rdfs:label "shortcut health care encounter data model to data set title" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000644
@@ -1433,13 +1448,13 @@ Note that TURBO will typically expect an xsd:date literal bound to date instance
 ---
 
 the textual representation of a date isn't technically interdependent with anything else.  However, if it was present in tabular data, it should be passed on with this shortcut, to provide provenance for the xsd representation of the date""" ;
-                         rdfs:label "shortcut health care encounter to textual encounter date" .
+                         rdfs:label "shortcut health care encounter data model to textual encounter date" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000645
 ontologies:TURBO_0000645 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0000641 ;
-                         rdfs:domain obo:OGMS_0000097 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
                          rdfs:range xsd:date ;
                          obo:IAO_0000111 "shortcut health care encounter to xsd-formatted encounter date" ;
                          obo:IAO_0000115 "an 'instantiation hybrid shortcut' that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a xsd-formatted encounter date" ;
@@ -1464,7 +1479,7 @@ As of the end of August 2017, that means that a textual date value will need to 
 I added xsd:date to that range definition within turbo.owl and turbo_merged.owl.  Some applications seem to accept the dual range, but some (like top braid composer) only seem to consider one of the datatype ranges…  first found in the file???
 
 I have also created turbo:hasDateValue\"""" ;
-                         rdfs:label "shortcut health care encounter to xsd-formatted encounter date" .
+                         rdfs:label "shortcut health care encounter data model to xsd-formatted encounter date" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000646
@@ -1496,7 +1511,7 @@ ontologies:TURBO_0000647 rdf:type owl:DatatypeProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0000648
 ontologies:TURBO_0000648 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0000641 ;
-                         rdfs:domain obo:OGMS_0000097 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
                          rdfs:range xsd:string ;
                          obo:IAO_0000111 "shortcut health care encounter to encounter ID symbol" ;
                          obo:IAO_0000115 "an 'instantiation hybrid shortcut' that, after expansion by Drivetrain, enables a reasonable semantic path from a health care encounter to a encounter ID symbol" ;
@@ -1508,7 +1523,7 @@ ontologies:TURBO_0000648 rdf:type owl:DatatypeProperty ;
             ?i   rdf:type            :EncounterID ;
                       obo:IAO_0000219     ?e ;
                       :thingLiteralValue     ? iv.""" ;
-                         rdfs:label "shortcut health care encounter to encounter ID symbol" .
+                         rdfs:label "shortcut health care encounter data model to encounter ID symbol" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000649
@@ -2729,71 +2744,71 @@ ontologies:TURBO_0010077 rdf:type owl:DatatypeProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010078
 ontologies:TURBO_0010078 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0000670 ;
-                         rdfs:domain obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T15:13:18Z"^^xsd:dateTime ;
                          rdfs:comment ontologies:TURBO_0010081 ;
-                         rdfs:label "shortcut person to data" .
+                         rdfs:label "shortcut person data model to data" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010079
 ontologies:TURBO_0010079 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
-                         rdfs:domain obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
                          rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T15:14:03Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to patient CRID symbol value" .
+                         rdfs:label "shortcut person data model to patient CRID symbol value" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010084
 ontologies:TURBO_0010084 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
-                         rdfs:domain obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
                          rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T15:43:31Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to dataset title" .
+                         rdfs:label "shortcut person data model to dataset title" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010085
 ontologies:TURBO_0010085 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
-                         rdfs:domain obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
                          rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T15:57:02Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to DOB (textual)" .
+                         rdfs:label "shortcut person data model to DOB (textual)" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010086
 ontologies:TURBO_0010086 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
-                         rdfs:domain obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
                          rdfs:range xsd:date ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T15:59:16Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to DOB (xsd compliant)" .
+                         rdfs:label "shortcut person data model to DOB (xsd compliant)" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010087
 ontologies:TURBO_0010087 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
-                         rdfs:domain obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
                          rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T16:03:48Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to first name" .
+                         rdfs:label "shortcut person data model to first name" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010088
 ontologies:TURBO_0010088 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
-                         rdfs:domain obo:NCBITaxon_9606 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
                          rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T16:04:45Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to last name" .
+                         rdfs:label "shortcut person data model to last name" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010094
@@ -2844,25 +2859,31 @@ ontologies:TURBO_0010096 rdf:type owl:DatatypeProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010098
 ontologies:TURBO_0010098 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
+                         rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T18:16:29Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to GID text" .
+                         rdfs:label "shortcut person data model to gender identity datum text" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010099
 ontologies:TURBO_0010099 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
+                         rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T18:16:37Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to EID text" .
+                         rdfs:label "shortcut person data model to ethnic identity datum text" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010100
 ontologies:TURBO_0010100 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
+                         rdfs:domain ontologies:TURBO_0010161 ;
+                         rdfs:range xsd:string ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T18:16:46Z"^^xsd:dateTime ;
-                         rdfs:label "shortcut person to RID text" .
+                         rdfs:label "shortcut person data model to RID text" .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010107
@@ -2972,7 +2993,9 @@ ontologies:TURBO_0010135 rdf:type owl:DatatypeProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010170
 ontologies:TURBO_0010170 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0010078 ;
-                         rdfs:label "shortcut person to person PK value"@en .
+                         rdfs:domain ontologies:TURBO_0010161 ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "shortcut person data model to person PK value"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010171
@@ -3026,17 +3049,32 @@ ontologies:TURBO_0010194 rdf:type owl:DatatypeProperty ;
 ###  http://transformunify.org/ontologies/TURBO_0010258
 ontologies:TURBO_0010258 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0000641 ;
-                         rdfs:domain obo:OGMS_0000097 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
                          rdfs:range xsd:float ;
-                         rdfs:label "shortcut health care encounter to systolic BP in mmHg"@en .
+                         rdfs:label "shortcut health care encounter data model to systolic BP in mmHg"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010259
 ontologies:TURBO_0010259 rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ontologies:TURBO_0000641 ;
-                         rdfs:domain obo:OGMS_0000097 ;
+                         rdfs:domain ontologies:TURBO_0010158 ;
                          rdfs:range xsd:float ;
-                         rdfs:label "shortcut health care encounter to diastolic BP in mmHg"@en .
+                         rdfs:label "shortcut health care encounter data model to diastolic BP in mmHg"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010262
+ontologies:TURBO_0010262 rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0000670 ;
+                         rdfs:domain ontologies:TURBO_0010168 ;
+                         rdfs:label "shortcut person CRID data model to data"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010263
+ontologies:TURBO_0010263 rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010262 ;
+                         rdfs:domain ontologies:TURBO_0010168 ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "shortcut person CRID data model to symbol value"@en .
 
 
 ###  http://www.w3.org/2002/07/owl#topDataProperty
@@ -6307,13 +6345,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ontoneo.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6326,39 +6361,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:omrse.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6370,6 +6372,66 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -6377,6 +6439,15 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:omrse.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -6397,6 +6468,81 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -6409,10 +6555,85 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ontoneo.owl
@@ -6445,33 +6666,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -6482,111 +6676,12 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ro.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -6595,76 +6690,19 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:uberon.owl
  ] .
 
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
+[ obo:IAO_0000412 obo:geno.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -6679,9 +6717,9 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
-                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C66830 ,
+                                  obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -6690,10 +6728,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                rdfs:label "Primary Gleason Pattern" ;
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -6705,8 +6743,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                                   obo:NCIT_C61410 .
 
 
-obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
-                rdfs:label "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
+                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
@@ -6740,8 +6778,8 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000176" ;
                oboInOwl:hasExactSynonym "milligram per millilitre" ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "mg/ml" ;
-               oboInOwl:hasOBONamespace "unit.ontology" .
+               oboInOwl:hasOBONamespace "unit.ontology" ;
+               oboInOwl:hasExactSynonym "mg/ml" .
 
 
 obo:UO_0000208 oboInOwl:hasExactSynonym "g/dl" ;
