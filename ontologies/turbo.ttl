@@ -5207,6 +5207,18 @@ ontologies:TURBO_0010268 rdf:type owl:Class ;
                          rdfs:label "health care encounter identifier source denoter"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010271
+ontologies:TURBO_0010271 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000028 ;
+                         rdfs:label "primary key symbol"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010272
+ontologies:TURBO_0010272 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010271 ;
+                         rdfs:label "health care encounter primary key symbol"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
 efo:EFO_0004340 rdf:type owl:Class ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -6401,7 +6413,6 @@ ontologies:TURBO_0010256 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0010266
 ontologies:TURBO_0010266 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010265 ;
-                         obo:IAO_0000219 ontologies:TURBO_0010266 ;
                          rdfs:label "Synthea health care identifier source"@en .
 
 
@@ -6409,7 +6420,7 @@ ontologies:TURBO_0010266 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010269 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010268 ;
                          obo:IAO_0000219 ontologies:TURBO_0010266 ;
-                         rdfs:label "Denoter of Synthea health care encounter identifier source"@en .
+                         rdfs:label "Denoter of the OMOP health care encounter identifier source"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
@@ -6430,9 +6441,9 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
-                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C66830 ,
+                                  obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -6491,8 +6502,8 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000176" ;
                oboInOwl:hasExactSynonym "milligram per millilitre" ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:hasExactSynonym "mg/ml" .
+               oboInOwl:hasExactSynonym "mg/ml" ;
+               oboInOwl:hasOBONamespace "unit.ontology" .
 
 
 obo:UO_0000208 oboInOwl:hasExactSynonym "g/dl" ;
