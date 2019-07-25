@@ -164,6 +164,14 @@ obo:IAO_0000600 rdf:type owl:AnnotationProperty .
 obo:IAO_0100001 rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.obolibrary.org/obo/ICO_0000091
+obo:ICO_0000091 rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/ICO_0000092
+obo:ICO_0000092 rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.obolibrary.org/obo/created_by
 obo:created_by rdf:type owl:AnnotationProperty .
 
@@ -1064,6 +1072,22 @@ ontologies:TURBO_0010270 rdf:type owl:ObjectProperty ;
                          rdfs:domain ontologies:TURBO_0010158 ;
                          rdfs:range ontologies:TURBO_0010268 ;
                          rdfs:label "shortcut health care encounter data model to singleton identifier source dentoer"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010277
+ontologies:TURBO_0010277 rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010195 ;
+                         rdfs:domain ontologies:TURBO_0010191 ;
+                         rdfs:range ontologies:TURBO_0010278 ;
+                         rdfs:label "shortcut tumor data model to singleton tumor registry denoter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010279
+ontologies:TURBO_0010279 rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010195 ;
+                         rdfs:domain ontologies:TURBO_0010191 ;
+                         rdfs:range ontologies:TURBO_0000505 ;
+                         rdfs:label "shortcut tumor data model to singleton patient registry denoter"@en .
 
 
 #################################################################
@@ -3149,6 +3173,10 @@ A multiaxial, hierarchical classification system for diseases in man developed b
                  rdfs:label "Systematized Nomenclature of Medicine" .
 
 
+###  http://purl.obolibrary.org/obo/BFO_0000001
+obo:BFO_0000001 rdf:type owl:Class .
+
+
 ###  http://purl.obolibrary.org/obo/BFO_0000002
 obo:BFO_0000002 rdf:type owl:Class .
 
@@ -3243,6 +3271,10 @@ obo:IAO_0000007 rdf:type owl:Class .
 
 ###  http://purl.obolibrary.org/obo/IAO_0000027
 obo:IAO_0000027 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000028
+obo:IAO_0000028 rdf:type owl:Class .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000030
@@ -5219,6 +5251,12 @@ ontologies:TURBO_0010272 rdf:type owl:Class ;
                          rdfs:label "health care encounter primary key symbol"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010278
+ontologies:TURBO_0010278 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_00001501 ;
+                         rdfs:label "tumor registry denoter"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
 efo:EFO_0004340 rdf:type owl:Class ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -6425,7 +6463,7 @@ ontologies:TURBO_0010269 rdf:type owl:NamedIndividual ,
 
 ###  http://transformunify.org/ontologies/TURBO_0010274
 ontologies:TURBO_0010274 rdf:type owl:NamedIndividual ,
-                                  ontologies:TURBO_00001501 ;
+                                  ontologies:TURBO_0010278 ;
                          obo:IAO_0000219 ontologies:TURBO_0010190 ;
                          rdfs:label "Metriq/ORQID tumor registry denoter"@en .
 
@@ -6433,8 +6471,8 @@ ontologies:TURBO_0010274 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0010275
 ontologies:TURBO_0010275 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000505 ;
-                         obo:IAO_0000219 ontologies:TURBO_0010275 ;
-                         rdfs:label "HUP MRN registry"@en .
+                         obo:IAO_0000219 ontologies:TURBO_0000410 ;
+                         rdfs:label "HUP MRN registry denoter"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
@@ -6466,10 +6504,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ;
+                rdfs:label "Primary Gleason Pattern" ;
+                oboInOwl:inSubset obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -6477,8 +6515,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C61410 ,
-                                  obo:NCIT_C125922 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
@@ -6516,8 +6554,8 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000176" ;
                oboInOwl:hasExactSynonym "milligram per millilitre" ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "mg/ml" ;
-               oboInOwl:hasOBONamespace "unit.ontology" .
+               oboInOwl:hasOBONamespace "unit.ontology" ;
+               oboInOwl:hasExactSynonym "mg/ml" .
 
 
 obo:UO_0000208 oboInOwl:id "UO:0000208" ;

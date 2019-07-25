@@ -788,15 +788,7 @@ dc:subject rdf:type owl:AnnotationProperty ;
 
 
 ###  http://purl.org/dc/elements/1.1/title
-dc:title rdf:type owl:AnnotationProperty ;
-         dc:description """
-        Typically, a Title will be a name by which the resource is
-         formally known.
-    """@en-us ;
-         rdfs:comment "A name given to the resource."@en-us ;
-         rdfs:isDefinedBy dc: ;
-         rdfs:label "Title" ,
-                    "Title"@en-us .
+dc:title rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
@@ -3763,6 +3755,22 @@ ontologies:TURBO_0010270 rdf:type owl:ObjectProperty ;
                          rdfs:label "shortcut health care encounter data model to singleton identifier source dentoer"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010277
+ontologies:TURBO_0010277 rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010195 ;
+                         rdfs:domain ontologies:TURBO_0010191 ;
+                         rdfs:range ontologies:TURBO_0010278 ;
+                         rdfs:label "shortcut tumor data model to singleton tumor registry denoter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010279
+ontologies:TURBO_0010279 rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010195 ;
+                         rdfs:domain ontologies:TURBO_0010191 ;
+                         rdfs:range ontologies:TURBO_0000505 ;
+                         rdfs:label "shortcut tumor data model to singleton patient registry denoter"@en .
+
+
 ###  http://www.obofoundry.org/ro/ro.owl#has_proper_part
 <http://www.obofoundry.org/ro/ro.owl#has_proper_part> rdf:type owl:ObjectProperty ;
                                                       rdfs:subPropertyOf owl:topObjectProperty ;
@@ -6288,7 +6296,8 @@ obo:BFO_0000016 rdf:type owl:Class ;
                                 "the cell wall is disposed to filter chemicals in endocytosis and exocytosis"@en ;
                 obo:IAO_0000116 "BFO 2 Reference: Dispositions exist along a strength continuum. Weaker forms of disposition are realized in only a fraction of triggering cases. These forms occur in a significant number of cases of a similar type [89"@en ,
                                 "BFO 2 Reference: Dispositions exist along a strength continuum. Weaker forms of disposition are realized in only a fraction of triggering cases. These forms occur in a significant number of cases of a similar type."@en ;
-                obo:IAO_0000412 obo:mondo.owl ,
+                obo:IAO_0000412 obo:ido.owl ,
+                                obo:mondo.owl ,
                                 obo:obi.owl ,
                                 obo:ogg.owl ,
                                 obo:ro.owl ;
@@ -6501,7 +6510,7 @@ obo:BFO_0000023 rdf:type owl:Class ;
 ###  http://purl.obolibrary.org/obo/BFO_0000024
 obo:BFO_0000024 rdf:type owl:Class ;
                 rdfs:subClassOf obo:BFO_0000040 ;
-                obo:BFO_0000179 "fiat-object" ;
+                obo:BFO_0000179 "fiat-object-part" ;
                 obo:BFO_0000180 "FiatObjectPart" ;
                 obo:IAO_0000112 "or with divisions drawn by cognitive subjects for practical reasons, such as the division of a cake (before slicing) into (what will become) slices (and thus member parts of an object aggregate). However, this does not mean that fiat object parts are dependent for their existence on divisions or delineations effected by cognitive subjects. If, for example, it is correct to conceive geological layers of the Earth as fiat object parts of the Earth, then even though these layers were first delineated in recent times, still existed long before such delineation and what holds of these layers (for example that the oldest layers are also the lowest layers) did not begin to hold because of our acts of delineation.Treatment of material entity in BFOExamples viewed by some as problematic cases for the trichotomy of fiat object part, object, and object aggregate include: a mussel on (and attached to) a rock, a slime mold, a pizza, a cloud, a galaxy, a railway train with engine and multiple carriages, a clonal stand of quaking aspen, a bacterial community (biofilm), a broken femur. Note that, as Aristotle already clearly recognized, such problematic cases – which lie at or near the penumbra of instances defined by the categories in question – need not invalidate these categories. The existence of grey objects does not prove that there are not objects which are black and objects which are white; the existence of mules does not prove that there are not objects which are donkeys and objects which are horses. It does, however, show that the examples in question need to be addressed carefully in order to show how they can be fitted into the proposed scheme, for example by recognizing additional subdivisions [29"@en ,
                                 "the FMA:regional parts of an intact human body."@en ,
@@ -6519,8 +6528,7 @@ obo:BFO_0000024 rdf:type owl:Class ;
                 oboInOwl:hasOBONamespace "bfo"^^xsd:string ;
                 oboInOwl:id "BFO:0000024"^^xsd:string ;
                 rdfs:isDefinedBy obo:bfo.owl ;
-                rdfs:label "fiat object"@en ,
-                           "fiat object part"@en ,
+                rdfs:label "fiat object part"@en ,
                            "fiat object part"^^xsd:string .
 
 
@@ -7235,6 +7243,14 @@ obo:FMA_256135 rdf:type owl:Class ;
                oboInOwl:id "FMA:256135"^^xsd:string ;
                rdfs:label "Body"@en ,
                           "corpo"@pt .
+
+
+###  http://purl.obolibrary.org/obo/FMA_50707
+obo:FMA_50707 rdf:type owl:Class ;
+              rdfs:subClassOf obo:BFO_0000002 ;
+              obo:IAO_0000115 "Spatial association relationship which describes the containment, adjacency and anatomical coordinates of physical anatomical entities. Examples: anatomical containment, anatomical adjacency, anatomical coordinate."^^xsd:string ;
+              obo:IAO_0000412 obo:fma.owl ;
+              rdfs:label "Anatomical location"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/FMA_67473
@@ -8430,10 +8446,11 @@ obo:IAO_0020000 rdf:type owl:Class ;
                                       rdf:type owl:Class
                                     ] ;
                 rdfs:subClassOf obo:IAO_0000030 ;
-                obo:IAO_0000115 "A proper name is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity. "@en ;
+                obo:IAO_0000115 "An identifier is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity."@en ;
                 obo:IAO_0000117 "Mathias Brochhausen"@en ;
-                rdfs:label "identifier"@en ,
-                           "proper name"@en .
+                obo:IAO_0000118 "proper name"@en ;
+                rdfs:comment "Sep 29, 2016: The current definition has been amended from the previous version: \"A proper name is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity.\" to more accuratly reflect the necessary and sufficient condition on the class. (MB)"@en ;
+                rdfs:label "identifier"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0020010
@@ -8616,15 +8633,21 @@ obo:ICO_0000001 rdf:type owl:Class ;
                                   owl:onProperty obo:ICO_0000130 ;
                                   owl:someValuesFrom obo:ICO_0000111
                                 ] ;
-                obo:IAO_0000115 "A document that explains all relevant study information to assist a human subject in understanding the expectations and requirements of participation in a research study. This form document is presented to and signed by the study subject. "@en ;
+                obo:IAO_0000115 "A document that explains all relevant information to assist a human being in understanding the expectations and requirements of participation in a process, and is an instrument in obtaining consent and, after having obtained consent, is a record that such a consent has occurred."@en ,
+                                "A document that explains all relevant study information to assist a human subject in understanding the expectations and requirements of participation in a research study. This form document is presented to and signed by the study subject. "@en ;
                 obo:IAO_0000116 "The term definition is adapted from NCIt definition of 'consent form' (C16468) with modification. Compared to the NCIt definition, the ICO definition does not restrict the form to a clinical trial.  " ;
-                obo:IAO_0000117 "AK, FM, YH, YL, MH, EE" ;
-                obo:IAO_0000118 "informed consent document" ;
-                obo:IAO_0000119 "NCIt C16468" ;
+                obo:IAO_0000117 ""@en ,
+                                "AK, FM, YH, YL, MH, EE" ,
+                                "Alla Karnovsky, Frank Manion, Yongqun He, Asiyah Yu Lin, Marcy Harris, Elizabeth Eisenhauer, Jonathan Vajda, Cooper Stansbury, J. Neil Otte"@en ;
+                obo:IAO_0000118 "informed consent document" ,
+                                "informed consent document"@en ;
+                obo:IAO_0000119 "NCIt C16468" ,
+                                "NCIt C16468"@en ;
                 obo:IAO_0000412 obo:ico.owl ;
                 obo:ICO_0000091 "C0009797 "@en ;
                 obo:ICO_0000092 "C16468 "@en ;
-                rdfs:label "informed consent form" .
+                rdfs:label "informed consent form" ,
+                           "informed consent form"@en .
 
 
 ###  http://purl.obolibrary.org/obo/ICO_0000006
@@ -8672,10 +8695,10 @@ obo:ICO_0000023 rdf:type owl:Class ;
                                                        rdf:type owl:Class
                                                      ]
                                 ] ;
-                obo:IAO_0000115 "an informed consent form that has been filled with all required contents." ;
-                obo:IAO_0000117 "YH" ;
+                obo:IAO_0000115 "An informed consent form that has been filled with all required contents."@en ;
+                obo:IAO_0000117 "Yongqun He"@en ;
                 obo:IAO_0000412 obo:ico.owl ;
-                rdfs:label "completely filled informed consent form" .
+                rdfs:label "completely filled informed consent form"@en .
 
 
 ###  http://purl.obolibrary.org/obo/ICO_0000086
@@ -9064,6 +9087,7 @@ obo:NCBITaxon_9606 rdf:type owl:Class ;
                                    obo:ncbitaxon.owl ,
                                    obo:obi.owl ,
                                    obo:ogg.owl ,
+                                   obo:omrse.owl ,
                                    obo:pdro.owl ;
                    ncbitaxon:has_rank obo:NCBITaxon_species ;
                    oboInOwl:hasDbXref "GC_ID:1"^^xsd:string ;
@@ -9516,24 +9540,6 @@ obo:OBI_0000070 rdf:type owl:Class ;
                                                                           ) ;
                                                        rdf:type owl:Class
                                                      ]
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000299 ;
-                                  owl:someValuesFrom [ owl:intersectionOf ( obo:IAO_0000030
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty obo:IAO_0000136 ;
-                                                                              owl:someValuesFrom [ owl:intersectionOf ( obo:BFO_0000040
-                                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                                          owl:onProperty obo:RO_0000087 ;
-                                                                                                                          owl:someValuesFrom obo:OBI_0000067
-                                                                                                                        ]
-                                                                                                                      ) ;
-                                                                                                   rdf:type owl:Class
-                                                                                                 ]
-                                                                            ]
-                                                                          ) ;
-                                                       rdf:type owl:Class
-                                                     ]
                                 ] ;
                 obo:IAO_0000111 "assay"@en ;
                 obo:IAO_0000112 "Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house."^^xsd:string ;
@@ -9616,19 +9622,11 @@ obo:OBI_0000094 rdf:type owl:Class ;
                                     ] ;
                 rdfs:subClassOf obo:OBI_0000011 ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000293 ;
-                                  owl:someValuesFrom obo:BFO_0000040
-                                ] ,
-                                [ rdf:type owl:Restriction ;
                                   owl:onProperty obo:OBI_0000299 ;
                                   owl:someValuesFrom obo:OBI_0000047
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty obo:OBI_0000293 ;
-                                  owl:allValuesFrom obo:BFO_0000040
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000299 ;
                                   owl:allValuesFrom obo:BFO_0000040
                                 ] ;
                 obo:IAO_0000111 "material processing"^^xsd:string ;
@@ -9913,8 +9911,7 @@ obo:OBI_0000272 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000275
 obo:OBI_0000275 rdf:type owl:Class ;
-                rdfs:subClassOf obo:BFO_0000023 ,
-                                obo:OBI_0002444 ,
+                rdfs:subClassOf obo:OBI_0002444 ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty obo:RO_0000081 ;
                                   owl:someValuesFrom [ rdf:type owl:Class ;
@@ -9922,16 +9919,11 @@ obo:OBI_0000275 rdf:type owl:Class ;
                                                                      obo:CHEBI_33250
                                                                    )
                                                      ]
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:BFO_0000054 ;
-                                  owl:allValuesFrom obo:OBI_0000443
                                 ] ;
                 obo:IAO_0000111 "analyte role"^^xsd:string ;
                 obo:IAO_0000112 "Glucose in blood (measured in an assay to determine the concentration of glucose)."^^xsd:string ;
                 obo:IAO_0000114 obo:IAO_0000122 ;
-                obo:IAO_0000115 "A measurand role borne by a molecular entity or an atom and realized in an analyte assay which achieves the objective to measure the magnitude/concentration/amount of the analyte in the entity bearing evaluant role."@en ,
-                                "A role borne by a molecular entity or an atom and realized in an analyte assay which achieves the objective to measure the magnitude/concentration/amount of the analyte in the entity bearing evaluant role"@en ;
+                obo:IAO_0000115 "A measurand role borne by a molecular entity or an atom and realized in an analyte assay which achieves the objective to measure the magnitude/concentration/amount of the analyte in the entity bearing evaluant role."@en ;
                 obo:IAO_0000116 "interestingly, an analyte is still an analyte even if it is not detected.  for this reason it does not bear a specified input role"^^xsd:string ,
                                 "pH (technically the inverse log of [H+]) may be considered a quality; this remains to be tested."^^xsd:string ,
                                 "qualities such as weight, color are not assayed but measured, so they do not fall into this category."^^xsd:string ;
@@ -10246,15 +10238,7 @@ obo:OBI_0000441 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000443
 obo:OBI_0000443 rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                      owl:onProperty obo:OBI_0000417 ;
-                                      owl:someValuesFrom obo:OBI_0000437
-                                    ] ;
                 rdfs:subClassOf obo:OBI_0000070 ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:BFO_0000055 ;
-                                  owl:someValuesFrom obo:OBI_0000275
-                                ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty obo:OBI_0000299 ;
                                   owl:someValuesFrom obo:IAO_0000109
@@ -10264,36 +10248,20 @@ obo:OBI_0000443 rdf:type owl:Class ;
                                   owl:someValuesFrom obo:OBI_0000437
                                 ] ;
                 obo:IAO_0000111 "analyte assay"^^xsd:string ;
-                obo:IAO_0000112 "example of usage: In lab test for blood glucose, the test is the assay, the blood bears evaluant_role and glucose bears the analyte role. The evaluant is considered an input to the assay and the information entity that records the measurement of glucose concentration the output"@en ,
-                                "example of usage: In lab test for blood glucose, the test is the assay, the blood bears evaluant_role and glucose bears the analyte role. The evaluant is considered an input to the assay and the information entity that records the measurement of glucose concentration the output"^^xsd:string ;
+                obo:IAO_0000112 "example of usage: In lab test for blood glucose, the test is the assay, the blood bears evaluant_role and glucose bears the analyte role. The evaluant is considered an input to the assay and the information entity that records the measurement of glucose concentration the output"^^xsd:string ;
                 obo:IAO_0000114 obo:IAO_0000122 ;
-                obo:IAO_0000115 "An assay with the objective to capture information about the presence, concentration, or amount of an analyte in an evaluant."@en ,
-                                "An assay with the objective to capture information about the presence, concentration, or amount of an analyte in an evaluant."^^xsd:string ;
-                obo:IAO_0000116 "2013-09-23: simplify equivalent axiom" ,
-                                "Note: is_realization of some analyte role isn't always true, for example when there is none of the analyte in the evaluant. For the moment we are writing it this way, but when the information ontology is further worked out this will be replaced with a condition discussing the measurement."@en ,
-                                """logical def modified to remove expression below, as some analyte assays report below the level of detection, and therefore not a scalar measurement datum, replaced by measurement datum
-
-and 
-('has measurement unit label' some 'measurement unit label') and 
-('is quality measurement of' some 'molecular concentration'))"""^^xsd:string ;
+                obo:IAO_0000115 "An assay with the objective to capture information about the presence, concentration, or amount of an analyte in an evaluant."^^xsd:string ;
                 obo:IAO_0000117 "Alan Ruttenberg"^^xsd:string ,
                                 "Bjoern Peters"^^xsd:string ,
                                 "Helen Parkinson"^^xsd:string ,
-                                "PERSON:Bjoern Peters, Helen Parkinson, Philippe Rocca-Serra, Alan Ruttenberg"^^xsd:string ,
                                 "Philippe Rocca-Serra"^^xsd:string ;
                 obo:IAO_0000119 "Alan Ruttenberg"^^xsd:string ,
                                 "Bjoern Peters"^^xsd:string ,
                                 "Helen Parkinson"^^xsd:string ,
                                 "OBI Planned process branch"^^xsd:string ,
-                                """PERSON:Bjoern Peters
-PERSON:Helen Parkinson
-PERSON:Philippe Rocca-Serra
-PERSON:Alan Ruttenberg
-GROUP:OBI Planned process branch"""^^xsd:string ,
                                 "Philippe Rocca-Serra"^^xsd:string ;
                 obo:IAO_0000412 obo:obi.owl ;
-                rdfs:label "analyte assay"@en ,
-                           "analyte assay"^^xsd:string .
+                rdfs:label "analyte assay"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000445
@@ -11095,32 +11063,12 @@ obo:OBI_0001137 rdf:type owl:Class ;
                 rdfs:label "protein sequencer"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/OBI_0001158
-obo:OBI_0001158 rdf:type owl:Class ;
-                rdfs:subClassOf obo:OBI_0000070 ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000299 ;
-                                  owl:someValuesFrom obo:OBI_0001167
-                                ] ;
-                obo:IAO_0000111 "age measurement assay"@en ;
-                obo:IAO_0000114 obo:IAO_0000120 ;
-                obo:IAO_0000115 "An assay that measures the duration of temporal interval of a process that is part of the life of the bearer, where the initial time point of the measured process is the beginning of some transitional state of the bearer such as birth or when planted."^^xsd:string ;
-                obo:IAO_0000116 "This assay measures time not developmental stage.  we recognize that development takes different time periods under different conditions such as media / temperature. For example, age measurement assay of fly age, the output likes 28 days but not mid-life of age at room temperature."^^xsd:string ;
-                obo:IAO_0000117 "PERSON: Alan Ruttenberg"^^xsd:string ;
-                obo:IAO_0000119 "OBI group"^^xsd:string ;
-                rdfs:label "age measurement assay"@en .
-
-
 ###  http://purl.obolibrary.org/obo/OBI_0001167
 obo:OBI_0001167 rdf:type owl:Class ;
                 rdfs:subClassOf obo:IAO_0000416 ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty obo:IAO_0000221 ;
                                   owl:someValuesFrom obo:PATO_0000011
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000312 ;
-                                  owl:someValuesFrom obo:OBI_0001158
                                 ] ;
                 obo:IAO_0000111 "age measurement datum"@en ;
                 obo:IAO_0000114 obo:IAO_0000120 ;
@@ -11502,12 +11450,13 @@ obo:OBI_0002141 rdf:type owl:Class ;
                                                        rdf:type owl:Class
                                                      ]
                                 ] ;
-                obo:IAO_0000111 "volume measurement assay" ;
+                obo:IAO_0000111 "volume measurement assay"^^xsd:string ;
                 obo:IAO_0000114 obo:IAO_0000122 ;
-                obo:IAO_0000115 "An assay to determine the volume of an evaluant." ;
-                obo:IAO_0000117 "Chris Stoeckert, Bjoern Peters" ;
-                obo:IAO_0000119 "OBI" ;
-                rdfs:label "volume measurement assay"@en .
+                obo:IAO_0000115 "An assay to determine the volume of an evaluant."^^xsd:string ;
+                obo:IAO_0000117 "Bjoern Peters"^^xsd:string ,
+                                "Chris Stoeckert"^^xsd:string ;
+                obo:IAO_0000119 "OBI"^^xsd:string ;
+                rdfs:label "volume measurement assay"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0002199
@@ -11984,7 +11933,7 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
 obo:OBI_0200000 rdf:type owl:Class ;
                 owl:equivalentClass [ rdf:type owl:Restriction ;
                                       owl:onProperty obo:OBI_0000417 ;
-                                      owl:someValuesFrom obo:OBI_0200166
+                                      owl:someValuesFrom obo:OBI_0200031
                                     ] ;
                 rdfs:subClassOf obo:OBI_0000011 ,
                                 [ rdf:type owl:Restriction ;
@@ -12003,18 +11952,6 @@ obo:OBI_0200000 rdf:type owl:Class ;
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty obo:OBI_0000293 ;
-                                  owl:someValuesFrom obo:IAO_0000027
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000299 ;
-                                  owl:someValuesFrom obo:IAO_0000027
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000293 ;
-                                  owl:allValuesFrom obo:IAO_0000027
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty obo:OBI_0000299 ;
                                   owl:allValuesFrom obo:IAO_0000027
                                 ] ;
                 obo:IAO_0000111 "data transformation"@en ;
@@ -12033,6 +11970,18 @@ obo:OBI_0200000 rdf:type owl:Class ;
                                 "data processing"@en ;
                 obo:IAO_0000119 "Branch editors"@en ;
                 rdfs:label "data transformation"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0200031
+obo:OBI_0200031 rdf:type owl:Class ;
+                rdfs:subClassOf obo:OBI_0200166 ;
+                obo:IAO_0000111 "differential expression analysis objective"@en ;
+                obo:IAO_0000112 "Analyses implemented by the SAM (http://www-stat.stanford.edu/~tibs/SAM), PaGE (www.cbil.upenn.edu/PaGE) or GSEA (www.broad.mit.edu/gsea/) algorithms and software"@en ;
+                obo:IAO_0000114 obo:IAO_0000122 ;
+                obo:IAO_0000115 "A differential expression analysis objective is a data transformation objective whose input consists of expression levels of entities (such as transcripts or proteins), or of sets of such expression levels, under two or more conditions and whose output reflects which of these are likely to have different expression across such conditions."@en ;
+                obo:IAO_0000117 "Elisabetta Manduchi"@en ;
+                obo:IAO_0000119 "PERSON: Elisabetta Manduchi"@en ;
+                rdfs:label "differential expression analysis objective"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0200166
@@ -12874,7 +12823,8 @@ obo:OGMS_0000045 rdf:type owl:Class ;
                  obo:IAO_0000115 "A material entity which is clinically abnormal and part of an extended organism. Disorders are the physical basis of disease."@en ;
                  obo:IAO_0000117 "Albert Goldfain" ;
                  obo:IAO_0000119 "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
-                 obo:IAO_0000412 obo:ogms.owl ;
+                 obo:IAO_0000412 obo:ido.owl ,
+                                 obo:ogms.owl ;
                  rdfs:label "disorder" .
 
 
@@ -12965,7 +12915,7 @@ editor date: 2017-04-18
 
 ###  http://purl.obolibrary.org/obo/OGMS_0000097
 obo:OGMS_0000097 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:BFO_0000015 ,
+                 rdfs:subClassOf obo:OBI_0000011 ,
                                  obo:OGMS_0000096 ;
                  obo:IAO_0000115 "A temporally-connected health care process that has as participants an organization or person realizing the health care provider role and a person realizing the patient role.  The health care provider role and patient are realized during the health care encounter"@en ;
                  obo:IAO_0000117 "Albert Goldfain" ;
@@ -13730,8 +13680,7 @@ obo:OSCI_0000036 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/PATO_0000011
 obo:PATO_0000011 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:PATO_0001018 ,
-                                 obo:PATO_0001237 ;
+                 rdfs:subClassOf obo:PATO_0000165 ;
                  obo:IAO_0000111 "age"^^xsd:string ;
                  obo:IAO_0000115 "A time quality inhering in a bearer by virtue of how long the bearer has existed."^^xsd:string ;
                  obo:IAO_0000412 obo:pato.owl ;
@@ -13751,6 +13700,7 @@ obo:PATO_0000047 rdf:type owl:Class ;
 ###  http://purl.obolibrary.org/obo/PATO_0000051
 obo:PATO_0000051 rdf:type owl:Class ;
                  rdfs:subClassOf obo:PATO_0001241 ;
+                 obo:IAO_0000111 "morphology"^^xsd:string ;
                  obo:IAO_0000115 "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure."^^xsd:string ;
                  obo:IAO_0000412 obo:pato.owl ;
                  rdfs:label "morphology"^^xsd:string .
@@ -13780,6 +13730,7 @@ obo:PATO_0000069 rdf:type owl:Class ;
 ###  http://purl.obolibrary.org/obo/PATO_0000117
 obo:PATO_0000117 rdf:type owl:Class ;
                  rdfs:subClassOf obo:PATO_0000051 ;
+                 obo:IAO_0000111 "size"^^xsd:string ;
                  obo:IAO_0000115 "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude."^^xsd:string ;
                  obo:IAO_0000412 obo:pato.owl ;
                  rdfs:label "size"^^xsd:string .
@@ -13818,6 +13769,15 @@ obo:PATO_0000128 rdf:type owl:Class ;
                  obo:IAO_0000115 "A physical quality inhering in a bearer that has mass near a gravitational body."^^xsd:string ;
                  obo:IAO_0000412 obo:pato.owl ;
                  rdfs:label "weight"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000165
+obo:PATO_0000165 rdf:type owl:Class ;
+                 rdfs:subClassOf obo:PATO_0001018 ;
+                 obo:IAO_0000111 "time"^^xsd:string ;
+                 obo:IAO_0000115 "A quality in which events occur in sequence."^^xsd:string ;
+                 obo:IAO_0000412 obo:pato.owl ;
+                 rdfs:label "time"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/PATO_0000383
@@ -13867,8 +13827,7 @@ obo:PATO_0000460 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/PATO_0000918
 obo:PATO_0000918 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:PATO_0000117 ,
-                                 obo:PATO_0001237 ;
+                 rdfs:subClassOf obo:PATO_0001710 ;
                  obo:IAO_0000111 "volume"^^xsd:string ;
                  obo:IAO_0000115 "A 3-D extent quality inhering in a bearer by virtue of the bearer's amount of 3-dimensional space it occupies."^^xsd:string ;
                  obo:IAO_0000412 obo:pato.owl ;
@@ -13878,6 +13837,7 @@ obo:PATO_0000918 rdf:type owl:Class ;
 ###  http://purl.obolibrary.org/obo/PATO_0001018
 obo:PATO_0001018 rdf:type owl:Class ;
                  rdfs:subClassOf obo:PATO_0001241 ;
+                 obo:IAO_0000111 "physical quality"^^xsd:string ;
                  obo:IAO_0000115 "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities."@en ,
                                  "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities."^^xsd:string ;
                  obo:IAO_0000412 obo:ontoneo.owl ,
@@ -13904,15 +13864,6 @@ obo:PATO_0001025 rdf:type owl:Class ;
                  oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/pato#attribute_slim> ;
                  rdfs:label "pressure"@en ,
                             "pressão"@pt .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001237
-obo:PATO_0001237 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:BFO_0000019 ;
-                 obo:IAO_0000111 "quality of a single physical entity"@en ;
-                 obo:IAO_0000115 "A physical object quality which inheres in a single-bearer."@en ;
-                 obo:IAO_0000412 obo:pato.owl ;
-                 rdfs:label "quality of a single physical entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/PATO_0001241
@@ -13943,6 +13894,15 @@ obo:PATO_0001241 rdf:type owl:Class ;
                             "physical object quality"^^xsd:string .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0001710
+obo:PATO_0001710 rdf:type owl:Class ;
+                 rdfs:subClassOf obo:PATO_0000117 ;
+                 obo:IAO_0000111 "3-D extent"^^xsd:string ;
+                 obo:IAO_0000115 "A size quality inhering in an bearer by virtue of the bearer's extension in three dimensions."^^xsd:string ;
+                 obo:IAO_0000412 obo:pato.owl ;
+                 rdfs:label "3-D extent"^^xsd:string .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001894
 obo:PATO_0001894 rdf:type owl:Class ;
                  rdfs:subClassOf obo:PATO_0000047 ,
@@ -13959,8 +13919,7 @@ obo:PATO_0001894 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/PATO_0001995
 obo:PATO_0001995 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:BFO_0000019 ,
-                                 obo:PATO_0001241 ;
+                 rdfs:subClassOf obo:PATO_0001241 ;
                  obo:IAO_0000111 "organismal quality"^^xsd:string ;
                  obo:IAO_0000115 "A quality that inheres in an entire organism or part of an organism."^^xsd:string ;
                  obo:IAO_0000412 obo:obi.owl ,
@@ -14247,7 +14206,6 @@ obo:PDRO_0040002 rdf:type owl:Class ;
 ###  http://purl.obolibrary.org/obo/PR_000000001
 obo:PR_000000001 rdf:type owl:Class ;
                  rdfs:subClassOf obo:CHEBI_16670 ,
-                                 obo:CHEBI_23367 ,
                                  obo:PR_000018263 ;
                  obo:IAO_0000111 "protein"^^xsd:string ;
                  obo:IAO_0000112 "antithrombin III is a protein"^^xsd:string ;
@@ -14544,7 +14502,7 @@ obo:UBERON_0000178 rdf:type owl:Class ;
 obo:UBERON_0000310 rdf:type owl:Class ;
                    rdfs:subClassOf obo:UBERON_0000465 ;
                    obo:IAO_0000111 "breast"^^xsd:string ;
-                   obo:IAO_0000115 "The upper ventral region of an animal's torso."^^xsd:string ;
+                   obo:IAO_0000115 "The upper ventral region of the torso of an organism."^^xsd:string ;
                    obo:IAO_0000412 obo:uberon.owl ;
                    rdfs:label "breast"^^xsd:string .
 
@@ -16583,6 +16541,12 @@ ontologies:TURBO_0010271 rdf:type owl:Class ;
 ontologies:TURBO_0010272 rdf:type owl:Class ;
                          rdfs:subClassOf ontologies:TURBO_0010271 ;
                          rdfs:label "health care encounter primary key symbol"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010278
+ontologies:TURBO_0010278 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_00001501 ;
+                         rdfs:label "tumor registry denoter"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0001799
@@ -19350,6 +19314,17 @@ obo:UO_0000009 rdf:type owl:NamedIndividual ,
                rdfs:label "kilogram" .
 
 
+###  http://purl.obolibrary.org/obo/UO_0000010
+obo:UO_0000010 rdf:type owl:NamedIndividual ,
+                        obo:UO_0000003 ;
+               obo:IAO_0000111 "second"^^xsd:string ;
+               obo:IAO_0000115 "A time unit which is equal to the duration of 9 192 631 770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom."^^xsd:string ;
+               obo:IAO_0000118 "s"^^xsd:string ,
+                               "sec"^^xsd:string ;
+               obo:IAO_0000412 obo:uo.owl ;
+               rdfs:label "second"^^xsd:string .
+
+
 ###  http://purl.obolibrary.org/obo/UO_0000015
 obo:UO_0000015 rdf:type owl:NamedIndividual ,
                         obo:UO_0000001 ;
@@ -19500,6 +19475,63 @@ obo:UO_0000026 rdf:type owl:NamedIndividual ,
                oboInOwl:id "UO:0000026" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                rdfs:label "femtogram" .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000031
+obo:UO_0000031 rdf:type owl:NamedIndividual ,
+                        obo:UO_0000003 ;
+               obo:IAO_0000111 "minute"^^xsd:string ;
+               obo:IAO_0000115 "A time unit which is equal to 60 seconds."^^xsd:string ;
+               obo:IAO_0000118 "min"^^xsd:string ;
+               obo:IAO_0000412 obo:uo.owl ;
+               rdfs:label "minute"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000032
+obo:UO_0000032 rdf:type owl:NamedIndividual ,
+                        obo:UO_0000003 ;
+               obo:IAO_0000111 "hour"^^xsd:string ;
+               obo:IAO_0000115 "A time unit which is equal to 3600 seconds or 60 minutes."^^xsd:string ;
+               obo:IAO_0000118 "h"^^xsd:string ,
+                               "hr"^^xsd:string ;
+               obo:IAO_0000412 obo:uo.owl ;
+               rdfs:label "hour"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000033
+obo:UO_0000033 rdf:type owl:NamedIndividual ,
+                        obo:UO_0000003 ;
+               obo:IAO_0000111 "day"^^xsd:string ;
+               obo:IAO_0000115 "A time unit which is equal to 24 hours."^^xsd:string ;
+               obo:IAO_0000412 obo:uo.owl ;
+               rdfs:label "day"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000034
+obo:UO_0000034 rdf:type owl:NamedIndividual ,
+                        obo:UO_0000003 ;
+               obo:IAO_0000111 "week"^^xsd:string ;
+               obo:IAO_0000115 "A time unit which is equal to 7 days."^^xsd:string ;
+               obo:IAO_0000412 obo:uo.owl ;
+               rdfs:label "week"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000035
+obo:UO_0000035 rdf:type owl:NamedIndividual ,
+                        obo:UO_0000003 ;
+               obo:IAO_0000111 "month"^^xsd:string ;
+               obo:IAO_0000115 "A time unit which is approximately equal to the length of time of one of cycle of the moon's phases which in science is taken to be equal to 30 days."^^xsd:string ;
+               obo:IAO_0000412 obo:uo.owl ;
+               rdfs:label "month"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000036
+obo:UO_0000036 rdf:type owl:NamedIndividual ,
+                        obo:UO_0000003 ;
+               obo:IAO_0000111 "year"^^xsd:string ;
+               obo:IAO_0000115 "A time unit which is equal to 12 months which is science is taken to be equal to 365.25 days."^^xsd:string ;
+               obo:IAO_0000412 obo:uo.owl ;
+               rdfs:label "year"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000055
@@ -20165,13 +20197,10 @@ obo:obi.owl rdf:type owl:NamedIndividual ;
             dc:date "2009-07-31"^^xsd:date ;
             dc:description "The Ontology for Biomedical Investigations (OBI) is build in a collaborative, international effort and will serve as a resource for annotating biomedical investigations, including the study design, protocols and instrumentation used, the data generated and the types of analysis performed on the data. This ontology arose from the Functional Genomics Investigation Ontology (FuGO) and will contain both terms that are common to all biomedical investigations, including functional genomics investigations and those that are more domain specific."@en ;
             dc:format "OWL-DL"@en ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
             dc:subject "An ontology for the annotation of biomedical and functional genomics experiments."@en ;
-            dc:title "Ontology for Biomedical Investigation"@en ;
             terms:license "http://creativecommons.org/licenses/by/4.0/" ;
             rdfs:comment "Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them."^^xsd:string ;
-            owl:versionInfo "2017-11-07"^^xsd:string ,
-                            "2019-06-05"^^xsd:string .
+            owl:versionInfo "2019-06-05"^^xsd:string .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000401
@@ -20524,7 +20553,7 @@ ontologies:TURBO_0010269 rdf:type owl:NamedIndividual ,
 
 ###  http://transformunify.org/ontologies/TURBO_0010274
 ontologies:TURBO_0010274 rdf:type owl:NamedIndividual ,
-                                  ontologies:TURBO_00001501 ;
+                                  ontologies:TURBO_0010278 ;
                          obo:IAO_0000219 ontologies:TURBO_0010190 ;
                          rdfs:label "Metriq/ORQID tumor registry denoter"@en .
 
@@ -20532,8 +20561,8 @@ ontologies:TURBO_0010274 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0010275
 ontologies:TURBO_0010275 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000505 ;
-                         obo:IAO_0000219 ontologies:TURBO_0010275 ;
-                         rdfs:label "HUP MRN registry"@en .
+                         obo:IAO_0000219 ontologies:TURBO_0000410 ;
+                         rdfs:label "HUP MRN registry denoter"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
@@ -20541,10 +20570,22 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
 
 
-[ obo:IAO_0000412 obo:obi.owl
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
 ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:pr.owl
@@ -20553,87 +20594,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -20641,105 +20601,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -20748,6 +20609,12 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ro.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ico.owl
  ] .
 
@@ -20763,22 +20630,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pr.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -20790,10 +20648,40 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -20814,43 +20702,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -20862,10 +20717,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -20877,7 +20729,40 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -20886,6 +20771,96 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pr.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -20901,7 +20876,25 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -20916,7 +20909,43 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 #################################################################
@@ -20936,10 +20965,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ;
+                rdfs:label "Primary Gleason Pattern" ;
+                oboInOwl:inSubset obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -20947,8 +20976,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C61410 ,
-                                  obo:NCIT_C125922 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
@@ -20957,8 +20986,8 @@ obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
 
 
 obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
-               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                oboInOwl:id "UO:0000272"^^xsd:string ;
+               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                rdfs:label "millimetres of mercury"^^xsd:string ;
                oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
@@ -20974,38 +21003,38 @@ Documentation is under development as well, and for now a slidedeck is available
 
 
 obo:ico.owl dc:description "The Informed Consent Ontology (ICO) is an ontology for the informed consent and informed consent process in the medical field." ;
-            dc:contributor "William Duncan"@en ,
-                           "Chris Stoeckert" ;
-            dc:creator "Elizabeth Eisenhauer"@en ;
-            dc:contributor "Jian Guan"@en ;
-            dc:creator "Alla Karnovsky" ;
-            dc:contributor "Anna Maria Masci" ,
+            dc:contributor "Chris Stoeckert" ,
+                           "William Duncan"@en ;
+            dc:creator "Elizabeth Eisenhauer"@en ,
+                       "Alla Karnovsky" ;
+            dc:contributor "Jian Guan"@en ,
+                           "Anna Maria Masci" ,
                            "Neil Otte"@en ;
             rdfs:comment "Terms were identified from a sample of informed consent templates, and definitions were selected based on concordance between the defintion and the use of the term in the source informed consent template document.  We preferentially selected defintioins from the NCI thesuarus." ;
             dc:contributor "Jonathan Bona" ;
-            dc:creator "Marcy Harris" ,
-                       "Yongqun \"Oliver\" He" ;
+            dc:creator "Yongqun \"Oliver\" He" ,
+                       "Marcy Harris" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
-            dc:creator "Frank Manion" ;
             owl:versionInfo "Arbor version; 1.0.100"@en ;
-            dc:creator "Christoph Brochhausen"@en ;
+            dc:creator "Frank Manion" ,
+                       "Christoph Brochhausen"@en ;
             dc:date "2018-03-01"@en ;
-            dc:contributor "Cui Tao"@en ;
-            dc:creator "Jie Zheng" ;
             rdfs:seeAlso <https://github.com/ICO-ontology/ICO> ;
-            dc:contributor "Jihad Obeid" ;
+            dc:creator "Jie Zheng" ;
+            dc:contributor "Cui Tao"@en ,
+                           "Jihad Obeid" ,
+                           "Helena Ellis" ;
             dc:creator "Asiyah Yu Lin" ;
-            dc:contributor "Helena Ellis" ,
-                           "Mathias Brochhausen" .
+            dc:contributor "Mathias Brochhausen" .
 
 
 obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
             rdfs:seeAlso "http://www.infectiousdiseaseontology.org" ;
             dc:creator "Albert Goldfain" ,
                        "Alexander Diehl" ,
-                       "Bjoern Peters" ;
+                       "Bjoern Peters" ,
+                       "Alan Ruttenberg" ;
             rdfs:comment "The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as 'pathogen', 'host', 'vector', and 'vaccine'.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. "@en ;
-            dc:creator "Alan Ruttenberg" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
             protege:defaultLanguage "en" ;
             dc:creator "Barry Smith" ;
@@ -21016,30 +21045,31 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
 
 obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             dc:description "OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. "@en ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
-            foaf:mbox <mailto:yongqunh@med.umich.edu> .
+            foaf:mbox <mailto:yongqunh@med.umich.edu> ;
+            dc:license <http://creativecommons.org/licenses/by/3.0/> .
 
 
-obo:omrse.owl rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "William Hogan"@en ,
+obo:omrse.owl dc:creator "William Hogan"@en ;
+              rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
+              dc:creator "Amanda Hicks" ,
                          "Mathias Brochhausen"@en ,
-                         "Amanda Hicks" ;
-              owl:versionInfo "2017-06-08" ;
-              dc:creator "Swetha Garimalla"@en ;
+                         "Swetha Garimalla"@en ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
               dc:contributor "Daniel Welch" ;
+              dc:license "CC-BY 4.0" ;
+              owl:versionInfo "2019-21-02" ;
               dc:creator "Shariq Tariq"@en .
 
 
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
            oboInOwl:date "18:04:2019 11:59"^^xsd:string ;
            oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
-           rdfs:comment "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string ,
-                        "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string .
+           rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
+                        "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
 
 
-obo:ro.owl dc:title "OBO Relations Ontology"@en ;
-           dc:description "The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies."@en ;
+obo:ro.owl dc:description "The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies."@en ;
+           dc:title "OBO Relations Ontology"@en ;
            dc:source <http://obofoundry.org/ro> ;
            rdfs:comment "Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 32 Logical Axioms: 0]"^^xsd:string ;
            foaf:homepage " https://github.com/oborel/obo-relations/"^^xsd:anyURI ;
