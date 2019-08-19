@@ -343,6 +343,73 @@ ontologies:TURBO_0010147 rdf:type owl:AnnotationProperty ;
                          rdfs:domain obo:BFO_0000001 .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010318
+ontologies:TURBO_0010318 rdf:type owl:AnnotationProperty ;
+                         obo:IAO_0000115 """A maps to B means that URI-identified class A has some relationship between URI-identified class B, outside of rdfs:subClassOf or owl:equivalentClass.
+
+Classes A and B will generally be defined and or asserted in different upstream ontologies (or other RDF artifacts)
+
+Similar in some ways to 'relatedMatch' from https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System, although SKOS defines that term an an object property.""" ;
+                         rdfs:label "maps to"@en ;
+                         rdfs:range owl:Thing .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010319
+ontologies:TURBO_0010319 rdf:type owl:AnnotationProperty ;
+                         obo:IAO_0000115 """A 'maps to' relationship in whose subject is a code (from a system like ICD or SNOMED) and the object is a disease (preferable form MonDO)
+
+This property does not imply any certainty or causality, only that some path can be drawn from the code to the disease.  This path justifying each 'evidence code for disease' should be exposed in an RDF graph, possibly by grouping all assertions from one path into the same named graph, which would be annotated with a definition etc.
+
+If you have a need to find people in an EHR who 'have' a disease, looking for the mapped code is a reasonable but noisy start.""" ;
+                         rdfs:label "evidence code for disease"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010318 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010320
+ontologies:TURBO_0010320 rdf:type owl:AnnotationProperty ;
+                         obo:IAO_0000115 """A 'maps to' relationship in which the subject is an RDF model of a R_MEDICATION row from the 'master data management' schema in the Penn Data Store relational database used by the University of Pennsylvania Healthcare System.
+
+The object would be the term for a drug (ingredient, generic product or branded product) from RxNorm, DrOn, ChEBI, etc.""" ;
+                         rdfs:comment """This term might not ever be used per se.  Rather, relationships are more likely to be drawn between an R_MEDICATION, some search results, and the predicted drug term.
+
+19 August 2019:  repo XXX has a <http://example.com/resource/rxnav_mapping> named graph containing the results of submitting PDS R_MEDICATION FULL_NAMEs to RxNav's approximateTerm API.
+
+
++---------------------+----------------------------------------------------+
+| predicate           | object                                             |
++---------------------+----------------------------------------------------+
+| mydata:R_MEDICATION | mydata:802ab5cc-bd6b-11e9-910d-713b0667bca7        |
++---------------------+----------------------------------------------------+
+| mydata:rank         | 1                                                  |
++---------------------+----------------------------------------------------+
+| mydata:rxcui        | http://purl.bioontology.org/ontology/RXNORM/307719 |
++---------------------+----------------------------------------------------+
+| mydata:score        | 100                                                |
++---------------------+----------------------------------------------------+
+| rdf:type            | mydata:rxnav_mapping                               |
++---------------------+----------------------------------------------------+
+
+This says that PDS R_MEDCIATION mydata:802ab5cc-bd6b-11e9-910d-713b0667bca7  
+
++-------------------------+----------------------------------------------------+
+| predicate               | object                                             |
++-------------------------+----------------------------------------------------+
+| mydata:FULL_NAME        | .Acetylcysteine Inhalation Solution 20%.           |
++-------------------------+----------------------------------------------------+
+| mydata:ORDERCOUNT       | 324                                                |
++-------------------------+----------------------------------------------------+
+| mydata:PK_MEDICATION_ID | 50665                                              |
++-------------------------+----------------------------------------------------+
+| mydata:RXNORM           | http://purl.bioontology.org/ontology/RXNORM/307719 |
++-------------------------+----------------------------------------------------+
+
+has a high quality match against RxNorm term 307719 (Acetylcysteine 200 MG/ML Inhalation Solution), which (in this case) agrees with the RxNorm annotation that is provided by PDS for some fraction of the R_MEDICATIONs.
+
+So formalizing properties like mydata:R_MEDICATION, mydata:rxcui, mydata:PK_MEDICATION_ID and mydata:RXNORM might be more important.  The were assigned the mydata namespace as they were take directly from the column names from tables that were subjected to a R2RML process.""" ;
+                         rdfs:label "PDS R_MEDICATION suggests drug term"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010318 .
+
+
 ###  http://www.ebi.ac.uk/efo/IAO_0000115
 efo:IAO_0000115 rdf:type owl:AnnotationProperty .
 
@@ -6666,9 +6733,9 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
-                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C66830 ,
+                                  obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -6677,9 +6744,9 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
+                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C61410 .
 
 
@@ -6727,8 +6794,8 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000176" ;
                oboInOwl:hasExactSynonym "milligram per millilitre" ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:hasExactSynonym "mg/ml" .
+               oboInOwl:hasExactSynonym "mg/ml" ;
+               oboInOwl:hasOBONamespace "unit.ontology" .
 
 
 obo:UO_0000208 oboInOwl:id "UO:0000208" ;
