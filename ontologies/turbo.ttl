@@ -3832,6 +3832,16 @@ where {
             bind(uuid() as ?cridSymb)
         }
     }
+}""" ,
+                                          """PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+delete {
+    ?hce a obo:OGMS_0000097 ;
+         ?p ?o .
+} where {
+    ?hce a obo:OGMS_0000097 ;
+         ?p ?o .
+    ?p  rdfs:subPropertyOf <http://transformunify.org/ontologies/TURBO_0010384>
 }""" .
 
 
@@ -7004,10 +7014,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
+                oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -7015,8 +7025,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 ,
+                                  obo:NCIT_C125922 .
 
 
 obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
@@ -7033,7 +7043,8 @@ obo:OGMS_0000100 ontologies:TURBO_0010147 9201 .
 obo:OGMS_0000101 ontologies:TURBO_0010147 9203 .
 
 
-obo:OMRSE_00000127 ontologies:TURBO_0010147 38003563 .
+obo:OMRSE_00000127 ontologies:TURBO_0010147 38003563 ,
+                                            0 .
 
 
 obo:OMRSE_00000181 ontologies:TURBO_0010147 8515 .
@@ -7060,12 +7071,12 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000176" ;
                oboInOwl:hasExactSynonym "milligram per millilitre" ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:hasExactSynonym "mg/ml" .
+               oboInOwl:hasExactSynonym "mg/ml" ;
+               oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000208 oboInOwl:hasExactSynonym "g/dl" ;
-               oboInOwl:id "UO:0000208" ;
+obo:UO_0000208 oboInOwl:id "UO:0000208" ;
+               oboInOwl:hasExactSynonym "g/dl" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:created_by "george gkoutos" ;

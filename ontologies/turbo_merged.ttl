@@ -13323,6 +13323,16 @@ where {
             bind(uuid() as ?cridSymb)
         }
     }
+}""" ,
+                                          """PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+delete {
+    ?hce a obo:OGMS_0000097 ;
+         ?p ?o .
+} where {
+    ?hce a obo:OGMS_0000097 ;
+         ?p ?o .
+    ?p  rdfs:subPropertyOf <http://transformunify.org/ontologies/TURBO_0010384>
 }""" ;
                  rdfs:label "health care encounter" .
 
@@ -13899,7 +13909,8 @@ obo:OMRSE_00000127 rdf:type owl:Class ;
                    obo:IAO_0000115 "An OMB ethnic identity datum that indicates the person identified is of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race."@en ;
                    obo:IAO_0000117 "Amanda Hicks"@en ;
                    obo:IAO_0000412 obo:omrse.owl ;
-                   ontologies:TURBO_0010147 38003563 ;
+                   ontologies:TURBO_0010147 0 ,
+                                            38003563 ;
                    rdfs:label "hispanic or latino identity datum"@en .
 
 
@@ -21091,24 +21102,9 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
 
 
-[ obo:IAO_0000412 obo:obi.owl
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
 ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -21118,6 +21114,90 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -21127,91 +21207,16 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -21223,121 +21228,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:pr.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21349,10 +21246,22 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -21379,46 +21288,25 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pr.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21433,19 +21321,127 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:geno.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -21460,13 +21456,28 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 #################################################################
@@ -21486,10 +21497,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
+                oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -21497,8 +21508,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 ,
+                                  obo:NCIT_C125922 .
 
 
 obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
@@ -21524,12 +21535,12 @@ Documentation is under development as well, and for now a slidedeck is available
 
 
 obo:ico.owl dc:description "The Informed Consent Ontology (ICO) is an ontology for the informed consent and informed consent process in the medical field." ;
-            dc:contributor "Chris Stoeckert" ,
-                           "William Duncan"@en ;
-            dc:creator "Elizabeth Eisenhauer"@en ,
-                       "Alla Karnovsky" ;
-            dc:contributor "Jian Guan"@en ,
-                           "Anna Maria Masci" ,
+            dc:contributor "William Duncan"@en ,
+                           "Chris Stoeckert" ;
+            dc:creator "Elizabeth Eisenhauer"@en ;
+            dc:contributor "Jian Guan"@en ;
+            dc:creator "Alla Karnovsky" ;
+            dc:contributor "Anna Maria Masci" ,
                            "Neil Otte"@en ;
             rdfs:comment "Terms were identified from a sample of informed consent templates, and definitions were selected based on concordance between the defintion and the use of the term in the source informed consent template document.  We preferentially selected defintioins from the NCI thesuarus." ;
             dc:contributor "Jonathan Bona" ;
@@ -21540,24 +21551,24 @@ obo:ico.owl dc:description "The Informed Consent Ontology (ICO) is an ontology f
             dc:creator "Frank Manion" ,
                        "Christoph Brochhausen"@en ;
             dc:date "2018-03-01"@en ;
-            dc:contributor "Cui Tao"@en ;
             dc:creator "Jie Zheng" ;
+            dc:contributor "Cui Tao"@en ;
             rdfs:seeAlso <https://github.com/ICO-ontology/ICO> ;
-            dc:contributor "Jihad Obeid" ;
+            dc:contributor "Jihad Obeid" ,
+                           "Helena Ellis" ;
             dc:creator "Asiyah Yu Lin" ;
-            dc:contributor "Helena Ellis" ,
-                           "Mathias Brochhausen" .
+            dc:contributor "Mathias Brochhausen" .
 
 
 obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
             rdfs:seeAlso "http://www.infectiousdiseaseontology.org" ;
             dc:creator "Albert Goldfain" ,
                        "Alexander Diehl" ,
-                       "Bjoern Peters" ;
+                       "Bjoern Peters" ,
+                       "Alan Ruttenberg" ;
             rdfs:comment "The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as 'pathogen', 'host', 'vector', and 'vaccine'.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. "@en ;
-            dc:creator "Alan Ruttenberg" ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
             protege:defaultLanguage "en" ;
+            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
             dc:creator "Barry Smith" ;
             owl:versionInfo "2017-11-03"^^xsd:string ;
             dc:creator "Lindsay Cowell" ;
@@ -21572,8 +21583,8 @@ obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
 
 obo:omrse.owl dc:creator "William Hogan"@en ;
               rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "Mathias Brochhausen"@en ,
-                         "Amanda Hicks" ,
+              dc:creator "Amanda Hicks" ,
+                         "Mathias Brochhausen"@en ,
                          "Swetha Garimalla"@en ;
               dc:contributor "Daniel Welch" ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
@@ -21585,8 +21596,8 @@ obo:omrse.owl dc:creator "William Hogan"@en ;
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
            oboInOwl:date "18:04:2019 11:59"^^xsd:string ;
            oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
-           rdfs:comment "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string ,
-                        "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string .
+           rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
+                        "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
 
 
 obo:ro.owl dc:description "The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies."@en ;
