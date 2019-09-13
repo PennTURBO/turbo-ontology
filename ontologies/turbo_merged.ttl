@@ -991,6 +991,83 @@ So formalizing properties like mydata:R_MEDICATION, mydata:rxcui, mydata:PK_MEDI
                          rdfs:subPropertyOf ontologies:TURBO_0010318 .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010384
+ontologies:TURBO_0010384 rdf:type owl:AnnotationProperty ;
+                         rdfs:comment "these properties can be used to temporarily link data values to a non-data-model class. they can be used for retaining data from a \"data model with shortcut properties\" when the expansion needs to be processed in two or more steps, due to a limitation of federated SAPRQL queries in some triple stores: it's hard to build a link between two service blocks with a data literal appearing in both blocks." ;
+                         rdfs:label "data retained between expansion steps"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010385
+ontologies:TURBO_0010385 rdf:type owl:AnnotationProperty ;
+                         rdfs:label "previous visit id from omop visit"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:OGMS_0000097 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010386
+ontologies:TURBO_0010386 rdf:type owl:AnnotationProperty ;
+                         rdfs:label "patient id from omop visit"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:OGMS_0000097 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010387
+ontologies:TURBO_0010387 rdf:type owl:AnnotationProperty ;
+                         rdfs:comment "this could be different from the symbol part of the denoter. in the case of instantiating  data in from an OMOP schema, the symbol might come from  the source identifier and this annotation might come from the OMOP primary key" ;
+                         rdfs:label "visit id from omop visit"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:OGMS_0000097 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010388
+ontologies:TURBO_0010388 rdf:type owl:AnnotationProperty ;
+                         rdfs:comment "this could be used to determine a more specific type (inpatient, outpatient, ER) for a healthcare encounter instance" ;
+                         rdfs:label "visit concept from omop visit"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:OGMS_0000097 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010389
+ontologies:TURBO_0010389 rdf:type owl:AnnotationProperty ;
+                         rdfs:label "commented SPARQL query for expansion"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010390
+ontologies:TURBO_0010390 rdf:type owl:AnnotationProperty ;
+                         rdfs:label "race concept from omop person"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:NCBITaxon_9606 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010391
+ontologies:TURBO_0010391 rdf:type owl:AnnotationProperty ;
+                         rdfs:label "ethnicity concept from omop person"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:NCBITaxon_9606 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010392
+ontologies:TURBO_0010392 rdf:type owl:AnnotationProperty ;
+                         rdfs:label "gender concept from omop person"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:NCBITaxon_9606 .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010393
+ontologies:TURBO_0010393 rdf:type owl:AnnotationProperty ;
+                         rdfs:label "person id from omop person"@en ;
+                         rdfs:subPropertyOf ontologies:TURBO_0010384 ;
+                         rdfs:range xsd:integer ;
+                         rdfs:domain obo:NCBITaxon_9606 .
+
+
 ###  http://www.ebi.ac.uk/efo/IAO_0000115
 efo:IAO_0000115 rdf:type owl:AnnotationProperty .
 
@@ -9262,6 +9339,58 @@ obo:NCBITaxon_9606 rdf:type owl:Class ;
                                    obo:omrse.owl ,
                                    obo:pdro.owl ;
                    ncbitaxon:has_rank obo:NCBITaxon_species ;
+                   ontologies:TURBO_0010389 """PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sm: <tag:stardog:api:mapping:>
+PREFIX turbo: <http://transformunify.org/ontologies/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ontologies: <http://transformunify.org/ontologies/>
+insert 
+{
+    graph turbo:expanedUnlinkedPeople {
+        ?person a obo:NCBITaxon_9606 ;
+                turbo:TURBO_0000303 ?sns ;
+                ontologies:TURBO_0010390 ?race_concept_id ;
+                ontologies:TURBO_0010391 ?ethnicity_concept_id ;
+                ontologies:TURBO_0010392 ?gender_concept_id ;
+                ontologies:TURBO_0010393 ?person_id .
+        ?sns a obo:UBERON_0035946 .
+        ?birthdate a <http://www.ebi.ac.uk/efo/EFO_0004950> ;
+                   obo:IAO_0000136 ?sns ;
+                   obo:IAO_0000004 ?birth_datetime ;
+                   obo:BFO_0000050 turbo:expanedUnlinkedEncounters .
+        turbo:expanedUnlinkedPeople a obo:IAO_0000100 ;
+                                    <http://purl.org/dc/elements/1.1/title> ?dataSetTitle .
+        ?crid a obo:IAO_0000578 ;
+              obo:IAO_0000219 ?person .
+        ?cridSymb a obo:IAO_0000577 ;
+                  obo:BFO_0000050 ?crid ;
+                  turbo:TURBO_0010094 ?person_source_value ;
+                  obo:BFO_0000050 turbo:expanedUnlinkedEncounters .
+        ?encRegDen obo:BFO_0000050 ?crid .
+    }
+} 
+where {
+    service <http://localhost:5820/forvg/query> {
+        graph <virtual://synthea_omop_rds> {
+            ?subject <http://transformunify.org/ontologies/TURBO_0010086> ?birth_datetime .
+            ?subject <http://transformunify.org/ontologies/TURBO_0010282> ?regden .
+            ?subject <http://transformunify.org/ontologies/TURBO_0010079> ?person_source_value .
+            ?subject rdf:type <http://transformunify.org/ontologies/TURBO_0010161> .
+            ?subject <http://transformunify.org/ontologies/TURBO_0010100> ?race_concept_id .
+            ?subject <http://transformunify.org/ontologies/TURBO_0010099> ?ethnicity_concept_id .
+            ?subject <http://transformunify.org/ontologies/TURBO_0010098> ?gender_concept_id .
+            ?subject <http://transformunify.org/ontologies/TURBO_0010170> ?person_id .
+            bind(uuid() as ?person)
+            bind(uuid() as ?sns)
+            bind(uuid() as ?birthdate)
+            # bind(sha1(concat(\"dataset\", ?dataSetTitle, year(now()), month(now()), day(now()))) as ?dataset)
+            bind(uuid() as ?crid)
+            bind(uuid() as ?cridSymb)
+        }
+    }
+}""" ;
                    oboInOwl:hasDbXref "GC_ID:1"^^xsd:string ;
                    oboInOwl:hasExactSynonym "human"^^xsd:string ,
                                             "man"^^xsd:string ;
@@ -13095,6 +13224,106 @@ obo:OGMS_0000097 rdf:type owl:Class ;
                  obo:IAO_0000232 "creation date: 2011-02-21T09:57:44Z" ;
                  obo:IAO_0000412 obo:ogms.owl ,
                                  obo:omrse.owl ;
+                 ontologies:TURBO_0010389 """PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sm: <tag:stardog:api:mapping:>
+PREFIX turbo: <http://transformunify.org/ontologies/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+#delete {
+#    ?hce1 a obo:OGMS_0000097 ;
+#          turbo:TURBO_0010385 ?linkingPk ;
+#          turbo:TURBO_0010386 ?patientPk ;
+#          turbo:TURBO_0010388 ?omopVisitConcept1 .
+#    ?hce2 a obo:OGMS_0000097 ;
+#          turbo:TURBO_0010387 ?linkingPk ;
+#          turbo:TURBO_0010388 ?omopVisitConcept2 .
+#}
+insert {
+    graph turbo:encounterTypesLinksParticipation {
+        ?role a obo:OBI_0000093 ;
+              obo:RO_0000052 ?person .
+        ?hce1 a ?encType1 ;
+              obo:BFO_0000055 ?role .
+        ?hce2  a ?encType2 ;
+               obo:BFO_0000055 ?role ;
+               obo:RO_0002090 ?hce1 .
+    }
+} 
+where {
+    graph turbo:expanedUnlinkedEncounters {
+        ?hce1 a obo:OGMS_0000097 ;
+              turbo:TURBO_0010385 ?linkingPk ;
+              turbo:TURBO_0010386 ?patientPk ;
+              turbo:TURBO_0010388 ?omopVisitConcept1 .
+        ?hce2 a obo:OGMS_0000097 ;
+              turbo:TURBO_0010387 ?linkingPk ;
+              turbo:TURBO_0010388 ?omopVisitConcept2 .
+    }
+    graph turbo:expanedUnlinkedPeople {
+        ?person a obo:NCBITaxon_9606 ;
+                turbo:TURBO_0010393 ?patientPk .
+    }
+    graph <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> {
+        ?encType1 rdfs:subClassOf obo:OGMS_0000097 ;
+                  turbo:TURBO_0010147 ?omopVisitConcept1 .
+        ?encType2 rdfs:subClassOf obo:OGMS_0000097 ;
+                  turbo:TURBO_0010147 ?omopVisitConcept2 .
+    }
+    bind(uri(concat(\"http://transformunify.org/ontologies/\", sha1(concat(str(?person), \"patient role\", year(now()), month(now()), day(now()))))) as ?role)
+}""" ,
+                                          """PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sm: <tag:stardog:api:mapping:>
+PREFIX turbo: <http://transformunify.org/ontologies/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+insert 
+{
+    graph turbo:expanedUnlinkedEncounters {
+        ?hce a obo:OGMS_0000097 ;
+             turbo:TURBO_0010385 ?prevPk ;
+             turbo:TURBO_0010387 ?encounterPk ;
+             turbo:TURBO_0010386 ?patientPk ;
+             turbo:TURBO_0010388 ?omopVisitConcept .
+        ?hceStart a obo:BFO_0000035 ;
+                  obo:RO_0002223 ?hce .
+        ?hceStartDate a obo:IAO_0000416 ;
+                      obo:IAO_0000136 ?hceStart ;
+                      obo:IAO_0000004 ?encStartDateVal ;
+                      obo:BFO_0000050 turbo:expanedUnlinkedEncounters .
+        turbo:expanedUnlinkedEncounters a obo:IAO_0000100 ;
+                                        <http://purl.org/dc/elements/1.1/title> ?dataSetTitle .
+        ?crid a obo:IAO_0000578 ;
+              obo:IAO_0000219 ?hce .
+        ?cridSymb a obo:IAO_0000577 ;
+                  obo:BFO_0000050 ?crid ;
+                  turbo:TURBO_0010094 ?syntheaVisitId ;
+                  obo:BFO_0000050 turbo:expanedUnlinkedEncounters .
+        ?encRegDen obo:BFO_0000050 ?crid .
+    }
+} 
+where {
+    service <http://localhost:5820/forvg/query> {
+        graph <virtual://synthea_omop_rds> {
+            ?subject turbo:TURBO_0000643 ?dataSetTitle .
+            ?subject turbo:TURBO_0000645 ?encStartDateVal .
+            ?subject turbo:TURBO_0010270 ?encRegDen .
+            ?subject turbo:TURBO_0000648 ?syntheaVisitId .
+            ?subject rdf:type turbo:TURBO_0010158 .
+            ?subject turbo:TURBO_0010174 ?prevPk .
+            ?subject turbo:TURBO_0010380 ?patientPk .
+            ?subject turbo:TURBO_0010381 ?encounterPk .
+            ?subject turbo:TURBO_0010382 ?omopVisitConcept .
+            bind(uuid() as ?hce)
+            bind(uuid() as ?hceStart)
+            bind(uuid() as ?hceStartDate)
+            # bind(sha1(concat(\"dataset\", ?dataSetTitle, year(now()), month(now()), day(now()))) as ?dataset)
+            bind(uuid() as ?crid)
+            bind(uuid() as ?cridSymb)
+        }
+    }
+}""" ;
                  rdfs:label "health care encounter" .
 
 
@@ -20862,12 +21091,27 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
 
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
 ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -20878,6 +21122,15 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
  ] .
 
 [ obo:IAO_0000412 obo:ico.owl
@@ -20895,7 +21148,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -20904,7 +21163,28 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:ontoneo.owl
@@ -20916,61 +21196,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -20986,138 +21212,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -21129,7 +21223,34 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21165,16 +21286,64 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:ico.owl
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -21192,6 +21361,24 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -21201,40 +21388,82 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ro.owl
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ico.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ico.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -21246,9 +21475,9 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                  obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
-                 oboInOwl:inSubset obo:NCIT_C66830 ;
                  rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                 oboInOwl:inSubset obo:NCIT_C61410 ;
+                 oboInOwl:inSubset obo:NCIT_C66830 ,
+                                   obo:NCIT_C61410 ;
                  oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                           "Total Gleason Score for Prostate Cancer" ;
                  oboInOwl:inSubset obo:NCIT_C125922 .
@@ -21300,8 +21529,8 @@ obo:ico.owl dc:description "The Informed Consent Ontology (ICO) is an ontology f
             dc:creator "Elizabeth Eisenhauer"@en ,
                        "Alla Karnovsky" ;
             dc:contributor "Jian Guan"@en ,
-                           "Neil Otte"@en ,
-                           "Anna Maria Masci" ;
+                           "Anna Maria Masci" ,
+                           "Neil Otte"@en ;
             rdfs:comment "Terms were identified from a sample of informed consent templates, and definitions were selected based on concordance between the defintion and the use of the term in the source informed consent template document.  We preferentially selected defintioins from the NCI thesuarus." ;
             dc:contributor "Jonathan Bona" ;
             dc:creator "Yongqun \"Oliver\" He" ,
@@ -21311,24 +21540,24 @@ obo:ico.owl dc:description "The Informed Consent Ontology (ICO) is an ontology f
             dc:creator "Frank Manion" ,
                        "Christoph Brochhausen"@en ;
             dc:date "2018-03-01"@en ;
-            rdfs:seeAlso <https://github.com/ICO-ontology/ICO> ;
+            dc:contributor "Cui Tao"@en ;
             dc:creator "Jie Zheng" ;
-            dc:contributor "Cui Tao"@en ,
-                           "Jihad Obeid" ,
-                           "Helena Ellis" ;
+            rdfs:seeAlso <https://github.com/ICO-ontology/ICO> ;
+            dc:contributor "Jihad Obeid" ;
             dc:creator "Asiyah Yu Lin" ;
-            dc:contributor "Mathias Brochhausen" .
+            dc:contributor "Helena Ellis" ,
+                           "Mathias Brochhausen" .
 
 
 obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
             rdfs:seeAlso "http://www.infectiousdiseaseontology.org" ;
             dc:creator "Albert Goldfain" ,
                        "Alexander Diehl" ,
-                       "Bjoern Peters" ,
-                       "Alan Ruttenberg" ;
+                       "Bjoern Peters" ;
             rdfs:comment "The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as 'pathogen', 'host', 'vector', and 'vaccine'.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. "@en ;
-            protege:defaultLanguage "en" ;
+            dc:creator "Alan Ruttenberg" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
+            protege:defaultLanguage "en" ;
             dc:creator "Barry Smith" ;
             owl:versionInfo "2017-11-03"^^xsd:string ;
             dc:creator "Lindsay Cowell" ;
@@ -21343,13 +21572,13 @@ obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
 
 obo:omrse.owl dc:creator "William Hogan"@en ;
               rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "Amanda Hicks" ,
-                         "Mathias Brochhausen"@en ,
+              dc:creator "Mathias Brochhausen"@en ,
+                         "Amanda Hicks" ,
                          "Swetha Garimalla"@en ;
               dc:contributor "Daniel Welch" ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
-              dc:license "CC-BY 4.0" ;
               owl:versionInfo "2019-21-02" ;
+              dc:license "CC-BY 4.0" ;
               dc:creator "Shariq Tariq"@en .
 
 
@@ -21360,8 +21589,8 @@ obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
                         "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string .
 
 
-obo:ro.owl dc:title "OBO Relations Ontology"@en ;
-           dc:description "The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies."@en ;
+obo:ro.owl dc:description "The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies."@en ;
+           dc:title "OBO Relations Ontology"@en ;
            dc:source <http://obofoundry.org/ro> ;
            rdfs:comment "Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 32 Logical Axioms: 0]"^^xsd:string ;
            foaf:homepage " https://github.com/oborel/obo-relations/"^^xsd:anyURI ;
