@@ -21,10 +21,26 @@
 @base <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> .
 
 <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> rdf:type owl:Ontology ;
-                                                                                                 owl:imports ontologies:turbo_obib_ontodog.owl ,
-                                                                                                             ontologies:turbo_obo_ontofox.owl ;
-                                                                                                 obo:IAO_0000116 "After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or turbo_merged.ttl for TopBraid Composer)" ,
-                                                                                                                 """April 2019 manual changes (attributed to OntoFox extract, possibly from hypertension related terms?)
+                                                                                                 owl:imports ontologies:turbo_obo_ontofox.owl ,
+                                                                                                             ontologies:turbo_obib_ontodog.owl ;
+                                                                                                 dc:title "The TURBO application ontology" ;
+                                                                                                 obo:IAO_0000116 "todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals." ,
+                                                                                                                 """some manual tidying that might be required:
+
+remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
+
+SDCs aren't directly (entities?), only continuants
+
+Haven't been using FMA anatomical region ?
+
+GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI""" ;
+                                                                                                 dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
+                                                                                                 obo:IAO_0000116 "After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or turbo_merged.ttl for TopBraid Composer)" ;
+                                                                                                 dc:contributor "Chris Stoeckert" ;
+                                                                                                 rdfs:comment "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ;
+                                                                                                 dc:contributor "Mark A. Miller" ;
+                                                                                                 foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" ;
+                                                                                                 obo:IAO_0000116 """April 2019 manual changes (attributed to OntoFox extract, possibly from hypertension related terms?)
 
 BFO_0000051 was erroneously labeled \"part of\" in addition to the correct label \"has part\"
 
@@ -89,25 +105,9 @@ save results of construct statement to uo_individualized.ttl and import into TUR
 
 Used a similar strategy for Gleason terms from NCIT: asserted (though inserts into a new named graph)  that the subclasses of http://purl.obolibrary.org/obo/NCIT_C28107 and http://purl.obolibrary.org/obo/NCIT_C28084  are instances of NCIT_C28107 and NCIT_C28084.  Then constructed those assertions, along with all annotations on the terms except for subClassOf, into a turtle file.
 
-Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That's the case for any term that isn't native to TURBO or didn't come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)""" ,
-                                                                                                                 """some manual tidying that might be required:
-
-remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
-
-SDCs aren't directly (entities?), only continuants
-
-Haven't been using FMA anatomical region ?
-
-GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI""" ,
-                                                                                                                 "todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals." ;
-                                                                                                 dc:contributor "Chris Stoeckert" ,
-                                                                                                                "Mark A. Miller" ;
-                                                                                                 dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
-                                                                                                 dc:title "The TURBO application ontology" ;
-                                                                                                 rdfs:comment "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ,
-                                                                                                              """used ontodog to extract a base ontology view from OBIB
-then used ontofox to get additional classes and properties from other OBO foundry ontologies""" ;
-                                                                                                 foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" .
+Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That's the case for any term that isn't native to TURBO or didn't come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)""" ;
+                                                                                                 rdfs:comment """used ontodog to extract a base ontology view from OBIB
+then used ontofox to get additional classes and properties from other OBO foundry ontologies""" .
 
 #################################################################
 #    Annotation properties
@@ -7015,8 +7015,8 @@ obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:inSubset obo:NCIT_C125922 ;
-                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
+                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C61410 .
 
 
@@ -7043,8 +7043,10 @@ obo:OGMS_0000100 ontologies:TURBO_0010147 9201 .
 obo:OGMS_0000101 ontologies:TURBO_0010147 9203 .
 
 
-obo:OMRSE_00000127 ontologies:TURBO_0010147 38003563 ,
-                                            0 .
+obo:OMRSE_00000127 ontologies:TURBO_0010147 38003563 .
+
+
+obo:OMRSE_00000128 ontologies:TURBO_0010147 0 .
 
 
 obo:OMRSE_00000181 ontologies:TURBO_0010147 8515 .
@@ -7098,4 +7100,4 @@ Our software developers would like to continue using mnemonics to refer to ontol
 This has_mnemonic datatype property has been created to facilitate and maintain these relationships, most likely with some SPARQL construct statements.""" .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

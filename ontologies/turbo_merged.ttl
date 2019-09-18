@@ -21,8 +21,24 @@
 @base <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> .
 
 <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> rdf:type owl:Ontology ;
-                                                                                                 obo:IAO_0000116 "After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or turbo_merged.ttl for TopBraid Composer)" ,
-                                                                                                                 """April 2019 manual changes (attributed to OntoFox extract, possibly from hypertension related terms?)
+                                                                                                 dc:title "The TURBO application ontology" ;
+                                                                                                 obo:IAO_0000116 "todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals." ,
+                                                                                                                 """some manual tidying that might be required:
+
+remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
+
+SDCs aren't directly (entities?), only continuants
+
+Haven't been using FMA anatomical region ?
+
+GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI""" ;
+                                                                                                 dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
+                                                                                                 obo:IAO_0000116 "After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or turbo_merged.ttl for TopBraid Composer)" ;
+                                                                                                 dc:contributor "Chris Stoeckert" ;
+                                                                                                 rdfs:comment "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ;
+                                                                                                 dc:contributor "Mark A. Miller" ;
+                                                                                                 foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" ;
+                                                                                                 obo:IAO_0000116 """April 2019 manual changes (attributed to OntoFox extract, possibly from hypertension related terms?)
 
 BFO_0000051 was erroneously labeled \"part of\" in addition to the correct label \"has part\"
 
@@ -87,25 +103,9 @@ save results of construct statement to uo_individualized.ttl and import into TUR
 
 Used a similar strategy for Gleason terms from NCIT: asserted (though inserts into a new named graph)  that the subclasses of http://purl.obolibrary.org/obo/NCIT_C28107 and http://purl.obolibrary.org/obo/NCIT_C28084  are instances of NCIT_C28107 and NCIT_C28084.  Then constructed those assertions, along with all annotations on the terms except for subClassOf, into a turtle file.
 
-Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That's the case for any term that isn't native to TURBO or didn't come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)""" ,
-                                                                                                                 """some manual tidying that might be required:
-
-remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
-
-SDCs aren't directly (entities?), only continuants
-
-Haven't been using FMA anatomical region ?
-
-GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI""" ,
-                                                                                                                 "todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals." ;
-                                                                                                 dc:contributor "Chris Stoeckert" ,
-                                                                                                                "Mark A. Miller" ;
-                                                                                                 dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
-                                                                                                 dc:title "The TURBO application ontology" ;
-                                                                                                 rdfs:comment "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ,
-                                                                                                              """used ontodog to extract a base ontology view from OBIB
-then used ontofox to get additional classes and properties from other OBO foundry ontologies""" ;
-                                                                                                 foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" .
+Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That's the case for any term that isn't native to TURBO or didn't come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)""" ;
+                                                                                                 rdfs:comment """used ontodog to extract a base ontology view from OBIB
+then used ontofox to get additional classes and properties from other OBO foundry ontologies""" .
 
 #################################################################
 #    Annotation properties
@@ -257,7 +257,8 @@ obo:IAO_0000116 rdf:type owl:AnnotationProperty ;
                                          "true"^^xsd:boolean ;
                 oboInOwl:shorthand "editor_note"^^xsd:string ;
                 rdfs:isDefinedBy obo:iao.owl ;
-                rdfs:label "editor note"@en ,
+                rdfs:label "editor note" ,
+                           "editor note"@en ,
                            "editor note"^^xsd:string .
 
 
@@ -275,6 +276,7 @@ obo:IAO_0000117 rdf:type owl:AnnotationProperty ;
                 rdfs:isDefinedBy obo:iao.owl ;
                 rdfs:label "definition editor"@en ,
                            "definition editor"^^xsd:string ,
+                           "term editor" ,
                            "term editor"@en ,
                            "term editor"^^xsd:string .
 
@@ -9903,12 +9905,14 @@ obo:OBI_0000093 rdf:type owl:Class ;
                                   owl:onProperty obo:RO_0000052 ;
                                   owl:someValuesFrom obo:NCBITaxon_9606
                                 ] ;
-                obo:IAO_0000111 "patient role" ;
+                obo:IAO_0000111 "patient role" ,
+                                "patient role"^^xsd:string ;
                 obo:IAO_0000112 "a hospitalized person; a person with controlled diabetes; the patient's role http://www.fertilityjourney.com/testingAndDiagnosis/theRightDoctor/thePatientsRole/index.asp?C=55245395146924652778"@en ;
                 obo:IAO_0000114 obo:IAO_0000120 ;
                 obo:IAO_0000115 "a role which inheres in a person and is realized by the process of being under the care of a physician or health care provider"@en ;
                 obo:IAO_0000117 "GROUP:Role Branch"@en ;
-                obo:IAO_0000118 "patient" ;
+                obo:IAO_0000118 "patient" ,
+                                "patient"^^xsd:string ;
                 obo:IAO_0000119 "OBI, CDISC"@en ;
                 obo:IAO_0000232 "CDISC definition:  patient. Person under a physician's care for a particular disease or condition. NOTE: A subject in a clinical trial is not necessarily a patient, but a patient in a clinical trial is a subject. See also subject, trial subject, healthy volunteer. Often used interchangeably"@en ;
                 obo:IAO_0000412 obo:pdro.owl ;
@@ -13909,8 +13913,7 @@ obo:OMRSE_00000127 rdf:type owl:Class ;
                    obo:IAO_0000115 "An OMB ethnic identity datum that indicates the person identified is of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race."@en ;
                    obo:IAO_0000117 "Amanda Hicks"@en ;
                    obo:IAO_0000412 obo:omrse.owl ;
-                   ontologies:TURBO_0010147 0 ,
-                                            38003563 ;
+                   ontologies:TURBO_0010147 38003563 ;
                    rdfs:label "hispanic or latino identity datum"@en .
 
 
@@ -13920,6 +13923,7 @@ obo:OMRSE_00000128 rdf:type owl:Class ;
                    obo:IAO_0000115 "An OMB ethnic identity datum that indicates the person identified is not of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race."@en ;
                    obo:IAO_0000117 "Amanda Hicks"@en ;
                    obo:IAO_0000412 obo:omrse.owl ;
+                   ontologies:TURBO_0010147 0 ;
                    rdfs:label "not hispanic or latino identity datum"@en .
 
 
@@ -15065,7 +15069,7 @@ obo:UBERON_0035946 rdf:type owl:Class ;
                    oboInOwl:hasExactSynonym "moment of birth"^^xsd:string ,
                                             "time of birth"^^xsd:string ;
                    oboInOwl:hasOBONamespace "uberon"^^xsd:string ;
-                   oboInOwl:hasRelatedSynonym "birth" ;
+                   oboInOwl:hasRelatedSynonym "birth"^^xsd:string ;
                    oboInOwl:id "UBERON:0035946"^^xsd:string ;
                    rdfs:label "start of neonate stage"^^xsd:string .
 
@@ -20190,7 +20194,7 @@ obo:UO_0000175 rdf:type owl:NamedIndividual ,
                                "g/L"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "g/L"^^xsd:string ,
+               oboInOwl:hasExactSynonym "g/L" ,
                                         "gram per litre" ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:id "UO:0000175" ;
@@ -20207,7 +20211,7 @@ obo:UO_0000176 rdf:type owl:NamedIndividual ,
                                "mg/ml"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "mg/ml"^^xsd:string ,
+               oboInOwl:hasExactSynonym "mg/ml" ,
                                         "milligram per millilitre" ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:id "UO:0000176" ;
@@ -20259,7 +20263,7 @@ obo:UO_0000208 rdf:type owl:NamedIndividual ,
                obo:IAO_0000118 "g/dl"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "g/dl"^^xsd:string ,
+               oboInOwl:hasExactSynonym "g/dl" ,
                                         "gram per decilitre" ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:id "UO:0000208" ;
@@ -20360,7 +20364,7 @@ obo:UO_0000301 rdf:type owl:NamedIndividual ,
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:created_by "george gkoutos" ;
                oboInOwl:hasExactSynonym "microgram per litre" ,
-                                        "ug/L"^^xsd:string ;
+                                        "ug/L" ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:id "UO:0000301" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
@@ -21105,6 +21109,9 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
 ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -21114,40 +21121,31 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:geno.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:pdro.owl
@@ -21162,7 +21160,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21175,66 +21173,18 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pr.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21243,34 +21193,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -21285,10 +21211,115 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pr.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
  ] .
 
 [ obo:IAO_0000412 obo:ico.owl
@@ -21297,7 +21328,22 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ro.owl
  ] .
 
-[ obo:IAO_0000412 obo:ico.owl
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -21306,7 +21352,34 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:pr.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21321,99 +21394,60 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:geno.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -21426,37 +21460,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21498,8 +21502,8 @@ obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:inSubset obo:NCIT_C125922 ;
-                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
+                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C61410 .
 
 
@@ -21517,16 +21521,16 @@ obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
-obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
-               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
-               oboInOwl:id "UO:0000272"^^xsd:string ;
-               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
+obo:UO_0000272 oboInOwl:hasOBONamespace "unit.ontology"^^xsd:string ;
                rdfs:label "millimetres of mercury"^^xsd:string ;
+               oboInOwl:id "UO:0000272"^^xsd:string ;
+               obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
-               oboInOwl:hasOBONamespace "unit.ontology"^^xsd:string ;
                oboInOwl:created_by "george gkoutos"^^xsd:string ;
+               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> ;
-               ontologies:TURBO_0010147 8876 .
+               ontologies:TURBO_0010147 8876 ;
+               oboInOwl:hasExactSynonym "mmHg"^^xsd:string .
 
 
 obo:geno.owl rdfs:comment """GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
@@ -21535,83 +21539,83 @@ Documentation is under development as well, and for now a slidedeck is available
 
 
 obo:ico.owl dc:description "The Informed Consent Ontology (ICO) is an ontology for the informed consent and informed consent process in the medical field." ;
-            dc:contributor "William Duncan"@en ,
-                           "Chris Stoeckert" ;
-            dc:creator "Elizabeth Eisenhauer"@en ;
-            dc:contributor "Jian Guan"@en ;
-            dc:creator "Alla Karnovsky" ;
-            dc:contributor "Anna Maria Masci" ,
-                           "Neil Otte"@en ;
+            dc:contributor "Chris Stoeckert" ,
+                           "William Duncan"@en ;
+            dc:creator "Elizabeth Eisenhauer"@en ,
+                       "Alla Karnovsky" ;
+            dc:contributor "Jian Guan"@en ,
+                           "Neil Otte"@en ,
+                           "Anna Maria Masci" ;
             rdfs:comment "Terms were identified from a sample of informed consent templates, and definitions were selected based on concordance between the defintion and the use of the term in the source informed consent template document.  We preferentially selected defintioins from the NCI thesuarus." ;
             dc:contributor "Jonathan Bona" ;
             dc:creator "Yongqun \"Oliver\" He" ,
                        "Marcy Harris" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
+            dc:creator "Frank Manion" ;
             owl:versionInfo "Arbor version; 1.0.100"@en ;
-            dc:creator "Frank Manion" ,
-                       "Christoph Brochhausen"@en ;
+            dc:creator "Christoph Brochhausen"@en ;
             dc:date "2018-03-01"@en ;
-            dc:creator "Jie Zheng" ;
-            dc:contributor "Cui Tao"@en ;
             rdfs:seeAlso <https://github.com/ICO-ontology/ICO> ;
-            dc:contributor "Jihad Obeid" ,
-                           "Helena Ellis" ;
+            dc:contributor "Cui Tao"@en ;
+            dc:creator "Jie Zheng" ;
+            dc:contributor "Jihad Obeid" ;
             dc:creator "Asiyah Yu Lin" ;
-            dc:contributor "Mathias Brochhausen" .
+            dc:contributor "Helena Ellis" ,
+                           "Mathias Brochhausen" .
 
 
 obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
             rdfs:seeAlso "http://www.infectiousdiseaseontology.org" ;
             dc:creator "Albert Goldfain" ,
                        "Alexander Diehl" ,
-                       "Bjoern Peters" ,
-                       "Alan Ruttenberg" ;
+                       "Bjoern Peters" ;
             rdfs:comment "The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as 'pathogen', 'host', 'vector', and 'vaccine'.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. "@en ;
+            dc:creator "Alan Ruttenberg" ;
+            owl:versionInfo "2017-11-03"^^xsd:string ;
             protege:defaultLanguage "en" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
-            dc:creator "Barry Smith" ;
-            owl:versionInfo "2017-11-03"^^xsd:string ;
-            dc:creator "Lindsay Cowell" ;
+            dc:creator "Barry Smith" ,
+                       "Lindsay Cowell" ;
             dc:contributor "Jie Zheng" .
 
 
 obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             dc:description "OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. "@en ;
-            foaf:mbox <mailto:yongqunh@med.umich.edu> ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> .
+            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
+            foaf:mbox <mailto:yongqunh@med.umich.edu> .
 
 
-obo:omrse.owl dc:creator "William Hogan"@en ;
-              rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "Amanda Hicks" ,
+obo:omrse.owl rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
+              dc:creator "William Hogan"@en ,
                          "Mathias Brochhausen"@en ,
+                         "Amanda Hicks" ,
                          "Swetha Garimalla"@en ;
-              dc:contributor "Daniel Welch" ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
+              dc:contributor "Daniel Welch" ;
               owl:versionInfo "2019-21-02" ;
               dc:license "CC-BY 4.0" ;
               dc:creator "Shariq Tariq"@en .
 
 
-obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-           oboInOwl:date "18:04:2019 11:59"^^xsd:string ;
-           oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
-           rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
-                        "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
+obo:pr.owl oboInOwl:date "18:04:2019 11:59"^^xsd:string ;
+           rdfs:comment "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string ;
+           terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+           rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ;
+           oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string .
 
 
-obo:ro.owl dc:description "The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies."@en ;
-           dc:title "OBO Relations Ontology"@en ;
+obo:ro.owl dc:title "OBO Relations Ontology"@en ;
+           dc:description "The OBO Relations Ontology (RO) is a collection of OWL relations (ObjectProperties) intended for use across a wide variety of biological ontologies."@en ;
+           rdfs:comment "Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 26 Logical Axioms: 0]"^^xsd:string ;
            dc:source <http://obofoundry.org/ro> ;
-           rdfs:comment "Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 32 Logical Axioms: 0]"^^xsd:string ;
            foaf:homepage " https://github.com/oborel/obo-relations/"^^xsd:anyURI ;
-           rdfs:comment "Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 26 Logical Axioms: 0]"^^xsd:string .
+           rdfs:comment "Includes Ontology(OntologyID(Anonymous-21)) [Axioms: 32 Logical Axioms: 0]"^^xsd:string .
 
 
 efo:EFO_0004374 oboInOwl:hasDbXref "NCIt:C67015"^^xsd:string ;
+                rdfs:comment "NCIt:C67015" ;
                 rdfs:label "milligram per deciliter"^^xsd:string ;
-                rdfs:comment "NCIt:C67015"^^xsd:string ;
                 obo:IAO_0000412 efo:efo.owl .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
