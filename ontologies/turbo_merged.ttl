@@ -5979,7 +5979,7 @@ ontologies:TURBO_0010088 rdf:type owl:DatatypeProperty ;
 
 ###  http://transformunify.org/ontologies/TURBO_0010094
 ontologies:TURBO_0010094 rdf:type owl:DatatypeProperty ;
-                         rdfs:domain obo:IAO_0000027 ;
+                         rdfs:domain obo:IAO_0000030 ;
                          rdfs:range rdfs:Literal ;
                          obo:IAO_0000112 """?x a 'data item' ;
 'has representation' 'It was the best of times, it was the worst of times.' .""" ,
@@ -8054,12 +8054,6 @@ obo:GENO_0000960 rdf:type owl:Class ;
                  rdfs:label "genomic sequence"@en .
 
 
-###  http://purl.obolibrary.org/obo/GO_0005575
-obo:GO_0005575 rdf:type owl:Class ;
-               rdfs:subClassOf obo:BFO_0000040 ;
-               rdfs:label "cellular_component" .
-
-
 ###  http://purl.obolibrary.org/obo/GO_0005623
 obo:GO_0005623 rdf:type owl:Class ;
                rdfs:subClassOf obo:CL_0000000 ;
@@ -8955,6 +8949,10 @@ obo:IAO_0000590 rdf:type owl:Class ;
                 obo:IAO_0000412 obo:obi.owl ,
                                 obo:pdro.owl ;
                 rdfs:label "written name"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000594
+obo:IAO_0000594 rdf:type owl:Class .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0020000
@@ -15843,11 +15841,7 @@ obo:UBERON_0000479 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/UBERON_0001013
 obo:UBERON_0001013 rdf:type owl:Class ;
-                   rdfs:subClassOf obo:UBERON_0000479 ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty obo:BFO_0000050 ;
-                                     owl:someValuesFrom obo:OBI_0100026
-                                   ] ;
+                   rdfs:subClassOf obo:UBERON_0000479 ;
                    obo:IAO_0000111 "adipose tissue"^^xsd:string ;
                    obo:IAO_0000115 "Portion of connective tissue composed of adipocytes enmeshed in areolar tissue"^^xsd:string ;
                    obo:IAO_0000412 obo:uberon.owl ;
@@ -15978,6 +15972,16 @@ obo:UO_0000003 rdf:type owl:Class ;
                obo:IAO_0000115 "A unit which is a standard measure of the dimension in which events occur in sequence."^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                rdfs:label "time unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000009
+obo:UO_0000009 rdf:type owl:Class ;
+               rdfs:subClassOf obo:UO_0000002 .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000015
+obo:UO_0000015 rdf:type owl:Class ;
+               rdfs:subClassOf obo:UO_0000001 .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000051
@@ -17932,10 +17936,225 @@ ontologies:TURBO_0010296 rdf:type owl:Class ;
                          rdfs:label "patient identifier source"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010343
+ontologies:TURBO_0010343 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:OBI_0200000 ;
+                         rdfs:comment "define graph" ;
+                         rdfs:label "graph manipulation"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010344
+ontologies:TURBO_0010344 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010343 ;
+                         rdfs:comment "define RDF" ;
+                         rdfs:label "RDF graph manipulation"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010345
+ontologies:TURBO_0010345 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000100 ;
+                         obo:IAO_0000119 <https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)> ;
+                         rdfs:comment "define edges and vertices" ;
+                         rdfs:label "edge-vertex graph"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010346
+ontologies:TURBO_0010346 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010345 ;
+                         rdfs:comment "the FORMAT is defined at https://en.wikipedia.org/wiki/Resource_Description_Framework" ;
+                         rdfs:label "RDF graph"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010347
+ontologies:TURBO_0010347 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010373
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom [ owl:intersectionOf ( obo:OBI_0000260
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty obo:RO_0000059 ;
+                                                                                           owl:someValuesFrom ontologies:TURBO_0010353
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ]
+                                             ] ;
+                         rdfs:subClassOf ontologies:TURBO_0010344 ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:OBI_0000293 ;
+                                           owl:someValuesFrom ontologies:TURBO_0010346
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:OBI_0000299 ;
+                                           owl:someValuesFrom ontologies:TURBO_0010346
+                                         ] ;
+                         rdfs:label "SPARQL update process"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010348
+ontologies:TURBO_0010348 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000033 ;
+                         rdfs:label "SPARQL language"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010349
+ontologies:TURBO_0010349 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010348 ;
+                         rdfs:comment "disregarding versions... is this a named individual?" ;
+                         rdfs:label "update specification portionof SPARQL language"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010350
+ontologies:TURBO_0010350 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000104 ;
+                         rdfs:label "database statement"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010351
+ontologies:TURBO_0010351 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010374
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:OBI_0000299 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010353
+                                             ] ;
+                         rdfs:subClassOf obo:OBI_0000011 ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:BFO_0000055 ;
+                                           owl:someValuesFrom [ owl:intersectionOf ( obo:OBI_0000260
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty obo:RO_0000059 ;
+                                                                                       owl:someValuesFrom ontologies:TURBO_0010354
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ]
+                                         ] ;
+                         rdfs:label "SPARQL update statement generation"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010352
+ontologies:TURBO_0010352 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010350 ;
+                         rdfs:label "database update statement"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010353
+ontologies:TURBO_0010353 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010352 ;
+                         rdfs:label "SPARQL update statement"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010354
+ontologies:TURBO_0010354 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000051 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010349
+                                             ] ;
+                         rdfs:subClassOf obo:IAO_0000104 ;
+                         rdfs:label "SPARQL update statement generation specification"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010355
+ontologies:TURBO_0010355 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000104 ;
+                         rdfs:comment "either where, insert or delete blocks?" ;
+                         rdfs:label "Acorn SPARQL update fragment recipe"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010356
+ontologies:TURBO_0010356 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010354 ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:BFO_0000051 ;
+                                           owl:someValuesFrom ontologies:TURBO_0010355
+                                         ] ;
+                         obo:IAO_0000118 "Acorn recipe-based SPARQL update statement generation specification"@en ;
+                         rdfs:label "Acorn specification" .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010373
+ontologies:TURBO_0010373 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:RO_0000059 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010353
+                                             ] ;
+                         rdfs:subClassOf obo:OBI_0000260 ;
+                         rdfs:comment "I wanted to say that this inheres in some SPARQL engine, but those are currently GDCs, not IDCs" ;
+                         rdfs:label "SPARQL update plan"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010374
+ontologies:TURBO_0010374 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:RO_0000059 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010354
+                                             ] ;
+                         rdfs:subClassOf obo:OBI_0000260 ;
+                         rdfs:label "SPARQL update statement generation plan"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010375
+ontologies:TURBO_0010375 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000594 ;
+                         rdfs:label "SPARQL engine / triplestore"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010376
+ontologies:TURBO_0010376 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000594 ;
+                         rdfs:label "Acorn interpreter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010377
+ontologies:TURBO_0010377 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:RO_0000059 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010356
+                                             ] ;
+                         rdfs:subClassOf ontologies:TURBO_0010374 ;
+                         rdfs:comment "I wanted to say that this inheres in some Acorn interpreter, bu that's currently a GDC not an IDC" ;
+                         rdfs:label "Acorn SPARQL update statement generation plan"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010378
+ontologies:TURBO_0010378 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010377
+                                             ] ;
+                         rdfs:subClassOf ontologies:TURBO_0010351 ;
+                         rdfs:label "SPARQL update statement generation by Acorn"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010379
+ontologies:TURBO_0010379 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000033 ;
+                         obo:IAO_0000118 "Acorn DSL" ;
+                         rdfs:label "Acorn domain specific language"@en .
+
+
 ###  http://transformunify.org/ontologies/TURBO_0010383
 ontologies:TURBO_0010383 rdf:type owl:Class ;
                          rdfs:subClassOf obo:OGMS_0000099 ;
                          rdfs:label "office vist"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010395
+ontologies:TURBO_0010395 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010267 ;
+                         rdfs:label "patient identifier source denoter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010404
+ontologies:TURBO_0010404 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000027 ;
+                         rdfs:label "provenance data item"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0001799
@@ -20694,15 +20913,7 @@ obo:UO_0000008 rdf:type owl:NamedIndividual ,
 
 ###  http://purl.obolibrary.org/obo/UO_0000009
 obo:UO_0000009 rdf:type owl:NamedIndividual ,
-                        obo:UO_0000002 ;
-               obo:IAO_0000115 "A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France." ;
-               ontologies:TURBO_0010147 9529 ;
-               oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "kg" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:id "UO:0000009" ;
-               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
-               rdfs:label "kilogram" .
+                        obo:UO_0000002 .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000010
@@ -20718,17 +20929,7 @@ obo:UO_0000010 rdf:type owl:NamedIndividual ,
 
 ###  http://purl.obolibrary.org/obo/UO_0000015
 obo:UO_0000015 rdf:type owl:NamedIndividual ,
-                        obo:UO_0000001 ;
-               obo:IAO_0000115 "A length unit which is equal to one hundredth of a meter or 10^[-2] m." ;
-               ontologies:TURBO_0010147 8582 ;
-               oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "centimetre" ,
-                                        "cm" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:id "UO:0000015" ;
-               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
-               rdfs:comment "is METER the unit preferred by OMOP for height 3036277 / LOINC 8302-2?" ;
-               rdfs:label "centimeter" .
+                        obo:UO_0000001 .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000016
@@ -21928,21 +22129,20 @@ ontologies:TURBO_0010255 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010256 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000510 ;
                          obo:IAO_0000219 ontologies:TURBO_0010112 ;
-                         rdfs:label "Synthea health care encounter registry denoter"@en ;
-                         owl:deprecated "true"^^xsd:boolean .
+                         rdfs:label "Synthea health care encounter registry denoter"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010266
 ontologies:TURBO_0010266 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010265 ;
-                         rdfs:label "Synthea OMOP health care identifier source"@en .
+                         rdfs:label "OMOP health care identifier source"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010269
 ontologies:TURBO_0010269 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010268 ;
                          obo:IAO_0000219 ontologies:TURBO_0010266 ;
-                         rdfs:label "Denoter of the Synthea OMOP health care encounter identifier source"@en .
+                         rdfs:label "Denoter of the OMOP health care encounter identifier source"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010274
@@ -22007,6 +22207,45 @@ ontologies:TURBO_0010302 rdf:type owl:NamedIndividual ,
                          rdfs:label "PMC MRN registry denoter"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010394
+ontologies:TURBO_0010394 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010296 ;
+                         rdfs:label "OMOP patient identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010396
+ontologies:TURBO_0010396 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010395 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010394 ;
+                         rdfs:label "denoter of the OMOP patient identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010397
+ontologies:TURBO_0010397 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010257 ;
+                         rdfs:label "OMOP measurement identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010398
+ontologies:TURBO_0010398 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010267 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010397 ;
+                         rdfs:label "denoter of the OMOP measurement identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010399
+ontologies:TURBO_0010399 rdf:type owl:NamedIndividual ,
+                                  obo:IAO_0000579 ;
+                         rdfs:label "Synthea measurement registry"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010400
+ontologies:TURBO_0010400 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_00001501 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010399 ;
+                         rdfs:label "denoter of the Synthea measurement registry"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
@@ -22015,6 +22254,168 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
 ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
 [ obo:IAO_0000412 obo:pdro.owl
  ] .
 
@@ -22027,6 +22428,87 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -22039,19 +22521,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22069,7 +22539,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22081,6 +22551,15 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -22096,13 +22575,28 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22111,13 +22605,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pr.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22144,43 +22635,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pr.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 [ obo:IAO_0000412 obo:pdro.owl
@@ -22195,55 +22656,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22252,10 +22665,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -22285,178 +22695,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 #################################################################
@@ -22494,6 +22733,28 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
 obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 rdfs:label "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
+
+
+obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
+               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
+               oboInOwl:hasExactSynonym "kg" ;
+               rdfs:label "kilogram" ;
+               oboInOwl:id "UO:0000009" ;
+               obo:IAO_0000115 "A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France." ;
+               oboInOwl:created_by "george gkoutos" ;
+               oboInOwl:hasOBONamespace "unit.ontology" .
+
+
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
+               oboInOwl:hasExactSynonym "cm" ;
+               oboInOwl:id "UO:0000015" ;
+               oboInOwl:hasExactSynonym "centimetre" ;
+               rdfs:comment "is METER the unit preferred by OMOP for height 3036277 / LOINC 8302-2?" ;
+               ontologies:TURBO_0010147 8582 ;
+               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
+               obo:IAO_0000115 "A length unit which is equal to one hundredth of a meter or 10^[-2] m." ;
+               oboInOwl:created_by "george gkoutos" .
 
 
 obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth." ;
