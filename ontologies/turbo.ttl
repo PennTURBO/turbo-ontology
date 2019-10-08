@@ -21,26 +21,8 @@
 @base <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> .
 
 <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> rdf:type owl:Ontology ;
-                                                                                                 owl:imports ontologies:turbo_obo_ontofox.owl ,
-                                                                                                             ontologies:turbo_obib_ontodog.owl ;
-                                                                                                 dc:title "The TURBO application ontology" ;
-                                                                                                 obo:IAO_0000116 "todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals." ,
-                                                                                                                 """some manual tidying that might be required:
-
-remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
-
-SDCs aren't directly (entities?), only continuants
-
-Haven't been using FMA anatomical region ?
-
-GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI""" ;
-                                                                                                 dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
-                                                                                                 obo:IAO_0000116 "After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or turbo_merged.ttl for TopBraid Composer)" ;
-                                                                                                 dc:contributor "Chris Stoeckert" ;
-                                                                                                 rdfs:comment "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ;
-                                                                                                 dc:contributor "Mark A. Miller" ;
-                                                                                                 foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" ;
-                                                                                                 obo:IAO_0000116 """April 2019 manual changes (attributed to OntoFox extract, possibly from hypertension related terms?)
+                                                                                                 obo:IAO_0000116 "After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or turbo_merged.ttl for TopBraid Composer)" ,
+                                                                                                                 """April 2019 manual changes (attributed to OntoFox extract, possibly from hypertension related terms?)
 
 BFO_0000051 was erroneously labeled \"part of\" in addition to the correct label \"has part\"
 
@@ -105,9 +87,25 @@ save results of construct statement to uo_individualized.ttl and import into TUR
 
 Used a similar strategy for Gleason terms from NCIT: asserted (though inserts into a new named graph)  that the subclasses of http://purl.obolibrary.org/obo/NCIT_C28107 and http://purl.obolibrary.org/obo/NCIT_C28084  are instances of NCIT_C28107 and NCIT_C28084.  Then constructed those assertions, along with all annotations on the terms except for subClassOf, into a turtle file.
 
-Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That's the case for any term that isn't native to TURBO or didn't come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)""" ;
-                                                                                                 rdfs:comment """used ontodog to extract a base ontology view from OBIB
-then used ontofox to get additional classes and properties from other OBO foundry ontologies""" .
+Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That's the case for any term that isn't native to TURBO or didn't come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)""" ,
+                                                                                                                 """some manual tidying that might be required:
+
+remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
+
+SDCs aren't directly (entities?), only continuants
+
+Haven't been using FMA anatomical region ?
+
+GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI""" ,
+                                                                                                                 "todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals." ;
+                                                                                                 dc:contributor "Chris Stoeckert" ,
+                                                                                                                "Mark A. Miller" ;
+                                                                                                 dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
+                                                                                                 dc:title "The TURBO application ontology" ;
+                                                                                                 rdfs:comment "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ,
+                                                                                                              """used ontodog to extract a base ontology view from OBIB
+then used ontofox to get additional classes and properties from other OBO foundry ontologies""" ;
+                                                                                                 foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" .
 
 #################################################################
 #    Annotation properties
@@ -3081,7 +3079,7 @@ ontologies:TURBO_0010088 rdf:type owl:DatatypeProperty ;
 
 ###  http://transformunify.org/ontologies/TURBO_0010094
 ontologies:TURBO_0010094 rdf:type owl:DatatypeProperty ;
-                         rdfs:domain obo:IAO_0000027 ;
+                         rdfs:domain obo:IAO_0000030 ;
                          rdfs:range rdfs:Literal ;
                          obo:IAO_0000112 """?x a 'data item' ;
 'has representation' 'It was the best of times, it was the worst of times.' .""" ,
@@ -3456,12 +3454,6 @@ obo:CL_0001063 rdf:type owl:Class .
 obo:CL_0001064 rdf:type owl:Class .
 
 
-###  http://purl.obolibrary.org/obo/GO_0005575
-obo:GO_0005575 rdf:type owl:Class ;
-               rdfs:subClassOf obo:BFO_0000040 ;
-               rdfs:label "cellular_component" .
-
-
 ###  http://purl.obolibrary.org/obo/HTN_00000000
 obo:HTN_00000000 rdf:type owl:Class ;
                  rdfs:subClassOf obo:VSO_0000005 ,
@@ -3491,6 +3483,9 @@ obo:HTN_00000001 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/IAO_0000007
 obo:IAO_0000007 rdf:type owl:Class .
+
+
+
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000027
@@ -3540,6 +3535,8 @@ obo:IAO_0000578 rdf:type owl:Class .
 
 ###  http://purl.obolibrary.org/obo/IAO_0000579
 obo:IAO_0000579 rdf:type owl:Class .
+
+
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0020015
@@ -3731,6 +3728,22 @@ obo:OGMS_0000078 rdf:type owl:Class ;
                                  ] .
 
 
+###  http://purl.obolibrary.org/obo/OGMS_0000096
+obo:OGMS_0000096 rdf:type owl:Class ;
+                 rdfs:subClassOf obo:OBI_0000011 ;
+                 obo:IAO_0000115 """
+A planned process with the objective to improve the health status of a patient that directly involves the treatment, diagnosis, or prevention of disease or injury of a patient
+"""@en ;
+                 obo:IAO_0000117 "Albert Goldfain Sagar Jain" ;
+                 obo:IAO_0000119 """
+http://groups.google.com/group/ogms-discuss/browse_thread/thread/a2dbc2ed1dff99d6
+""" ;
+                 obo:IAO_0000232 """
+creation date: 2011-02-21T09:57:44Z editor date: 2017-04-18
+""" ;
+                 rdfs:label "health care process" .
+
+
 ###  http://purl.obolibrary.org/obo/OGMS_0000097
 obo:OGMS_0000097 rdf:type owl:Class ;
                  ontologies:TURBO_0010389 """PREFIX obo: <http://purl.obolibrary.org/obo/>
@@ -3889,13 +3902,6 @@ obo:PDRO_0000024 rdf:type owl:Class ;
 obo:UBERON_0000061 rdf:type owl:Class .
 
 
-###  http://purl.obolibrary.org/obo/UBERON_0001013
-obo:UBERON_0001013 rdf:type owl:Class ;
-                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                     owl:onProperty obo:BFO_0000050 ;
-                                     owl:someValuesFrom obo:OBI_0100026
-                                   ] .
-
 
 ###  http://purl.obolibrary.org/obo/UBERON_0007221
 obo:UBERON_0007221 rdf:type owl:Class ;
@@ -3929,6 +3935,16 @@ obo:UO_0000001 rdf:type owl:Class .
 
 ###  http://purl.obolibrary.org/obo/UO_0000002
 obo:UO_0000002 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000009
+obo:UO_0000009 rdf:type owl:Class ;
+               rdfs:subClassOf obo:UO_0000002 .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000015
+obo:UO_0000015 rdf:type owl:Class ;
+               rdfs:subClassOf obo:UO_0000001 .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000051
@@ -5713,10 +5729,225 @@ ontologies:TURBO_0010296 rdf:type owl:Class ;
                          rdfs:label "patient identifier source"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010343
+ontologies:TURBO_0010343 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:OBI_0200000 ;
+                         rdfs:comment "define graph" ;
+                         rdfs:label "graph manipulation"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010344
+ontologies:TURBO_0010344 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010343 ;
+                         rdfs:comment "define RDF" ;
+                         rdfs:label "RDF graph manipulation"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010345
+ontologies:TURBO_0010345 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000100 ;
+                         obo:IAO_0000119 <https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)> ;
+                         rdfs:comment "define edges and vertices" ;
+                         rdfs:label "edge-vertex graph"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010346
+ontologies:TURBO_0010346 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010345 ;
+                         rdfs:comment "the FORMAT is defined at https://en.wikipedia.org/wiki/Resource_Description_Framework" ;
+                         rdfs:label "RDF graph"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010347
+ontologies:TURBO_0010347 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010373
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom [ owl:intersectionOf ( obo:OBI_0000260
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty obo:RO_0000059 ;
+                                                                                           owl:someValuesFrom ontologies:TURBO_0010353
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ]
+                                             ] ;
+                         rdfs:subClassOf ontologies:TURBO_0010344 ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:OBI_0000293 ;
+                                           owl:someValuesFrom ontologies:TURBO_0010346
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:OBI_0000299 ;
+                                           owl:someValuesFrom ontologies:TURBO_0010346
+                                         ] ;
+                         rdfs:label "SPARQL update process"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010348
+ontologies:TURBO_0010348 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000033 ;
+                         rdfs:label "SPARQL language"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010349
+ontologies:TURBO_0010349 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010348 ;
+                         rdfs:comment "disregarding versions... is this a named individual?" ;
+                         rdfs:label "update specification portionof SPARQL language"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010350
+ontologies:TURBO_0010350 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000104 ;
+                         rdfs:label "database statement"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010351
+ontologies:TURBO_0010351 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010374
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:OBI_0000299 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010353
+                                             ] ;
+                         rdfs:subClassOf obo:OBI_0000011 ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:BFO_0000055 ;
+                                           owl:someValuesFrom [ owl:intersectionOf ( obo:OBI_0000260
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty obo:RO_0000059 ;
+                                                                                       owl:someValuesFrom ontologies:TURBO_0010354
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ]
+                                         ] ;
+                         rdfs:label "SPARQL update statement generation"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010352
+ontologies:TURBO_0010352 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010350 ;
+                         rdfs:label "database update statement"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010353
+ontologies:TURBO_0010353 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010352 ;
+                         rdfs:label "SPARQL update statement"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010354
+ontologies:TURBO_0010354 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000051 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010349
+                                             ] ;
+                         rdfs:subClassOf obo:IAO_0000104 ;
+                         rdfs:label "SPARQL update statement generation specification"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010355
+ontologies:TURBO_0010355 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000104 ;
+                         rdfs:comment "either where, insert or delete blocks?" ;
+                         rdfs:label "Acorn SPARQL update fragment recipe"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010356
+ontologies:TURBO_0010356 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010354 ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty obo:BFO_0000051 ;
+                                           owl:someValuesFrom ontologies:TURBO_0010355
+                                         ] ;
+                         obo:IAO_0000118 "Acorn recipe-based SPARQL update statement generation specification"@en ;
+                         rdfs:label "Acorn specification" .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010373
+ontologies:TURBO_0010373 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:RO_0000059 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010353
+                                             ] ;
+                         rdfs:subClassOf obo:OBI_0000260 ;
+                         rdfs:comment "I wanted to say that this inheres in some SPARQL engine, but those are currently GDCs, not IDCs" ;
+                         rdfs:label "SPARQL update plan"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010374
+ontologies:TURBO_0010374 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:RO_0000059 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010354
+                                             ] ;
+                         rdfs:subClassOf obo:OBI_0000260 ;
+                         rdfs:label "SPARQL update statement generation plan"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010375
+ontologies:TURBO_0010375 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000594 ;
+                         rdfs:label "SPARQL engine / triplestore"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010376
+ontologies:TURBO_0010376 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000594 ;
+                         rdfs:label "Acorn interpreter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010377
+ontologies:TURBO_0010377 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:RO_0000059 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010356
+                                             ] ;
+                         rdfs:subClassOf ontologies:TURBO_0010374 ;
+                         rdfs:comment "I wanted to say that this inheres in some Acorn interpreter, bu that's currently a GDC not an IDC" ;
+                         rdfs:label "Acorn SPARQL update statement generation plan"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010378
+ontologies:TURBO_0010378 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty obo:BFO_0000055 ;
+                                               owl:someValuesFrom ontologies:TURBO_0010377
+                                             ] ;
+                         rdfs:subClassOf ontologies:TURBO_0010351 ;
+                         rdfs:label "SPARQL update statement generation by Acorn"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010379
+ontologies:TURBO_0010379 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000033 ;
+                         obo:IAO_0000118 "Acorn DSL" ;
+                         rdfs:label "Acorn domain specific language"@en .
+
+
 ###  http://transformunify.org/ontologies/TURBO_0010383
 ontologies:TURBO_0010383 rdf:type owl:Class ;
                          rdfs:subClassOf obo:OGMS_0000099 ;
                          rdfs:label "office vist"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010395
+ontologies:TURBO_0010395 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010267 ;
+                         rdfs:label "patient identifier source denoter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010404
+ontologies:TURBO_0010404 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000027 ;
+                         rdfs:label "provenance data item"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
@@ -5995,30 +6226,12 @@ obo:UO_0000008 rdf:type owl:NamedIndividual ,
 
 ###  http://purl.obolibrary.org/obo/UO_0000009
 obo:UO_0000009 rdf:type owl:NamedIndividual ,
-                        obo:UO_0000002 ;
-               obo:IAO_0000115 "A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France." ;
-               ontologies:TURBO_0010147 9529 ;
-               oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "kg" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:id "UO:0000009" ;
-               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
-               rdfs:label "kilogram" .
+                        obo:UO_0000002 .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000015
 obo:UO_0000015 rdf:type owl:NamedIndividual ,
-                        obo:UO_0000001 ;
-               obo:IAO_0000115 "A length unit which is equal to one hundredth of a meter or 10^[-2] m." ;
-               ontologies:TURBO_0010147 8582 ;
-               oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "centimetre" ,
-                                        "cm" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:id "UO:0000015" ;
-               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
-               rdfs:comment "is METER the unit preferred by OMOP for height 3036277 / LOINC 8302-2?" ;
-               rdfs:label "centimeter" .
+                        obo:UO_0000001 .
 
 
 ###  http://purl.obolibrary.org/obo/UO_0000016
@@ -6906,21 +7119,20 @@ ontologies:TURBO_0010255 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010256 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000510 ;
                          obo:IAO_0000219 ontologies:TURBO_0010112 ;
-                         rdfs:label "Synthea health care encounter registry denoter"@en ;
-                         owl:deprecated "true"^^xsd:boolean .
+                         rdfs:label "Synthea health care encounter registry denoter"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010266
 ontologies:TURBO_0010266 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010265 ;
-                         rdfs:label "Synthea OMOP health care identifier source"@en .
+                         rdfs:label "OMOP health care identifier source"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010269
 ontologies:TURBO_0010269 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010268 ;
                          obo:IAO_0000219 ontologies:TURBO_0010266 ;
-                         rdfs:label "Denoter of the Synthea OMOP health care encounter identifier source"@en .
+                         rdfs:label "Denoter of the OMOP health care encounter identifier source"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010274
@@ -6985,6 +7197,45 @@ ontologies:TURBO_0010302 rdf:type owl:NamedIndividual ,
                          rdfs:label "PMC MRN registry denoter"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010394
+ontologies:TURBO_0010394 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010296 ;
+                         rdfs:label "OMOP patient identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010396
+ontologies:TURBO_0010396 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010395 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010394 ;
+                         rdfs:label "denoter of the OMOP patient identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010397
+ontologies:TURBO_0010397 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010257 ;
+                         rdfs:label "OMOP measurement identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010398
+ontologies:TURBO_0010398 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010267 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010397 ;
+                         rdfs:label "denoter of the OMOP measurement identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010399
+ontologies:TURBO_0010399 rdf:type owl:NamedIndividual ,
+                                  obo:IAO_0000579 ;
+                         rdfs:label "Synthea measurement registry"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010400
+ontologies:TURBO_0010400 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_00001501 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010399 ;
+                         rdfs:label "denoter of the Synthea measurement registry"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 ;
@@ -7003,9 +7254,9 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
+                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C66830 ,
-                                  obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -7014,10 +7265,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
                 rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -7061,6 +7312,28 @@ obo:OMRSE_00000184 ontologies:TURBO_0010147 8527 .
 obo:RO_0002422 rdfs:label "logical macro assertion on an object property" .
 
 
+obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
+               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
+               oboInOwl:hasExactSynonym "kg" ;
+               rdfs:label "kilogram" ;
+               oboInOwl:id "UO:0000009" ;
+               obo:IAO_0000115 "A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France." ;
+               oboInOwl:created_by "george gkoutos" ;
+               oboInOwl:hasOBONamespace "unit.ontology" .
+
+
+obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
+               rdfs:label "centimeter" ;
+               oboInOwl:hasExactSynonym "cm" ;
+               oboInOwl:id "UO:0000015" ;
+               oboInOwl:hasExactSynonym "centimetre" ;
+               rdfs:comment "is METER the unit preferred by OMOP for height 3036277 / LOINC 8302-2?" ;
+               ontologies:TURBO_0010147 8582 ;
+               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
+               obo:IAO_0000115 "A length unit which is equal to one hundredth of a meter or 10^[-2] m." ;
+               oboInOwl:created_by "george gkoutos" .
+
+
 obo:UO_0000175 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000175" ;
                oboInOwl:hasExactSynonym "gram per litre" ,
@@ -7100,4 +7373,4 @@ Our software developers would like to continue using mnemonics to refer to ontol
 This has_mnemonic datatype property has been created to facilitate and maintain these relationships, most likely with some SPARQL construct statements.""" .
 
 
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
