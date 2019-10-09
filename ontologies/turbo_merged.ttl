@@ -1955,7 +1955,8 @@ obo:BFO_0000156 rdf:type owl:ObjectProperty ;
                 obo:BFO_0000180 "spanOf" ;
                 obo:IAO_0000412 obo:ogg.owl ,
                                 <http://purl.obolibrary.org/obo/bfo/2012-07-20/bfo.owl> ;
-                obo:IAO_0000600 "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ;
+                obo:IAO_0000600 "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ,
+                                "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ;
                 rdfs:isDefinedBy obo:bfo.owl ,
                                  <http://purl.obolibrary.org/obo/bfo/2012-07-20/bfo.owl> ;
                 rdfs:label "has temporal occupant"@en .
@@ -6520,7 +6521,8 @@ obo:BFO_0000006 rdf:type owl:Class ;
                                 "Spatial region doesn't have a closure axiom because the subclasses don't exhaust all possibilites. An example would be the union of a spatial point and a spatial line that doesn't overlap the point, or two spatial lines that intersect at a single point. In both cases the resultant spatial region is neither 0-dimensional, 1-dimensional, 2-dimensional, or 3-dimensional."@en ;
                 obo:IAO_0000412 obo:ogg.owl ;
                 obo:IAO_0000600 "A spatial region is a continuant entity that is a continuant_part_of spaceR as defined relative to some frame R. (axiom label in BFO2 Reference: [035-001])"@en ;
-                obo:IAO_0000601 "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ;
+                obo:IAO_0000601 "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ,
+                                "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ;
                 obo:IAO_0000602 "(forall (x y t) (if (and (SpatialRegion x) (continuantPartOfAt y x t)) (SpatialRegion y))) // axiom label in BFO2 CLIF: [036-001] " ,
                                 "(forall (x) (if (SpatialRegion x) (Continuant x))) // axiom label in BFO2 CLIF: [035-001] " ;
                 rdfs:isDefinedBy obo:bfo.owl ;
@@ -6599,7 +6601,8 @@ obo:BFO_0000011 rdf:type owl:Class ;
                                 "the spatiotemporal region occupied by the development of a cancer tumor"@en ;
                 obo:IAO_0000412 obo:ogg.owl ;
                 obo:IAO_0000600 "A spatiotemporal region is an occurrent entity that is part of spacetime. (axiom label in BFO2 Reference: [095-001])"@en ;
-                obo:IAO_0000601 "All parts of spatiotemporal regions are spatiotemporal regions. (axiom label in BFO2 Reference: [096-001])"@en ,
+                obo:IAO_0000601 "All parts of spatiotemporal regions are spatiotemporal regions. (axiom label in BFO2 Reference: [096-001])"@en ,
+                                "All parts of spatiotemporal regions are spatiotemporal regions. (axiom label in BFO2 Reference: [096-001])"@en ,
                                 "Each spatiotemporal region at any time t projects_onto some spatial region at t. (axiom label in BFO2 Reference: [099-001])"@en ,
                                 "Each spatiotemporal region projects_onto some temporal region. (axiom label in BFO2 Reference: [098-001])"@en ,
                                 "Every spatiotemporal region occupies_spatiotemporal_region itself."@en ,
@@ -7662,6 +7665,14 @@ obo:FMA_256135 rdf:type owl:Class ;
                oboInOwl:id "FMA:256135"^^xsd:string ;
                rdfs:label "Body"@en ,
                           "corpo"@pt .
+
+
+###  http://purl.obolibrary.org/obo/FMA_50707
+obo:FMA_50707 rdf:type owl:Class ;
+              rdfs:subClassOf obo:BFO_0000002 ;
+              obo:IAO_0000115 "Spatial association relationship which describes the containment, adjacency and anatomical coordinates of physical anatomical entities. Examples: anatomical containment, anatomical adjacency, anatomical coordinate."^^xsd:string ;
+              obo:IAO_0000412 obo:fma.owl ;
+              rdfs:label "Anatomical location"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/FMA_67473
@@ -21831,14 +21842,14 @@ ontologies:TURBO_0010252 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010255 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000505 ;
                          obo:IAO_0000219 ontologies:TURBO_0010083 ;
-                         rdfs:label "Synthea patient registry denoter"@en .
+                         rdfs:label "denoter of the Synthea patient registry"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010256
 ontologies:TURBO_0010256 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000510 ;
                          obo:IAO_0000219 ontologies:TURBO_0010112 ;
-                         rdfs:label "Synthea health care encounter registry denoter"@en .
+                         rdfs:label "denoter of the Synthea health care encounter registry"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010266
@@ -21851,7 +21862,7 @@ ontologies:TURBO_0010266 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010269 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010268 ;
                          obo:IAO_0000219 ontologies:TURBO_0010266 ;
-                         rdfs:label "Denoter of the OMOP health care encounter identifier source"@en .
+                         rdfs:label "denoter of the OMOP health care encounter identifier source"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010274
@@ -21932,6 +21943,7 @@ ontologies:TURBO_0010396 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0010397
 ontologies:TURBO_0010397 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010257 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010397 ;
                          rdfs:label "OMOP measurement identifier source"@en .
 
 
@@ -21955,24 +21967,44 @@ ontologies:TURBO_0010400 rdf:type owl:NamedIndividual ,
                          rdfs:label "denoter of the Synthea measurement registry"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010405
+ontologies:TURBO_0010405 rdf:type owl:NamedIndividual ,
+                                  obo:IAO_0000579 ;
+                         rdfs:label "Synthea procudure registry"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010406
+ontologies:TURBO_0010406 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_00001501 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010405 ;
+                         rdfs:label "denoter of the Synthea procedure registry"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010407
+ontologies:TURBO_0010407 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010267 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010408 ;
+                         rdfs:label "denoter of the OMOP procedure identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010408
+ontologies:TURBO_0010408 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010257 ;
+                         rdfs:label "OMOP procedure identifier source"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
 
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pdro.owl
 ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -21981,34 +22013,25 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:ontoneo.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22018,24 +22041,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22056,34 +22061,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -22092,7 +22070,151 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:pdro.owl
  ] .
 
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22104,7 +22226,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:geno.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:pr.owl
@@ -22113,6 +22241,18 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -22122,6 +22262,9 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -22131,7 +22274,28 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22140,7 +22304,28 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:pdro.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:pdro.owl
@@ -22155,9 +22340,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -22171,9 +22353,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22197,25 +22376,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -22275,130 +22436,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ro.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22424,9 +22462,9 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
+                oboInOwl:inSubset obo:NCIT_C125922 ;
+                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C61410 .
 
 
@@ -22439,8 +22477,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                                   obo:NCIT_C61410 .
 
 
-obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
-                rdfs:label "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
+                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
@@ -22454,8 +22492,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
@@ -22487,9 +22525,9 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
             rdfs:seeAlso "http://www.infectiousdiseaseontology.org" ;
             dc:creator "Albert Goldfain" ,
                        "Alexander Diehl" ,
-                       "Bjoern Peters" ;
+                       "Bjoern Peters" ,
+                       "Alan Ruttenberg" ;
             rdfs:comment "The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as 'pathogen', 'host', 'vector', and 'vaccine'.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. "@en ;
-            dc:creator "Alan Ruttenberg" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
             protege:defaultLanguage "en" ;
             dc:creator "Barry Smith" ;
@@ -22500,17 +22538,17 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
 
 obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             dc:description "OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. "@en ;
-            foaf:mbox <mailto:yongqunh@med.umich.edu> ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> .
+            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
+            foaf:mbox <mailto:yongqunh@med.umich.edu> .
 
 
-obo:omrse.owl rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "William Hogan"@en ,
-                         "Amanda Hicks" ,
+obo:omrse.owl dc:creator "William Hogan"@en ;
+              rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
+              dc:creator "Amanda Hicks" ,
                          "Mathias Brochhausen"@en ,
                          "Swetha Garimalla"@en ;
-              rdfs:label "The Ontology of Medically Related Social Entities"@en ;
               dc:contributor "Daniel Welch" ;
+              rdfs:label "The Ontology of Medically Related Social Entities"@en ;
               owl:versionInfo "2019-21-02" ;
               dc:license "CC-BY 4.0" ;
               dc:creator "Shariq Tariq"@en .
@@ -22525,8 +22563,8 @@ obo:pdro.owl dc:creator "Jean-François Éthier" ,
 
 
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-           oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
            oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
+           oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
            rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
                         "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
 

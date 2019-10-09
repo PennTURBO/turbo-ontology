@@ -7154,14 +7154,14 @@ ontologies:TURBO_0010252 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010255 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000505 ;
                          obo:IAO_0000219 ontologies:TURBO_0010083 ;
-                         rdfs:label "Synthea patient registry denoter"@en .
+                         rdfs:label "denoter of the Synthea patient registry"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010256
 ontologies:TURBO_0010256 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0000510 ;
                          obo:IAO_0000219 ontologies:TURBO_0010112 ;
-                         rdfs:label "Synthea health care encounter registry denoter"@en .
+                         rdfs:label "denoter of the Synthea health care encounter registry"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010266
@@ -7174,7 +7174,7 @@ ontologies:TURBO_0010266 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010269 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010268 ;
                          obo:IAO_0000219 ontologies:TURBO_0010266 ;
-                         rdfs:label "Denoter of the OMOP health care encounter identifier source"@en .
+                         rdfs:label "denoter of the OMOP health care encounter identifier source"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010274
@@ -7255,6 +7255,7 @@ ontologies:TURBO_0010396 rdf:type owl:NamedIndividual ,
 ###  http://transformunify.org/ontologies/TURBO_0010397
 ontologies:TURBO_0010397 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010257 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010397 ;
                          rdfs:label "OMOP measurement identifier source"@en .
 
 
@@ -7276,6 +7277,32 @@ ontologies:TURBO_0010400 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_00001501 ;
                          obo:IAO_0000219 ontologies:TURBO_0010399 ;
                          rdfs:label "denoter of the Synthea measurement registry"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010405
+ontologies:TURBO_0010405 rdf:type owl:NamedIndividual ,
+                                  obo:IAO_0000579 ;
+                         rdfs:label "Synthea procudure registry"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010406
+ontologies:TURBO_0010406 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_00001501 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010405 ;
+                         rdfs:label "denoter of the Synthea procedure registry"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010407
+ontologies:TURBO_0010407 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010267 ;
+                         obo:IAO_0000219 ontologies:TURBO_0010408 ;
+                         rdfs:label "denoter of the OMOP procedure identifier source"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010408
+ontologies:TURBO_0010408 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010257 ;
+                         rdfs:label "OMOP procedure identifier source"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
@@ -7307,9 +7334,9 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
+                oboInOwl:inSubset obo:NCIT_C125922 ;
+                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C61410 .
 
 
@@ -7322,8 +7349,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                                   obo:NCIT_C61410 .
 
 
-obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
-                rdfs:label "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
+                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
@@ -7364,8 +7391,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
@@ -7388,12 +7415,12 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000176" ;
                oboInOwl:hasExactSynonym "milligram per millilitre" ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasExactSynonym "mg/ml" ;
-               oboInOwl:hasOBONamespace "unit.ontology" .
+               oboInOwl:hasOBONamespace "unit.ontology" ;
+               oboInOwl:hasExactSynonym "mg/ml" .
 
 
-obo:UO_0000208 oboInOwl:hasExactSynonym "g/dl" ;
-               oboInOwl:id "UO:0000208" ;
+obo:UO_0000208 oboInOwl:id "UO:0000208" ;
+               oboInOwl:hasExactSynonym "g/dl" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:created_by "george gkoutos" ;
