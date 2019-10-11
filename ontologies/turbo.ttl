@@ -7492,6 +7492,13 @@ ontologies:TURBO_0010427 rdf:type owl:NamedIndividual ,
                          rdfs:label "Penn Data Store database"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0020003
+ontologies:TURBO_0020003 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010409 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010425 ;
+                         rdfs:label "patient_class"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 ;
@@ -7521,10 +7528,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -7578,8 +7585,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 rdfs:label "centimeter" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
+obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
+               rdfs:label "centimeter" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
