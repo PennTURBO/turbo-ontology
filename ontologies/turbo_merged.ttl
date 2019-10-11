@@ -22148,6 +22148,37 @@ ontologies:TURBO_0010423 rdf:type owl:NamedIndividual ,
                          rdfs:label "more_units"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010424
+ontologies:TURBO_0010424 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010409 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010425 ;
+                         rdfs:label "enc_type_code"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010425
+ontologies:TURBO_0010425 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010416 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010426 ;
+                         rdfs:label "patient_encounter"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010426
+ontologies:TURBO_0010426 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010414 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010427 ;
+                         obo:IAO_0000118 "MDM" ;
+                         rdfs:label "Penn Data Store Master Data Managment schema"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010427
+ontologies:TURBO_0010427 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010412 ;
+                         obo:IAO_0000118 "PDS" ,
+                                         """host = pdsprd.uphs.upenn.edu
+(oracle)""" ;
+                         rdfs:label "Penn Data Store database"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
@@ -22606,9 +22637,9 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                  obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
-                 oboInOwl:inSubset obo:NCIT_C66830 ;
                  rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                 oboInOwl:inSubset obo:NCIT_C61410 ;
+                 oboInOwl:inSubset obo:NCIT_C66830 ,
+                                   obo:NCIT_C61410 ;
                  oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                           "Total Gleason Score for Prostate Cancer" ;
                  oboInOwl:inSubset obo:NCIT_C125922 .
@@ -22632,8 +22663,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                                   obo:NCIT_C125922 .
 
 
-obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
-                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
+                rdfs:label "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
@@ -22660,8 +22691,8 @@ obo:UO_0000015 rdfs:label "centimeter" ;
 
 
 obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
-               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                oboInOwl:id "UO:0000272"^^xsd:string ;
+               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                obo:IAO_0000118 "mmHg"^^xsd:string ;
                oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                rdfs:label "millimetres of mercury"^^xsd:string ;
@@ -22694,14 +22725,14 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
 
 obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             dc:description "OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. "@en ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
-            foaf:mbox <mailto:yongqunh@med.umich.edu> .
+            foaf:mbox <mailto:yongqunh@med.umich.edu> ;
+            dc:license <http://creativecommons.org/licenses/by/3.0/> .
 
 
 obo:omrse.owl dc:creator "William Hogan"@en ;
               rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "Amanda Hicks" ,
-                         "Mathias Brochhausen"@en ,
+              dc:creator "Mathias Brochhausen"@en ,
+                         "Amanda Hicks" ,
                          "Swetha Garimalla"@en ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
               dc:contributor "Daniel Welch" ;
@@ -22721,8 +22752,8 @@ obo:pdro.owl dc:creator "Jean-François Éthier" ,
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
            oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
            oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
-           rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
-                        "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
+           rdfs:comment "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string ,
+                        "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string .
 
 
 obo:ro.owl terms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
