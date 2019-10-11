@@ -17162,7 +17162,7 @@ ontologies:TURBO_0010103 rdf:type owl:Class ;
 
 ###  http://transformunify.org/ontologies/TURBO_0010104
 ontologies:TURBO_0010104 rdf:type owl:Class ;
-                         rdfs:subClassOf obo:IAO_0000100 ;
+                         rdfs:subClassOf ontologies:TURBO_0010418 ;
                          obo:IAO_0000117 "Mark A. Miller" ;
                          dc:date "2019-03-01T22:46:55Z"^^xsd:dateTime ;
                          rdfs:label "CSV file" .
@@ -17878,6 +17878,55 @@ ontologies:TURBO_0010395 rdf:type owl:Class ;
 ontologies:TURBO_0010404 rdf:type owl:Class ;
                          rdfs:subClassOf obo:IAO_0000027 ;
                          rdfs:label "provenance data item"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010409
+ontologies:TURBO_0010409 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000100 ;
+                         rdfs:comment "could come from a relational database or a delimited file." ;
+                         rdfs:label "data column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010410
+ontologies:TURBO_0010410 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "value_as_number column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010412
+ontologies:TURBO_0010412 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000027 ;
+                         rdfs:label "relational database"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010414
+ontologies:TURBO_0010414 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000027 ;
+                         rdfs:label "relational schema"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010416
+ontologies:TURBO_0010416 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000027 ;
+                         rdfs:label "data table"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010417
+ontologies:TURBO_0010417 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010416 ;
+                         rdfs:label "relational data table"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010418
+ontologies:TURBO_0010418 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010416 ;
+                         rdfs:label "delited data file"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010419
+ontologies:TURBO_0010419 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010417 ;
+                         rdfs:label "omop measurement table"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0001799
@@ -21993,6 +22042,34 @@ ontologies:TURBO_0010408 rdf:type owl:NamedIndividual ,
                          rdfs:label "OMOP procedure identifier source"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010411
+ontologies:TURBO_0010411 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010410 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010420 ;
+                         rdfs:label "syntheaomop_post_icbo.cdm_synthea10.measurement.value_as_number"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010413
+ontologies:TURBO_0010413 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010412 ;
+                         rdfs:label "syntheaomop_post_icbo at pennturbo.org port 5432"@en ;
+                         rdfs:seeAlso "jdbc:postgresql://localhost:5432/syntheaomop_post_icbo?currentSchema=cdm_synthea10" .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010415
+ontologies:TURBO_0010415 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010414 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010413 ;
+                         rdfs:label "syntheaomop_post_icbo schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010420
+ontologies:TURBO_0010420 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010419 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010415 ;
+                         rdfs:label "measurement in syntheaomop_post_icbo schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
@@ -22473,8 +22550,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 ,
+                                  obo:NCIT_C125922 .
 
 
 obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
@@ -22505,8 +22582,8 @@ obo:UO_0000015 rdfs:label "centimeter" ;
 
 
 obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
-               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                oboInOwl:id "UO:0000272"^^xsd:string ;
+               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                rdfs:label "millimetres of mercury"^^xsd:string ;
                oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
@@ -22525,9 +22602,9 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
             rdfs:seeAlso "http://www.infectiousdiseaseontology.org" ;
             dc:creator "Albert Goldfain" ,
                        "Alexander Diehl" ,
-                       "Bjoern Peters" ,
-                       "Alan Ruttenberg" ;
+                       "Bjoern Peters" ;
             rdfs:comment "The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as 'pathogen', 'host', 'vector', and 'vaccine'.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. "@en ;
+            dc:creator "Alan Ruttenberg" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
             protege:defaultLanguage "en" ;
             dc:creator "Barry Smith" ;
@@ -22542,13 +22619,13 @@ obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             foaf:mbox <mailto:yongqunh@med.umich.edu> .
 
 
-obo:omrse.owl dc:creator "William Hogan"@en ;
-              rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "Amanda Hicks" ,
+obo:omrse.owl rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
+              dc:creator "William Hogan"@en ,
+                         "Amanda Hicks" ,
                          "Mathias Brochhausen"@en ,
                          "Swetha Garimalla"@en ;
-              dc:contributor "Daniel Welch" ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
+              dc:contributor "Daniel Welch" ;
               owl:versionInfo "2019-21-02" ;
               dc:license "CC-BY 4.0" ;
               dc:creator "Shariq Tariq"@en .
@@ -22563,8 +22640,8 @@ obo:pdro.owl dc:creator "Jean-François Éthier" ,
 
 
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-           oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
            oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
+           oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
            rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
                         "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
 
