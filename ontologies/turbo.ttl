@@ -5995,7 +5995,7 @@ ontologies:TURBO_0010404 rdf:type owl:Class ;
 ###  http://transformunify.org/ontologies/TURBO_0010409
 ontologies:TURBO_0010409 rdf:type owl:Class ;
                          rdfs:subClassOf obo:IAO_0000100 ;
-                         rdfs:comment "could come from a relational database or a delimited file." ;
+                         rdfs:comment "could come from a relational database table, a view or ephemeral query result, or a delimited file." ;
                          rdfs:label "data column"@en .
 
 
@@ -6039,6 +6039,12 @@ ontologies:TURBO_0010418 rdf:type owl:Class ;
 ontologies:TURBO_0010419 rdf:type owl:Class ;
                          rdfs:subClassOf ontologies:TURBO_0010417 ;
                          rdfs:label "omop measurement table"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010421
+ontologies:TURBO_0010421 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000027 ;
+                         rdfs:label "query result"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
@@ -6588,6 +6594,7 @@ obo:UO_0000222 rdf:type owl:NamedIndividual ,
 ###  http://purl.obolibrary.org/obo/UO_0000272
 obo:UO_0000272 rdf:type owl:NamedIndividual ,
                         obo:UO_0000109 ;
+               obo:IAO_0000118 "mmHg" ;
                ontologies:TURBO_0010147 8876 .
 
 
@@ -7382,6 +7389,78 @@ ontologies:TURBO_0010420 rdf:type owl:NamedIndividual ,
                          rdfs:label "measurement in syntheaomop_post_icbo schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010422
+ontologies:TURBO_0010422 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010421 ;
+                         obo:RO_0001000 ontologies:TURBO_0010420 ;
+                         rdfs:comment """MAPPING
+FROM SQL {
+--  SELECT *
+--  FROM \"cdm_synthea10\".\"measurement\"
+select
+	*,
+	(case
+		when m.unit_source_value = 'mmHg' then 8876 
+		else m.unit_concept_id
+	end ) as more_units
+from
+	cdm_synthea10.measurement m
+--  WHERE \"measurement_date\" IS NOT NULL AND \"measurement_time\" IS NOT NULL AND \"operator_concept_id\" IS NOT NULL AND \"value_as_number\" IS NOT NULL AND \"value_as_concept_id\" IS NOT NULL AND \"unit_concept_id\" IS NOT NULL AND \"range_low\" IS NOT NULL AND \"range_high\" IS NOT NULL AND \"provider_id\" IS NOT NULL AND \"visit_occurrence_id\" IS NOT NULL AND \"visit_detail_id\" IS NOT NULL AND \"measurement_source_value\" IS NOT NULL AND \"unit_source_value\" IS NOT NULL AND \"value_source_value\" IS NOT NULL
+}
+TO {
+  ?subject <http://api.stardog.com/measurement#measurement_concept_id> ?measurement_concept_id .
+  ?subject <http://api.stardog.com/measurement#measurement_date> ?measurement_date .
+  ?subject <http://api.stardog.com/measurement#measurement_datetime> ?measurement_datetime .
+  ?subject <http://api.stardog.com/measurement#measurement_id> ?measurement_id .
+  ?subject <http://api.stardog.com/measurement#measurement_source_concept_id> ?measurement_source_concept_id .
+  ?subject <http://api.stardog.com/measurement#measurement_source_value> ?measurement_source_value .
+  ?subject <http://api.stardog.com/measurement#measurement_time> ?measurement_time .
+  ?subject <http://api.stardog.com/measurement#measurement_type_concept_id> ?measurement_type_concept_id .
+  ?subject <http://api.stardog.com/measurement#operator_concept_id> ?operator_concept_id .
+  ?subject <http://api.stardog.com/measurement#person_id> ?person_id .
+  ?subject <http://api.stardog.com/measurement#provider_id> ?provider_id .
+  ?subject <http://api.stardog.com/measurement#range_high> ?range_high .
+  ?subject <http://api.stardog.com/measurement#range_low> ?range_low .
+  ?subject <http://api.stardog.com/measurement#unit_concept_id> ?unit_concept_id .
+  ?subject <http://api.stardog.com/measurement#more_units> ?more_units .
+  ?subject <http://api.stardog.com/measurement#unit_source_value> ?unit_source_value .
+  ?subject <http://api.stardog.com/measurement#value_as_concept_id> ?value_as_concept_id .
+  ?subject <http://api.stardog.com/measurement#value_as_number> ?value_as_number .
+  ?subject <http://api.stardog.com/measurement#value_source_value> ?value_source_value .
+  ?subject <http://api.stardog.com/measurement#visit_detail_id> ?visit_detail_id .
+  ?subject <http://api.stardog.com/measurement#visit_occurrence_id> ?visit_occurrence_id .
+  ?subject rdf:type :measurement
+} WHERE {
+#  BIND(template(\"measurement{measurement_id}_{person_id}_{measurement_concept_id}_{measurement_date}_{measurement_datetime}_{measurement_time}_{measurement_type_concept_id}_{operator_concept_id}_{value_as_number}_{value_as_concept_id}_{unit_concept_id}_{range_low}_{range_high}_{provider_id}_{visit_occurrence_id}_{visit_detail_id}_{measurement_source_value}_{measurement_source_concept_id}_{unit_source_value}_{value_source_value}\") AS ?subject)
+  BIND(template(\"measurement_{measurement_id}\") AS ?subject)
+  BIND(xsd:date(?measurement_date) AS ?measurement_date)
+  BIND(xsd:dateTime(?measurement_datetime) AS ?measurement_datetime)
+  BIND(xsd:double(?range_high) AS ?range_high)
+  BIND(xsd:double(?range_low) AS ?range_low)
+  BIND(xsd:double(?value_as_number) AS ?value_as_number)
+  BIND(xsd:integer(?measurement_concept_id) AS ?measurement_concept_id)
+  BIND(xsd:integer(?measurement_id) AS ?measurement_id)
+  BIND(xsd:integer(?measurement_source_concept_id) AS ?measurement_source_concept_id)
+  BIND(xsd:integer(?measurement_type_concept_id) AS ?measurement_type_concept_id)
+  BIND(xsd:integer(?operator_concept_id) AS ?operator_concept_id)
+  BIND(xsd:integer(?person_id) AS ?person_id)
+  BIND(xsd:integer(?provider_id) AS ?provider_id)
+  BIND(xsd:integer(?unit_concept_id) AS ?unit_concept_id)
+  BIND(xsd:integer(?value_as_concept_id) AS ?value_as_concept_id)
+  BIND(xsd:integer(?visit_detail_id) AS ?visit_detail_id)
+  BIND(xsd:integer(?visit_occurrence_id) AS ?visit_occurrence_id)
+}""" ;
+                         rdfs:label "omop measurements with manually asserted mmHg units for BP"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010423
+ontologies:TURBO_0010423 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010409 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010422 ;
+                         rdfs:comment "" ;
+                         rdfs:label "more_units"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 ;
@@ -7400,9 +7479,9 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
+                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C66830 ,
-                                  obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -7411,9 +7490,9 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
                 oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
+                oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
                 oboInOwl:inSubset obo:NCIT_C61410 .
 
 
@@ -7492,12 +7571,12 @@ obo:UO_0000176 oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000176" ;
                oboInOwl:hasExactSynonym "milligram per millilitre" ;
                oboInOwl:created_by "george gkoutos" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               oboInOwl:hasExactSynonym "mg/ml" .
+               oboInOwl:hasExactSynonym "mg/ml" ;
+               oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000208 oboInOwl:hasExactSynonym "g/dl" ;
-               oboInOwl:id "UO:0000208" ;
+obo:UO_0000208 oboInOwl:id "UO:0000208" ;
+               oboInOwl:hasExactSynonym "g/dl" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:created_by "george gkoutos" ;
