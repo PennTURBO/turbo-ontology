@@ -5298,7 +5298,7 @@ ontologies:TURBO_0010106 rdf:type owl:Class ;
 
 ###  http://transformunify.org/ontologies/TURBO_0010134
 ontologies:TURBO_0010134 rdf:type owl:Class ;
-                         rdfs:subClassOf obo:IAO_0000030 ,
+                         rdfs:subClassOf ontologies:TURBO_0010433 ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty obo:BFO_0000051 ;
                                            owl:someValuesFrom obo:IAO_0000028
@@ -6057,6 +6057,12 @@ ontologies:TURBO_0010428 rdf:type owl:Class ;
 ontologies:TURBO_0010430 rdf:type owl:Class ;
                          rdfs:subClassOf ontologies:TURBO_0010409 ;
                          rdfs:label "gender_concept_id column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010433
+ontologies:TURBO_0010433 rdf:type owl:Class ;
+                         rdfs:subClassOf obo:IAO_0000030 ;
+                         rdfs:label "relational key"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
@@ -7543,9 +7549,9 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
+                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C66830 ,
-                                  obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -7555,9 +7561,9 @@ obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -7565,12 +7571,12 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 ,
+                                  obo:NCIT_C125922 .
 
 
-obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
-                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
+                rdfs:label "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
@@ -7611,8 +7617,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
