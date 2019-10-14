@@ -6032,7 +6032,7 @@ ontologies:TURBO_0010417 rdf:type owl:Class ;
 ###  http://transformunify.org/ontologies/TURBO_0010418
 ontologies:TURBO_0010418 rdf:type owl:Class ;
                          rdfs:subClassOf ontologies:TURBO_0010416 ;
-                         rdfs:label "delited data file"@en .
+                         rdfs:label "delimited data file"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010419
@@ -6045,6 +6045,18 @@ ontologies:TURBO_0010419 rdf:type owl:Class ;
 ontologies:TURBO_0010421 rdf:type owl:Class ;
                          rdfs:subClassOf obo:IAO_0000027 ;
                          rdfs:label "query result"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010428
+ontologies:TURBO_0010428 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010417 ;
+                         rdfs:label "omop person table"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010430
+ontologies:TURBO_0010430 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "gender_concept_id column"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
@@ -7379,14 +7391,14 @@ ontologies:TURBO_0010413 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010415 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010414 ;
                          <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010413 ;
-                         rdfs:label "syntheaomop_post_icbo schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+                         rdfs:label "cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010420
 ontologies:TURBO_0010420 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010419 ;
                          <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010415 ;
-                         rdfs:label "measurement in syntheaomop_post_icbo schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+                         rdfs:label "measurement in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010422
@@ -7492,6 +7504,19 @@ ontologies:TURBO_0010427 rdf:type owl:NamedIndividual ,
                          rdfs:label "Penn Data Store database"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010429
+ontologies:TURBO_0010429 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010428 ;
+                         rdfs:label "person in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010431
+ontologies:TURBO_0010431 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010430 ;
+                         <http://purl.obolibrary.org/obo/fma#part_of> ontologies:TURBO_0010429 ;
+                         rdfs:label "gender_concept_id column from person in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
 ###  http://transformunify.org/ontologies/TURBO_0020003
 ontologies:TURBO_0020003 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010409 ;
@@ -7528,10 +7553,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ;
+                rdfs:label "Primary Gleason Pattern" ;
+                oboInOwl:inSubset obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -7543,8 +7568,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                                   obo:NCIT_C125922 .
 
 
-obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
-                rdfs:label "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
+                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
@@ -7585,8 +7610,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
