@@ -11646,6 +11646,7 @@ obo:OBI_0000934 rdf:type owl:Class ;
                 obo:IAO_0000114 obo:IAO_0000123 ;
                 obo:IAO_0000115 "is the injection of a material entity (bearing the administered substance role) into the muscle (bearing the target role) of an organism using a syringe"^^xsd:string ;
                 obo:IAO_0000412 obo:obi.owl ;
+                ontologies:TURBO_0010147 4295880 ;
                 rdfs:label "intramuscular injection"^^xsd:string .
 
 
@@ -13712,6 +13713,7 @@ obo:OGMS_0000057 rdf:type owl:Class ;
                  obo:IAO_0000119 "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
                  obo:IAO_0000232 "creation date: 2010-07-19T11:50:18Z" ;
                  obo:IAO_0000412 obo:ogms.owl ;
+                 ontologies:TURBO_0010147 4240345 ;
                  rdfs:label "physical examination" .
 
 
@@ -13803,6 +13805,7 @@ editor date: 2017-04-18
                  obo:IAO_0000412 obo:ogms.owl ,
                                  obo:ontoneo.owl ,
                                  obo:pdro.owl ;
+                 ontologies:TURBO_0010147 4078793 ;
                  rdfs:label "health care process" ,
                             "health care process"@en .
 
@@ -22852,10 +22855,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                rdfs:label "Primary Gleason Pattern" ;
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -22882,8 +22885,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
@@ -22895,11 +22898,11 @@ obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
 
 
 obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
-               oboInOwl:id "UO:0000272"^^xsd:string ;
                oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
+               oboInOwl:id "UO:0000272"^^xsd:string ;
                obo:IAO_0000118 "mmHg"^^xsd:string ;
-               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                rdfs:label "millimetres of mercury"^^xsd:string ;
+               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:hasOBONamespace "unit.ontology"^^xsd:string ;
                oboInOwl:created_by "george gkoutos"^^xsd:string ;
@@ -22929,8 +22932,8 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
 
 obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             dc:description "OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. "@en ;
-            foaf:mbox <mailto:yongqunh@med.umich.edu> ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> .
+            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
+            foaf:mbox <mailto:yongqunh@med.umich.edu> .
 
 
 obo:omrse.owl dc:creator "William Hogan"@en ;
@@ -22940,8 +22943,8 @@ obo:omrse.owl dc:creator "William Hogan"@en ;
                          "Swetha Garimalla"@en ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
               dc:contributor "Daniel Welch" ;
-              dc:license "CC-BY 4.0" ;
               owl:versionInfo "2019-21-02" ;
+              dc:license "CC-BY 4.0" ;
               dc:creator "Shariq Tariq"@en .
 
 
