@@ -6215,6 +6215,30 @@ ontologies:TURBO_0010460 rdf:type owl:Class ;
                          rdfs:label "omop procedure_occurrence table"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010462
+ontologies:TURBO_0010462 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "procedure_occurrence_id column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010467
+ontologies:TURBO_0010467 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "procedure_source_value column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010468
+ontologies:TURBO_0010468 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "procedure_source_concept_id"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010471
+ontologies:TURBO_0010471 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "procedure_date column"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
 efo:EFO_0004340 rdf:type owl:Class ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -7763,6 +7787,48 @@ ontologies:TURBO_0010461 rdf:type owl:NamedIndividual ,
                          rdfs:label "procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010464
+ontologies:TURBO_0010464 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010436 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010461 ;
+                         rdfs:label "person_id column from procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010465
+ontologies:TURBO_0010465 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010462 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010461 ;
+                         rdfs:label "procedure_occurrence_id column from procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010466
+ontologies:TURBO_0010466 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010452 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010461 ;
+                         rdfs:label "visit_occurrence_id column from procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010469
+ontologies:TURBO_0010469 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010468 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010461 ;
+                         rdfs:label "procedure_source_concept_id column from procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010470
+ontologies:TURBO_0010470 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010467 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010461 ;
+                         rdfs:label "procedure_source_value column from procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010472
+ontologies:TURBO_0010472 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010471 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010461 ;
+                         rdfs:label "procedure_date column from procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
 ###  http://transformunify.org/ontologies/TURBO_0020003
 ontologies:TURBO_0020003 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010409 ;
@@ -7787,16 +7853,16 @@ obo:IAO_0000414 ontologies:TURBO_0010147 3025315 .
 
 
 obo:IAO_0000572 ontologies:TURBO_0010147 4187458 ,
-                                         4326177 ,
                                          4210433 ,
+                                         4326177 ,
                                          765467 .
 
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
+                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C66830 ,
-                                  obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -7805,10 +7871,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ;
+                rdfs:label "Primary Gleason Pattern" ;
+                oboInOwl:inSubset obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -7816,21 +7882,21 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Secondary Gleason Pattern" ;
                 obo:IAO_0000115 "The second most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON SECONDARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ,
-                                  obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C61410 ,
+                                  obo:NCIT_C125922 .
 
 
-obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
-                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
+                rdfs:label "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
 obo:OBI_0000185 ontologies:TURBO_0010147 4145310 ,
                                          4024289 ,
                                          4163872 ,
+                                         4058899 ,
                                          4252419 ,
                                          4047491 ,
-                                         4058899 ,
                                          4243062 .
 
 
@@ -7865,8 +7931,8 @@ obo:OGMS_0000090 ontologies:TURBO_0010147 4323902 ,
                                           4301346 ,
                                           4199458 ,
                                           4043071 ,
-                                          4170947 ,
                                           4163971 ,
+                                          4170947 ,
                                           4127235 ,
                                           4078793 ,
                                           40493226 ,
@@ -7877,8 +7943,8 @@ obo:OGMS_0000090 ontologies:TURBO_0010147 4323902 ,
                                           4035793 ,
                                           4337138 ,
                                           4181781 ,
-                                          4107731 ,
-                                          4202451 .
+                                          4202451 ,
+                                          4107731 .
 
 
 obo:OGMS_0000096 ontologies:TURBO_0010147 4275113 ,
@@ -7886,8 +7952,8 @@ obo:OGMS_0000096 ontologies:TURBO_0010147 4275113 ,
                                           4059978 ,
                                           4302270 ,
                                           4128031 ,
-                                          4311671 ,
                                           4078199 ,
+                                          4311671 ,
                                           4139065 ,
                                           4238715 ,
                                           4127260 ,
@@ -7903,8 +7969,8 @@ obo:OGMS_0000096 ontologies:TURBO_0010147 4275113 ,
                                           4128597 ,
                                           4015701 ,
                                           4330583 ,
-                                          4139064 ,
                                           4084216 ,
+                                          4139064 ,
                                           40619801 ,
                                           4150970 ,
                                           4117038 ,
@@ -7920,8 +7986,8 @@ obo:OGMS_0000101 ontologies:TURBO_0010147 9203 .
 
 
 obo:OGMS_0000104 ontologies:TURBO_0010147 4075363 ,
-                                          4062501 ,
                                           4249893 ,
+                                          4062501 ,
                                           4037675 ,
                                           4168236 ,
                                           4010253 ,
@@ -7929,8 +7995,8 @@ obo:OGMS_0000104 ontologies:TURBO_0010147 4075363 ,
                                           4254766 ,
                                           4163951 ,
                                           4133840 ,
-                                          4335825 ,
                                           4068785 ,
+                                          4335825 ,
                                           4052083 ,
                                           4302356 ,
                                           4064377 ,
@@ -8018,127 +8084,3 @@ This has_mnemonic datatype property has been created to facilitate and maintain 
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
-
-
-<http://purl.obolibrary.org/obo/IAO_0000572>	<http://transformunify.org/ontologies/TURBO_0010147>	4187458	.
-<http://purl.obolibrary.org/obo/IAO_0000572>	<http://transformunify.org/ontologies/TURBO_0010147>	4210433	.
-<http://purl.obolibrary.org/obo/IAO_0000572>	<http://transformunify.org/ontologies/TURBO_0010147>	4326177	.
-<http://purl.obolibrary.org/obo/IAO_0000572>	<http://transformunify.org/ontologies/TURBO_0010147>	765467	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	37393315	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4014117	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4015052	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4018595	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4018603	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4024509	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4041881	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	40481948	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4060266	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4060626	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4061811	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4078285	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4091461	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4102154	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4134565	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4136494	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4149386	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4149631	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4151408	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4168615	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4181917	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4191851	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4191853	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4195803	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4258677	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	4304821	.
-<http://purl.obolibrary.org/obo/OBI_0000070>	<http://transformunify.org/ontologies/TURBO_0010147>	44784284	.
-<http://purl.obolibrary.org/obo/OBI_0000185>	<http://transformunify.org/ontologies/TURBO_0010147>	4024289	.
-<http://purl.obolibrary.org/obo/OBI_0000185>	<http://transformunify.org/ontologies/TURBO_0010147>	4047491	.
-<http://purl.obolibrary.org/obo/OBI_0000185>	<http://transformunify.org/ontologies/TURBO_0010147>	4058899	.
-<http://purl.obolibrary.org/obo/OBI_0000185>	<http://transformunify.org/ontologies/TURBO_0010147>	4145310	.
-<http://purl.obolibrary.org/obo/OBI_0000185>	<http://transformunify.org/ontologies/TURBO_0010147>	4163872	.
-<http://purl.obolibrary.org/obo/OBI_0000185>	<http://transformunify.org/ontologies/TURBO_0010147>	4243062	.
-<http://purl.obolibrary.org/obo/OBI_0000185>	<http://transformunify.org/ontologies/TURBO_0010147>	4252419	.
-<http://purl.obolibrary.org/obo/OBI_0600005>	<http://transformunify.org/ontologies/TURBO_0010147>	4234541	.
-<http://purl.obolibrary.org/obo/OBI_0600005>	<http://transformunify.org/ontologies/TURBO_0010147>	4278515	.
-<http://purl.obolibrary.org/obo/OBI_0600005>	<http://transformunify.org/ontologies/TURBO_0010147>	4294513	.
-<http://purl.obolibrary.org/obo/OBI_0600005>	<http://transformunify.org/ontologies/TURBO_0010147>	4331248	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4035793	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4043071	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	40492359	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	40493226	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4057420	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4078793	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4107731	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4108705	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4125906	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4127235	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4146536	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4163708	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4163971	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4170947	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4181781	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4198190	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4199458	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4202451	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4216130	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4235738	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4240305	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4276519	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4293740	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4295880	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4301346	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4323902	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4336464	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	4337138	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	44783196	.
-<http://purl.obolibrary.org/obo/OGMS_0000090>	<http://transformunify.org/ontologies/TURBO_0010147>	45766298	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	37018340	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4015590	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4015701	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4059978	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	40619801	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	40623280	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4073422	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4078199	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4084216	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4117038	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4127260	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4128031	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4128597	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4139064	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4139065	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4150970	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4166761	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4186930	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4197460	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4199276	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4202832	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4238715	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4275113	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	43020419	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	43021839	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4302270	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4311671	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	4330583	.
-<http://purl.obolibrary.org/obo/OGMS_0000096>	<http://transformunify.org/ontologies/TURBO_0010147>	44805732	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4010253	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4024958	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4037675	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4052083	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4055982	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4062501	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4064377	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4068785	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4075363	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4133840	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4150653	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4151422	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4163951	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4168236	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4240345	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4249893	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	42535580	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4254766	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4302356	.
-<http://purl.obolibrary.org/obo/OGMS_0000104>	<http://transformunify.org/ontologies/TURBO_0010147>	4335825	.
-
