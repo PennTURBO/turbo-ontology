@@ -97,9 +97,9 @@ After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or 
 
 some manual tidying that might be required:
 
-remove chemical entity (?) from (things? entities? continuants?).  Make  molecular entities direct subclass of material entities
+remove chemical entity (?) from (things? entities? continuants?).  Make  [molecular entity](http://purl.obolibrary.org/obo/CHEBI_23367) a direct subclass of material entities
 
-SDCs aren't directly (entities?), only continuants
+[specifically dependent continuant](http://purl.obolibrary.org/obo/BFO_0000020) isn't a  direct sbclasses of [entity](http://purl.obolibrary.org/obo/BFO_0000001), only [continuant](http://purl.obolibrary.org/obo/BFO_0000002)
 
 Haven't been using 
 [Anatomical location](http://purl.obolibrary.org/obo/FMA_50707)
@@ -110,14 +110,14 @@ GO cellular_component appearing as direct subclass of Thing... dragged into mate
 
 April 2019 manual changes (attributed to OntoFox extract, possibly from hypertension related terms?)
 
-BFO_0000051 was erroneously labeled \"part of\" in addition to the correct label \"has part\"
+- BFO_0000051 was erroneously labeled \"part of\" in addition to the correct label \"has part\"
 
-'sign' was moved from 'quality' to 'entity'
+- [sign](http://purl.obolibrary.org/obo/OGMS_0000024) was moved out of [quality](http://purl.obolibrary.org/obo/BFO_0000019) and into [entity](http://purl.obolibrary.org/obo/BFO_0000001)
 
 
 ----
 
-moved [physical object quality](http://purl.obolibrary.org/obo/PATO_0001241) out of [Phenotypic abnormality](http://purl.obolibrary.org/obo/HP_0000118)
+removed [physical object quality](http://purl.obolibrary.org/obo/PATO_0001241) from [Phenotypic abnormality](http://purl.obolibrary.org/obo/HP_0000118)
 
 removed [blood pressure](http://purl.obolibrary.org/obo/VSO_0000004) from [vital sign](http://purl.obolibrary.org/obo/OGMS_0000029)""" ,
                                                                                                               "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ,
@@ -7860,9 +7860,9 @@ obo:IAO_0000572 ontologies:TURBO_0010147 4187458 ,
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                 obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
-                oboInOwl:inSubset obo:NCIT_C66830 ;
                 rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                oboInOwl:inSubset obo:NCIT_C61410 ;
+                oboInOwl:inSubset obo:NCIT_C66830 ,
+                                  obo:NCIT_C61410 ;
                 oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                          "Total Gleason Score for Prostate Cancer" ;
                 oboInOwl:inSubset obo:NCIT_C125922 .
@@ -7872,9 +7872,9 @@ obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -7886,17 +7886,17 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                                   obo:NCIT_C125922 .
 
 
-obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
-                rdfs:label "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
+                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
 obo:OBI_0000185 ontologies:TURBO_0010147 4145310 ,
                                          4024289 ,
                                          4163872 ,
-                                         4058899 ,
-                                         4252419 ,
                                          4047491 ,
+                                         4252419 ,
+                                         4058899 ,
                                          4243062 .
 
 
@@ -7932,8 +7932,8 @@ obo:OGMS_0000090 ontologies:TURBO_0010147 4323902 ,
                                           4199458 ,
                                           4043071 ,
                                           4163971 ,
-                                          4170947 ,
                                           4127235 ,
+                                          4170947 ,
                                           4078793 ,
                                           40493226 ,
                                           40492359 ,
@@ -7943,8 +7943,8 @@ obo:OGMS_0000090 ontologies:TURBO_0010147 4323902 ,
                                           4035793 ,
                                           4337138 ,
                                           4181781 ,
-                                          4202451 ,
-                                          4107731 .
+                                          4107731 ,
+                                          4202451 .
 
 
 obo:OGMS_0000096 ontologies:TURBO_0010147 4275113 ,
@@ -7952,8 +7952,8 @@ obo:OGMS_0000096 ontologies:TURBO_0010147 4275113 ,
                                           4059978 ,
                                           4302270 ,
                                           4128031 ,
-                                          4078199 ,
                                           4311671 ,
+                                          4078199 ,
                                           4139065 ,
                                           4238715 ,
                                           4127260 ,
@@ -7966,11 +7966,11 @@ obo:OGMS_0000096 ontologies:TURBO_0010147 4275113 ,
                                           43020419 ,
                                           44805732 ,
                                           37018340 ,
-                                          4128597 ,
                                           4015701 ,
+                                          4128597 ,
                                           4330583 ,
-                                          4084216 ,
                                           4139064 ,
+                                          4084216 ,
                                           40619801 ,
                                           4150970 ,
                                           4117038 ,
@@ -7986,21 +7986,21 @@ obo:OGMS_0000101 ontologies:TURBO_0010147 9203 .
 
 
 obo:OGMS_0000104 ontologies:TURBO_0010147 4075363 ,
-                                          4249893 ,
                                           4062501 ,
+                                          4249893 ,
                                           4037675 ,
                                           4168236 ,
                                           4010253 ,
-                                          4055982 ,
                                           4254766 ,
+                                          4055982 ,
                                           4163951 ,
                                           4133840 ,
-                                          4068785 ,
                                           4335825 ,
+                                          4068785 ,
                                           4052083 ,
                                           4302356 ,
-                                          4064377 ,
                                           4240345 ,
+                                          4064377 ,
                                           42535580 ,
                                           4150653 ,
                                           4024958 ,
@@ -8032,8 +8032,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 rdfs:label "centimeter" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
+obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
+               rdfs:label "centimeter" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
