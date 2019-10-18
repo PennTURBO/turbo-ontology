@@ -279,6 +279,26 @@ We don't have definitions of 'meaning' or 'expression' or 'property'. For 'refer
 
 Personally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable. 
 
+We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.  """@en ,
+                                """2012-04-05: 
+Barry Smith
+
+The official OBI definition, explaining the meaning of a class or property: 'Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions'  is terrible.
+
+Can you fix to something like:
+
+A statement of necessary and sufficient conditions explaining the meaning of an expression referring to a class or property.
+
+Alan Ruttenberg
+
+Your proposed definition is a reasonable candidate, except that it is very common that necessary and sufficient conditions are not given. Mostly they are necessary, occasionally they are necessary and sufficient or just sufficient. Often they use terms that are not themselves defined and so they effectively can't be evaluated by those criteria. 
+
+On the specifics of the proposed definition:
+
+We don't have definitions of 'meaning' or 'expression' or 'property'. For 'reference' in the intended sense I think we use the term 'denotation'. For 'expression', I think we you mean symbol, or identifier. For 'meaning' it differs for class and property. For class we want documentation that let's the intended reader determine whether an entity is instance of the class, or not. For property we want documentation that let's the intended reader determine, given a pair of potential relata, whether the assertion that the relation holds is true. The 'intended reader' part suggests that we also specify who, we expect, would be able to understand the definition, and also generalizes over human and computer reader to include textual and logical definition. 
+
+Personally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable. 
+
 We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.  """@en ;
                 obo:IAO_0000117 "PERSON:Daniel Schober"@en ;
                 obo:IAO_0000118 "DEFINITION" ;
@@ -508,6 +528,8 @@ obo:OBI_0001847 rdf:type owl:AnnotationProperty ;
                 obo:IAO_0000114 obo:IAO_0000122 ;
                 obo:IAO_0000115 "An alternative term used by the ISA tools project (http://isa-tools.org)." ;
                 obo:IAO_0000116 """Requested by Alejandra Gonzalez-Beltran
+https://sourceforge.net/tracker/?func=detail&aid=3603413&group_id=177891&atid=886178""" ,
+                                """Requested by Alejandra Gonzalez-Beltran
 https://sourceforge.net/tracker/?func=detail&aid=3603413&group_id=177891&atid=886178""" ;
                 obo:IAO_0000117 "Person: Alejandra Gonzalez-Beltran" ,
                                 "Person: Philippe Rocca-Serra" ;
@@ -740,8 +762,13 @@ ontoneo:ONTONEO_1000002 rdf:type owl:AnnotationProperty ;
 dc:contributor rdf:type owl:AnnotationProperty ;
                dc:description """Examples of a Contributor include a person, an 
          organisation, or a service.  Typically, the name of a 
+         Contributor should be used to indicate the entity."""@en-us ,
+                              """Examples of a Contributor include a person, an 
+         organisation, or a service.  Typically, the name of a 
          Contributor should be used to indicate the entity."""@en-us ;
                rdfs:comment """An entity responsible for making contributions to the
+         content of the resource."""@en-us ,
+                            """An entity responsible for making contributions to the
          content of the resource."""@en-us ;
                rdfs:isDefinedBy dc: ;
                rdfs:label "Contributor" ,
@@ -755,6 +782,9 @@ dc:creator rdf:type owl:AnnotationProperty ;
          be used to indicate the entity."""@en-us ,
                           """Examples of a Creator include a person, an organisation,
          or a service.  Typically, the name of a Creator should 
+         be used to indicate the entity."""@en-us ,
+                          """Examples of a Creator include a person, an organisation,
+         or a service.  Typically, the name of a Creator should 
          be used to indicate the entity."""@en-us ;
            oboInOwl:hasDbXref dc:creator ;
            oboInOwl:hasOBONamespace "uberon"^^xsd:string ;
@@ -762,6 +792,8 @@ dc:creator rdf:type owl:AnnotationProperty ;
            oboInOwl:is_metadata_tag "true"^^xsd:boolean ;
            oboInOwl:shorthand "dc-creator"^^xsd:string ;
            rdfs:comment """An entity primarily responsible for making the content
+         of the resource."""@en-us ,
+                        """An entity primarily responsible for making the content 
          of the resource."""@en-us ,
                         """An entity primarily responsible for making the content 
          of the resource."""@en-us ;
@@ -776,8 +808,14 @@ dc:date rdf:type owl:AnnotationProperty ;
         dc:description """Typically, Date will be associated with the creation or
          availability of the resource.  Recommended best practice
          for encoding the date value is defined in a profile of
+         ISO 8601 [W3CDTF] and follows the YYYY-MM-DD format."""@en-us ,
+                       """Typically, Date will be associated with the creation or
+         availability of the resource.  Recommended best practice
+         for encoding the date value is defined in a profile of
          ISO 8601 [W3CDTF] and follows the YYYY-MM-DD format."""@en-us ;
         rdfs:comment """A date associated with an event in the life cycle of the
+         resource."""@en-us ,
+                     """A date associated with an event in the life cycle of the
          resource."""@en-us ;
         rdfs:isDefinedBy dc: ;
         rdfs:label "Date" ,
@@ -787,6 +825,9 @@ dc:date rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/dc/elements/1.1/description
 dc:description rdf:type owl:AnnotationProperty ;
                dc:description """Description may include but is not limited to: an abstract,
+         table of contents, reference to a graphical representation
+         of content or a free-text account of the content."""@en-us ,
+                              """Description may include but is not limited to: an abstract,
          table of contents, reference to a graphical representation
          of content or a free-text account of the content."""@en-us ;
                rdfs:comment "An account of the content of the resource."@en-us ;
@@ -798,6 +839,13 @@ dc:description rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/dc/elements/1.1/format
 dc:format rdf:type owl:AnnotationProperty ;
           dc:description """Typically, Format may include the media-type or dimensions of
+         the resource. Format may be used to determine the software,
+         hardware or other equipment needed to display or operate the
+         resource. Examples of dimensions include size and duration.
+         Recommended best practice is to select a value from a
+         controlled vocabulary (for example, the list of Internet Media
+         Types [MIME] defining computer media formats)."""@en-us ,
+                         """Typically, Format may include the media-type or dimensions of
          the resource. Format may be used to determine the software,
          hardware or other equipment needed to display or operate the
          resource. Examples of dimensions include size and duration.
@@ -834,8 +882,14 @@ dc:source rdf:type owl:AnnotationProperty ;
           dc:description """The present resource may be derived from the Source resource
          in whole or in part.  Recommended best practice is to reference
          the resource by means of a string or number conforming to a
+         formal identification system."""@en-us ,
+                         """The present resource may be derived from the Source resource
+         in whole or in part.  Recommended best practice is to reference
+         the resource by means of a string or number conforming to a
          formal identification system."""@en-us ;
           rdfs:comment """A reference to a resource from which the present resource
+         is derived."""@en-us ,
+                       """A reference to a resource from which the present resource
          is derived."""@en-us ;
           rdfs:isDefinedBy dc: ;
           rdfs:label "Source" ,
@@ -845,6 +899,11 @@ dc:source rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/dc/elements/1.1/subject
 dc:subject rdf:type owl:AnnotationProperty ;
            dc:description """Typically, a Subject will be expressed as keywords,
+         key phrases or classification codes that describe a topic
+         of the resource.  Recommended best practice is to select 
+         a value from a controlled vocabulary or formal 
+         classification scheme."""@en-us ,
+                          """Typically, a Subject will be expressed as keywords,
          key phrases or classification codes that describe a topic
          of the resource.  Recommended best practice is to select 
          a value from a controlled vocabulary or formal 
@@ -1407,6 +1466,9 @@ obo:BFO_0000050 rdf:type owl:ObjectProperty ;
                                 """Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
 
 A continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'."""@en ,
+                                """Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
+
+A continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'."""@en ,
                                 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.) A continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'."@en ;
                 obo:IAO_0000118 "part of"@en ,
                                 "part_of"@en ;
@@ -1451,6 +1513,9 @@ obo:BFO_0000051 rdf:type owl:ObjectProperty ;
                                 """Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
 
 A continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'."""@en ,
+                                """Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
+
+A continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'."""@en ,
                                 "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.) A continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'."@en ;
                 obo:IAO_0000118 "has_part"@en ;
                 obo:IAO_0000412 obo:geno.owl ,
@@ -1470,7 +1535,8 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                 oboInOwl:shorthand "has_part"^^xsd:string ;
                 rdfs:label "has part" ,
                            "has part"@en ,
-                           "has_part"^^xsd:string .
+                           "has_part"^^xsd:string ,
+                           "part of"@en .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000052
@@ -1955,8 +2021,7 @@ obo:BFO_0000156 rdf:type owl:ObjectProperty ;
                 obo:BFO_0000180 "spanOf" ;
                 obo:IAO_0000412 obo:ogg.owl ,
                                 <http://purl.obolibrary.org/obo/bfo/2012-07-20/bfo.owl> ;
-                obo:IAO_0000600 "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ,
-                                "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ;
+                obo:IAO_0000600 "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ;
                 rdfs:isDefinedBy obo:bfo.owl ,
                                  <http://purl.obolibrary.org/obo/bfo/2012-07-20/bfo.owl> ;
                 rdfs:label "has temporal occupant"@en .
@@ -2241,6 +2306,11 @@ Some currently missing phenomena that should be considered \"about\" are predica
 
 We will try to build it back up by elaborating the various subproperties that are more precisely defined.
 
+Some currently missing phenomena that should be considered \"about\" are predications - \"The only person who knows the answer is sitting beside me\" , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic."""@en ,
+                                """7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of \"mentions\" relation. Weaken the is_about relationship to be primitive. 
+
+We will try to build it back up by elaborating the various subproperties that are more precisely defined.
+
 Some currently missing phenomena that should be considered \"about\" are predications - \"The only person who knows the answer is sitting beside me\" , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic."""@en ;
                 obo:IAO_0000117 "person:Alan Ruttenberg"@en ;
                 obo:IAO_0000119 "Smith, Ceusters, Ruttenberg, 2000 years of philosophy"@en ;
@@ -2281,6 +2351,11 @@ every c that is a concretization of g specifically denotes r"""@en ,
 g denotes r =def 
 r is a portion of reality
 there is some c that is a concretization of g 
+every c that is a concretization of g specifically denotes r"""@en ,
+                                """2009-11-10 Alan Ruttenberg. Old definition said the following to emphasize the generic nature of this relation. We no longer have 'specifically denotes', which would have been primitive, so make this relation primitive.
+g denotes r =def 
+r is a portion of reality
+there is some c that is a concretization of g 
 every c that is a concretization of g specifically denotes r"""@en ;
                 obo:IAO_0000117 "person:Alan Ruttenberg"@en ;
                 obo:IAO_0000119 "Conversations with Barry Smith, Werner Ceusters, Bjoern Peters, Michel Dumontier, Melanie Courtot, James Malone, Bill Hogan"@en ;
@@ -2298,6 +2373,9 @@ obo:IAO_0000221 rdf:type owl:ObjectProperty ;
                 rdfs:domain obo:IAO_0000109 ;
                 rdfs:range obo:BFO_0000019 ;
                 obo:IAO_0000115 """m is a quality measurement of q at t when
+q is a quality 
+there is a measurement process p that has specified output m, a measurement datum, that is about q"""@en ,
+                                """m is a quality measurement of q at t when
 q is a quality 
 there is a measurement process p that has specified output m, a measurement datum, that is about q"""@en ;
                 obo:IAO_0000116 "8/6/2009 Alan Ruttenberg: The strategy is to be rather specific with this relationship. There are other kinds of measurements that are not of qualities, such as those that measure time. We will add these as separate properties for the moment and see about generalizing later"@en ,
@@ -2321,6 +2399,29 @@ describe:
 a describes b means a is about b and a allows an inference of at least one quality of b
 
 We have had a long discussion about denotes versus describes."""@en ,
+                                """From the second IAO workshop [Alan Ruttenberg 8/6/2009: not completely current, though bringing in comparison is probably important]
+
+This one is the one we are struggling with at the moment. The issue is what a measurement measures. On the one hand saying that it measures the quality would include it \"measuring\" the bearer = referring to the bearer in the measurement. However this makes comparisons of two different things not possible. On the other hand not having it inhere in the bearer, on the face of it, breaks the audit trail.
+
+Werner suggests a solution based on \"Magnitudes\" a proposal for which we are awaiting details.
+--
+From the second IAO workshop, various comments, [commented on by Alan Ruttenberg 8/6/2009]
+
+unit of measure is a quality, e.g. the length of a ruler.
+
+[We decided to hedge on what units of measure are, instead talking about measurement unit labels, which are the information content entities that are about whatever measurement units are. For IAO we need that information entity in any case. See the term measurement unit label]
+
+[Some struggling with the various subflavors of is_about. We subsequently removed the relation represents, and describes until and only when we have a better theory]
+
+a represents b means either a denotes b or a describes
+
+describe:
+a describes b means a is about b and a allows an inference of at least one quality of b
+
+We have had a long discussion about denotes versus describes."""@en ,
+                                """From the second IAO workshop: An attempt at tieing the quality to the measurement datum more carefully.
+
+a is a magnitude means a is a determinate quality particular inhering in some bearer b existing at a time t that can be represented/denoted by an information content entity e that has parts denoting a unit of measure, a number, and b. The unit of measure is an instance of the determinable quality."""@en ,
                                 """From the second IAO workshop: An attempt at tieing the quality to the measurement datum more carefully.
 
 a is a magnitude means a is a determinate quality particular inhering in some bearer b existing at a time t that can be represented/denoted by an information content entity e that has parts denoting a unit of measure, a number, and b. The unit of measure is an instance of the determinable quality."""@en ,
@@ -2333,6 +2434,18 @@ process and has_input some material entity
 and has_output some information content entity 
 and which is such that instances of this process type reliably generate 
 outputs that describes the input."""@en ,
+                                """From the second meeting on IAO:
+
+An attempt at defining assay using Barry's \"reliability\" wording
+
+assay:
+process and has_input some material entity
+and has_output some information content entity 
+and which is such that instances of this process type reliably generate 
+outputs that describes the input."""@en ,
+                                """This one is the one we are struggling with at the moment. The issue is what a measurement measures. On the one hand saying that it measures the quality would include it \"measuring\" the bearer = referring to the bearer in the measurement. However this makes comparisons of two different things not possible. On the other hand not having it inhere in the bearer, on the face of it, breaks the audit trail.
+
+Werner suggests a solution based on \"Magnitudes\" a proposal for which we are awaiting details."""@en ,
                                 """This one is the one we are struggling with at the moment. The issue is what a measurement measures. On the one hand saying that it measures the quality would include it \"measuring\" the bearer = referring to the bearer in the measurement. However this makes comparisons of two different things not possible. On the other hand not having it inhere in the bearer, on the face of it, breaks the audit trail.
 
 Werner suggests a solution based on \"Magnitudes\" a proposal for which we are awaiting details."""@en ;
@@ -6521,8 +6634,7 @@ obo:BFO_0000006 rdf:type owl:Class ;
                                 "Spatial region doesn't have a closure axiom because the subclasses don't exhaust all possibilites. An example would be the union of a spatial point and a spatial line that doesn't overlap the point, or two spatial lines that intersect at a single point. In both cases the resultant spatial region is neither 0-dimensional, 1-dimensional, 2-dimensional, or 3-dimensional."@en ;
                 obo:IAO_0000412 obo:ogg.owl ;
                 obo:IAO_0000600 "A spatial region is a continuant entity that is a continuant_part_of spaceR as defined relative to some frame R. (axiom label in BFO2 Reference: [035-001])"@en ;
-                obo:IAO_0000601 "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ,
-                                "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ;
+                obo:IAO_0000601 "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ;
                 obo:IAO_0000602 "(forall (x y t) (if (and (SpatialRegion x) (continuantPartOfAt y x t)) (SpatialRegion y))) // axiom label in BFO2 CLIF: [036-001] " ,
                                 "(forall (x) (if (SpatialRegion x) (Continuant x))) // axiom label in BFO2 CLIF: [035-001] " ;
                 rdfs:isDefinedBy obo:bfo.owl ;
@@ -6601,8 +6713,7 @@ obo:BFO_0000011 rdf:type owl:Class ;
                                 "the spatiotemporal region occupied by the development of a cancer tumor"@en ;
                 obo:IAO_0000412 obo:ogg.owl ;
                 obo:IAO_0000600 "A spatiotemporal region is an occurrent entity that is part of spacetime. (axiom label in BFO2 Reference: [095-001])"@en ;
-                obo:IAO_0000601 "All parts of spatiotemporal regions are spatiotemporal regions. (axiom label in BFO2 Reference: [096-001])"@en ,
-                                "All parts of spatiotemporal regions are spatiotemporal regions. (axiom label in BFO2 Reference: [096-001])"@en ,
+                obo:IAO_0000601 "All parts of spatiotemporal regions are spatiotemporal regions. (axiom label in BFO2 Reference: [096-001])"@en ,
                                 "Each spatiotemporal region at any time t projects_onto some spatial region at t. (axiom label in BFO2 Reference: [099-001])"@en ,
                                 "Each spatiotemporal region projects_onto some temporal region. (axiom label in BFO2 Reference: [098-001])"@en ,
                                 "Every spatiotemporal region occupies_spatiotemporal_region itself."@en ,
@@ -7329,7 +7440,8 @@ obo:CHEBI_17234 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/CHEBI_23367
 obo:CHEBI_23367 rdf:type owl:Class ;
-                rdfs:subClassOf obo:BFO_0000040 ;
+                rdfs:subClassOf obo:BFO_0000040 ,
+                                obo:CHEBI_24431 ;
                 obo:IAO_0000111 "molecular entity"^^xsd:string ;
                 obo:IAO_0000115 "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity."^^xsd:string ;
                 obo:IAO_0000116 "We are assuming that every molecular entity has to be completely connected by chemical bonds. This excludes protein complexes, which are comprised of minimally two separate molecular entities. We will follow up with Chebi to ensure this is their understanding as well"@en ;
@@ -7340,6 +7452,16 @@ obo:CHEBI_23367 rdf:type owl:Class ;
                 oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
                 oboInOwl:id "CHEBI:23367"^^xsd:string ;
                 rdfs:label "molecular entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_24431
+obo:CHEBI_24431 rdf:type owl:Class ;
+                rdfs:subClassOf obo:BFO_0000040 ;
+                obo:IAO_0000115 "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances."^^xsd:string ;
+                obo:IAO_0000412 obo:pr.owl ;
+                oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
+                oboInOwl:id "CHEBI:24431"^^xsd:string ;
+                rdfs:label "chemical entity"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/CHEBI_33247
@@ -7665,14 +7787,6 @@ obo:FMA_256135 rdf:type owl:Class ;
                oboInOwl:id "FMA:256135"^^xsd:string ;
                rdfs:label "Body"@en ,
                           "corpo"@pt .
-
-
-###  http://purl.obolibrary.org/obo/FMA_50707
-obo:FMA_50707 rdf:type owl:Class ;
-              rdfs:subClassOf obo:BFO_0000002 ;
-              obo:IAO_0000115 "Spatial association relationship which describes the containment, adjacency and anatomical coordinates of physical anatomical entities. Examples: anatomical containment, anatomical adjacency, anatomical coordinate."^^xsd:string ;
-              obo:IAO_0000412 obo:fma.owl ;
-              rdfs:label "Anatomical location"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/FMA_67473
@@ -8222,6 +8336,11 @@ proposed for OBI (OBI_0000176) , edited by Chris Stoeckert and
 Cristian Cocos, and subsequently moved to IAO where the objective for
 which the original term was defined was satisfied with the definition
 of this, different, term."""@en ,
+                                """2009-03-16: provenance: a term measurement unit was
+proposed for OBI (OBI_0000176) , edited by Chris Stoeckert and
+Cristian Cocos, and subsequently moved to IAO where the objective for
+which the original term was defined was satisfied with the definition
+of this, different, term."""@en ,
                                 "2009-03-16: review of this term done during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify this definition please notify OBI."@en ;
                 obo:IAO_0000117 "PERSON: Alan Ruttenberg"@en ,
                                 "PERSON: Melanie Courtot"@en ;
@@ -8273,6 +8392,8 @@ obo:IAO_0000009 rdf:type owl:Class ;
                 obo:IAO_0000116 "http://www.golovchenko.org/cgi-bin/wnsearch?q=label#4n"@en ;
                 obo:IAO_0000117 "GROUP: IAO"@en ;
                 obo:IAO_0000232 """9/22/11 BP: changed the rdfs:label for this class from 'label' to 'datum label' to convey that this class is not intended to cover all kinds of labels (stickers, radiolabels, etc.), and not even all kind of textual labels, but rather the kind of labels occuring in a datum. 
+""" ,
+                                """9/22/11 BP: changed the rdfs:label for this class from 'label' to 'datum label' to convey that this class is not intended to cover all kinds of labels (stickers, radiolabels, etc.), and not even all kind of textual labels, but rather the kind of labels occuring in a datum. 
 """ ;
                 obo:IAO_0000412 obo:obi.owl ;
                 rdfs:label "datum label"@en .
@@ -8310,6 +8431,13 @@ obo:IAO_0000027 rdf:type owl:Class ;
 information-like stuff that might be put into a computer and that is
 meant, by someone, to denote and/or to be interpreted by some
 process... I would include lists, tables, sentences... I think I might
+defer to Barry, or to Brian Cantwell Smith
+
+JAR: A data item is an approximately justified approximately true approximate belief"""@en ,
+                                """JAR: datum     -- well, this will be very tricky to define, but maybe some 
+information-like stuff that might be put into a computer and that is 
+meant, by someone, to denote and/or to be interpreted by some 
+process... I would include lists, tables, sentences... I think I might 
 defer to Barry, or to Brian Cantwell Smith
 
 JAR: A data item is an approximately justified approximately true approximate belief"""@en ,
@@ -8371,6 +8499,9 @@ obo:IAO_0000030 rdf:type owl:Class ;
                 obo:IAO_0000116 "2014-03-10: The use of \"thing\" is intended to be general enough to include universals and configurations (see https://groups.google.com/d/msg/information-ontology/GBxvYZCk1oc/-L6B5fSBBTQJ)."@en ,
                                 """information_content_entity 'is_encoded_in' some digital_entity in obi before split (040907). information_content_entity 'is_encoded_in' some physical_document in obi before split (040907).
 
+Previous. An information content entity is a non-realizable information entity that 'is encoded in' some digital or physical entity."""@en ,
+                                """information_content_entity 'is_encoded_in' some digital_entity in obi before split (040907). information_content_entity 'is_encoded_in' some physical_document in obi before split (040907).
+
 Previous. An information content entity is a non-realizable information entity that 'is encoded in' some digital or physical entity."""@en ;
                 obo:IAO_0000117 "PERSON: Chris Stoeckert"@en ;
                 obo:IAO_0000119 "OBI_0000142"@en ;
@@ -8405,6 +8536,8 @@ obo:IAO_0000032 rdf:type owl:Class ;
                 obo:IAO_0000114 obo:IAO_0000120 ;
                 obo:IAO_0000115 "a scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label."@en ;
                 obo:IAO_0000116 """2009-03-16: we decided to keep datum singular in scalar measurement datum, as in
+this case we explicitly refer to the singular form"""@en ,
+                                """2009-03-16: we decided to keep datum singular in scalar measurement datum, as in
 this case we explicitly refer to the singular form"""@en ,
                                 "Would write this as: has_part some 'measurement unit label' and has_part some numeral and has_part exactly 2, except for the fact that this won't let us take advantage of OWL reasoning over the numbers. Instead use has measurment value property to represent the same. Use has measurement unit label (subproperty of has_part) so we can easily say that there is only one of them."@en ;
                 obo:IAO_0000117 "PERSON: Alan Ruttenberg"@en ,
@@ -8554,6 +8687,13 @@ obo:IAO_0000104 rdf:type owl:Class ;
                 obo:IAO_0000412 obo:obi.owl ,
                                 obo:pdro.owl ;
                 rdfs:comment """2/3/2009 Comment from OBI review.
+
+Action specification not well enough specified.
+Conditional specification not well enough specified.
+Question whether all plan specifications have objective specifications.
+
+Request that IAO either clarify these or change definitions not to use them"""@en ,
+                             """2/3/2009 Comment from OBI review.
 
 Action specification not well enough specified.
 Conditional specification not well enough specified.
@@ -8890,6 +9030,8 @@ obo:IAO_0000578 rdf:type owl:Class ;
                                 "An information content entity that consists of a CRID symbol and additional information about which CRID registry it belongs. "@en ;
                 obo:IAO_0000116 "2014-05-05: In defining this term we take no position on what the CRID denotes. In particular do not assume it denotes a *record* in the CRID registry (since the registry might not have 'records')."@en ,
                                 """Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation.
+"""@en ,
+                                """Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation. 
 """@en ,
                                 """Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation. 
 """@en ,
@@ -9948,6 +10090,8 @@ obo:OBI_0000011 rdf:type owl:Class ;
                                 """We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some
 objectives is a planned process."""^^xsd:string ,
                                 """We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
+objectives is a planned process."""^^xsd:string ,
+                                """We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
 objectives is a planned process."""^^xsd:string ;
                 obo:IAO_0000117 "Bjoern Peters"^^xsd:string ;
                 obo:IAO_0000119 "branch derived"^^xsd:string ;
@@ -10190,6 +10334,8 @@ obo:OBI_0000079 rdf:type owl:Class ;
                 obo:IAO_0000114 obo:IAO_0000122 ;
                 obo:IAO_0000115 "a processed material that provides the needed nourishment for microorganisms or cells grown in vitro."^^xsd:string ;
                 obo:IAO_0000116 """changed from a role to a processed material based on on Aug 22, 2011 dev call. Details see the tracker item: http://sourceforge.net/tracker/?func=detail&aid=3325270&group_id=177891&atid=886178
+Modification made by JZ."""^^xsd:string ,
+                                """changed from a role to a processed material based on on Aug 22, 2011 dev call. Details see the tracker item: http://sourceforge.net/tracker/?func=detail&aid=3325270&group_id=177891&atid=886178
 Modification made by JZ."""^^xsd:string ;
                 obo:IAO_0000117 "Person: Jennifer Fostel, Jie Zheng"@en ;
                 obo:IAO_0000119 "OBI"@en ;
@@ -10210,9 +10356,19 @@ obo:OBI_0000086 rdf:type owl:Class ;
                 obo:IAO_0000232 """Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.
 
 May 28 2013. Updated definition taken from ReO based on discussions initiated in Philly 2011 workshop.  Former defnition described a narrower view of reagents in chemistry that restricts bearers of the role to be chemical entities (\"a role played by a molecular entity used to produce a chemical reaction to detect, measure, or produce other substances\").  Updated definition allows for broader view of reagents in the domain of biomedical research to include larger materials that have parts that participate chemically in a molecular reaction or interaction.
+"""^^xsd:string ,
+                                """Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.
+
+May 28 2013. Updated definition taken from ReO based on discussions initiated in Philly 2011 workshop.  Former defnition described a narrower view of reagents in chemistry that restricts bearers of the role to be chemical entities (\"a role played by a molecular entity used to produce a chemical reaction to detect, measure, or produce other substances\").  Updated definition allows for broader view of reagents in the domain of biomedical research to include larger materials that have parts that participate chemically in a molecular reaction or interaction.
 """^^xsd:string ;
                 obo:IAO_0000412 obo:obi.owl ;
                 rdfs:comment """(copied from ReO)
+Reagents are distinguished from instruments or devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in or have parts that participate in some chemical interaction or reaction during their intended participation in some technique.  By contrast, instruments do not participate in a chemical reaction/interaction during the technique.
+
+Reagents are distinguished from study subjects/evaluants in that study subjects and evaluants are that about which conclusions are drawn and knowledge is sought in an investigation - while reagents, by definition, are not.  It should be noted, however, that reagent and study subject/evaluant roles can be borne by instances of the same type of material entity - but a given instance will realize only one of these roles in the execution of a given assay or technique. For example, taq polymerase can bear a reagent role or an evaluant role.  In a DNA sequencing assay aimed at generating sequence data about some plasmid, the reagent role of the taq polymerase is realized. In an assay to evaluate the quality of the taq polymerase itself, the evaluant/study subject role of the taq is realized, but not the reagent role since the taq is the subject about which data is generated.
+
+In regard to the statement that reagents are 'distinct' from the specified outputs of a technique, note that a reagent may be incorporated into a material output of a technique, as long as the IDENTITY of this output is distinct from that of the bearer of the reagent role.  For example, dNTPs input into a PCR are reagents that become part of the material output of this technique, but this output has a new identity (ie that of a 'nucleic acid molecule') that is distinct from the identity of the dNTPs that comprise it.  Similarly, a biotin molecule input into a cell labeling technique are reagents that become part of the specified output, but the identity of the output is that of some modified cell specimen which shares identity with the input unmodified cell specimen, and not with the biotin label. Thus, we see that an important criteria of 'reagent-ness' is that it is a facilitator, and not the primary focus of an investigation or material processing technique (ie not the specified subject/evaluant about which knowledge is sought, or the specified output material of the technique).""" ,
+                             """(copied from ReO)
 Reagents are distinguished from instruments or devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in or have parts that participate in some chemical interaction or reaction during their intended participation in some technique.  By contrast, instruments do not participate in a chemical reaction/interaction during the technique.
 
 Reagents are distinguished from study subjects/evaluants in that study subjects and evaluants are that about which conclusions are drawn and knowledge is sought in an investigation - while reagents, by definition, are not.  It should be noted, however, that reagent and study subject/evaluant roles can be borne by instances of the same type of material entity - but a given instance will realize only one of these roles in the execution of a given assay or technique. For example, taq polymerase can bear a reagent role or an evaluant role.  In a DNA sequencing assay aimed at generating sequence data about some plasmid, the reagent role of the taq polymerase is realized. In an assay to evaluate the quality of the taq polymerase itself, the evaluant/study subject role of the taq is realized, but not the reagent role since the taq is the subject about which data is generated.
@@ -10319,6 +10475,12 @@ obo:OBI_0000112 rdf:type owl:Class ;
                                 "Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation."^^xsd:string ,
                                 """blood taken from animal: animal continues in study, whereas blood has role specimen.
 something taken from study subject, leaves the study and becomes the specimen."""@en ,
+                                """blood taken from animal: animal continues in study, whereas blood has role specimen.
+something taken from study subject, leaves the study and becomes the specimen."""@en ,
+                                """parasite example
+- when parasite in people we study people, people are subjects and parasites are specimen
+- when parasite extracted, they become subject in the following study
+specimen can later be subject."""@en ,
                                 """parasite example
 - when parasite in people we study people, people are subjects and parasites are specimen
 - when parasite extracted, they become subject in the following study
@@ -10459,6 +10621,33 @@ obo:OBI_0000245 rdf:type owl:Class ;
                 obo:IAO_0000115 "An entity that can bear roles, has members, and has a set of organization rules. Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members."@en ,
                                 "An organization is a continuant entity which can play roles,  has members, and has a set of organization rules.  Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members."@en ;
                 obo:IAO_0000116 """BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
+
+1) there are organization_member_roles (president, treasurer, branch
+editor), with individual persons as bearers
+
+2) there are organization_roles (employer, owner, vendor, patent holder)
+
+3) an organization has a charter / rules / bylaws, which specify what roles
+there are, how they should be realized, and how to modify the
+charter/rules/bylaws themselves.
+
+It is debatable what the organization itself is (some kind of dependent
+continuant or an aggregate of people). This also determines who/what the
+bearer of organization_roles' are. My personal favorite is still to define
+organization as a kind of 'legal entity', but thinking it through leads to
+all kinds of questions that are clearly outside the scope of OBI.
+
+Interestingly enough, it does not seem to matter much where we place
+organization itself, as long as we can subclass it (University, Corporation,
+Government Agency, Hospital), instantiate it (Affymetrix, NCBI, NIH, ISO,
+W3C, University of Oklahoma), and have it play roles.
+
+This leads to my proposal: We define organization through the statements 1 -
+3 above, but without an 'is a' statement for now. We can leave it in its
+current place in the is_a hierarchy (material entity) or move it up to
+'continuant'. We leave further clarifications to BFO, and close this issue
+for now."""@en ,
+                                """BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
 
 1) there are organization_member_roles (president, treasurer, branch
 editor), with individual persons as bearers
@@ -11406,6 +11595,8 @@ obo:OBI_0000659 rdf:type owl:Class ;
                                 "Philly2013: A specimen collection can have as part a material entity acquisition, such as ordering from a bank. The distinction is that specimen collection necessarily involves the creation of a specimen role. However ordering cell lines cells from ATCC for use in an investigation is NOT a specimen collection, because the cell lines already have a specimen role." ,
                                 "Philly2013: The specimen_role for the specimen is created during the specimen collection process." ,
                                 """label  changed to 'specimen collection process' on 10/27/2014, details see tracker:
+http://sourceforge.net/p/obi/obi-terms/716/""" ,
+                                """label  changed to 'specimen collection process' on 10/27/2014, details see tracker:
 http://sourceforge.net/p/obi/obi-terms/716/""" ;
                 obo:IAO_0000117 "Bjoern Peters"^^xsd:string ;
                 obo:IAO_0000118 "specimen collection" ;
@@ -11740,6 +11931,8 @@ obo:OBI_0000953 rdf:type owl:Class ;
                                 obo:OBI_0100051 ;
                 obo:IAO_0000111 "processed specimen"^^xsd:string ;
                 obo:IAO_0000112 """A tissue sample that has been sliced and stained for a histology study.
+A blood specimen that has been centrifuged to obtain the white blood cells.""" ,
+                                """A tissue sample that has been sliced and stained for a histology study.
 A blood specimen that has been centrifuged to obtain the white blood cells.""" ;
                 obo:IAO_0000114 obo:IAO_0000122 ;
                 obo:IAO_0000115 "A specimen that has been intentionally physically modified."^^xsd:string ;
@@ -11767,6 +11960,17 @@ obo:OBI_0000968 rdf:type owl:Class ;
                 obo:IAO_0000114 obo:IAO_0000122 ;
                 obo:IAO_0000115 "A material entity that is designed to perform a function in a scientific investigation, but is not a reagent."^^xsd:string ;
                 obo:IAO_0000116 """2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of \"device\", and are enumerating the types of roles that a reagent can perform.
+
+2013-6-5 MHB: The following clarifications are outcomes of the May 2013 Philly Workshop. Reagents are distinguished from devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in some chemical interaction or reaction during the realization of their experimental role. By contrast, devices do not participate in such chemical reactions/interactions.  Note that there are cases where devices use reagent components during their operation, where the reagent-device distinction is less clear.  For example:
+
+(1) An HPLC machine is considered a device, but has a column that holds a stationary phase resin as an operational component.  This resin qualifies as a device if it participates purely in size exclusion, but bears a reagent role that is realized in the running of a column if it interacts electrostatically or chemically with the evaluant. The container the resin is in (“the column”) considered alone is a device. So the entire column as well as the entire HPLC machine are devices that have a reagent as an operating part.
+
+(2) A pH meter is a device, but its electrode component bears a reagent role in virtue of its interacting directly with the evaluant in execution of an assay.
+
+(3) A gel running  box  is a device that has a metallic lead as a component that participates in a chemical reaction with the running buffer when a charge is passed through it.  This metallic lead is considered to have a reagent role as a component of this device realized in the running of a gel.
+
+In the examples above, a reagent is an operational component of a device, but the device itself does not realize a reagent role (as bearing a reagent role is not transitive across the part_of relation).  In this way, the asserted disjointness between a reagent and device holds, as both roles are never realized in the same bearer during execution of an assay.  """^^xsd:string ,
+                                """2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of \"device\", and are enumerating the types of roles that a reagent can perform.
 
 2013-6-5 MHB: The following clarifications are outcomes of the May 2013 Philly Workshop. Reagents are distinguished from devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in some chemical interaction or reaction during the realization of their experimental role. By contrast, devices do not participate in such chemical reactions/interactions.  Note that there are cases where devices use reagent components during their operation, where the reagent-device distinction is less clear.  For example:
 
@@ -12063,6 +12267,19 @@ obo:OBI_0001404 rdf:type owl:Class ;
                 obo:IAO_0000117 "Person: Chris Stoeckert, Jie Zheng"@en ;
                 obo:IAO_0000119 "MO_66 IndividualGeneticCharacteristics"@en ;
                 obo:IAO_0000232 """MO definition:
+The genotype of the individual organism from which the biomaterial was derived. Individual genetic characteristics include polymorphisms, disease alleles, and haplotypes.
+
+examples in ArrayExpress
+wild_type
+MutaMouse (CD2F1 mice with lambda-gt10LacZ integration)
+AlfpCre; SNF5 flox/knockout
+p53 knock out
+C57Bl/6 gp130lox/lox MLC2vCRE/+
+fer-15; fem-1
+df/df
+pat1-114/pat1-114 ade6-M210/ade6-M216 h+/h+ (cells are diploid)
+"""@en ,
+                                """MO definition:
 The genotype of the individual organism from which the biomaterial was derived. Individual genetic characteristics include polymorphisms, disease alleles, and haplotypes.
 
 examples in ArrayExpress
@@ -12687,6 +12904,9 @@ obo:OBI_0100026 rdf:type owl:Class ;
                                 """13-02-2009:
 OBI doesn't take position as to  when an organism starts or ends being an organism - e.g. sperm, foetus.
 This issue is outside the scope of OBI."""^^xsd:string ,
+                                """13-02-2009:
+OBI doesn't take position as to  when an organism starts or ends being an organism - e.g. sperm, foetus.
+This issue is outside the scope of OBI."""^^xsd:string ,
                                 "Stub class to serve as root of hierarchy for imports from NCBI Taxonomy." ;
                 obo:IAO_0000117 "GROUP: OBI Biomaterial Branch"^^xsd:string ;
                 obo:IAO_0000119 "WEB: http://en.wikipedia.org/wiki/Organism"@en ;
@@ -12747,6 +12967,9 @@ obo:OBI_0100060 rdf:type owl:Class ;
                                 ] ;
                 obo:IAO_0000111 "cultured cell population"^^xsd:string ;
                 obo:IAO_0000112 """A cultured cell population applied in an experiment: \"293 cells expressing TrkA were serum-starved for 18 hours and then neurotrophins were added for 10 min before cell harvest.\"  (Lee, Ramee, et al. \"Regulation of cell survival by secreted proneurotrophins.\" Science 294.5548 (2001): 1945-1948).
+
+A cultured cell population maintained in vitro: \"Rat cortical neurons from 15 day embryos are grown in dissociated cell culture and maintained in vitro for 8–12 weeks\" (Dichter, Marc A. \"Rat cortical neurons in cell culture: culture methods, cell morphology, electrophysiology, and synapse formation.\" Brain Research 149.2 (1978): 279-293).""" ,
+                                """A cultured cell population applied in an experiment: \"293 cells expressing TrkA were serum-starved for 18 hours and then neurotrophins were added for 10 min before cell harvest.\"  (Lee, Ramee, et al. \"Regulation of cell survival by secreted proneurotrophins.\" Science 294.5548 (2001): 1945-1948).
 
 A cultured cell population maintained in vitro: \"Rat cortical neurons from 15 day embryos are grown in dissociated cell culture and maintained in vitro for 8–12 weeks\" (Dichter, Marc A. \"Rat cortical neurons in cell culture: culture methods, cell morphology, electrophysiology, and synapse formation.\" Brain Research 149.2 (1978): 279-293).""" ;
                 obo:IAO_0000114 obo:IAO_0000120 ;
@@ -12884,6 +13107,8 @@ obo:OBI_0302884 rdf:type owl:Class ;
                 obo:IAO_0000114 obo:IAO_0000123 ;
                 obo:IAO_0000115 "A material separation in which a desired component of an input material is separated from the remainder"^^xsd:string ;
                 obo:IAO_0000116 """Current the output of material processing defined as the molecular entity, main component in the output material entity, rather than the material entity that have grain molecular entity. 
+'nucleic acid extract' is the output of 'nucleic acid extraction' and has grain 'nucleic acid'. However, the output of 'nucleic acid extraction' is 'nucleic acid' rather than 'nucleic acid extract'. We are aware of this issue and will work it out in the future."""@en ,
+                                """Current the output of material processing defined as the molecular entity, main component in the output material entity, rather than the material entity that have grain molecular entity. 
 'nucleic acid extract' is the output of 'nucleic acid extraction' and has grain 'nucleic acid'. However, the output of 'nucleic acid extraction' is 'nucleic acid' rather than 'nucleic acid extract'. We are aware of this issue and will work it out in the future."""@en ;
                 obo:IAO_0000117 "Person:Bjoern Peters"^^xsd:string ,
                                 "Philippe Rocca-Serra"^^xsd:string ;
@@ -13693,7 +13918,7 @@ obo:OGMS_0000023 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/OGMS_0000024
 obo:OGMS_0000024 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:BFO_0000001 ;
+                 rdfs:subClassOf obo:BFO_0000019 ;
                  obo:IAO_0000115 "A quality of a patient, a material entity that is part of a patient, or a processual entity that a patient participates in, any one of which is observed in a physical examination and is deemed by the clinician to be of clinical significance."@en ,
                                  "TO DO"@pt ;
                  obo:IAO_0000116 "note: defined class" ;
@@ -13828,6 +14053,47 @@ obo:OGMS_0000078 rdf:type owl:Class ;
                  obo:IAO_0000232 "creation date: 2009-07-13T02:14:05Z" ;
                  obo:IAO_0000412 obo:ogms.owl ;
                  rdfs:label "pathological anatomical structure" .
+
+
+###  http://purl.obolibrary.org/obo/OGMS_0000090
+obo:OGMS_0000090 rdf:type owl:Class ;
+                 rdfs:subClassOf obo:OBI_0000011 ;
+                 obo:IAO_0000115 "A planned process whose completion is hypothesized by a health care provider to eliminate, prevent, or alleviate the signs and symptoms of a disorder or pathological process"@en ;
+                 obo:IAO_0000117 "Albert Goldfain" ;
+                 obo:IAO_0000119 "http://code.google.com/p/ogms/issues/detail?id=35" ;
+                 obo:IAO_0000232 "creation date: 2010-03-31T04:51:11Z" ;
+                 obo:IAO_0000412 obo:ogms.owl ;
+                 ontologies:TURBO_0010147 4035793 ,
+                                          4043071 ,
+                                          40492359 ,
+                                          40493226 ,
+                                          4057420 ,
+                                          4078793 ,
+                                          4107731 ,
+                                          4108705 ,
+                                          4125906 ,
+                                          4127235 ,
+                                          4146536 ,
+                                          4163708 ,
+                                          4163971 ,
+                                          4170947 ,
+                                          4181781 ,
+                                          4198190 ,
+                                          4199458 ,
+                                          4202451 ,
+                                          4216130 ,
+                                          4235738 ,
+                                          4240305 ,
+                                          4276519 ,
+                                          4293740 ,
+                                          4295880 ,
+                                          4301346 ,
+                                          4323902 ,
+                                          4336464 ,
+                                          4337138 ,
+                                          44783196 ,
+                                          45766298 ;
+                 rdfs:label "treatment" .
 
 
 ###  http://purl.obolibrary.org/obo/OGMS_0000096
@@ -14048,6 +14314,37 @@ obo:OGMS_0000101 rdf:type owl:Class ;
                  rdfs:label "ED encounter" .
 
 
+###  http://purl.obolibrary.org/obo/OGMS_0000104
+obo:OGMS_0000104 rdf:type owl:Class ;
+                 rdfs:subClassOf obo:OGMS_0000096 ;
+                 obo:IAO_0000115 "A health care process that involves the interpretation of a clinical picture from a given patient (input) and the assertion to the effect that the patient has a disease, disorder, or syndrome of a certain type, or none of these (output)."@en ;
+                 obo:IAO_0000117 "Albert Goldfain" ;
+                 obo:IAO_0000119 "http://groups.google.com/group/ogms-discuss/browse_thread/thread/2a7008f311fac766/e7de486c94dfd82e" ;
+                 obo:IAO_0000232 "creation date: 2011-09-20T09:57:44Z" ;
+                 obo:IAO_0000412 obo:ogms.owl ;
+                 ontologies:TURBO_0010147 4010253 ,
+                                          4024958 ,
+                                          4037675 ,
+                                          4052083 ,
+                                          4055982 ,
+                                          4062501 ,
+                                          4064377 ,
+                                          4068785 ,
+                                          4075363 ,
+                                          4133840 ,
+                                          4150653 ,
+                                          4151422 ,
+                                          4163951 ,
+                                          4168236 ,
+                                          4240345 ,
+                                          4249893 ,
+                                          42535580 ,
+                                          4254766 ,
+                                          4302356 ,
+                                          4335825 ;
+                 rdfs:label "diagnostic process" .
+
+
 ###  http://purl.obolibrary.org/obo/OGMS_0000108
 obo:OGMS_0000108 rdf:type owl:Class ;
                  rdfs:subClassOf obo:OGMS_0000096 ;
@@ -14055,6 +14352,15 @@ obo:OGMS_0000108 rdf:type owl:Class ;
                  obo:IAO_0000412 obo:ogms.owl ;
                  dc:date "creation: 16MAY2017" ;
                  rdfs:label "health care process assay" .
+
+
+###  http://purl.obolibrary.org/obo/OGMS_0000111
+obo:OGMS_0000111 rdf:type owl:Class ;
+                 rdfs:subClassOf obo:OGMS_0000090 ;
+                 obo:IAO_0000115 "A treatment whose completion is hypothesized by a health care provider to prevent the signs and symptoms of a disorder or pathological process." ;
+                 obo:IAO_0000232 "Creation date: 2018-11-27" ;
+                 obo:IAO_0000412 obo:ogms.owl ;
+                 rdfs:label "prophylactic treatment"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OMIABIS_0000000
@@ -14346,6 +14652,8 @@ obo:OMIABIS_0001026 rdf:type owl:Class ;
                                     obo:pdro.owl ;
                     ontoneo:ONTONEO_1000002 "PERSON: Fernanda Farinelli"@en ;
                     rdfs:comment "It is a chronological written account of examination, treatment, medical history or complaints." ,
+                                 """It is used interchangeably with health record and medical chart.
+https://en.wikipedia.org/wiki/Medical_record""" ,
                                  """It is used interchangeably with health record and medical chart.
 https://en.wikipedia.org/wiki/Medical_record""" ;
                     rdfs:label "medical record"@en ,
@@ -15120,7 +15428,8 @@ obo:PATO_0001025 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/PATO_0001241
 obo:PATO_0001241 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:BFO_0000019 ;
+                 rdfs:subClassOf obo:BFO_0000019 ,
+                                 obo:HP_0000118 ;
                  obo:IAO_0000111 "physical object quality"^^xsd:string ;
                  obo:IAO_0000115 "A quality which inheres in a continuant."@en ,
                                  "A quality which inheres in a continuant."^^xsd:string ;
@@ -15864,7 +16173,8 @@ obo:VSO_0000004 rdf:type owl:Class ;
                                                          ) ;
                                       rdf:type owl:Class
                                     ] ;
-                rdfs:subClassOf obo:PATO_0001025 ;
+                rdfs:subClassOf obo:OGMS_0000029 ,
+                                obo:PATO_0001025 ;
                 obo:IAO_0000111 "blood pressure" ;
                 obo:IAO_0000115 "The pressure exerted by circulating blood on the walls of blood vessels."@en ;
                 obo:IAO_0000116 "Unless otherwise specified, a clinical report of a blood pressure is systolic left ventricular pressure over diastolic left ventricular pressure." ;
@@ -18107,6 +18417,12 @@ ontologies:TURBO_0010456 rdf:type owl:Class ;
 ontologies:TURBO_0010458 rdf:type owl:Class ;
                          rdfs:subClassOf ontologies:TURBO_0010409 ;
                          rdfs:label "preceding_visit_occurrence_id column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010460
+ontologies:TURBO_0010460 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010417 ;
+                         rdfs:label "omop procedure_occurrence table"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0001799
@@ -20843,6 +21159,37 @@ all instantiation predicates and predicates that use this relation.
 
 This interpretation is *not* the same as an at-all-times relation
 
+""" ,
+                               """
+
+## Elucidation
+
+This is used when the statement/axiom is assumed to hold true 'eternally'
+
+## How to interpret (informal)
+
+First the \"atemporal\" FOL is derived from the OWL using the standard
+interpretation. This axiom is temporalized by embedding the axiom
+within a for-all-times quantified sentence. The t argument is added to
+all instantiation predicates and predicates that use this relation.
+
+## Example
+
+    Class: nucleus
+    SubClassOf: part_of some cell
+
+    forall t :
+      forall n :
+        instance_of(n,Nucleus,t)
+         implies
+        exists c :
+          instance_of(c,Cell,t)
+          part_of(n,c,t)
+
+## Notes
+
+This interpretation is *not* the same as an at-all-times relation
+
 """ ;
                rdfs:label "axiom holds for all times"@en .
 
@@ -22450,6 +22797,12 @@ ontologies:TURBO_0010459 rdf:type owl:NamedIndividual ,
                          rdfs:label "preceding_visit_occurrence_id column from visit_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010461
+ontologies:TURBO_0010461 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010460 ;
+                         rdfs:label "procedure_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
 ###  http://transformunify.org/ontologies/TURBO_0020003
 ontologies:TURBO_0020003 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010409 ;
@@ -22462,220 +22815,43 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
 
 
-[ obo:IAO_0000412 obo:pdro.owl
+[ obo:IAO_0000412 obo:ro.owl
 ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
 [ obo:IAO_0000412 obo:geno.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -22697,6 +22873,297 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
 [ obo:IAO_0000412 obo:pr.owl
@@ -22705,19 +23172,22 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ico.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22730,9 +23200,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22741,106 +23208,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ontoneo.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ico.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -22870,34 +23244,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -22927,9 +23280,9 @@ obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -22946,60 +23299,6 @@ obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
-obo:OGMS_0000090 ontologies:TURBO_0010147 4323902 ,
-                                          4163708 ,
-                                          4108705 ,
-                                          4216130 ,
-                                          4276519 ,
-                                          4295880 ,
-                                          4057420 ,
-                                          4240305 ,
-                                          4125906 ,
-                                          4336464 ,
-                                          4235738 ,
-                                          45766298 ,
-                                          44783196 ,
-                                          4301346 ,
-                                          4199458 ,
-                                          4043071 ,
-                                          4170947 ,
-                                          4127235 ,
-                                          4163971 ,
-                                          4078793 ,
-                                          40493226 ,
-                                          40492359 ,
-                                          4146536 ,
-                                          4198190 ,
-                                          4293740 ,
-                                          4035793 ,
-                                          4337138 ,
-                                          4181781 ,
-                                          4107731 ,
-                                          4202451 .
-
-
-obo:OGMS_0000104 ontologies:TURBO_0010147 4075363 ,
-                                          4062501 ,
-                                          4249893 ,
-                                          4037675 ,
-                                          4168236 ,
-                                          4010253 ,
-                                          4254766 ,
-                                          4055982 ,
-                                          4163951 ,
-                                          4133840 ,
-                                          4335825 ,
-                                          4068785 ,
-                                          4052083 ,
-                                          4302356 ,
-                                          4064377 ,
-                                          4240345 ,
-                                          42535580 ,
-                                          4150653 ,
-                                          4024958 ,
-                                          4151422 .
-
-
 obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasExactSynonym "kg" ;
@@ -23010,8 +23309,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
@@ -23023,11 +23322,11 @@ obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
 
 
 obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
-               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                oboInOwl:id "UO:0000272"^^xsd:string ;
+               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                obo:IAO_0000118 "mmHg"^^xsd:string ;
-               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                rdfs:label "millimetres of mercury"^^xsd:string ;
+               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:hasOBONamespace "unit.ontology"^^xsd:string ;
                oboInOwl:created_by "george gkoutos"^^xsd:string ;
@@ -23061,13 +23360,13 @@ obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             foaf:mbox <mailto:yongqunh@med.umich.edu> .
 
 
-obo:omrse.owl rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "William Hogan"@en ,
-                         "Amanda Hicks" ,
+obo:omrse.owl dc:creator "William Hogan"@en ;
+              rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
+              dc:creator "Amanda Hicks" ,
                          "Mathias Brochhausen"@en ,
                          "Swetha Garimalla"@en ;
-              rdfs:label "The Ontology of Medically Related Social Entities"@en ;
               dc:contributor "Daniel Welch" ;
+              rdfs:label "The Ontology of Medically Related Social Entities"@en ;
               dc:license "CC-BY 4.0" ;
               owl:versionInfo "2019-21-02" ;
               dc:creator "Shariq Tariq"@en .
