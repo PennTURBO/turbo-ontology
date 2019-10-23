@@ -18474,6 +18474,107 @@ ontologies:TURBO_0010481 rdf:type owl:Class ;
                          rdfs:label "vocabulary_id column"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010489
+ontologies:TURBO_0010489 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010417 ;
+                         rdfs:label "omop condition_occurrence table"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010490
+ontologies:TURBO_0010490 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010417 ;
+                         rdfs:label "omop drug_exposure table"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010492
+ontologies:TURBO_0010492 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "condition_occurrence_id column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010493
+ontologies:TURBO_0010493 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "condition_start_datetime column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010494
+ontologies:TURBO_0010494 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "condition_end_datetime column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010495
+ontologies:TURBO_0010495 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "condition_source_value column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010496
+ontologies:TURBO_0010496 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "condition_source_concept_id column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010497
+ontologies:TURBO_0010497 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "drug_exposure_id column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010498
+ontologies:TURBO_0010498 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "drug_exposure_start_datetime column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010499
+ontologies:TURBO_0010499 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "drug_exposure_end_date column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010500
+ontologies:TURBO_0010500 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "verbatim_end_date column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010501
+ontologies:TURBO_0010501 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:comment """Synthea omop:
+
+|drug_type_concept_id|count|
+|--------------------|-----|
+|38000177|8468|
+|581452|22798|
+
+|concept_id|concept_name|
+|----------|------------|
+|581452|Dispensed in Outpatient office|
+|38000177|Prescription written|""" ;
+                         rdfs:label "drug_type_concept_id column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010502
+ontologies:TURBO_0010502 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "days_supply column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010503
+ontologies:TURBO_0010503 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "drug_source_value column"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010504
+ontologies:TURBO_0010504 rdf:type owl:Class ;
+                         rdfs:subClassOf ontologies:TURBO_0010409 ;
+                         rdfs:label "drug_source_concept_id column"@en .
+
+
 ###  http://www.ebi.ac.uk/efo/EFO_0001799
 efo:EFO_0001799 rdf:type owl:Class ;
                 rdfs:subClassOf obo:OBI_0000181 ;
@@ -22650,19 +22751,30 @@ ontologies:TURBO_0010420 rdf:type owl:NamedIndividual ,
 ontologies:TURBO_0010422 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010421 ;
                          obo:RO_0001000 ontologies:TURBO_0010420 ;
-                         rdfs:comment """MAPPING
+                         rdfs:comment """PREFIX : <http://api.stardog.com/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX stardog: <tag:stardog:api:>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+MAPPING
 FROM SQL {
 --  SELECT *
 --  FROM \"cdm_synthea10\".\"measurement\"
 select
-	*,
+	m.*,
+	c.vocabulary_id,
 	(case
 		when m.unit_source_value = 'mmHg' then 8876 
 		else m.unit_concept_id
 	end ) as more_units
 from
 	cdm_synthea10.measurement m
+join cdm_synthea10.concept c on
+	m.measurement_source_concept_id = c.concept_id
 --  WHERE \"measurement_date\" IS NOT NULL AND \"measurement_time\" IS NOT NULL AND \"operator_concept_id\" IS NOT NULL AND \"value_as_number\" IS NOT NULL AND \"value_as_concept_id\" IS NOT NULL AND \"unit_concept_id\" IS NOT NULL AND \"range_low\" IS NOT NULL AND \"range_high\" IS NOT NULL AND \"provider_id\" IS NOT NULL AND \"visit_occurrence_id\" IS NOT NULL AND \"visit_detail_id\" IS NOT NULL AND \"measurement_source_value\" IS NOT NULL AND \"unit_source_value\" IS NOT NULL AND \"value_source_value\" IS NOT NULL
+WHERE \"visit_occurrence_id\" < 30
 }
 TO {
   ?subject <http://api.stardog.com/measurement#measurement_concept_id> ?measurement_concept_id .
@@ -22686,6 +22798,7 @@ TO {
   ?subject <http://api.stardog.com/measurement#value_source_value> ?value_source_value .
   ?subject <http://api.stardog.com/measurement#visit_detail_id> ?visit_detail_id .
   ?subject <http://api.stardog.com/measurement#visit_occurrence_id> ?visit_occurrence_id .
+  ?subject <http://api.stardog.com/measurement#vocabulary_id> ?vocabulary_id .
   ?subject rdf:type :measurement
 } WHERE {
 #  BIND(template(\"measurement{measurement_id}_{person_id}_{measurement_concept_id}_{measurement_date}_{measurement_datetime}_{measurement_time}_{measurement_type_concept_id}_{operator_concept_id}_{value_as_number}_{value_as_concept_id}_{unit_concept_id}_{range_low}_{range_high}_{provider_id}_{visit_occurrence_id}_{visit_detail_id}_{measurement_source_value}_{measurement_source_concept_id}_{unit_source_value}_{value_source_value}\") AS ?subject)
@@ -22706,6 +22819,7 @@ TO {
   BIND(xsd:integer(?value_as_concept_id) AS ?value_as_concept_id)
   BIND(xsd:integer(?visit_detail_id) AS ?visit_detail_id)
   BIND(xsd:integer(?visit_occurrence_id) AS ?visit_occurrence_id)
+  BIND(xsd:integer(?more_units) AS ?more_units)
 }""" ;
                          rdfs:label "omop measurements with manually asserted mmHg units for BP"@en .
 
@@ -22943,6 +23057,133 @@ ontologies:TURBO_0010488 rdf:type owl:NamedIndividual ,
                          rdfs:label "measurement_source_concept_id column from person in cdm_synthea10 schema from measurement query result"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0010491
+ontologies:TURBO_0010491 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010489 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010415 ;
+                         rdfs:label "condition_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010505
+ontologies:TURBO_0010505 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010421 ;
+                         obo:RO_0001000 ontologies:TURBO_0010506 ;
+                         rdfs:comment """PREFIX : <http://api.stardog.com/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX stardog: <tag:stardog:api:>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+MAPPING
+FROM SQL {
+  SELECT 	de.*,
+	c.vocabulary_id
+  FROM \"cdm_synthea10\".\"drug_exposure\" de
+join cdm_synthea10.concept c on
+	de.drug_source_concept_id = c.concept_id
+--  WHERE \"measurement_date\" IS NOT NULL AND \"measurement_time\" IS NOT NULL AND \"operator_concept_id\" IS NOT NULL AND \"value_as_number\" IS NOT NULL AND \"value_as_concept_id\" IS NOT NULL AND \"unit_concept_id\" IS NOT NULL AND \"range_low\" IS NOT NULL AND \"range_high\" IS NOT NULL AND \"provider_id\" IS NOT NULL AND \"visit_occurrence_id\" IS NOT NULL AND \"visit_detail_id\" IS NOT NULL AND \"measurement_source_value\" IS NOT NULL AND \"unit_source_value\" IS NOT NULL AND \"value_source_value\" IS NOT NULL
+WHERE \"visit_occurrence_id\" < 30
+}
+TO {
+  ?subject <http://api.stardog.com/drug_exposure#days_supply> ?days_supply .
+  ?subject <http://api.stardog.com/drug_exposure#dose_unit_source_value> ?dose_unit_source_value .
+  ?subject <http://api.stardog.com/drug_exposure#drug_concept_id> ?drug_concept_id .
+  ?subject <http://api.stardog.com/drug_exposure#drug_exposure_end_date> ?drug_exposure_end_date .
+  ?subject <http://api.stardog.com/drug_exposure#drug_exposure_end_datetime> ?drug_exposure_end_datetime .
+  ?subject <http://api.stardog.com/drug_exposure#drug_exposure_id> ?drug_exposure_id .
+  ?subject <http://api.stardog.com/drug_exposure#drug_exposure_start_date> ?drug_exposure_start_date .
+  ?subject <http://api.stardog.com/drug_exposure#drug_exposure_start_datetime> ?drug_exposure_start_datetime .
+  ?subject <http://api.stardog.com/drug_exposure#drug_source_concept_id> ?drug_source_concept_id .
+  ?subject <http://api.stardog.com/drug_exposure#drug_source_value> ?drug_source_value .
+  ?subject <http://api.stardog.com/drug_exposure#drug_type_concept_id> ?drug_type_concept_id .
+  ?subject <http://api.stardog.com/drug_exposure#lot_number> ?lot_number .
+  ?subject <http://api.stardog.com/drug_exposure#person_id> ?person_id .
+  ?subject <http://api.stardog.com/drug_exposure#provider_id> ?provider_id .
+  ?subject <http://api.stardog.com/drug_exposure#quantity> ?quantity .
+  ?subject <http://api.stardog.com/drug_exposure#refills> ?refills .
+  ?subject <http://api.stardog.com/drug_exposure#route_concept_id> ?route_concept_id .
+  ?subject <http://api.stardog.com/drug_exposure#route_source_value> ?route_source_value .
+  ?subject <http://api.stardog.com/drug_exposure#sig> ?sig .
+  ?subject <http://api.stardog.com/drug_exposure#stop_reason> ?stop_reason .
+  ?subject <http://api.stardog.com/drug_exposure#verbatim_end_date> ?verbatim_end_date .
+  ?subject <http://api.stardog.com/drug_exposure#visit_detail_id> ?visit_detail_id .
+  ?subject <http://api.stardog.com/drug_exposure#visit_occurrence_id> ?visit_occurrence_id .
+  ?subject <http://api.stardog.com/measurement#vocabulary_id> ?vocabulary_id .
+  ?subject rdf:type :drug_exposure
+} WHERE {
+#  BIND(template(\"drug_exposure{drug_exposure_id}_{person_id}_{drug_concept_id}_{drug_exposure_start_date}_{drug_exposure_start_datetime}_{drug_exposure_end_date}_{drug_exposure_end_datetime}_{verbatim_end_date}_{drug_type_concept_id}_{stop_reason}_{refills}_{quantity}_{days_supply}_{sig}_{route_concept_id}_{lot_number}_{provider_id}_{visit_occurrence_id}_{visit_detail_id}_{drug_source_value}_{drug_source_concept_id}_{route_source_value}_{dose_unit_source_value}\") AS ?subject)
+  BIND(template(\"drug_exposure_{drug_exposure_id}\") AS ?subject)
+  BIND(xsd:date(?drug_exposure_end_date) AS ?drug_exposure_end_date)
+  BIND(xsd:date(?drug_exposure_start_date) AS ?drug_exposure_start_date)
+  BIND(xsd:date(?verbatim_end_date) AS ?verbatim_end_date)
+  BIND(xsd:dateTime(?drug_exposure_end_datetime) AS ?drug_exposure_end_datetime)
+  BIND(xsd:dateTime(?drug_exposure_start_datetime) AS ?drug_exposure_start_datetime)
+  BIND(xsd:double(?quantity) AS ?quantity)
+  BIND(xsd:integer(?days_supply) AS ?days_supply)
+  BIND(xsd:integer(?drug_concept_id) AS ?drug_concept_id)
+  BIND(xsd:integer(?drug_exposure_id) AS ?drug_exposure_id)
+  BIND(xsd:integer(?drug_source_concept_id) AS ?drug_source_concept_id)
+  BIND(xsd:integer(?drug_type_concept_id) AS ?drug_type_concept_id)
+  BIND(xsd:integer(?person_id) AS ?person_id)
+  BIND(xsd:integer(?provider_id) AS ?provider_id)
+  BIND(xsd:integer(?refills) AS ?refills)
+  BIND(xsd:integer(?route_concept_id) AS ?route_concept_id)
+  BIND(xsd:integer(?visit_detail_id) AS ?visit_detail_id)
+  BIND(xsd:integer(?visit_occurrence_id) AS ?visit_occurrence_id)
+}""" ;
+                         rdfs:label "omop drug_exposure plus vocabulary"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010506
+ontologies:TURBO_0010506 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010490 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010415 ;
+                         rdfs:label "drug_exposure in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010601
+ontologies:TURBO_0010601 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010494 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010491 ;
+                         rdfs:label "condition_end_datetime column from condition_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010602
+ontologies:TURBO_0010602 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010492 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010491 ;
+                         rdfs:label "condition_occurrence_id column from condition_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010603
+ontologies:TURBO_0010603 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010496 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010491 ;
+                         rdfs:label "condition_source_concept_id column from condition_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010604
+ontologies:TURBO_0010604 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010493 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010491 ;
+                         rdfs:label "condition_start_datetime column from condition_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010605
+ontologies:TURBO_0010605 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010495 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010491 ;
+                         rdfs:label "condition_source_value column from condition_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010606
+ontologies:TURBO_0010606 rdf:type owl:NamedIndividual ,
+                                  ontologies:TURBO_0010500 ;
+                         obo:BFO_0000050 ontologies:TURBO_0010491 ;
+                         rdfs:label "verbatim_end_date column from condition_occurrence in cdm_synthea10 schema from syntheaomop_post_icbo at pennturbo.org port 5432"@en .
+
+
 ###  http://transformunify.org/ontologies/TURBO_0020003
 ontologies:TURBO_0020003 rdf:type owl:NamedIndividual ,
                                   ontologies:TURBO_0010409 ;
@@ -22958,27 +23199,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
 ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -22992,66 +23212,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:pdro.owl
@@ -23069,7 +23229,145 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -23084,6 +23382,27 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -23093,25 +23412,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
+[ obo:IAO_0000412 obo:geno.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23121,30 +23425,21 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ro.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -23159,33 +23454,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -23198,145 +23466,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ico.owl
@@ -23345,6 +23478,18 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -23369,7 +23514,46 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23390,7 +23574,64 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
@@ -23420,9 +23661,9 @@ obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -23449,8 +23690,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
@@ -23462,11 +23703,11 @@ obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
 
 
 obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth."^^xsd:string ;
-               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                oboInOwl:id "UO:0000272"^^xsd:string ;
+               oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                obo:IAO_0000118 "mmHg"^^xsd:string ;
-               rdfs:label "millimetres of mercury"^^xsd:string ;
                oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
+               rdfs:label "millimetres of mercury"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:hasOBONamespace "unit.ontology"^^xsd:string ;
                oboInOwl:created_by "george gkoutos"^^xsd:string ;
@@ -23483,9 +23724,9 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
             rdfs:seeAlso "http://www.infectiousdiseaseontology.org" ;
             dc:creator "Albert Goldfain" ,
                        "Alexander Diehl" ,
-                       "Bjoern Peters" ,
-                       "Alan Ruttenberg" ;
+                       "Bjoern Peters" ;
             rdfs:comment "The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as 'pathogen', 'host', 'vector', and 'vaccine'.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. "@en ;
+            dc:creator "Alan Ruttenberg" ;
             protege:defaultLanguage "en" ;
             dc:license <http://creativecommons.org/licenses/by/3.0/> ;
             dc:creator "Barry Smith" ;
@@ -23502,13 +23743,13 @@ obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
 
 obo:omrse.owl rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
               dc:creator "William Hogan"@en ,
-                         "Mathias Brochhausen"@en ,
                          "Amanda Hicks" ,
+                         "Mathias Brochhausen"@en ,
                          "Swetha Garimalla"@en ;
-              dc:contributor "Daniel Welch" ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
-              owl:versionInfo "2019-21-02" ;
+              dc:contributor "Daniel Welch" ;
               dc:license "CC-BY 4.0" ;
+              owl:versionInfo "2019-21-02" ;
               dc:creator "Shariq Tariq"@en .
 
 
@@ -23521,10 +23762,10 @@ obo:pdro.owl dc:creator "Jean-François Éthier" ,
 
 
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-           oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
            oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
-           rdfs:comment "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string ,
-                        "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string .
+           oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
+           rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
+                        "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
 
 
 obo:ro.owl terms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
