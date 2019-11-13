@@ -21,6 +21,8 @@
 @base <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> .
 
 <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> rdf:type owl:Ontology ;
+                                                                                                 owl:imports ontologies:turbo_obib_ontodog.owl ,
+                                                                                                             ontologies:turbo_obo_ontofox.owl ;
                                                                                                  obo:IAO_0000116 """Converting UO terms from classes to individuals (offline, in a triplestore):
 
 (Most recently did mmHg with Ontofox, then converted in text editor... may not survive next merge.)
@@ -2482,11 +2484,14 @@ obo:IAO_0000417 rdf:type owl:ObjectProperty ;
 obo:IAO_0000581 rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf obo:BFO_0000051 ;
                 rdf:type owl:FunctionalProperty ;
-                rdfs:domain obo:IAO_0000582 ;
+                rdfs:domain obo:IAO_0000027 ;
                 rdfs:range obo:IAO_0000416 ;
                 obo:IAO_0000114 obo:IAO_0000123 ;
                 obo:IAO_0000115 "relates a time stamped measurement datum to the time measurement datum that denotes the time when the measurement was taken"@en ;
                 obo:IAO_0000117 "Alan Ruttenberg"@en ;
+                rdfs:comment """IAO domain: [time stamped measurement datum](http://purl.obolibrary.org/obo/IAO_0000582)
+
+I would also like to use this with data items like prescriptions and diagnoses""" ;
                 rdfs:label "has time stamp"@en .
 
 
@@ -23400,7 +23405,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
                          obo:UO_0000051 .
 
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
 ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23412,34 +23417,13 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23454,9 +23438,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -23464,75 +23445,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:geno.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ico.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23544,127 +23456,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:pr.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ontoneo.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23682,16 +23477,10 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:ro.owl
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23706,13 +23495,7 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
 [ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
@@ -23730,40 +23513,28 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:obi.owl
+[ obo:IAO_0000412 obo:ogg.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
  ] .
 
 [ obo:IAO_0000412 obo:geno.owl
@@ -23784,27 +23555,6 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:obi.owl
- ] .
-
-[ obo:IAO_0000412 obo:ogg.owl
- ] .
-
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
@@ -23826,6 +23576,15 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
@@ -23838,10 +23597,256 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 [ obo:IAO_0000412 obo:ogg.owl
  ] .
 
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
 [ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ico.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ontoneo.owl
+ ] .
+
+[ obo:IAO_0000412 obo:geno.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:pdro.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:ogg.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
+ ] .
+
+[ obo:IAO_0000412 obo:obi.owl
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -23853,9 +23858,9 @@ efo:EFO_0004374 rdf:type owl:NamedIndividual ,
 
 obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
                  obo:IAO_0000115 "The value of the sum of the primary and secondary Gleason scores (range 2-10). If three patterns are identified, it is the sum of the primary pattern score and the score of the least well-differentiated pattern." ;
+                 oboInOwl:inSubset obo:NCIT_C66830 ;
                  rdfs:label "Total Gleason Score for Prostate Cancer" ;
-                 oboInOwl:inSubset obo:NCIT_C66830 ,
-                                   obo:NCIT_C61410 ;
+                 oboInOwl:inSubset obo:NCIT_C61410 ;
                  oboInOwl:hasExactSynonym "Total Gleason Score" ,
                                           "Total Gleason Score for Prostate Cancer" ;
                  oboInOwl:inSubset obo:NCIT_C125922 .
@@ -23864,10 +23869,10 @@ obo:NCIT_C48602 oboInOwl:hasExactSynonym "GLEASON TOTAL SUM" ;
 obo:NCIT_C48603 oboInOwl:hasExactSynonym "Primary Gleason Pattern" ;
                 oboInOwl:inSubset obo:NCIT_C66830 ;
                 obo:IAO_0000115 "The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns." ;
-                oboInOwl:inSubset obo:NCIT_C125922 ;
                 rdfs:label "Primary Gleason Pattern" ;
                 oboInOwl:hasExactSynonym "GLEASON PRIMARY SCORE" ;
-                oboInOwl:inSubset obo:NCIT_C61410 .
+                oboInOwl:inSubset obo:NCIT_C125922 ,
+                                  obo:NCIT_C61410 .
 
 
 obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
@@ -23879,8 +23884,8 @@ obo:NCIT_C48604 oboInOwl:inSubset obo:NCIT_C66830 ;
                                   obo:NCIT_C61410 .
 
 
-obo:NCIT_C48605 oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
-                rdfs:label "Tertiary Gleason Pattern" ;
+obo:NCIT_C48605 rdfs:label "Tertiary Gleason Pattern" ;
+                oboInOwl:hasExactSynonym "Tertiary Gleason Pattern" ;
                 obo:IAO_0000115 "Prostate carcinoma patterns occupying less than 5% of the tumor." .
 
 
@@ -23894,8 +23899,8 @@ obo:UO_0000009 ontologies:TURBO_0010147 9529 ;
                oboInOwl:hasOBONamespace "unit.ontology" .
 
 
-obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "centimeter" ;
+obo:UO_0000015 rdfs:label "centimeter" ;
+               oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:hasExactSynonym "cm" ;
                oboInOwl:id "UO:0000015" ;
                oboInOwl:hasExactSynonym "centimetre" ;
@@ -23905,8 +23910,8 @@ obo:UO_0000015 oboInOwl:hasOBONamespace "unit.ontology" ;
                oboInOwl:created_by "george gkoutos" .
 
 
-obo:UO_0000016 oboInOwl:hasExactSynonym "micrometre" ;
-               obo:IAO_0000115 "A length unit which is equal to one thousandth of a meter or 10^[-3] m." ;
+obo:UO_0000016 obo:IAO_0000115 "A length unit which is equal to one thousandth of a meter or 10^[-3] m." ;
+               oboInOwl:hasExactSynonym "micrometre" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasExactSynonym "mm" ;
                oboInOwl:id "UO:0000016" ;
@@ -23920,10 +23925,10 @@ obo:UO_0000025 oboInOwl:id "UO:0000025" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                ontologies:TURBO_0010147 8564 ;
                obo:IAO_0000115 "A mass unit which is equal to 10^[-12] g." ;
-               oboInOwl:created_by "george gkoutos" ;
+               rdfs:label "picogram" ;
                oboInOwl:hasExactSynonym "pg" ;
-               oboInOwl:hasOBONamespace "unit.ontology" ;
-               rdfs:label "picogram" .
+               oboInOwl:created_by "george gkoutos" ;
+               oboInOwl:hasOBONamespace "unit.ontology" .
 
 
 obo:UO_0000063 obo:IAO_0000118 "millimole per liter" ;
@@ -23931,10 +23936,10 @@ obo:UO_0000063 obo:IAO_0000118 "millimole per liter" ;
                ontologies:TURBO_0010147 8753 ;
                oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> ;
                obo:IAO_0000115 "A unit of molarity which is equal to one thousandth of a molar or 10^[-3] M."^^xsd:string ;
-               oboInOwl:hasExactSynonym "mM"^^xsd:string ;
                oboInOwl:id "UO:0000063"^^xsd:string ;
-               rdfs:label "millimolar"^^xsd:string ;
+               oboInOwl:hasExactSynonym "mM"^^xsd:string ;
                obo:IAO_0000118 "mM"^^xsd:string ;
+               rdfs:label "millimolar"^^xsd:string ;
                oboInOwl:created_by "george gkoutos"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                obo:IAO_0000111 "millimolar"^^xsd:string .
@@ -23947,10 +23952,10 @@ An area density unit which is equal to the mass of an object in kilograms divide
                obo:created_by "george gkoutos" ;
                rdfs:label "kilogram per square meter" ;
                ontologies:TURBO_0010147 9531 ;
-               obo:hasExactSynonym "Body Mass Index (BMI)" ;
+               obo:hasExactSynonym "Body Mass Index (BMI)" ,
+                                   "kilogram per square metre" ;
                obo:id "UO:0000086" ;
-               obo:hasExactSynonym "kilogram per square metre" ,
-                                   "kg/m^[2]" ;
+               obo:hasExactSynonym "kg/m^[2]" ;
                obo:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> .
 
 
@@ -23974,17 +23979,17 @@ obo:UO_0000196 rdfs:label "pH"^^xsd:string ;
                obo:IAO_0000111 "pH"^^xsd:string .
 
 
-obo:UO_0000208 oboInOwl:hasExactSynonym "g/dl" ;
-               oboInOwl:id "UO:0000208" ;
+obo:UO_0000208 oboInOwl:id "UO:0000208" ;
+               oboInOwl:hasExactSynonym "g/dl" ;
                oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                obo:IAO_0000111 "gram per deciliter"^^xsd:string ;
                ontologies:TURBO_0010147 8713 ;
                oboInOwl:created_by "george gkoutos" ;
                oboInOwl:hasExactSynonym "gram per decilitre" ;
-               rdfs:label "gram per deciliter"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                obo:IAO_0000115 "A mass density unit which is equal to mass of an object in grams divided by the volume in deciliters."^^xsd:string ;
+               rdfs:label "gram per deciliter"^^xsd:string ;
                obo:IAO_0000118 "g/dl" .
 
 
@@ -23992,8 +23997,8 @@ obo:UO_0000272 obo:IAO_0000115 "A unit of pressure equal to the amount of fluid 
                oboInOwl:hasExactSynonym "mmHg"^^xsd:string ;
                oboInOwl:id "UO:0000272"^^xsd:string ;
                obo:IAO_0000118 "mmHg"^^xsd:string ;
-               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                rdfs:label "millimetres of mercury"^^xsd:string ;
+               oboInOwl:hasExactSynonym "millimeters of mercury"^^xsd:string ;
                obo:IAO_0000412 obo:uo.owl ;
                oboInOwl:hasOBONamespace "unit.ontology"^^xsd:string ;
                oboInOwl:created_by "george gkoutos"^^xsd:string ;
@@ -24008,8 +24013,8 @@ obo:UO_0000275 ontologies:TURBO_0010147 8842 ;
                obo:IAO_0000115 "A mass unit density which is equal to mass of an object in nanograms divided by the volume in milliliters." ;
                oboInOwl:hasOBONamespace "unit.ontology" ;
                rdfs:label "nanogram per milliliter" ;
-               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:creation_date "2011-03-21T10:55:12Z" ;
+               oboInOwl:inSubset <http://purl.obolibrary.org/obo/uo#unit_slim> ;
                oboInOwl:id "UO:0000275" .
 
 
@@ -24035,17 +24040,17 @@ obo:ido.owl dc:date "2017-11-03T15:13:52"^^xsd:dateTime ;
 
 obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
             dc:description "OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. "@en ;
-            dc:license <http://creativecommons.org/licenses/by/3.0/> ;
-            foaf:mbox <mailto:yongqunh@med.umich.edu> .
+            foaf:mbox <mailto:yongqunh@med.umich.edu> ;
+            dc:license <http://creativecommons.org/licenses/by/3.0/> .
 
 
-obo:omrse.owl rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
-              dc:creator "William Hogan"@en ,
-                         "Amanda Hicks" ,
+obo:omrse.owl dc:creator "William Hogan"@en ;
+              rdfs:comment "This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government's \"meaningful use\" criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt"@en ;
+              dc:creator "Amanda Hicks" ,
                          "Mathias Brochhausen"@en ,
                          "Swetha Garimalla"@en ;
-              dc:contributor "Daniel Welch" ;
               rdfs:label "The Ontology of Medically Related Social Entities"@en ;
+              dc:contributor "Daniel Welch" ;
               owl:versionInfo "2019-21-02" ;
               dc:license "CC-BY 4.0" ;
               dc:creator "Shariq Tariq"@en .
@@ -24060,8 +24065,8 @@ obo:pdro.owl dc:creator "Jean-François Éthier" ,
 
 
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-           oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
            oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
+           oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
            rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string ,
                         "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
 
