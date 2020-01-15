@@ -104,7 +104,7 @@ link exiting obo terms to a LOINC code, or a LOINC URI (from the BioPortal/UMLS 
 \"...to identify measures at a point in time. This is a synonym for 'spot' or 'random' as applied to urine measurements.\"""" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000116> """LThe orders for, or the results from, laboratory assays, when communicated according to LOINC, must indicate the nominal time span over which the sample was collected or over which the assay was performed. 
 
-Urine samples, for example, are frequently collected in a cumulative fashion, over a period such as 24 hours. THAT EXAMPLE WOD ULNOT BE A Pt ASSAY. The time scope for a Pt assay is nominally one point in time. Obviously it takes several seconds or more to fill a vacutainer with blood,""" ;
+Urine samples, for example, are frequently collected in a cumulative fashion, over a period such as 24 hours. THAT EXAMPLE WOULD NOT BE A Pt ASSAY. The time scope for a Pt assay is nominally one point in time. Obviously it takes several seconds or more to fill a vacutainer with blood,""" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000118> "Pt" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000119> <https://loinc.org/download/loinc-users-guide/> ;
                                               <http://purl.obolibrary.org/obo/LOBO_0100003> <http://purl.bioontology.org/ontology/LNC/LP208893-0> ;
@@ -151,14 +151,16 @@ need to create blood or serum etc terms""" ;
 
 ###  http://purl.obolibrary.org/obo/LOBO_0100008
 <http://purl.obolibrary.org/obo/LOBO_0100008> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/LOBO_0100001> ;
-                                              rdfs:label "quantitative assay"@en .
+                                              rdfs:subClassOf <http://www.geneontology.org/formats/oboInOwl#ObsoleteClass> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000116> "preparing to depricate LOINC-inspired clinical assay"^^xsd:string ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/IAO_0000103> ;
+                                              rdfs:label "obsolete_quantitative assay"@en ;
+                                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/LOBO_0100009
 <http://purl.obolibrary.org/obo/LOBO_0100009> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/LOBO_0100006> ,
-                                                              <http://purl.obolibrary.org/obo/OBI_0000418> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/LOBO_0100006> ;
                                               rdfs:label "Pt concentration of glucose in blood serum assay"@en .
 
 
@@ -237,7 +239,7 @@ need to create blood or serum etc terms""" ;
                                                                                      ]
                                                                                      [ rdf:type owl:Restriction ;
                                                                                        owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100017>
+                                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/LOBO_0100014>
                                                                                                                                  [ rdf:type owl:Restriction ;
                                                                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
                                                                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
@@ -249,30 +251,12 @@ need to create blood or serum etc terms""" ;
                                                                                    ) ;
                                                                 rdf:type owl:Class
                                                               ] ,
-                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
-                                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
-                                                                                                                                 [ rdf:type owl:Restriction ;
-                                                                                                                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
-                                                                                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
-                                                                                                                                 ]
-                                                                                                                               ) ;
-                                                                                                            rdf:type owl:Class
-                                                                                                          ]
-                                                                                     ]
-                                                                                     [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                                                       owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
-                                                                                     ]
-                                                                                   ) ;
-                                                                rdf:type owl:Class
-                                                              ] ,
                                                               [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/LOBO_0100014>
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
+                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
                                                                                                           [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
-                                                                                                            owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                            owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
                                                                                                           ]
                                                                                                         ) ;
                                                                                      rdf:type owl:Class
@@ -283,10 +267,10 @@ need to create blood or serum etc terms""" ;
                                                                 owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/IAO_0000027>
                                                                                                           [ rdf:type owl:Restriction ;
                                                                                                             owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000136> ;
-                                                                                                            owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/CHEBI_17234>
+                                                                                                            owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/LOBO_0100014>
                                                                                                                                                       [ rdf:type owl:Restriction ;
                                                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
-                                                                                                                                                        owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                                        owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
                                                                                                                                                       ]
                                                                                                                                                     ) ;
                                                                                                                                  rdf:type owl:Class
@@ -296,37 +280,95 @@ need to create blood or serum etc terms""" ;
                                                                                      rdf:type owl:Class
                                                                                    ]
                                                               ] ;
-                                              rdfs:label "measuring glucose concentration in blood serum or plasma assay"@en .
+                                              rdfs:comment """removed 
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/LOBO_0100013> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
-                         owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/IAO_0000027>
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000136> ;
-                                                                     owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/CHEBI_17234>
-                                                                                                               [ rdf:type owl:Restriction ;
-                                                                                                                 owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
-                                                                                                                 owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000275>
-                                                                                                               ]
-                                                                                                             ) ;
-                                                                                          rdf:type owl:Class
-                                                                                        ]
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ]
-                       ] ;
-   rdfs:comment "is the output about a concentration? or the glucose alone? or the serum/plasma alone?"
- ] .
+ and (has_specified_input some glucose)
+
+from analyte role axiom""" ;
+                                              rdfs:label "measuring glucose concentration in blood serum or plasma assay"@en .
 
 
 ###  http://purl.obolibrary.org/obo/LOBO_0100014
 <http://purl.obolibrary.org/obo/LOBO_0100014> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
                                               rdfs:label "blood serum or plasma defined class"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010715
+<http://transformunify.org/ontologies/TURBO_0010715> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ;
+                                                     rdfs:label "placeholder for LOINC assays under development"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010716
+<http://transformunify.org/ontologies/TURBO_0010716> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0010715> ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
+                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0000059> ;
+                                                                                            owl:someValuesFrom <http://purl.obolibrary.org/obo/LOBO_0100005>
+                                                                                          ]
+                                                                     ] ;
+                                                     rdfs:label "Point-in-time assay"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010717
+<http://transformunify.org/ontologies/TURBO_0010717> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0010715> ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://purl.obolibrary.org/obo/OSCI_0000036>
+                                                                     ] ;
+                                                     rdfs:label "Quantitative concentration assay"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010718
+<http://transformunify.org/ontologies/TURBO_0010718> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0010715> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/LOBO_0100014>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/LOBO_0100014>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ;
+                                                     rdfs:label "assay with serum/plasma evaluant"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010719
+<http://transformunify.org/ontologies/TURBO_0010719> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0010715> ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
+                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
+                                                                                                                 ]
+                                                                                                               ) ;
+                                                                                            rdf:type owl:Class
+                                                                                          ]
+                                                                     ] ;
+                                                     rdfs:label "assay with glucose analyte"@en .
 
 
 #################################################################
@@ -336,4 +378,4 @@ need to create blood or serum etc terms""" ;
 <http://purl.obolibrary.org/obo/UBERON_0000178> <http://purl.obolibrary.org/obo/LOBO_0100003> <http://purl.bioontology.org/ontology/LNC/LP71680-0> .
 
 
-###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

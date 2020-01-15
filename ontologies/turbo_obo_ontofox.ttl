@@ -10,6 +10,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix chebi: <http://purl.obolibrary.org/obo/chebi/> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix OBO_REL: <http://purl.org/obo/owl/OBO_REL#> .
 @prefix ontoneo: <http://purl.obolibrary.org/obo/ontoneo/> .
@@ -443,6 +444,17 @@ obo:RO_0040042 a owl:AnnotationProperty ;
 	rdfs:seeAlso <https://github.com/oborel/obo-relations/issues/164> ;
 	rdfs:subPropertyOf obo:RO_0002422 .
 # 
+# http://purl.obolibrary.org/obo/UBPROP_0000008
+
+obo:UBPROP_0000008 a owl:AnnotationProperty ;
+	obo:IAO_0000115 "Notes on the how instances of this class vary across species."^^xsd:string ;
+	oboInOwl:hasDbXref "UBPROP:0000008"^^xsd:string ;
+	oboInOwl:hasOBONamespace "uberon"^^xsd:string ;
+	oboInOwl:id "taxon_notes"^^xsd:string ;
+	oboInOwl:is_metadata_tag "true"^^xsd:boolean ;
+	oboInOwl:shorthand "taxon_notes"^^xsd:string ;
+	rdfs:label "taxon_notes"^^xsd:string .
+# 
 # http://purl.obolibrary.org/obo/UBPROP_0000012
 
 obo:UBPROP_0000012 a owl:AnnotationProperty ;
@@ -474,6 +486,34 @@ obo:is_metadata_tag a owl:AnnotationProperty .
 # http://purl.obolibrary.org/obo/shorthand
 
 obo:shorthand a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/chebi/charge
+
+chebi:charge a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/chebi/formula
+
+chebi:formula a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/chebi/inchi
+
+chebi:inchi a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/chebi/inchikey
+
+chebi:inchikey a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/chebi/mass
+
+chebi:mass a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/chebi/monoisotopicmass
+
+chebi:monoisotopicmass a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/chebi/smiles
+
+chebi:smiles a owl:AnnotationProperty .
 # 
 # http://purl.obolibrary.org/obo/ncbitaxon#has_rank
 
@@ -3600,6 +3640,18 @@ obo:CHEBI_17234 a owl:Class ;
 	obo:IAO_0000412 obo:chebi.owl , obo:obi.owl ;
 	rdfs:label "glucose"^^xsd:string .
 # 
+# http://purl.obolibrary.org/obo/CHEBI_22720
+
+obo:CHEBI_22720 a owl:Class ;
+	rdfs:subClassOf obo:CHEBI_23367 ;
+	obo:IAO_0000115 "A group of heterocyclic compounds with a core structure containing a benzene ring fused to a diazepine ring."^^xsd:string ;
+	obo:IAO_0000412 obo:chebi.owl ;
+	oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
+	oboInOwl:hasRelatedSynonym "benzodiazepines"^^xsd:string ;
+	oboInOwl:id "CHEBI:22720"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/chebi#3_STAR> ;
+	rdfs:label "benzodiazepine"^^xsd:string .
+# 
 # http://purl.obolibrary.org/obo/CHEBI_23367
 
 obo:CHEBI_23367 a owl:Class ;
@@ -3608,9 +3660,65 @@ obo:CHEBI_23367 a owl:Class ;
 	obo:IAO_0000115 "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity."^^xsd:string ;
 	obo:IAO_0000116 "We are assuming that every molecular entity has to be completely connected by chemical bonds. This excludes protein complexes, which are comprised of minimally two separate molecular entities. We will follow up with Chebi to ensure this is their understanding as well"@en ;
 	obo:IAO_0000412 obo:chebi.owl , obo:obi.owl , obo:pr.owl ;
+	oboInOwl:hasExactSynonym "molecular entity"^^xsd:string ;
 	oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
+	oboInOwl:hasRelatedSynonym "entidad molecular"^^xsd:string , "entidades moleculares"^^xsd:string , "entite moleculaire"^^xsd:string , "molecular entities"^^xsd:string , "molekulare Entitaet"^^xsd:string ;
 	oboInOwl:id "CHEBI:23367"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/chebi#3_STAR> ;
 	rdfs:label "molecular entity"^^xsd:string .
+# 
+# http://purl.obolibrary.org/obo/CHEBI_24431
+
+obo:CHEBI_24431 a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000040 ;
+	obo:IAO_0000115 "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances."^^xsd:string ;
+	obo:IAO_0000412 obo:pr.owl ;
+	oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
+	oboInOwl:id "CHEBI:24431"^^xsd:string ;
+	rdfs:label "chemical entity"^^xsd:string .
+# 
+# http://purl.obolibrary.org/obo/CHEBI_2611
+
+obo:CHEBI_2611 a owl:Class ;
+	rdfs:subClassOf obo:CHEBI_22720 ;
+	obo:IAO_0000115 "A member of the class of triazolobenzodiazepines that is 4H-[1,2,4]triazolo[4,3-a][1,4]benzodiazepine carrying methyl, phenyl and chloro substituents at positions 1, 6 and 8 respectively. Alprazolam is only found in individuals that have taken this drug."^^xsd:string ;
+	obo:IAO_0000412 obo:chebi.owl ;
+	chebi:charge "0"^^xsd:string ;
+	chebi:formula "C17H13ClN4"^^xsd:string ;
+	chebi:inchi "InChI=1S/C17H13ClN4/c1-11-20-21-16-10-19-17(12-5-3-2-4-6-12)14-9-13(18)7-8-15(14)22(11)16/h2-9H,10H2,1H3"^^xsd:string ;
+	chebi:inchikey "VREFGVBLTWBCJP-UHFFFAOYSA-N"^^xsd:string ;
+	chebi:mass "308.76478"^^xsd:string ;
+	chebi:monoisotopicmass "308.08287"^^xsd:string ;
+	chebi:smiles "Cc1nnc2CN=C(c3ccccc3)c3cc(Cl)ccc3-n12"^^xsd:string ;
+	oboInOwl:hasDbXref "CAS:28981-97-7"^^xsd:string , "DrugBank:DB00404"^^xsd:string , "Drug_Central:136"^^xsd:string , "HMDB:HMDB0014548"^^xsd:string , "KEGG:C06817"^^xsd:string , "KEGG:D00225"^^xsd:string , "LINCS:LSM-5460"^^xsd:string , "PMID:10350361"^^xsd:string , "PMID:10443648"^^xsd:string , "PMID:10631626"^^xsd:string , "PMID:10963939"^^xsd:string , "PMID:10997633"^^xsd:string , "PMID:11304902"^^xsd:string , "PMID:11824768"^^xsd:string , "PMID:12035937"^^xsd:string , "PMID:15647704"^^xsd:string , "PMID:15725773"^^xsd:string , "PMID:15830221"^^xsd:string , "PMID:16103667"^^xsd:string , "PMID:16139113"^^xsd:string , "PMID:16572266"^^xsd:string , "PMID:17631455"^^xsd:string , "PMID:24361783"^^xsd:string , "PMID:24464531"^^xsd:string , "PMID:24629629"^^xsd:string , "PMID:24840273"^^xsd:string , "PMID:24977401"^^xsd:string , "PMID:25032127"^^xsd:string , "PMID:25139178"^^xsd:string , "PMID:25199955"^^xsd:string , "PMID:25300043"^^xsd:string , "PMID:25427652"^^xsd:string , "PMID:25581490"^^xsd:string , "PMID:25620535"^^xsd:string , "PMID:7907366"^^xsd:string , "PMID:9050091"^^xsd:string , "Reaxys:1223125"^^xsd:string , "VSDB:2960"^^xsd:string , "Wikipedia:Alprazolam"^^xsd:string ;
+	oboInOwl:hasExactSynonym "8-chloro-1-methyl-6-phenyl-4H-[1,2,4]triazolo[4,3-a][1,4]benzodiazepine"^^xsd:string , "Alprazolam"^^xsd:string ;
+	oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
+	oboInOwl:hasRelatedSynonym "8-Chloro-1-methyl-6-phenyl-4H-s-triazolo(4,3-a)(1,4)benzodiazepine"^^xsd:string , "Xanax"^^xsd:string ;
+	oboInOwl:id "CHEBI:2611"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/chebi#3_STAR> ;
+	rdfs:label "alprazolam"^^xsd:string .
+# 
+# http://purl.obolibrary.org/obo/CHEBI_29026
+
+obo:CHEBI_29026 a owl:Class ;
+	rdfs:subClassOf obo:CHEBI_23367 ;
+	obo:IAO_0000115 "A member of the class of bilanes that is a colourless product formed in the intestine by the reduction of bilirubin."^^xsd:string ;
+	obo:IAO_0000412 obo:chebi.owl ;
+	chebi:charge "0"^^xsd:string ;
+	chebi:formula "C33H44N4O6"^^xsd:string ;
+	chebi:inchi "InChI=1S/C33H44N4O6/c1-7-20-19(6)32(42)37-27(20)14-25-18(5)23(10-12-31(40)41)29(35-25)15-28-22(9-11-30(38)39)17(4)24(34-28)13-26-16(3)21(8-2)33(43)36-26/h26-27,34-35H,7-15H2,1-6H3,(H,36,43)(H,37,42)(H,38,39)(H,40,41)"^^xsd:string ;
+	chebi:inchikey "OBHRVMZSZIDDEK-UHFFFAOYSA-N"^^xsd:string ;
+	chebi:mass "592.72582"^^xsd:string ;
+	chebi:monoisotopicmass "592.32609"^^xsd:string ;
+	chebi:smiles "CCC1=C(C)C(=O)NC1Cc1[nH]c(Cc2[nH]c(CC3NC(=O)C(CC)=C3C)c(C)c2CCC(O)=O)c(CCC(O)=O)c1C"^^xsd:string ;
+	oboInOwl:hasAlternativeId "CHEBI:27246"^^xsd:string , "CHEBI:5844"^^xsd:string ;
+	oboInOwl:hasDbXref "Beilstein:75461"^^xsd:string , "CAS:14684-37-8"^^xsd:string , "HMDB:HMDB0004158"^^xsd:string , "KEGG:C05790"^^xsd:string , "PMID:21614935"^^xsd:string , "PMID:24709296"^^xsd:string , "PMID:24714521"^^xsd:string , "Reaxys:75461"^^xsd:string ;
+	oboInOwl:hasExactSynonym "2,17-diethyl-3,7,13,18-tetramethyl-1,19-dioxo-1,4,5,10,15,16,19,22,23,24-decahydro-21H-biline-8,12-dipropanoic acid"^^xsd:string , "Urobilinogen"^^xsd:string ;
+	oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
+	oboInOwl:hasRelatedSynonym "2,17-diethyl-1,4,5,10,15,16,19,22,23,24-decahydro-3,7,13,18-tetramethyl-1,19-dioxo-21H-biline-8,12-dipropanoic acid"^^xsd:string , "8,12-bis(2-carboxyethyl)-3,18-diethyl-2,7,13,17-tetramethylbilane-1,19(4H,16H)-dione"^^xsd:string , "I-Urobilinogen"^^xsd:string , "Mesobilirubinogen"^^xsd:string , "mesobilirubinogen IXalpha"^^xsd:string , "urobilinogen IXalpha"^^xsd:string ;
+	oboInOwl:id "CHEBI:29026"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/chebi#3_STAR> ;
+	rdfs:label "urobilinogen"^^xsd:string .
 # 
 # http://purl.obolibrary.org/obo/CHEBI_33247
 
@@ -3662,6 +3770,19 @@ obo:CHEBI_33839 a owl:Class ;
 	obo:IAO_0000412 obo:chebi.owl , obo:obi.owl ;
 	rdfs:label "macromolecule"^^xsd:string .
 # 
+# http://purl.obolibrary.org/obo/CHEBI_35143
+
+obo:CHEBI_35143 a owl:Class ;
+	rdfs:subClassOf obo:CHEBI_33839 ;
+	obo:IAO_0000412 obo:chebi.owl ;
+	oboInOwl:hasDbXref "COMe:PRX000321"^^xsd:string ;
+	oboInOwl:hasExactSynonym "hemoglobin"^^xsd:string ;
+	oboInOwl:hasOBONamespace "chebi_ontology"^^xsd:string ;
+	oboInOwl:hasRelatedSynonym "haemoglobin"^^xsd:string , "vertebrate haemoglobin"^^xsd:string ;
+	oboInOwl:id "CHEBI:35143"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/chebi#3_STAR> ;
+	rdfs:label "hemoglobin"^^xsd:string .
+# 
 # http://purl.obolibrary.org/obo/CHEBI_50047
 
 obo:CHEBI_50047 a owl:Class ;
@@ -3689,7 +3810,7 @@ obo:CL_0000000 a owl:Class ;
 # http://purl.obolibrary.org/obo/CL_0000003
 
 obo:CL_0000003 a owl:Class ;
-	rdfs:subClassOf obo:CL_0000000 , obo:GO_0005623 ;
+	rdfs:subClassOf obo:CL_0000000 ;
 	obo:IAO_0000115 "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)."^^xsd:string ;
 	obo:IAO_0000412 obo:cl.owl ;
 	oboInOwl:hasDbXref "CARO:0000013"^^xsd:string ;
@@ -3734,6 +3855,17 @@ obo:CL_0000010 obo:IAO_0000111 "cultured cell"^^xsd:string ;
 	obo:IAO_0000412 obo:cl.owl , obo:obi.owl ;
 	rdfs:label "cultured cell"^^xsd:string .
 # 
+# http://purl.obolibrary.org/obo/CL_0000232
+
+obo:CL_0000232 a owl:Class ;
+	rdfs:subClassOf obo:CL_0000000 ;
+	obo:IAO_0000115 "A red blood cell. In mammals, mature erythrocytes are biconcave disks containing hemoglobin whose function is to transport oxygen."^^xsd:string ;
+	obo:IAO_0000412 obo:cl.owl ;
+	oboInOwl:hasDbXref "BTO:0000424"^^xsd:string , "CALOHA:TS-0290"^^xsd:string , "FMA:81100"^^xsd:string ;
+	oboInOwl:hasExactSynonym "RBC"^^xsd:string , "red blood cell"^^xsd:string ;
+	oboInOwl:hasOBONamespace "cell"^^xsd:string ;
+	rdfs:label "erythrocyte"^^xsd:string .
+# 
 # http://purl.obolibrary.org/obo/CL_0000578
 
 obo:CL_0000578 a owl:Class ;
@@ -3748,10 +3880,22 @@ obo:CL_0000578 obo:IAO_0000111 "experimentally modified cell in vitro"^^xsd:stri
 	obo:IAO_0000412 obo:cl.owl , obo:obi.owl ;
 	rdfs:label "experimentally modified cell in vitro"^^xsd:string .
 # 
+# http://purl.obolibrary.org/obo/CL_0000775
+
+obo:CL_0000775 a owl:Class ;
+	rdfs:subClassOf obo:CL_0000000 ;
+	obo:IAO_0000115 "Any of the immature or mature forms of a granular leukocyte that in its mature form has a nucleus with three to five lobes connected by slender threads of chromatin, and cytoplasm containing fine inconspicuous granules and stainable by neutral dyes."^^xsd:string ;
+	obo:IAO_0000412 obo:cl.owl ;
+	oboInOwl:hasBroadSynonym "PMN"^^xsd:string , "poly"^^xsd:string , "polymorphonuclear leucocyte"^^xsd:string , "polymorphonuclear leukocyte"^^xsd:string , "polymorphonuclear neutrophil"^^xsd:string , "polynuclear neutrophilic leucocyte"^^xsd:string , "polynuclear neutrophilic leukocyte"^^xsd:string ;
+	oboInOwl:hasDbXref "BTO:0000130"^^xsd:string , "CALOHA:TS-0688"^^xsd:string , "FMA:62860"^^xsd:string ;
+	oboInOwl:hasExactSynonym "neutrocyte"^^xsd:string , "neutrophil leucocyte"^^xsd:string , "neutrophil leukocyte"^^xsd:string , "neutrophilic leucocyte"^^xsd:string , "neutrophilic leukocyte"^^xsd:string ;
+	oboInOwl:hasOBONamespace "cell"^^xsd:string ;
+	rdfs:label "neutrophil"^^xsd:string .
+# 
 # http://purl.obolibrary.org/obo/CL_0001061
 
 obo:CL_0001061 a owl:Class ;
-	rdfs:subClassOf obo:CL_0000000 , obo:GO_0005623 ;
+	rdfs:subClassOf obo:CL_0000000 ;
 	obo:IAO_0000115 "A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models." ;
 	obo:IAO_0000412 obo:cl.owl ;
 	dc:creator <http://orcid.org/0000-0001-9990-8331> ;
@@ -9360,7 +9504,7 @@ obo:PATO_0001025 a owl:Class ;
 # http://purl.obolibrary.org/obo/PATO_0001241
 
 obo:PATO_0001241 a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000019 ;
+	rdfs:subClassOf obo:BFO_0000019 , obo:HP_0000118 ;
 	obo:IAO_0000111 "physical object quality"^^xsd:string ;
 	obo:IAO_0000115 "A quality which inheres in a continuant."@en , "A quality which inheres in a continuant."^^xsd:string ;
 	obo:IAO_0000412 obo:obi.owl , obo:ontoneo.owl , obo:pato.owl , obo:pdro.owl ;
@@ -9824,6 +9968,19 @@ obo:UBERON_0000479 a owl:Class ;
 	obo:IAO_0000412 obo:obi.owl , obo:uberon.owl ;
 	rdfs:label "tissue"^^xsd:string .
 # 
+# http://purl.obolibrary.org/obo/UBERON_0001088
+
+obo:UBERON_0001088 a owl:Class ;
+	rdfs:subClassOf obo:UBERON_0000465 ;
+	obo:IAO_0000115 "Excretion that is the output of a kidney"^^xsd:string ;
+	obo:IAO_0000412 obo:uberon.owl ;
+	obo:UBPROP_0000008 "kidney excreta from some taxa (e.g. in aves) may not be liquid"^^xsd:string ;
+	oboInOwl:hasDbXref <http://en.wikipedia.org/wiki/Urine> , <http://linkedlifedata.com/resource/umls/id/C0042036> , "BTO:0001419"^^xsd:string , "CALOHA:TS-1092"^^xsd:string , "EFO:0001939"^^xsd:string , "EMAPA:36554"^^xsd:string , "ENVO:00002047"^^xsd:string , "FMA:12274"^^xsd:string , "GAID:1189"^^xsd:string , "MA:0002545"^^xsd:string , "MAT:0000058"^^xsd:string , "MESH:D014556"^^xsd:string , "MIAA:0000058"^^xsd:string , "NCIT:C13283"^^xsd:string , "OpenCyc:Mx4rvVjGppwpEbGdrcN5Y29ycA"^^xsd:string , "UMLS:C0042036"^^xsd:string , "galen:Urine"^^xsd:string ;
+	oboInOwl:hasOBONamespace "uberon"^^xsd:string ;
+	oboInOwl:id "UBERON:0001088"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#efo_slim> , <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#pheno_slim> , <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#uberon_slim> ;
+	rdfs:label "urine"^^xsd:string .
+# 
 # http://purl.obolibrary.org/obo/UBERON_0001134
 
 obo:UBERON_0001134 a owl:Class ;
@@ -9832,6 +9989,33 @@ obo:UBERON_0001134 a owl:Class ;
 	obo:IAO_0000115 "Muscle tissue that consists primarily of skeletal muscle fibers."^^xsd:string ;
 	obo:IAO_0000412 obo:obi.owl , obo:uberon.owl ;
 	rdfs:label "skeletal muscle tissue"^^xsd:string .
+# 
+# http://purl.obolibrary.org/obo/UBERON_0001969
+
+obo:UBERON_0001969 a owl:Class ;
+	rdfs:subClassOf obo:UBERON_0000465 ;
+	obo:IAO_0000115 "The liquid component of blood, in which erythrocytes are suspended."^^xsd:string ;
+	obo:IAO_0000412 obo:uberon.owl ;
+	oboInOwl:hasBroadSynonym "plasma"^^xsd:string , "portion of plasma"^^xsd:string ;
+	oboInOwl:hasDbXref <http://en.wikipedia.org/wiki/Blood_plasma> , <http://linkedlifedata.com/resource/umls/id/C0032105> , "BTO:0000131"^^xsd:string , "CALOHA:TS-0800"^^xsd:string , "EFO:0001905"^^xsd:string , "EMAPA:35690"^^xsd:string , "FMA:62970"^^xsd:string , "GAID:1178"^^xsd:string , "MA:0002501"^^xsd:string , "MAT:0000052"^^xsd:string , "MESH:D010949"^^xsd:string , "MIAA:0000052"^^xsd:string , "NCIT:C13356"^^xsd:string , "OpenCyc:Mx4rEg4ZYrIbEduAAAAOpmP6tw"^^xsd:string , "UMLS:C0032105"^^xsd:string ;
+	oboInOwl:hasExactSynonym "blood plasm"^^xsd:string , "portion of blood plasma"^^xsd:string ;
+	oboInOwl:hasOBONamespace "uberon"^^xsd:string ;
+	oboInOwl:id "UBERON:0001969"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#efo_slim> , <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#pheno_slim> , <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#uberon_slim> ;
+	rdfs:label "blood plasma"^^xsd:string .
+# 
+# http://purl.obolibrary.org/obo/UBERON_0001977
+
+obo:UBERON_0001977 a owl:Class ;
+	rdfs:subClassOf obo:UBERON_0000465 ;
+	obo:IAO_0000115 "The portion of blood plasma that excludes clotting factors."^^xsd:string ;
+	obo:IAO_0000412 obo:uberon.owl ;
+	oboInOwl:hasDbXref <http://en.wikipedia.org/wiki/Serum_(blood)> , <http://linkedlifedata.com/resource/umls/id/C0229671> , "BTO:0000133"^^xsd:string , "BTO:0001239"^^xsd:string , "CALOHA:TS-0923"^^xsd:string , "EHDAA2:0004728"^^xsd:string , "EMAPA:35770"^^xsd:string , "FMA:63083"^^xsd:string , "MA:0002502"^^xsd:string , "NCIT:C13325"^^xsd:string , "UMLS:C0229671"^^xsd:string ;
+	oboInOwl:hasExactSynonym "serum"^^xsd:string ;
+	oboInOwl:hasOBONamespace "uberon"^^xsd:string ;
+	oboInOwl:id "UBERON:0001977"^^xsd:string ;
+	oboInOwl:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#pheno_slim> , <http://purl.oboInOwllibrary.org/oboInOwl/uberon/core#uberon_slim> ;
+	rdfs:label "blood serum"^^xsd:string .
 # 
 # http://purl.obolibrary.org/obo/UBERON_0007221
 
@@ -10078,7 +10262,8 @@ _:genid796 rdf:rest rdf:nil .
 
 _:genid795 a owl:Class .
 
-obo:VSO_0000004 obo:IAO_0000111 "blood pressure" ;
+obo:VSO_0000004 rdfs:subClassOf obo:OGMS_0000029 ;
+	obo:IAO_0000111 "blood pressure" ;
 	obo:IAO_0000115 "The pressure exerted by circulating blood on the walls of blood vessels."@en ;
 	obo:IAO_0000116 "Unless otherwise specified, a clinical report of a blood pressure is systolic left ventricular pressure over diastolic left ventricular pressure." ;
 	obo:IAO_0000117 "Albert Goldfain" ;
@@ -10376,52 +10561,52 @@ obo:obi.owl a owl:NamedIndividual ;
 	dc:subject "An ontology for the annotation of biomedical and functional genomics experiments."@en ;
 	terms:license "http://creativecommons.org/licenses/by/4.0/" ;
 	rdfs:comment "Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them."^^xsd:string ;
-	owl:versionInfo "2019-08-06"^^xsd:string .
+	owl:versionInfo "2019-11-12"^^xsd:string .
 # 
 
-_:genid818 obo:IAO_0000412 obo:obi.owl .
+_:genid818 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid819 obo:IAO_0000412 obo:obi.owl .
+_:genid819 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid820 obo:IAO_0000412 obo:obi.owl .
+_:genid820 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid821 obo:IAO_0000412 obo:obi.owl .
+_:genid821 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid822 obo:IAO_0000412 obo:pdro.owl .
+_:genid822 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid823 obo:IAO_0000412 obo:obi.owl .
+_:genid823 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid824 obo:IAO_0000412 obo:obi.owl .
+_:genid824 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid825 obo:IAO_0000412 obo:ogg.owl .
+_:genid825 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid826 obo:IAO_0000412 obo:obi.owl .
+_:genid826 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid827 obo:IAO_0000412 obo:obi.owl .
+_:genid827 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid828 obo:IAO_0000412 obo:obi.owl .
+_:genid828 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid829 obo:IAO_0000412 obo:obi.owl .
+_:genid829 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid830 obo:IAO_0000412 obo:obi.owl .
+_:genid830 obo:IAO_0000412 obo:pdro.owl .
 
 _:genid831 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid832 obo:IAO_0000412 obo:obi.owl .
+_:genid832 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid833 obo:IAO_0000412 obo:ogg.owl .
+_:genid833 obo:IAO_0000412 obo:pr.owl .
 
 _:genid834 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid835 obo:IAO_0000412 obo:obi.owl .
+_:genid835 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid836 obo:IAO_0000412 obo:pdro.owl .
+_:genid836 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid837 obo:IAO_0000412 obo:pdro.owl .
+_:genid837 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid838 obo:IAO_0000412 obo:obi.owl .
+_:genid838 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid839 obo:IAO_0000412 obo:pdro.owl .
+_:genid839 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid840 obo:IAO_0000412 obo:ogg.owl .
 
@@ -10433,61 +10618,61 @@ _:genid843 obo:IAO_0000412 obo:obi.owl .
 
 _:genid844 obo:IAO_0000412 obo:obi.owl .
 
-_:genid845 obo:IAO_0000412 obo:ogg.owl .
+_:genid845 obo:IAO_0000412 obo:obi.owl .
 
 _:genid846 obo:IAO_0000412 obo:obi.owl .
 
-_:genid847 obo:IAO_0000412 obo:ogg.owl .
+_:genid847 obo:IAO_0000412 obo:geno.owl .
 
-_:genid848 obo:IAO_0000412 obo:obi.owl .
+_:genid848 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid849 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid850 obo:IAO_0000412 obo:obi.owl .
+_:genid850 obo:IAO_0000412 obo:geno.owl .
 
-_:genid851 obo:IAO_0000412 obo:ogg.owl .
+_:genid851 obo:IAO_0000412 obo:geno.owl .
 
-_:genid852 obo:IAO_0000412 obo:ogg.owl .
+_:genid852 obo:IAO_0000412 obo:geno.owl .
 
-_:genid853 obo:IAO_0000412 obo:obi.owl .
+_:genid853 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid854 obo:IAO_0000412 obo:obi.owl .
 
 _:genid855 obo:IAO_0000412 obo:obi.owl .
 
-_:genid856 obo:IAO_0000412 obo:ogg.owl .
+_:genid856 obo:IAO_0000412 obo:obi.owl .
 
-_:genid857 obo:IAO_0000412 obo:pr.owl .
+_:genid857 obo:IAO_0000412 obo:obi.owl .
 
-_:genid858 obo:IAO_0000412 obo:ogg.owl .
+_:genid858 obo:IAO_0000412 obo:obi.owl .
 
 _:genid859 obo:IAO_0000412 obo:obi.owl .
 
-_:genid860 obo:IAO_0000412 obo:ogg.owl .
+_:genid860 obo:IAO_0000412 obo:obi.owl .
 
 _:genid861 obo:IAO_0000412 obo:obi.owl .
 
-_:genid862 obo:IAO_0000412 obo:ogg.owl .
+_:genid862 obo:IAO_0000412 obo:obi.owl .
 
 _:genid863 obo:IAO_0000412 obo:obi.owl .
 
-_:genid864 obo:IAO_0000412 obo:ogg.owl .
+_:genid864 obo:IAO_0000412 obo:obi.owl .
 
 _:genid865 obo:IAO_0000412 obo:obi.owl .
 
-_:genid866 obo:IAO_0000412 obo:ogg.owl .
+_:genid866 obo:IAO_0000412 obo:obi.owl .
 
 _:genid867 obo:IAO_0000412 obo:obi.owl .
 
 _:genid868 obo:IAO_0000412 obo:obi.owl .
 
-_:genid869 obo:IAO_0000412 obo:ogg.owl .
+_:genid869 obo:IAO_0000412 obo:obi.owl .
 
 _:genid870 obo:IAO_0000412 obo:obi.owl .
 
 _:genid871 obo:IAO_0000412 obo:obi.owl .
 
-_:genid872 obo:IAO_0000412 obo:ogg.owl .
+_:genid872 obo:IAO_0000412 obo:obi.owl .
 
 _:genid873 obo:IAO_0000412 obo:obi.owl .
 
@@ -10495,31 +10680,31 @@ _:genid874 obo:IAO_0000412 obo:obi.owl .
 
 _:genid875 obo:IAO_0000412 obo:obi.owl .
 
-_:genid876 obo:IAO_0000412 obo:ogg.owl .
+_:genid876 obo:IAO_0000412 obo:obi.owl .
 
 _:genid877 obo:IAO_0000412 obo:obi.owl .
 
-_:genid878 obo:IAO_0000412 obo:ogg.owl .
+_:genid878 obo:IAO_0000412 obo:obi.owl .
 
 _:genid879 obo:IAO_0000412 obo:obi.owl .
 
-_:genid880 obo:IAO_0000412 obo:pdro.owl .
+_:genid880 obo:IAO_0000412 obo:obi.owl .
 
-_:genid881 obo:IAO_0000412 obo:geno.owl .
+_:genid881 obo:IAO_0000412 obo:obi.owl .
 
 _:genid882 obo:IAO_0000412 obo:obi.owl .
 
-_:genid883 obo:IAO_0000412 obo:pdro.owl .
+_:genid883 obo:IAO_0000412 obo:obi.owl .
 
 _:genid884 obo:IAO_0000412 obo:obi.owl .
 
-_:genid885 obo:IAO_0000412 obo:pdro.owl .
+_:genid885 obo:IAO_0000412 obo:obi.owl .
 
-_:genid886 obo:IAO_0000412 obo:pdro.owl .
+_:genid886 obo:IAO_0000412 obo:obi.owl .
 
 _:genid887 obo:IAO_0000412 obo:obi.owl .
 
-_:genid888 obo:IAO_0000412 obo:geno.owl .
+_:genid888 obo:IAO_0000412 obo:ontoneo.owl .
 
 _:genid889 obo:IAO_0000412 obo:obi.owl .
 
@@ -10533,43 +10718,43 @@ _:genid893 obo:IAO_0000412 obo:obi.owl .
 
 _:genid894 obo:IAO_0000412 obo:obi.owl .
 
-_:genid895 obo:IAO_0000412 obo:obi.owl .
+_:genid895 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid896 obo:IAO_0000412 obo:pdro.owl .
+_:genid896 obo:IAO_0000412 obo:obi.owl .
 
-_:genid897 obo:IAO_0000412 obo:obi.owl .
+_:genid897 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid898 obo:IAO_0000412 obo:obi.owl .
+_:genid898 obo:IAO_0000412 obo:ro.owl .
 
 _:genid899 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid900 obo:IAO_0000412 obo:pdro.owl .
+_:genid900 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid901 obo:IAO_0000412 obo:pdro.owl .
+_:genid901 obo:IAO_0000412 obo:obi.owl .
 
-_:genid902 obo:IAO_0000412 obo:obi.owl .
+_:genid902 obo:IAO_0000412 obo:ontoneo.owl .
 
-_:genid903 obo:IAO_0000412 obo:ontoneo.owl .
+_:genid903 obo:IAO_0000412 obo:obi.owl .
 
-_:genid904 obo:IAO_0000412 obo:pdro.owl .
+_:genid904 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid905 obo:IAO_0000412 obo:obi.owl .
 
-_:genid906 obo:IAO_0000412 obo:ico.owl .
+_:genid906 obo:IAO_0000412 obo:obi.owl .
 
-_:genid907 obo:IAO_0000412 obo:obi.owl .
+_:genid907 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid908 obo:IAO_0000412 obo:pdro.owl .
+_:genid908 obo:IAO_0000412 obo:ontoneo.owl .
 
-_:genid909 obo:IAO_0000412 obo:pdro.owl .
+_:genid909 obo:IAO_0000412 obo:ro.owl .
 
-_:genid910 obo:IAO_0000412 obo:pdro.owl .
+_:genid910 obo:IAO_0000412 obo:obi.owl .
 
-_:genid911 obo:IAO_0000412 obo:geno.owl .
+_:genid911 obo:IAO_0000412 obo:obi.owl .
 
-_:genid912 obo:IAO_0000412 obo:ontoneo.owl .
+_:genid912 obo:IAO_0000412 obo:obi.owl .
 
-_:genid913 obo:IAO_0000412 obo:obi.owl .
+_:genid913 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid914 obo:IAO_0000412 obo:obi.owl .
 
@@ -10577,11 +10762,11 @@ _:genid915 obo:IAO_0000412 obo:obi.owl .
 
 _:genid916 obo:IAO_0000412 obo:obi.owl .
 
-_:genid917 obo:IAO_0000412 obo:pdro.owl .
+_:genid917 obo:IAO_0000412 obo:obi.owl .
 
-_:genid918 obo:IAO_0000412 obo:pdro.owl .
+_:genid918 obo:IAO_0000412 obo:obi.owl .
 
-_:genid919 obo:IAO_0000412 obo:geno.owl .
+_:genid919 obo:IAO_0000412 obo:pdro.owl .
 
 _:genid920 obo:IAO_0000412 obo:obi.owl .
 
@@ -10591,89 +10776,89 @@ _:genid922 obo:IAO_0000412 obo:obi.owl .
 
 _:genid923 obo:IAO_0000412 obo:obi.owl .
 
-_:genid924 obo:IAO_0000412 obo:obi.owl .
+_:genid924 obo:IAO_0000412 obo:ico.owl .
 
-_:genid925 obo:IAO_0000412 obo:ogg.owl .
+_:genid925 obo:IAO_0000412 obo:obi.owl .
 
-_:genid926 obo:IAO_0000412 obo:ogg.owl .
+_:genid926 obo:IAO_0000412 obo:pdro.owl .
 
 _:genid927 obo:IAO_0000412 obo:obi.owl .
 
-_:genid928 obo:IAO_0000412 obo:obi.owl .
+_:genid928 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid929 obo:IAO_0000412 obo:obi.owl .
+_:genid929 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid930 obo:IAO_0000412 obo:obi.owl .
 
-_:genid931 obo:IAO_0000412 obo:obi.owl .
+_:genid931 obo:IAO_0000412 obo:pdro.owl .
 
 _:genid932 obo:IAO_0000412 obo:obi.owl .
 
-_:genid933 obo:IAO_0000412 obo:obi.owl .
+_:genid933 obo:IAO_0000412 obo:pdro.owl .
 
 _:genid934 obo:IAO_0000412 obo:obi.owl .
 
 _:genid935 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid936 obo:IAO_0000412 obo:obi.owl .
+_:genid936 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid937 obo:IAO_0000412 obo:ogg.owl .
+_:genid937 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid938 obo:IAO_0000412 obo:obi.owl .
+_:genid938 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid939 obo:IAO_0000412 obo:ogg.owl .
+_:genid939 obo:IAO_0000412 obo:ontoneo.owl .
 
-_:genid940 obo:IAO_0000412 obo:obi.owl .
+_:genid940 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid941 obo:IAO_0000412 obo:ogg.owl .
+_:genid941 obo:IAO_0000412 obo:obi.owl .
 
-_:genid942 obo:IAO_0000412 obo:obi.owl .
+_:genid942 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid943 obo:IAO_0000412 obo:ogg.owl .
+_:genid943 obo:IAO_0000412 obo:ontoneo.owl .
 
-_:genid944 obo:IAO_0000412 obo:ogg.owl .
+_:genid944 obo:IAO_0000412 obo:obi.owl .
 
 _:genid945 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid946 obo:IAO_0000412 obo:ro.owl .
+_:genid946 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid947 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid948 obo:IAO_0000412 obo:ogg.owl .
+_:genid948 obo:IAO_0000412 obo:obi.owl .
 
-_:genid949 obo:IAO_0000412 obo:ogg.owl .
+_:genid949 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid950 obo:IAO_0000412 obo:ogg.owl .
+_:genid950 obo:IAO_0000412 obo:pdro.owl .
 
 _:genid951 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid952 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid953 obo:IAO_0000412 obo:ogg.owl .
+_:genid953 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid954 obo:IAO_0000412 obo:ogg.owl .
+_:genid954 obo:IAO_0000412 obo:obi.owl .
 
-_:genid955 obo:IAO_0000412 obo:ro.owl .
+_:genid955 obo:IAO_0000412 obo:obi.owl .
 
-_:genid956 obo:IAO_0000412 obo:ogg.owl .
+_:genid956 obo:IAO_0000412 obo:pdro.owl .
 
 _:genid957 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid958 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid959 obo:IAO_0000412 obo:ontoneo.owl .
+_:genid959 obo:IAO_0000412 obo:ogg.owl .
 
 _:genid960 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid961 obo:IAO_0000412 obo:pdro.owl .
+_:genid961 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid962 obo:IAO_0000412 obo:ontoneo.owl .
+_:genid962 obo:IAO_0000412 obo:pdro.owl .
 
-_:genid963 obo:IAO_0000412 obo:pdro.owl .
+_:genid963 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid964 obo:IAO_0000412 obo:ontoneo.owl .
+_:genid964 obo:IAO_0000412 obo:ogg.owl .
 
-_:genid965 obo:IAO_0000412 obo:pdro.owl .
+_:genid965 obo:IAO_0000412 obo:ogg.owl .
 # 
 # 
 # #################################################################
@@ -10691,8 +10876,8 @@ Documentation is under development as well, and for now a slidedeck is available
 
 obo:ogg.owl owl:versionInfo "Vision Release: 1.0.59"@en ;
 	dc:description "OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. "@en ;
-	foaf:mbox <mailto:yongqunh@med.umich.edu> ;
-	dc:license <http://creativecommons.org/licenses/by/3.0/> .
+	dc:license <http://creativecommons.org/licenses/by/3.0/> ;
+	foaf:mbox <mailto:yongqunh@med.umich.edu> .
 # 
 
 obo:pdro.owl dc:creator "Jean-François Éthier" , "Adrien Barton" ;
@@ -10701,8 +10886,8 @@ obo:pdro.owl dc:creator "Jean-François Éthier" , "Adrien Barton" ;
 # 
 
 obo:pr.owl terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-	oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
 	oboInOwl:date "23:09:2019 10:14"^^xsd:string ;
+	oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string ;
 	rdfs:comment "The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details."^^xsd:string , "Use reasoner in OBO Edit to see the correct hierarchy."^^xsd:string .
 # 
 
