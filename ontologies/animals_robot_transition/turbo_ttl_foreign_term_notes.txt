@@ -1,6 +1,6 @@
 # fully resolved not necessarily the latest version
-# -L can be used to pursue redirects
-# may not like overwriting
+# curl -L can be used to pursue redirects
+# curl may not like overwriting
 
 http://purl.obolibrary.org/obo/bfo.owl
 http://purl.obolibrary.org/obo/cl.owl
@@ -27,16 +27,15 @@ curl -O -J -L https://raw.githubusercontent.com/ICO-ontology/ICO/master/ico.owl
 curl -O -J -L https://raw.githubusercontent.com/OGMS/ogms/master/src/ontology/ogms.owl
 curl -O -J -L https://raw.githubusercontent.com/OpenLHS/PDRO/master/pdro.owl
 curl -O -J -L https://raw.githubusercontent.com/aellenhicks/htn_owl/master/htn.owl
+curl -O -J -L https://raw.githubusercontent.com/biobanking/ontology/20190620/obib.owl
+curl -O -J -L https://raw.githubusercontent.com/infectious-disease-ontology/infectious-disease-ontology/2017-11-03/ido.owl
 curl -O -J -L https://raw.githubusercontent.com/information-artifact-ontology/IAO/v2019-06-07/iao.owl
 curl -O -J -L https://raw.githubusercontent.com/obi-ontology/obi/v2019-11-12/obi.owl
 curl -O -J -L https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.owl
 curl -O -J -L https://raw.githubusercontent.com/oborel/obo-relations/master/ro.owl
 curl -O -J -L https://raw.githubusercontent.com/pato-ontology/pato/master/pato.owl
-curl -O -J -L https://raw.githubusercontent.com/ufbmi/OMRSE/master/omrse/omrse.owl
-
-curl -O -J -L https://raw.githubusercontent.com/biobanking/ontology/20190620/obib.owl
-curl -O -J -L https://raw.githubusercontent.com/infectious-disease-ontology/infectious-disease-ontology/2017-11-03/ido.owl
 curl -O -J -L https://raw.githubusercontent.com/stemcellontologyresource/OSCI/master/src/ontology/osci.owl
+curl -O -J -L https://raw.githubusercontent.com/ufbmi/OMRSE/master/omrse/omrse.owl
 
 ./robot.sh extract --method STAR --input cl.owl --force true --verbose --term-file cl_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_cl_module.ttl
 ./robot.sh extract --method STAR --input htn.owl --force true --verbose --term-file htn_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_htn_module.ttl
@@ -51,13 +50,15 @@ curl -O -J -L https://raw.githubusercontent.com/stemcellontologyresource/OSCI/ma
 
 ### ### ###
 
+# PULLING THREE TERMS INDIVIDUALLY, SO NO TERM LIST AT THIS POINT
+
 ./robot.sh extract --method STAR --input ido.owl --force true --verbose --term http://purl.obolibrary.org/obo/IDO_0000664 --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_ido_module.ttl
 ./robot.sh extract --method STAR --input obib.owl --force true --verbose --term http://purl.obolibrary.org/obo/OMIABIS_0000010 --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_obib_module.ttl
 ./robot.sh extract --method STAR --input osci.owl --force true --verbose --term http://purl.obolibrary.org/obo/OSCI_0000036 --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_osci_module.ttl
 
 ### ### ###
 
-# exceptions
+# PROBLEMATIC TERMS OR USAGE
 
 ./robot.sh extract --method STAR --input htn.owl --force true --verbose --term-file htn_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_htn_module.ttl
 2020-01-28 18:52:28,201 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IDO_0000664 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IDO_0000664>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IDO_0000664>))]
@@ -70,6 +71,8 @@ curl -O -J -L https://raw.githubusercontent.com/stemcellontologyresource/OSCI/ma
 2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IAO_0000142 in punning not allowed [Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IAO_0000142>)), Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000142>))]
 2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/OBI_0000312 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/OBI_0000312>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000312>))]
 2020-01-28 18:52:28,535 WARN org.obolibrary.robot.CommandManager - Subcommand Timing: extract took 2.364 seconds
+
+# IAO_0020015, personal name
 
 ./robot.sh extract --method STAR --input obi.owl --force true --verbose --term-file obi_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_obi_etc_module.ttl
 2020-01-28 18:36:11,577 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/IAO_0020015>
@@ -145,6 +148,8 @@ For any SLME method, this will only include the classes directly used in the log
 
 ### ### ###
 
+GENERALLY OK
+
 http://purl.obolibrary.org/obo/BFO_
 http://purl.obolibrary.org/obo/CL_
 http://purl.obolibrary.org/obo/GO_
@@ -164,6 +169,9 @@ http://purl.obolibrary.org/obo/UO_
 http://purl.obolibrary.org/obo/VSO_
 
 ### ### ###
+
+NON OBO
+TWO DIFFERENBT STYES FOR NCIT
 
 http://www.ebi.ac.uk/efo/EFO_
 http://www.ebi.ac.uk/efo/EFO_0004340
@@ -211,7 +219,7 @@ http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71892
 http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#code 
 
 http://www.ebi.ac.uk/efo/IAO_0000115 EFO?! Used by UO
-http://www.ebi.ac.uk/efo/IAO_0000115 
+
 
 http://purl.obolibrary.org/obo/LOBO
 http://purl.obolibrary.org/obo/LOBO_0100003
