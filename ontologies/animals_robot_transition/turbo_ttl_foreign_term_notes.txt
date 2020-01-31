@@ -1,15 +1,293 @@
-edited ontology 2020 0130 1030, need to remerge
-renamed lobo annotation term for bioportal loinc uri
+http://purl.obolibrary.org/obo/ontoneo.owl
+curl -O -J -L https://raw.githubusercontent.com/ontoneo-project/Ontoneo/master/ontoneo.owl
 
-/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  extract --individuals include --method STAR --input "C:/Users/Mark Miller/Box Sync/ncit.owl" --force true --verbose --term-file "C:/Users/Mark Miller/Turbo-Ontology/ontologies/animals_robot_transition/ncit_turbo_hardcoded_imports.txt"  --intermediates all --annotate-with-source true --output "C:/Users/Mark Miller/Box Sync/turbo_hardcoded_ncit_module.ttl"
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  merge -v \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/cl.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/efo.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/htn.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ico.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ido.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/mondo.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ncit.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/obi.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/obib.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ogms.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/omrse.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ontoneo.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/osci.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/pato.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/pdro.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ro.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/uberon.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/uo.owl.txt.ttl \
+--output Turbo-Ontology/ontologies/animals_robot_transition/merged_modules.ttl
 
-DUPLICATE LABELS:
+
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  extract \
+--individuals include --method BOT --force true --verbose --intermediates all --annotate-with-source true \
+--input Box\ Sync/obo_owl/ontoneo.owl \
+--term-file Turbo-Ontology/ontologies/animals_robot_transition/term_lists/ontoneo.owl.txt \
+--output Turbo-Ontology/ontologies/animals_robot_transition/temp/ontoneo.owl.txt.ttl
+
+lots of illegal redeclarations... just for Portuguese translation term!
+
+cd ~ ; 
+for i in Turbo-Ontology/ontologies/animals_robot_transition/term_lists/*.txt ; 
+do j=`basename $i` ; 
+echo ${j} ; 
+k=`echo $j | sed "s/\.txt$//"` ; 
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar -v extract --individuals include --method BOT --force true --verbose --intermediates all --annotate-with-source true --input Box\ Sync/obo_owl/$k --term-file $i --output Turbo-Ontology/ontologies/animals_robot_transition/temp/$j.ttl ;
+done
+
+# for omrse and pdro
+
+cd ~ ; 
+for i in Turbo-Ontology/ontologies/animals_robot_transition/term_lists/no_bot_imports/*.txt ; 
+do j=`basename $i` ; 
+echo ${j} ; 
+k=`echo $j | sed "s/\.txt$//"` ; 
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar -v extract --individuals include --method BOT --imports exclude  --force true --verbose --intermediates all --annotate-with-source true --input Box\ Sync/obo_owl/$k --term-file $i --output Turbo-Ontology/ontologies/animals_robot_transition/temp/$j.ttl ;
+done
+
+# more verbose
+cd ~ ; 
+for i in Turbo-Ontology/ontologies/animals_robot_transition/term_lists/*.txt ; 
+do ls -l ${i} ; 
+j=`basename $i` ; 
+k=`echo $j | sed "s/\.txt$//"` ; 
+ls Box\ Sync/obo_owl/$k -l ; 
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  extract --individuals include --method BOT --force true --verbose --intermediates all --annotate-with-source true --input Box\ Sync/obo_owl/$k --term-file $i --output Turbo-Ontology/ontologies/animals_robot_transition/temp/$j.ttl ;
+done
+
+htn.owl.txt
+various Illegal redeclarations (minor)
+
+https://github.com/ontodev/robot/issues/615
+mondo.owl.txt
+2020-01-31 14:41:11,704 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/GO_0005623>
+obi.owl.txt
+2020-01-31 14:42:29,688 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/IAO_0020015>
+2020-01-31 14:42:29,688 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/BFO_0000139>
+2020-01-31 14:42:29,689 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/BFO_0000155>
+ro.owl.txt
+2020-01-31 14:42:59,052 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0000092>
+2020-01-31 14:42:59,053 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0000086>
+2020-01-31 14:42:59,053 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0001000>
+2020-01-31 14:42:59,053 WARN  org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0000087>
+
+https://github.com/ontodev/robot/issues/616
+do
+	--method BOT --imports exclude 
+or
+	--method STAR
+
+omrse.owl.txt
+String index out of range: -1
+Use the -vvv option to show the stack trace.
+
+pdro.owl.txt
+String index out of range: -1
+
+turbo.ttl.txt
+org.semanticweb.owlapi.io.OWLOntologyInputSourceException: java.io.FileNotFoundException: Box Sync\obo_owl\turbo.ttl (The system cannot find the file specified)
+
+
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  extract \
+--individuals include --method STAR --force true --verbose --intermediates all --annotate-with-source true \
+--input Turbo-Ontology/ontologies/turbo.ttl \
+--term-file Turbo-Ontology/ontologies/animals_robot_transition/term_lists/turbo.ttl.txt \
+--output Turbo-Ontology/ontologies/animals_robot_transition/temp/turbo.ttl.txt.ttl
+
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar merge \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/cl.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/efo.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/htn.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ico.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ido.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/mondo.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ncit.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/obi.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/obib.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ogms.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/omrse.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/osci.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/pato.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/pdro.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/ro.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/uberon.owl.txt.ttl \
+--input Turbo-Ontology/ontologies/animals_robot_transition/temp/uo.owl.txt.ttl \
+--output  Turbo-Ontology/ontologies/animals_robot_transition/temp/merged.ttl 
+
+# edited base turbo ontology 2020 0130 1030, need to remerge
+# gave lobo annotation term for "bioportal loinc uri" a turbo IRI
+# http://transformunify.org/ontologies/TURBO_
+# TO DO: FIX THESE SUBJECTS that don't follow ^http://transformunify.org/ontologies/TURBO_\d{7}$
+	http://transformunify.org/ontologies/TURBO_00001501
+	http://transformunify.org/ontologies/TURBO_00001502
+	http://transformunify.org/ontologies/TURBO_00001503
+	http://transformunify.org/ontologies/TURBO_00001511
+
+
+# DUPLICATE LABELS:
 cell
 material anatomical entity
 patient role
 MORE?
 
-# fully resolved not necessarily the latest version
+
+$ ls -1 ~/Box\ Sync/obo_owl/
+cl.owl
+efo.owl
+htn.owl
+ico.owl
+ido.owl
+mondo.owl
+ncit.owl
+obi.owl
+obib.owl
+ogms.owl
+omrse.owl
+osci.owl
+pato.owl
+pdro.owl
+ro.owl
+uberon.owl
+uo.owl
+
+bfo_classes_only.owl
+iao.owl
+
+$ ls -1 ~/Turbo-Ontology/ontologies/animals_robot_transition/term_lists/
+cl_turbo_hardcoded_imports.txt
+efo_turbo_hardcoded_imports.txt
+htn_turbo_hardcoded_imports.txt
+ico_turbo_hardcoded_imports.txt
+ido_turbo_hardcoded_imports.txt
+mondo_turbo_hardcoded_imports.txt
+ncit_turbo_hardcoded_imports.txt
+obi_etc_turbo_hardcoded_imports.txt
+obib_turbo_hardcoded_imports.txt
+ogms_turbo_hardcoded_imports.txt
+omrse_turbo_hardcoded_imports.txt
+osci_turbo_hardcoded_imports.txt
+pato_turbo_hardcoded_imports.txt
+pdro_turbo_hardcoded_imports.txt
+ro_turbo_hardcoded_imports.txt
+uberon_turbo_hardcoded_imports.txt
+uo_turbo_hardcoded_imports.txt
+
+
+
+
+## ### ###
+
+# PROBLEMATIC TERMS OR USAGE
+
+./robot.sh extract --method STAR --input htn.owl --force true --verbose --term-file htn_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_htn_module.ttl
+
+2020-01-28 18:52:28,202 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/RO_0000092 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0000092>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000092>))]
+	disposition of
+	OK, imported from RO
+2020-01-28 18:52:28,202 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IAO_0000039 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000039>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IAO_0000039>))]
+	H-MUL
+	OK imported from IAO
+2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/OBI_0000295 in punning not allowed [Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000295>)), Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/OBI_0000295>))]
+	IS-IO
+	OK, imported from OBI
+
+2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/BFO_0000113 in punning not allowed [Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000113>)), Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/BFO_0000113>))]
+	has material basis at all times
+	deprecated in BFO
+	see also http://purl.obolibrary.org/obo/IDO_0000664 has material basis, already imported from IDO
+
+2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/RO_0000053 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0000053>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))]
+	is bearer of
+	deprecated in favor of http://purl.obolibrary.org/obo/RO_0000053, already imported from RO
+	
+2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/RO_0000086 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0000086>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000086>))]
+	has quality
+	deprecated by RO but already in several other imports?!
+
+2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IAO_0000142 in punning not allowed [Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IAO_0000142>)), Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000142>))]
+	mentions
+	OK, already imported from IAO
+2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/OBI_0000312 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/OBI_0000312>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000312>))]
+	IS-OO
+	OK, already imported from OBI
+2020-01-28 18:52:28,535 WARN org.obolibrary.robot.CommandManager - Subcommand Timing: extract took 2.364 seconds
+
+
+2020-01-28 18:52:28,201 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IDO_0000664 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IDO_0000664>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IDO_0000664>))]
+	has material basis in
+		Human Disease Ontology
+
+
+
+
+# IAO_0020015, personal name
+
+./robot.sh extract --method STAR --input obi.owl --force true --verbose --term-file obi_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_obi_etc_module.ttl
+2020-01-28 18:36:11,577 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/IAO_0020015>
+	personal name
+	deprecated but still present in OBIB and OMRSE
+	bee below for turbo usage
+	
+ontologies:TURBO_0010101 rdf:type owl:Class ;
+ rdfs:subClassOf obo:IAO_0020015 ;
+ rdfs:label given name .
+
+ontologies:TURBO_0010102 rdf:type owl:Class ;
+ rdfs:subClassOf obo:IAO_0020015 ;
+ rdfs:label family name .
+ 
+[Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) SCO ('is designated by' some 'personal name')
+ and ('is identical to' some 'Human body')
+						 
+2020-01-28 18:36:11,578 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/BFO_0000139>
+	temporal part of
+		used in TURBO date of birth machinery
+		[process boundary](http://purl.obolibrary.org/obo/BFO_0000035) SCO 
+'occupies spatiotemporal region' only 
+    ('spatiotemporal region'
+     and ('temporal part of' some 'spatiotemporal region'))
+	 
+2020-01-28 18:36:11,578 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/BFO_0000155>
+	occupies Temporal Region
+		used in TURBO date of birth machinery
+		and [temporal region](http://purl.obolibrary.org/obo/BFO_0000008)  SCO 'has temporal occupant' some  Self 
+
+./robot.sh extract --method STAR --input ro.owl --force true --verbose --term-file ro_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_ro_module.ttl
+2020-01-28 18:23:46,188 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0000086>
+	ObjectProperty: has quality
+	deprecated?!
+2020-01-28 18:23:46,188 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0001000>
+	ObjectProperty: derives from
+2020-01-28 18:23:46,188 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0000087>
+	ObjectProperty: has role
+	
+http://purl.obolibrary.org/obo/RO_0000086
+http://purl.obolibrary.org/obo/RO_0001000
+http://purl.obolibrary.org/obo/RO_0000087
+
+$ ./robot.sh extract --method STAR --input mondo.owl --force true --verbose --term-file mondo_turbo_hardcoded_imports.txt --individuals include --intermediates all --copy-ontology-annotations true --annotate-with-source true --output turbo_hardcoded_mondo_module.ttl
+2020-01-28 19:14:51,926 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/GO_0005623>
+Class: cell
+2020-01-28 19:15:00,017 WARN org.obolibrary.robot.CommandManager - Subcommand Timing: extract took 79.02 seconds
+
+###
+
+# latest extract template
+$ /C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  extract --individuals include --method STAR --input ~/Box\ Sync/obo_owl/efo.owl --term-file ~/Turbo-Ontology/ontologies/animals_robot_transition/term_lists/efo_turbo_hardcoded_imports.txt --force true --verbose --intermediates all --annotate-with-source true --output ~/Turbo-Ontology/ontologies/animals_robot_transition/per_ontology_ouput/turbo_hardcoded_efo_module.ttl
+2020-01-31 11:12:07,341 WARN  org.obolibrary.robot.CommandManager - Subcommand Timing: extract took 20.936 seconds
+
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  extract --individuals include --method STAR --input ~/Box\ Sync/obo_owl/efo.owl --term-file ~/Turbo-Ontology/ontologies/animals_robot_transition/term_lists/efo_turbo_hardcoded_imports.txt --force true --verbose --intermediates all --annotate-with-source true --output ~/Turbo-Ontology/ontologies/animals_robot_transition/per_ontology_ouput/turbo_hardcoded_efo_module.ttl
+
+
+
+###   ###   ###	
+
+
+# fully resolved URL not necessarily the latest version
 # curl -L can be used to pursue redirects
 # curl may not like overwriting
 
@@ -74,6 +352,8 @@ curl -O -J -L https://www.ebi.ac.uk/efo/efo.owl
 
 /C/robot/robot.bat  extract --method STAR --input /C/Users/Mark\ Miller/Box\ Sync/uo.owl  --force true --verbose --term-file /C/Users/Mark\ Miller/Turbo-Ontology/ontologies/animals_robot_transition/uo_turbo_hardcoded_imports.txt  --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_uo_module.ttl/C/Users/Mark\ Miller/Box\ Sync/turbo_hardcoded_uo_module.ttl
 
+/C/Program\ Files/Java/jdk1.8.0_201/bin/java -Xms4G -Xmx8G -jar /C/robot/robot.jar  extract --individuals include --method STAR --input "C:/Users/Mark Miller/Box Sync/ncit.owl" --force true --verbose --term-file "C:/Users/Mark Miller/Turbo-Ontology/ontologies/animals_robot_transition/ncit_turbo_hardcoded_imports.txt"  --intermediates all --annotate-with-source true --output "C:/Users/Mark Miller/Box Sync/turbo_hardcoded_ncit_module.ttl"
+
 
 ###   ###   ###
 
@@ -101,7 +381,7 @@ add UO
 
 ### ### ###
 
-# PULLING THREE TERMS INDIVIDUALLY, SO NO TERM LIST AT THIS POINT
+# HAD BEEN PULLING THREE TERMS INDIVIDUALLY
 
 ./robot.sh extract --method STAR --input ido.owl --force true --verbose --term http://purl.obolibrary.org/obo/IDO_0000664 --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_ido_module.ttl
 ./robot.sh extract --method STAR --input obib.owl --force true --verbose --term http://purl.obolibrary.org/obo/OMIABIS_0000010 --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_obib_module.ttl
@@ -109,92 +389,14 @@ add UO
 
 ### ### ###
 
-# PROBLEMATIC TERMS OR USAGE
-
-./robot.sh extract --method STAR --input htn.owl --force true --verbose --term-file htn_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_htn_module.ttl
-2020-01-28 18:52:28,201 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IDO_0000664 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IDO_0000664>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IDO_0000664>))]
-	has material basis in
-		Human Disease Ontology
-
-2020-01-28 18:52:28,202 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/RO_0000092 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0000092>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000092>))]
-	disposition of
-2020-01-28 18:52:28,202 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IAO_0000039 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000039>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IAO_0000039>))]
-	H-MUL
-2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/OBI_0000295 in punning not allowed [Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000295>)), Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/OBI_0000295>))]
-	IS-IO
-2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/BFO_0000113 in punning not allowed [Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000113>)), Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/BFO_0000113>))]
-	has material basis at all times
-2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/RO_0000053 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0000053>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))]
-	is bearer of
-2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/RO_0000086 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0000086>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000086>))]
-	has quality
-2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/IAO_0000142 in punning not allowed [Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IAO_0000142>)), Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000142>))]
-	mentions
-2020-01-28 18:52:28,203 WARN uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl - Illegal redeclarations of entities: reuse of entity http://purl.obolibrary.org/obo/OBI_0000312 in punning not allowed [Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/OBI_0000312>)), Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000312>))]
-	IS-OO
-2020-01-28 18:52:28,535 WARN org.obolibrary.robot.CommandManager - Subcommand Timing: extract took 2.364 seconds
-
-# IAO_0020015, personal name
-
-./robot.sh extract --method STAR --input obi.owl --force true --verbose --term-file obi_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_obi_etc_module.ttl
-2020-01-28 18:36:11,577 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/IAO_0020015>
-	personal name
-	bee below for turbo usage
-	
-ontologies:TURBO_0010101 rdf:type owl:Class ;
- rdfs:subClassOf obo:IAO_0020015 ;
- rdfs:label given name .
-
-ontologies:TURBO_0010102 rdf:type owl:Class ;
- rdfs:subClassOf obo:IAO_0020015 ;
- rdfs:label family name .
- 
-[Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) SCO ('is designated by' some 'personal name')
- and ('is identical to' some 'Human body')
-						 
-2020-01-28 18:36:11,578 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/BFO_0000139>
-	temporal part of
-		used in TURBO date of birth machinery
-		[process boundary](http://purl.obolibrary.org/obo/BFO_0000035) SCO 
-'occupies spatiotemporal region' only 
-    ('spatiotemporal region'
-     and ('temporal part of' some 'spatiotemporal region'))
-	 
-2020-01-28 18:36:11,578 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/BFO_0000155>
-	occupies Temporal Region
-		used in TURBO date of birth machinery
-		and [temporal region](http://purl.obolibrary.org/obo/BFO_0000008)  SCO 'has temporal occupant' some  Self 
-
-./robot.sh extract --method STAR --input ro.owl --force true --verbose --term-file ro_turbo_hardcoded_imports.txt --individuals include --intermediates all --annotate-with-source true --output turbo_hardcoded_ro_module.ttl
-2020-01-28 18:23:46,188 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0000086>
-	ObjectProperty: has quality
-2020-01-28 18:23:46,188 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0001000>
-	ObjectProperty: derives from
-2020-01-28 18:23:46,188 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/RO_0000087>
-	ObjectProperty: has role
-
-$ ./robot.sh extract --method STAR --input mondo.owl --force true --verbose --term-file mondo_turbo_hardcoded_imports.txt --individuals include --intermediates all --copy-ontology-annotations true --annotate-with-source true --output turbo_hardcoded_mondo_module.ttl
-2020-01-28 19:14:51,926 WARN org.obolibrary.robot.OntologyHelper - Ontology does not contain <http://purl.obolibrary.org/obo/GO_0005623>
-Class: cell
-2020-01-28 19:15:00,017 WARN org.obolibrary.robot.CommandManager - Subcommand Timing: extract took 79.02 seconds
-
-### ### ###
-
 NON OBO
-
-
 http://www.ebi.ac.uk/efo/EFO_
-http://www.ebi.ac.uk/efo/EFO_0004340
-	body mass index
-http://www.ebi.ac.uk/efo/EFO_0004374
-	milligram per deciliter
-http://www.ebi.ac.uk/efo/EFO_0004950
-	date of birth
 
 TWO DIFFERENT STYLES FOR NCIT
 THIS STYLE HAS BEEN REVIEWED BY OBO
 	http://purl.obolibrary.org/obo/NCIT_
 
+These were imported with the BioPortal style
 http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#
 	http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49474
 		International Classification of Diseases
@@ -229,15 +431,6 @@ http://www.geneontology.org/formats/oboInOwl#
 	http://www.geneontology.org/formats/oboInOwl#ObsoleteClass 
 	http://www.geneontology.org/formats/oboInOwl#shorthand 
 	
-###   ###   ###	
-
-http://transformunify.org/ontologies/TURBO_
-	FIX THESE SUBJECTS that don't follow ^http://transformunify.org/ontologies/TURBO_\d{7}$
-	http://transformunify.org/ontologies/TURBO_00001501
-	http://transformunify.org/ontologies/TURBO_00001502
-	http://transformunify.org/ontologies/TURBO_00001503
-	http://transformunify.org/ontologies/TURBO_00001511
-
 ### ### ###
 
 # notes from robot docs
@@ -353,4 +546,4 @@ NON-^http://transformunify.org/ontologies/TURBO_\d{7}$ TERMS BELOW OK
 	http://transformunify.org/ontologies/turbo_obib_ontodog.owl
 	http://transformunify.org/ontologies/turbo_obo_ontofox.owl
 
-	NO ODD TURBO PREDICATES
+	NO ODD TURBO PRPERTY TERMS
