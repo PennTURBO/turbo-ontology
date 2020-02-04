@@ -107,6 +107,11 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0000165
+<http://purl.obolibrary.org/obo/PATO_0000165> rdf:type owl:Class ;
+                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001019
 <http://purl.obolibrary.org/obo/PATO_0001019> rdf:type owl:Class ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> .
@@ -114,6 +119,11 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/PATO_0001025
 <http://purl.obolibrary.org/obo/PATO_0001025> rdf:type owl:Class ;
+                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001309
+<http://purl.obolibrary.org/obo/PATO_0001309> rdf:type owl:Class ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> .
 
 
@@ -210,6 +220,35 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    owl:annotatedSource <http://purl.obolibrary.org/obo/UO_0000002> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A unit which is a standard measure of the amount of matter/energy of a physical object."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:Wikipedia"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000003
+<http://purl.obolibrary.org/obo/UO_0000003> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://purl.obolibrary.org/obo/uo#is_unit_of> ;
+                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/PATO_0000165>
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://purl.obolibrary.org/obo/uo#is_unit_of> ;
+                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/PATO_0001309>
+                                                            ] ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A unit which is a standard measure of the dimension in which events occur in sequence."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "UO:0000149"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "time derived unit"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000003"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uo#unit_group_slim> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            rdfs:label "time unit"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A unit which is a standard measure of the dimension in which events occur in sequence."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:Wikipedia"^^xsd:string
  ] .
 
@@ -833,6 +872,27 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UO_0000165
+<http://purl.obolibrary.org/obo/UO_0000165> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000187> ,
+                                                            <http://purl.obolibrary.org/obo/UO_0000205> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A dimensionless concentration unit which denotes the volume of the solute in mL per 100 mL of the resulting solution."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "% (v/v)"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000165"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uo#unit_slim> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            rdfs:label "volume percentage"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UO_0000165> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A dimensionless concentration unit which denotes the volume of the solute in mL per 100 mL of the resulting solution."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UOC:GVG"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UO_0000173
 <http://purl.obolibrary.org/obo/UO_0000173> rdf:type owl:Class ;
                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000052> ;
@@ -1059,6 +1119,25 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A dimensionless concentration notation which denotes the acidity of a solution in terms of activity of hydrogen ions (H+)."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:Wikipedia"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000205
+<http://purl.obolibrary.org/obo/UO_0000205> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A dimensionless concentration unit which denotes the given volume of the solute in the total volume of the resulting solution."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000205"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uo#unit_group_slim> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            rdfs:label "volume per unit volume"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UO_0000205> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A dimensionless concentration unit which denotes the given volume of the solute in the total volume of the resulting solution."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NIST:NIST"^^xsd:string
  ] .
 
 

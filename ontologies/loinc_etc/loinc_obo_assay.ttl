@@ -1,0 +1,722 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000118
+<http://purl.obolibrary.org/obo/IAO_0000118> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000051
+<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000293
+<http://purl.obolibrary.org/obo/OBI_0000293> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000299
+<http://purl.obolibrary.org/obo/OBI_0000299> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000308
+<http://purl.obolibrary.org/obo/OBI_0000308> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000052
+<http://purl.obolibrary.org/obo/RO_0000052> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000059
+<http://purl.obolibrary.org/obo/RO_0000059> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000081
+<http://purl.obolibrary.org/obo/RO_0000081> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000087
+<http://purl.obolibrary.org/obo/RO_0000087> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/CHEBI_17234
+<http://purl.obolibrary.org/obo/CHEBI_17234> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_22720
+<http://purl.obolibrary.org/obo/CHEBI_22720> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_2611
+<http://purl.obolibrary.org/obo/CHEBI_2611> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_29026
+<http://purl.obolibrary.org/obo/CHEBI_29026> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_35143
+<http://purl.obolibrary.org/obo/CHEBI_35143> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000232
+<http://purl.obolibrary.org/obo/CL_0000232> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000775
+<http://purl.obolibrary.org/obo/CL_0000775> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000067
+<http://purl.obolibrary.org/obo/OBI_0000067> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000070
+<http://purl.obolibrary.org/obo/OBI_0000070> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000275
+<http://purl.obolibrary.org/obo/OBI_0000275> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000651
+<http://purl.obolibrary.org/obo/OBI_0000651> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000655
+<http://purl.obolibrary.org/obo/OBI_0000655> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000659
+<http://purl.obolibrary.org/obo/OBI_0000659> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0100016
+<http://purl.obolibrary.org/obo/OBI_0100016> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0100017
+<http://purl.obolibrary.org/obo/OBI_0100017> rdf:type owl:Class .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010721
+<http://transformunify.org/ontologies/TURBO_0010721> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100016>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100016>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100017>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100017>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010738>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Glucose [Mass/volume] in Serum or Plasma"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/2345-7/> ;
+                                                     rdfs:label "measuring concentration of glucose in serum or plasma"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010724
+<http://transformunify.org/ontologies/TURBO_0010724> rdf:type owl:Class .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010725
+<http://transformunify.org/ontologies/TURBO_0010725> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_17234>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010738>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Glucose [Mass/volume] in Blood"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/2339-0/> ;
+                                                     rdfs:label "measuring concentration of glucose in blood"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010726
+<http://transformunify.org/ontologies/TURBO_0010726> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_35143>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_35143>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010738>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Hemoglobin [Mass/volume] in Blood"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/718-7/> ;
+                                                     rdfs:label "measuring concentration of hemoglobin in blood"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010727
+<http://transformunify.org/ontologies/TURBO_0010727> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_29026>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_29026>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000651>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000651>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010738>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Urobilinogen [Mass/volume] in Urine"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/3107-0/> ;
+                                                     rdfs:label "measuring concentration of urobilinogen in urine "^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010728
+<http://transformunify.org/ontologies/TURBO_0010728> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_29026>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_29026>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000651>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000651>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000659>
+                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0000059> ;
+                                                                                                                                        owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010724>
+                                                                                                                                      ]
+                                                                                                                 ]
+                                                                                                               ) ;
+                                                                                            rdf:type owl:Class
+                                                                                          ]
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010740>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Urobilinogen [Units] in 24 hour Urine"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/28007-3/> ;
+                                                     rdfs:label "measuring concentration of urobilinogen in 24-hour urine specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010729
+<http://transformunify.org/ontologies/TURBO_0010729> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_2611>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_2611>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000651>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000651>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010737>
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010738>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "ALPRAZolam [Mass/volume] in Urine by Confirmatory method"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/59615-5/> ;
+                                                     rdfs:label "confirmatory measuring concentration of ALPRAZolam in urine"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010730
+<http://transformunify.org/ontologies/TURBO_0010730> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_22720>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_22720>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100016>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100016>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100017>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100017>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010738>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Benzodiazepines [Mass/volume] in Serum or Plasma"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/11024-7/> ;
+                                                     rdfs:label "measuring concentration of benzodiazepines in serum or plasma"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010731
+<http://transformunify.org/ontologies/TURBO_0010731> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0000775>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0000775>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010736>
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010734>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Neutrophils [#/volume] in Blood by Automated count"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/751-8/> ;
+                                                     rdfs:label "automated measuring count of neutrophils in blood"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010732
+<http://transformunify.org/ontologies/TURBO_0010732> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0000232>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000275>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0000232>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000087> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000308> ;
+                                                                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000655>
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010736>
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010739>
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "Hematocrit [Volume Fraction] of Blood by Automated count"^^xsd:string ;
+                                                     <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://loinc.org/4544-3/> ;
+                                                     rdfs:label "automated measuring hematocrit percentage in blood"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010734
+<http://transformunify.org/ontologies/TURBO_0010734> rdf:type owl:Class .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010736
+<http://transformunify.org/ontologies/TURBO_0010736> rdf:type owl:Class .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010737
+<http://transformunify.org/ontologies/TURBO_0010737> rdf:type owl:Class .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010738
+<http://transformunify.org/ontologies/TURBO_0010738> rdf:type owl:Class .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010739
+<http://transformunify.org/ontologies/TURBO_0010739> rdf:type owl:Class .
+
+
+###  http://transformunify.org/ontologies/TURBO_0010740
+<http://transformunify.org/ontologies/TURBO_0010740> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

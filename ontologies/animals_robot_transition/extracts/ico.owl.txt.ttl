@@ -320,6 +320,16 @@ rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
 rdfs:label "denotes"@en .
 
 
+###  http://purl.obolibrary.org/obo/IAO_0020018
+<http://purl.obolibrary.org/obo/IAO_0020018> rdf:type owl:ObjectProperty ,
+                                                      owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "p1 is designated by p2, if p2 is an information content entity that represents p1 in a linguistic context."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Mathias Brochhausen" ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "is designated by"@en .
+
+
 ###  http://purl.obolibrary.org/obo/OBI_0000299
 <http://purl.obolibrary.org/obo/OBI_0000299> rdf:type owl:ObjectProperty ;
                                              owl:equivalentProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/OBI_0000312>
@@ -355,6 +365,42 @@ rdfs:label "denotes"@en .
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "is_specified_output_of" ,
                                                         "is_specified_output_of"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000052
+<http://purl.obolibrary.org/obo/RO_0000052> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000053>
+                                                                   ] ;
+                                            owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000111> "inheres in"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000112> "this fragility inheres in this vase"@en ,
+                                                                                         "this red color inheres in this apple"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000116> "A dependent inheres in its bearer at all times for which the dependent exists."@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "inheres_in"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/obi.owl> ;
+                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "inheres in"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000053
+<http://purl.obolibrary.org/obo/RO_0000053> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000052>
+                                                                   ] ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/BFO_0000020> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000111> "bearer of"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000112> "this apple is bearer of this red color"@en ,
+                                                                                         "this vase is bearer of this fragility"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000116> "A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist."@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "bearer_of"@en ,
+                                                                                         "is bearer of"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/obi.owl> ;
+                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "bearer of"@en ,
+                                                       "bearer_of"@en .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0000056
@@ -1179,6 +1225,32 @@ Request that IAO either clarify these or change definitions not to use them"""@e
                                              rdfs:label "plan specification"@en .
 
 
+###  http://purl.obolibrary.org/obo/IAO_0000178
+<http://purl.obolibrary.org/obo/IAO_0000178> rdf:type owl:Class ;
+                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                                                                          owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000059> ;
+                                                                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000030>
+                                                                                                             ]
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ] ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "material information bearer"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000112> "A page of a paperback novel with writing on it. The paper itself is a material information bearer, the pattern of ink is the information carrier."@en ,
+                                                                                          "a brain"@en ,
+                                                                                          "a hard drive"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A material entity in which a concretization of an information content entity inheres."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "GROUP: IAO"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "material information bearer"@en .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0000225
 <http://purl.obolibrary.org/obo/IAO_0000225> rdf:type owl:Class ;
                                              owl:equivalentClass [ rdf:type owl:Class ;
@@ -1198,6 +1270,19 @@ Request that IAO either clarify these or change definitions not to use them"""@e
                                                                                           "PERSON: Melanie Courtot"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
                                              rdfs:label "obsolescence reason specification"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000310
+<http://purl.obolibrary.org/obo/IAO_0000310> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "document"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000112> "A journal article, patent application, laboratory notebook, or a book"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A collection of information content entities intended to be understood together as a whole"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Lawrence Hunter"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "document"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000409
@@ -1274,6 +1359,184 @@ Request that IAO either clarify these or change definitions not to use them"""@e
                                              rdfs:label "personal name"@en .
 
 
+###  http://purl.obolibrary.org/obo/IAO_0020021
+<http://purl.obolibrary.org/obo/IAO_0020021> rdf:type owl:Class ;
+                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/IAO_0000310>
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000136> ;
+                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020022>
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000058> ;
+                                                                                          owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000020>
+                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                                                           owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                                                                                                                                           owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020024>
+                                                                                                                                                         ]
+                                                                                                                                    ]
+                                                                                                                                  ) ;
+                                                                                                               rdf:type owl:Class
+                                                                                                             ]
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000058> ;
+                                                                                          owl:allValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000020>
+                                                                                                                                   [ rdf:type owl:Restriction ;
+                                                                                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                                                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020024>
+                                                                                                                                                        ]
+                                                                                                                                   ]
+                                                                                                                                 ) ;
+                                                                                                              rdf:type owl:Class
+                                                                                                            ]
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ] ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A document that denotes some identity and is concretized by the bearer of some credential role."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "identity document"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020022
+<http://purl.obolibrary.org/obo/IAO_0020022> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ,
+                                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000030>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/IAO_0000136>
+                                                                                                     ] ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020021>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                                      owl:allValuesFrom <http://purl.obolibrary.org/obo/IAO_0000030>
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A documented identity is the aggregate of all data items about an entity.  Notice that a documented identity is not itself a document since a document is intended to be understood as a whole and data items about an individual are usually scattered across different documents."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                             rdfs:comment """is an aggregate of ICEs also an ICE? yes
+Is part_of the appropriate relation to use for data items and documented identities?"""@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "documented identity"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020023
+<http://purl.obolibrary.org/obo/IAO_0020023> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                                             [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020024>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0000057> ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000027>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0000057> ;
+                                                                                      owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/IAO_0000136>
+                                                                                                                          ] ;
+                                                                                                           owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000027>
+                                                                                                         ]
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000112> " I order a beer and the bartender authenticates my age by looking at my DOB on my driver's license.  I sign into my email account, and the system authenticates my permission to read the email by checking the password I enter against my password listed in the database." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> """Authentication is the act of checking or verifying an identity claim (that is either tacit or explicit).
+"""@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "authentication"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020024
+<http://purl.obolibrary.org/obo/IAO_0020024> rdf:type owl:Class ;
+                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000023>
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020023>
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                          owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                                                                                               owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0000059> ;
+                                                                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020021>
+                                                                                                                                  ]
+                                                                                                             ]
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ] ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A role that inheres in a concretization of an identity document and is realized by an authentication process."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "credential role"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0021003
+<http://purl.obolibrary.org/obo/IAO_0021003> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000011> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Colonel Klink giving Sergeant Schultz an order, Jake promising Jill to take her to the junior prom"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A planned process that is carried out by a conscious being or an organization, and is self-generated, directed towards another conscious being or an aggregate of conscious beings, an organization or an aggregate of organizations, and that needs to be perceived."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Mathias Brochhausen" ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "social act"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0021007
+<http://purl.obolibrary.org/obo/IAO_0021007> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000310> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A document that is intended to be the specified input in a document act. It has a plan specification as a part that specifies the intended socio-legal entities that are created through the document (objective specification) and the way in which the document act is to be performed (by signing, by stamping, etc.) (action specification)."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Mathias Brochhausen"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "document act input document"@en .
+
+
+###  http://purl.obolibrary.org/obo/ICO_0000001
+<http://purl.obolibrary.org/obo/ICO_0000001> rdf:type owl:Class ;
+                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                   owl:unionOf ( <http://purl.obolibrary.org/obo/ICO_0000213>
+                                                                                 <http://purl.obolibrary.org/obo/ICO_0000214>
+                                                                               )
+                                                                 ] ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0021007> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A document that explains all relevant information to assist a human being in understanding the expectations and requirements of participation in a process, and is an instrument in obtaining consent and, after having obtained consent, is a record that such a consent has occurred."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "The term definition is adapted from NCIt definition of 'consent form' (C16468) with modification. For instance, whereas the NCIt definition restricted informed consent forms to clinical trials, the present definition does not."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> ""@en ,
+                                                                                          "Alla Karnovsky, Frank Manion, Yongqun He, Asiyah Yu Lin, Marcy Harris, Elizabeth Eisenhauer, Jonathan Vajda, Cooper Stansbury, J. Neil Otte"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000118> "informed consent document"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "NCIt C16468"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000232> "See curator note for 'incomplete informed consent form'."@en ;
+                                             <http://purl.obolibrary.org/obo/ICO_0000091> "C0009797"@en ;
+                                             <http://purl.obolibrary.org/obo/ICO_0000092> "C16468"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ico.owl> ;
+                                             rdfs:label "informed consent form"@en .
+
+
+###  http://purl.obolibrary.org/obo/ICO_0000023
+<http://purl.obolibrary.org/obo/ICO_0000023> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/ICO_0000001> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An informed consent form that has been filled with all required contents."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Yongqun He"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ico.owl> ;
+                                             rdfs:label "completely filled informed consent form"@en .
+
+
 ###  http://purl.obolibrary.org/obo/ICO_0000086
 <http://purl.obolibrary.org/obo/ICO_0000086> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
@@ -1282,6 +1545,25 @@ Request that IAO either clarify these or change definitions not to use them"""@e
                                              <http://purl.obolibrary.org/obo/IAO_0000232> "This class is under group discussion as of 03/26/2019."@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ico.owl> ;
                                              rdfs:label "consenter role"@en .
+
+
+###  http://purl.obolibrary.org/obo/ICO_0000213
+<http://purl.obolibrary.org/obo/ICO_0000213> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/ICO_0000001> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A document act input document that explains all relevant information to assist a human being in understanding the expectations and requirements of participation in a process, and whose purpose is to assist in obtaining consent."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "J. Neil Otte"@en ;
+                                             rdfs:comment "Note: instances of 'incomplete informed consent form' include both blank informed consent forms that are waiting to be used in a process of informed consent, as well as those that have been left blank by a patient, whether on purpose or in error. Those that have been left blank on purpose have been used in a process of informed consent, where the patient must have reached a decision."@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ico.owl> ;
+                                             rdfs:label "incomplete informed consent form"@en .
+
+
+###  http://purl.obolibrary.org/obo/ICO_0000214
+<http://purl.obolibrary.org/obo/ICO_0000214> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/ICO_0000001> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A document act input document that has, as part, an incomplete informed consent form, along with some additional parts, such as a signature, stamp, or initials, which serve as a record to an act of consent that had the incomplete informed consent form as a specified input."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "J. Neil Otte"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ico.owl> ;
+                                             rdfs:label "complete informed consent form indicating consent"@en .
 
 
 ###  http://purl.obolibrary.org/obo/ICO_0000220

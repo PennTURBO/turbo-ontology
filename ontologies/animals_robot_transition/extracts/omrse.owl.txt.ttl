@@ -62,6 +62,16 @@
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
 
+###  http://purl.obolibrary.org/obo/IAO_0000231
+<http://purl.obolibrary.org/obo/IAO_0000231> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000232
+<http://purl.obolibrary.org/obo/IAO_0000232> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0000412
 <http://purl.obolibrary.org/obo/IAO_0000412> rdf:type owl:AnnotationProperty ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
@@ -221,6 +231,16 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                              rdfs:label "realizes"@en .
 
 
+###  http://purl.obolibrary.org/obo/BFO_0000075
+<http://purl.obolibrary.org/obo/BFO_0000075> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty <http://purl.obolibrary.org/obo/OMRSE_00000020> ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000118> "aggregate of"@en ,
+                                                                                          "aggregate_of"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "is aggregate of"@en .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0000136
 <http://purl.obolibrary.org/obo/IAO_0000136> rdf:type owl:ObjectProperty ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/IAO_0000030> ;
@@ -273,6 +293,16 @@ Some currently missing phenomena that should be considered \"about\" are predica
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "is_specified_output_of" ,
                                                         "is_specified_output_of"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000020
+<http://purl.obolibrary.org/obo/OMRSE_00000020> rdf:type owl:ObjectProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000231> "BFO relation takes precedence."@en ;
+                                                rdfs:comment """We anticipate BFO 2.0 including and defining this relation.  When it does, we will obsolete this property and declare it equivalent to the BFO 2.0 relation.
+"""@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "is-aggregate-of" ;
+                                                owl:deprecated "true"@en .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0000052
@@ -824,6 +854,68 @@ owl:topObjectProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/BFO_0000027
+<http://purl.obolibrary.org/obo/BFO_0000027> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000179> "object-aggregate" ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000180> "ObjectAggregate" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000112> "a collection of cells in a blood biobank."@en ,
+                                                                                          "a swarm of bees is an aggregate of members who are linked together through natural bonds"@en ,
+                                                                                          "a symphony orchestra"@en ,
+                                                                                          "an organization is an aggregate whose member parts have roles of specific types (for example in a jazz band, a chess club, a football team)"@en ,
+                                                                                          "defined by fiat: the aggregate of members of an organization"@en ,
+                                                                                          "defined through physical attachment: the aggregate of atoms in a lump of granite"@en ,
+                                                                                          "defined through physical containment: the aggregate of molecules of carbon dioxide in a sealed container"@en ,
+                                                                                          "defined via attributive delimitations such as: the patients in this hospital"@en ,
+                                                                                          "the aggregate of bearings in a constant velocity axle joint"@en ,
+                                                                                          "the aggregate of blood cells in your body"@en ,
+                                                                                          "the nitrogen atoms in the atmosphere"@en ,
+                                                                                          "the restaurants in Palo Alto"@en ,
+                                                                                          "your collection of Meissen ceramic plates."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "An entity a is an object aggregate if and only if there is a mutually exhaustive and pairwise disjoint partition of a into objects " ,
+                                                                                          "BFO 2 Reference: object aggregates may gain and lose parts while remaining numerically identical (one and the same individual) over time. This holds both for aggregates whose membership is determined naturally (the aggregate of cells in your body) and aggregates determined by fiat (a baseball team, a congressional committee)."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "ISBN:978-3-938793-98-5pp124-158#Thomas Bittner and Barry Smith, 'A Theory of Granular Partitions', in K. Munn and B. Smith (eds.), Applied Ontology: An Introduction, Frankfurt/Lancaster: ontos, 2008, 125-158." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000600> "b is an object aggregate means: b is a material entity consisting exactly of a plurality of objects as member_parts at all times at which b exists. (axiom label in BFO2 Reference: [025-004])"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x) (if (ObjectAggregate x) (and (MaterialEntity x) (forall (t) (if (existsAt x t) (exists (y z) (and (Object y) (Object z) (memberPartOfAt y x t) (memberPartOfAt z x t) (not (= y z)))))) (not (exists (w t_1) (and (memberPartOfAt w x t_1) (not (Object w)))))))) // axiom label in BFO2 CLIF: [025-004] " ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "object aggregate"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000027> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
+   owl:annotatedTarget "An entity a is an object aggregate if and only if there is a mutually exhaustive and pairwise disjoint partition of a into objects " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000011>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000027> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
+   owl:annotatedTarget "An entity a is an object aggregate if and only if there is a mutually exhaustive and pairwise disjoint partition of a into objects " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000301>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000027> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000119> ;
+   owl:annotatedTarget "ISBN:978-3-938793-98-5pp124-158#Thomas Bittner and Barry Smith, 'A Theory of Granular Partitions', in K. Munn and B. Smith (eds.), Applied Ontology: An Introduction, Frankfurt/Lancaster: ontos, 2008, 125-158." ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000300>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000027> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
+   owl:annotatedTarget "b is an object aggregate means: b is a material entity consisting exactly of a plurality of objects as member_parts at all times at which b exists. (axiom label in BFO2 Reference: [025-004])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/025-004>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000027> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x) (if (ObjectAggregate x) (and (MaterialEntity x) (forall (t) (if (existsAt x t) (exists (y z) (and (Object y) (Object z) (memberPartOfAt y x t) (memberPartOfAt z x t) (not (= y z)))))) (not (exists (w t_1) (and (memberPartOfAt w x t_1) (not (Object w)))))))) // axiom label in BFO2 CLIF: [025-004] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/025-004>
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/BFO_0000031
 <http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
@@ -1244,6 +1336,49 @@ The term is used in the following meaning of being self generated. It does not s
                                              rdfs:label "planned process"@en .
 
 
+###  http://purl.obolibrary.org/obo/OBI_0000245
+<http://purl.obolibrary.org/obo/OBI_0000245> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "organization"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000112> "PMID: 16353909.AAPS J. 2005 Sep 22;7(2):E274-80. Review. The joint food and agriculture organization of the United Nations/World Health Organization Expert Committee on Food Additives and its role in the evaluation of the safety of veterinary drug residues in foods."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An organization is a continuant entity which can play roles,  has members, and has a set of organization rules.  Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> """BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
+
+1) there are organization_member_roles (president, treasurer, branch
+editor), with individual persons as bearers
+
+2) there are organization_roles (employer, owner, vendor, patent holder)
+
+3) an organization has a charter / rules / bylaws, which specify what roles
+there are, how they should be realized, and how to modify the
+charter/rules/bylaws themselves.
+
+It is debatable what the organization itself is (some kind of dependent
+continuant or an aggregate of people). This also determines who/what the
+bearer of organization_roles' are. My personal favorite is still to define
+organization as a kind of 'legal entity', but thinking it through leads to
+all kinds of questions that are clearly outside the scope of OBI.
+
+Interestingly enough, it does not seem to matter much where we place
+organization itself, as long as we can subclass it (University, Corporation,
+Government Agency, Hospital), instantiate it (Affymetrix, NCBI, NIH, ISO,
+W3C, University of Oklahoma), and have it play roles.
+
+This leads to my proposal: We define organization through the statements 1 -
+3 above, but without an 'is a' statement for now. We can leave it in its
+current place in the is_a hierarchy (material entity) or move it up to
+'continuant'. We leave further clarifications to BFO, and close this issue
+for now."""@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Alan Ruttenberg"^^xsd:string ,
+                                                                                          "PERSON: Bjoern Peters"^^xsd:string ,
+                                                                                          "PERSON: Philippe Rocca-Serra"^^xsd:string ,
+                                                                                          "PERSON: Susanna Sansone"^^xsd:string ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "GROUP: OBI"^^xsd:string ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             rdfs:label "organization"@en .
+
+
 ###  http://purl.obolibrary.org/obo/OBI_0100026
 <http://purl.obolibrary.org/obo/OBI_0100026> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
@@ -1262,6 +1397,163 @@ This issue is outside the scope of OBI."""^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://en.wikipedia.org/wiki/Organism"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "organism"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGMS_0000097
+<http://purl.obolibrary.org/obo/OGMS_0000097> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000011> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A temporally-connected health care process that has as participants an organization or person realizing the health care provider role and a person realizing the patient role.  The health care provider role and patient are realized during the health care encounter"@en ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000117> "Albert Goldfain" ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000119> "http://groups.google.com/group/ogms-discuss/browse_thread/thread/a2dbc2ed1dff99d6" ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000232> "creation date: 2011-02-21T09:57:44Z" ;
+                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogms.owl> ;
+                                              rdfs:label "health care encounter" .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000010
+<http://purl.obolibrary.org/obo/OMRSE_00000010> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000024> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGMS_0000097>
+                                                                ] ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A role in human social processes that is realized by health care processes such as seeking or providing treatment for disease and injury, diagnosing disease and injury, or undergoing diagnosis. "@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "William R. Hogan"@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000118> "health care role"@en ;
+                                                rdfs:comment "Mathias Brochhausen" ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "human health care role"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000012
+<http://purl.obolibrary.org/obo/OMRSE_00000012> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000010> ,
+                                                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                              owl:unionOf ( <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                                                                                            <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                                                          )
+                                                                                                            ]
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                         owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                                             owl:unionOf ( <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                                                                                           <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                                                         )
+                                                                                                           ]
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A human health care role inhering in an organization or human being that is realized by a process of providing health care services to an organism."@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> """Mathias Brochhausen
+"""@en ;
+                                                rdfs:comment "William R. Hogan"@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "health care provider role"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000022
+<http://purl.obolibrary.org/obo/OMRSE_00000022> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000027> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An object aggregate of objectual organisms."@en ;
+                                                rdfs:comment "Any arbitrary collection of organisms.  They need not be of the same taxonomic class.  "@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "aggregate of objectual organisms"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000023
+<http://purl.obolibrary.org/obo/OMRSE_00000023> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000022> ;
+                                                rdfs:comment "An object aggregate all of whose components are human beings."@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "collection of humans"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000024
+<http://purl.obolibrary.org/obo/OMRSE_00000024> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                       owl:unionOf ( <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                                     <http://purl.obolibrary.org/obo/OBI_0100026>
+                                                                                                   )
+                                                                                     ]
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                      owl:unionOf ( <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                                    <http://purl.obolibrary.org/obo/OBI_0100026>
+                                                                                                  )
+                                                                                    ]
+                                                                ] ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A role inhering in an entity realized by social interactions in human society."@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Mathias Brochhausen"@en ;
+                                                rdfs:comment "Previous definition: A role played by an entity in human social processes."@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "role in human social processes"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000033
+<http://purl.obolibrary.org/obo/OMRSE_00000033> rdf:type owl:Class ;
+                                                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                             owl:complementOf <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                           ]
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <http://purl.obolibrary.org/obo/OMRSE_00000020> ;
+                                                                                             owl:allValuesFrom <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                           ]
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <http://purl.obolibrary.org/obo/OMRSE_00000020> ;
+                                                                                             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                                             owl:onClass <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ] ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An object aggregate that is not itself an organization and whose members are only organizations that have some feature in common"@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> """William R. Hogan
+Amanda Hicks"""@en ;
+                                                rdfs:comment "It is often convenient to group organizations together that otherwise might not even interact with one another. "@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "aggregate of organizations"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000038
+<http://purl.obolibrary.org/obo/OMRSE_00000038> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000024> ,
+                                                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                              owl:unionOf ( <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                                                                                            <http://purl.obolibrary.org/obo/OMRSE_00000023>
+                                                                                                                          )
+                                                                                                            ]
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                         owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                                             owl:unionOf ( <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                                                                                           <http://purl.obolibrary.org/obo/OMRSE_00000023>
+                                                                                                                         )
+                                                                                                           ]
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A role borne by a human individual or by a collection of humans regarded as possessing rights and duties enforeable at law."@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Mathias Brochhausen" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000119> "Malcolm N. Shaw: International Law. Cambridge University Press, Cambridge, 2008." ;
+                                                rdfs:comment """We are aware of the fact that Wikipedia's definition differs from ours by saying that \"Legal personality (...) is the characteristic of a non-living entity regarded by law to have the status of personhood\" (http://en.wikipedia.org/wiki/Legal_personality) 
+However, Shaw explicates:
+\"In any legal system, certain entities, whether they be individuals or companies, will be regarded as possessing rights and duties enforceable at law. Thus an individual may prosecute or be prosecuted for assault and a company can sue for breach of contract. They are able to do this because the law recognises them as 'legal persons' possessing the capacity to have and to maintain certain rights, and being subject to perform specific duties. (...) In municipal law individuals, limited companies and public corporations are recognized as each possessing a distinct legal personality, the terms of which are circumscribed by the relevant legislation\" (Shaw MN: International Law. Sixth Edition. Cambridge University Press, Cambridge, 2008).                We hold that Shaw's position is ontological more prolific since it not only allows to explain how groups of individuals become recognized as unities at law, but also how different individuals can hold different legal personality roles (always against the context of one legal system). The latter will proof useful when dealing with the representing comatous patients or minorsat law in ontologies."""@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "legal person role"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000048
@@ -1316,6 +1608,25 @@ This issue is outside the scope of OBI."""^^xsd:string ;
                                                                 ] ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
                                                 rdfs:label "Homo sapiens role"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000051
+<http://purl.obolibrary.org/obo/OMRSE_00000051> rdf:type owl:Class ;
+                                                owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000023>
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ] ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000048> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                  owl:allValuesFrom <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                ] ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "organization role"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000083
@@ -1421,6 +1732,15 @@ This issue is outside the scope of OBI."""^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
                                                 rdfs:label "hispanic or latino identity datum"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000128
+<http://purl.obolibrary.org/obo/OMRSE_00000128> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000083> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An OMB ethnic identity datum that indicates the person identified is not of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race."@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "not hispanic or latino identity datum"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000132
@@ -1569,6 +1889,15 @@ This issue is outside the scope of OBI."""^^xsd:string ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000175> ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
                                                 rdfs:label "answer to identity question"@en .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000180
+<http://purl.obolibrary.org/obo/OMRSE_00000180> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000185> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A racial identity that is the output of a racial identification process that uses OMB terminology for race or terminology that is mapped the OMB race terms and that indicates that the subject of the identity has origins in any of the original peoples of North and South America (including Central America), and maintains tribal affiliation or community attachment."@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
+                                                rdfs:label "American Indian or Alaska Native identity datum"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000181

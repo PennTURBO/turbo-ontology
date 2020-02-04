@@ -32,6 +32,11 @@
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
 
+###  http://purl.obolibrary.org/obo/IAO_0100001
+<http://purl.obolibrary.org/obo/IAO_0100001> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+
 ###  http://purl.obolibrary.org/obo/mondo#closeMatch
 <http://purl.obolibrary.org/obo/mondo#closeMatch> rdf:type owl:AnnotationProperty ;
                                                   rdfs:isDefinedBy <http://purl.obolibrary.org/obo/mondo.owl> .
@@ -72,9 +77,19 @@
                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/gwas.owl> .
 
 
+###  http://www.ebi.ac.uk/efo/obsoleted_in_version
+<http://www.ebi.ac.uk/efo/obsoleted_in_version> rdf:type owl:AnnotationProperty ;
+                                                rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/obsoleted_in.owl> .
+
+
 ###  http://www.ebi.ac.uk/efo/organizational_class
 <http://www.ebi.ac.uk/efo/organizational_class> rdf:type owl:AnnotationProperty ;
                                                 rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/organizational.owl> .
+
+
+###  http://www.ebi.ac.uk/efo/reason_for_obsolescence
+<http://www.ebi.ac.uk/efo/reason_for_obsolescence> rdf:type owl:AnnotationProperty ;
+                                                   rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/reason_for.owl> .
 
 
 ###  http://www.ebi.ac.uk/efo/source_definition
@@ -150,12 +165,24 @@ rdfs:comment rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema.owl> .
 rdfs:label rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema.owl> .
 
 
+###  http://www.w3.org/2002/07/owl#deprecated
+owl:deprecated rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
+
+
 #################################################################
 #    Datatypes
 #################################################################
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral
 rdf:PlainLiteral rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns.owl> .
+
+
+###  http://www.w3.org/2001/XMLSchema#boolean
+xsd:boolean rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
+
+
+###  http://www.w3.org/2001/XMLSchema#decimal
+xsd:decimal rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 
 ###  http://www.w3.org/2001/XMLSchema#string
@@ -1566,6 +1593,155 @@ Note that metabolic processes do not include single functions or processes such 
                                                                                                 "SNOMEDCT:122869004"^^xsd:string ;
                                        rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
                                        rdfs:label "measurement"^^xsd:string .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0001799
+<http://www.ebi.ac.uk/efo/EFO_0001799> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000181> ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A group of people with a common cultural heritage that sets them apart from others in a variety of social relationships. (MSH); A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease. (NCI); Ethnicity - an arbitrary classification of the social group a person belongs to, and either identifies with or is identified with by others, as a result of a complex of cultural, biological, geographical and other factors such as linguistic, dietary and religion traditions; ancestry, background, allegiance, or association; and physical characteristics traditionally associated with race. Increasingly the concept is used synonymously with race but this use trend has a pragmatic basis rather than scientific. (NCI); The concept of ethnic origin is an attempt to classify people, not according to their current ethnicity, but according to where their ancestors came from. Ethnic origin has become a popular classification in statistics, where the concept of race has been largely discarded. (from Wikipedia) (NCI); a group of people with a common cultural heritage that sets them apart from others in a variety of social relationships. (CSP)"^^xsd:string ,
+                                                                                    "An ethnic group is a population whose members have a common heritage that is real or presumed such as common culture, language, religion, behaviour or biological trait."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ,
+                                                                                    "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/definition_citation> "http://en.wikipedia.org/wiki/Ethnic_group"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C16564"^^xsd:string ,
+                                                                                                "NIFSTD:birnlex_3016"^^xsd:string ,
+                                                                                                "SNOMEDCT:364699009"^^xsd:string ,
+                                                                                                "SNOMEDCT:372148003"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Ethnicity"^^xsd:string ,
+                                                                                                      "race"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "ethnic group"^^xsd:string .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003150
+<http://www.ebi.ac.uk/efo/EFO_0003150> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A term used in the United States to categorize a population group comprised of persons having origins in any of the black racial groups of Africa. Includes population subgroups (e.g., Kenyan, Nigerian, Haitian). The concept refers also to individuals who classify themselves as described."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0568"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C16352"^^xsd:string ,
+                                                                                                "SNOMEDCT:15086000"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Afro American"^^xsd:string ,
+                                                                                                      "BLACK OR AFRICAN AMERICAN"^^xsd:string ,
+                                                                                                      "Black"^^xsd:string ,
+                                                                                                      "Black Populations"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_African American"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003151
+<http://www.ebi.ac.uk/efo/EFO_0003151> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0463"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C0596070"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_American"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003152
+<http://www.ebi.ac.uk/efo/EFO_0003152> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Denotes a person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including Cambodia, China, India, Japan, Korea, Malaysia, Mongolia, Pakistan, the Philippine Islands, Thailand, and Vietnam."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Jie Zheng"^^xsd:string ,
+                                                                                    "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0008"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C41260"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Asians"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_Asian"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003153
+<http://www.ebi.ac.uk/efo/EFO_0003153> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "In North America the term is used to distinguish a person having origins in the original peoples of the Indian sub-continent from Native Americans."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0487"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C41262"^^xsd:string ,
+                                                                                                "SNOMEDCT:414481008"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Asian Indians"^^xsd:string ,
+                                                                                                      "Hindu"^^xsd:string ,
+                                                                                                      "Indian"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_Asian Indian"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003157
+<http://www.ebi.ac.uk/efo/EFO_0003157> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Denotes the inhabitants of China, a person from there, or their descendants elsewhere."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0021"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C43391"^^xsd:string ,
+                                                                                                "SNOMEDCT:33897005"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_Chinese"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003159
+<http://www.ebi.ac.uk/efo/EFO_0003159> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0005"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/definition_citation> "http://en.wikipedia.org/wiki/European_American"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_European-American"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003164
+<http://www.ebi.ac.uk/efo/EFO_0003164> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Denotes the inhabitants of Japan, a person from there, or their descendants elsewhere."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0019"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C43392"^^xsd:string ,
+                                                                                                "SNOMEDCT:414551003"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "JPT"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_Japanese"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0003166
+<http://www.ebi.ac.uk/efo/EFO_0003166> rdf:type owl:Class ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A person of Mexican, Puerto Rican, Cuban, Central or South American or other Spanish culture or origin, regardless of race. An arbitrary ethnic classification."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0014"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:boolean ;
+                                       <http://www.ebi.ac.uk/efo/reason_for_obsolescence> "Replacement of all EFO ethnic groups by HANCESTRO terms"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C17459"^^xsd:string ,
+                                                                                                "SNOMEDCT:414408004"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Hispanic"^^xsd:string ,
+                                                                                                      "Hispanic Populations"^^xsd:string ,
+                                                                                                      "Hispanic or Latino"^^xsd:string ,
+                                                                                                      "Hispanics or Latinos"^^xsd:string ,
+                                                                                                      "Latino Population"^^xsd:string ,
+                                                                                                      "Spanish Origin"^^xsd:string ;
+                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
+                                       rdfs:label "obsolete_Latino"^^xsd:string ;
+                                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004302

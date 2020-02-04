@@ -959,6 +959,22 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             rdfs:label "has input"@en .
 
 
+###  http://purl.obolibrary.org/obo/RO_0002234
+<http://purl.obolibrary.org/obo/RO_0002234> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000057> ;
+                                            owl:inverseOf <http://purl.obolibrary.org/obo/RO_0002353> ;
+                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0002230>
+                                                                     <http://purl.obolibrary.org/obo/RO_0002234>
+                                                                   ) ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "produces" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "has output"@en .
+
+
 ###  http://purl.obolibrary.org/obo/RO_0002254
 <http://purl.obolibrary.org/obo/RO_0002254> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002258> ;
@@ -1240,6 +1256,18 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                                                                                     <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "input of"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002353
+<http://purl.obolibrary.org/obo/RO_0002353> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ,
+                                                               <http://purl.obolibrary.org/obo/RO_0002328> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of has output" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/RO_0002259> ,
+                                                                                                    <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "output of"@en .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002384
@@ -1806,6 +1834,55 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                                             rdfs:label "directly negatively regulates" .
 
 
+###  http://purl.obolibrary.org/obo/RO_0003000
+<http://purl.obolibrary.org/obo/RO_0003000> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <http://purl.obolibrary.org/obo/RO_0003001> ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                            owl:propertyChainAxiom ( [ owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000066>
+                                                                     ]
+                                                                     <http://purl.obolibrary.org/obo/RO_0002234>
+                                                                   ) ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix."^^xsd:string ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Melissa Haendel" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:comment "Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue."^^xsd:string ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "produces"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0003001
+<http://purl.obolibrary.org/obo/RO_0003001> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a produced_by b iff some process that occurs_in b has_output a." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Melissa Haendel" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "produced by"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0004026
+<http://purl.obolibrary.org/obo/RO_0004026> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0040035> ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/OGMS_0000031> ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                       [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <http://purl.obolibrary.org/obo/CARO_0000006>
+                                                                       <http://purl.obolibrary.org/obo/CARO_0000007>
+                                                                     )
+                                                       ] ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000116> "TODO: complete range axiom once more of CARO has been mireoted in to this ontology" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000232> "This relation is intentionally very general, and covers isolated diseases, where the disease is realized as a process occurring in the location, and syndromic diseases, where one or more of the features may be present in that location. Thus any given disease can have multiple locations in the sense defined here." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "cjm"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2017-11-05T04:06:02Z"^^xsd:dateTime ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "disease has location" .
+
+
 ###  http://purl.obolibrary.org/obo/RO_0004031
 <http://purl.obolibrary.org/obo/RO_0004031> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ;
@@ -1934,6 +2011,16 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                                             rdfs:label "is carrier of"@en .
 
 
+###  http://purl.obolibrary.org/obo/RO_0040035
+<http://purl.obolibrary.org/obo/RO_0040035> rdf:type owl:ObjectProperty ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "This relation groups  relations between diseases and any other kind of entity." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, in which the subject or object is a disease." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "cjm"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2018-09-26T00:00:32Z"^^xsd:dateTime ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
+                                            rdfs:label "disease relationship" .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -1991,6 +2078,25 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                                              rdfs:label "process"@en .
 
 
+###  http://purl.obolibrary.org/obo/BFO_0000016
+<http://purl.obolibrary.org/obo/BFO_0000016> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000017> ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "disposition"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000017
+<http://purl.obolibrary.org/obo/BFO_0000017> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ;
+                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000017>
+                                                             ] ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances."@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "realizable entity"@en .
+
+
 ###  http://purl.obolibrary.org/obo/BFO_0000020
 <http://purl.obolibrary.org/obo/BFO_0000020> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
@@ -2019,9 +2125,25 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 ###  http://purl.obolibrary.org/obo/BFO_0000040
 <http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ;
+                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000141> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ;
+                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000141>
+                                                              ] ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time."@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "material entity"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000141
+<http://purl.obolibrary.org/obo/BFO_0000141> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ;
+                                             owl:disjointWith [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                              ] ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "immaterial entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/CARO_0000000
@@ -2030,6 +2152,22 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                                               <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/caro.owl> ;
                                               rdfs:label "anatomical entity"@en .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000006
+<http://purl.obolibrary.org/obo/CARO_0000006> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                              <http://purl.obolibrary.org/obo/CARO_0000000> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> ;
+                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/caro.owl> ;
+                                              rdfs:label "material anatomical entity"@en .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000007
+<http://purl.obolibrary.org/obo/CARO_0000007> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000141> ;
+                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/caro.owl> ;
+                                              rdfs:label "immaterial anatomical entity" .
 
 
 ###  http://purl.obolibrary.org/obo/CARO_0030000
@@ -2094,6 +2232,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 ###  http://purl.obolibrary.org/obo/GO_0048018
 <http://purl.obolibrary.org/obo/GO_0048018> rdf:type owl:Class ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/go.owl> .
+
+
+###  http://purl.obolibrary.org/obo/OGMS_0000031
+<http://purl.obolibrary.org/obo/OGMS_0000031> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism."@en ;
+                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogms.owl> ;
+                                              rdfs:label "disease" .
 
 
 ###  http://www.w3.org/2002/07/owl#Nothing
