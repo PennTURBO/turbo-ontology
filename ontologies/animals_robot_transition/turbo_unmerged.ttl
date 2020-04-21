@@ -8,6 +8,7 @@
 @base <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> .
 
 <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> rdf:type owl:Ontology ;
+                                                                                                 owl:imports <http://purl.obolibrary.org/obo/chebi.owl> ;
                                                                                                  dc:contributor "Chris Stoeckert" ,
                                                                                                                 "Mark A. Miller" ;
                                                                                                  dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
@@ -5778,8 +5779,9 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
 
 ###  http://transformunify.org/ontologies/TURBO_0010724
 <http://transformunify.org/ontologies/TURBO_0010724> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000007> ;
-                                                     rdfs:label "24 hour sample collection specification"@en .
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000684> ;
+                                                     rdfs:comment "A specimen collection objective that reflects the desire to gather a specimen that can serve as the input into an assay designed to determine the sum or average abundance of some measurand in the organism from which the sample was collected." ;
+                                                     rdfs:label "24 hour sample collection objective"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010725
@@ -5877,6 +5879,30 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
 <http://transformunify.org/ontologies/TURBO_0010740> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000032> ;
                                                      rdfs:label "arbitrary units per 24 hours datum"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0020009
+<http://transformunify.org/ontologies/TURBO_0020009> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200000> ;
+                                                     rdfs:label "clinical assay result normalization" .
+
+
+###  http://transformunify.org/ontologies/TURBO_0020010
+<http://transformunify.org/ontologies/TURBO_0020010> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ;
+                                                     rdfs:label "clinical assay" .
+
+
+###  http://transformunify.org/ontologies/TURBO_0020011
+<http://transformunify.org/ontologies/TURBO_0020011> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0020009> ;
+                                                     rdfs:label "division by 100 leukocytes normalization" .
+
+
+###  http://transformunify.org/ontologies/TURBO_0020012
+<http://transformunify.org/ontologies/TURBO_0020012> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0020009> ;
+                                                     rdfs:label "division by creatinine concentration normalization" .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004950
