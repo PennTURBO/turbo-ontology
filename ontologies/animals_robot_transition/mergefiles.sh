@@ -1,7 +1,7 @@
 #!/bin/bash
 output="$1"
 shift
-for file
+for file in *.ttl
 do
   inputs+=( --input "$file" )
 done

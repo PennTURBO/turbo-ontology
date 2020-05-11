@@ -3349,6 +3349,10 @@ James: broaden domain?  remove constraint?""" ;
 <http://purl.obolibrary.org/obo/OBI_0000671> rdf:type owl:Class .
 
 
+###  http://purl.obolibrary.org/obo/OBI_0000684
+<http://purl.obolibrary.org/obo/OBI_0000684> rdf:type owl:Class .
+
+
 ###  http://purl.obolibrary.org/obo/OBI_0000810
 <http://purl.obolibrary.org/obo/OBI_0000810> rdf:type owl:Class .
 
@@ -3453,12 +3457,24 @@ James: broaden domain?  remove constraint?""" ;
 <http://purl.obolibrary.org/obo/UBERON_0035946> rdf:type owl:Class .
 
 
+###  http://purl.obolibrary.org/obo/UO_0000000
+<http://purl.obolibrary.org/obo/UO_0000000> rdf:type owl:Class .
+
+
 ###  http://purl.obolibrary.org/obo/UO_0000051
 <http://purl.obolibrary.org/obo/UO_0000051> rdf:type owl:Class .
 
 
+###  http://purl.obolibrary.org/obo/UO_0000061
+<http://purl.obolibrary.org/obo/UO_0000061> rdf:type owl:Class .
+
+
 ###  http://purl.obolibrary.org/obo/UO_0000177
 <http://purl.obolibrary.org/obo/UO_0000177> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000270
+<http://purl.obolibrary.org/obo/UO_0000270> rdf:type owl:Class .
 
 
 ###  http://transformunify.org/ontologies/TURBO_00001501
@@ -5835,6 +5851,7 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
 ###  http://transformunify.org/ontologies/TURBO_0010733
 <http://transformunify.org/ontologies/TURBO_0010733> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
+                                                     rdfs:comment "LP6836-3, NCnc, Number Concentration" ;
                                                      rdfs:label "count per volume"@en .
 
 
@@ -5881,6 +5898,13 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
                                                      rdfs:label "arbitrary units per 24 hours datum"@en .
 
 
+###  http://transformunify.org/ontologies/TURBO_0019997
+<http://transformunify.org/ontologies/TURBO_0019997> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                                     rdfs:comment "LP6773-8, ACnc, Arbitrary Concentration... LOINC includes U/volume in here, along with other units that don't really look like they have a volume divisor" ;
+                                                     rdfs:label "arbitrary clinical concentration/abundance unit"@en .
+
+
 ###  http://transformunify.org/ontologies/TURBO_0020009
 <http://transformunify.org/ontologies/TURBO_0020009> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200000> ;
@@ -5903,6 +5927,32 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
 <http://transformunify.org/ontologies/TURBO_0020012> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0020009> ;
                                                      rdfs:label "division by creatinine concentration normalization" .
+
+
+###  http://transformunify.org/ontologies/TURBO_0021995
+<http://transformunify.org/ontologies/TURBO_0021995> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0010733> ;
+                                                     rdfs:comment "LP33110-5, LnCnc, Log number concentration" ;
+                                                     rdfs:label "log transformed count per volume"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0022001
+<http://transformunify.org/ontologies/TURBO_0022001> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000177> ;
+                                                     rdfs:label "log tranformed arbitrary unit concentration"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0022002
+<http://transformunify.org/ontologies/TURBO_0022002> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000270> ;
+                                                     rdfs:comment "LP6787-8, ArVRa, Volume Rate/Area" ;
+                                                     rdfs:label "valume/time*area flow rate"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0022003
+<http://transformunify.org/ontologies/TURBO_0022003> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000061> ;
+                                                     rdfs:label "log transformed molarity unit"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004950
