@@ -40,7 +40,9 @@ ObjectPropertyCharacteristic
 SubObjectProperty
 
 One or more of these axiom generators can be passed into the option (separated by spaces).""" ,
-                                                                                                                           "robot reason --reasoner hermit --create-new-ontology-with-annotations true --equivalent-classes-allowed all --axiom-generators \"SubClass EquivalentClass\" --input workerStatus.ttl --output workerStatus_reasoned.tt" .
+                                                                                                                           """rrobot merge --input ~/loinc_in_obo/lobo.ttl --input ~/Turbo-Ontology/side-projects/OECsearch/workerStatus.ttl --input ~/obi/obi.owl --output OECinThereSomewhere.ttl
+
+obot reason --reasoner hermit --create-new-ontology-with-annotations true --equivalent-classes-allowed all --axiom-generators \"SubClass EquivalentClass\" --input workerStatus.ttl --output workerStatus_reasoned.tt""" .
 
 #################################################################
 #    Object Properties
