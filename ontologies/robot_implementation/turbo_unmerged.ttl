@@ -8,7 +8,6 @@
 @base <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> .
 
 <https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl> rdf:type owl:Ontology ;
-                                                                                                 owl:imports <http://purl.obolibrary.org/obo/chebi.owl> ;
                                                                                                  dc:contributor "Chris Stoeckert" ,
                                                                                                                 "Mark A. Miller" ;
                                                                                                  dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
@@ -486,7 +485,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000055
-<http://purl.obolibrary.org/obo/BFO_0000055> rdf:type owl:ObjectProperty .
+<http://purl.obolibrary.org/obo/BFO_0000055> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "realizes" .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000139
@@ -507,7 +507,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000293
-<http://purl.obolibrary.org/obo/OBI_0000293> rdf:type owl:ObjectProperty .
+<http://purl.obolibrary.org/obo/OBI_0000293> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "has_specified_input" .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000299
@@ -520,6 +521,11 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.obolibrary.org/obo/OBI_0001938
 <http://purl.obolibrary.org/obo/OBI_0001938> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000052
+<http://purl.obolibrary.org/obo/RO_0000052> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "inheres in" .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0000056
@@ -3321,6 +3327,11 @@ James: broaden domain?  remove constraint?""" ;
 <http://purl.obolibrary.org/obo/OBI_0000011> rdf:type owl:Class .
 
 
+###  http://purl.obolibrary.org/obo/OBI_0000067
+<http://purl.obolibrary.org/obo/OBI_0000067> rdf:type owl:Class ;
+                                             rdfs:label "evaluant role" .
+
+
 ###  http://purl.obolibrary.org/obo/OBI_0000070
 <http://purl.obolibrary.org/obo/OBI_0000070> rdf:type owl:Class .
 
@@ -3363,6 +3374,11 @@ James: broaden domain?  remove constraint?""" ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0001352
 <http://purl.obolibrary.org/obo/OBI_0001352> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0001479
+<http://purl.obolibrary.org/obo/OBI_0001479> rdf:type owl:Class ;
+                                             rdfs:label "specimen from organism" .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0001930
@@ -5953,6 +5969,30 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
 <http://transformunify.org/ontologies/TURBO_0022003> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000061> ;
                                                      rdfs:label "log transformed molarity unit"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0022089
+<http://transformunify.org/ontologies/TURBO_0022089> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
+                                                                     [ owl:intersectionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
+                                                                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                                                                                   ]
+                                                                                                                   [ rdf:type owl:Restriction ;
+                                                                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0001479>
+                                                                                                                   ]
+                                                                                                                 ) ;
+                                                                                              rdf:type owl:Class
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0001479>
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ;
+                                                     rdfs:label "assay of specimen from organism"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004950
