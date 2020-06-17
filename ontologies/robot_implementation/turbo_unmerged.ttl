@@ -6517,7 +6517,6 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
 ###  http://transformunify.org/ontologies/TURBO_0010422
 <http://transformunify.org/ontologies/TURBO_0010422> rdf:type owl:NamedIndividual ,
                                                               <http://transformunify.org/ontologies/TURBO_0010421> ;
-                                                     <http://purl.obolibrary.org/obo/RO_0001000> <http://transformunify.org/ontologies/TURBO_0010420> ;
                                                      rdfs:comment """PREFIX : <http://api.stardog.com/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -6589,8 +6588,10 @@ TO {
   BIND(xsd:integer(?visit_detail_id) AS ?visit_detail_id)
   BIND(xsd:integer(?visit_occurrence_id) AS ?visit_occurrence_id)
   BIND(xsd:integer(?more_units) AS ?more_units)
-}""" ;
-                                                     rdfs:label "omop measurements query result, including vocab and manually asserted mmHg units for BP"@en .
+}""" ,
+                                                                  "switched from obo:RO_0001000 \"derives from\" to rdfs:seeAlso" ;
+                                                     rdfs:label "omop measurements query result, including vocab and manually asserted mmHg units for BP"@en ;
+                                                     rdfs:seeAlso <http://transformunify.org/ontologies/TURBO_0010420> .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010423
@@ -6836,7 +6837,6 @@ TO {
 ###  http://transformunify.org/ontologies/TURBO_0010505
 <http://transformunify.org/ontologies/TURBO_0010505> rdf:type owl:NamedIndividual ,
                                                               <http://transformunify.org/ontologies/TURBO_0010421> ;
-                                                     <http://purl.obolibrary.org/obo/RO_0001000> <http://transformunify.org/ontologies/TURBO_0010506> ;
                                                      rdfs:comment """PREFIX : <http://api.stardog.com/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -6900,8 +6900,10 @@ TO {
   BIND(xsd:integer(?route_concept_id) AS ?route_concept_id)
   BIND(xsd:integer(?visit_detail_id) AS ?visit_detail_id)
   BIND(xsd:integer(?visit_occurrence_id) AS ?visit_occurrence_id)
-}""" ;
-                                                     rdfs:label "omop drug_exposure plus vocabulary"@en .
+}""" ,
+                                                                  "switched from obo:RO_0001000 \"derives from\" to rdfs:seeAlso" ;
+                                                     rdfs:label "omop drug_exposure plus vocabulary"@en ;
+                                                     rdfs:seeAlso <http://transformunify.org/ontologies/TURBO_0010506> .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010506
