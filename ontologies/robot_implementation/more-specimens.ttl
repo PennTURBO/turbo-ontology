@@ -1,0 +1,611 @@
+@prefix : <https://raw.githubusercontent.com/PennTURBO/loinc_in_obo/master/more-specimens.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/PennTURBO/loinc_in_obo/master/more-specimens.ttl> .
+
+<https://raw.githubusercontent.com/PennTURBO/loinc_in_obo/master/more-specimens.ttl> rdf:type owl:Ontology ;
+                                                                                      <http://purl.org/dc/elements/1.1/creator> "Chris Stoeckert" ,
+                                                                                                                                "Mark Andrew Miller, ORCID:0000-0001-9076-6066" ;
+                                                                                      <http://purl.org/dc/terms/description> "More specimens for assays. To be added to TURBO." ;
+                                                                                      <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                                                                      <http://purl.org/dc/terms/title> "More specimens for assays" ;
+                                                                                      rdfs:comment "todo: add xmlns namespace, xml:base, dc:contributor, dc:date, dc:format, dc:subject, owl:versionInfo, owl:versionIRI, protege:defaultLanguage, obo:IAO_0000589 (OBO foundry unique label)" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "definition"@en ,
+                                                        "definition"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000119
+<http://purl.obolibrary.org/obo/IAO_0000119> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "definition source"@en .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/OBI_0000312
+<http://purl.obolibrary.org/obo/OBI_0000312> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ;
+                                             rdfs:label "is_specified_output_of"@en ,
+                                                        "is_specified_output_of"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000056
+<http://purl.obolibrary.org/obo/RO_0000056> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "participates in"@en ,
+                                                       "participates_in"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/RO_0001000
+<http://purl.obolibrary.org/obo/RO_0001000> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdfs:label "derives from"@en ,
+                                                       "derives from"^^xsd:string ,
+                                                       "derives_from"^^xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000001
+<http://purl.obolibrary.org/obo/BFO_0000001> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             rdfs:label "entity"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000002
+<http://purl.obolibrary.org/obo/BFO_0000002> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
+                                             rdfs:label "continuant" ,
+                                                        "continuant"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000003
+<http://purl.obolibrary.org/obo/BFO_0000003> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
+                                             rdfs:label "occurrent"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000004
+<http://purl.obolibrary.org/obo/BFO_0000004> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
+                                             rdfs:label "independent continuant" ,
+                                                        "independent continuant"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000015
+<http://purl.obolibrary.org/obo/BFO_0000015> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000003> ,
+                                                             <http://www.ebi.ac.uk/efo/EFO_0000001> ;
+                                             rdfs:label "process" ,
+                                                        "process"@en ,
+                                                        "processo"@pt .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000030
+<http://purl.obolibrary.org/obo/BFO_0000030> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             rdfs:label "object" ,
+                                                        "object"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000040
+<http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                             <http://www.ebi.ac.uk/efo/EFO_0000001> ;
+                                             rdfs:label "material entity"@en ,
+                                                        "material entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000000
+<http://purl.obolibrary.org/obo/CARO_0000000> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0030000> ;
+                                              rdfs:label "anatomical entity"@en .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000003
+<http://purl.obolibrary.org/obo/CARO_0000003> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0000006> ;
+                                              rdfs:label "anatomical structure"@en ,
+                                                         "connected anatomical structure"@en .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000006
+<http://purl.obolibrary.org/obo/CARO_0000006> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                              <http://purl.obolibrary.org/obo/CARO_0000000> ;
+                                              rdfs:label "material anatomical entity"@en .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0030000
+<http://purl.obolibrary.org/obo/CARO_0030000> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ;
+                                              rdfs:label "biological entity" .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000000
+<http://purl.obolibrary.org/obo/CL_0000000> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                            <http://purl.obolibrary.org/obo/CARO_0000003> ,
+                                                            <http://purl.obolibrary.org/obo/GO_0005575> ;
+                                            rdfs:label "cell"@en ,
+                                                       "cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000003
+<http://purl.obolibrary.org/obo/CL_0000003> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000000> ,
+                                                            <http://purl.obolibrary.org/obo/GO_0005623> ;
+                                            rdfs:label "native cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000081
+<http://purl.obolibrary.org/obo/CL_0000081> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000988> ;
+                                            rdfs:label "blood cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000219
+<http://purl.obolibrary.org/obo/CL_0000219> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000003> ;
+                                            rdfs:label "motile cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000232
+<http://purl.obolibrary.org/obo/CL_0000232> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000081> ,
+                                                            <http://purl.obolibrary.org/obo/CL_0000329> ,
+                                                            <http://purl.obolibrary.org/obo/CL_0000764> ;
+                                            rdfs:label "erythrocyte"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000255
+<http://purl.obolibrary.org/obo/CL_0000255> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000003> ;
+                                            rdfs:label "eukaryotic cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000329
+<http://purl.obolibrary.org/obo/CL_0000329> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000003> ;
+                                            rdfs:label "oxygen accumulating cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000548
+<http://purl.obolibrary.org/obo/CL_0000548> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000255> ;
+                                            rdfs:label "animal cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000738
+<http://purl.obolibrary.org/obo/CL_0000738> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000219> ,
+                                                            <http://purl.obolibrary.org/obo/CL_0000988> ,
+                                                            <http://purl.obolibrary.org/obo/CL_0002242> ;
+                                            rdfs:label "leukocyte"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000763
+<http://purl.obolibrary.org/obo/CL_0000763> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000988> ;
+                                            rdfs:label "myeloid cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000764
+<http://purl.obolibrary.org/obo/CL_0000764> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000763> ;
+                                            rdfs:label "erythroid lineage cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000988
+<http://purl.obolibrary.org/obo/CL_0000988> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000548> ,
+                                                            <http://purl.obolibrary.org/obo/CL_0002371> ;
+                                            rdfs:label "hematopoietic cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0002242
+<http://purl.obolibrary.org/obo/CL_0002242> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000003> ;
+                                            rdfs:label "nucleate cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CL_0002371
+<http://purl.obolibrary.org/obo/CL_0002371> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000003> ;
+                                            rdfs:label "somatic cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/GO_0005575
+<http://purl.obolibrary.org/obo/GO_0005575> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
+                                            rdfs:label "cellular_component"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/GO_0005623
+<http://purl.obolibrary.org/obo/GO_0005623> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                            <http://purl.obolibrary.org/obo/CARO_0000003> ,
+                                                            <http://purl.obolibrary.org/obo/GO_0005575> ;
+                                            rdfs:label "cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000011
+<http://purl.obolibrary.org/obo/OBI_0000011> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                             rdfs:label "planned process" ,
+                                                        "planned process"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000047
+<http://purl.obolibrary.org/obo/OBI_0000047> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             rdfs:label "processed material"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000659
+<http://purl.obolibrary.org/obo/OBI_0000659> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000011> ;
+                                             rdfs:label "specimen collection process" .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000953
+<http://purl.obolibrary.org/obo/OBI_0000953> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000047> ,
+                                                             <http://purl.obolibrary.org/obo/OBI_0100051> ;
+                                             rdfs:label "processed specimen"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0100016
+<http://purl.obolibrary.org/obo/OBI_0100016> rdf:type owl:Class ;
+                                             rdfs:subClassOf [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000953>
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0001969>
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                          "Mark A. Miller"^^xsd:string ,
+                                                                                          "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                          "ORCID:0000-0002-5714-991X"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0100017
+<http://purl.obolibrary.org/obo/OBI_0100017> rdf:type owl:Class ;
+                                             rdfs:subClassOf [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000953>
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                      owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0001977>
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                          "Mark A. Miller"^^xsd:string ,
+                                                                                          "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                          "ORCID:0000-0002-5714-991X"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0100051
+<http://purl.obolibrary.org/obo/OBI_0100051> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             rdfs:label "specimen"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0600005
+<http://purl.obolibrary.org/obo/OBI_0600005> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000659> ;
+                                             rdfs:label "collecting specimen from organism"@en .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000178
+<http://purl.obolibrary.org/obo/UBERON_0000178> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000179> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000463> ;
+                                                rdfs:label "blood"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000179
+<http://purl.obolibrary.org/obo/UBERON_0000179> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0006314> ;
+                                                rdfs:label "haemolymphatic fluid"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000463
+<http://purl.obolibrary.org/obo/UBERON_0000463> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
+                                                rdfs:label "organism substance"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000465
+<http://purl.obolibrary.org/obo/UBERON_0000465> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0001062> ;
+                                                rdfs:label "material anatomical entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0001062
+<http://purl.obolibrary.org/obo/UBERON_0001062> rdf:type owl:Class ;
+                                                rdfs:subClassOf owl:Thing ;
+                                                rdfs:label "anatomical entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0001968
+<http://purl.obolibrary.org/obo/UBERON_0001968> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
+                                                rdfs:label "semen"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0001969
+<http://purl.obolibrary.org/obo/UBERON_0001969> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000179> ;
+                                                rdfs:label "blood plasma"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0001977
+<http://purl.obolibrary.org/obo/UBERON_0001977> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000179> ;
+                                                rdfs:label "blood serum"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0006314
+<http://purl.obolibrary.org/obo/UBERON_0006314> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
+                                                rdfs:label "bodily fluid"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0012168
+<http://purl.obolibrary.org/obo/UBERON_0012168> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000178> ;
+                                                rdfs:label "umbilical cord blood"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0013755
+<http://purl.obolibrary.org/obo/UBERON_0013755> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000178> ;
+                                                rdfs:label "arterial blood"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0013756
+<http://purl.obolibrary.org/obo/UBERON_0013756> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000178> ;
+                                                rdfs:label "venous blood"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0013757
+<http://purl.obolibrary.org/obo/UBERON_0013757> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000178> ;
+                                                rdfs:label "capillary blood"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000751
+<http://transformunify.org/ontologies/TURBO_0000751> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0013755>
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some arterial blood"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "arterial blood specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000752
+<http://transformunify.org/ontologies/TURBO_0000752> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0006314>
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some bodily fluid"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "bodily fluid specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000753
+<http://transformunify.org/ontologies/TURBO_0000753> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0013757>
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some capillary blood"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "capillary blood specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000754
+<http://transformunify.org/ontologies/TURBO_0000754> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0012168>
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some umbilical cord blood"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "umbilical cord blood specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000755
+<http://transformunify.org/ontologies/TURBO_0000755> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0013756>
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some venous blood"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "venous blood specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000756
+<http://transformunify.org/ontologies/TURBO_0000756> rdf:type owl:Class ;
+                                                     rdfs:subClassOf [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000953>
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0000232>
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some erythrocytes"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "erythrocyte specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000757
+<http://transformunify.org/ontologies/TURBO_0000757> rdf:type owl:Class ;
+                                                     rdfs:subClassOf [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000953>
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0000738>
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some white blood cells"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "white blood cell specimen"^^xsd:string .
+
+
+###  http://transformunify.org/ontologies/TURBO_0000758
+<http://transformunify.org/ontologies/TURBO_0000758> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0600005>
+                                                                                                                       ]
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
+                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/UBERON_0001968>
+                                                                                                                       ]
+                                                                                                                     ) ;
+                                                                                                  rdf:type owl:Class
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen that is derived from some semen"^^xsd:string ;
+                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Christian Stoeckert"^^xsd:string ,
+                                                                                                  "Mark A. Miller"^^xsd:string ,
+                                                                                                  "ORCID:0000-0001-9076-6066"^^xsd:string ,
+                                                                                                  "ORCID:0000-0002-5714-991X"^^xsd:string ;
+                                                     rdfs:label "semen specimen"^^xsd:string .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0000001
+<http://www.ebi.ac.uk/efo/EFO_0000001> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
+                                       rdfs:label "experimental factor"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi
