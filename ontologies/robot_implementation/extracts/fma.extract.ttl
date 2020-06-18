@@ -1,0 +1,511 @@
+@prefix : <http://purl.obolibrary.org/obo/fma.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/fma.owl> .
+
+<http://purl.obolibrary.org/obo/fma.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:isDefinedBy <http://www.geneontology.org/formats/oboinowl.owl> .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
+<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:isDefinedBy <http://www.geneontology.org/formats/oboinowl.owl> .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#id
+<http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty ;
+                                                  rdfs:isDefinedBy <http://www.geneontology.org/formats/oboinowl.owl> .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema.owl> .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#string
+xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/fma#constitutional_part_of
+<http://purl.obolibrary.org/obo/fma#constitutional_part_of> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/fma#part_of> ;
+                                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                                            <http://www.geneontology.org/formats/oboInOwl#id> "constitutional_part_of"^^xsd:string ;
+                                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                                            rdfs:label "constitutional_part_of"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/fma#part_of
+<http://purl.obolibrary.org/obo/fma#part_of> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                             <http://www.geneontology.org/formats/oboInOwl#id> "part_of"^^xsd:string ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                             rdfs:label "part_of"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/fma#regional_part_of
+<http://purl.obolibrary.org/obo/fma#regional_part_of> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf <http://purl.obolibrary.org/obo/fma#part_of> ;
+                                                      <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                                      <http://www.geneontology.org/formats/oboInOwl#id> "regional_part_of"^^xsd:string ;
+                                                      rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                                      rdfs:label "regional_part_of"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/FMA_223408
+<http://purl.obolibrary.org/obo/FMA_223408> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_9647> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_68646>
+                                                            ] ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical compartment which consists of the cell cavity and the cytoplasm with or without the cell nucleus."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Cell compartment"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "FMA:223408"^^xsd:string ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                            rdfs:label "Compartment of cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_223411
+<http://purl.obolibrary.org/obo/FMA_223411> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_9647> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "FMA:223411"^^xsd:string ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                            rdfs:label "Compartment of cell part"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_223474
+<http://purl.obolibrary.org/obo/FMA_223474> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_223411> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_63840>
+                                                            ] ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "FMA:223474"^^xsd:string ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                            rdfs:label "Compartment of cell nucleus"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_226229
+<http://purl.obolibrary.org/obo/FMA_226229> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_223408> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical compartment that consists of the cell cavity with protoplasm."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "FMA:226229"^^xsd:string ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                            rdfs:label "Compartment of nucleated cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_49443
+<http://purl.obolibrary.org/obo/FMA_49443> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67135> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure, which has as its parts a heterogeneous collection of  organs, organ parts, cells, cell parts or body part subdivisions that are adjacent to, or continuous with one another; does not constitute a cell part, cell,  tissue,  organ, organ system or organ system subdivision, cardinal body part, body part subdivision or anatomical junction. Examples: joint, adnexa of uterus, root of lung, renal pedicle, back."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:49443"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Anatomical cluster"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_61764
+<http://purl.obolibrary.org/obo/FMA_61764> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67135> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure which is demarcated by bona fide or fiat boundaries within a cell. Examples: plasma membrane, mitochondrion, cell nucleus, neurite."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Normal cell part"^^xsd:string ,
+                                                                                                          "Subcellular anatomical structure"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:61764"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Cardinal cell part"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_61775
+<http://purl.obolibrary.org/obo/FMA_61775> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_62955> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical entity which has three or fewer spatial dimensions. Examples: hemoglobin molecule, mitochondrion, hepatocyte, erythrocyte, heart, head, blood, urine, peritoneal cavity, diaphragmatic surface of heart, inferior margin of liver, apex of lung."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:61775"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Physical anatomical entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_62293
+<http://purl.obolibrary.org/obo/FMA_62293> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67257> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Haemoglobin"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:62293"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Hemoglobin"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_62871
+<http://purl.obolibrary.org/obo/FMA_62871> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67257> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_67921>
+                                                           ] ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Antibody"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:62871"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Immunoglobulin"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_62872
+<http://purl.obolibrary.org/obo/FMA_62872> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_62871> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "IgG"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:62872"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Immunoglobulin G"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_62873
+<http://purl.obolibrary.org/obo/FMA_62873> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_62871> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "IgM"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:62873"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Immunoglobulin M"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_62875
+<http://purl.obolibrary.org/obo/FMA_62875> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_62871> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "IgE"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:62875"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Immunoglobulin E"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_62876
+<http://purl.obolibrary.org/obo/FMA_62876> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_62871> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "IgD"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:62876"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Immunoglobulin D"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_62955
+<http://purl.obolibrary.org/obo/FMA_62955> rdf:type owl:Class ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Organismal continuant entity which is enclosed by the bona fide boundary of an organism or is an attribute of its structural organization. Examples: cell, heart, head, peritoneal cavity, apex of lung, anatomical term, sagittal plane."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:62955"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Anatomical entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_63832
+<http://purl.obolibrary.org/obo/FMA_63832> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_86454> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Cell compCell component which is surrounded by a portion of cytosol. Examples: endoplasmic reticulum, ribosome, cytoskeleton, nuclear envelope, nucleus, mitochondrion."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:63832"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Organelle"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_63840
+<http://purl.obolibrary.org/obo/FMA_63840> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_63832> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_67261>
+                                                           ] ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Organelle which has as its direct parts a nuclear membrane and nuclear matrix."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Nucleus of cell"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:63840"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Cell nucleus"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_63887
+<http://purl.obolibrary.org/obo/FMA_63887> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67135> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure which has as its parts one or more ordered aggregates of nucleotide, amino acid fatty acid or sugar molecules bonded to one another.  Examples: collagen, DNA, neurotransmitter, troponin."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:63887"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Biological macromolecule"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_66846
+<http://purl.obolibrary.org/obo/FMA_66846> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_86455> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Cell nuclear region"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:66846"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Region of cell nucleus"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_66866
+<http://purl.obolibrary.org/obo/FMA_66866> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67289> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:66866"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Nonmembranous cytoplasmic organelle"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67135
+<http://purl.obolibrary.org/obo/FMA_67135> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67165> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Material anatomical entity which is generated by coordinated expression of the organism's own genes that guide its morphogenesis; has inherent 3D shape; its parts are connected and spatially related to one another in patterns determined by coordinated gene expression. Examples: heart, right ventricle, mitral valve, myocardium, endothelium, lymphocyte, fibroblast, thorax, cardiovascular system, hemoglobin, T cell receptor."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Biological structure"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67135"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Anatomical structure"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67165
+<http://purl.obolibrary.org/obo/FMA_67165> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_61775> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Physical anatomical entity which has mass. Examples: hemoglobin molecule, mitochondrion, hepatocyte, erythrocyte, heart, head, blood, urine."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67165"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Material anatomical entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67257
+<http://purl.obolibrary.org/obo/FMA_67257> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_63887> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67257"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Protein"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67261
+<http://purl.obolibrary.org/obo/FMA_67261> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_86454> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_226229>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_67513>
+                                                           ] ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Cell component which has as its direct parts a maximally connected part of cytoplasm and one or more cell nuclei. Examples: protoplasm of hepatocyte, sarcoplasm, protoplasm of megakaryocyte."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67261"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Protoplasm"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67289
+<http://purl.obolibrary.org/obo/FMA_67289> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_63832> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67289"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Cytoplasmic organelle"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67513
+<http://purl.obolibrary.org/obo/FMA_67513> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_68646> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Cell which has as its direct part a maximally connected part of protoplasm. Examples: hepatocyte, erythroblast, skeletal muscle fiber, megakaryocyte."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67513"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Nucleated cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67526
+<http://purl.obolibrary.org/obo/FMA_67526> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_84688> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_74410>
+                                                           ] ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67526"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Chromatin"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67528
+<http://purl.obolibrary.org/obo/FMA_67528> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_66846> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_74410>
+                                                           ] ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "DNA protein particle"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67528"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Nucleosome"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67718
+<http://purl.obolibrary.org/obo/FMA_67718> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_66866> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Myofibrilla"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67718"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Myofibril"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67894
+<http://purl.obolibrary.org/obo/FMA_67894> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_86455> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Myofibril region"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67894"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Region of myofibril"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67895
+<http://purl.obolibrary.org/obo/FMA_67895> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67894> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#regional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_67718>
+                                                           ] ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67895"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Sarcomere"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_67921
+<http://purl.obolibrary.org/obo/FMA_67921> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67894> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#regional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_67895>
+                                                           ] ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:67921"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Titin filament"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_68646
+<http://purl.obolibrary.org/obo/FMA_68646> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_67135> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure which has as its boundary the external surface of a maximally connected plasma membrane.  Examples: lymphocyte, fibroblast, erythrocyte, neuron."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Normal cell"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:68646"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Cell"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_72159
+<http://purl.obolibrary.org/obo/FMA_72159> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_62293> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:72159"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Hemoglobin F"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_72160
+<http://purl.obolibrary.org/obo/FMA_72160> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_62293> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:72160"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Hemoglobin A2"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_74410
+<http://purl.obolibrary.org/obo/FMA_74410> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_86454> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#constitutional_part_of> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_223474>
+                                                           ] ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:74410"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Nucleoplasm"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_84688
+<http://purl.obolibrary.org/obo/FMA_84688> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_86455> ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Chromosomal region"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:84688"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Region of chromosome"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_86454
+<http://purl.obolibrary.org/obo/FMA_86454> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_61764> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Cardinal cell part which is demarcated from other cell parts by predominantly bona fide anatomical surfaces. Examples: golgi complex, endosome, myofilament."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:86454"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Cell component"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_86455
+<http://purl.obolibrary.org/obo/FMA_86455> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_61764> ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Cell part which is a fiat subdivision of a cell component."^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Cell component region"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:86455"^^xsd:string ;
+                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                           rdfs:label "Region of cell component"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/FMA_9647
+<http://purl.obolibrary.org/obo/FMA_9647> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_49443> ;
+                                          <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical cluster, which  consists of anatomical compartment space and the contents of the space. Examples: mediastinal part of chest,  anterior compartment of forearm, palm of hand(compartment),  intercostal space, vertebral canal"^^xsd:string ;
+                                          <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                          <http://www.geneontology.org/formats/oboInOwl#id> "FMA:9647"^^xsd:string ;
+                                          rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                          rdfs:label "Anatomical compartment"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

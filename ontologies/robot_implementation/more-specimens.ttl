@@ -235,6 +235,30 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                             rdfs:label "somatic cell"^^xsd:string .
 
 
+###  http://purl.obolibrary.org/obo/FOODON_03420116
+<http://purl.obolibrary.org/obo/FOODON_03420116> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                                 rdfs:label "part of plant or animal"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03420122
+<http://purl.obolibrary.org/obo/FOODON_03420122> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/FOODON_03420127> ;
+                                                 rdfs:label "nonmeat part of animal"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03420127
+<http://purl.obolibrary.org/obo/FOODON_03420127> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/FOODON_03420164> ;
+                                                 rdfs:label "animal body or body part"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03420164
+<http://purl.obolibrary.org/obo/FOODON_03420164> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/FOODON_03420116> ;
+                                                 rdfs:label "part of animal"@en .
+
+
 ###  http://purl.obolibrary.org/obo/GO_0005575
 <http://purl.obolibrary.org/obo/GO_0005575> rdf:type owl:Class ;
                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
@@ -329,7 +353,9 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000178
 <http://purl.obolibrary.org/obo/UBERON_0000178> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000179> ,
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                                <http://purl.obolibrary.org/obo/CARO_0000000> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000179> ,
                                                                 <http://purl.obolibrary.org/obo/UBERON_0000463> ;
                                                 rdfs:label "blood"^^xsd:string .
 
@@ -343,8 +369,11 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000463
 <http://purl.obolibrary.org/obo/UBERON_0000463> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
-                                                rdfs:label "organism substance"^^xsd:string .
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                                <http://purl.obolibrary.org/obo/FOODON_03420122> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000465> ;
+                                                rdfs:label "organism substance"@en ,
+                                                           "organism substance"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000465
@@ -368,7 +397,8 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0001969
 <http://purl.obolibrary.org/obo/UBERON_0001969> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000179> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0000000> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000179> ;
                                                 rdfs:label "blood plasma"^^xsd:string .
 
 
