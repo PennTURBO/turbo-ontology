@@ -72,11 +72,6 @@
                                                   rdfs:isDefinedBy <http://purl.obolibrary.org/obo/mondo.owl> .
 
 
-###  http://purl.obolibrary.org/obo/mondo#excluded_subClassOf
-<http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> rdf:type owl:AnnotationProperty ;
-                                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/mondo.owl> .
-
-
 ###  http://www.ebi.ac.uk/efo/ArrayExpress_label
 <http://www.ebi.ac.uk/efo/ArrayExpress_label> rdf:type owl:AnnotationProperty ;
                                               rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/arrayexpress.owl> .
@@ -243,7 +238,6 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
                                                                                          <http://purl.obolibrary.org/obo/BFO_0000003> ,
                                                                                          <http://purl.obolibrary.org/obo/BFO_0000004> ,
                                                                                          <http://purl.obolibrary.org/obo/BFO_0000017> ,
-                                                                                         <http://purl.obolibrary.org/obo/BFO_0000019> ,
                                                                                          <http://purl.obolibrary.org/obo/BFO_0000020> ,
                                                                                          <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                              <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/part_of"^^xsd:string ;
@@ -296,7 +290,6 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
 <http://purl.obolibrary.org/obo/OBI_0000300> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/OBI_0000308> ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "Relation between a realizable entity and a process. Reciprocal relation of realizes"^^xsd:string ;
                                              <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/is_realized_by"^^xsd:string ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
@@ -305,7 +298,6 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
 
 ###  http://purl.obolibrary.org/obo/OBI_0000308
 <http://purl.obolibrary.org/obo/OBI_0000308> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "Relation between a process and a material fulfilling a role (i.e. realizing a role within the context of the process).  For example a human realizing role of teacher within a lesson teching process."^^xsd:string ;
                                              <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/realizes"^^xsd:string ;
@@ -322,52 +314,6 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
 #################################################################
 #    Classes
 #################################################################
-
-###  http://purl.obolibrary.org/obo/BFO_0000015
-<http://purl.obolibrary.org/obo/BFO_0000015> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000001> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A process is an entity that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity during the time it occurs."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001433"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/source_definition> "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity."^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "http://www.ifomis.org/bfo/1.1/span#ProcessualEntity" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C29862"^^xsd:string ,
-                                                                                                      "SNOMEDCT:415178003"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "process"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000016
-<http://purl.obolibrary.org/obo/BFO_0000016> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "For example, the disposition of vegetables to decay when not refrigerated, the disposition of blood to coagulate, the disposition of a patient with a weakened immune system to contract disease."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A disposition is an entity that causes a specific process or transformation in an entity in which it inheres, under specific circumstances and in conjunction with the laws of nature. For example, the disposition of vegetables to decay when not refrigerated, the disposition of blood to coagulate, the disposition of a patient with a weakened immune system to contract disease."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone modified from original"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/ArrayExpress_label> "disease property"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001438"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/branch_class> "true"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/source_definition> "A realizable entity [snap:RealizableEntity] that essentially causes a specific process or transformation in the object [snap:Object] in which it inheres, under specific circumstances and in conjunction with the laws of nature. A general formula for dispositions is: X (object [snap:Object] has the disposition D to (transform, initiate a process) R under conditions C."^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "http://www.ifomis.org/bfo/1.1/snap#Disposition" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C41205"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "disposition"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000019
-<http://purl.obolibrary.org/obo/BFO_0000019> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A quality is an entity that describes some aspect which is intrinsic to that particular object and is dependent on or more material entities in which it inheres in or is borne by. Example the color of a tomato, the ambient temperature of air, the circumference of a waist, the shape of a nose, the mass of a piece of gold, the weight of a chimpanzee"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001436"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/source_definition> "A specifically dependent continuant [snap:SpecificallyDependentContinuant] that is exhibited if it inheres in an entity or entities at all (a categorical property)."^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "http://www.ifomis.org/bfo/1.1/snap#Quality" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C25283"^^xsd:string ,
-                                                                                                      "SNOMEDCT:263496004"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "quality"^^xsd:string .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000020
 <http://purl.obolibrary.org/obo/BFO_0000020> rdf:type owl:Class ;
@@ -387,25 +333,9 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
                                              rdfs:label "material property"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000040
-<http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000001> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "A heart, a human, a fly, a microarray."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A material entity is an entity that exists in full during the length of time of its existence, persists through this time while maintaining its identity and has no temporal parts. For example a heart, a human, a fly, a microarray."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/ArrayExpress_label> "sample factor"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001434"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/source_definition> "An independent continuant [snap:IndependentContinuant] that is spatially extended whose identity is independent of that of other entities and can be maintained through time. Note: Material entity [snap:MaterialEntity] subsumes object [snap:Object], fiat object part [snap:FiatObjectPart], and object aggregate [snap:ObjectAggregate], which assume a three level theory of granularity, which is inadequate for some domains, such as biology."^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "http://www.ifomis.org/bfo/1.1/snap#MaterialEntity" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "material type"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "material entity"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/GO_0008150
 <http://purl.obolibrary.org/obo/GO_0008150> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                            rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000001> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> """Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end.
 """^^xsd:string ,
                                                                                          "The activities of living organisms that support life in single- or multi-cellular organisms from their origin through the progression of life."^^xsd:string ;
@@ -469,22 +399,13 @@ Note that metabolic processes do not include single functions or processes such 
                                             rdfs:label "metabolic process"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/HANCESTRO_0004
-<http://purl.obolibrary.org/obo/HANCESTRO_0004> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000181> ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "population category defined using ancestry informative markers (AIMs) based on genetic/genomic data" ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "ancestral group" ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/hancestro.owl> ;
-                                                rdfs:label "ancestry category" .
-
-
 ###  http://purl.obolibrary.org/obo/HANCESTRO_0290
 <http://purl.obolibrary.org/obo/HANCESTRO_0290> rdf:type owl:Class ;
                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
                                                                       owl:onProperty <http://purl.obolibrary.org/obo/HANCESTRO_0301> ;
                                                                       owl:allValuesFrom <http://purl.obolibrary.org/obo/HANCESTRO_0305>
                                                                     ] ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/HANCESTRO_0004> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000181> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "a population with increased genetic homogeneity and reduced genetic variation due to cultural or geographic isolation" ;
                                                 <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "founder population" ,
                                                                                                                "population isolate" ;
@@ -499,7 +420,7 @@ Note that metabolic processes do not include single functions or processes such 
                                                                                     <http://purl.obolibrary.org/obo/HANCESTRO_0306>
                                                                                   )
                                                                     ] ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "general characterisation of the ancestry of a population or individual" ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/hancestro.owl> ;
                                                 rdfs:label "ancestry status"@en .
@@ -535,81 +456,6 @@ Note that metabolic processes do not include single functions or processes such 
                                              rdfs:label "information entity"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/MONDO_0003916
-<http://purl.obolibrary.org/obo/MONDO_0003916> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An imbalanced nutritional status resulting from excessive intake of nutrients. Generally, overnutrition generates an energy imbalance between food consumption and energy expenditure leading to disorders such as obesity."^^xsd:string ;
-                                               <http://purl.obolibrary.org/obo/mondo#exactMatch> <http://identifiers.org/mesh/D044343> ,
-                                                                                                 <http://identifiers.org/snomedct/302872003> ,
-                                                                                                 <http://linkedlifedata.com/resource/umls/id/C1257763> ,
-                                                                                                 <http://purl.obolibrary.org/obo/DOID_654> ;
-                                               <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOID:654"^^xsd:string ,
-                                                                                                        "ICD9:278.8"^^xsd:string ,
-                                                                                                        "MESH:D044343"^^xsd:string ,
-                                                                                                        "SCTID:302872003"^^xsd:string ,
-                                                                                                        "UMLS:C1257763"^^xsd:string ;
-                                               <http://www.geneontology.org/formats/oboInOwl#id> "MONDO:0003916"^^xsd:string ;
-                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/mondo.owl> ;
-                                               rdfs:label "overnutrition"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "SCTID:302872003"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:654"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:kboom-pr-0.98/0.71/4.03"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "UMLS:C1257763"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:654"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:654"^^xsd:string ,
-                                                         "MESH:D044343"^^xsd:string ,
-                                                         "linkedlifedata"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "An imbalanced nutritional status resulting from excessive intake of nutrients. Generally, overnutrition generates an energy imbalance between food consumption and energy expenditure leading to disorders such as obesity."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MESH:D044343"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "DOID:654"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD9:278.8"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:relatedTo"^^xsd:string ,
-                                                         "i2s"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "MESH:D044343"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:654"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:ontobio"^^xsd:string
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/MONDO_0021194
 <http://purl.obolibrary.org/obo/MONDO_0021194> rdf:type owl:Class ;
                                                owl:equivalentClass [ rdf:type owl:Class ;
@@ -618,7 +464,7 @@ Note that metabolic processes do not include single functions or processes such 
                                                                                    <http://purl.obolibrary.org/obo/MONDO_0021197>
                                                                                  )
                                                                    ] ;
-                                               rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000408> ;
+                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A grouping of diseases based on molecular activity, cellular process or subcellular component."^^xsd:string ;
                                                <http://www.geneontology.org/formats/oboInOwl#id> "MONDO:0021194"^^xsd:string ;
                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#metaclass> ;
@@ -686,11 +532,6 @@ Note that metabolic processes do not include single functions or processes such 
 
 ###  http://purl.obolibrary.org/obo/MONDO_0024297
 <http://purl.obolibrary.org/obo/MONDO_0024297> rdf:type owl:Class ;
-                                               owl:equivalentClass [ rdf:type owl:Class ;
-                                                                     owl:unionOf ( <http://www.ebi.ac.uk/efo/EFO_0000589>
-                                                                                   <http://www.ebi.ac.uk/efo/EFO_0001069>
-                                                                                 )
-                                                                   ] ;
                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/MONDO_0021195> ;
                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A collective term for nutritional disorders resulting from poor absorption or nutritional imbalance, and metabolic disorders resulting from defects in biosynthesis (ANABOLISM) or breakdown (CATABOLISM) of endogenous substances."^^xsd:string ;
                                                <http://purl.obolibrary.org/obo/mondo#exactMatch> <http://identifiers.org/mesh/D009750> ,
@@ -734,7 +575,7 @@ Note that metabolic processes do not include single functions or processes such 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000181
 <http://purl.obolibrary.org/obo/OBI_0000181> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000001> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A population is a group of material entities consisting of individuals which share a particular characteristic such as inhabiting a particular region or area or ability to interbreed."^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone modified from original OBI definition"^^xsd:string ,
                                                                                           "Tomasz Adamusiak modified from original OBI definition"^^xsd:string ;
@@ -755,53 +596,6 @@ Note that metabolic processes do not include single functions or processes such 
                                               rdfs:label "disease course"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/UO_0000000
-<http://purl.obolibrary.org/obo/UO_0000000> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A unit of measurement is a standardized quantity of a physical quality."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ,
-                                                                                         "Jie Zheng"^^xsd:string ,
-                                                                                         "Tomasz Adamusiak"^^xsd:string ;
-                                            <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001446"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MO:3"^^xsd:string ,
-                                                                                                     "NCIt:C44278"^^xsd:string ,
-                                                                                                     "NCIt:C68553"^^xsd:string ,
-                                                                                                     "NIFSTD:birnlex_2015"^^xsd:string ,
-                                                                                                     "SNOMEDCT:258666001"^^xsd:string ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uo.owl> ;
-                                            rdfs:label "unit"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/UO_0000046
-<http://purl.obolibrary.org/obo/UO_0000046> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A derived unit is a unit which is derived from base units."^^xsd:string ,
-                                                                                         "A unit which is derived from base units."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                            <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001692"^^xsd:string ;
-                                            <http://www.ebi.ac.uk/efo/definition_citation> "UO_0000046"^^xsd:string ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uo.owl> ;
-                                            rdfs:label "derived unit"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/UO_0000051
-<http://purl.obolibrary.org/obo/UO_0000051> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000046> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A concentration unit is a dervied unit which represents a standard measurement of how much of a given substance there is mixed with another substance."^^xsd:string ,
-                                                                                         "A derived unit which represents a standard measurement of how much of a given substance there is mixed with another substance."^^xsd:string ,
-                                                                                         "A unit which represents a standard measurement of how much of a given substance there is mixed with another substance."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ,
-                                                                                         "Jie Zheng"^^xsd:string ,
-                                                                                         "Tomasz Adamusiak"^^xsd:string ;
-                                            <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001803"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MO:61"^^xsd:string ,
-                                                                                                     "MO:86"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "ConcentrationUnit"^^xsd:string ,
-                                                                                                           "ConcentrationUnitOther"^^xsd:string ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uo.owl> ;
-                                            rdfs:label "concentration unit"^^xsd:string .
-
-
 ###  http://www.ebi.ac.uk/efo/EFO_0000001
 <http://www.ebi.ac.uk/efo/EFO_0000001> rdf:type owl:Class ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "An experimental factor in Array Express which are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This upper level class is really used to give a root class from which applications can rely on and not be tied to upper ontology classses which do change."^^xsd:string ;
@@ -820,481 +614,10 @@ Note that metabolic processes do not include single functions or processes such 
                                        rdfs:label "experimental factor"^^xsd:string .
 
 
-###  http://www.ebi.ac.uk/efo/EFO_0000408
-<http://www.ebi.ac.uk/efo/EFO_0000408> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A disease is a disposition that describes states of disease associated with a particular sample and/or organism."^^xsd:string ,
-                                                                                    "A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/mondo#exactMatch> <http://identifiers.org/mesh/D004194> ,
-                                                                                         <http://identifiers.org/snomedct/64572001> ,
-                                                                                         <http://linkedlifedata.com/resource/umls/id/C0012634> ,
-                                                                                         <http://purl.obolibrary.org/obo/DOID_4> ,
-                                                                                         <http://purl.obolibrary.org/obo/NCIT_C2991> ,
-                                                                                         <http://purl.obolibrary.org/obo/Orphanet_377788> ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOID:4"^^xsd:string ,
-                                                                                                "ICD10:N18"^^xsd:string ,
-                                                                                                "ICD10:R69"^^xsd:string ,
-                                                                                                "ICD9:799.9"^^xsd:string ,
-                                                                                                "MESH:D004194"^^xsd:string ,
-                                                                                                "MONDO:0000001"^^xsd:string ,
-                                                                                                "MSH:D004194"^^xsd:string ,
-                                                                                                "NCIT:C2991"^^xsd:string ,
-                                                                                                "OGMS:0000031"^^xsd:string ,
-                                                                                                "Orphanet:377788"^^xsd:string ,
-                                                                                                "SCTID:64572001"^^xsd:string ,
-                                                                                                "SNOMEDCT:64572001"^^xsd:string ,
-                                                                                                "UMLS:C0012634"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Homo sapiens disease"^^xsd:string ,
-                                                                                                      "condition"^^xsd:string ,
-                                                                                                      "disease"^^xsd:string ,
-                                                                                                      "disease or disorder"^^xsd:string ,
-                                                                                                      "disease or disorder, non-neoplastic"^^xsd:string ,
-                                                                                                      "diseases"^^xsd:string ,
-                                                                                                      "diseases and disorders"^^xsd:string ,
-                                                                                                      "disorder"^^xsd:string ,
-                                                                                                      "disorders"^^xsd:string ,
-                                                                                                      "human disease"^^xsd:string ,
-                                                                                                      "medical condition"^^xsd:string ,
-                                                                                                      "other disease"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#id> "EFO:0000408"^^xsd:string ;
-                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
-                                       rdfs:label "disease"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "OGMS:0000031"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "DOID:4"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "EFO:0000408"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD10:N18"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD9:799.9"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:relatedTo"^^xsd:string ,
-                                                         "i2s"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "MESH:D004194"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:4"^^xsd:string ,
-                                                         "EFO:0000408"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:ontobio"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "NCIT:C2991"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:4"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "OGMS:0000031"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "Orphanet:377788"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "SCTID:64572001"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:4"^^xsd:string ,
-                                                         "EFO:0000408"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:kboom-pr-0.81/0.56/0.38"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "UMLS:C0012634"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:4"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "condition"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "disease"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "disease or disorder"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "disease or disorder"^^xsd:string ;
-   rdfs:comment "preferred label from MONDO"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "disease or disorder, non-neoplastic"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "diseases"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "diseases and disorders"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "disorder"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "disorders"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000408> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "other disease"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C2991"^^xsd:string
- ] .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0000589
-<http://www.ebi.ac.uk/efo/EFO_0000589> rdf:type owl:Class ;
-                                       owl:equivalentClass [ owl:intersectionOf ( <http://www.ebi.ac.uk/efo/EFO_0000408>
-                                                                                  [ rdf:type owl:Restriction ;
-                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000300> ;
-                                                                                    owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OGMS_0000063>
-                                                                                                                              [ rdf:type owl:Restriction ;
-                                                                                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GO_0008152>
-                                                                                                                              ]
-                                                                                                                            ) ;
-                                                                                                         rdf:type owl:Class
-                                                                                                       ]
-                                                                                  ]
-                                                                                ) ;
-                                                             rdf:type owl:Class
-                                                           ] ;
+###  http://www.ebi.ac.uk/efo/EFO_0001073
+<http://www.ebi.ac.uk/efo/EFO_0001073> rdf:type owl:Class ;
                                        rdfs:subClassOf <http://purl.obolibrary.org/obo/MONDO_0021195> ,
                                                        <http://purl.obolibrary.org/obo/MONDO_0024297> ,
-                                                       [ owl:intersectionOf ( <http://www.ebi.ac.uk/efo/EFO_0000408>
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000300> ;
-                                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OGMS_0000063>
-                                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                                                                            owl:someValuesFrom <http://purl.obolibrary.org/obo/GO_0008152>
-                                                                                                                          ]
-                                                                                                                        ) ;
-                                                                                                     rdf:type owl:Class
-                                                                                                   ]
-                                                                              ]
-                                                                            ) ;
-                                                         rdf:type owl:Class
-                                                       ] ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A congenital (due to inherited enzyme abnormality) or acquired (due to failure of a metabolic important organ) disorder resulting from an abnormal metabolic process."^^xsd:string ,
-                                                                                    "A congenital (due to inherited enzyme abnormality) or acquired (due to failure of a metabolic important organ) disorder resulting from an abnormal metabolic process. -- 2003"^^xsd:string ,
-                                                                                    "A disease that involving errors in metabolic processes."^^xsd:string ,
-                                                                                    "Generic term for diseases caused by an abnormal metabolic process. It can be congenital due to inherited enzyme abnormality (METABOLISM, INBORN ERRORS) or acquired due to disease of an endocrine organ or failure of a metabolically important organ such as the liver. (Stedman, 26th ed)"^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/mondo#closeMatch> <http://identifiers.org/snomedct/154733004> ,
-                                                                                         <http://identifiers.org/snomedct/190961002> ,
-                                                                                         <http://identifiers.org/snomedct/267456000> ,
-                                                                                         <http://identifiers.org/snomedct/30390004> ;
-                                       <http://purl.obolibrary.org/obo/mondo#exactMatch> <http://identifiers.org/mesh/D008659> ,
-                                                                                         <http://identifiers.org/snomedct/75934005> ,
-                                                                                         <http://linkedlifedata.com/resource/umls/id/C0025517> ,
-                                                                                         <http://purl.obolibrary.org/obo/DOID_0014667> ,
-                                                                                         <http://purl.obolibrary.org/obo/NCIT_C3235> ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "COHD:436670"^^xsd:string ,
-                                                                                                "DOID:0014667"^^xsd:string ,
-                                                                                                "ICD10:E70.E90"^^xsd:string ,
-                                                                                                "ICD10:E88.9"^^xsd:string ,
-                                                                                                "ICD9:277.8"^^xsd:string ,
-                                                                                                "ICD9:277.9"^^xsd:string ,
-                                                                                                "MESH:D008659"^^xsd:string ,
-                                                                                                "MONDO:0005066"^^xsd:string ,
-                                                                                                "MSH:D008659"^^xsd:string ,
-                                                                                                "NCIT:C3235"^^xsd:string ,
-                                                                                                "NCIt:C3235"^^xsd:string ,
-                                                                                                "SCTID:75934005"^^xsd:string ,
-                                                                                                "SNOMEDCT:75934005"^^xsd:string ,
-                                                                                                "UMLS:C0025517"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "DIS METAB"^^xsd:string ,
-                                                                                                      "Disease, Metabolic"^^xsd:string ,
-                                                                                                      "Diseases, Metabolic"^^xsd:string ,
-                                                                                                      "Disorder of metabolism NOS"^^xsd:string ,
-                                                                                                      "Disorder of metabolism NOS (disorder)"^^xsd:string ,
-                                                                                                      "Generalised metabolic disorder"^^xsd:string ,
-                                                                                                      "Generalized metabolic disorder"^^xsd:string ,
-                                                                                                      "Generalized metabolic disorder (disorder)"^^xsd:string ,
-                                                                                                      "MD - Metabolic disorders"^^xsd:string ,
-                                                                                                      "METAB DIS"^^xsd:string ,
-                                                                                                      "METABOLISM DISORDER NOS"^^xsd:string ,
-                                                                                                      "Metabolic Diseases"^^xsd:string ,
-                                                                                                      "Metabolic Disorder"^^xsd:string ,
-                                                                                                      "Metabolic disease (disorder)"^^xsd:string ,
-                                                                                                      "Metabolic disease, NOS"^^xsd:string ,
-                                                                                                      "Metabolic disorder, NOS"^^xsd:string ,
-                                                                                                      "Metabolic disorders"^^xsd:string ,
-                                                                                                      "Thesaurismoses"^^xsd:string ,
-                                                                                                      "Thesaurismosis"^^xsd:string ,
-                                                                                                      "Unspecified disorder of metabolism"^^xsd:string ,
-                                                                                                      "disease of metabolism"^^xsd:string ,
-                                                                                                      "disorder of metabolic process"^^xsd:string ,
-                                                                                                      "metabolic disease"^^xsd:string ,
-                                                                                                      "metabolic process disease"^^xsd:string ,
-                                                                                                      "metabolism disorder"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "metabolic disorder"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "disease of metabolism"^^xsd:string ,
-                                                                                                        "disorder of metabolic process"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#id> "EFO:0000589"^^xsd:string ;
-                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
-                                       rdfs:label "metabolic disease"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/MONDO_0021195> ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:cjm"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/MONDO_0024297> ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "ICD10:E70.E90"^^xsd:string ,
-                                                         "MESH:D008659"^^xsd:string ,
-                                                         "MONDO:Entailed"^^xsd:string ,
-                                                         "MONDO:Redundant"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "A congenital (due to inherited enzyme abnormality) or acquired (due to failure of a metabolic important organ) disorder resulting from an abnormal metabolic process."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C3235"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "COHD:436670"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "DOID:0014667"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "EFO:0000589"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD10:E70.E90"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD10:E88.9"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:0014667"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD9:277.8"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:relatedTo"^^xsd:string ,
-                                                         "i2s"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD9:277.9"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:0014667"^^xsd:string ,
-                                                         "EFO:0000589"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "i2s"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "MESH:D008659"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:0014667"^^xsd:string ,
-                                                         "EFO:0000589"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:ontobio"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "NCIT:C3235"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:0014667"^^xsd:string ,
-                                                         "EFO:0000589"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "SCTID:75934005"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:0014667"^^xsd:string ,
-                                                         "EFO:0000589"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:kboom-pr-1.00/0.92/8.50"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "UMLS:C0025517"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:0014667"^^xsd:string ,
-                                                         "MEDGEN:kboom-pr98-c99"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "NCIT:C3235"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "disorder of metabolic process"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/basis_in_disruption_of_process"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "metabolic disease"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOID:0014667"^^xsd:string ,
-                                                            "NCIT:C3235"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "metabolic disease"^^xsd:string ;
-   rdfs:comment "preferred label from MONDO"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "metabolic process disease"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:design_pattern"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
-   owl:annotatedTarget "metabolic disorder"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C3235"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
-   owl:annotatedTarget "disease of metabolism"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOID:0014667"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0000589> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
-   owl:annotatedTarget "disorder of metabolic process"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/basis_in_disruption_of_process"^^xsd:string
- ] .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0000719
-<http://www.ebi.ac.uk/efo/EFO_0000719> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0001444> ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000112> "The life of an organism, a surgical operation as processual context for a nosocomical infection, the spatiotemporal context occupied by a process of cellular meiosis, the spatiotemporal region occupied by the development of a cancer tumor."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A temporal entity is an entity that has temporal parts and that happens, unfolds or develops through time. An occurrent is something which exists over time, rather than existing completely at many times"^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
-                                       rdfs:label "temporal measurement"^^xsd:string .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0000724
-<http://www.ebi.ac.uk/efo/EFO_0000724> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000719> ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Time point at which a sample or observation is made or taken from a biomaterial as measured from some reference point."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ,
-                                                                                    "Jie Zheng"^^xsd:string ,
-                                                                                    "Tomasz Adamusiak"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MO:738"^^xsd:string ,
-                                                                                                "NCIt:C68568"^^xsd:string ;
-                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
-                                       rdfs:label "timepoint"^^xsd:string .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0001069
-<http://www.ebi.ac.uk/efo/EFO_0001069> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/MONDO_0024297> ,
-                                                       <http://www.ebi.ac.uk/efo/EFO_0000589> ,
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000300> ;
                                                          owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OGMS_0000063>
@@ -1305,158 +628,7 @@ Note that metabolic processes do not include single functions or processes such 
                                                                                                  ) ;
                                                                               rdf:type owl:Class
                                                                             ]
-                                                       ] ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Any condition related to a disturbance between proper intake and utilization of nourishment."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/mondo#closeMatch> <http://identifiers.org/mesh/D044342> ,
-                                                                                         <http://identifiers.org/snomedct/191077005> ;
-                                       <http://purl.obolibrary.org/obo/mondo#exactMatch> <http://identifiers.org/mesh/D009748> ,
-                                                                                         <http://identifiers.org/snomedct/2492009> ,
-                                                                                         <http://linkedlifedata.com/resource/umls/id/C3714509> ,
-                                                                                         <http://purl.obolibrary.org/obo/DOID_374> ,
-                                                                                         <http://purl.obolibrary.org/obo/NCIT_C26836> ;
-                                       <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> <http://purl.obolibrary.org/obo/MONDO_0005066> ,
-                                                                                                  <http://purl.obolibrary.org/obo/MONDO_0006504> ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOID:374"^^xsd:string ,
-                                                                                                "ICD9:783.9"^^xsd:string ,
-                                                                                                "MESH:D009748"^^xsd:string ,
-                                                                                                "MONDO:0005137"^^xsd:string ,
-                                                                                                "MSH:D009748"^^xsd:string ,
-                                                                                                "MSH:D044342"^^xsd:string ,
-                                                                                                "NCIT:C26836"^^xsd:string ,
-                                                                                                "NCIt:C26836"^^xsd:string ,
-                                                                                                "SCTID:2492009"^^xsd:string ,
-                                                                                                "SNOMEDCT:2492009"^^xsd:string ,
-                                                                                                "UMLS:C3714509"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Disorder of nutrition"^^xsd:string ,
-                                                                                                      "Malnutrition"^^xsd:string ,
-                                                                                                      "NUTRITION DIS"^^xsd:string ,
-                                                                                                      "NUTRITIONAL DIS"^^xsd:string ,
-                                                                                                      "Nutrition Disorders"^^xsd:string ,
-                                                                                                      "Nutrition disorder"^^xsd:string ,
-                                                                                                      "Nutritional Disorders"^^xsd:string ,
-                                                                                                      "Nutritional disease"^^xsd:string ,
-                                                                                                      "Nutritional disease, NOS"^^xsd:string ,
-                                                                                                      "Nutritional disorder (disorder)"^^xsd:string ,
-                                                                                                      "Nutritional disorder, NOS"^^xsd:string ,
-                                                                                                      "nutrition disease"^^xsd:string ,
-                                                                                                      "nutritional disorder"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "nutrition disease"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#id> "EFO:0001069"^^xsd:string ;
-                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
-                                       rdfs:label "nutritional disorder"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
-   owl:annotatedTarget "nutrition disease"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOID:374"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/MONDO_0024297> ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MESH:D009748"^^xsd:string ,
-                                                         "MONDO:Entailed"^^xsd:string ,
-                                                         "MONDO:Redundant"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "Any condition related to a disturbance between proper intake and utilization of nourishment."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C26836"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/MONDO_0005066> ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "NCIT:C26836"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/MONDO_0006504> ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:374"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "DOID:374"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "EFO:0001069"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD9:783.9"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:relatedTo"^^xsd:string ,
-                                                         "i2s"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "MESH:D009748"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:374"^^xsd:string ,
-                                                         "EFO:0001069"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:ontobio"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "NCIT:C26836"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:374"^^xsd:string ,
-                                                         "EFO:0001069"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "exact-label-match"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "SCTID:2492009"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:374"^^xsd:string ,
-                                                         "EFO:0001069"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:kboom-pr-1.00/0.91/28.54"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "UMLS:C3714509"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:374"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "NCIT:C26836"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "nutritional disorder"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOID:374"^^xsd:string ,
-                                                            "NCIT:C26836"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001069> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "nutritional disorder"^^xsd:string ;
-   rdfs:comment "preferred label from MONDO"^^xsd:string
- ] .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0001073
-<http://www.ebi.ac.uk/efo/EFO_0001073> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/MONDO_0003916> ,
+                                                       ] ,
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty <http://www.ebi.ac.uk/efo/EFO_0006351> ;
                                                          owl:someValuesFrom <http://www.ebi.ac.uk/efo/EFO_0004340>
@@ -1510,13 +682,6 @@ Note that metabolic processes do not include single functions or processes such 
                                        rdfs:comment "Obesity is a complex disease that may involve multiple environmental and genetic causes. See the subclass monogenic disease for genetic subtypes"^^xsd:string ;
                                        rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
                                        rdfs:label "obesity"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/MONDO_0003916> ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:9970"^^xsd:string
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
@@ -1803,34 +968,9 @@ Note that metabolic processes do not include single functions or processes such 
                                        owl:deprecated "true"^^xsd:boolean .
 
 
-###  http://www.ebi.ac.uk/efo/EFO_0004302
-<http://www.ebi.ac.uk/efo/EFO_0004302> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0001444> ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Anthropometry is a measurement of the size, weight, and proportions of the human or other primate body."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Dani Welter"^^xsd:string ;
-                                       <http://www.ebi.ac.uk/efo/gwas_trait> "true"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D000886"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "anthropometric traits"^^xsd:string ,
-                                                                                                      "anthropometry"^^xsd:string ;
-                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
-                                       rdfs:label "anthropometric measurement"^^xsd:string .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0004324
-<http://www.ebi.ac.uk/efo/EFO_0004324> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0004302> ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Measurements of the height, weight, length, area, etc., of the human and animal body or its parts."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Dani Welter"^^xsd:string ;
-                                       <http://www.ebi.ac.uk/efo/gwas_trait> "true"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D001837"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "body measures"^^xsd:string ;
-                                       rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
-                                       rdfs:label "body weights and measures"^^xsd:string .
-
-
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
 <http://www.ebi.ac.uk/efo/EFO_0004340> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0004324> ,
+                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0001444> ,
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000136> ;
                                                          owl:someValuesFrom <http://www.ebi.ac.uk/efo/EFO_0001073>
@@ -1851,7 +991,7 @@ Note that metabolic processes do not include single functions or processes such 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 <http://www.ebi.ac.uk/efo/EFO_0004374> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
+                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
                                        <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C67015"^^xsd:string ;
                                        rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
                                        rdfs:label "milligram per deciliter"^^xsd:string .
@@ -1872,12 +1012,19 @@ Note that metabolic processes do not include single functions or processes such 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004950
 <http://www.ebi.ac.uk/efo/EFO_0004950> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000724> ;
+                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0001444> ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "The point in time at which an individual was born."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Helen Parkinson"^^xsd:string ;
                                        <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT:184099003"^^xsd:string ;
                                        rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/efo.owl> ;
                                        rdfs:label "date of birth"^^xsd:string .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> rdfs:isDefinedBy <http://purl.obolibrary.org/obo/mondo.owl> .
 
 
 ###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

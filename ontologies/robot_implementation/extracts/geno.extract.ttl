@@ -98,10 +98,6 @@ rdf:PlainLiteral rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns.ow
 xsd:boolean rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 
-###  http://www.w3.org/2001/XMLSchema#int
-xsd:int rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
-
-
 ###  http://www.w3.org/2001/XMLSchema#string
 xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
@@ -130,7 +126,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/GENO_0000239
 <http://purl.obolibrary.org/obo/GENO_0000239> rdf:type owl:ObjectProperty ;
                                               owl:inverseOf <http://purl.obolibrary.org/obo/GENO_0000251> ;
-                                              rdfs:range <http://purl.obolibrary.org/obo/GENO_0000702> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A relationship between an entity that carries a sequence (e.g. a sequence feature or collection), and the sequence it bears." ;
                                               <http://purl.obolibrary.org/obo/IAO_0000118> "has_sequence_component" ,
                                                                                            "has_state" ;
@@ -142,7 +137,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/GENO_0000251
 <http://purl.obolibrary.org/obo/GENO_0000251> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <http://purl.obolibrary.org/obo/GENO_0000702> ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
                                               rdfs:label "is_sequence_of" .
 
@@ -176,12 +170,6 @@ Used in GENO to describe physical context of materialized sequence features that
 
 ###  http://purl.obolibrary.org/obo/GENO_0000726
 <http://purl.obolibrary.org/obo/GENO_0000726> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain [ rdf:type owl:Class ;
-                                                            owl:unionOf ( <http://purl.obolibrary.org/obo/GENO_0000919>
-                                                                          <http://purl.obolibrary.org/obo/GENO_0000920>
-                                                                        )
-                                                          ] ;
-                                              rdfs:range <http://purl.obolibrary.org/obo/SO_0000110> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A relation linking a qualified sequence feature to its component sequence feature." ;
                                               <http://purl.obolibrary.org/obo/IAO_0000118> "has_sequence_feature_component" ;
                                               rdfs:comment "In GENO we define three levels of sequence artifacts: (1) biological sequences, (2) sequence features, and (3) qualified sequence features. The identify criteria for a 'biological sequence' include only its inherent sequence (the ordered string of units that comprise it). The identity criteria for a 'sequence feature' include its sequence and position (where it resides - i.e. its location based on how it maps to a reference or standard) The identity criteria for a 'qualified sequence feature' include its component sequence feature (defined by its sequence and position), and the material context of its bearer in a cell or organism. This context can include direct epigenetic modification, or being targeted by gene knockdown reagents such as morpholinos or RNAi, or being transiently overexpressed from a transgenic construct in a cell or organism." ;
@@ -191,8 +179,6 @@ Used in GENO to describe physical context of materialized sequence features that
 
 ###  http://purl.obolibrary.org/obo/GENO_0000903
 <http://purl.obolibrary.org/obo/GENO_0000903> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <http://purl.obolibrary.org/obo/SO_0000110> ;
-                                              rdfs:range <http://purl.obolibrary.org/obo/GENO_0000815> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A relation linking a sequence feature to the location it occupies on some reference sequence." ;
                                               <http://purl.obolibrary.org/obo/IAO_0000118> "occupies" ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
@@ -268,7 +254,6 @@ Example 2: a collection of information entities such as a genotype being compris
 
 ###  http://purl.obolibrary.org/obo/GENO_0000896
 <http://purl.obolibrary.org/obo/GENO_0000896> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <http://purl.obolibrary.org/obo/GENO_0000702> ;
                                               rdfs:range xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "Property linking a biological sequence to a string representing the ordered units that comprise the sequence (e.g. 'atgcagctagctaccgtcgatcg')." ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
@@ -312,47 +297,6 @@ Example 2: a collection of information entities such as a genotype being compris
                                                         "continuant"@en .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000004
-<http://purl.obolibrary.org/obo/BFO_0000004> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "a chair"@en ,
-                                                                                          "a heart"@en ,
-                                                                                          "a leg"@en ,
-                                                                                          "a molecule"@en ,
-                                                                                          "a spatial region"@en ,
-                                                                                          "an atom"@en ,
-                                                                                          "an orchestra."@en ,
-                                                                                          "an organism"@en ,
-                                                                                          "the bottom right portion of a human torso"@en ,
-                                                                                          "the interior of your mouth"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "independent continuant" ,
-                                                        "independent continuant"@en .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000020
-<http://purl.obolibrary.org/obo/BFO_0000020> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Reciprocal specifically dependent continuants: the function of this key to open this lock and the mutually dependent disposition of this lock: to be opened by this key"@en ,
-                                                                                          "of one-sided specifically dependent continuants: the mass of this tomato"@en ,
-                                                                                          "of relational dependent continuants (multiple bearers): John’s love for Mary, the ownership relation between John and this statue, the relation of authority between John and his subordinates."@en ,
-                                                                                          "the disposition of this fish to decay"@en ,
-                                                                                          "the function of this heart: to pump blood"@en ,
-                                                                                          "the mutual dependence of proton donors and acceptors in chemical reactions [79"@en ,
-                                                                                          "the mutual dependence of the role predator and the role prey as played by two organisms in a given interaction"@en ,
-                                                                                          "the pink color of a medium rare piece of grilled filet mignon at its center"@en ,
-                                                                                          "the role of being a doctor"@en ,
-                                                                                          "the shape of this hole."@en ,
-                                                                                          "the smell of this portion of mozzarella"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])"@en ,
-                                                                                          "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "Specifically dependent continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. We're not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc."@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "specifically dependent continuant" ,
-                                                        "specifically dependent continuant"@en .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000031
 <http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
@@ -363,45 +307,6 @@ Example 2: a collection of information entities such as a genotype being compris
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "generically dependent continuant" ,
                                                         "generically dependent continuant"@en .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000040
-<http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "a flame"@en ,
-                                                                                          "a forest fire"@en ,
-                                                                                          "a human being"@en ,
-                                                                                          "a hurricane"@en ,
-                                                                                          "a photon"@en ,
-                                                                                          "a puff of smoke"@en ,
-                                                                                          "a sea wave"@en ,
-                                                                                          "a tornado"@en ,
-                                                                                          "an aggregate of human beings."@en ,
-                                                                                          "an energy wave"@en ,
-                                                                                          "an epidemic"@en ,
-                                                                                          "the undetached arm of a human being"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Material entities (continuants) can preserve their identity even while gaining and losing material parts. Continuants are contrasted with occurrents, which unfold themselves in successive temporal parts or phases [60"@en ,
-                                                                                          "BFO 2 Reference: Object, Fiat Object Part and Object Aggregate are not intended to be exhaustive of Material Entity. Users are invited to propose new subcategories of Material Entity."@en ,
-                                                                                          "BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "A material entity is an independent continuant that has some portion of matter as proper or improper continuant part. (axiom label in BFO2 Reference: [019-002])"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "material entity" ,
-                                                        "material entity"@en .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000133
-<http://purl.obolibrary.org/obo/GENO_0000133> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000875> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
-                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000516>
-                                                              ] ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different)." ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000118> "allelic state" ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000119> "derived from https://en.wikipedia.org/wiki/Zygosity" ;
-                                              <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "http://semanticscience.org/resource/SIO_001263" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "zygosity" .
 
 
 ###  http://purl.obolibrary.org/obo/GENO_0000135
@@ -420,23 +325,19 @@ Example 2: a collection of information entities such as a genotype being compris
 
 ###  http://purl.obolibrary.org/obo/GENO_0000391
 <http://purl.obolibrary.org/obo/GENO_0000391> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000133> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000516>
+                                                              ] ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
                                               rdfs:label "disomic zygosity" .
 
 
 ###  http://purl.obolibrary.org/obo/GENO_0000481
 <http://purl.obolibrary.org/obo/GENO_0000481> rdf:type owl:Class ;
-                                              owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0000110>
-                                                                                         [ rdf:type owl:Restriction ;
-                                                                                           owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000903> ;
-                                                                                           owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000902>
-                                                                                         ]
-                                                                                       ) ;
-                                                                    rdf:type owl:Class
-                                                                  ] ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000897> ,
-                                                              <http://purl.obolibrary.org/obo/SO_0000110> ,
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000701> ,
+                                                              <http://purl.obolibrary.org/obo/GENO_0000897> ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ;
                                                                 owl:someValuesFrom <http://purl.obolibrary.org/obo/SO_0001026>
@@ -462,7 +363,11 @@ Example 2: a collection of information entities such as a genotype being compris
 
 ###  http://purl.obolibrary.org/obo/GENO_0000501
 <http://purl.obolibrary.org/obo/GENO_0000501> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000512> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000481> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000683> ;
+                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000481>
+                                                              ] ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An allele representing a highly common varaint (typically >99% in a population), that typically exhibits canonical function, and against which rare and/or non-functional mutant alleles are often compared." ;
                                               <http://purl.obolibrary.org/obo/IAO_0000118> "wild-type allele" ;
                                               rdfs:comment """'Wild-type' is typically contrasted with 'mutant', where 'wild-type' indicates a highly prevalent allele in a population (typically >99%), and/or some prototypical allele in a background genome that serves as a basis for some experimental alteration to generate a mutant allele, which can be selected for in establishing a mutant strain.
@@ -470,46 +375,6 @@ Example 2: a collection of information entities such as a genotype being compris
 The notion of wild-type alleles is more common in model organism databases, where specific mutations are generated against a wild-type reference feature. Wild-type alleles are typically but not always used as reference alleles in sequence comparison/analysis applications. More than one wild-type sequence can exist for a given feature, but typically only one allele is deemed wild-type iin the context of a single dataset or analysis.""" ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
                                               rdfs:label "wild-type allele" .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000512
-<http://purl.obolibrary.org/obo/GENO_0000512> rdf:type owl:Class ;
-                                              owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/GENO_0000481>
-                                                                                         [ rdf:type owl:Restriction ;
-                                                                                           owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000683> ;
-                                                                                           owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000481>
-                                                                                         ]
-                                                                                       ) ;
-                                                                    rdf:type owl:Class
-                                                                  ] ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000481> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000683> ;
-                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000481>
-                                                              ] ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "One of a set of sequence features known to exist at a particular genomic location." ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000116> """A landsacpe review found mostly gene-centric definitions of 'allele' that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6][6a].  But we also found 'allele' used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11], where such variations don't neccessarily impact a gene.
-
-To be maximally accommodating of how this term is used across research communities, GENO defines 'allele' broadly and allow alleles can span any locus or extent of sequence. While 'alleles' encountered in public datases typically overlap a gene, many do not. But GENO does define the 'gene allele' class as a subtype of 'allele' to refers more specifically to a specifc version of an entire gene.
-	
-[1] https://isogg.org/wiki/Allele (retrieved 2018-03-17)
-[2] http://semanticscience.org/resource/allele (retrieved 2018-03-17)
-[3] https://en.wikipedia.org/wiki/Allele (retrieved 2018-03-17)
-[4] https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/allele (retrieved 2018-03-17)
-[5] http://purl.obolibrary.org/obo/SO_0001023 (retrieved 2018-03-17)
-[6] http://purl.obolibrary.org/obo/NCIT_C16277 (retrieved 2018-03-17)
-[6a] https://www.ncbi.nlm.nih.gov/mesh/68000483
-[7] https://www.snpedia.com/index.php/Allele (retrieved 2018-03-17)
-[8]  https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism (retrieved 2018-03-17)
-[9] http://purl.obolibrary.org/obo/OGI_0000008 (retrieved 2018-03-17)
-[10] http://purl.obolibrary.org/obo/OBI_0001352 (retrieved 2018-03-17)
-[11] http://purl.phyloviz.net/ontology/typon#Allele (retrieved 2018-03-17)""" ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000118> "variable feature"@en ;
-                                              rdfs:comment """An allele is a seqeunce feature at a genomic location where variation occurs (i.e. where >1 different sequence is known to exist). An allele can span only the extent of sequence known to vary (e.g. a single base SNP, or short insertion), or it can span a larger extent that includes one or more variable features as proper parts (e.g. a 'gene allele' that spans the extent of an entire gene which contains several sequence alterations).
-
-Alleles can carry 'reference' or 'variant' sequence - depending on whether the its 'state' matches that considered to be the reference at that location. Alleles whose state differs from the reference are called 'variant alleles', and those that match the reference are called 'reference alleles'. What is considered the 'reference' state at a particular location may vary, depending on the context/goal of a particular analysis. A 'sequence alteration' is a 'variant allele' that varies along its entire extent (i.e every position varies from that of some defined reference sequence).""" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "allele" .
 
 
 ###  http://purl.obolibrary.org/obo/GENO_0000516
@@ -530,37 +395,9 @@ The fact that we are counting how many copies of the same *sequence* exist in a 
                                               rdfs:label "single locus complement" .
 
 
-###  http://purl.obolibrary.org/obo/GENO_0000659
-<http://purl.obolibrary.org/obo/GENO_0000659> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000701> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0002351> ;
-                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/SO_0000110>
-                                                              ] ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000917> ;
-                                                                owl:someValuesFrom xsd:int
-                                                              ] ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000112> """1. The set of all alleles at a particular location in a genome (a 'single locus complement')  - e.g. {APOE-epsilon2 / APOE-epsilon4} at the APOE locus
-
-2. The set of all alleles that comprise a haplotype - e.g. the SNPs {rs7412-T, rs429358-T} in the APOEɛ2 allele.
-
-3. The set of all chromosomes in a genome - e.g. {human Chr1, 2, 3,  . . . 22, X, Y}""" ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A set of sequence features." ;
-                                              rdfs:comment """'Sets' are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an 'empty' set) or 1 member (a 'singleton' or 'unit' set), consistent with the concept of 'mathematical sets'. Sets may also include duplicates (i.e. contain more than one member representing the same feature).
-
-The notion of a 'complement' is a special case of a set, where the members necessarily comprise an exhaustive collection of all objects that make up some well-defined set. It is useful for defining many biologically-relevant sets of sequence features. For example, a 'haplotype' is the set of all genetically-linked alleles on a single chromosomal strand at a defined location - e.g. the SNP alleles {rs7412-C, rs429358-C} comprise the haplotype defining the APOEɛ4 gene allele [1]. And a 'single locus complement' is the set of all alleles at a specified location in a particular genome  - e.g. the APOEɛ4 and APOEɛ4 gene alleles ([1], [2]) that make up the 'Gs270' APOE genotype [3].
-
-[1] https://www.snpedia.com/index.php/APOE-%CE%B54
-[2] https://www.snpedia.com/index.php/APOE-%CE%B52
-[3] https://www.snpedia.com/index.php/Gs270""" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "sequence feature set"@en .
-
-
 ###  http://purl.obolibrary.org/obo/GENO_0000660
 <http://purl.obolibrary.org/obo/GENO_0000660> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000659> ,
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000701> ,
                                                               <http://purl.obolibrary.org/obo/GENO_0000897> ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002351> ;
@@ -578,11 +415,6 @@ The notion of a 'genomic feature set' differs from that of a 'genomic sequence s
 
 ###  http://purl.obolibrary.org/obo/GENO_0000701
 <http://purl.obolibrary.org/obo/GENO_0000701> rdf:type owl:Class ;
-                                              owl:equivalentClass [ rdf:type owl:Class ;
-                                                                    owl:unionOf ( <http://purl.obolibrary.org/obo/GENO_0000701>
-                                                                                  <http://purl.obolibrary.org/obo/SO_0000110>
-                                                                                )
-                                                                  ] ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A sequence feature or a set of such features." ;
                                               <http://purl.obolibrary.org/obo/IAO_0000118> "sequence feature or collection" ;
@@ -592,45 +424,6 @@ The notion of a 'genomic feature set' differs from that of a 'genomic sequence s
 3. 'Qualified sequence feature' identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.""" ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
                                               rdfs:label "sequence feature or set"@en .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000702
-<http://purl.obolibrary.org/obo/GENO_0000702> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000921> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000896> ;
-                                                                owl:someValuesFrom xsd:string
-                                                              ] ;
-                                              owl:disjointWith <http://purl.obolibrary.org/obo/GENO_0000815> ,
-                                                               <http://purl.obolibrary.org/obo/SO_0000110> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A linear ordering of units representing monomers of a biological macromolecule (e.g. nucleotides in DNA and RNA, amino acids in polypeptides)." ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000116> """GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
-1. 'Biological sequence' identity is dependent only on the ordering of units that comprise the sequence.
-2. 'Sequence feature' identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of 'sequence feature' in the Sequence Ontology).
-3. 'Qualified sequence feature' identity is additionally dependent on some aspect of the physical context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature's physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino 'Shha-MO1'), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern).""" ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000118> "biomacromolecular sequence" ,
-                                                                                           "state" ;
-                                              <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "VMC:State" ;
-                                              rdfs:comment "'Sequences' differ from 'sequence features' in that instances are distinguished only by their inherent ordering of units, and not by any positional aspect related to alignment with some reference sequence. Accordingly, the 'ATG' translational start codon of the human AKT gene is the same *sequence* as the 'ATG' start codon of the human SHH gene, but these represent two distinct *sequence features* in virtue of their different positions in the genome." ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "biological sequence"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/GENO_0000702> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000896> ;
-                         owl:someValuesFrom xsd:string
-                       ] ;
-   <http://purl.obolibrary.org/obo/GENO_0000834> "true"^^xsd:boolean
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/GENO_0000702> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000118> ;
-   owl:annotatedTarget "state" ;
-   <http://purl.obolibrary.org/obo/IAO_0000116> "In the VMC model, the notion of a GENO:biological sequence is called the 'state' of an allele."
- ] .
 
 
 ###  http://purl.obolibrary.org/obo/GENO_0000713
@@ -643,8 +436,8 @@ The notion of a 'genomic feature set' differs from that of a 'genomic sequence s
 
 ###  http://purl.obolibrary.org/obo/GENO_0000714
 <http://purl.obolibrary.org/obo/GENO_0000714> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000897> ,
-                                                              <http://purl.obolibrary.org/obo/GENO_0000919> ,
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000713> ,
+                                                              <http://purl.obolibrary.org/obo/GENO_0000897> ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000580> ;
                                                                 owl:someValuesFrom owl:Thing
@@ -662,17 +455,6 @@ The notion of a 'genomic feature set' differs from that of a 'genomic sequence s
    owl:annotatedSource <http://purl.obolibrary.org/obo/GENO_0000714> ;
    owl:annotatedProperty rdfs:subClassOf ;
    owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000580> ;
-                         owl:someValuesFrom owl:Thing
-                       ] ;
-   <http://purl.obolibrary.org/obo/GENO_0000834> "true"^^xsd:boolean ;
-   rdfs:comment "This axiom is an initial attempt to formalize the identity criteria of an extrinnsic context that separates qualified sequence features from sequence features (i.e. the context of its material bearer).  As we further develop our efforts here this will get refined and more precise."
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/GENO_0000714> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
                          owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000726> ;
                          owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000481>
                        ] ;
@@ -680,11 +462,22 @@ The notion of a 'genomic feature set' differs from that of a 'genomic sequence s
    rdfs:comment "Formalizes one identity criteria of the sequence feature component of a qualified sequence feature (which itself is identified by its sequence and its genomic position)."
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GENO_0000714> ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000580> ;
+                         owl:someValuesFrom owl:Thing
+                       ] ;
+   <http://purl.obolibrary.org/obo/GENO_0000834> "true"^^xsd:boolean ;
+   rdfs:comment "This axiom is an initial attempt to formalize the identity criteria of an extrinnsic context that separates qualified sequence features from sequence features (i.e. the context of its material bearer).  As we further develop our efforts here this will get refined and more precise."
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/GENO_0000715
 <http://purl.obolibrary.org/obo/GENO_0000715> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000897> ,
-                                                              <http://purl.obolibrary.org/obo/GENO_0000920> ,
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000713> ,
+                                                              <http://purl.obolibrary.org/obo/GENO_0000897> ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000726> ;
                                                                 owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000660>
@@ -700,36 +493,6 @@ The notion of a 'genomic feature set' differs from that of a 'genomic sequence s
 A complements may contain 0, 1, or more than one members. For example, the complement of alleles at a defined locus across homologous chromosomes in an individual's genome will consist of two members for autosomal locations, and one member for non-homologous locations on the X and Y chromosome.""" ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
                                               rdfs:label "qualified genomic feature set"@en .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000788
-<http://purl.obolibrary.org/obo/GENO_0000788> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An attribute, quality, or state of a sequence feature or collection." ;
-                                              <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "http://purl.obolibrary.org/obo/SO_0000400" ;
-                                              rdfs:comment "Sequence feature attributes can be 'intrinsic' - reflecting feature-level characteristics that depend only on the sequence, location, or genomic context of a feature or collection, or 'extrinsic' - reflecting characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, physical appearance, etc.). Intrinsic attributes include things like allelic state, allelic phase.  Extrinsic attributes include things like its cellular distribution and chromosomal band intensity." ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "sequence feature attribute" .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000815
-<http://purl.obolibrary.org/obo/GENO_0000815> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
-                                              owl:disjointWith <http://purl.obolibrary.org/obo/SO_0000110> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "The location of a sequence feature as defined by its start and end position on some reference coordinate system." ;
-                                              rdfs:comment """1. A sequence feature location is defined by its begin and end coordinates on a reference sequence, but it is not identified by a particular sequence that may reside there. The same location, as defined on a particular reference, may be occupied by different sequences in the genome of organism 1 vs that of organism 2 (e.g. if a SNV exists within this location in only one of the organisms).
-
-2. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be 'occupied by' physical objects, while a genomic location is 'occupied by' sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic location is distinct from a sequence feature that occupies it. As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.""" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "sequence feature location"@en .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000875
-<http://purl.obolibrary.org/obo/GENO_0000875> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000788> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality inhering in an 'allelic complement' (aka a 'single locus complement') that describes the allelic variability found at a particular locus in the genome of a single cell/organism" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "allelic state"@en .
 
 
 ###  http://purl.obolibrary.org/obo/GENO_0000897
@@ -773,7 +536,7 @@ A complements may contain 0, 1, or more than one members. For example, the compl
 
 ###  http://purl.obolibrary.org/obo/GENO_0000902
 <http://purl.obolibrary.org/obo/GENO_0000902> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000815> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "The location of a sequence feature in a genome, defined by its start and end position on some reference genomic coordinate system" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000116> """In GENO, the notion of a Genomic Location (aka Genomic Locus) plays the same role as that of a FALDO:Region in the design pattern for describing the location of a feature of interest.  We define this specific GENO class because the ontological nature of FALDO:Region class is not clear in the context of the BFO and SO-based GENO model. We will work to resolve these questions and ideally converge these concepts in the future.
 
@@ -793,108 +556,25 @@ For example, we would define an  'HLA gene block' as a subclass of 'genomic feat
                                               rdfs:label "genomic feature location"@en .
 
 
-###  http://purl.obolibrary.org/obo/GENO_0000904
-<http://purl.obolibrary.org/obo/GENO_0000904> rdf:type owl:Class ;
-                                              owl:equivalentClass [ rdf:type owl:Class ;
-                                                                    owl:unionOf ( <http://purl.obolibrary.org/obo/OBI_0100026>
-                                                                                  [ rdf:type owl:Restriction ;
-                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0001000> ;
-                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100026>
-                                                                                  ]
-                                                                                  [ rdf:type owl:Restriction ;
-                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0002351> ;
-                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100026>
-                                                                                  ]
-                                                                                )
-                                                                  ] ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
-                                              <http://purl.obolibrary.org/obo/GENO_0000905> "true"^^xsd:boolean ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/GENO_0000484> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A material entity that is an organism, derived from an organism, or composed of organisms (e.g. a cell line, biosample, tissue culture, population, etc)." ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000116> "useful organizational term to collect entities that have genomes/genotypes." ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "organismal entity"@en .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000919
-<http://purl.obolibrary.org/obo/GENO_0000919> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000713> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000112> "Consider wild-type zebrafish shha gene in the context of being targeted by morpholino MO-1 vs morpholino MO-2 in separate experiments. These shha genes share identical sequence and position, but represent distinct instances of a 'qualified sequence feature' because of their different external contexts. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants (alleles) of the same gene can have potentially different associated phenotypes)." ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A sequence feature whose identity is additionally dependent on the context or state of the material sequence molecule in which the feature is concretized. This context/state describes factors external to the feature's intrinsic  sequence and position that can influences its expression, such as being targeted by gene-knockdown reagents, or an epigenetic modification." ;
-                                              rdfs:comment """GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
-1. 'Biological sequence' identity is dependent only on the ordering of units that comprise the sequence.
-2. 'Sequence feature' identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of 'sequence feature' in the Sequence Ontology).
-3. 'Qualified sequence feature' identity is additionally dependent on some aspect of the physical state or context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature's physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino 'Shha-MO1'), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern).""" ,
-                                                           "Modeling sequence entities at this 'qualified' level is useful for distinguishing cases where features with identical sequence and position as separate instances - based on their material bearers being found in different contexts. For example, consider a situation where the zebrafish shha gene (a sequence feature) is targeted in two experimental groups of fish by two different morpholinos, and phenotypes are assessed for each.  We want to be able to represent two 'variants' of the shha gene in this scenario as separate 'qualified sequence feature' instances so we can capture data about the phenotypes resulting from each - just as we would separately represent to different sequence variants (alleles) of the shha gene at the sequence feature level so that we can track their associated phenotypes." ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "qualified sequence feature"@en .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000920
-<http://purl.obolibrary.org/obo/GENO_0000920> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000713> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000919>
-                                                              ] ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000726> ;
-                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000659>
-                                                              ] ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A set of qualified seqeunce features." ;
-                                              rdfs:comment "'Sets' are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an 'empty' set) or 1 member (a 'singleton' or 'unit' set), consistent with the concept of 'matehmatical sets'." ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "qualified sequence feature set"@en .
-
-
-###  http://purl.obolibrary.org/obo/GENO_0000921
-<http://purl.obolibrary.org/obo/GENO_0000921> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A biolocical sequence, or set of such sequences." ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000118> "biological sequence or collection" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
-                                              rdfs:label "biological sequence or set"@en .
-
-
 ###  http://purl.obolibrary.org/obo/GENO_0000960
 <http://purl.obolibrary.org/obo/GENO_0000960> rdf:type owl:Class ;
                                               owl:equivalentClass [ rdf:type owl:Restriction ;
                                                                     owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000251> ;
                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000481>
                                                                   ] ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000702> ,
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000251> ;
                                                                 owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000481>
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000896> ;
+                                                                owl:someValuesFrom xsd:string
                                                               ] ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A biological sequence that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)." ;
                                               rdfs:comment "A sequence being 'of genomic origin' here means only that it has been located to the genome of some organism by alignment with some reference genomic sequence. This is because the sequence was originally identified in, or artificially created to replicate, sequence from an organism's genome." ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/geno.owl> ;
                                               rdfs:label "genomic sequence"@en .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000027
-<http://purl.obolibrary.org/obo/IAO_0000027> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "data item"@en .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000030
-<http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "information content entity"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Examples of information content entites include journal articles, data, graphical layouts, and graphs."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "an information content entity is an entity that is generically dependent on some artifact and stands in relation of aboutness to some entity"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> """information_content_entity 'is_encoded_in' some digital_entity in obi before split (040907). information_content_entity 'is_encoded_in' some physical_document in obi before split (040907).
-
-Previous. An information content entity is a non-realizable information entity that 'is encoded in' some digital or physical entity."""@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Chris Stoeckert"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "OBI_0000142"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "information content entity" ,
-                                                        "information content entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000078
@@ -925,7 +605,7 @@ Previous. An information content entity is a non-realizable information entity t
 
 ###  http://purl.obolibrary.org/obo/IAO_0000102
 <http://purl.obolibrary.org/obo/IAO_0000102> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "data about an ontology part is a data item about a part of an ontology, for example a term"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000117> "Person:Alan Ruttenberg"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000118> "ontology metadata" ;
@@ -974,53 +654,10 @@ Previous. An information content entity is a non-realizable information entity t
 
 ###  http://purl.obolibrary.org/obo/OBI_0100026
 <http://purl.obolibrary.org/obo/OBI_0100026> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000904> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "Stub class to serve as root of hierarchy for imports from NCBI Taxonomy." ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "organism" .
-
-
-###  http://purl.obolibrary.org/obo/SO_0000110
-<http://purl.obolibrary.org/obo/SO_0000110> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000701> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000239> ;
-                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000702>
-                                                            ] ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000903> ;
-                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000815>
-                                                            ] ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Any extent of continuous biological sequence." ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000116> """GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
-1. 'Biological sequence' identity is dependent only on the ordering of units that comprise the sequence.
-2. 'Sequence feature' identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of 'sequence feature' in the Sequence Ontology).
-3. 'Qualified sequence feature' identity is additionally dependent on some aspect of the physical context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature's physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino 'Shha-MO1'), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern).""" ;
-                                            rdfs:comment "A sequence feature is an extent of 'located' biological sequence, whose identity is determined by both its inherent sequence (ordering of monomeric units) and its position (start and end coordinates based on alignment with some reference). By contrast, 'biological sequences' are identified and distinguished only by their inehrent sequence, and not their position.  Accordingly, the 'ATG' start codon in the coding DNA sequence of the human AKT gene is the same 'sequence' as the 'ATG' start codon in the human SHH gene, but these represent two distinct 'sequence features' in virtue of their different positions in the genome." ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/so.owl> ;
-                                            rdfs:label "sequence_feature" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/SO_0000110> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000239> ;
-                         owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000702>
-                       ] ;
-   <http://purl.obolibrary.org/obo/GENO_0000834> "true"^^xsd:boolean ;
-   rdfs:comment "Formalizes the first identity criteria for a sequence feature of its sequence."
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/SO_0000110> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/GENO_0000903> ;
-                         owl:someValuesFrom <http://purl.obolibrary.org/obo/GENO_0000815>
-                       ] ;
-   <http://purl.obolibrary.org/obo/GENO_0000834> "true"^^xsd:boolean ;
-   rdfs:comment "Formalizes the second identify criteiria for a sequence feature of its genomic position. We use the FALDO model to represent positional information, which links features to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence. (But features can also be linked to Positions directly through the location property)."
- ] .
 
 
 ###  http://purl.obolibrary.org/obo/SO_0001026
@@ -1219,6 +856,13 @@ owl:Thing rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "group:OBI"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
                                              rdfs:label "requires discussion"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+xsd:int rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 
 #################################################################

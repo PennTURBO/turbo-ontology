@@ -229,14 +229,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/BFO_0000052
 <http://purl.obolibrary.org/obo/BFO_0000052> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000070> ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                             rdfs:range [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                               [ rdf:type owl:Class ;
-                                                                                 owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                                               ]
-                                                                             ) ;
-                                                          rdf:type owl:Class
-                                                        ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "inheres-in_at" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "inheresInAt" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "b inheres_in c at t =Def. b is a dependent continuant & c is an independent continuant that is not a spatial region & b s-depends_on c at t. (axiom label in BFO2 Reference: [051-002])"@en ;
@@ -247,26 +239,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (inheresInAt a b t) (and (DependentContinuant a) (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))) // axiom label in BFO2 CLIF: [051-002] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "inheres in at all times"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000052> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/517>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000052> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                              [ rdf:type owl:Class ;
-                                                owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                              ]
-                                            ) ;
-                         rdf:type owl:Class
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/518>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000052> ;
@@ -287,7 +259,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 <http://purl.obolibrary.org/obo/BFO_0000058> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000059> ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000031> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "concretized-by_st" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "[copied from inverse property 'concretizes at some time'] You may concretize a piece of software by installing it in your computer" ,
                                                                                           "[copied from inverse property 'concretizes at some time'] You may concretize a recipe that you find in a cookbook by turning it into a plan which exists as a realizable dependent continuant in your head." ,
@@ -299,13 +270,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000058> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/533>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000058> ;
    owl:annotatedProperty rdfs:domain ;
    owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000031> ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/534>
@@ -314,7 +278,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000059
 <http://purl.obolibrary.org/obo/BFO_0000059> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "concretizes_st" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "concretizesAt" ;
@@ -328,13 +291,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                                                           "(forall (x y t) (if (genericallyDependsOnAt x y t) (exists (z) (and (concretizesAt z x t) (specificallyDependsOnAt z y t))))) // axiom label in BFO2 CLIF: [076-001] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "concretizes at some time"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000059> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/533>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000059> ;
@@ -418,13 +374,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000070> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "If b is s-depends_on something at some time, then b is not a material entity. (axiom label in BFO2 Reference: [052-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/052-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000070> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
    owl:annotatedTarget "If b s-depends_on something at t, then there is some c, which is an independent continuant and not a spatial region, such that b s-depends_on c at t. (axiom label in BFO2 Reference: [136-001])"@en ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/136-001>
  ] .
@@ -485,12 +434,18 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/052-001>
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000070> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
+   owl:annotatedTarget "If b is s-depends_on something at some time, then b is not a material entity. (axiom label in BFO2 Reference: [052-001])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/052-001>
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/BFO_0000083
 <http://purl.obolibrary.org/obo/BFO_0000083> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000123> ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000004> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000006> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "located-at-r_st" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "occupiesSpatialRegionAt" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "Alan Ruttenberg: This is a binary version of a ternary time-indexed, instance level, relation. The BFO reading of the binary relation 'occupies spatial region at some time@en' is: exists t,  exists_at(x,t) & exists_at(y,t) & 'occupies spatial region@en'(x,y,t)" ,
@@ -510,13 +465,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    owl:annotatedProperty rdfs:domain ;
    owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000004> ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/041-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000083> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/516>
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -565,7 +513,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/BFO_0000107
 <http://purl.obolibrary.org/obo/BFO_0000107> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000052> ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000016> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "d-of_at" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "dispositionOfAt" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "a disposition_of b at t =Def. a is a disposition and a inheres_in b at t. (axiom label in BFO2 Reference: [066-001])"@en ;
@@ -573,13 +520,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (dispositionOf a b t) (and (Disposition a) (inheresInAt a b t))) // axiom label in BFO2 CLIF: [066-001] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "disposition of at all times"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000107> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/525>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000107> ;
@@ -600,7 +540,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 <http://purl.obolibrary.org/obo/BFO_0000108> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000157> ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000001> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000008> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "exists-at" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "existsAt" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "BFO2 Reference: entity" ,
@@ -614,13 +553,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    owl:annotatedProperty rdfs:domain ;
    owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000001> ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/101>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000108> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/102>
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -726,7 +658,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000123
 <http://purl.obolibrary.org/obo/BFO_0000123> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000006> ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000004> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "r-location-of_st" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "[copied from inverse property 'occupies spatial region at some time'] Alan Ruttenberg: This is a binary version of a ternary time-indexed, instance level, relation. The BFO reading of the binary relation 'occupies spatial region at some time@en' is: exists t,  exists_at(x,t) & exists_at(y,t) & 'occupies spatial region@en'(x,y,t)" ,
@@ -735,13 +666,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000600> "[copied from inverse property 'occupies spatial region at some time'] b occupies_spatial_region r at t means that r is a spatial region in which independent continuant b is exactly located (axiom label in BFO2 Reference: [041-002])" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "has spatial occupant at some time"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000123> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/516>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000123> ;
@@ -754,23 +678,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/BFO_0000125
 <http://purl.obolibrary.org/obo/BFO_0000125> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000169> ;
-                                             rdfs:domain [ rdf:type owl:Class ;
-                                                           owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                                                         <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                         [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                                                [ rdf:type owl:Class ;
-                                                                                                  owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                                                                ]
-                                                                                              ) ;
-                                                                           rdf:type owl:Class
-                                                                         ]
-                                                                       )
-                                                         ] ;
-                                             rdfs:range [ rdf:type owl:Class ;
-                                                          owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                                                        <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                      )
-                                                        ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "has-s-dep_st" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "[copied from inverse property 'specifically depends on at some time'] A pain s-depends_on the organism that is experiencing the pain" ,
                                                                                           "[copied from inverse property 'specifically depends on at some time'] a gait s-depends_on the walking object. (All at some specific time.)" ,
@@ -799,35 +706,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000600> "[copied from inverse property 'specifically depends on at some time'] To say that b s-depends_on a at t is to say that b and c do not share common parts & b is of its nature such that it cannot exist unless c exists & b is not a boundary of c and b is not a site of which c is the host [64" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "has specific dependent at some time"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000125> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget [ rdf:type owl:Class ;
-                         owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                       <http://purl.obolibrary.org/obo/BFO_0000020>
-                                       [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                              [ rdf:type owl:Class ;
-                                                                owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ]
-                                     )
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/528>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000125> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget [ rdf:type owl:Class ;
-                         owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                       <http://purl.obolibrary.org/obo/BFO_0000020>
-                                     )
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/527>
- ] .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000126
@@ -1103,7 +981,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 <http://purl.obolibrary.org/obo/BFO_0000151> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000152> ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000011> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000006> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "st-projects-onto-s_st" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "projects onto spatial region at some time"@en .
@@ -1115,28 +992,13 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/535>
  ] .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000151> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/536>
- ] .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000152
 <http://purl.obolibrary.org/obo/BFO_0000152> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000006> ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000011> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "s-projection-of-st_st" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "spatial projection of spatiotemporal at some time"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000152> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/536>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000152> ;
@@ -1151,7 +1013,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000108> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000154> ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000011> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000008> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "st-projects-onto-t" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "projects onto temporal region"@en .
@@ -1163,29 +1024,14 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/159>
  ] .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000153> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/160>
- ] .
-
 
 ###  http://purl.obolibrary.org/obo/BFO_0000154
 <http://purl.obolibrary.org/obo/BFO_0000154> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000157> ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000008> ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000011> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "t-projection-of-st" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "temporal projection of spatiotemporal"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000154> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/160>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000154> ;
@@ -1200,7 +1046,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000108> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000156> ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000008> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "spans" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "occupiesTemporalRegion" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000600> "p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])"@en ;
@@ -1216,13 +1061,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000155> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/540>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000155> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
    owl:annotatedTarget "p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])"@en ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/132-001>
@@ -1232,20 +1070,12 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/BFO_0000156
 <http://purl.obolibrary.org/obo/BFO_0000156> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000157> ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000008> ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "span-of" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "spanOf" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000600> "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "has temporal occupant"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000156> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/540>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000156> ;
@@ -1257,7 +1087,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000157
 <http://purl.obolibrary.org/obo/BFO_0000157> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000008> ;
                                              rdfs:range <http://purl.obolibrary.org/obo/BFO_0000001> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "during-which-exists" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "[copied from inverse property 'exists at'] BFO2 Reference: entity" ,
@@ -1265,13 +1094,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000600> "[copied from inverse property 'exists at'] b exists_at t means: b is an entity which exists at some temporal region t. (axiom label in BFO2 Reference: [118-002])" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "during which exists"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000157> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/102>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000157> ;
@@ -1284,14 +1106,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/BFO_0000158
 <http://purl.obolibrary.org/obo/BFO_0000158> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000168> ;
-                                             rdfs:domain [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                                [ rdf:type owl:Class ;
-                                                                                  owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                                                ]
-                                                                              ) ;
-                                                           rdf:type owl:Class
-                                                         ] ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "bearer-of_at" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "bearerOfAt" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "b bearer_of c at t =Def. c s-depends_on b at t & b is an independent continuant that is not a spatial region. (axiom label in BFO2 Reference: [053-004])"@en ;
@@ -1301,26 +1115,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (bearerOfAt a b t) (and (specificallyDependsOnAt b a t) (IndependentContinuant a) (not (SpatialRegion a)) (existsAt b t))) // axiom label in BFO2 CLIF: [053-004] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "bearer of at all times"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000158> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                              [ rdf:type owl:Class ;
-                                                owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                              ]
-                                            ) ;
-                         rdf:type owl:Class
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/518>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000158> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/517>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000158> ;
@@ -1340,7 +1134,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/BFO_0000162
 <http://purl.obolibrary.org/obo/BFO_0000162> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000158> ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000016> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "has-d_at" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "hasDispositionAt" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "a has_disposition b at t =Def. b disposition_of a at t. (axiom label in BFO2 Reference: [069-001])"@en ;
@@ -1348,13 +1141,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (hasDispositionAt a b t) (dispositionOf b a t)) // axiom label in BFO2 CLIF: [069-001] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "has disposition at all times"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000162> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/525>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000162> ;
@@ -1381,23 +1167,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000169
 <http://purl.obolibrary.org/obo/BFO_0000169> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain [ rdf:type owl:Class ;
-                                                           owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                                                         <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                       )
-                                                         ] ;
-                                             rdfs:range [ rdf:type owl:Class ;
-                                                          owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                                                        <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                        [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                                               [ rdf:type owl:Class ;
-                                                                                                 owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                                                               ]
-                                                                                             ) ;
-                                                                          rdf:type owl:Class
-                                                                        ]
-                                                                      )
-                                                        ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "s-depends-on_st" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "specificallyDependsOn" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "A pain s-depends_on the organism that is experiencing the pain"@en ,
@@ -1437,35 +1206,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                                                           "(forall (x) (if (exists (y t) (specificallyDependsOnAt x y t)) (not (MaterialEntity x)))) // axiom label in BFO2 CLIF: [052-001] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "specifically depends on at some time"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000169> ;
-   owl:annotatedProperty rdfs:domain ;
-   owl:annotatedTarget [ rdf:type owl:Class ;
-                         owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                       <http://purl.obolibrary.org/obo/BFO_0000020>
-                                     )
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/527>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000169> ;
-   owl:annotatedProperty rdfs:range ;
-   owl:annotatedTarget [ rdf:type owl:Class ;
-                         owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
-                                       <http://purl.obolibrary.org/obo/BFO_0000020>
-                                       [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                              [ rdf:type owl:Class ;
-                                                                owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ]
-                                     )
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/528>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000169> ;
@@ -1573,6 +1313,48 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x y t) (if (and (continuantPartOfAt x y t) (IndependentContinuant x)) (locatedInAt x y t))) // axiom label in BFO2 CLIF: [047-002] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/047-002>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x y t) (if (and (continuantPartOfAt x y t) (continuantPartOfAt y x t)) (= x y))) // axiom label in BFO2 CLIF: [120-001] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/120-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x y t) (if (and (continuantPartOfAt x y t) (not (= x y))) (exists (z) (and (continuantPartOfAt z y t) (not (exists (w) (and (continuantPartOfAt w x t) (continuantPartOfAt w z t)))))))) // axiom label in BFO2 CLIF: [121-001] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/121-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x y t) (if (exists (v) (and (continuantPartOfAt v x t) (continuantPartOfAt v y t))) (exists (z) (forall (u w) (iff (iff (continuantPartOfAt w u t) (and (continuantPartOfAt w x t) (continuantPartOfAt w y t))) (= z u)))))) // axiom label in BFO2 CLIF: [122-001] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/122-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x y z t) (if (and (continuantPartOfAt x y t) (continuantPartOfAt y z t)) (continuantPartOfAt x z t))) // axiom label in BFO2 CLIF: [110-001] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/110-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(iff (ImmaterialEntity a) (and (IndependentContinuant a) (not (exists (b t) (and (MaterialEntity b) (continuantPartOfAt b a t)))))) // axiom label in BFO2 CLIF: [028-001] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/028-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
    owl:annotatedProperty rdfs:domain ;
    owl:annotatedTarget <http://purl.obolibrary.org/obo/BFO_0000002> ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/502>
@@ -1646,48 +1428,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
    owl:annotatedTarget "(forall (x t) (if (Continuant x) (continuantPartOfAt x x t))) // axiom label in BFO2 CLIF: [111-002] " ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/111-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x y t) (if (and (continuantPartOfAt x y t) (IndependentContinuant x)) (locatedInAt x y t))) // axiom label in BFO2 CLIF: [047-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/047-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x y t) (if (and (continuantPartOfAt x y t) (continuantPartOfAt y x t)) (= x y))) // axiom label in BFO2 CLIF: [120-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/120-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x y t) (if (and (continuantPartOfAt x y t) (not (= x y))) (exists (z) (and (continuantPartOfAt z y t) (not (exists (w) (and (continuantPartOfAt w x t) (continuantPartOfAt w z t)))))))) // axiom label in BFO2 CLIF: [121-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/121-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x y t) (if (exists (v) (and (continuantPartOfAt v x t) (continuantPartOfAt v y t))) (exists (z) (forall (u w) (iff (iff (continuantPartOfAt w u t) (and (continuantPartOfAt w x t) (continuantPartOfAt w y t))) (= z u)))))) // axiom label in BFO2 CLIF: [122-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/122-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x y z t) (if (and (continuantPartOfAt x y t) (continuantPartOfAt y z t)) (continuantPartOfAt x z t))) // axiom label in BFO2 CLIF: [110-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/110-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000176> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(iff (ImmaterialEntity a) (and (IndependentContinuant a) (not (exists (b t) (and (MaterialEntity b) (continuantPartOfAt b a t)))))) // axiom label in BFO2 CLIF: [028-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/028-001>
  ] .
 
 
@@ -1766,10 +1506,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000001
 <http://purl.obolibrary.org/obo/BFO_0000001> rdf:type owl:Class ;
-                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000108> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000008>
-                                                             ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "entity" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "Entity" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "Julius Caesar"@en ,
@@ -1781,16 +1517,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000600> "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "entity"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000001> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000108> ;
-                         owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000008>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/170>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000001> ;
@@ -1964,22 +1690,8 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 <http://purl.obolibrary.org/obo/BFO_0000004> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
                                                              [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000083> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000169> ;
                                                                owl:allValuesFrom owl:Nothing
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                                                               owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                   owl:complementOf [ rdf:type owl:Class ;
-                                                                                                      owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                                                                    <http://purl.obolibrary.org/obo/BFO_0000031>
-                                                                                                                  )
-                                                                                                    ]
-                                                                                 ]
                                                              ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "ic" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "IndependentContinuant" ;
@@ -2006,36 +1718,10 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
    owl:annotatedProperty rdfs:subClassOf ;
    owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000083> ;
-                         owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/539>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000169> ;
                          owl:allValuesFrom owl:Nothing
                        ] ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/593>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                         owl:allValuesFrom [ rdf:type owl:Class ;
-                                             owl:complementOf [ rdf:type owl:Class ;
-                                                                owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000031>
-                                                                            )
-                                                              ]
-                                           ]
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/589>
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -2081,246 +1767,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000006
-<http://purl.obolibrary.org/obo/BFO_0000006> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000141> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000083> ;
-                                                               owl:hasSelf "true"^^xsd:boolean
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000123> ;
-                                                               owl:hasSelf "true"^^xsd:boolean
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "s-region" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "SpatialRegion" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Spatial regions do not participate in processes."@en ,
-                                                                                          "Spatial region doesn't have a closure axiom because the subclasses don't exhaust all possibilites. An example would be the union of a spatial point and a spatial line that doesn't overlap the point, or two spatial lines that intersect at a single point. In both cases the resultant spatial region is neither 0-dimensional, 1-dimensional, 2-dimensional, or 3-dimensional."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "A spatial region is a continuant entity that is a continuant_part_of spaceR as defined relative to some frame R. (axiom label in BFO2 Reference: [035-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x y t) (if (and (SpatialRegion x) (continuantPartOfAt y x t)) (SpatialRegion y))) // axiom label in BFO2 CLIF: [036-001] " ,
-                                                                                          "(forall (x) (if (SpatialRegion x) (Continuant x))) // axiom label in BFO2 CLIF: [035-001] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "spatial region"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                         owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/585>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                         owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/585>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000083> ;
-                         owl:hasSelf "true"^^xsd:boolean
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/575>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000123> ;
-                         owl:hasSelf "true"^^xsd:boolean
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/576>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
-   owl:annotatedTarget "Spatial region doesn't have a closure axiom because the subclasses don't exhaust all possibilites. An example would be the union of a spatial point and a spatial line that doesn't overlap the point, or two spatial lines that intersect at a single point. In both cases the resultant spatial region is neither 0-dimensional, 1-dimensional, 2-dimensional, or 3-dimensional."@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000002> ;
-   rdfs:comment "per discussion with Barry Smith"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "A spatial region is a continuant entity that is a continuant_part_of spaceR as defined relative to some frame R. (axiom label in BFO2 Reference: [035-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/035-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "All continuant parts of spatial regions are spatial regions. (axiom label in BFO2 Reference: [036-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/036-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x y t) (if (and (SpatialRegion x) (continuantPartOfAt y x t)) (SpatialRegion y))) // axiom label in BFO2 CLIF: [036-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/036-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000006> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (SpatialRegion x) (Continuant x))) // axiom label in BFO2 CLIF: [035-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/035-001>
- ] .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000008
-<http://purl.obolibrary.org/obo/BFO_0000008> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000003> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000008>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000132> ;
-                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000008>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000155> ;
-                                                               owl:hasSelf "true"^^xsd:boolean
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000156> ;
-                                                               owl:hasSelf "true"^^xsd:boolean
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "t-region" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "TemporalRegion" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "Temporal region doesn't have a closure axiom because the subclasses don't exhaust all possibilites. An example would be the mereological sum of a temporal instant and a temporal interval that doesn't overlap the instant. In this case the resultant temporal region is neither 0-dimensional nor 1-dimensional"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "A temporal region is an occurrent entity that is part of time as defined relative to some reference frame. (axiom label in BFO2 Reference: [100-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "All parts of temporal regions are temporal regions. (axiom label in BFO2 Reference: [101-001])"@en ,
-                                                                                          "Every temporal region t is such that t occupies_temporal_region t. (axiom label in BFO2 Reference: [119-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (r) (if (TemporalRegion r) (occupiesTemporalRegion r r))) // axiom label in BFO2 CLIF: [119-002] " ,
-                                                                                          "(forall (x y) (if (and (TemporalRegion x) (occurrentPartOf y x)) (TemporalRegion y))) // axiom label in BFO2 CLIF: [101-001] " ,
-                                                                                          "(forall (x) (if (TemporalRegion x) (Occurrent x))) // axiom label in BFO2 CLIF: [100-001] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "temporal region"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                         owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000008>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/109>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000132> ;
-                         owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000008>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/109>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000155> ;
-                         owl:hasSelf "true"^^xsd:boolean
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/163>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000156> ;
-                         owl:hasSelf "true"^^xsd:boolean
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/164>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
-   owl:annotatedTarget "Temporal region doesn't have a closure axiom because the subclasses don't exhaust all possibilites. An example would be the mereological sum of a temporal instant and a temporal interval that doesn't overlap the instant. In this case the resultant temporal region is neither 0-dimensional nor 1-dimensional"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000003> ;
-   rdfs:comment "per discussion with Barry Smith"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "A temporal region is an occurrent entity that is part of time as defined relative to some reference frame. (axiom label in BFO2 Reference: [100-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/100-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "All parts of temporal regions are temporal regions. (axiom label in BFO2 Reference: [101-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/101-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "Every temporal region t is such that t occupies_temporal_region t. (axiom label in BFO2 Reference: [119-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/119-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (r) (if (TemporalRegion r) (occupiesTemporalRegion r r))) // axiom label in BFO2 CLIF: [119-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/119-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x y) (if (and (TemporalRegion x) (occurrentPartOf y x)) (TemporalRegion y))) // axiom label in BFO2 CLIF: [101-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/101-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000008> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (TemporalRegion x) (Occurrent x))) // axiom label in BFO2 CLIF: [100-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/100-001>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000011
 <http://purl.obolibrary.org/obo/BFO_0000011> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000003> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000151> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000153> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000008>
-                                                             ] ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
                                                                owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000011>
@@ -2355,16 +1804,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                                                           "(forall (x) (if (SpatioTemporalRegion x) (exists (y) (and (TemporalRegion y) (temporallyProjectsOnto x y))))) // axiom label in BFO2 CLIF: [098-001] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "spatiotemporal region"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000011> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000151> ;
-                         owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000006>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/590>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000011> ;
@@ -2550,214 +1989,23 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000016
-<http://purl.obolibrary.org/obo/BFO_0000016> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000017> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "disposition" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "Disposition" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "an atom of element X has the disposition to decay to an atom of element Y"@en ,
-                                                                                          "certain people have a predisposition to colon cancer"@en ,
-                                                                                          "children are innately disposed to categorize objects in certain ways."@en ,
-                                                                                          "the cell wall is disposed to filter chemicals in endocitosis and exocitosis"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Dispositions exist along a strength continuum. Weaker forms of disposition are realized in only a fraction of triggering cases. These forms occur in a significant number of cases of a similar type [89"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "b is a disposition means: b is a realizable entity & b’s bearer is some material entity & b is such that if it ceases to exist, then its bearer is physically changed, & b’s realization occurs when and because this bearer is in some special physical circumstances, & this realization occurs in virtue of the bearer’s physical make-up. (axiom label in BFO2 Reference: [062-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "If b is a realizable entity then for all t at which b exists, b s-depends_on some material entity at t. (axiom label in BFO2 Reference: [063-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x t) (if (and (RealizableEntity x) (existsAt x t)) (exists (y) (and (MaterialEntity y) (specificallyDepends x y t))))) // axiom label in BFO2 CLIF: [063-002] " ,
-                                                                                          "(forall (x) (if (Disposition x) (and (RealizableEntity x) (exists (y) (and (MaterialEntity y) (bearerOfAt x y t)))))) // axiom label in BFO2 CLIF: [062-002] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "disposition"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "b is a disposition means: b is a realizable entity & b’s bearer is some material entity & b is such that if it ceases to exist, then its bearer is physically changed, & b’s realization occurs when and because this bearer is in some special physical circumstances, & this realization occurs in virtue of the bearer’s physical make-up. (axiom label in BFO2 Reference: [062-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/062-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "If b is a realizable entity then for all t at which b exists, b s-depends_on some material entity at t. (axiom label in BFO2 Reference: [063-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/063-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x t) (if (and (RealizableEntity x) (existsAt x t)) (exists (y) (and (MaterialEntity y) (specificallyDepends x y t))))) // axiom label in BFO2 CLIF: [063-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/063-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (Disposition x) (and (RealizableEntity x) (exists (y) (and (MaterialEntity y) (bearerOfAt x y t)))))) // axiom label in BFO2 CLIF: [062-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/062-002>
- ] .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000017
-<http://purl.obolibrary.org/obo/BFO_0000017> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "realizable" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "RealizableEntity" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "the disposition of this piece of metal to conduct electricity."@en ,
-                                                                                          "the disposition of your blood to coagulate"@en ,
-                                                                                          "the function of your reproductive organs"@en ,
-                                                                                          "the role of being a doctor"@en ,
-                                                                                          "the role of this boundary to delineate where Utah and Colorado meet"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "All realizable dependent continuants have independent continuants that are not spatial regions as their bearers. (axiom label in BFO2 Reference: [060-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x t) (if (RealizableEntity x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (bearerOfAt y x t))))) // axiom label in BFO2 CLIF: [060-002] " ,
-                                                                                          "(forall (x) (if (RealizableEntity x) (and (SpecificallyDependentContinuant x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (inheresIn x y)))))) // axiom label in BFO2 CLIF: [058-002] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "realizable entity"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/058-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "All realizable dependent continuants have independent continuants that are not spatial regions as their bearers. (axiom label in BFO2 Reference: [060-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/060-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x t) (if (RealizableEntity x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (bearerOfAt y x t))))) // axiom label in BFO2 CLIF: [060-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/060-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (RealizableEntity x) (and (SpecificallyDependentContinuant x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (inheresIn x y)))))) // axiom label in BFO2 CLIF: [058-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/058-002>
- ] .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000020
-<http://purl.obolibrary.org/obo/BFO_0000020> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000052> ;
-                                                               owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                                                         [ rdf:type owl:Class ;
-                                                                                                           owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                                                                         ]
-                                                                                                       ) ;
-                                                                                    rdf:type owl:Class
-                                                                                  ]
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                                                               owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                   owl:complementOf [ rdf:type owl:Class ;
-                                                                                                      owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                                                                    <http://purl.obolibrary.org/obo/BFO_0000031>
-                                                                                                                  )
-                                                                                                    ]
-                                                                                 ]
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "sdc" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "SpecificallyDependentContinuant" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Reciprocal specifically dependent continuants: the function of this key to open this lock and the mutually dependent disposition of this lock: to be opened by this key"@en ,
-                                                                                          "of one-sided specifically dependent continuants: the mass of this tomato"@en ,
-                                                                                          "of relational dependent continuants (multiple bearers): John’s love for Mary, the ownership relation between John and this statue, the relation of authority between John and his subordinates."@en ,
-                                                                                          "the disposition of this fish to decay"@en ,
-                                                                                          "the function of this heart: to pump blood"@en ,
-                                                                                          "the mutual dependence of proton donors and acceptors in chemical reactions [79"@en ,
-                                                                                          "the mutual dependence of the role predator and the role prey as played by two organisms in a given interaction"@en ,
-                                                                                          "the pink color of a medium rare piece of grilled filet mignon at its center"@en ,
-                                                                                          "the role of being a doctor"@en ,
-                                                                                          "the shape of this hole."@en ,
-                                                                                          "the smell of this portion of mozzarella"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])"@en ,
-                                                                                          "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "Specifically dependent continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. We're not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (RelationalSpecificallyDependentContinuant a) (and (SpecificallyDependentContinuant a) (forall (t) (exists (b c) (and (not (SpatialRegion b)) (not (SpatialRegion c)) (not (= b c)) (not (exists (d) (and (continuantPartOfAt d b t) (continuantPartOfAt d c t)))) (specificallyDependsOnAt a b t) (specificallyDependsOnAt a c t)))))) // axiom label in BFO2 CLIF: [131-004] " ,
-                                                                                          "(iff (SpecificallyDependentContinuant a) (and (Continuant a) (forall (t) (if (existsAt a t) (exists (b) (and (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))))))) // axiom label in BFO2 CLIF: [050-003] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "specifically dependent continuant"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000052> ;
-                         owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                   [ rdf:type owl:Class ;
-                                                                     owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000006>
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ]
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/548>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                         owl:allValuesFrom [ rdf:type owl:Class ;
-                                             owl:complementOf [ rdf:type owl:Class ;
-                                                                owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000031>
-                                                                            )
-                                                              ]
-                                           ]
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/587>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/131-004>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/050-003>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
-   owl:annotatedTarget "Specifically dependent continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. We're not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc."@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000005> ;
-   rdfs:comment "per discussion with Barry Smith"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(iff (RelationalSpecificallyDependentContinuant a) (and (SpecificallyDependentContinuant a) (forall (t) (exists (b c) (and (not (SpatialRegion b)) (not (SpatialRegion c)) (not (= b c)) (not (exists (d) (and (continuantPartOfAt d b t) (continuantPartOfAt d c t)))) (specificallyDependsOnAt a b t) (specificallyDependsOnAt a c t)))))) // axiom label in BFO2 CLIF: [131-004] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/131-004>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(iff (SpecificallyDependentContinuant a) (and (Continuant a) (forall (t) (if (existsAt a t) (exists (b) (and (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))))))) // axiom label in BFO2 CLIF: [050-003] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/050-003>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000028
 <http://purl.obolibrary.org/obo/BFO_0000028> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000006> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                   owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                                                 ]
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000083> ;
+                                                               owl:hasSelf "true"^^xsd:boolean
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000123> ;
+                                                               owl:hasSelf "true"^^xsd:boolean
+                                                             ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "3d-s-region" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "ThreeDimensionalSpatialRegion" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "a cube-shaped region of space"@en ,
@@ -2784,21 +2032,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000031
 <http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000058> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                                                               owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                   owl:complementOf [ rdf:type owl:Class ;
-                                                                                                      owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                                                                    <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                                                                  )
-                                                                                                    ]
-                                                                                 ]
-                                                             ] ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "gdc" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "GenericallyDependentContinuant" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "The entries in your database are patterns instantiated as quality instances in your hard drive. The database itself is an aggregate of such patterns. When you create the database you create a particular instance of the generically dependent continuant type database. Each entry in the database is an instance of the generically dependent continuant type IAO: information content entity."@en ,
@@ -2808,32 +2042,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (GenericallyDependentContinuant a) (and (Continuant a) (exists (b t) (genericallyDependsOnAt a b t)))) // axiom label in BFO2 CLIF: [074-001] " ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "generically dependent continuant"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000031> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000058> ;
-                         owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000020>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/557>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000031> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
-                         owl:allValuesFrom [ rdf:type owl:Class ;
-                                             owl:complementOf [ rdf:type owl:Class ;
-                                                                owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000020>
-                                                                            )
-                                                              ]
-                                           ]
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/588>
- ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000031> ;
@@ -2980,16 +2188,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
                                                                owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                                                               owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                   owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                                                                 <http://purl.obolibrary.org/obo/BFO_0000141>
-                                                                                               )
-                                                                                 ]
                                                              ] ;
-                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000141> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "material" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "MaterialEntity" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "a flame"@en ,
@@ -3024,20 +2223,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                          owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
                        ] ;
    <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/595>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000040> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                         owl:allValuesFrom [ rdf:type owl:Class ;
-                                             owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                           <http://purl.obolibrary.org/obo/BFO_0000141>
-                                                         )
-                                           ]
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/596>
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -3083,51 +2268,17 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000141
-<http://purl.obolibrary.org/obo/BFO_0000141> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000141>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                                                               owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                   owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                                                 ]
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "immaterial" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "ImmaterialEntity" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Immaterial entities are divided into two subgroups:boundaries and sites, which bound, or are demarcated in relation, to material entities, and which can thus change location, shape and size and as their material hosts move or change shape or size (for example: your nasal passage; the hold of a ship; the boundary of Wales (which moves with the rotation of the Earth) [38, 7, 10"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "immaterial entity"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000141> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                         owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000141>
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/581>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000141> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                         owl:allValuesFrom [ rdf:type owl:Class ;
-                                             owl:complementOf <http://purl.obolibrary.org/obo/BFO_0000040>
-                                           ]
-                       ] ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/028-001>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000148
 <http://purl.obolibrary.org/obo/BFO_0000148> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000008> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000003> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000155> ;
+                                                               owl:hasSelf "true"^^xsd:boolean
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000156> ;
+                                                               owl:hasSelf "true"^^xsd:boolean
+                                                             ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "0d-t-region" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "ZeroDimensionalTemporalRegion" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "a temporal region that is occupied by a process boundary"@en ,
@@ -3156,81 +2307,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/NCBITaxon_1224
-<http://purl.obolibrary.org/obo/NCBITaxon_1224> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_2> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_1000001224>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                <http://purl.obolibrary.org/obo/ncbitaxon#has_rank> <http://purl.obolibrary.org/obo/NCBITaxon_phylum> ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GC_ID:11"^^xsd:string ,
-                                                                                                         "PMID:11321122"^^xsd:string ,
-                                                                                                         "PMID:11542017"^^xsd:string ,
-                                                                                                         "PMID:11837318"^^xsd:string ,
-                                                                                                         "PMID:16280474"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "purple bacteria"^^xsd:string ,
-                                                                                                               "purple bacteria and relatives"^^xsd:string ,
-                                                                                                               "purple non-sulfur bacteria"^^xsd:string ,
-                                                                                                               "purple photosynthetic bacteria"^^xsd:string ,
-                                                                                                               "purple photosynthetic bacteria and relatives"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "ncbi_taxonomy"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "proteobacteria"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                rdfs:label "Proteobacteria"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_2
-<http://purl.obolibrary.org/obo/NCBITaxon_2> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100026> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_1000000002>
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                             <http://purl.obolibrary.org/obo/ncbitaxon#has_rank> <http://purl.obolibrary.org/obo/NCBITaxon_superkingdom> ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GC_ID:11"^^xsd:string ,
-                                                                                                      "PMID:10425795"^^xsd:string ,
-                                                                                                      "PMID:10425796"^^xsd:string ,
-                                                                                                      "PMID:10425797"^^xsd:string ,
-                                                                                                      "PMID:10490293"^^xsd:string ,
-                                                                                                      "PMID:10843050"^^xsd:string ,
-                                                                                                      "PMID:10939651"^^xsd:string ,
-                                                                                                      "PMID:10939673"^^xsd:string ,
-                                                                                                      "PMID:10939677"^^xsd:string ,
-                                                                                                      "PMID:11211268"^^xsd:string ,
-                                                                                                      "PMID:11321083"^^xsd:string ,
-                                                                                                      "PMID:11321113"^^xsd:string ,
-                                                                                                      "PMID:11411719"^^xsd:string ,
-                                                                                                      "PMID:11540071"^^xsd:string ,
-                                                                                                      "PMID:11542017"^^xsd:string ,
-                                                                                                      "PMID:11542087"^^xsd:string ,
-                                                                                                      "PMID:11760965"^^xsd:string ,
-                                                                                                      "PMID:12054223"^^xsd:string ,
-                                                                                                      "PMID:2112744"^^xsd:string ,
-                                                                                                      "PMID:270744"^^xsd:string ,
-                                                                                                      "PMID:8123559"^^xsd:string ,
-                                                                                                      "PMID:8590690"^^xsd:string ,
-                                                                                                      "PMID:9103655"^^xsd:string ,
-                                                                                                      "PMID:9336922"^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "eubacteria"^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "ncbi_taxonomy"^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "Monera"^^xsd:string ,
-                                                                                                              "Procaryotae"^^xsd:string ,
-                                                                                                              "Prokaryota"^^xsd:string ,
-                                                                                                              "Prokaryotae"^^xsd:string ,
-                                                                                                              "bacteria"^^xsd:string ,
-                                                                                                              "not Bacteria Haeckel 1894"^^xsd:string ,
-                                                                                                              "prokaryote"^^xsd:string ,
-                                                                                                              "prokaryotes"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                             rdfs:label "Bacteria"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/NCBITaxon_224914
 <http://purl.obolibrary.org/obo/NCBITaxon_224914> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_1224> ,
+                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100026> ,
                                                                   [ rdf:type owl:Restriction ;
                                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_1000224914>
@@ -3247,32 +2326,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                   rdfs:label "Brucella melitensis bv. 1 str. 16M"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/NCBITaxon_2759
-<http://purl.obolibrary.org/obo/NCBITaxon_2759> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100026> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_1000002759>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                <http://purl.obolibrary.org/obo/ncbitaxon#has_rank> <http://purl.obolibrary.org/obo/NCBITaxon_superkingdom> ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GC_ID:1"^^xsd:string ,
-                                                                                                         "PMID:23020233"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "eucaryotes"^^xsd:string ,
-                                                                                                               "eukaryotes"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "ncbi_taxonomy"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "Eucarya"^^xsd:string ,
-                                                                                                                 "Eucaryotae"^^xsd:string ,
-                                                                                                                 "Eukarya"^^xsd:string ,
-                                                                                                                 "Eukaryotae"^^xsd:string ,
-                                                                                                                 "eukaryotes"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                rdfs:label "Eukaryota"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/NCBITaxon_9606
 <http://purl.obolibrary.org/obo/NCBITaxon_9606> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_2759> ,
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100026> ,
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_1000009606>
@@ -3326,11 +2382,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/OGG_0000000002
 <http://purl.obolibrary.org/obo/OGG_0000000002> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000162> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_0000000003>
-                                                                ] ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A gene is a material entity that represents the entire DNA sequence required for synthesis of a functional protein or RNA molecule. " ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He" ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/books/NBK21640/" ;
@@ -3339,20 +2391,19 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                 rdfs:label "gene"@en .
 
 
-###  http://purl.obolibrary.org/obo/OGG_0000000003
-<http://purl.obolibrary.org/obo/OGG_0000000003> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "a disposition that a gene can be used as a blueprint for generating a new form of product such as protein. " ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yongqun He" ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/IEB/ToolBox/CPP_DOC/lxr/source/src/objects/entrezgene/entrezgene.asn " ;
-                                                rdfs:comment "YH: According to NCBI Gene project, there are two gene types: unknown (0) , tRNA (1) , rRNA (2) , snRNA (3) , scRNA (4) , snoRNA  (5) , protein-coding (6) , pseudo  (7) , transposon  (8) , miscRNA  (9) , ncRNA (10) , other (255). Therefore, we have generated corresponding gene dispositions. Note that we don't use the term \"gene type\" here to differentiate the meanings of \"type\" and \"disposition\". " ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "gene disposition"@en .
-
-
 ###  http://purl.obolibrary.org/obo/OGG_0000000010
 <http://purl.obolibrary.org/obo/OGG_0000000010> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000003> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                                                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                      owl:complementOf [ rdf:type owl:Class ;
+                                                                                                         owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
+                                                                                                                       <http://purl.obolibrary.org/obo/BFO_0000031>
+                                                                                                                     )
+                                                                                                       ]
+                                                                                    ]
+                                                                ] ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "a gene disposition that a gene can be used as a blueprint for generating a protein (i.e., a gene encodes for a protein). " ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Yongqun He" ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/IEB/ToolBox/CPP_DOC/lxr/source/src/objects/entrezgene/entrezgene.asn" ;
@@ -3360,67 +2411,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                 rdfs:label "protein-coding gene disposition"@en .
 
 
-###  http://purl.obolibrary.org/obo/OGG_1000000002
-<http://purl.obolibrary.org/obo/OGG_1000000002> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000001> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_2000000002>
-                                                                ] ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000014> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_2>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "The genome of an organism of Bacteria"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "2"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "genome of Bacteria"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OGG_1000001224
-<http://purl.obolibrary.org/obo/OGG_1000001224> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_1000000002> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_2000001224>
-                                                                ] ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000014> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_1224>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "The genome of an organism of Proteobacteria"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "1224"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "genome of Proteobacteria"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OGG_1000002759
-<http://purl.obolibrary.org/obo/OGG_1000002759> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000001> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_2000002759>
-                                                                ] ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000014> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_2759>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "The genome of an organism of Eukaryota"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "2759"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "genome of Eukaryota"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/OGG_1000009606
 <http://purl.obolibrary.org/obo/OGG_1000009606> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_1000002759> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_2000009606>
-                                                                ] ,
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000001> ,
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000014> ;
                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_9606>
@@ -3434,11 +2427,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/OGG_1000224914
 <http://purl.obolibrary.org/obo/OGG_1000224914> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_1000001224> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_2000224914>
-                                                                ] ,
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000001> ,
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000014> ;
                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_224914>
@@ -3450,102 +2439,22 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                 rdfs:label "genome of Brucella melitensis bv. 1 str. 16M"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/OGG_2000000002
-<http://purl.obolibrary.org/obo/OGG_2000000002> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000002> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000016> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_2>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of an organism of Bacteria"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "2"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "gene of Bacteria"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OGG_2000001224
-<http://purl.obolibrary.org/obo/OGG_2000001224> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2000000002> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000016> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_1224>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of an organism of Proteobacteria"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "1224"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "gene of Proteobacteria"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OGG_2000002759
-<http://purl.obolibrary.org/obo/OGG_2000002759> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000002> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000016> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_2759>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of an organism of Eukaryota"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "2759"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "gene of Eukaryota"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OGG_2000009606
-<http://purl.obolibrary.org/obo/OGG_2000009606> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2000002759> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000016> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_9606>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of an organism of Homo sapiens"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "9606"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "gene of Homo sapiens"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OGG_2000224914
-<http://purl.obolibrary.org/obo/OGG_2000224914> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2000001224> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000016> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_224914>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of an organism of Brucella melitensis bv. 1 str. 16M"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yue Liu, Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "224914"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "gene of Brucella melitensis bv. 1 str. 16M"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/OGG_2060009606
 <http://purl.obolibrary.org/obo/OGG_2060009606> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2000009606> ,
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000002> ,
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000162> ;
                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_0000000010>
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000016> ;
+                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_9606>
                                                                 ] ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of Homo sapiens that has a protein-coding gene disposition"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Oliver He"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/OGG_0000000015> "9606"^^xsd:string ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
                                                 rdfs:label "protein-coding gene of Homo sapiens"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OGG_2060224914
-<http://purl.obolibrary.org/obo/OGG_2060224914> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2000224914> ,
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000162> ;
-                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_0000000010>
-                                                                ] ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of Brucella melitensis bv. 1 str. 16M that has a protein-coding gene disposition"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Oliver He"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "224914"^^xsd:string ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogg.owl> ;
-                                                rdfs:label "protein-coding gene of Brucella melitensis bv. 1 str. 16M"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/OGG_3000000213
@@ -3687,7 +2596,15 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/OGG_3001198867
 <http://purl.obolibrary.org/obo/OGG_3001198867> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2060224914> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000002> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000162> ;
+                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/OGG_0000000010>
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/OGG_0000000016> ;
+                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_224914>
+                                                                ] ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Yue Liu, Oliver He"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/gene"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/OGG_0000000006> "1198867"^^xsd:string ;
@@ -3705,67 +2622,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://www.w3.org/2002/07/owl#Nothing
 owl:Nothing rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:Axiom ;
-  owl:annotatedSource [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000016>
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000052> ;
-                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000004>
-                                             ]
-                                           ) ;
-                        rdf:type owl:Class ;
-                        owl:equivalentClass [ rdf:type owl:Restriction ;
-                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000107> ;
-                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000004>
-                                            ]
-                      ] ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000107> ;
-                        owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000004>
-                      ] ;
-  <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/567>
-] .
-
-
-[ rdf:type owl:Axiom ;
-  owl:annotatedSource [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000158> ;
-                        owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000016> ;
-                        owl:equivalentClass [ rdf:type owl:Restriction ;
-                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000162> ;
-                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000016>
-                                            ]
-                      ] ;
-  owl:annotatedProperty owl:equivalentClass ;
-  owl:annotatedTarget [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000162> ;
-                        owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000016>
-                      ] ;
-  <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/567>
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://purl.obolibrary.org/obo/BFO_0000004>
-                <http://purl.obolibrary.org/obo/BFO_0000020>
-                <http://purl.obolibrary.org/obo/BFO_0000031>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://purl.obolibrary.org/obo/BFO_0000008>
-                <http://purl.obolibrary.org/obo/BFO_0000011>
-                <http://purl.obolibrary.org/obo/BFO_0000015>
-                <http://purl.obolibrary.org/obo/BFO_0000035>
-              )
-] .
 
 
 ###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

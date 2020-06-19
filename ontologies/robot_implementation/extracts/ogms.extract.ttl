@@ -87,16 +87,6 @@
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
 
-###  http://purl.org/dc/elements/1.1/date
-<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty ;
-                                       rdfs:isDefinedBy <http://purl.org/dc/elements/1.1.owl> .
-
-
-###  http://purl.org/dc/elements/1.1/publisher
-<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty ;
-                                            rdfs:isDefinedBy <http://purl.org/dc/elements/1.1.owl> .
-
-
 ###  http://www.w3.org/2000/01/rdf-schema#comment
 rdfs:comment rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema.owl> .
 
@@ -163,7 +153,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 ###  http://purl.obolibrary.org/obo/BFO_0000002
 <http://purl.obolibrary.org/obo/BFO_0000002> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
-                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "continuant" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "Continuant" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240"@en ,
@@ -243,146 +232,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000003
-<http://purl.obolibrary.org/obo/BFO_0000003> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "occurrent" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "Occurrent" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: every occurrent that is not a temporal or spatiotemporal region is s-dependent on some independent continuant that is not a spatial region"@en ,
-                                                                                          "BFO 2 Reference: s-dependence obtains between every process and its participants in the sense that, as a matter of necessity, this process could not have existed unless these or those participants existed also. A process may have a succession of participants at different phases of its unfolding. Thus there may be different players on the field at different times during the course of a football game; but the process which is the entire game s-depends_on all of these players nonetheless. Some temporal parts of this process will s-depend_on on only some of the players."@en ,
-                                                                                          "Occurrent doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. An example would be the sum of a process and the process boundary of another process."@en ,
-                                                                                          "Simons uses different terminology for relations of occurrents to regions: Denote the spatio-temporal location of a given occurrent e by 'spn[e]' and call this region its span. We may say an occurrent is at its span, in any larger region, and covers any smaller region. Now suppose we have fixed a frame of reference so that we can speak not merely of spatio-temporal but also of spatial regions (places) and temporal regions (times). The spread of an occurrent, (relative to a frame of reference) is the space it exactly occupies, and its spell is likewise the time it exactly occupies. We write 'spr[e]' and `spl[e]' respectively for the spread and spell of e, omitting mention of the frame." ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "An occurrent is an entity that unfolds itself in time or it is the instantaneous boundary of such an entity (for example a beginning or an ending) or it is a temporal or spatiotemporal region which such an entity occupies_temporal_region or occupies_spatiotemporal_region. (axiom label in BFO2 Reference: [077-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "Every occurrent occupies_spatiotemporal_region some spatiotemporal region. (axiom label in BFO2 Reference: [108-001])"@en ,
-                                                                                          "b is an occurrent entity iff b is an entity that has temporal parts. (axiom label in BFO2 Reference: [079-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x) (if (Occurrent x) (exists (r) (and (SpatioTemporalRegion r) (occupiesSpatioTemporalRegion x r))))) // axiom label in BFO2 CLIF: [108-001] " ,
-                                                                                          "(forall (x) (iff (Occurrent x) (and (Entity x) (exists (y) (temporalPartOf y x))))) // axiom label in BFO2 CLIF: [079-001] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "occurrent"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
-   owl:annotatedTarget "Occurrent doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. An example would be the sum of a process and the process boundary of another process."@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000006> ;
-   rdfs:comment "per discussion with Barry Smith"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
-   owl:annotatedTarget "Simons uses different terminology for relations of occurrents to regions: Denote the spatio-temporal location of a given occurrent e by 'spn[e]' and call this region its span. We may say an occurrent is at its span, in any larger region, and covers any smaller region. Now suppose we have fixed a frame of reference so that we can speak not merely of spatio-temporal but also of spatial regions (places) and temporal regions (times). The spread of an occurrent, (relative to a frame of reference) is the space it exactly occupies, and its spell is likewise the time it exactly occupies. We write 'spr[e]' and `spl[e]' respectively for the spread and spell of e, omitting mention of the frame." ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000012>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "An occurrent is an entity that unfolds itself in time or it is the instantaneous boundary of such an entity (for example a beginning or an ending) or it is a temporal or spatiotemporal region which such an entity occupies_temporal_region or occupies_spatiotemporal_region. (axiom label in BFO2 Reference: [077-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/077-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "Every occurrent occupies_spatiotemporal_region some spatiotemporal region. (axiom label in BFO2 Reference: [108-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/108-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "b is an occurrent entity iff b is an entity that has temporal parts. (axiom label in BFO2 Reference: [079-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/079-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (Occurrent x) (exists (r) (and (SpatioTemporalRegion r) (occupiesSpatioTemporalRegion x r))))) // axiom label in BFO2 CLIF: [108-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/108-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (iff (Occurrent x) (and (Entity x) (exists (y) (temporalPartOf y x))))) // axiom label in BFO2 CLIF: [079-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/079-001>
- ] .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000004
-<http://purl.obolibrary.org/obo/BFO_0000004> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000020> ,
-                                                              <http://purl.obolibrary.org/obo/BFO_0000031> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "ic" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "IndependentContinuant" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "a chair"@en ,
-                                                                                          "a heart"@en ,
-                                                                                          "a leg"@en ,
-                                                                                          "a molecule"@en ,
-                                                                                          "a spatial region"@en ,
-                                                                                          "an atom"@en ,
-                                                                                          "an orchestra."@en ,
-                                                                                          "an organism"@en ,
-                                                                                          "the bottom right portion of a human torso"@en ,
-                                                                                          "the interior of your mouth"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])"@en ,
-                                                                                          "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " ,
-                                                                                          "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " ,
-                                                                                          "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "independent continuant"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/017-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/134-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/018-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/134-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/018-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000004> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/017-002>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000015
 <http://purl.obolibrary.org/obo/BFO_0000015> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000003> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "process" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "Process" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "a process of cell-division, \\ a beating of the heart"@en ,
@@ -413,150 +265,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000016
-<http://purl.obolibrary.org/obo/BFO_0000016> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000017> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "disposition" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "Disposition" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "an atom of element X has the disposition to decay to an atom of element Y"@en ,
-                                                                                          "certain people have a predisposition to colon cancer"@en ,
-                                                                                          "children are innately disposed to categorize objects in certain ways."@en ,
-                                                                                          "the cell wall is disposed to filter chemicals in endocytosis and exocytosis"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Dispositions exist along a strength continuum. Weaker forms of disposition are realized in only a fraction of triggering cases. These forms occur in a significant number of cases of a similar type."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "b is a disposition means: b is a realizable entity & b’s bearer is some material entity & b is such that if it ceases to exist, then its bearer is physically changed, & b’s realization occurs when and because this bearer is in some special physical circumstances, & this realization occurs in virtue of the bearer’s physical make-up. (axiom label in BFO2 Reference: [062-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "If b is a realizable entity then for all t at which b exists, b s-depends_on some material entity at t. (axiom label in BFO2 Reference: [063-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x t) (if (and (RealizableEntity x) (existsAt x t)) (exists (y) (and (MaterialEntity y) (specificallyDepends x y t))))) // axiom label in BFO2 CLIF: [063-002] " ,
-                                                                                          "(forall (x) (if (Disposition x) (and (RealizableEntity x) (exists (y) (and (MaterialEntity y) (bearerOfAt x y t)))))) // axiom label in BFO2 CLIF: [062-002] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "disposition"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "b is a disposition means: b is a realizable entity & b’s bearer is some material entity & b is such that if it ceases to exist, then its bearer is physically changed, & b’s realization occurs when and because this bearer is in some special physical circumstances, & this realization occurs in virtue of the bearer’s physical make-up. (axiom label in BFO2 Reference: [062-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/062-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "If b is a realizable entity then for all t at which b exists, b s-depends_on some material entity at t. (axiom label in BFO2 Reference: [063-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/063-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x t) (if (and (RealizableEntity x) (existsAt x t)) (exists (y) (and (MaterialEntity y) (specificallyDepends x y t))))) // axiom label in BFO2 CLIF: [063-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/063-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000016> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (Disposition x) (and (RealizableEntity x) (exists (y) (and (MaterialEntity y) (bearerOfAt x y t)))))) // axiom label in BFO2 CLIF: [062-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/062-002>
- ] .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000017
-<http://purl.obolibrary.org/obo/BFO_0000017> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000019> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "realizable" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "RealizableEntity" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "the disposition of this piece of metal to conduct electricity."@en ,
-                                                                                          "the disposition of your blood to coagulate"@en ,
-                                                                                          "the function of your reproductive organs"@en ,
-                                                                                          "the role of being a doctor"@en ,
-                                                                                          "the role of this boundary to delineate where Utah and Colorado meet"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "All realizable dependent continuants have independent continuants that are not spatial regions as their bearers. (axiom label in BFO2 Reference: [060-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x t) (if (RealizableEntity x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (bearerOfAt y x t))))) // axiom label in BFO2 CLIF: [060-002] " ,
-                                                                                          "(forall (x) (if (RealizableEntity x) (and (SpecificallyDependentContinuant x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (inheresIn x y)))))) // axiom label in BFO2 CLIF: [058-002] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "realizable entity"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/058-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "All realizable dependent continuants have independent continuants that are not spatial regions as their bearers. (axiom label in BFO2 Reference: [060-002])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/060-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x t) (if (RealizableEntity x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (bearerOfAt y x t))))) // axiom label in BFO2 CLIF: [060-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/060-002>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000017> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (RealizableEntity x) (and (SpecificallyDependentContinuant x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (inheresIn x y)))))) // axiom label in BFO2 CLIF: [058-002] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/058-002>
- ] .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000019
-<http://purl.obolibrary.org/obo/BFO_0000019> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "quality" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "Quality" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "the ambient temperature of this portion of air"@en ,
-                                                                                          "the color of a tomato"@en ,
-                                                                                          "the length of the circumference of your waist"@en ,
-                                                                                          "the mass of this piece of gold."@en ,
-                                                                                          "the shape of your nose"@en ,
-                                                                                          "the shape of your nostril"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "If an entity is a quality at any time that it exists, then it is a quality at every time that it exists. (axiom label in BFO2 Reference: [105-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x) (if (Quality x) (SpecificallyDependentContinuant x))) // axiom label in BFO2 CLIF: [055-001] " ,
-                                                                                          "(forall (x) (if (exists (t) (and (existsAt x t) (Quality x))) (forall (t_1) (if (existsAt x t_1) (Quality x))))) // axiom label in BFO2 CLIF: [105-001] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "quality"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000019> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/055-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000019> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
-   owl:annotatedTarget "If an entity is a quality at any time that it exists, then it is a quality at every time that it exists. (axiom label in BFO2 Reference: [105-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/105-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000019> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (Quality x) (SpecificallyDependentContinuant x))) // axiom label in BFO2 CLIF: [055-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/055-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000019> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(forall (x) (if (exists (t) (and (existsAt x t) (Quality x))) (forall (t_1) (if (existsAt x t_1) (Quality x))))) // axiom label in BFO2 CLIF: [105-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/105-001>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000020
 <http://purl.obolibrary.org/obo/BFO_0000020> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "sdc" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "SpecificallyDependentContinuant" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "Reciprocal specifically dependent continuants: the function of this key to open this lock and the mutually dependent disposition of this lock: to be opened by this key"@en ,
@@ -599,37 +310,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000031
-<http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "gdc" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "GenericallyDependentContinuant" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "The entries in your database are patterns instantiated as quality instances in your hard drive. The database itself is an aggregate of such patterns. When you create the database you create a particular instance of the generically dependent continuant type database. Each entry in the database is an instance of the generically dependent continuant type IAO: information content entity."@en ,
-                                                                                          "the pdf file on your laptop, the pdf file that is a copy thereof on my laptop"@en ,
-                                                                                          "the sequence of this protein molecule; the sequence that is a copy thereof in that protein molecule."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (GenericallyDependentContinuant a) (and (Continuant a) (exists (b t) (genericallyDependsOnAt a b t)))) // axiom label in BFO2 CLIF: [074-001] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "generically dependent continuant"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000031> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/074-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000031> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(iff (GenericallyDependentContinuant a) (and (Continuant a) (exists (b t) (genericallyDependsOnAt a b t)))) // axiom label in BFO2 CLIF: [074-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/074-001>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000040
 <http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "material" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "MaterialEntity" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "a flame"@en ,
@@ -701,18 +384,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/IAO_0000027
 <http://purl.obolibrary.org/obo/IAO_0000027> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
                                              rdfs:label "data item"@en .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000030
-<http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An information content entity is an entity that is generically dependent on some artifact and stands in relation of aboutness to some entity"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "information content entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000078
@@ -799,7 +473,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/OGMS_0000023
 <http://purl.obolibrary.org/obo/OGMS_0000023> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species."@en ;
                                               <http://purl.obolibrary.org/obo/IAO_0000117> "Albert Goldfain" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000119> "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
@@ -810,7 +484,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/OGMS_0000031
 <http://purl.obolibrary.org/obo/OGMS_0000031> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism."@en ;
                                               <http://purl.obolibrary.org/obo/IAO_0000117> "Albert Goldfain" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000119> "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
@@ -832,7 +506,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/OGMS_0000057
 <http://purl.obolibrary.org/obo/OGMS_0000057> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000108> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000096> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A sequence of acts of observing and measuring qualities of a patient performed by a clinician; measurements may occur with and without elicitation."@en ;
                                               <http://purl.obolibrary.org/obo/IAO_0000117> "Albert Goldfain" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000119> "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
@@ -841,18 +515,9 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                               rdfs:label "physical examination" .
 
 
-###  http://purl.obolibrary.org/obo/OGMS_0000060
-<http://purl.obolibrary.org/obo/OGMS_0000060> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000117> "Albert Goldfain" ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000232> "creation date: 2009-06-23T11:53:49Z" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogms.owl> ;
-                                              rdfs:label "bodily process" .
-
-
 ###  http://purl.obolibrary.org/obo/OGMS_0000061
 <http://purl.obolibrary.org/obo/OGMS_0000061> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000060> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A bodily process that is clinically abnormal."@en ;
                                               <http://purl.obolibrary.org/obo/IAO_0000117> "Albert Goldfain" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000119> "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
@@ -863,7 +528,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/OGMS_0000073
 <http://purl.obolibrary.org/obo/OGMS_0000073> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000123> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "The representation of a conclusion of a diagnostic process."@en ;
                                               <http://purl.obolibrary.org/obo/IAO_0000117> "Albert Goldfain" ;
                                               <http://purl.obolibrary.org/obo/IAO_0000119> "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
@@ -963,16 +628,6 @@ editor date: 2017-04-18
                                               rdfs:label "diagnostic process" .
 
 
-###  http://purl.obolibrary.org/obo/OGMS_0000108
-<http://purl.obolibrary.org/obo/OGMS_0000108> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000096> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A health care process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies." ;
-                                              <http://purl.org/dc/elements/1.1/date> "creation: 16MAY2017" ;
-                                              <http://purl.org/dc/elements/1.1/publisher> "Sagar Jain" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogms.owl> ;
-                                              rdfs:label "health care process assay" .
-
-
 ###  http://purl.obolibrary.org/obo/OGMS_0000111
 <http://purl.obolibrary.org/obo/OGMS_0000111> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000090> ;
@@ -980,15 +635,6 @@ editor date: 2017-04-18
                                               <http://purl.obolibrary.org/obo/IAO_0000232> "Creation date: 2018-11-27" ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogms.owl> ;
                                               rdfs:label "prophylactic treatment"@en .
-
-
-###  http://purl.obolibrary.org/obo/OGMS_0000123
-<http://purl.obolibrary.org/obo/OGMS_0000123> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "a data item that is about a patient and is the specified output of a health care process assay or diagnostic process" ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000232> "creation date: 2018-11-27" ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ogms.owl> ;
-                                              rdfs:label "clinical data item"@en .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#Subset
@@ -1158,6 +804,16 @@ editor date: 2017-04-18
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "group:OBI"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
                                              rdfs:label "requires discussion"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/elements/1.1/date> rdfs:isDefinedBy <http://purl.org/dc/elements/1.1.owl> .
+
+
+<http://purl.org/dc/elements/1.1/publisher> rdfs:isDefinedBy <http://purl.org/dc/elements/1.1.owl> .
 
 
 #################################################################

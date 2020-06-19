@@ -2274,16 +2274,6 @@ owl:topDataProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/CHEBI_16670
-<http://purl.obolibrary.org/obo/CHEBI_16670> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/CHEBI_33839> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "peptide"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from alpha-amino acids, but it includes those derived from any amino carboxylic acid. X = OH, OR, NH2, NHR, etc."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/chebi.owl> ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/chebi.owl> ;
-                                             rdfs:label "peptide"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/CHEBI_16991
 <http://purl.obolibrary.org/obo/CHEBI_16991> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CHEBI_33696> ;
@@ -2400,7 +2390,8 @@ owl:topDataProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
 
 ###  http://purl.obolibrary.org/obo/CL_0000010
 <http://purl.obolibrary.org/obo/CL_0000010> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000578> ,
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000000> ,
+                                                            <http://purl.obolibrary.org/obo/OBI_0000047> ,
                                                             [ rdf:type owl:Class ;
                                                               owl:unionOf ( [ rdf:type owl:Restriction ;
                                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
@@ -2414,6 +2405,10 @@ owl:topDataProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
                                                                                                  ]
                                                                             ]
                                                                           )
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
+                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000094>
                                                             ] ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "cultured cell"^^xsd:string ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A cell in vitro that is or has been maintained or propagated as part of a cell culture."^^xsd:string ;
@@ -2424,7 +2419,7 @@ owl:topDataProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
 
 ###  http://purl.obolibrary.org/obo/CL_0000236
 <http://purl.obolibrary.org/obo/CL_0000236> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000542> ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000000> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "B cell"^^xsd:string ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A lymphocyte of B lineage that is capable of B cell mediated immunity."^^xsd:string ;
                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> ;
@@ -2432,64 +2427,9 @@ owl:topDataProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
                                             rdfs:label "B cell"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/CL_0000542
-<http://purl.obolibrary.org/obo/CL_0000542> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000842> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "lymphocyte"^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A lymphocyte is a leukocyte commonly found in the blood and lymph that has the characteristics of a large nucleus, a neutral staining cytoplasm, and prominent heterochromatin."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> ;
-                                            rdfs:label "lymphocyte"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/CL_0000578
-<http://purl.obolibrary.org/obo/CL_0000578> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000000> ,
-                                                            <http://purl.obolibrary.org/obo/OBI_0000047> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
-                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000094>
-                                                            ] ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "experimentally modified cell in vitro"^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> ;
-                                            rdfs:label "experimentally modified cell in vitro"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/CL_0000842
-<http://purl.obolibrary.org/obo/CL_0000842> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000000> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "mononuclear cell"^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A leukocyte with a single non-segmented nucleus in the mature form."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> ;
-                                            rdfs:label "mononuclear cell"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/GO_0003674
-<http://purl.obolibrary.org/obo/GO_0003674> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "molecular_function"^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/go.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/go.owl> ;
-                                            rdfs:label "molecular_function"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/GO_0003824
-<http://purl.obolibrary.org/obo/GO_0003824> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0003674> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "catalytic activity"^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Catalysis of a biochemical reaction at physiological temperatures. In biologically catalyzed reactions, the reactants are known as substrates, and the catalysts are naturally occurring macromolecular substances known as enzymes. Enzymes possess specific binding sites for substrates, and are usually composed wholly or largely of protein, but RNA that has catalytic activity (ribozyme) is often also regarded as enzymatic."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/go.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/go.owl> ;
-                                            rdfs:label "catalytic activity"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/GO_0003964
 <http://purl.obolibrary.org/obo/GO_0003964> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0003824> ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "RNA-directed DNA polymerase activity"^^xsd:string ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Catalysis of the reaction: deoxynucleoside triphosphate + DNA(n) = diphosphate + DNA(n+1). Catalyzes RNA-template-directed extension of the 3'- end of a DNA strand by one deoxynucleotide at a time."^^xsd:string ;
                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/go.owl> ;
@@ -2758,7 +2698,7 @@ this case we explicitly refer to the singular form"""@en ,
 
 ###  http://purl.obolibrary.org/obo/IAO_0000038
 <http://purl.obolibrary.org/obo/IAO_0000038> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000309> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000308> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "graph"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A diagram that presents one or more tuples of information by mapping those tuples in to a two dimensional space in a non arbitrary way."@en ;
@@ -3085,7 +3025,7 @@ clustering algorithm."""@en ;
 
 ###  http://purl.obolibrary.org/obo/IAO_0000302
 <http://purl.obolibrary.org/obo/IAO_0000302> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000590> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000300> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "author identification"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "L. Hunter"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
@@ -3105,18 +3045,6 @@ clustering algorithm."""@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Lawrence Hunter"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
                                              rdfs:label "figure"@en .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000309
-<http://purl.obolibrary.org/obo/IAO_0000309> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000308> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "diagram"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "A molecular structure ribbon cartoon showing helices, turns and sheets and their relations to each other in space."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A figure that expresses one or more propositions"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Lawrence Hunter"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "diagram"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000310
@@ -3317,22 +3245,6 @@ clustering algorithm."""@en ;
                                              rdfs:label "time stamped measurement datum"@en .
 
 
-###  http://purl.obolibrary.org/obo/IAO_0000590
-<http://purl.obolibrary.org/obo/IAO_0000590> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000300> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "written name"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "\"Bill Clinton\""@en ,
-                                                                                          "\"The Eiffel Tower\""@en ,
-                                                                                          "\"United States of America\""@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A textual entity that denotes a particular in reality."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Bill Hogan"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "https://github.com/information-artifact-ontology/IAO/issues/114"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000232> "The qualifier \"written\" is to set it apart from spoken names.  Also, note the restrictions to particulars.  We are not naming universals.   We could however, be naming, attributive collections which are particulars, so \"All people located in the boundaries of the city of Little Rock, AR on June 18, 2011 at 9:50a CDT\" would be a name."@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "written name"@en .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000594
 <http://purl.obolibrary.org/obo/IAO_0000594> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000010> ;
@@ -3354,16 +3266,6 @@ clustering algorithm."""@en ;
                                                  rdfs:label "Viruses"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/NCBITaxon_117571
-<http://purl.obolibrary.org/obo/NCBITaxon_117571> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_7742> ;
-                                                  <http://purl.obolibrary.org/obo/IAO_0000111> "Euteleostomi"^^xsd:string ;
-                                                  <http://purl.obolibrary.org/obo/IAO_0000118> "bony vertebrates"^^xsd:string ;
-                                                  <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                  rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                  rdfs:label "Euteleostomi"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/NCBITaxon_2
 <http://purl.obolibrary.org/obo/NCBITaxon_2> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100026> ;
@@ -3383,88 +3285,9 @@ clustering algorithm."""@en ;
                                                 rdfs:label "Archaea"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/NCBITaxon_2759
-<http://purl.obolibrary.org/obo/NCBITaxon_2759> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100026> ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000111> "Eukaryota"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000118> "eucaryotes"^^xsd:string ,
-                                                                                             "eukaryotes"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                rdfs:label "Eukaryota"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_314146
-<http://purl.obolibrary.org/obo/NCBITaxon_314146> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_40674> ;
-                                                  <http://purl.obolibrary.org/obo/IAO_0000111> "Euarchontoglires"^^xsd:string ;
-                                                  <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                  rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                  rdfs:label "Euarchontoglires"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_32523
-<http://purl.obolibrary.org/obo/NCBITaxon_32523> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_117571> ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000111> "Tetrapoda"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000118> "tetrapods"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:label "Tetrapoda"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_32524
-<http://purl.obolibrary.org/obo/NCBITaxon_32524> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_32523> ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000111> "Amniota"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000118> "amniotes"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:label "Amniota"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_33154
-<http://purl.obolibrary.org/obo/NCBITaxon_33154> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_2759> ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000111> "Opisthokonta"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:label "Opisthokonta"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_33213
-<http://purl.obolibrary.org/obo/NCBITaxon_33213> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_33154> ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000111> "Bilateria"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:label "Bilateria"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_40674
-<http://purl.obolibrary.org/obo/NCBITaxon_40674> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_32524> ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000111> "Mammalia"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000118> "mammals"^^xsd:string ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                 rdfs:label "Mammalia"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_7742
-<http://purl.obolibrary.org/obo/NCBITaxon_7742> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_33213> ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000111> "Vertebrata <Metazoa>"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000118> "Vertebrata"^^xsd:string ,
-                                                                                             "vertebrates"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
-                                                rdfs:label "Vertebrata <Metazoa>"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/NCBITaxon_9606
 <http://purl.obolibrary.org/obo/NCBITaxon_9606> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_314146> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100026> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000111> "Homo sapiens"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000118> "human"^^xsd:string ,
                                                                                              "human being"^^xsd:string ,
@@ -3503,7 +3326,7 @@ objectives is a planned process."""^^xsd:string ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000014
 <http://purl.obolibrary.org/obo/OBI_0000014> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000017> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "regulator role"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "Fact sheet - Regulating the companies The role of the regulator. Ofwat is the economic regulator of the water and sewerage industry in England and Wales.  http://www.ofwat.gov.uk/aptrix/ofwat/publish.nsf/Content/roleofregulator_factsheet170805"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
@@ -3515,34 +3338,21 @@ objectives is a planned process."""^^xsd:string ;
                                              rdfs:label "regulator role"@en .
 
 
-###  http://purl.obolibrary.org/obo/OBI_0000015
-<http://purl.obolibrary.org/obo/OBI_0000015> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000005> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "biological feature identification objective"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Biological_feature_identification_objective is an objective role carried out by the proposition defining the aim of a study designed to examine or characterize a particular biological feature."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Jennifer Fostel"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "biological feature identification objective"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000017
-<http://purl.obolibrary.org/obo/OBI_0000017> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "regulatory role"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Regulatory agency, Ethics committee, Approval letter; example:  Browse these EPA Regulatory Role subtopics  http://www.epa.gov/ebtpages/enviregulatoryrole.html  Feb 29, 2008"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "a role which inheres in material entities and is realized in the processes of making, enforcing or being defined by legislation or orders issued by a governmental body."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "GROUP:  Role branch"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "OBI, CDISC"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000232> "govt agents responsible for creating regulations; proxies for enforcing regulations.  CDISC definition:  regulatory authorities. Bodies having the power to regulate. NOTE: In the ICH GCP guideline the term includes the authorities that review submitted clinical data and those that conduct inspections. These bodies are sometimes referred to as competent"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "regulatory role"@en .
-
-
 ###  http://purl.obolibrary.org/obo/OBI_0000018
 <http://purl.obolibrary.org/obo/OBI_0000018> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000947> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
+                                                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                                                                  <http://purl.obolibrary.org/obo/OBI_0000245>
+                                                                                                )
+                                                                                  ]
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/OBI_0000011>
+                                                             ] ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "material supplier role"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "Jackson Labs is an organization which provide mice as experimental material"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
@@ -3557,10 +3367,6 @@ objectives is a planned process."""^^xsd:string ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000023
 <http://purl.obolibrary.org/obo/OBI_0000023> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
-                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000663>
-                                                                 ] ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000100> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "classified data set"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
@@ -3864,7 +3670,7 @@ specimen can later be subject."""@en ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000113
 <http://purl.obolibrary.org/obo/OBI_0000113> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000015> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000005> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "sequence feature identification objective"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "Sequence_feature_identification_objective is a biological_feature_identification_objective role describing a study designed to examine or characterize molecular features exhibited at the level of a macromolecular sequence, e.g. nucleic acid, protein, polysaccharide."@en ;
@@ -4072,7 +3878,7 @@ for now."""@en ;
                                                                    owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000434>
                                                                  ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000652> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000094> ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000319>
@@ -4080,6 +3886,14 @@ for now."""@en ;
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000444>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
                                                              ] ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
@@ -4116,7 +3930,11 @@ for now."""@en ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000275
 <http://purl.obolibrary.org/obo/OBI_0000275> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0002444> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                             ] ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
                                                                owl:someValuesFrom [ rdf:type owl:Class ;
@@ -4354,18 +4172,7 @@ for now."""@en ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000419
 <http://purl.obolibrary.org/obo/OBI_0000419> rdf:type owl:Class ;
-                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000427>
-                                                                                        [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000085> ;
-                                                                                          owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                                                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/GO_0003964>
-                                                                                                             ]
-                                                                                        ]
-                                                                                      ) ;
-                                                                   rdf:type owl:Class
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000427> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "reverse transcriptase"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> """enzyme and has_function some GO:0003964 (RNA-directed DNA polymerase
@@ -4444,50 +4251,6 @@ activity)"""@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "OBI Biomaterial"^^xsd:string ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "injection"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000427
-<http://purl.obolibrary.org/obo/OBI_0000427> rdf:type owl:Class ;
-                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                                                        [ rdf:type owl:Class ;
-                                                                                          owl:unionOf ( <http://purl.obolibrary.org/obo/CHEBI_33697>
-                                                                                                        <http://purl.obolibrary.org/obo/GO_0032991>
-                                                                                                        <http://purl.obolibrary.org/obo/PR_000000001>
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/CHEBI_33697>
-                                                                                                        ]
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/GO_0032991>
-                                                                                                        ]
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/PR_000000001>
-                                                                                                        ]
-                                                                                                      )
-                                                                                        ]
-                                                                                        [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000085> ;
-                                                                                          owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                                                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/GO_0003824>
-                                                                                                             ]
-                                                                                        ]
-                                                                                      ) ;
-                                                                   rdf:type owl:Class
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "enzyme"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> """(protein or rna) or has_part (protein or rna) and
-has_function some GO:0003824 (catalytic activity)"""@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> """MC: known issue: enzyme doesn't classify under material entity for now as it isn't stated that anything
-that has_part some material entity is a material entity. If we add as equivalent classes to material entity has_part some material entity and part_of some material entity  (each one in his own necessary and sufficient block) Pellet in P3 doesn't classify any more."""^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "person: Melanie Courtot"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "GROUP:OBI"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "enzyme"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000431
@@ -4580,7 +4343,7 @@ that has_part some material entity is a material entity. If we add as equivalent
 
 ###  http://purl.obolibrary.org/obo/OBI_0000434
 <http://purl.obolibrary.org/obo/OBI_0000434> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000686> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000456> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "adding material objective"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "creating a mouse infected with LCM virus"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
@@ -5022,32 +4785,6 @@ that has_part some material entity is a material entity. If we add as equivalent
                                              rdfs:label "urine specimen"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/OBI_0000652
-<http://purl.obolibrary.org/obo/OBI_0000652> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000686>
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000094> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "material combination"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Mixing two fluids. Adding salt into water. Injecting a mouse with PBS."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "is a material processing with the objective to combine two or more material entities as input into a single material entity as output."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "created at workshop as parent class for 'adding material into target', which is asymmetric, while combination encompasses all addition processes."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "bp"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "bp"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "material combination"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/OBI_0000655
 <http://purl.obolibrary.org/obo/OBI_0000655> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0001479> ,
@@ -5127,30 +4864,6 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
                                              rdfs:label "specimen collection process" .
 
 
-###  http://purl.obolibrary.org/obo/OBI_0000663
-<http://purl.obolibrary.org/obo/OBI_0000663> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
-                                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000023>
-                                                                                 ]
-                                                                                 [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0200179>
-                                                                                 ]
-                                                                               )
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200000> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "class prediction data transformation"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A class prediction data transformation (sometimes called supervised classification) is a data transformation that has objective class prediction."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000118> "supervised classification data transformation"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "PERSON: James Malone"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "class prediction data transformation"@en .
-
-
 ###  http://purl.obolibrary.org/obo/OBI_0000671
 <http://purl.obolibrary.org/obo/OBI_0000671> rdf:type owl:Class ;
                                              owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -5216,21 +4929,9 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
                                              rdfs:label "specimen collection objective" .
 
 
-###  http://purl.obolibrary.org/obo/OBI_0000686
-<http://purl.obolibrary.org/obo/OBI_0000686> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000456> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "material combination objective"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "is an objective to obtain an output material that contains several input materials."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PPPB branch"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "bp"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "material combination objective"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/OBI_0000700
 <http://purl.obolibrary.org/obo/OBI_0000700> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000663> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200000> ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0200179>
@@ -5255,22 +4956,6 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "decision tree induction objective"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000707
-<http://purl.obolibrary.org/obo/OBI_0000707> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000704>
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200000> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "decision tree building data transformation"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A decision tree building data transformation is a data transformation that has objective decision tree induction."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "PERSON: James Malone"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "decision tree building data transformation"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000713
@@ -5313,10 +4998,6 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
                                                                                     ]
                                                                                   ) ;
                                                                rdf:type owl:Class
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0200172>
                                                              ] ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "k-nearest neighbors"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
@@ -5389,7 +5070,7 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000749
 <http://purl.obolibrary.org/obo/OBI_0000749> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000707> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200000> ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000704>
@@ -5402,23 +5083,6 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "BOOK: David J. Hand, Heikki Mannila and Padhraic Smyth (2001) Principles of Data Mining."@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "CART"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000792
-<http://purl.obolibrary.org/obo/OBI_0000792> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0200188>
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200171> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "statistical model validation"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Using the expression levels of 20 proteins to predict whether a cancer patient will respond to a drug. A practical goal would be to determine which subset of the 20 features should be used to produce the best predictive model. - wikipedia"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A data transformation which assesses how the results of a statistical analysis will generalize to an independent data set."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Helen Parkinson"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "http://en.wikipedia.org/wiki/Cross-validation_%28statistics%29"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "statistical model validation"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000806
@@ -5616,11 +5280,23 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
                                                                                       ) ;
                                                                    rdf:type owl:Class
                                                                  ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000426> ,
-                                                             <http://purl.obolibrary.org/obo/OBI_0600007> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000274> ,
+                                                             <http://purl.obolibrary.org/obo/OBI_0000426> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100026>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100026>
+                                                             ] ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000434>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                              ] ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "intramuscular injection"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
@@ -5645,30 +5321,6 @@ http://sourceforge.net/p/obi/obi-terms/716/""" ;
 """^^xsd:string ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "categorical measurement datum"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000947
-<http://purl.obolibrary.org/obo/OBI_0000947> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
-                                                               owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                    owl:unionOf ( <http://purl.obolibrary.org/obo/NCBITaxon_9606>
-                                                                                                  <http://purl.obolibrary.org/obo/OBI_0000245>
-                                                                                                )
-                                                                                  ]
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
-                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/OBI_0000011>
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "service provider role"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Jackson Lab provides experimental animals, EBI provides training on databases, a core facility provides access to a DNA sequencer."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "is a role which inheres in a person or organization and is realized in in a planned process which provides access to training, materials or execution of protocols for an organization or person"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Helen Parkinson"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "service provider role"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000953
@@ -5769,7 +5421,7 @@ In the examples above, a reagent is an operational component of a device, but th
 
 ###  http://purl.obolibrary.org/obo/OBI_0000971
 <http://purl.obolibrary.org/obo/OBI_0000971> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0001472> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100051> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "fresh specimen"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "a liver freshly removed from a rat"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
@@ -6104,30 +5756,6 @@ pat1-114/pat1-114 ade6-M210/ade6-M216 h+/h+ (cells are diploid)
 """@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "genetic characteristics information"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0001472
-<http://purl.obolibrary.org/obo/OBI_0001472> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <http://purl.obolibrary.org/obo/OBI_0000971>
-                                                                                 [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
-                                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0302893>
-                                                                                                        ]
-                                                                                                      ) ;
-                                                                                   rdf:type owl:Class
-                                                                                 ]
-                                                                               )
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0100051> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "specimen with known storage state"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A specimen for which it is known whether it has been subjected to storage of a specified type."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Chris Stoeckert, Jie Zheng"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "MO_95 BiosourceType"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "specimen with known storage state"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0001479
@@ -6901,23 +6529,6 @@ The following are NOT conclusions based on data: data themselves; results from p
                                              rdfs:label "Karnofsky score vaue specification" .
 
 
-###  http://purl.obolibrary.org/obo/OBI_0002444
-<http://purl.obolibrary.org/obo/OBI_0002444> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "measurand role"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A role borne by a material entity and realized in an assay which achieves the objective to measure the magnitude/concentration/amount of the measurand in the entity bearing evaluant role." ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Person: Alan Ruttenberg, Jie Zheng" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wiktionary.org/wiki/measurand" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000233> "https://github.com/obi-ontology/obi/issues/778" ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "measurand role"@en .
-
-
 ###  http://purl.obolibrary.org/obo/OBI_0002500
 <http://purl.obolibrary.org/obo/OBI_0002500> rdf:type owl:Class ;
                                              owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
@@ -7266,13 +6877,6 @@ The following are NOT conclusions based on data: data themselves; results from p
 
 ###  http://purl.obolibrary.org/obo/OBI_0100026
 <http://purl.obolibrary.org/obo/OBI_0100026> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <http://purl.obolibrary.org/obo/NCBITaxon_10239>
-                                                                                 <http://purl.obolibrary.org/obo/NCBITaxon_2>
-                                                                                 <http://purl.obolibrary.org/obo/NCBITaxon_2157>
-                                                                                 <http://purl.obolibrary.org/obo/NCBITaxon_2759>
-                                                                               )
-                                                                 ] ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "organism"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "animal"@en ,
@@ -7418,7 +7022,7 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
 
 ###  http://purl.obolibrary.org/obo/OBI_0200033
 <http://purl.obolibrary.org/obo/OBI_0200033> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000792> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200171> ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0200188>
@@ -7447,10 +7051,6 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
                                                                                     ]
                                                                                   ) ;
                                                                rdf:type owl:Class
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0200172>
                                                              ] ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "k-means clustering"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
@@ -7486,8 +7086,8 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
                                              rdfs:label "hierarchical clustering"@en .
 
 
-###  http://purl.obolibrary.org/obo/OBI_0200050
-<http://purl.obolibrary.org/obo/OBI_0200050> rdf:type owl:Class ;
+###  http://purl.obolibrary.org/obo/OBI_0200051
+<http://purl.obolibrary.org/obo/OBI_0200051> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200175> ,
                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
@@ -7500,24 +7100,6 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
                                                                                   ) ;
                                                                rdf:type owl:Class
                                                              ] ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "dimensionality reduction"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A dimensionality reduction is data partitioning which transforms each input m-dimensional vector (x_1, x_2, ..., x_m) into an output n-dimensional vector (y_1, y_2, ..., y_n), where n is smaller than m."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Elisabetta Manduchi"@en ,
-                                                                                          "James Malone"@en ,
-                                                                                          "Melanie Courtot"@en ,
-                                                                                          "Philippe Rocca-Serra"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000118> "data projection"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "PERSON: Elisabetta Manduchi"@en ,
-                                                                                          "PERSON: James Malone"@en ,
-                                                                                          "PERSON: Melanie Courtot"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "dimensionality reduction"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0200051
-<http://purl.obolibrary.org/obo/OBI_0200051> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200050> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "principal components analysis dimensionality reduction"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A principal components analysis dimensionality reduction is a dimensionality reduction achieved by applying principal components analysis and by keeping low-order principal components and excluding higher-order ones."@en ;
@@ -7531,55 +7113,6 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
                                                                                           "PERSON: Melanie Courtot"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "principal components analysis dimensionality reduction"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0200111
-<http://purl.obolibrary.org/obo/OBI_0200111> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000011> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000027>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
-                                                               owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                    owl:unionOf ( <http://purl.obolibrary.org/obo/IAO_0000038>
-                                                                                                  <http://purl.obolibrary.org/obo/IAO_0000101>
-                                                                                                )
-                                                                                  ]
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/IAO_0000027>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
-                                                               owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                                   owl:unionOf ( <http://purl.obolibrary.org/obo/IAO_0000038>
-                                                                                                 <http://purl.obolibrary.org/obo/IAO_0000101>
-                                                                                               )
-                                                                                 ]
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "data visualization"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Generation of a heatmap from a microarray dataset"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An planned process that creates images, diagrams or animations from the input data."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Elisabetta Manduchi"@en ,
-                                                                                          "James Malone"@en ,
-                                                                                          "Melanie Courtot"@en ,
-                                                                                          "Tina Boussard"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000118> "data encoding as image"^^xsd:string ,
-                                                                                          "visualization"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "PERSON: Elisabetta Manduchi"@en ,
-                                                                                          "PERSON: James Malone"@en ,
-                                                                                          "PERSON: Melanie Courtot"@en ,
-                                                                                          "PERSON: Tina Boussard"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000232> """Possible future hierarchy might include this:
-information_encoding
->data_encoding
->>image_encoding"""^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "data visualization"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0200166
@@ -7598,10 +7131,6 @@ information_encoding
 
 ###  http://purl.obolibrary.org/obo/OBI_0200171
 <http://purl.obolibrary.org/obo/OBI_0200171> rdf:type owl:Class ;
-                                             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0200172>
-                                                                 ] ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200000> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "partitioning data transformation"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
@@ -7610,20 +7139,6 @@ information_encoding
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "PERSON: James Malone"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "partitioning data transformation"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0200172
-<http://purl.obolibrary.org/obo/OBI_0200172> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200166> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "partitioning objective"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "A k-means clustering which has partitioning objective is a data transformation in which the input data is partitioned into k output sets."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A partitioning objective is a data transformation objective where the aim is to generate a collection of disjoint non-empty subsets whose union equals a non-empty input set."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Elisabetta Manduchi"^^xsd:string ,
-                                                                                          "James Malone"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "PERSON: Elisabetta Manduchi"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "partitioning objective"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0200175
@@ -7685,7 +7200,7 @@ class labels for these objects. The resulting predictor can be used to attach cl
 
 ###  http://purl.obolibrary.org/obo/OBI_0200188
 <http://purl.obolibrary.org/obo/OBI_0200188> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200172> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200166> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "cross validation objective"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A cross validation objective is a data transformation objective in which the aim is to partition a sample of data into subsets such that the analysis is initially performed on a single subset, while the other subset(s) are retained for subsequent use in confirming and validating the initial analysis."@en ;
@@ -7698,7 +7213,11 @@ class labels for these objects. The resulting predictor can be used to attach cl
 
 ###  http://purl.obolibrary.org/obo/OBI_0200190
 <http://purl.obolibrary.org/obo/OBI_0200190> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0200111> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000011> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000027>
+                                                             ] ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
                                                                owl:someValuesFrom [ rdf:type owl:Class ;
@@ -7711,8 +7230,28 @@ class labels for these objects. The resulting predictor can be used to attach cl
                                                                                   ]
                                                              ] ,
                                                              [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( <http://purl.obolibrary.org/obo/IAO_0000038>
+                                                                                                  <http://purl.obolibrary.org/obo/IAO_0000101>
+                                                                                                )
+                                                                                  ]
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
+                                                               owl:allValuesFrom <http://purl.obolibrary.org/obo/IAO_0000027>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
                                                                owl:allValuesFrom <http://purl.obolibrary.org/obo/OBI_0000648>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                   owl:unionOf ( <http://purl.obolibrary.org/obo/IAO_0000038>
+                                                                                                 <http://purl.obolibrary.org/obo/IAO_0000101>
+                                                                                               )
+                                                                                 ]
                                                              ] ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "clustered data visualization"^^xsd:string ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
@@ -7724,21 +7263,6 @@ class labels for these objects. The resulting predictor can be used to attach cl
 
 ###  http://purl.obolibrary.org/obo/OBI_0302716
 <http://purl.obolibrary.org/obo/OBI_0302716> rdf:type owl:Class ;
-                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0100051>
-                                                                                        [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000312> ;
-                                                                                          owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000652>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                                                                                                      owl:allValuesFrom <http://purl.obolibrary.org/obo/OBI_0100051>
-                                                                                                                                    ]
-                                                                                                                                  ) ;
-                                                                                                               rdf:type owl:Class
-                                                                                                             ]
-                                                                                        ]
-                                                                                      ) ;
-                                                                   rdf:type owl:Class
-                                                                 ] ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000953> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "pool of specimens"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
@@ -8087,64 +7611,6 @@ Manual editing of automatically recorded data in an anesthesia information manag
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "IEDB"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "collecting specimen from organism"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0600007
-<http://purl.obolibrary.org/obo/OBI_0600007> rdf:type owl:Class ;
-                                             owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
-                                                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000319>
-                                                                                        ]
-                                                                                        [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
-                                                                                          owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/OBI_0000444>
-                                                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0000081> ;
-                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                                                           owl:unionOf ( <http://purl.obolibrary.org/obo/OBI_0100026>
-                                                                                                                                                                         <http://purl.obolibrary.org/obo/UBERON_0000465>
-                                                                                                                                                                       )
-                                                                                                                                                         ]
-                                                                                                                                    ]
-                                                                                                                                  ) ;
-                                                                                                               rdf:type owl:Class
-                                                                                                             ]
-                                                                                        ]
-                                                                                      ) ;
-                                                                   rdf:type owl:Class
-                                                                 ] ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000274> ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100026>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0100026>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000417> ;
-                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000434>
-                                                             ] ,
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
-                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                             ] ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "administering substance in vivo"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Balb/c mice received an intracameral or subconjunctival injection of trinitrophenylated spleen cells"^^xsd:string ,
-                                                                                          "injecting mice with 10 ug morphine intranasally, a patient taking two pills of 1 mg aspirin orally"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A process by which a substance is intentionally given to an organism resulting in exposure of the organism to that substance."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "2009-11-10. Tracker: https://sourceforge.net/tracker/?func=detail&aid=2893050&group_id=177891&atid=886178"^^xsd:string ,
-                                                                                          "Different routes and means of administration should go as children underneath this"@en ,
-                                                                                          """Update the definition based on the discussion. Details see the tracker:
-https://sourceforge.net/p/obi/obi-terms/738/""" ,
-                                                                                          "needs roles such as perturber and perturbee (children of input role). Perturb is too strong. Host might be the name for one role. Others considered: Doner, Donated, Acceptor."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Bjoern Peters"@en ,
-                                                                                          "Person:Bjoern Peters"^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "IEDB"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             rdfs:label "administering substance in vivo"@en .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0600014
@@ -8522,32 +7988,12 @@ realizes some 'host of immune response role'"""^^xsd:string ;
 
 ###  http://purl.obolibrary.org/obo/PATO_0000011
 <http://purl.obolibrary.org/obo/PATO_0000011> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000165> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000111> "age"^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A time quality inhering in a bearer by virtue of how long the bearer has existed."^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
                                               rdfs:label "age"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000051
-<http://purl.obolibrary.org/obo/PATO_0000051> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000111> "morphology"^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure."^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:label "morphology"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000117
-<http://purl.obolibrary.org/obo/PATO_0000117> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000051> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000111> "size"^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude."^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:label "size"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/PATO_0000122
@@ -8570,44 +8016,14 @@ realizes some 'host of immune response role'"""^^xsd:string ;
                                               rdfs:label "mass"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/PATO_0000165
-<http://purl.obolibrary.org/obo/PATO_0000165> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000111> "time"^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality in which events occur in sequence."^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:label "time"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0000186
-<http://purl.obolibrary.org/obo/PATO_0000186> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001995> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000111> "behavioral quality"^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An organismal quality inhering in a bearer by virtue of the bearer's behavior aggregate of the responses or reactions or movements in a given situation."^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:label "behavioral quality"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/PATO_0000918
 <http://purl.obolibrary.org/obo/PATO_0000918> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001710> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000111> "volume"^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A 3-D extent quality inhering in a bearer by virtue of the bearer's amount of 3-dimensional space it occupies."^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
                                               rdfs:label "volume"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001018
-<http://purl.obolibrary.org/obo/PATO_0001018> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000111> "physical quality"^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities."^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:label "physical quality"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/PATO_0001241
@@ -8620,29 +8036,9 @@ realizes some 'host of immune response role'"""^^xsd:string ;
                                               rdfs:label "physical object quality"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/PATO_0001710
-<http://purl.obolibrary.org/obo/PATO_0001710> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000117> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000111> "3-D extent"^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A size quality inhering in an bearer by virtue of the bearer's extension in three dimensions."^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:label "3-D extent"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/PATO_0001995
-<http://purl.obolibrary.org/obo/PATO_0001995> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000111> "organismal quality"^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality that inheres in an entire organism or part of an organism."^^xsd:string ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/pato.owl> ;
-                                              rdfs:label "organismal quality"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/PATO_0002201
 <http://purl.obolibrary.org/obo/PATO_0002201> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000186> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000111> "handedness"^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A behavioral quality inhering ina bearer by virtue of the bearer's unequal distribution of fine motor skill between its left and right hands or feet."^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
@@ -8682,7 +8078,7 @@ realizes some 'host of immune response role'"""^^xsd:string ;
 
 ###  http://purl.obolibrary.org/obo/PR_000000001
 <http://purl.obolibrary.org/obo/PR_000000001> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CHEBI_16670> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CHEBI_33839> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000111> "protein"^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000112> "antithrombin III is a protein"^^xsd:string ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof."^^xsd:string ;
@@ -8705,32 +8101,12 @@ realizes some 'host of immune response role'"""^^xsd:string ;
 
 ###  http://purl.obolibrary.org/obo/SO_0000353
 <http://purl.obolibrary.org/obo/SO_0000353> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0001248> ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000001> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "sequence_assembly"^^xsd:string ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A sequence of nucleotides that has been algorithmically derived from an alignment of two or more different sequences."^^xsd:string ;
                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/so.owl> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/so.owl> ;
                                             rdfs:label "sequence_assembly"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/SO_0001248
-<http://purl.obolibrary.org/obo/SO_0001248> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0001410> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "assembly"^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A region of the genome of known length that is composed by ordering and aligning two or more different regions."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/so.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/so.owl> ;
-                                            rdfs:label "assembly"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/SO_0001410
-<http://purl.obolibrary.org/obo/SO_0001410> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000001> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "experimental_feature"^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer."^^xsd:string ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/so.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/so.owl> ;
-                                            rdfs:label "experimental_feature"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000173
@@ -8783,16 +8159,6 @@ realizes some 'host of immune response role'"""^^xsd:string ;
                                                 rdfs:label "anatomical cluster"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/UBERON_0000479
-<http://purl.obolibrary.org/obo/UBERON_0000479> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000111> "tissue"^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation."^^xsd:string ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uberon.owl> ;
-                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uberon.owl> ;
-                                                rdfs:label "tissue"^^xsd:string .
-
-
 ###  http://purl.obolibrary.org/obo/UBERON_0001087
 <http://purl.obolibrary.org/obo/UBERON_0001087> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
@@ -8825,7 +8191,7 @@ realizes some 'host of immune response role'"""^^xsd:string ;
 
 ###  http://purl.obolibrary.org/obo/UBERON_0001134
 <http://purl.obolibrary.org/obo/UBERON_0001134> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000479> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000111> "skeletal muscle tissue"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "Muscle tissue that consists primarily of skeletal muscle fibers."^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uberon.owl> ;

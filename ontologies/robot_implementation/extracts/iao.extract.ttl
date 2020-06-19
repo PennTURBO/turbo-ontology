@@ -345,7 +345,7 @@ every c that is a concretization of g specifically denotes r"""@en ;
 
 ###  http://purl.obolibrary.org/obo/BFO_0000017
 <http://purl.obolibrary.org/obo/BFO_0000017> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "realizable" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "RealizableEntity" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "the disposition of this piece of metal to conduct electricity."@en ,
@@ -390,82 +390,6 @@ every c that is a concretization of g specifically denotes r"""@en ;
  ] .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000020
-<http://purl.obolibrary.org/obo/BFO_0000020> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000031> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "sdc" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "SpecificallyDependentContinuant" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Reciprocal specifically dependent continuants: the function of this key to open this lock and the mutually dependent disposition of this lock: to be opened by this key"@en ,
-                                                                                          "of one-sided specifically dependent continuants: the mass of this tomato"@en ,
-                                                                                          "of relational dependent continuants (multiple bearers): John’s love for Mary, the ownership relation between John and this statue, the relation of authority between John and his subordinates."@en ,
-                                                                                          "the disposition of this fish to decay"@en ,
-                                                                                          "the function of this heart: to pump blood"@en ,
-                                                                                          "the mutual dependence of proton donors and acceptors in chemical reactions [79"@en ,
-                                                                                          "the mutual dependence of the role predator and the role prey as played by two organisms in a given interaction"@en ,
-                                                                                          "the pink color of a medium rare piece of grilled filet mignon at its center"@en ,
-                                                                                          "the role of being a doctor"@en ,
-                                                                                          "the shape of this hole."@en ,
-                                                                                          "the smell of this portion of mozzarella"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same."@en ,
-                                                                                          "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "Specifically dependent continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. We're not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (SpecificallyDependentContinuant a) (and (Continuant a) (forall (t) (if (existsAt a t) (exists (b) (and (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))))))) // axiom label in BFO2 CLIF: [050-003] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "specifically dependent continuant"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/050-003>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
-   owl:annotatedTarget "Specifically dependent continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. We're not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc."@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000005> ;
-   rdfs:comment "per discussion with Barry Smith"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000020> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(iff (SpecificallyDependentContinuant a) (and (Continuant a) (forall (t) (if (existsAt a t) (exists (b) (and (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))))))) // axiom label in BFO2 CLIF: [050-003] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/050-003>
- ] .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000031
-<http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "gdc" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "GenericallyDependentContinuant" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "The entries in your database are patterns instantiated as quality instances in your hard drive. The database itself is an aggregate of such patterns. When you create the database you create a particular instance of the generically dependent continuant type database. Each entry in the database is an instance of the generically dependent continuant type IAO: information content entity."@en ,
-                                                                                          "the pdf file on your laptop, the pdf file that is a copy thereof on my laptop"@en ,
-                                                                                          "the sequence of this protein molecule; the sequence that is a copy thereof in that protein molecule."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time."@en ,
-                                                                                          "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(iff (GenericallyDependentContinuant a) (and (Continuant a) (exists (b t) (genericallyDependsOnAt a b t)))) // axiom label in BFO2 CLIF: [074-001] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "generically dependent continuant"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000031> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/074-001>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000031> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
-   owl:annotatedTarget "(iff (GenericallyDependentContinuant a) (and (Continuant a) (exists (b t) (genericallyDependsOnAt a b t)))) // axiom label in BFO2 CLIF: [074-001] " ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/074-001>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000027
 <http://purl.obolibrary.org/obo/IAO_0000027> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
@@ -492,27 +416,9 @@ JAR: A data item is an approximately justified approximately true approximate be
                                              rdfs:label "data item"@en .
 
 
-###  http://purl.obolibrary.org/obo/IAO_0000028
-<http://purl.obolibrary.org/obo/IAO_0000028> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "symbol"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "a serial number such as \"12324X\""@en ,
-                                                                                          "a stop sign"@en ,
-                                                                                          "a written proper name such as \"OBI\""@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An information content entity that is a mark(s) or character(s) used as a conventional representation of another entity."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "20091104, MC: this needs work and will most probably change"@en ,
-                                                                                          "2014-03-31: We would like to have a deeper analysis of 'mark' and 'sign' in the future (see https://github.com/information-artifact-ontology/IAO/issues/154)."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: James A. Overton"@en ,
-                                                                                          "PERSON: Jonathan Rees"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "based on Oxford English Dictionary"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "symbol"@en .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000030
 <http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000136> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000001>
@@ -576,23 +482,6 @@ Previous. An information content entity is a non-realizable information entity t
                                              rdfs:label "curation status specification"@en .
 
 
-###  http://purl.obolibrary.org/obo/IAO_0000100
-<http://purl.obolibrary.org/obo/IAO_0000100> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "data set"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Intensity values in a CEL file or from multiple CEL files comprise a data set (as opposed to the CEL files themselves)."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "2009/10/23 Alan Ruttenberg. The intention is that this term represent collections of like data. So this isn't for, e.g. the whole contents of a cel file, which includes parameters, metadata etc. This is more like java arrays of a certain rather specific type"@en ,
-                                                                                          "2014-05-05: Data sets are aggregates and thus must include two or more data items. We have chosen not to add logical axioms to make this restriction." ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "person:Allyson Lister"@en ,
-                                                                                          "person:Chris Stoeckert"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000119> "OBI_0000042"@en ,
-                                                                                          "group:OBI"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "data set"@en .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000102
 <http://purl.obolibrary.org/obo/IAO_0000102> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
@@ -621,21 +510,6 @@ Previous. An information content entity is a non-realizable information entity t
                                                                                           "PERSON: Melanie Courtot"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
                                              rdfs:label "obsolescence reason specification"@en .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000300
-<http://purl.obolibrary.org/obo/IAO_0000300> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000111> "textual entity"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Words, sentences, paragraphs, and the written (non-figure) parts of publications are all textual entities"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A textual entity is a part of a manifestation (FRBR sense), a generically dependent continuant whose concretizations are patterns of glyphs intended to be interpreted as words, formulas, etc."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "AR, (IAO call 2009-09-01): a document as a whole is not typically a textual entity, because it has pictures in it - rather there are parts of it that are textual entities. Examples: The title, paragraph 2 sentence 7, etc."@en ,
-                                                                                          "MC, 2009-09-14 (following IAO call 2009-09-01): textual entities live at the FRBR (http://en.wikipedia.org/wiki/Functional_Requirements_for_Bibliographic_Records) manifestation level. Everything is significant: line break, pdf and html versions of same document are different textual entities."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON: Lawrence Hunter"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000118> "text"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
-                                             rdfs:label "textual entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000302
@@ -681,7 +555,7 @@ Previous. An information content entity is a non-realizable information entity t
 
 ###  http://purl.obolibrary.org/obo/IAO_0000577
 <http://purl.obolibrary.org/obo/IAO_0000577> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000028> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ,
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ;
                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000578>
@@ -732,7 +606,7 @@ Previous. An information content entity is a non-realizable information entity t
 
 ###  http://purl.obolibrary.org/obo/IAO_0000579
 <http://purl.obolibrary.org/obo/IAO_0000579> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000100> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "PubMed is a CRID registry. It has a dataset of PubMed identifiers associated with journal articles. "@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A CRID registry is a dataset of CRID records, each consisting of a CRID symbol and additional information which was recorded in the dataset through a assigning a centrally registered identifier process."@en ;
@@ -748,7 +622,7 @@ Previous. An information content entity is a non-realizable information entity t
 
 ###  http://purl.obolibrary.org/obo/IAO_0000590
 <http://purl.obolibrary.org/obo/IAO_0000590> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000300> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "written name"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "\"Bill Clinton\""@en ,
                                                                                           "\"The Eiffel Tower\""@en ,

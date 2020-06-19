@@ -141,7 +141,7 @@ for i in range(0, num_ontologies):
         'true',
         '--verbose',
         '--intermediates',
-        'all',
+        'minimal',
         '--annotate-with-source',
         'true',
         '--input',
