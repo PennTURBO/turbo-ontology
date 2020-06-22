@@ -46,7 +46,8 @@ turbo_reasoned_ontology_file = 'turbo_merged_inferred.ttl'
 more_specimens_tsv_file = 'more-specimens.tsv'
 
 more_specimens_ontology_url = \
-    "https://raw.githubusercontent.com/PennTURBO/loinc_in_obo/master/more-specimens.ttl"
+    "https://raw.githubusercontent.com/" + \
+    "PennTURBO/loinc_in_obo/master/more-specimens.ttl"
 
 more_specimens_annotations_file = "more-specimens_annotations.ttl"
 
@@ -63,11 +64,13 @@ obo_abbreviations_byte_estimates = \
 #     print(col)
 
 smaller_obo_ontologies = \
-    obo_abbreviations_byte_estimates[obo_abbreviations_byte_estimates.loc[:
-        , 'bytes_estimate'] <= max_estimate]
+    obo_abbreviations_byte_estimates[
+        obo_abbreviations_byte_estimates.loc[:,
+                                             'bytes_estimate']
+        <= max_estimate]
 
-obo_abbreviation_list = smaller_obo_ontologies['obo_abbreviation'
-        ].tolist()
+obo_abbreviation_list = \
+    smaller_obo_ontologies['obo_abbreviation'].tolist()
 
 obo_url_prefix = 'http://purl.obolibrary.org/obo/'
 
@@ -83,7 +86,7 @@ for obo_abbreviation in obo_abbreviation_list:
 
     now = datetime.now()
     current_time = now.strftime('%H:%M:%S')
-    print ('Current Time =', current_time)
+    print('Current Time =', current_time)
 
     r = requests.get(obo_url, allow_redirects=True)
     open(obo_file_path, 'wb').write(r.content)
@@ -168,7 +171,7 @@ for i in range(0, num_ontologies):
     current_onto_abbrev = ontology_abbreviations[i]
     current_extract_file = current_onto_abbrev + '.extract.ttl'
     current_extract_path = os.path.join(EXTRACTION_OUPUT_PATH,
-            current_extract_file)
+                                        current_extract_file)
     print(current_extract_path)
     extracts_merge_interleaved.append('--input')
     extracts_merge_interleaved.append(current_extract_path)
@@ -188,10 +191,11 @@ print(robot_call.stdout)
 ####
 
 turbo_UNmerged_ontology_path = os.path.join(ART_PATH,
-        turbo_UNmerged_ontology_file)
+                                            turbo_UNmerged_ontology_file)
 
-turbo_with_extracts_ontology_path = os.path.join(ART_PATH,
-        turbo_with_extracts_ontology_file)
+turbo_with_extracts_ontology_path = \
+    os.path.join(ART_PATH,
+                 turbo_with_extracts_ontology_file)
 
 next_merge_interleaved = [
     ROBOT_PATH,
@@ -212,13 +216,15 @@ print(robot_call.stdout)
 ####
 
 more_specimens_tsv_path = os.path.join(ART_PATH,
-        more_specimens_tsv_file)
+                                       more_specimens_tsv_file)
 
-more_specimens_annotations_path = os.path.join(ART_PATH,
-        more_specimens_annotations_file)
+more_specimens_annotations_path = \
+    os.path.join(ART_PATH,
+                 more_specimens_annotations_file)
 
-more_specimens_ontology_output_path = os.path.join(ART_PATH,
-        more_specimens_ontology_output_file)
+more_specimens_ontology_output_path = \
+    os.path.join(ART_PATH,
+                 more_specimens_ontology_output_file)
 
 template_specimens = [
     ROBOT_PATH,
@@ -243,8 +249,8 @@ print(robot_call.stdout)
 
 ####
 
-turbo_merged_ontology_path = os.path.join(ART_PATH,
-        turbo_merged_ontology_file)
+turbo_merged_ontology_path = \
+    os.path.join(ART_PATH, turbo_merged_ontology_file)
 
 last_merge_interleaved = [
     ROBOT_PATH,
@@ -264,8 +270,9 @@ print(robot_call.stdout)
 
 ####
 
-turbo_reasoned_ontology_path = os.path.join(ART_PATH,
-        turbo_reasoned_ontology_file)
+turbo_reasoned_ontology_path = \
+    os.path.join(ART_PATH,
+                 turbo_reasoned_ontology_file)
 
 reasoning = [
     ROBOT_PATH,
@@ -288,4 +295,3 @@ robot_call = subprocess.run(reasoning,
                             stdout=subprocess.PIPE, text=True,
                             check=True)
 print(robot_call.stdout)
-
