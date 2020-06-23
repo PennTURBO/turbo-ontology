@@ -14,6 +14,7 @@ from datetime import datetime
 import subprocess
 from os import listdir
 import re
+import shutil
 
 # timeit ?
 
@@ -125,9 +126,7 @@ ontology_abbreviations = [sub.replace('.owl.txt', '') for sub in
 num_ontologies = len(termlist_filenames)
 
 for i in range(0, num_ontologies):
-
     # print(i)
-
     current_onto_abbrev = ontology_abbreviations[i]
     current_onto_file = current_onto_abbrev + '.owl'
     current_termlist_file = current_onto_abbrev + '.owl.txt'
@@ -162,6 +161,22 @@ for i in range(0, num_ontologies):
 
 ####
 
+pdro_merged_file = "pdro-merged.extract.ttl"
+pdro_merged_file_repaired = "pdro-merged-repaired.extract.ttl"
+pdro_merged_original_path = os.path.join(EXTRACTION_OUPUT_PATH, pdro_merged_file)
+pdro_merged_repaired_path = os.path.join(EXTRACTION_OUPUT_PATH, "repaired", pdro_merged_file)
+pdro_merged_stash_path = os.path.join(EXTRACTION_OUPUT_PATH, "original", pdro_merged_file)
+pdro_remove_survey_execution = [ROBOT_PATH, 'remove', '--input', pdro_merged_original_path, '--term', 'http://purl.obolibrary.org/obo/OMIABIS_0001035', '--output', pdro_merged_repaired_path]
+
+robot_call = subprocess.run(pdro_remove_survey_execution, stdout=subprocess.PIPE, text=True, check=True)
+print(robot_call.stdout)
+print(robot_call.stderr)
+
+shutil.move(pdro_merged_original_path, pdro_merged_stash_path)
+shutil.move(pdro_merged_repaired_path, pdro_merged_original_path)
+
+####
+
 extracts_merge_interleaved = [ROBOT_PATH, 'merge']
 
 for i in range(0, num_ontologies):
@@ -188,23 +203,6 @@ robot_call = subprocess.run(extracts_merge_interleaved,
                             check=True)
 print(robot_call.stdout)
 
-####
-
-pdro_merged_file = "pdro-merged.extract.ttl"
-pdro_merged_file_repaired = "pdro-merged-repaired.extract.ttl"
-pdro_merged_original_path = os.path.join(EXTRACTION_OUPUT_PATH,pdro_merged_file)
-pdro_merged_repaired_path = os.path.join(EXTRACTION_OUPUT_PATH,"repaired",pdro_merged_file_repaired)
-
-pdro_remove_survey_execution = [
-    ROBOT_PATH,
-    'remove',
-    '--input',
-    pdro_merged_original_path,
-    '--term',
-    'http://purl.obolibrary.org/obo/OMIABIS_0001035',
-    '--output',
-    pdro_merged_repaired_path,
-    ]
 
 ####
 
