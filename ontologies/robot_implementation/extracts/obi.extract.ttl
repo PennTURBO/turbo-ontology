@@ -976,7 +976,6 @@ https://sourceforge.net/tracker/index.php?func=detail&aid=3512902&group_id=17789
 <http://purl.obolibrary.org/obo/RO_0001000> rdf:type owl:ObjectProperty ;
                                             owl:equivalentProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/RO_0001001>
                                                                    ] ;
-                                            rdfs:subPropertyOf owl:topObjectProperty ;
                                             owl:inverseOf <http://purl.obolibrary.org/obo/RO_0001001> ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000004> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000004> ;
@@ -1081,18 +1080,13 @@ https://sourceforge.net/tracker/index.php?func=detail&aid=3512902&group_id=17789
                                             rdfs:label "has member"@en .
 
 
-###  http://www.w3.org/2002/07/owl#topObjectProperty
-owl:topObjectProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
-
-
 #################################################################
 #    Data properties
 #################################################################
 
 ###  http://purl.obolibrary.org/obo/IAO_0000004
-<http://purl.obolibrary.org/obo/IAO_0000004> rdf:type owl:DatatypeProperty ;
-                                             rdfs:subPropertyOf owl:topDataProperty ;
-                                             rdf:type owl:FunctionalProperty ;
+<http://purl.obolibrary.org/obo/IAO_0000004> rdf:type owl:DatatypeProperty ,
+                                                      owl:FunctionalProperty ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/IAO_0000032> ;
                                              rdfs:range xsd:double ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
@@ -1124,10 +1118,6 @@ owl:topObjectProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "OBI" ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
                                              rdfs:label "has specified value"@en .
-
-
-###  http://www.w3.org/2002/07/owl#topDataProperty
-owl:topDataProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
 
 
 #################################################################

@@ -237,7 +237,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 ###  http://purl.obolibrary.org/obo/BFO_0000075
 <http://purl.obolibrary.org/obo/BFO_0000075> rdf:type owl:ObjectProperty ;
                                              owl:equivalentProperty <http://purl.obolibrary.org/obo/OMRSE_00000020> ;
-                                             rdfs:subPropertyOf owl:topObjectProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000118> "aggregate of"@en ,
                                                                                           "aggregate_of"@en ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
@@ -265,8 +264,7 @@ Some currently missing phenomena that should be considered \"about\" are predica
 <http://purl.obolibrary.org/obo/OBI_0000299> rdf:type owl:ObjectProperty ;
                                              owl:equivalentProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/OBI_0000312>
                                                                     ] ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000057> ,
-                                                                owl:topObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000057> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/OBI_0000312> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "has_specified_output"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
@@ -381,7 +379,6 @@ Some currently missing phenomena that should be considered \"about\" are predica
 <http://purl.obolibrary.org/obo/RO_0000058> rdf:type owl:ObjectProperty ;
                                             owl:equivalentProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000059>
                                                                    ] ;
-                                            rdfs:subPropertyOf owl:topObjectProperty ;
                                             owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000059> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "is concretized as"@en ;
                                             <http://purl.obolibrary.org/obo/IAO_0000112> "A journal article is an information artifact that inheres in some number of printed journals. For each copy of the printed journal there is some quality that carries the journal article, such as a pattern of ink. The journal article (a generically dependent continuant) is concretized as the quality (a specifically dependent continuant), and both depend on that copy of the printed journal (an independent continuant)."@en ,
@@ -397,7 +394,6 @@ Some currently missing phenomena that should be considered \"about\" are predica
 <http://purl.obolibrary.org/obo/RO_0000059> rdf:type owl:ObjectProperty ;
                                             owl:equivalentProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000058>
                                                                    ] ;
-                                            rdfs:subPropertyOf owl:topObjectProperty ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "concretizes"@en ;
                                             <http://purl.obolibrary.org/obo/IAO_0000112> "A journal article is an information artifact that inheres in some number of printed journals. For each copy of the printed journal there is some quality that carries the journal article, such as a pattern of ink. The quality (a specifically dependent continuant) concretizes the journal article (a generically dependent continuant), and both depend on that copy of the printed journal (an independent continuant)."@en ,
                                                                                          "An investigator reads a protocol and forms a plan to carry out an assay. The plan is a realizable entity (a specifically dependent continuant) that concretizes the protocol (a generically dependent continuant), and both depend on the investigator (an independent continuant). The plan is then realized by the assay (a process)."@en ;
@@ -435,10 +431,6 @@ Some currently missing phenomena that should be considered \"about\" are predica
                                             <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "has member"@en .
-
-
-###  http://www.w3.org/2002/07/owl#topObjectProperty
-owl:topObjectProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
 
 
 #################################################################
@@ -1176,8 +1168,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000100> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An ethnic identity datum that is the output of an ethnic identification process that uses OMB terminology for ethnicity or terminology that is mapped the OMB ethnicity terms."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB ethnic identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "OMB ethnic identity datum"@en .
+                                                rdfs:label "obsolete OMB ethnic identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000098
@@ -1202,8 +1196,10 @@ However, Shaw explicates:
                                                                       rdf:type owl:Class
                                                                     ] ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A racial identity is an information content entity that is the output of some racial identitification process and is intended to be a truthful statement about the genetic or cultural race of a person.  Unlike data items they are not necessilary contributed or acquired by a reliable method."@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "racial identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "racial identity datum"@en .
+                                                rdfs:label "obsolete racial identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000099
@@ -1246,8 +1242,10 @@ However, Shaw explicates:
                                                                     ] ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An ethnic identity datum is an information content entity that is the output of some ethnic identitification process and is intended to be a truthful statement about the cultural or national heritage of a person.  Unlike data items they are not necessilary contributed or acquired by a reliable method."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "ethnic identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "ethnic identity datum"@en .
+                                                rdfs:label "obsolete ethnic identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000101
@@ -1272,8 +1270,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000083> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An OMB ethnic identity datum that indicates the person identified is of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB Hispanic or Latino identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "hispanic or latino identity datum"@en .
+                                                rdfs:label "obsolete hispanic or latino identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000128
@@ -1281,8 +1281,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000083> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An OMB ethnic identity datum that indicates the person identified is not of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB not Hispanic or Latino identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "not hispanic or latino identity datum"@en .
+                                                rdfs:label "obsolete not hispanic or latino identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000132
@@ -1312,9 +1314,11 @@ However, Shaw explicates:
                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/OMRSE_00000168>
                                                                 ] ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An identity datum is an information content entity that is the output of some identitification process and is intended to be a truthful statement about a person's social identity.  Unlike data items they are not necessilary contributed or acquired by a reliable method."@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "social identity information content entity"@en ;
                                                 <http://purl.org/dc/elements/1.1/creator> "Amanda Hicks" ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "identity datum"@en .
+                                                rdfs:label "obsolete identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000133
@@ -1339,9 +1343,11 @@ However, Shaw explicates:
                                                                       rdf:type owl:Class
                                                                     ] ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A gender identity is an information content entity that is the output of some gender identitification process and is intended to be a truthful statement about a person's subjective sense of their gender.  Unlike data items they are not necessilary contributed or acquired by a reliable method." ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "gender identity information content entity"@en ;
                                                 <http://purl.org/dc/elements/1.1/creator> "Amanda Hicks" ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "gender identity datum"@en .
+                                                rdfs:label "obsolete gender identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000134
@@ -1374,8 +1380,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000133> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "a gender identity datum resulting from a gender identification process in which ‘female’ is selected based on the participant's subjective sense of gender"@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "female gender identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "female gender identity datum"@en .
+                                                rdfs:label "obsolete female gender identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000141
@@ -1384,8 +1392,10 @@ However, Shaw explicates:
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "a gender identity datum resulting from a gender identification process in which ‘male’ is selected based on the participant's subjective sense of gender"@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks"@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000119> ""@en ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "male gender identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "male gender identity datum"@en .
+                                                rdfs:label "obsolete male gender identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000168
@@ -1418,8 +1428,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000185> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A racial identity that is the output of a racial identification process that uses OMB terminology for race or terminology that is mapped the OMB race terms and that indicates that the subject of the identity has origins in any of the original peoples of North and South America (including Central America), and maintains tribal affiliation or community attachment."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB American Indian or Alaska Native identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "American Indian or Alaska Native identity datum"@en .
+                                                rdfs:label "obsolete American Indian or Alaska Native identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000181
@@ -1427,8 +1439,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000185> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A racial identity that is the output of a racial identification process that uses OMB terminology for race or terminology that is mapped the OMB race terms and that indicates that the subject of the identity has origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB Asian identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "Asian identity datum"@en .
+                                                rdfs:label "obsolete Asian identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000182
@@ -1436,8 +1450,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000185> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A racial identity that is the output of a racial identification process that uses OMB terminology for race or terminology that is mapped the OMB race terms and that indicates that the subject of the identity has origins in any of the black racial groups of Africa."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB black or African American identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "black or African American identity datum"@en .
+                                                rdfs:label "obsolete black or African American identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000184
@@ -1445,8 +1461,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000185> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A racial identity that is the output of a racial identification process that uses OMB terminology for race or terminology that is mapped the OMB race terms and that indicates that the subject of the identity has origins in any of the original peoples of Europe, the Middle East, or North Africa."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB white identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "white identity datum"@en .
+                                                rdfs:label "obsolete white identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/OMRSE_00000185
@@ -1454,8 +1472,10 @@ However, Shaw explicates:
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000098> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A racial identity that is the output of a racial identification process that uses OMB terminology for race or terminology that is mapped the OMB race terms."@en ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000117> "Amanda Hicks" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0100001> "OMB racial identity information content entity"@en ;
                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                                rdfs:label "OMB racial identity datum"@en .
+                                                rdfs:label "obsolete OMB racial identity datum"@en ;
+                                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#Subset

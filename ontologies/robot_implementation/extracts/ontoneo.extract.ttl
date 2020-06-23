@@ -67,11 +67,6 @@
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
 
-###  http://purl.obolibrary.org/obo/IAO_0000424
-<http://purl.obolibrary.org/obo/IAO_0000424> rdf:type owl:AnnotationProperty ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000600
 <http://purl.obolibrary.org/obo/IAO_0000600> rdf:type owl:AnnotationProperty ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
@@ -110,11 +105,6 @@
 ###  http://purl.org/dc/elements/1.1/identifier
 <http://purl.org/dc/elements/1.1/identifier> rdf:type owl:AnnotationProperty ;
                                              rdfs:isDefinedBy <http://purl.org/dc/elements/1.1.owl> .
-
-
-###  http://purl.org/dc/elements/1.1/source
-<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty ;
-                                         rdfs:isDefinedBy <http://purl.org/dc/elements/1.1.owl> .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#created_by
@@ -214,7 +204,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 <http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                              rdf:type owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "is part of"@en ;
@@ -235,9 +224,8 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000051
-<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
-                                             rdf:type owl:TransitiveProperty ;
+<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "has part"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "my body has part my brain (continuant parthood, two material entities)"@en ,
                                                                                           "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)"@en ,
@@ -254,7 +242,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000062
 <http://purl.obolibrary.org/obo/BFO_0000062> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002086> ;
                                              owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
                                                                       <http://purl.obolibrary.org/obo/BFO_0000062>
                                                                     ) ;
@@ -280,7 +267,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              owl:inverseOf <http://purl.obolibrary.org/obo/IAO_0020018> ;
                                              rdf:type owl:AsymmetricProperty ,
                                                       owl:IrreflexiveProperty ;
-                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000001> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "x designates y, if for any given group of language users, x is an information content entity, is about y, and represents y in a linguistic context.."@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000117> "Mathias Brochhausen" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/omiabis.owl> ;
@@ -325,36 +311,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                             rdfs:label "bearer of"@en .
 
 
-###  http://purl.obolibrary.org/obo/RO_0000056
-<http://purl.obolibrary.org/obo/RO_0000056> rdf:type owl:ObjectProperty ;
-                                            owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000057> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "participates in"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000112> "this blood clot participates in this blood coagulation"@en ,
-                                                                                         "this input material (or this output material) participates in this process"@en ,
-                                                                                         "this investigator participates in this investigation"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a relation between a continuant and a process, in which the continuant is somehow involved in the process"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000118> "participates_in"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "participates in"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0000057
-<http://purl.obolibrary.org/obo/RO_0000057> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000111> "has participant"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000112> "this blood coagulation has participant this blood clot"@en ,
-                                                                                         "this investigation has participant this investigator"@en ,
-                                                                                         "this process has participant this input material (or this output material)"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a relation between a process and a continuant, in which the continuant is somehow involved in the process"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000116> "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time."@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000118> "has_participant"@en ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/omrse.owl> ;
-                                            <http://purl.org/dc/elements/1.1/source> "http://www.obofoundry.org/ro/#OBO_REL:has_participant" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "has participant"@en ,
-                                                       "has_participant" .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0000080
 <http://purl.obolibrary.org/obo/RO_0000080> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000052> ;
@@ -379,45 +335,8 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                             rdfs:label "has quality"@en .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002086
-<http://purl.obolibrary.org/obo/RO_0002086> rdf:type owl:ObjectProperty ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "ends after"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002131
-<http://purl.obolibrary.org/obo/RO_0002131> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002323> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/RO_0002131>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "x overlaps y if and only if there exists some z such that x has part z and z part of y" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000424> "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" ;
-                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
-                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "overlaps"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002131> ;
-   owl:annotatedProperty owl:propertyChainAxiom ;
-   owl:annotatedTarget ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                         <http://purl.obolibrary.org/obo/BFO_0000050>
-                       ) ;
-   <http://purl.obolibrary.org/obo/RO_0002582> "true"^^xsd:boolean
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002217
 <http://purl.obolibrary.org/obo/RO_0002217> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ;
                                             owl:inverseOf <http://purl.obolibrary.org/obo/RO_0002218> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "x actively participates in y if and only if x participates in y and x realizes some active role" ;
@@ -429,7 +348,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/RO_0002218
 <http://purl.obolibrary.org/obo/RO_0002218> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000057> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000112> "'heart development' has active participant some Shh protein" ;
                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "x has participant y if and only if x realizes some active role that inheres in y" ;
@@ -445,7 +363,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/RO_0002314
 <http://purl.obolibrary.org/obo/RO_0002314> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002502> ;
                                             owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0000052>
                                                                      <http://purl.obolibrary.org/obo/BFO_0000050>
                                                                    ) ,
@@ -470,24 +387,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
  ] .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002323
-<http://purl.obolibrary.org/obo/RO_0002323> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A mereological relationship or a topological relationship" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" ;
-                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "mereotopologically related to"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002502
-<http://purl.obolibrary.org/obo/RO_0002502> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "depends on" ;
-                                            rdfs:seeAlso <http://purl.obolibrary.org/obo/BFO_0000169> .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002573
 <http://purl.obolibrary.org/obo/RO_0002573> rdf:type owl:ObjectProperty ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A relation that holds between an attribute or a qualifier and another attribute." ;
@@ -499,48 +398,17 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                             rdfs:label "has modifier" .
 
 
-###  http://purl.obolibrary.org/obo/fma#part_of
-<http://purl.obolibrary.org/obo/fma#part_of> rdf:type owl:ObjectProperty ,
-                                                      owl:TransitiveProperty ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#id> "part_of"^^xsd:string ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
-                                             rdfs:label "part_of"@en .
-
-
 ###  http://purl.obolibrary.org/obo/fma#regional_part_of
 <http://purl.obolibrary.org/obo/fma#regional_part_of> rdf:type owl:ObjectProperty ;
-                                                      rdfs:subPropertyOf <http://purl.obolibrary.org/obo/fma#part_of> ;
                                                       <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
                                                       <http://www.geneontology.org/formats/oboInOwl#id> "regional_part_of"^^xsd:string ;
                                                       rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
                                                       rdfs:label "regional_part_of"@en .
 
 
-###  http://semanticscience.org/resource/SIO_000001
-<http://semanticscience.org/resource/SIO_000001> rdf:type owl:ObjectProperty ,
-                                                          owl:SymmetricProperty ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A is related to B iff there is some relation between A and B."@en ;
-                                                 <http://purl.org/dc/elements/1.1/identifier> "SIO_000001" ;
-                                                 rdfs:comment "'is related to' is the top level relation in SIO"@en ;
-                                                 rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
-                                                 rdfs:label "is related to"@en .
-
-
-###  http://semanticscience.org/resource/SIO_000736
-<http://semanticscience.org/resource/SIO_000736> rdf:type owl:ObjectProperty ;
-                                                 rdfs:subPropertyOf <http://semanticscience.org/resource/SIO_000001> ;
-                                                 rdf:type owl:SymmetricProperty ;
-                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "is comparable to is a relation between two entities that share at least one feature whose value can be compared."@en ;
-                                                 <http://purl.org/dc/elements/1.1/identifier> "SIO_000736" ;
-                                                 rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
-                                                 rdfs:label "is comparable to"@en .
-
-
 ###  http://semanticscience.org/resource/SIO_001242
-<http://semanticscience.org/resource/SIO_001242> rdf:type owl:ObjectProperty ;
-                                                 rdfs:subPropertyOf <http://semanticscience.org/resource/SIO_000736> ;
-                                                 rdf:type owl:SymmetricProperty ;
+<http://semanticscience.org/resource/SIO_001242> rdf:type owl:ObjectProperty ,
+                                                          owl:SymmetricProperty ;
                                                  <http://purl.obolibrary.org/obo/IAO_0000115> "is identical to is a relation between two objects that are conceptually the same notwithstanding provenance or other non-intrinsic attributes."@en ;
                                                  <http://purl.org/dc/elements/1.1/identifier> "SIO_001242" ;
                                                  rdfs:isDefinedBy <http://semanticscience.org/ontology/sio.owl> ;
@@ -551,41 +419,8 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 #    Classes
 #################################################################
 
-###  http://purl.obolibrary.org/obo/BFO_0000001
-<http://purl.obolibrary.org/obo/BFO_0000001> rdf:type owl:Class ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Julius Caesar"@en ,
-                                                                                          "Verdi’s Requiem"@en ,
-                                                                                          "the Second World War"@en ,
-                                                                                          "your body mass index"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81"@en ,
-                                                                                          "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "entity"@en .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000002
-<http://purl.obolibrary.org/obo/BFO_0000002> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240"@en ,
-                                                                                          "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])"@en ,
-                                                                                          "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])"@en ,
-                                                                                          "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " ,
-                                                                                          "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " ,
-                                                                                          "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " ,
-                                                                                          "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "continuant"@en .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000019
 <http://purl.obolibrary.org/obo/BFO_0000019> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "the ambient temperature of this portion of air"@en ,
                                                                                           "the color of a tomato"@en ,
                                                                                           "the length of the circumference of your waist"@en ,
@@ -601,60 +436,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
                                              rdfs:label "qualidade"@pt ,
                                                         "quality"@en .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000030
-<http://purl.obolibrary.org/obo/BFO_0000030> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "atom"@en ,
-                                                                                          "cell"@en ,
-                                                                                          "cells and organisms"@en ,
-                                                                                          "engineered artifacts"@en ,
-                                                                                          "grain of sand"@en ,
-                                                                                          "molecule"@en ,
-                                                                                          "organelle"@en ,
-                                                                                          "organism"@en ,
-                                                                                          "planet"@en ,
-                                                                                          "solid portions of matter"@en ,
-                                                                                          "star"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: BFO rests on the presupposition that at multiple micro-, meso- and macroscopic scales reality exhibits certain stable, spatially separated or separable material units, combined or combinable into aggregates of various sorts (for example organisms into what are called ‘populations’). Such units play a central role in almost all domains of natural science from particle physics to cosmology. Many scientific laws govern the units in question, employing general terms (such as ‘molecule’ or ‘planet’) referring to the types and subtypes of units, and also to the types and subtypes of the processes through which such units develop and interact. The division of reality into such natural units is at the heart of biological science, as also is the fact that these units may form higher-level units (as cells form multicellular organisms) and that they may also form aggregates of units, for example as cells form portions of tissue and organs form families, herds, breeds, species, and so on. At the same time, the division of certain portions of reality into engineered units (manufactured artifacts) is the basis of modern industrial technology, which rests on the distributed mass production of engineered parts through division of labor and on their assembly into larger, compound units such as cars and laptops. The division of portions of reality into units is one starting point for the phenomenon of counting."@en ,
-                                                                                          "BFO 2 Reference: Each object is such that there are entities of which we can assert unproblematically that they lie in its interior, and other entities of which we can assert unproblematically that they lie in its exterior. This may not be so for entities lying at or near the boundary between the interior and exterior. This means that two objects – for example the two cells depicted in Figure 3 – may be such that there are material entities crossing their boundaries which belong determinately to neither cell. Something similar obtains in certain cases of conjoined twins (see below)."@en ,
-                                                                                          "BFO 2 Reference: To say that b is causally unified means: b is a material entity which is such that its material parts are tied together in such a way that, in environments typical for entities of the type in question,if c, a continuant part of b that is in the interior of b at t, is larger than a certain threshold size (which will be determined differently from case to case, depending on factors such as porosity of external cover) and is moved in space to be at t at a location on the exterior of the spatial region that had been occupied by b at t, then either b’s other parts will be moved in coordinated fashion or b will be damaged (be affected, for example, by breakage or tearing) in the interval between t and t.causal changes in one part of b can have consequences for other parts of b without the mediation of any entity that lies on the exterior of b. Material entities with no proper material parts would satisfy these conditions trivially. Candidate examples of types of causal unity for material entities of more complex sorts are as follows (this is not intended to be an exhaustive list):CU1: Causal unity via physical coveringHere the parts in the interior of the unified entity are combined together causally through a common membrane or other physical covering\\. The latter points outwards toward and may serve a protective function in relation to what lies on the exterior of the entity [13, 47"@en ,
-                                                                                          "BFO 2 Reference: an object is a maximal causally unified material entity"@en ,
-                                                                                          "BFO 2 Reference: ‘objects’ are sometimes referred to as ‘grains’ [74"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "b is an object means: b is a material entity which manifests causal unity of one or other of the types CUn listed above & is of a type (a material universal) instances of which are maximal relative to this criterion of causal unity. (axiom label in BFO2 Reference: [024-001])"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "object"@en .
-
-
-###  http://purl.obolibrary.org/obo/BFO_0000040
-<http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "a flame"@en ,
-                                                                                          "a forest fire"@en ,
-                                                                                          "a human being"@en ,
-                                                                                          "a hurricane"@en ,
-                                                                                          "a photon"@en ,
-                                                                                          "a puff of smoke"@en ,
-                                                                                          "a sea wave"@en ,
-                                                                                          "a tornado"@en ,
-                                                                                          "an aggregate of human beings."@en ,
-                                                                                          "an energy wave"@en ,
-                                                                                          "an epidemic"@en ,
-                                                                                          "the undetached arm of a human being"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: Material entities (continuants) can preserve their identity even while gaining and losing material parts. Continuants are contrasted with occurrents, which unfold themselves in successive temporal parts or phases [60"@en ,
-                                                                                          "BFO 2 Reference: Object, Fiat Object Part and Object Aggregate are not intended to be exhaustive of Material Entity. Users are invited to propose new subcategories of Material Entity."@en ,
-                                                                                          "BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here."@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "A material entity is an independent continuant that has some portion of matter as proper or improper continuant part. (axiom label in BFO2 Reference: [019-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000601> "Every entity which has a material entity as continuant part is a material entity. (axiom label in BFO2 Reference: [020-002])"@en ,
-                                                                                          "every entity of which a material entity is continuant part is also a material entity. (axiom label in BFO2 Reference: [021-002])"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x) (if (MaterialEntity x) (IndependentContinuant x))) // axiom label in BFO2 CLIF: [019-002] " ,
-                                                                                          "(forall (x) (if (and (Entity x) (exists (y t) (and (MaterialEntity y) (continuantPartOfAt x y t)))) (MaterialEntity x))) // axiom label in BFO2 CLIF: [021-002] " ,
-                                                                                          "(forall (x) (if (and (Entity x) (exists (y t) (and (MaterialEntity y) (continuantPartOfAt y x t)))) (MaterialEntity x))) // axiom label in BFO2 CLIF: [020-002] " ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "material entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/CMO_0000012
@@ -688,7 +469,26 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/FMA_20394
 <http://purl.obolibrary.org/obo/FMA_20394> rdf:type owl:Class ;
-                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_256135> ,
+                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0000086> ;
+                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/CMO_0000012>
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0000086> ;
+                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/CMO_0000106>
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0000086> ;
+                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/PATO_0020000>
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://semanticscience.org/resource/SIO_001242> ;
+                                                                                    owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                                                  ]
+                                                                                ) ;
+                                                             rdf:type owl:Class
+                                                           ] ;
                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure which is the aggregate material substance of an individual member of the Homo sapiens species. Examples: There is only one human body."@en ,
                                                                                         "TO DO"@pt ;
                                            <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
@@ -699,22 +499,20 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
                                                       "corpo humano"@pt .
 
 
-###  http://purl.obolibrary.org/obo/FMA_63917
-<http://purl.obolibrary.org/obo/FMA_63917> rdf:type owl:Class ;
-                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
-                                           <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure, which is the developmental form of a vertebrate animal or any of its parts at any given time from fertilization of the egg by the sperm to parturition. Examples: embryo, embryonic structure, fetus, fetal heart."@en ,
-                                                                                        "TO DO"@pt ;
-                                           <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
-                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
-                                           <http://www.geneontology.org/formats/oboInOwl#id> "FMA:63917"^^xsd:string ;
-                                           rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
-                                           rdfs:label "Gestational structure"@en ,
-                                                      "estrutura gestacional"@pt .
+###  http://purl.obolibrary.org/obo/FMA_256135
+<http://purl.obolibrary.org/obo/FMA_256135> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure which is the aggregate material substance of an individual member of a species."@en ,
+                                                                                         "TO DO"@pt ;
+                                            <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "FMA:256135"^^xsd:string ;
+                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
+                                            rdfs:label "Body"@en ,
+                                                       "corpo"@pt .
 
 
 ###  http://purl.obolibrary.org/obo/FMA_63919
 <http://purl.obolibrary.org/obo/FMA_63919> rdf:type owl:Class ;
-                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_63917> ;
                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Fetal structure, which is a developmental form of a vertebrate animal at any given time point from 8 weeks of gestation to birth (or hatching). Examples: There is only one fetus."@en ,
                                                                                         "TO DO"@pt ;
                                            <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
@@ -727,7 +525,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/FMA_69068
 <http://purl.obolibrary.org/obo/FMA_69068> rdf:type owl:Class ;
-                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/FMA_63917> ;
                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "fma"^^xsd:string ;
                                            <http://www.geneontology.org/formats/oboInOwl#id> "FMA:69068"^^xsd:string ;
                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/fma.owl> ;
@@ -736,8 +533,7 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/FMA_7160
 <http://purl.obolibrary.org/obo/FMA_7160> rdf:type owl:Class ;
-                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ,
-                                                          [ rdf:type owl:Restriction ;
+                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                             owl:onProperty <http://purl.obolibrary.org/obo/fma#regional_part_of> ;
                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_20394>
                                                           ] ;
@@ -799,7 +595,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/GO_0008150
 <http://purl.obolibrary.org/obo/GO_0008150> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end."@en ;
                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/go.owl> ;
                                             <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "GO:0000004"^^xsd:string ,
@@ -946,6 +741,21 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/HP_0000118
 <http://purl.obolibrary.org/obo/HP_0000118> rdf:type owl:Class ;
+                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                  owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000019>
+                                                                                                            [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002314> ;
+                                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_256135>
+                                                                                                            ]
+                                                                                                            [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002573> ;
+                                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/PATO_0000460>
+                                                                                                            ]
+                                                                                                          ) ;
+                                                                                       rdf:type owl:Class
+                                                                                     ]
+                                                                ] ;
                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A phenotypic abnormality."@en ;
                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Organ abnormality"^^xsd:string ;
@@ -997,9 +807,29 @@ OntONeo development prioritizes the reuse of classes and entities from FMA ontol
                                             rdfs:label "Abnormal genital system morphology"^^xsd:string .
 
 
+###  http://purl.obolibrary.org/obo/IAO_0020000
+<http://purl.obolibrary.org/obo/IAO_0020000> rdf:type owl:Class ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A proper name is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity. "@en ,
+                                                                                          "Uma entidade de conteúdo de informação que é o resultado de um processo de identificação e é usada para se referir a uma instância de entidade compartilhada por um grupo de pessoas para se referir a essa entidade individual."@pt ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Mathias Brochhausen"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/omiabis.owl> ;
+                                             <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "nome próprio"@pt ,
+                                                        "proper name"@en .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0020015
 <http://purl.obolibrary.org/obo/IAO_0020015> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
+                                             owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/IAO_0020000>
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/IAO_0020012> ;
+                                                                                          owl:allValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ] ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0020000> ,
                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                                                                       owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020016>
@@ -1135,6 +965,32 @@ OntONeo development prioritizes the reuse of classes and entities from FMA ontol
                                             rdfs:label "reproductive system phenotype"^^xsd:string .
 
 
+###  http://purl.obolibrary.org/obo/NCBITaxon_9606
+<http://purl.obolibrary.org/obo/NCBITaxon_9606> rdf:type owl:Class ;
+                                                rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/IAO_0020018> ;
+                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020015>
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://semanticscience.org/resource/SIO_001242> ;
+                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_20394>
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000111> "Homo sapiens"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "TO DO"@pt ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000118> "human"^^xsd:string ,
+                                                                                             "human being"^^xsd:string ,
+                                                                                             "humano, ser humano"@pt ,
+                                                                                             "man"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
+                                                <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                                rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> ;
+                                                rdfs:label "Homo sapiens"@en ,
+                                                           "Homo sapiens"@pt .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0000460
 <http://purl.obolibrary.org/obo/PATO_0000460> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
@@ -1222,18 +1078,7 @@ OntONeo development prioritizes the reuse of classes and entities from FMA ontol
 
 ###  http://purl.obolibrary.org/obo/ontoneo/ONTONEO_00000197
 <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_00000197> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ,
-                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                   owl:onProperty <http://purl.obolibrary.org/obo/IAO_0020018> ;
-                                                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020015>
-                                                                                                 ]
-                                                                                                 [ rdf:type owl:Restriction ;
-                                                                                                   owl:onProperty <http://semanticscience.org/resource/SIO_001242> ;
-                                                                                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/FMA_20394>
-                                                                                                 ]
-                                                                                               ) ;
-                                                                            rdf:type owl:Class
-                                                                          ] ,
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_9606> ,
                                                                           [ rdf:type owl:Class ;
                                                                             owl:unionOf ( <http://purl.obolibrary.org/obo/FMA_63919>
                                                                                           [ rdf:type owl:Restriction ;

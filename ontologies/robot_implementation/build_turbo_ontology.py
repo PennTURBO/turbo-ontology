@@ -136,7 +136,7 @@ for i in range(0, num_ontologies):
         '--individuals',
         'include',
         '--method',
-        'BOT',
+        'STAR',
         '--force',
         'true',
         '--verbose',
@@ -184,6 +184,24 @@ robot_call = subprocess.run(extracts_merge_interleaved,
                             stdout=subprocess.PIPE, text=True,
                             check=True)
 print(robot_call.stdout)
+
+####
+
+pdro_merged_file = "pdro-merged.extract.ttl"
+pdro_merged_file_repaired = "pdro-merged-repaired.extract.ttl"
+pdro_merged_original_path = os.path.join(EXTRACTION_OUPUT_PATH,pdro_merged_file)
+pdro_merged_repaired_path = os.path.join(EXTRACTION_OUPUT_PATH,"repaired",pdro_merged_file_repaired)
+
+pdro_remove_survey_execution = [
+    ROBOT_PATH,
+    'remove',
+    '--input',
+    pdro_merged_original_path,
+    '--term',
+    'http://purl.obolibrary.org/obo/OMIABIS_0001035',
+    '--output',
+    pdro_merged_repaired_path,
+    ]
 
 ####
 
