@@ -92,11 +92,6 @@
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
 
-###  http://purl.obolibrary.org/obo/IAO_0100001
-<http://purl.obolibrary.org/obo/IAO_0100001> rdf:type owl:AnnotationProperty ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0001900
 <http://purl.obolibrary.org/obo/RO_0001900> rdf:type owl:AnnotationProperty ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> .
@@ -173,10 +168,6 @@ rdfs:label rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema.owl> .
 rdfs:seeAlso rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema.owl> .
 
 
-###  http://www.w3.org/2002/07/owl#deprecated
-owl:deprecated rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
-
-
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
 <http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:AnnotationProperty ;
                                                  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core.owl> .
@@ -195,10 +186,6 @@ owl:deprecated rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
 rdf:PlainLiteral rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns.owl> .
 
 
-###  http://www.w3.org/2001/XMLSchema#boolean
-xsd:boolean rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
-
-
 ###  http://www.w3.org/2001/XMLSchema#string
 xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
@@ -209,7 +196,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 <http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                              rdf:type owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "is part of"@en ;
@@ -233,9 +219,8 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000051
-<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
-                                             rdf:type owl:TransitiveProperty ;
+<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "has part"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "my body has part my brain (continuant parthood, two material entities)"@en ,
                                                                                           "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)"@en ,
@@ -260,6 +245,8 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002086> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000063> ;
                                              rdf:type owl:TransitiveProperty ;
+                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
+                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                              owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
                                                                       <http://purl.obolibrary.org/obo/BFO_0000062>
                                                                     ) ;
@@ -281,6 +268,8 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 <http://purl.obolibrary.org/obo/BFO_0000063> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002222> ;
                                              rdf:type owl:TransitiveProperty ;
+                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
+                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                              owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
                                                                       <http://purl.obolibrary.org/obo/BFO_0000063>
                                                                     ) ;
@@ -294,6 +283,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 ###  http://purl.obolibrary.org/obo/BFO_0000066
 <http://purl.obolibrary.org/obo/BFO_0000066> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000067> ;
+                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                              owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
                                                                       <http://purl.obolibrary.org/obo/BFO_0000066>
                                                                     ) ,
@@ -322,7 +312,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0000052
 <http://purl.obolibrary.org/obo/RO_0000052> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002314> ;
                                             owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000053> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "inheres in"@en ;
                                             <http://purl.obolibrary.org/obo/IAO_0000112> "this fragility inheres in this vase"@en ,
@@ -357,6 +346,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 <http://purl.obolibrary.org/obo/RO_0000056> rdf:type owl:ObjectProperty ;
                                             owl:inverseOf <http://purl.obolibrary.org/obo/RO_0000057> ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000002> ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000111> "participates in"@en ;
                                             <http://purl.obolibrary.org/obo/IAO_0000112> "this blood clot participates in this blood coagulation"@en ,
                                                                                          "this input material (or this output material) participates in this process"@en ,
@@ -370,6 +360,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0000057
 <http://purl.obolibrary.org/obo/RO_0000057> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                             owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000051>
                                                                      <http://purl.obolibrary.org/obo/RO_0000057>
@@ -432,7 +423,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 ###  http://purl.obolibrary.org/obo/RO_0002019
 <http://purl.obolibrary.org/obo/RO_0002019> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002233> ;
-                                            rdfs:domain <http://purl.obolibrary.org/obo/GO_0004872> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A relationship that holds between between a receptor and an chemical entity, typically a small molecule or peptide, that carries information between cells or compartments of a cell and which binds the receptor and regulates its effector function." ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "has ligand" .
@@ -512,25 +502,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             rdfs:label "immediately precedes"@en .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002131
-<http://purl.obolibrary.org/obo/RO_0002131> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002323> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/RO_0002131>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "x overlaps y if and only if there exists some z such that x has part z and z part of y" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "overlaps"@en .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002180
 <http://purl.obolibrary.org/obo/RO_0002180> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
@@ -602,8 +573,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002216
 <http://purl.obolibrary.org/obo/RO_0002216> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002500> ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002500> ;
                                             owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0002215>
                                                                      <http://purl.obolibrary.org/obo/BFO_0000050>
                                                                    ) ;
@@ -614,6 +584,8 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002222
 <http://purl.obolibrary.org/obo/RO_0002222> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000119> <https://en.wikipedia.org/wiki/Allen%27s_interval_algebra> ;
                                             rdfs:comment "A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations." ;
@@ -673,30 +645,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             rdfs:label "causally upstream of, negative effect" .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002314
-<http://purl.obolibrary.org/obo/RO_0002314> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002502> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0000052>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/RO_0002314>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000119> <http://www.ncbi.nlm.nih.gov/pubmed/20064205> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "inheres in part of"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002323
-<http://purl.obolibrary.org/obo/RO_0002323> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A mereological relationship or a topological relationship" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "mereotopologically related to"@en .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002327
 <http://purl.obolibrary.org/obo/RO_0002327> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002215> ;
@@ -709,25 +657,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                                                    ) ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "enables"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002328
-<http://purl.obolibrary.org/obo/RO_0002328> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "functionally related to"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002329
-<http://purl.obolibrary.org/obo/RO_0002329> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                     <http://purl.obolibrary.org/obo/RO_0002215>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "this relation holds between c and p when c is part of some c', and c' is capable of p." ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "part of structure that is capable of"@en .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002331
@@ -746,8 +675,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002333
 <http://purl.obolibrary.org/obo/RO_0002333> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ,
-                                                               [ owl:inverseOf <http://purl.obolibrary.org/obo/RO_0002215>
+                                            rdfs:subPropertyOf [ owl:inverseOf <http://purl.obolibrary.org/obo/RO_0002215>
                                                                ] ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of enables" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
@@ -783,8 +711,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002352
 <http://purl.obolibrary.org/obo/RO_0002352> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002328> ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of has input" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "input of"@en .
@@ -807,14 +734,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             owl:inverseOf <http://purl.obolibrary.org/obo/RO_0002412> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "immediately causally downstream of"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002410
-<http://purl.obolibrary.org/obo/RO_0002410> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002609> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "This relation groups causal relations between material entities and causal relations between processes" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "causally related to"@en .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002411
@@ -900,24 +819,10 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 ###  http://purl.obolibrary.org/obo/RO_0002431
 <http://purl.obolibrary.org/obo/RO_0002431> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002264> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002328> ,
                                                                <http://purl.obolibrary.org/obo/RO_0002500> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "involved in or involved in regulation of" .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002432
-<http://purl.obolibrary.org/obo/RO_0002432> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002328> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0002327>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000066>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "enables activity in" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "is active in" .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002434
@@ -980,6 +885,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002479
 <http://purl.obolibrary.org/obo/RO_0002479> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                             owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000051>
                                                                      <http://purl.obolibrary.org/obo/BFO_0000066>
                                                                    ) ;
@@ -1000,22 +906,15 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002501
 <http://purl.obolibrary.org/obo/RO_0002501> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
+                                            rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
+                                            rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "causal relation between processes" .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002502
-<http://purl.obolibrary.org/obo/RO_0002502> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "depends on" .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002506
 <http://purl.obolibrary.org/obo/RO_0002506> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "causal relation between material entities" .
 
@@ -1066,8 +965,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002584
 <http://purl.obolibrary.org/obo/RO_0002584> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002595> ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002595> ;
                                             owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000051>
                                                                      <http://purl.obolibrary.org/obo/RO_0002215>
                                                                    ) ;
@@ -1078,7 +976,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002595
 <http://purl.obolibrary.org/obo/RO_0002595> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
@@ -1120,19 +1017,11 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002608
 <http://purl.obolibrary.org/obo/RO_0002608> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Inverse of 'causal agent in process'" ,
                                                                                          "Inverse of 'causal agent in'" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "has causal agent" ,
                                                        "process has causal agent" .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002609
-<http://purl.obolibrary.org/obo/RO_0002609> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "related via dependence to" .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002629
@@ -1155,7 +1044,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0004023
 <http://purl.obolibrary.org/obo/RO_0004023> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "causal relationship with disease as subject" .
 
@@ -1188,17 +1076,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             <http://www.geneontology.org/formats/oboInOwl#shorthand> "disease_has_feature"^^xsd:string ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "disease has feature"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/RO_0004031
-<http://purl.obolibrary.org/obo/RO_0004031> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0002327>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Holds between an entity and an process P where the entity enables some larger compound process, and that larger process has-part P." ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "enables subfunction" .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0004032
@@ -1302,41 +1179,13 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                                       rdfs:isDefinedBy <http://linkedlifedata.com/resource/umls/id.owl> .
 
 
-###  http://purl.obolibrary.org/obo/BFO_0000001
-<http://purl.obolibrary.org/obo/BFO_0000001> rdf:type owl:Class ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000179> "entity" ;
-                                             <http://purl.obolibrary.org/obo/BFO_0000180> "Entity" ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Julius Caesar"@en ,
-                                                                                          "Verdi’s Requiem"@en ,
-                                                                                          "the Second World War"@en ,
-                                                                                          "your body mass index"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81"@en ,
-                                                                                          "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"@en ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/obi.owl> ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000600> "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"@en ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
-                                             rdfs:label "entity"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000001> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
-   owl:annotatedTarget "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000004> ;
-   rdfs:comment "per discussion with Barry Smith" ;
-   rdfs:seeAlso <http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000001> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
-   owl:annotatedTarget "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"@en ;
-   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/001-001>
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/BFO_0000002
 <http://purl.obolibrary.org/obo/BFO_0000002> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
+                                             owl:disjointWith <http://purl.obolibrary.org/obo/BFO_0000003> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ;
+                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000003>
+                                                              ] ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "continuant" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "Continuant" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts."@en ;
@@ -1419,9 +1268,82 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
  ] .
 
 
+###  http://purl.obolibrary.org/obo/BFO_0000003
+<http://purl.obolibrary.org/obo/BFO_0000003> rdf:type owl:Class ;
+                                             owl:disjointWith [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ;
+                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000002>
+                                                              ] ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000179> "occurrent" ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000180> "Occurrent" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An entity that has temporal parts and that happens, unfolds or develops through time."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: every occurrent that is not a temporal or spatiotemporal region is s-dependent on some independent continuant that is not a spatial region"@en ,
+                                                                                          "BFO 2 Reference: s-dependence obtains between every process and its participants in the sense that, as a matter of necessity, this process could not have existed unless these or those participants existed also. A process may have a succession of participants at different phases of its unfolding. Thus there may be different players on the field at different times during the course of a football game; but the process which is the entire game s-depends_on all of these players nonetheless. Some temporal parts of this process will s-depend_on on only some of the players."@en ,
+                                                                                          "Occurrent doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. An example would be the sum of a process and the process boundary of another process."@en ,
+                                                                                          "Simons uses different terminology for relations of occurrents to regions: Denote the spatio-temporal location of a given occurrent e by 'spn[e]' and call this region its span. We may say an occurrent is at its span, in any larger region, and covers any smaller region. Now suppose we have fixed a frame of reference so that we can speak not merely of spatio-temporal but also of spatial regions (places) and temporal regions (times). The spread of an occurrent, (relative to a frame of reference) is the space it exactly occupies, and its spell is likewise the time it exactly occupies. We write 'spr[e]' and `spl[e]' respectively for the spread and spell of e, omitting mention of the frame." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000600> "An occurrent is an entity that unfolds itself in time or it is the instantaneous boundary of such an entity (for example a beginning or an ending) or it is a temporal or spatiotemporal region which such an entity occupies_temporal_region or occupies_spatiotemporal_region. (axiom label in BFO2 Reference: [077-002])"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000601> "Every occurrent occupies_spatiotemporal_region some spatiotemporal region. (axiom label in BFO2 Reference: [108-001])"@en ,
+                                                                                          "b is an occurrent entity iff b is an entity that has temporal parts. (axiom label in BFO2 Reference: [079-001])"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000602> "(forall (x) (if (Occurrent x) (exists (r) (and (SpatioTemporalRegion r) (occupiesSpatioTemporalRegion x r))))) // axiom label in BFO2 CLIF: [108-001] " ,
+                                                                                          "(forall (x) (iff (Occurrent x) (and (Entity x) (exists (y) (temporalPartOf y x))))) // axiom label in BFO2 CLIF: [079-001] " ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "occurrent"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
+   owl:annotatedTarget "An occurrent is an entity that unfolds itself in time or it is the instantaneous boundary of such an entity (for example a beginning or an ending) or it is a temporal or spatiotemporal region which such an entity occupies_temporal_region or occupies_spatiotemporal_region. (axiom label in BFO2 Reference: [077-002])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/077-002>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
+   owl:annotatedTarget "Every occurrent occupies_spatiotemporal_region some spatiotemporal region. (axiom label in BFO2 Reference: [108-001])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/108-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000601> ;
+   owl:annotatedTarget "b is an occurrent entity iff b is an entity that has temporal parts. (axiom label in BFO2 Reference: [079-001])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/079-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x) (if (Occurrent x) (exists (r) (and (SpatioTemporalRegion r) (occupiesSpatioTemporalRegion x r))))) // axiom label in BFO2 CLIF: [108-001] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/108-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000602> ;
+   owl:annotatedTarget "(forall (x) (iff (Occurrent x) (and (Entity x) (exists (y) (temporalPartOf y x))))) // axiom label in BFO2 CLIF: [079-001] " ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/079-001>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
+   owl:annotatedTarget "Occurrent doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. An example would be the sum of a process and the process boundary of another process."@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000006> ;
+   rdfs:comment "per discussion with Barry Smith"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000003> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
+   owl:annotatedTarget "Simons uses different terminology for relations of occurrents to regions: Denote the spatio-temporal location of a given occurrent e by 'spn[e]' and call this region its span. We may say an occurrent is at its span, in any larger region, and covers any smaller region. Now suppose we have fixed a frame of reference so that we can speak not merely of spatio-temporal but also of spatial regions (places) and temporal regions (times). The spread of an occurrent, (relative to a frame of reference) is the space it exactly occupies, and its spell is likewise the time it exactly occupies. We write 'spr[e]' and `spl[e]' respectively for the spread and spell of e, omitting mention of the frame." ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000012>
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/BFO_0000015
 <http://purl.obolibrary.org/obo/BFO_0000015> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                              <http://purl.obolibrary.org/obo/BFO_0000179> "process" ;
                                              <http://purl.obolibrary.org/obo/BFO_0000180> "Process" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "a process of cell-division, \\ a beating of the heart"@en ,
@@ -1586,14 +1508,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "molecular function"^^xsd:string ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/go.owl> ;
                                             rdfs:label "molecular_function"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/GO_0004872
-<http://purl.obolibrary.org/obo/GO_0004872> rdf:type owl:Class ;
-                                            <http://purl.obolibrary.org/obo/IAO_0100001> <http://purl.obolibrary.org/obo/GO_0038023> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/go.owl> ;
-                                            rdfs:label "receptor activity" ;
-                                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.obolibrary.org/obo/GO_0005575

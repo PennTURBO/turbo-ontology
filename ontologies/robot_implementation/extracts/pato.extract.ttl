@@ -253,7 +253,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 <http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                              rdf:type owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "is part of"@en ;
@@ -288,9 +287,8 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000051
-<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
-                                             rdf:type owl:TransitiveProperty ;
+<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "has part"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "my body has part my brain (continuant parthood, two material entities)"@en ,
                                                                                           "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)"@en ,
@@ -589,39 +587,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             rdfs:label "immediately precedes"@en .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002131
-<http://purl.obolibrary.org/obo/RO_0002131> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002323> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/RO_0002131>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/RO_0002131>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "x overlaps y if and only if there exists some z such that x has part z and z part of y" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000424> "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" ;
-                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
-                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "overlaps"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002131> ;
-   owl:annotatedProperty owl:propertyChainAxiom ;
-   owl:annotatedTarget ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                         <http://purl.obolibrary.org/obo/BFO_0000050>
-                       ) ;
-   <http://purl.obolibrary.org/obo/RO_0002582> "true"^^xsd:boolean
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002180
 <http://purl.obolibrary.org/obo/RO_0002180> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
@@ -713,8 +678,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002216
 <http://purl.obolibrary.org/obo/RO_0002216> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002500> ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002500> ;
                                             owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0002215>
                                                                      <http://purl.obolibrary.org/obo/BFO_0000050>
                                                                    ) ;
@@ -815,16 +779,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             rdfs:label "causally upstream of, negative effect" .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002323
-<http://purl.obolibrary.org/obo/RO_0002323> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A mereological relationship or a topological relationship" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" ;
-                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "mereotopologically related to"@en .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002327
 <http://purl.obolibrary.org/obo/RO_0002327> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002215> ;
@@ -848,37 +802,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             rdfs:label "enables"@en .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002328
-<http://purl.obolibrary.org/obo/RO_0002328> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000232> "This is a grouping relation that collects relations used for the purpose of connecting structure and function" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "functionally related to"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002329
-<http://purl.obolibrary.org/obo/RO_0002329> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                     <http://purl.obolibrary.org/obo/RO_0002215>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "this relation holds between c and p when c is part of some c', and c' is capable of p." ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000118> "false"^^xsd:boolean ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "part of structure that is capable of"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002329> ;
-   owl:annotatedProperty owl:propertyChainAxiom ;
-   owl:annotatedTarget ( <http://purl.obolibrary.org/obo/BFO_0000050>
-                         <http://purl.obolibrary.org/obo/RO_0002215>
-                       ) ;
-   <http://purl.obolibrary.org/obo/RO_0002581> "true"^^xsd:boolean
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002331
 <http://purl.obolibrary.org/obo/RO_0002331> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ,
@@ -900,8 +823,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002333
 <http://purl.obolibrary.org/obo/RO_0002333> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000057> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002328> ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000057> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of enables" ;
                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
@@ -944,8 +866,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 
 ###  http://purl.obolibrary.org/obo/RO_0002352
 <http://purl.obolibrary.org/obo/RO_0002352> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002328> ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of has input" ;
                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/RO_0002259> ,
@@ -975,31 +896,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "immediately causally downstream of"@en .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002410
-<http://purl.obolibrary.org/obo/RO_0002410> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000428> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "This relation groups causal relations between material entities and causal relations between processes" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000116> """This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.
-
-To define causal relations in an activity-flow type network, we make use of 3 primitives:
-
- * Temporal: how do the intervals of the two occurrents relate? 
- * Is the causal relation regulatory?
- * Is the influence positive or negative
-
-The first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.
-
-For the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.
-
-For the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.
-
-Each of these 3 primitives can be composed to yield a cross-product of different relation types.""" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "causally related to"@en .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002411
@@ -1103,7 +999,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 ###  http://purl.obolibrary.org/obo/RO_0002431
 <http://purl.obolibrary.org/obo/RO_0002431> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002264> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002328> ,
                                                                <http://purl.obolibrary.org/obo/RO_0002500> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" ;
                                             <http://purl.obolibrary.org/obo/IAO_0000116> "OWL does not allow defining object properties via a Union" ;
@@ -1111,40 +1006,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                                             <http://purl.obolibrary.org/obo/IAO_0000118> "involved in or reguates" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "involved in or involved in regulation of" .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002432
-<http://purl.obolibrary.org/obo/RO_0002432> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002328> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0002327>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000066>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000112> "A protein that enables activity in a cytosol." ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000118> "executes activity in" ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "enables activity in" ;
-                                            rdfs:comment "" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "is active in" .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002432> ;
-   owl:annotatedProperty owl:propertyChainAxiom ;
-   owl:annotatedTarget ( <http://purl.obolibrary.org/obo/RO_0002327>
-                         <http://purl.obolibrary.org/obo/BFO_0000066>
-                       ) ;
-   <http://purl.obolibrary.org/obo/RO_0002581> "true"^^xsd:boolean
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002432> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:cjm" ,
-                                                            "GOC:dos"^^xsd:string
- ] .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002434
@@ -1247,14 +1108,6 @@ For example, A and B may be gene products and binding of B by A positively regul
                                             rdfs:label "directly positively regulates activity of" .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002464
-<http://purl.obolibrary.org/obo/RO_0002464> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000232> "This property or its subproperties is not to be used directly. These properties exist as helper properties that are used to support OWL reasoning." ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "helper property (not for use in curation)" .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002479
 <http://purl.obolibrary.org/obo/RO_0002479> rdf:type owl:ObjectProperty ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
@@ -1277,14 +1130,6 @@ For example, A and B may be gene products and binding of B by A positively regul
  ] .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002481
-<http://purl.obolibrary.org/obo/RO_0002481> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002564> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "is kinase activity" .
-
-
 ###  http://purl.obolibrary.org/obo/RO_0002500
 <http://purl.obolibrary.org/obo/RO_0002500> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002595> ;
@@ -1297,7 +1142,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
 ###  http://purl.obolibrary.org/obo/RO_0002501
 <http://purl.obolibrary.org/obo/RO_0002501> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." ;
@@ -1310,7 +1154,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
 ###  http://purl.obolibrary.org/obo/RO_0002506
 <http://purl.obolibrary.org/obo/RO_0002506> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000002> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000116> "The intent is that the process branch of the causal property hierarchy is primary (causal relations hold between occurrents/processes), and that the material branch is defined in terms of the process branch" ;
@@ -1330,24 +1173,6 @@ For example, A and B may be gene products and binding of B by A positively regul
                                             <http://purl.obolibrary.org/obo/IAO_0000589> "causally influenced by (entity-centric)" ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "causally influenced by" .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002563
-<http://purl.obolibrary.org/obo/RO_0002563> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002464> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "interaction relation helper property" ;
-                                            rdfs:seeAlso <http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29> ;
-                                            <http://xmlns.com/foaf/0.1/page> "https://github.com/oborel/obo-relations/wiki/InteractionRelations"^^xsd:anyURI .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002564
-<http://purl.obolibrary.org/obo/RO_0002564> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002563> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "molecular interaction relation helper property" .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0002566
@@ -1387,8 +1212,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
 ###  http://purl.obolibrary.org/obo/RO_0002584
 <http://purl.obolibrary.org/obo/RO_0002584> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ,
-                                                               <http://purl.obolibrary.org/obo/RO_0002595> ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002595> ;
                                             owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000051>
                                                                      <http://purl.obolibrary.org/obo/RO_0002215>
                                                                    ) ;
@@ -1401,7 +1225,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
 ###  http://purl.obolibrary.org/obo/RO_0002595
 <http://purl.obolibrary.org/obo/RO_0002595> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000040> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." ;
@@ -1452,7 +1275,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
 ###  http://purl.obolibrary.org/obo/RO_0002608
 <http://purl.obolibrary.org/obo/RO_0002608> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002410> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Inverse of 'causal agent in process'" ;
                                             <http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/ro/docs/causal-relations> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
@@ -1481,19 +1303,6 @@ For example, A and B may be gene products and binding of B by A positively regul
                                             <http://purl.obolibrary.org/obo/RO_0004050> <http://purl.obolibrary.org/obo/RO_0002578> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
                                             rdfs:label "directly negatively regulates" .
-
-
-###  http://purl.obolibrary.org/obo/RO_0004031
-<http://purl.obolibrary.org/obo/RO_0004031> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002328> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0002327>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Holds between an entity and an process P where the entity enables some larger compound process, and that larger process has-part P." ;
-                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "cjm" ;
-                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2018-01-25T23:20:13Z"^^xsd:dateTime ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "enables subfunction" .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0004032
@@ -1688,11 +1497,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
 ###  http://purl.obolibrary.org/obo/GO_0016301
 <http://purl.obolibrary.org/obo/GO_0016301> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002481> ;
-                                                              owl:hasSelf "true"^^xsd:boolean
-                                                            ] ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/go.owl> ;
                                             rdfs:label "kinase activity" .
 

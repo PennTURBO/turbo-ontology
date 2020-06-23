@@ -57,18 +57,8 @@
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
 
-###  http://purl.obolibrary.org/obo/IAO_0000232
-<http://purl.obolibrary.org/obo/IAO_0000232> rdf:type owl:AnnotationProperty ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000412
 <http://purl.obolibrary.org/obo/IAO_0000412> rdf:type owl:AnnotationProperty ;
-                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000424
-<http://purl.obolibrary.org/obo/IAO_0000424> rdf:type owl:AnnotationProperty ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
 
@@ -85,13 +75,6 @@
 ###  http://purl.obolibrary.org/obo/IAO_0010000
 <http://purl.obolibrary.org/obo/IAO_0010000> rdf:type owl:AnnotationProperty ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002582
-<http://purl.obolibrary.org/obo/RO_0002582> rdf:type owl:AnnotationProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "If R <- P o Q is a defining property chain axiom, then (1) R -> P o Q holds and (2) Q is either reflexive or locally reflexive. A corollary of this is that P SubPropertyOf R." ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "is a defining property chain axiom where second argument is reflexive" .
 
 
 ###  http://purl.org/dc/elements/1.1/source
@@ -112,11 +95,6 @@
 ###  http://www.geneontology.org/formats/oboInOwl#id
 <http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty ;
                                                   rdfs:isDefinedBy <http://www.geneontology.org/formats/oboinowl.owl> .
-
-
-###  http://www.geneontology.org/formats/oboInOwl#inSubset
-<http://www.geneontology.org/formats/oboInOwl#inSubset> rdf:type owl:AnnotationProperty ;
-                                                        rdfs:isDefinedBy <http://www.geneontology.org/formats/oboinowl.owl> .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#shorthand
@@ -148,10 +126,6 @@ rdfs:seeAlso rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema.owl> .
 rdf:PlainLiteral rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns.owl> .
 
 
-###  http://www.w3.org/2001/XMLSchema#boolean
-xsd:boolean rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
-
-
 ###  http://www.w3.org/2001/XMLSchema#string
 xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
@@ -162,7 +136,6 @@ xsd:string rdfs:isDefinedBy <http://www.w3.org/2001/xmlschema.owl> .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000050
 <http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
                                              rdf:type owl:TransitiveProperty ;
                                              rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000001> ;
@@ -197,7 +170,6 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
 
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 <http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ;
-                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "has part"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000112> "my body has part my brain (continuant parthood, two material entities)"@en ,
                                                                                           "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)"@en ,
@@ -311,54 +283,6 @@ Some currently missing phenomena that should be considered \"about\" are predica
                                             rdfs:label "has participant"@en .
 
 
-###  http://purl.obolibrary.org/obo/RO_0002131
-<http://purl.obolibrary.org/obo/RO_0002131> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002323> ;
-                                            owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/BFO_0000050>
-                                                                   ) ,
-                                                                   ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                                                                     <http://purl.obolibrary.org/obo/RO_0002131>
-                                                                   ) ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> """
-x overlaps y if and only if there exists some z such that x has part z and z part of y
-""" ,
-                                                                                         "x overlaps y if and only if there exists some z such that x has part z and z part of y" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> ,
-                                                                                         <http://purl.obolibrary.org/obo/hp.owl> ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000424> "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" ;
-                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco> ,
-                                                                                                    <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "overlaps"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002131> ;
-   owl:annotatedProperty owl:propertyChainAxiom ;
-   owl:annotatedTarget ( <http://purl.obolibrary.org/obo/BFO_0000051>
-                         <http://purl.obolibrary.org/obo/BFO_0000050>
-                       ) ;
-   <http://purl.obolibrary.org/obo/RO_0002582> "true"^^xsd:boolean
- ] .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002323
-<http://purl.obolibrary.org/obo/RO_0002323> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> """
-A mereological relationship or a topological relationship
-""" ,
-                                                                                         "A mereological relationship or a topological relationship" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> ,
-                                                                                         <http://purl.obolibrary.org/obo/hp.owl> ;
-                                            rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ro.owl> ;
-                                            rdfs:label "mereotopologically related to"@en .
-
-
 ###  http://purl.org/obo/owl/OBO_REL#exists_during
 <http://purl.org/obo/owl/OBO_REL#exists_during> rdf:type owl:ObjectProperty ;
                                                 rdfs:isDefinedBy <http://purl.org/obo/owl/obo_rel.owl> .
@@ -369,15 +293,10 @@ A mereological relationship or a topological relationship
 #################################################################
 
 ###  http://purl.obolibrary.org/obo/IAO_0000004
-<http://purl.obolibrary.org/obo/IAO_0000004> rdf:type owl:DatatypeProperty ;
-                                             rdfs:subPropertyOf owl:topDataProperty ;
-                                             rdf:type owl:FunctionalProperty ;
+<http://purl.obolibrary.org/obo/IAO_0000004> rdf:type owl:DatatypeProperty ,
+                                                      owl:FunctionalProperty ;
                                              rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
                                              rdfs:label "has measurement value"@en .
-
-
-###  http://www.w3.org/2002/07/owl#topDataProperty
-owl:topDataProperty rdfs:isDefinedBy <http://www.w3.org/2002/07/owl.owl> .
 
 
 #################################################################
@@ -631,6 +550,9 @@ owl:Thing rdf:type owl:Class ;
 #################################################################
 #    Annotations
 #################################################################
+
+<http://purl.obolibrary.org/obo/IAO_0000232> rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
 
 <http://purl.obolibrary.org/obo/IAO_0000601> rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
 
