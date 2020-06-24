@@ -6,30 +6,45 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.ebi.ac.uk/efo/efo.owl> .
 
-<http://www.ebi.ac.uk/efo/efo.owl> rdf:type owl:Ontology .
+<http://www.ebi.ac.uk/efo/efo.owl> rdf:type owl:Ontology ;
+                                    owl:versionIRI <http://www.ebi.ac.uk/efo/releases/v3.19.0/efo.owl> .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
+###  http://purl.obolibrary.org/obo/IAO_0000112
+<http://purl.obolibrary.org/obo/IAO_0000112> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "example of usage"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000114
+<http://purl.obolibrary.org/obo/IAO_0000114> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "has curation status"^^xsd:string .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0000115
-<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "definition"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000117
-<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "term editor"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0100001
-<http://purl.obolibrary.org/obo/IAO_0100001> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/IAO_0100001> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> "IAO_0000125"^^xsd:string ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> """Use on obsolete terms, relating the term to another term that can be used as a substitute
+
+Add as annotation triples in the granting ontology"""^^xsd:string ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "Person:Alan Ruttenberg"^^xsd:string ;
+                                             rdfs:label "term replaced by"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/mondo#closeMatch
-<http://purl.obolibrary.org/obo/mondo#closeMatch> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.obolibrary.org/obo/mondo#exactMatch
-<http://purl.obolibrary.org/obo/mondo#exactMatch> rdf:type owl:AnnotationProperty .
+###  http://www.ebi.ac.uk/efo/ArrayExpress_label
+<http://www.ebi.ac.uk/efo/ArrayExpress_label> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_URI
@@ -41,7 +56,9 @@
 
 
 ###  http://www.ebi.ac.uk/efo/definition_citation
-<http://www.ebi.ac.uk/efo/definition_citation> rdf:type owl:AnnotationProperty .
+<http://www.ebi.ac.uk/efo/definition_citation> rdf:type owl:AnnotationProperty ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A definition citation is a document, ontology class, person or organization from which the definition of the class is derived. It is used in the same sense as a citation in literature, in that the definition may have been derived from these sources or that this definition is related to these source."^^xsd:string ;
+                                               rdfs:label "definition_citation"^^xsd:string .
 
 
 ###  http://www.ebi.ac.uk/efo/gwas_trait
@@ -60,264 +77,97 @@
 <http://www.ebi.ac.uk/efo/reason_for_obsolescence> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.ebi.ac.uk/efo/source_definition
+<http://www.ebi.ac.uk/efo/source_definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#created_by
+<http://www.geneontology.org/formats/oboInOwl#created_by> rdf:type owl:AnnotationProperty ;
+                                                          rdfs:label "created_by"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasAlternativeId
+<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:label "has_alternative_id"^^xsd:string .
+
+
 ###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
-<http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty ;
+                                                         rdfs:label "database_cross_reference"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
-<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty ;
+                                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An alternative label for a given entity such as a commonly used abbreviation or synonym. "^^xsd:string ;
+                                                               rdfs:label "alternative_term"^^xsd:string ,
+                                                                          "has_exact_synonym"^^xsd:string .
 
 
-###  http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
-<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
 
 
-###  http://www.geneontology.org/formats/oboInOwl#hasSynonymType
-<http://www.geneontology.org/formats/oboInOwl#hasSynonymType> rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
 
 
-###  http://www.geneontology.org/formats/oboInOwl#id
-<http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.geneontology.org/formats/oboInOwl#source
-<http://www.geneontology.org/formats/oboInOwl#source> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://purl.obolibrary.org/obo/HANCESTRO_0301
-<http://purl.obolibrary.org/obo/HANCESTRO_0301> rdf:type owl:ObjectProperty ;
-                                                rdfs:label "hasAncestryStatus"@en .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000136
-<http://purl.obolibrary.org/obo/IAO_0000136> rdf:type owl:ObjectProperty ;
-                                             owl:inverseOf <http://www.ebi.ac.uk/efo/EFO_0006351> ;
-                                             rdfs:label "is_about"^^xsd:string .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0006351
-<http://www.ebi.ac.uk/efo/EFO_0006351> rdf:type owl:ObjectProperty ;
-                                       rdfs:label "has_about_it"^^xsd:string .
+###  http://www.w3.org/2002/07/owl#deprecated
+owl:deprecated rdf:type owl:AnnotationProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://purl.obolibrary.org/obo/HANCESTRO_0290
-<http://purl.obolibrary.org/obo/HANCESTRO_0290> rdf:type owl:Class ;
-                                                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty <http://purl.obolibrary.org/obo/HANCESTRO_0301> ;
-                                                                      owl:allValuesFrom <http://purl.obolibrary.org/obo/HANCESTRO_0305>
-                                                                    ] ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000181> ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "a population with increased genetic homogeneity and reduced genetic variation due to cultural or geographic isolation" ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "founder population" ,
-                                                                                                               "population isolate" ;
-                                                rdfs:label "genetically isolated population"@en .
+###  http://purl.obolibrary.org/obo/IAO_0000030
+<http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000001> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An information entity is an entity that represents information about some other entity.  For example, a measurement, a clustered data set."^^xsd:string ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ;
+                                             <http://www.ebi.ac.uk/efo/ArrayExpress_label> "information"^^xsd:string ;
+                                             <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0001435"^^xsd:string ;
+                                             <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:string ;
+                                             <http://www.ebi.ac.uk/efo/source_definition> "an information content entity is an entity that is generically dependent on some artifact and stands in relation of aboutness to some entity"^^xsd:string ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "information content entity"^^xsd:string ;
+                                             rdfs:label "information entity"^^xsd:string .
 
 
-###  http://purl.obolibrary.org/obo/HANCESTRO_0305
-<http://purl.obolibrary.org/obo/HANCESTRO_0305> rdf:type owl:Class ;
-                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Ancestry that is the result of cultural or geographic isolation. Generally characterised by increased genetic homogeneity and reduced genetic variation" ;
-                                                rdfs:label "genetically isolated ancestry"@en .
-
-
-###  http://purl.obolibrary.org/obo/OBI_0000181
-<http://purl.obolibrary.org/obo/OBI_0000181> rdf:type owl:Class ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A population is a group of material entities consisting of individuals which share a particular characteristic such as inhabiting a particular region or area or ability to interbreed."^^xsd:string ;
-                                             <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone modified from original OBI definition"^^xsd:string ,
-                                                                                          "Tomasz Adamusiak modified from original OBI definition"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/EFO_URI> "http://www.ebi.ac.uk/efo/EFO_0000664"^^xsd:string ;
-                                             <http://www.ebi.ac.uk/efo/branch_class> "true"^^xsd:string ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D011153"^^xsd:string ,
-                                                                                                      "NIFSTD:sao2254405550"^^xsd:string ,
-                                                                                                      "SNOMEDCT:385436007"^^xsd:string ;
-                                             rdfs:label "population"^^xsd:string .
-
-
-###  http://www.ebi.ac.uk/efo/EFO_0001073
-<http://www.ebi.ac.uk/efo/EFO_0001073> rdf:type owl:Class ;
-                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                         owl:onProperty <http://www.ebi.ac.uk/efo/EFO_0006351> ;
-                                                         owl:someValuesFrom <http://www.ebi.ac.uk/efo/EFO_0004340>
-                                                       ] ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A disorder involving an excessive amount of body fat."^^xsd:string ,
-                                                                                    "A status with BODY WEIGHT that is grossly above the acceptable or desirable weight, usually due to accumulation of excess FATS in the body. The standards may vary with age, sex, genetic or cultural background. In the BODY MASS INDEX, a BMI greater than 30.0 kg/m2 is considered obese, and a BMI greater than 40.0 kg/m2 is considered morbidly obese (MORBID OBESITY)."^^xsd:string ,
-                                                                                    "An eating-related disorder in which excess body fat has accumulated to such an extent that health may be negatively affected. It is commonly defined as a body mass index (weight divided by height squared) of 30 kg/m2 or higher."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ,
+###  http://www.ebi.ac.uk/efo/EFO_0000001
+<http://www.ebi.ac.uk/efo/EFO_0000001> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "An experimental factor in Array Express which are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This upper level class is really used to give a root class from which applications can rely on and not be tied to upper ontology classses which do change."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Helen Parkinson"^^xsd:string ,
+                                                                                    "James Malone"^^xsd:string ,
+                                                                                    "Jie Zheng"^^xsd:string ,
                                                                                     "Tomasz Adamusiak"^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/mondo#closeMatch> <http://identifiers.org/mesh/D009765> ,
-                                                                                         <http://identifiers.org/snomedct/154776002> ,
-                                                                                         <http://identifiers.org/snomedct/190963004> ,
-                                                                                         <http://identifiers.org/snomedct/414915002> ,
-                                                                                         <http://identifiers.org/snomedct/5476005> ,
-                                                                                         <http://linkedlifedata.com/resource/umls/id/C0039870> ;
-                                       <http://purl.obolibrary.org/obo/mondo#exactMatch> <http://identifiers.org/snomedct/414916001> ,
-                                                                                         <http://linkedlifedata.com/resource/umls/id/C0028754> ,
-                                                                                         <http://purl.obolibrary.org/obo/DOID_9970> ,
-                                                                                         <http://purl.obolibrary.org/obo/NCIT_C3283> ;
-                                       <http://www.ebi.ac.uk/efo/gwas_trait> "true"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "COHD:433736"^^xsd:string ,
-                                                                                                "DOID:9970"^^xsd:string ,
-                                                                                                "HP:0001513"^^xsd:string ,
-                                                                                                "ICD10:E66"^^xsd:string ,
-                                                                                                "ICD10:E66.9"^^xsd:string ,
-                                                                                                "ICD9:278.0"^^xsd:string ,
-                                                                                                "ICD9:278.00"^^xsd:string ,
-                                                                                                "MONDO:0011122"^^xsd:string ,
-                                                                                                "MSH:D009765"^^xsd:string ,
-                                                                                                "NCIT:C3283"^^xsd:string ,
-                                                                                                "NCIt:C3283"^^xsd:string ,
-                                                                                                "NIFSTD:nlx_dys_20090302"^^xsd:string ,
-                                                                                                "OMIM:601665"^^xsd:string ,
-                                                                                                "SCTID:414916001"^^xsd:string ,
-                                                                                                "SNOMEDCT:414916001"^^xsd:string ,
-                                                                                                "UMLS:C0028754"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Adiposis"^^xsd:string ,
-                                                                                                      "Adiposity"^^xsd:string ,
-                                                                                                      "Obese"^^xsd:string ,
-                                                                                                      "Obese (finding)"^^xsd:string ,
-                                                                                                      "Obesity (disorder)"^^xsd:string ,
-                                                                                                      "Obesity NOS"^^xsd:string ,
-                                                                                                      "Obesity [Ambiguous]"^^xsd:string ,
-                                                                                                      "Obesity, unspecified"^^xsd:string ,
-                                                                                                      "Overweight and obesity"^^xsd:string ,
-                                                                                                      "obesity"^^xsd:string ,
-                                                                                                      "obesity disease"^^xsd:string ,
-                                                                                                      "obesity disorder"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "leanness"^^xsd:string ;
-                                       <http://www.geneontology.org/formats/oboInOwl#id> "EFO:0001073"^^xsd:string ;
-                                       rdfs:comment "Obesity is a complex disease that may involve multiple environmental and genetic causes. See the subclass monogenic disease for genetic subtypes"^^xsd:string ;
-                                       rdfs:label "obesity"^^xsd:string .
+                                       <http://www.ebi.ac.uk/efo/organizational_class> "true"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#created_by> "Helen Parkinson"^^xsd:string ,
+                                                                                                 "James Malone"^^xsd:string ,
+                                                                                                 "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MO:10"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "ExperimentalFactor"^^xsd:string ;
+                                       rdfs:comment "Concept naming convention is lower case natural naming with spaces, when necessary captials should be used, for example disease factor, HIV, breast carcinoma, Ewing's sarcoma"^^xsd:string ;
+                                       rdfs:label "experimental factor"^^xsd:string .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "NCIT:C3283"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:9970"^^xsd:string ,
-                                                         "EFO:0001073"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:kboom-pr-1.00/0.83/11.72"^^xsd:string ,
-                                                         "MONDO:otherHierarchy"^^xsd:string
- ] .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "NIFSTD:nlx_dys_20090302"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "EFO:0001073"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "SCTID:414916001"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:9970"^^xsd:string ,
-                                                         "EFO:0001073"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "MONDO:kboom-pr-1.00/0.85/15.45"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "UMLS:C0028754"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:9970"^^xsd:string ,
-                                                         "MEDGEN:kboom-pr98-c99"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "NCBI:mim2gene_medline"^^xsd:string ,
-                                                         "OMIM:601665"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "obesity"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:ambiguous"^^xsd:string ,
-                                                            "OMIM:601665"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "obesity disorder"^^xsd:string ;
-   rdfs:comment "preferred label from MONDO"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
-   owl:annotatedTarget "leanness"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "OMIM:601665"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/mondo#EXCLUDE>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "A disorder involving an excessive amount of body fat."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://www.ama-assn.org/sites/default/files/media-browser/public/about-ama/councils/Council%20Reports/council-on-science-public-health/a13csaph3.pdf"^^xsd:string ,
-                                                            "https://www.mayoclinic.org/diseases-conditions/obesity/symptoms-causes/syc-20375742"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "COHD:433736"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "DOID:9970"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "EFO:0001073"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "HP:0001513"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:otherHierarchy"^^xsd:string ,
-                                                         "ontobio"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD10:E66.9"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:9970"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD9:278.0"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "EFO:0001073"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "i2s"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ebi.ac.uk/efo/EFO_0001073> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "ICD9:278.00"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "DOID:9970"^^xsd:string ,
-                                                         "EFO:0001073"^^xsd:string ,
-                                                         "MONDO:equivalentTo"^^xsd:string ,
-                                                         "i2s"^^xsd:string
- ] .
+###  http://www.ebi.ac.uk/efo/EFO_0001444
+<http://www.ebi.ac.uk/efo/EFO_0001444> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000115> "A measurement is an information entity that is a recording of the output of a measurement such as produced by an instrument."^^xsd:string ;
+                                       <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ,
+                                                                                    "Jie Zheng"^^xsd:string ,
+                                                                                    "Tomasz Adamusiak"^^xsd:string ;
+                                       <http://www.ebi.ac.uk/efo/branch_class> "true"^^xsd:string ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MO:144"^^xsd:string ,
+                                                                                                "NCIt:C25209"^^xsd:string ,
+                                                                                                "NIFSTD:sao279801585"^^xsd:string ,
+                                                                                                "SNOMEDCT:122869004"^^xsd:string ;
+                                       rdfs:label "measurement"^^xsd:string .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0001799
 <http://www.ebi.ac.uk/efo/EFO_0001799> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000181> ;
+                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0000001> ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "A group of people with a common cultural heritage that sets them apart from others in a variety of social relationships. (MSH); A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease. (NCI); Ethnicity - an arbitrary classification of the social group a person belongs to, and either identifies with or is identified with by others, as a result of a complex of cultural, biological, geographical and other factors such as linguistic, dietary and religion traditions; ancestry, background, allegiance, or association; and physical characteristics traditionally associated with race. Increasingly the concept is used synonymously with race but this use trend has a pragmatic basis rather than scientific. (NCI); The concept of ethnic origin is an attempt to classify people, not according to their current ethnicity, but according to where their ancestors came from. Ethnic origin has become a popular classification in statistics, where the concept of race has been largely discarded. (from Wikipedia) (NCI); a group of people with a common cultural heritage that sets them apart from others in a variety of social relationships. (CSP)"^^xsd:string ,
                                                                                     "An ethnic group is a population whose members have a common heritage that is real or presumed such as common culture, language, religion, behaviour or biological trait."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "James Malone"^^xsd:string ,
@@ -334,6 +184,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003150
 <http://www.ebi.ac.uk/efo/EFO_0003150> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "A term used in the United States to categorize a population group comprised of persons having origins in any of the black racial groups of Africa. Includes population subgroups (e.g., Kenyan, Nigerian, Haitian). The concept refers also to individuals who classify themselves as described."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0568"^^xsd:string ;
@@ -352,6 +203,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003151
 <http://www.ebi.ac.uk/efo/EFO_0003151> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0463"^^xsd:string ;
                                        <http://www.ebi.ac.uk/efo/obsoleted_in_version> 2.101 ;
@@ -364,6 +216,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003152
 <http://www.ebi.ac.uk/efo/EFO_0003152> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "Denotes a person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including Cambodia, China, India, Japan, Korea, Malaysia, Mongolia, Pakistan, the Philippine Islands, Thailand, and Vietnam."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Jie Zheng"^^xsd:string ,
                                                                                     "Tomasz Adamusiak"^^xsd:string ;
@@ -379,6 +232,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003153
 <http://www.ebi.ac.uk/efo/EFO_0003153> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "In North America the term is used to distinguish a person having origins in the original peoples of the Indian sub-continent from Native Americans."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0487"^^xsd:string ;
@@ -396,6 +250,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003157
 <http://www.ebi.ac.uk/efo/EFO_0003157> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "Denotes the inhabitants of China, a person from there, or their descendants elsewhere."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0021"^^xsd:string ;
@@ -410,6 +265,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003159
 <http://www.ebi.ac.uk/efo/EFO_0003159> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0005"^^xsd:string ;
                                        <http://www.ebi.ac.uk/efo/definition_citation> "http://en.wikipedia.org/wiki/European_American"^^xsd:string ;
@@ -422,6 +278,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003164
 <http://www.ebi.ac.uk/efo/EFO_0003164> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "Denotes the inhabitants of Japan, a person from there, or their descendants elsewhere."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0019"^^xsd:string ;
@@ -437,6 +294,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0003166
 <http://www.ebi.ac.uk/efo/EFO_0003166> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "A person of Mexican, Puerto Rican, Cuban, Central or South American or other Spanish culture or origin, regardless of race. An arbitrary ethnic classification."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Tomasz Adamusiak"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0100001> "http://purl.obolibrary.org/obo/HANCESTRO_0014"^^xsd:string ;
@@ -457,10 +315,7 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004340
 <http://www.ebi.ac.uk/efo/EFO_0004340> rdf:type owl:Class ;
-                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                         owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000136> ;
-                                                         owl:someValuesFrom <http://www.ebi.ac.uk/efo/EFO_0001073>
-                                                       ] ;
+                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0001444> ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "An indicator of body density as determined by the relationship of BODY WEIGHT to BODY HEIGHT. BMI=weight (kg)/height squared (m2). BMI correlates with body fat (ADIPOSE TISSUE). Their relationship varies with age and gender. For adults, BMI falls into these categories: below 18.5 (underweight); 18.5-24.9 (normal); 25.0-29.9 (overweight); 30.0 and above (obese). (National Center for Health Statistics, Centers for Disease Control and Prevention)"^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Dani Welter"^^xsd:string ;
                                        <http://www.ebi.ac.uk/efo/definition_citation> "https://en.wikipedia.org/wiki/Body_mass_index"^^xsd:string ;
@@ -476,23 +331,14 @@
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004374
 <http://www.ebi.ac.uk/efo/EFO_0004374> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
                                        <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIt:C67015"^^xsd:string ;
                                        rdfs:label "milligram per deciliter"^^xsd:string .
 
 
-###  http://www.ebi.ac.uk/efo/EFO_0004557
-<http://www.ebi.ac.uk/efo/EFO_0004557> rdf:type owl:Class ;
-                                       owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000136> ;
-                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000181>
-                                                           ] ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000115> "Is the quantification of some measureable quality of a population e.g. birth rate."^^xsd:string ;
-                                       <http://purl.obolibrary.org/obo/IAO_0000117> "Helen Parkinson"^^xsd:string ;
-                                       rdfs:label "population measurement"^^xsd:string .
-
-
 ###  http://www.ebi.ac.uk/efo/EFO_0004950
 <http://www.ebi.ac.uk/efo/EFO_0004950> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0001444> ;
                                        <http://purl.obolibrary.org/obo/IAO_0000115> "The point in time at which an individual was born."^^xsd:string ;
                                        <http://purl.obolibrary.org/obo/IAO_0000117> "Helen Parkinson"^^xsd:string ;
                                        <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT:184099003"^^xsd:string ;

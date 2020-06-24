@@ -6,74 +6,458 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://purl.obolibrary.org/obo/ncit.owl> .
 
-<http://purl.obolibrary.org/obo/ncit.owl> rdf:type owl:Ontology .
+<http://purl.obolibrary.org/obo/ncit.owl> rdf:type owl:Ontology ;
+                                           owl:versionIRI <http://purl.obolibrary.org/obo/ncit/releases/2019-11-26/ncit.owl> .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
+###  http://protege.stanford.edu/plugins/owl/protege#readOnly
+<http://protege.stanford.edu/plugins/owl/protege#readOnly> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0000115
-<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing the English language definitions of what NCI means by the concept. They may also include information about the definition's source and attribution in a form that can easily be interpreted by software." ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "DEFINITION" ;
+                                             rdfs:label "definition"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing the English language definitions of what NCI means by the concept. They may also include information about the definition's source and attribution in a form that can easily be interpreted by software." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "DEFINITION" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_A11
-<http://purl.obolibrary.org/obo/NCIT_A11> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_A11> rdf:type owl:AnnotationProperty ;
+                                          <http://purl.obolibrary.org/obo/IAO_0000115> "An association created to allow the source NICHD to assign a parent to each concept with the intent of creating a hierarchy that includes only terms in which they are a contributing source." ;
+                                          <http://purl.obolibrary.org/obo/NCIT_NHC0> "A11" ;
+                                          <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                          <http://purl.obolibrary.org/obo/NCIT_P108> "Has_NICHD_Parent" ;
+                                          <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Has_NICHD_Parent" ;
+                                          rdfs:label "Has_NICHD_Parent" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_A11> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An association created to allow the source NICHD to assign a parent to each concept with the intent of creating a hierarchy that includes only terms in which they are a contributing source." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_A11> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Has_NICHD_Parent" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_NHC0
-<http://purl.obolibrary.org/obo/NCIT_NHC0> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_NHC0> rdf:type owl:AnnotationProperty ;
+                                           <http://protege.stanford.edu/plugins/owl/protege#readOnly> "true" ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing a concept unique identifier within the NCI Enterprise Vocabulary Service's NCI Thesaurus." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "NHC0" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "code" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "code" ;
+                                           rdfs:label "code" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_NHC0> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing a concept unique identifier within the NCI Enterprise Vocabulary Service's NCI Thesaurus." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_NHC0> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "code" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P106
-<http://purl.obolibrary.org/obo/NCIT_P106> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P106> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property that represents a description of the sort of thing or category to which a concept belongs in the context of the UMLS semantic network." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P106" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P107> "Semantic Type" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Semantic_Type" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P98> "In general, applying semantic types aids in allowing users (or computer programs) to draw conclusions about concepts by virtue of the categories to which they have been assigned.  We use a set of semantic types developed for the UMLS Metathesaurus. There are currently 134 semantic types in the UMLS." ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Semantic_Type" ;
+                                           rdfs:label "Semantic_Type" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P106> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property that represents a description of the sort of thing or category to which a concept belongs in the context of the UMLS semantic network." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Semantic_Type" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P107
-<http://purl.obolibrary.org/obo/NCIT_P107> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P107> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing an alternative Preferred Name for use in some NCI systems." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P107" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P107> "Display Name" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Display_Name" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Display Name" ,
+                                                                                                          "Display_Name" ;
+                                           rdfs:label "Display_Name" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P107> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Display Name" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P107> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Display_Name" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P107> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing an alternative Preferred Name for use in some NCI systems." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P108
-<http://purl.obolibrary.org/obo/NCIT_P108> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P108> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing the word or phrase that NCI uses by preference to refer to the concept." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P108" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P107> "Preferred Name" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Preferred_Name" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Preferred Name" ,
+                                                                                                          "Preferred Term" ,
+                                                                                                          "Preferred_Name" ;
+                                           rdfs:label "Preferred_Name" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P108> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing the word or phrase that NCI uses by preference to refer to the concept." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P108> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Preferred Name" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P108> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Preferred Term" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P108> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Preferred_Name" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P207
-<http://purl.obolibrary.org/obo/NCIT_P207> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P207> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing the concept unique identifier (CUI) assigned by the National Library of Medicine (NLM). If a concept in any NCI-maintained knowledgebase exists in the NLM Unified Medical Language System (UMLS), NCI includes the NLM CUI among the information we provide about the concept." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P207" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P107> "UMLS CUI" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "UMLS_CUI" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "UMLS_CUI" ;
+                                           rdfs:label "UMLS_CUI" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P207> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing the concept unique identifier (CUI) assigned by the National Library of Medicine (NLM). If a concept in any NCI-maintained knowledgebase exists in the NLM Unified Medical Language System (UMLS), NCI includes the NLM CUI among the information we provide about the concept." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P207> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "UMLS_CUI" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P208
-<http://purl.obolibrary.org/obo/NCIT_P208> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P208> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing the concept unique identifier (CUI) for those concepts that appear in NCI Metathesaurus but not in the National Library of Medicine Unified Medical Language System (NLM UMLS)." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P208" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P107> "NCI Metathesaurus CUI" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "NCI_META_CUI" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "NCI_META_CUI" ;
+                                           rdfs:label "NCI_META_CUI" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P208> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing the concept unique identifier (CUI) for those concepts that appear in NCI Metathesaurus but not in the National Library of Medicine Unified Medical Language System (NLM UMLS)." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P208> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "NCI_META_CUI" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P322
-<http://purl.obolibrary.org/obo/NCIT_P322> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P322> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property is used to indicate when a non-EVS entity has contributed to, and has a stake in, a concept. This is used where such entities, within or outside NCI, have indicated the need to be able to track their own concepts. A single concept can have multiple instances of this property if multiple entities have such a defined stake." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P322" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P107> "Contributing Source" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Contributing_Source" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Contributing_Source" ;
+                                           rdfs:label "Contributing_Source" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P322> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property is used to indicate when a non-EVS entity has contributed to, and has a stake in, a concept. This is used where such entities, within or outside NCI, have indicated the need to be able to track their own concepts. A single concept can have multiple instances of this property if multiple entities have such a defined stake." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P322> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Contributing_Source" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P325
-<http://purl.obolibrary.org/obo/NCIT_P325> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P325> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing the English language definition of a concept from a source other than NCI." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P325" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P107> "[source] Definition" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "ALT_DEFINITION" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "ALT_DEFINITION" ;
+                                           rdfs:label "ALT_DEFINITION" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P325> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing the English language definition of a concept from a source other than NCI." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P325> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "ALT_DEFINITION" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P361
-<http://purl.obolibrary.org/obo/NCIT_P361> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P361> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing the ability to extend the set of values in a particular list." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P361" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Extensible_List" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Extensible_List" ,
+                                                                                                          "List Extensible" ;
+                                           rdfs:label "Extensible_List" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P361> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing the ability to extend the set of values in a particular list." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P361> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Extensible_List" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P361> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "List Extensible" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P366
-<http://purl.obolibrary.org/obo/NCIT_P366> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P366> rdf:type owl:AnnotationProperty ;
+                                           <http://protege.stanford.edu/plugins/owl/protege#readOnly> "true" ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing a retired unique concept identifier created and stored as Concept Name by legacy EVS software. Use of these values was long discouraged, but continued as late as 2009 when creation of new values ceased and Concept Name was retired. Legacy values are intended solely to help resolve and update earlier coding." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P366" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Legacy Concept Name" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Legacy Concept Name" ;
+                                           rdfs:label "Legacy_Concept_Name" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P366> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing a retired unique concept identifier created and stored as Concept Name by legacy EVS software. Use of these values was long discouraged, but continued as late as 2009 when creation of new values ceased and Concept Name was retired. Legacy values are intended solely to help resolve and update earlier coding." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P366> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Legacy Concept Name" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P371
-<http://purl.obolibrary.org/obo/NCIT_P371> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P371> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing a term chosen by NICHD to be used in the representation of the NICHD hierarchy." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P371" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "NICHD_Hierarchy_Term" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P322> "NICHD" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "NICHD_Hierarchy_Term" ;
+                                           rdfs:label "NICHD_Hierarchy_Term" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P371> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing a term chosen by NICHD to be used in the representation of the NICHD hierarchy." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P371> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "NICHD_Hierarchy_Term" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P372
-<http://purl.obolibrary.org/obo/NCIT_P372> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P372> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing whether a value set is ready for publication in the browser." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P372" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Publish_Value_Set" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Publish_Value_Set" ;
+                                           rdfs:label "Publish_Value_Set" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P372> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing whether a value set is ready for publication in the browser." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P372> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Publish_Value_Set" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P375
-<http://purl.obolibrary.org/obo/NCIT_P375> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P375> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing that a term in another terminology has been mapped to a term in NCIt and describes the relationship between the mapped terms." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P375" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Maps_To" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Maps_To" ;
+                                           rdfs:label "Maps_To" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing that a term in another terminology has been mapped to a term in NCIt and describes the relationship between the mapped terms." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Maps_To" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P376
-<http://purl.obolibrary.org/obo/NCIT_P376> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P376> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property used to house the text on the introductory page on the NCI Term Browser for the Value Set named by a concept when that text differs from the DEFINITION for that concept." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P376" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Term_Browser_Value_Set_Description" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Term_Browser_Value_Set_Description" ;
+                                           rdfs:label "Term_Browser_Value_Set_Description" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P376> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property used to house the text on the introductory page on the NCI Term Browser for the Value Set named by a concept when that text differs from the DEFINITION for that concept." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P376> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Term_Browser_Value_Set_Description" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P378
@@ -113,15 +497,113 @@
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_P398
-<http://purl.obolibrary.org/obo/NCIT_P398> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/NCIT_P398> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A property that indicates whether or not a value set is part of a paired set of codelists for publication processing purposes." ;
+                                           <http://purl.obolibrary.org/obo/NCIT_NHC0> "P398" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P108> "Value_Set_Pair" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ;
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Value_Set_Pair" ;
+                                           rdfs:label "Value_Set_Pair" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P398> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property that indicates whether or not a value set is part of a paired set of codelists for publication processing purposes." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P398> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Value_Set_Pair" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P98
+<http://purl.obolibrary.org/obo/NCIT_P98> rdf:type owl:AnnotationProperty ;
+                                          <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing notations made by NCI vocabulary curators. They are intended to provide supplemental, unstructured information to the user or additional insight about the concept." ;
+                                          <http://purl.obolibrary.org/obo/NCIT_NHC0> "P98" ;
+                                          <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                          <http://purl.obolibrary.org/obo/NCIT_P107> "DesignNote" ;
+                                          <http://purl.obolibrary.org/obo/NCIT_P108> "DesignNote" ;
+                                          <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "DesignNote" ;
+                                          rdfs:label "DesignNote" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P98> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing notations made by NCI vocabulary curators. They are intended to provide supplemental, unstructured information to the user or additional insight about the concept." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P98> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "DesignNote" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
-<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty ;
+                                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing a fully qualified synonym, contains the string, term type, source, and an optional source code if appropriate. Each subfield is deliniated to facilitate interpretation by software." ;
+                                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "FULL_SYN" ,
+                                                                                                                              "Synonym with Source Data" ;
+                                                               rdfs:label "has exact synonym"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A property representing a fully qualified synonym, contains the string, term type, source, and an optional source code if appropriate. Each subfield is deliniated to facilitate interpretation by software." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "FULL_SYN" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Synonym with Source Data" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#inSubset
-<http://www.geneontology.org/formats/oboInOwl#inSubset> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#inSubset> rdf:type owl:AnnotationProperty ;
+                                                        <http://purl.obolibrary.org/obo/IAO_0000115> "An association that connects the concept defining a particular terminology subset with concepts that belong to this subset." ;
+                                                        <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Concept_In_Subset" ;
+                                                        rdfs:label "in subset"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://www.geneontology.org/formats/oboInOwl#inSubset> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An association that connects the concept defining a particular terminology subset with concepts that belong to this subset." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://www.geneontology.org/formats/oboInOwl#inSubset> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Concept_In_Subset" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty ;
+           rdfs:label "label" .
 
 
 #################################################################
@@ -768,21 +1250,6 @@
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "Predominantly poorly-formed/fused/cribriform glands with a lesser component of well-formed glands." ;
-   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "3" ;
-   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
-   <http://purl.obolibrary.org/obo/NCIT_P384> "CPTAC"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "Gleason Grade Group 3" ;
    <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
@@ -803,6 +1270,21 @@
    owl:annotatedTarget "Grade Group 3" ;
    <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Predominantly poorly-formed/fused/cribriform glands with a lesser component of well-formed glands." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "3" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "CPTAC"
  ] .
 
 
@@ -1152,7 +1634,7 @@
 
 ###  http://purl.obolibrary.org/obo/NCIT_C20181
 <http://purl.obolibrary.org/obo/NCIT_C20181> rdf:type owl:Class ;
-                                             owl:disjointWith <http://purl.obolibrary.org/obo/NCIT_C20189> ;
+                                             rdfs:subClassOf owl:Thing ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An organizational header for concepts representing mostly abstract entities." ;
                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C20181" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
@@ -1180,6 +1662,7 @@
 
 ###  http://purl.obolibrary.org/obo/NCIT_C20189
 <http://purl.obolibrary.org/obo/NCIT_C20189> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A distinguishing quality or prominent aspect of a person, object, action, process, or substance." ;
                                              <http://purl.obolibrary.org/obo/NCIT_A11> <http://purl.obolibrary.org/obo/NCIT_C90259> ;
                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C20189" ;

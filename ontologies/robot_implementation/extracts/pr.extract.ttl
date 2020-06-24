@@ -6,22 +6,26 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://purl.obolibrary.org/obo/pr.owl> .
 
-<http://purl.obolibrary.org/obo/pr.owl> rdf:type owl:Ontology .
+<http://purl.obolibrary.org/obo/pr.owl> rdf:type owl:Ontology ;
+                                         owl:versionIRI <http://purl.obolibrary.org/obo/pr/60.0/pr.owl> .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://purl.obolibrary.org/obo/IAO_0000115
-<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "definition"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasAlternativeId
-<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:label "has_alternative_id"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym
-<http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_broad_synonym"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
@@ -29,19 +33,23 @@
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
-<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_exact_synonym"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym
-<http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:label "has_narrow_synonym"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
-<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_obo_namespace"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
-<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> rdf:type owl:AnnotationProperty .
+<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:label "has_related_synonym"^^xsd:string .
 
 
 ###  http://www.geneontology.org/formats/oboInOwl#hasSynonymType
@@ -52,145 +60,29 @@
 <http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty .
 
 
-###  http://www.geneontology.org/formats/oboInOwl#is_transitive
-<http://www.geneontology.org/formats/oboInOwl#is_transitive> rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
 
 
-###  http://www.geneontology.org/formats/oboInOwl#shorthand
-<http://www.geneontology.org/formats/oboInOwl#shorthand> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://purl.obolibrary.org/obo/RO_0002160
-<http://purl.obolibrary.org/obo/RO_0002160> rdf:type owl:ObjectProperty ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "U only_in_taxon T: U is a feature found in only in organisms of species of taxon T. The feature cannot be found in an organism of any species outside of (not subsumed by) that taxon. Down-propagates in U hierarchy, up-propagates in T hierarchy (species taxonomy). Implies applicable_to_taxon."^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RO:0002160"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "never_outside_taxon"^^xsd:string ,
-                                                                                                           "specific_to"^^xsd:string ,
-                                                                                                           "specific_to_taxon"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "protein"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#id> "only_in_taxon"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#is_transitive> "false"^^xsd:boolean ;
-                                            <http://www.geneontology.org/formats/oboInOwl#shorthand> "only_in_taxon"^^xsd:string ;
-                                            rdfs:comment "Down-propagates. The original name for this in the paper is 'specific_to'. Applicable to genes because some genes are lost in sub-species (strains) of a species."^^xsd:string ;
-                                            rdfs:label "only_in_taxon"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002160> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "U only_in_taxon T: U is a feature found in only in organisms of species of taxon T. The feature cannot be found in an organism of any species outside of (not subsumed by) that taxon. Down-propagates in U hierarchy, up-propagates in T hierarchy (species taxonomy). Implies applicable_to_taxon."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ROC:Waclaw"^^xsd:string
- ] .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002215
-<http://purl.obolibrary.org/obo/RO_0002215> rdf:type owl:ObjectProperty ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RO:0002215"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "protein"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#id> "capable_of"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#is_transitive> "false"^^xsd:boolean ;
-                                            <http://www.geneontology.org/formats/oboInOwl#shorthand> "capable_of"^^xsd:string ;
-                                            rdfs:label "capable_of"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/RO_0002353
-<http://purl.obolibrary.org/obo/RO_0002353> rdf:type owl:ObjectProperty ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RO:0002353"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "protein"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#id> "output_of"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#is_transitive> "false"^^xsd:boolean ;
-                                            <http://www.geneontology.org/formats/oboInOwl#shorthand> "output_of"^^xsd:string ;
-                                            rdfs:label "output_of"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/pr#has_gene_template
-<http://purl.obolibrary.org/obo/pr#has_gene_template> rdf:type owl:ObjectProperty ;
-                                                      <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "protein"^^xsd:string ;
-                                                      <http://www.geneontology.org/formats/oboInOwl#id> "has_gene_template"^^xsd:string ;
-                                                      <http://www.geneontology.org/formats/oboInOwl#is_transitive> "false"^^xsd:boolean ;
-                                                      rdfs:label "has_gene_template"^^xsd:string .
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://purl.obolibrary.org/obo/GO_0004930
-<http://purl.obolibrary.org/obo/GO_0004930> rdf:type owl:Class ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Combining with an extracellular signal and transmitting the signal across the membrane by activating an associated G-protein; promotes the exchange of GDP for GTP on the alpha subunit of a heterotrimeric G-protein complex."^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "EBV-induced receptor"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "molecular_function"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0004930"^^xsd:string ;
-                                            rdfs:label "G protein-coupled receptor activity"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0004930> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "Combining with an extracellular signal and transmitting the signal across the membrane by activating an associated G-protein; promotes the exchange of GDP for GTP on the alpha subunit of a heterotrimeric G-protein complex."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:bf"^^xsd:string ,
-                                                            "Wikipedia:GPCR"^^xsd:string ,
-                                                            "http://www.iuphar-db.org"^^xsd:string
- ] .
-
-
-###  http://purl.obolibrary.org/obo/GO_0006412
-<http://purl.obolibrary.org/obo/GO_0006412> rdf:type owl:Class ;
-                                            <http://purl.obolibrary.org/obo/IAO_0000115> "The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA or circRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA or circRNA. Translation ends with the release of a polypeptide chain from the ribosome."^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "protein anabolism"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "biological_process"^^xsd:string ;
-                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0006412"^^xsd:string ;
-                                            rdfs:label "translation"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0006412> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA or circRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA or circRNA. Translation ends with the release of a polypeptide chain from the ribosome."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:go_curators"^^xsd:string
- ] .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_237561
-<http://purl.obolibrary.org/obo/NCBITaxon_237561> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_2759> ;
-                                                  <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "ncbi_taxonomy"^^xsd:string ;
-                                                  <http://www.geneontology.org/formats/oboInOwl#id> "NCBITaxon:237561"^^xsd:string ;
-                                                  rdfs:label "Candida albicans SC5314"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/NCBITaxon_2759
-<http://purl.obolibrary.org/obo/NCBITaxon_2759> rdf:type owl:Class ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "ncbi_taxonomy"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "euk-"^^xsd:string ;
-                                                <http://www.geneontology.org/formats/oboInOwl#id> "NCBITaxon:2759"^^xsd:string ;
-                                                rdfs:label "Eukaryota"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/NCBITaxon_2759> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
-   owl:annotatedTarget "euk-"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DAN"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/pr#PRO-short-label>
- ] .
+###  http://purl.obolibrary.org/obo/BFO_0000040
+<http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "bfo"^^xsd:string ;
+                                             <http://www.geneontology.org/formats/oboInOwl#id> "BFO:0000040"^^xsd:string ;
+                                             rdfs:label "material entity"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/PR_000000001
 <http://purl.obolibrary.org/obo/PR_000000001> rdf:type owl:Class ;
-                                              owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/PR_000018263>
-                                                                                         [ rdf:type owl:Restriction ;
-                                                                                           owl:onProperty <http://purl.obolibrary.org/obo/RO_0002353> ;
-                                                                                           owl:someValuesFrom <http://purl.obolibrary.org/obo/GO_0006412>
-                                                                                         ]
-                                                                                       ) ;
-                                                                    rdf:type owl:Class
-                                                                  ] ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PR_000018263> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0002353> ;
-                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GO_0006412>
-                                                              ] ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof."^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "protein"^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#id> "PR:000000001"^^xsd:string ;
@@ -304,6 +196,14 @@
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000001006> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "PTPRC"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/pr#PRO-short-label>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000001006> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A protein that is a translation product of the human PTPRC gene or a 1:1 ortholog thereof. It is composed of an extracellular domain, a single transmembrane segment and two tandem intracytoplasmic protein-tyrosine phosphatase domains. Contains 1 to 3 copies of the Fibronectin type III domain (Pfam:PF00041) followed by two copies of the Protein-tyrosine phosphatase (Pfam:PF00102) domain. Receptor-type tyrosine-protein phosphatase C (CD45) regulates signal transduction and lymphocyte activation by specific association with receptor molecules on T and B cells. Multiple isoforms of CD45 (180-235 kDa) can be generated asa result of alternative splicing of three variable exons 4(A), 5(B) and 6(C), encoding sequences at the N-terminal extracellular domain of the molecule."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:1351092"^^xsd:string ,
@@ -315,14 +215,6 @@
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> ;
    owl:annotatedTarget "T200"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000001006> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "PTPRC"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/pr#PRO-short-label>
  ] .
 
 
@@ -589,11 +481,7 @@
 
 ###  http://purl.obolibrary.org/obo/PR_000001677
 <http://purl.obolibrary.org/obo/PR_000001677> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PR_000000001> ,
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0002215> ;
-                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/GO_0004930>
-                                                              ] ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PR_000000001> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A glycoprotein hormone receptor that is a translation product of the human TSHR gene or a 1:1 ortholog thereof. The preferred ligand is thyrotropin (thyroid-stimulating hormone)."^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "IUPHARobj:255"^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "TSH-R"^^xsd:string ,
@@ -1352,6 +1240,13 @@
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000008949> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A protein that is a translation product of the human IGFBP3 gene or a 1:1 ortholog thereof."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000008949> ;
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "IGFBP3"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string ;
@@ -1363,13 +1258,6 @@
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
    owl:annotatedTarget "IBP3"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/pr#Gene-based>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000008949> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "A protein that is a translation product of the human IGFBP3 gene or a 1:1 ortholog thereof."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string
  ] .
 
 
@@ -1471,17 +1359,17 @@
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000010543> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "A protein that is a translation product of the human MPO gene or a 1:1 ortholog thereof."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000010543> ;
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "MPO"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/pr#PRO-short-label>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000010543> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A protein that is a translation product of the human MPO gene or a 1:1 ortholog thereof."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string
  ] .
 
 
@@ -2007,39 +1895,6 @@
  ] .
 
 
-###  http://purl.obolibrary.org/obo/PR_000018263
-<http://purl.obolibrary.org/obo/PR_000018263> rdf:type owl:Class ;
-                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An organic amino compound that consists of amino acid residues (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds."^^xsd:string ;
-                                              <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "peptide"^^xsd:string ,
-                                                                                                              "polypeptide"^^xsd:string ;
-                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "protein"^^xsd:string ;
-                                              <http://www.geneontology.org/formats/oboInOwl#id> "PR:000018263"^^xsd:string ;
-                                              rdfs:comment "Category=external."^^xsd:string ;
-                                              rdfs:label "amino acid chain"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000018263> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "An organic amino compound that consists of amino acid residues (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DAN"^^xsd:string ,
-                                                            "PRO:JSG"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000018263> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
-   owl:annotatedTarget "peptide"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DAN"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/PR_000018263> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
-   owl:annotatedTarget "polypeptide"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DAN"^^xsd:string
- ] .
-
-
 ###  http://purl.obolibrary.org/obo/PR_000023540
 <http://purl.obolibrary.org/obo/PR_000023540> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PR_000000001> ;
@@ -2216,31 +2071,7 @@
 
 ###  http://purl.obolibrary.org/obo/PR_Q5AK64
 <http://purl.obolibrary.org/obo/PR_Q5AK64> rdf:type owl:Class ;
-                                           owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/PR_000000001>
-                                                                                      [ rdf:type owl:Restriction ;
-                                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002160> ;
-                                                                                        owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_237561>
-                                                                                      ]
-                                                                                      [ rdf:type owl:Restriction ;
-                                                                                        owl:onProperty <http://purl.obolibrary.org/obo/pr#has_gene_template> ;
-                                                                                        owl:someValuesFrom <http://www.ncbi.nlm.nih.gov/gene/3636517>
-                                                                                      ]
-                                                                                    ) ;
-                                                                 rdf:type owl:Class
-                                                               ] ;
-                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/PR_000000001> ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <http://purl.obolibrary.org/obo/RO_0002160> ;
-                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_237561>
-                                                           ] ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <http://purl.obolibrary.org/obo/RO_0002160> ;
-                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_2759>
-                                                           ] ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <http://purl.obolibrary.org/obo/pr#has_gene_template> ;
-                                                             owl:someValuesFrom <http://www.ncbi.nlm.nih.gov/gene/3636517>
-                                                           ] ;
+                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/PR_000000001> ;
                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A protein that is a translation product of the HER2 gene in Candida albicans SC5314."^^xsd:string ;
                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UniProtKB:Q5AK64"^^xsd:string ;
                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Calb-HER2"^^xsd:string ,
@@ -2307,26 +2138,6 @@
    owl:annotatedTarget "HER2"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UniProtKB:Q5AK64"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/pr#Gene-based>
- ] .
-
-
-###  http://www.ncbi.nlm.nih.gov/gene/3636517
-<http://www.ncbi.nlm.nih.gov/gene/3636517> rdf:type owl:Class ;
-                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <http://purl.obolibrary.org/obo/RO_0002160> ;
-                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_237561>
-                                                           ] ;
-                                           <http://purl.obolibrary.org/obo/IAO_0000115> "A protein coding gene HER2 in Candida albicans SC5314."^^xsd:string ;
-                                           <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "gene"^^xsd:string ;
-                                           <http://www.geneontology.org/formats/oboInOwl#id> "NCBIGene:3636517"^^xsd:string ;
-                                           rdfs:comment "Category=external."^^xsd:string ;
-                                           rdfs:label "HER2 (Candida albicans SC5314)"^^xsd:string .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://www.ncbi.nlm.nih.gov/gene/3636517> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "A protein coding gene HER2 in Candida albicans SC5314."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PRO:DNx"^^xsd:string
  ] .
 
 
