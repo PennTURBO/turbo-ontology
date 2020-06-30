@@ -855,7 +855,8 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty ;
 
 ###  http://purl.obolibrary.org/obo/UBERON_0001013
 <http://purl.obolibrary.org/obo/UBERON_0001013> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0002384> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0002384> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0011821> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of connective tissue composed of adipocytes enmeshed in areolar tissue"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/UBPROP_0000001> "Connective tissue in which fat is stored.[TAO]"^^xsd:string ,
                                                                                                 "Tissue that contains adipocytes, used for cushioning, thermal insulation, lubrication (primarily in the pericardium) and energy storage.[AAO]"^^xsd:string ;
@@ -1300,11 +1301,124 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty ;
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UBERON_0002349
+<http://purl.obolibrary.org/obo/UBERON_0002349> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000061> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0004120> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0004923> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "the middle layer of the heart, comprised mainly of striated cardiac muscle fibers"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000116> "TODO - check 'Myocardum proper' in FMA. We superclass the more generic class for now. FMA has is_a muscle layer - should we add this? ZFA and BTO both have is_a 'cardiac muscle' (tissue?). But in U we also follow FMA and have cardiac muscle tissue of myocardium (there is also Fibrocollagenous connective tissue of myocardium), which would be identical (see issue-10). Note that GO also treats left/right ventricular cardiac muscle tissue synonymous with ventricular myocardium"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000001> "Robust muscular tunic of the heart which forms the basic part of its walls. Its external surface is covered by the pericardium and its internal one by the endocardium. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]"^^xsd:string ,
+                                                                                                "The middle layer of the heart, consisting of cardiac muscle.[AAO]"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000007> "myocardial"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Myocardium> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0027061> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/362012001> ,
+                                                                                                         "AAO:0010410"^^xsd:string ,
+                                                                                                         "BSA:0000089"^^xsd:string ,
+                                                                                                         "BTO:0000901"^^xsd:string ,
+                                                                                                         "CALOHA:TS-0440"^^xsd:string ,
+                                                                                                         "EFO:0000819"^^xsd:string ,
+                                                                                                         "EHDAA2:0004150"^^xsd:string ,
+                                                                                                         "EMAPA:32688"^^xsd:string ,
+                                                                                                         "EV:0100022"^^xsd:string ,
+                                                                                                         "FMA:9462"^^xsd:string ,
+                                                                                                         "GAID:173"^^xsd:string ,
+                                                                                                         "MA:0000164"^^xsd:string ,
+                                                                                                         "MAT:0000453"^^xsd:string ,
+                                                                                                         "MESH:D009206"^^xsd:string ,
+                                                                                                         "NCIT:C12371"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4ro36AFrCvEduAAAAOpmP6tw"^^xsd:string ,
+                                                                                                         "RETIRED_EHDAA2:0001220"^^xsd:string ,
+                                                                                                         "TAO:0001319"^^xsd:string ,
+                                                                                                         "UMLS:C0027061"^^xsd:string ,
+                                                                                                         "VHOG:0000083"^^xsd:string ,
+                                                                                                         "XAO:0000065"^^xsd:string ,
+                                                                                                         "ZFA:0001319"^^xsd:string ,
+                                                                                                         "galen:Myocardium"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "heart myocardium"^^xsd:string ,
+                                                                                                               "muscle of heart"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "cardiac muscle"^^xsd:string ,
+                                                                                                                 "heart muscle"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0002349"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#efo_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#pheno_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#uberon_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#vertebrate_core> ;
+                                                rdfs:label "myocardium"^^xsd:string ;
+                                                <http://xmlns.com/foaf/0.1/depicted_by> <http://upload.wikimedia.org/wikipedia/commons/6/6e/Glanzstreifen.jpg> .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "the middle layer of the heart, comprised mainly of striated cardiac muscle fibers"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0-683-40008-8"^^xsd:string ,
+                                                            "MP:0005329"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "Robust muscular tunic of the heart which forms the basic part of its walls. Its external surface is covered by the pericardium and its internal one by the endocardium. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-09-17"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "VHOG:0000083"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "VHOG"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> <http://bgee.unil.ch/>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "The middle layer of the heart, consisting of cardiac muscle.[AAO]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-06-20"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "AAO:0010410"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "AAO"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "AAO:BJB"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0027061"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Myocardium"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "muscle of heart"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:9462"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "cardiac muscle"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ZFA:0001319"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "heart muscle"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:9462"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002349> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "heart muscle"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ZFA:0001319"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UBERON_0002367
 <http://purl.obolibrary.org/obo/UBERON_0002367> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000061> ,
                                                                 <http://purl.obolibrary.org/obo/UBERON_0000062> ,
                                                                 <http://purl.obolibrary.org/obo/UBERON_0004119> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0004120> ,
                                                                 <http://purl.obolibrary.org/obo/UBERON_0010000> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "The prostate gland is a partly muscular, partly glandular body that is situated near the base of the mammalian male urethra and secretes an alkaline viscid fluid which is a major constituent of the ejaculatory fluid."^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000116> "TODO - FMA treats the gland as part of the prostate - see also FMA:74119."^^xsd:string ;
@@ -1502,6 +1616,51 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty ;
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UBERON_0004120
+<http://purl.obolibrary.org/obo/UBERON_0004120> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000061> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical structure that develops (entirely or partially) from the mesoderm."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000232> "Grouping term for query purposes"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FBbt:00025998"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "mesodermal derivative"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0004120"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#grouping_class> ;
+                                                rdfs:label "mesoderm-derived structure"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0004120> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An anatomical structure that develops (entirely or partially) from the mesoderm."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0004120> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "mesodermal derivative"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FBbt:00025998"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0004923
+<http://purl.obolibrary.org/obo/UBERON_0004923> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A part of a wall of an organ that forms a layer."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:82485"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0004923"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#upper_level> ;
+                                                rdfs:label "organ component layer"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0004923> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A part of a wall of an organ that forms a layer."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UBERON_0007221
 <http://purl.obolibrary.org/obo/UBERON_0007221> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000105> ;
@@ -1530,6 +1689,29 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty ;
                                                 <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0007221"^^xsd:string ;
                                                 rdfs:label "neonate stage"^^xsd:string ;
                                                 rdfs:seeAlso <https://github.com/obophenotype/uberon/issues/350> .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007221> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "puggle"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCBITaxon:189497"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#SENSU>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007221> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "puggle stage"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCBITaxon:189497"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#SENSU>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007221> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "newborn stage"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-6601-2165>
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007221> ;
@@ -1592,29 +1774,6 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty ;
    owl:annotatedTarget "pouch stage"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCBITaxon:9263"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#SENSU>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007221> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
-   owl:annotatedTarget "puggle"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCBITaxon:189497"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#SENSU>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007221> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
-   owl:annotatedTarget "puggle stage"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCBITaxon:189497"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#SENSU>
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007221> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
-   owl:annotatedTarget "newborn stage"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-6601-2165>
  ] .
 
 
@@ -1737,16 +1896,71 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty ;
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An anatomical structure that has more than one cell as a part."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "CARO:0010000"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0010000> ;
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "multicellular structure"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FBbt:00100313"^^xsd:string
  ] .
 
+
+###  http://purl.obolibrary.org/obo/UBERON_0011821
+<http://purl.obolibrary.org/obo/UBERON_0011821> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0002384> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Connective tissue, which consists of a population of connective tissue cells, the intercellular matrix of which contains an irregular network of collagen and elastic fiber bundles. Examples: areolar tissue, mucoid tissue, connective tissue of peritoneum, connective tissue of fibrous pericardium."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:20107"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0011821"^^xsd:string ;
+                                                rdfs:label "irregular connective tissue"^^xsd:string .
+
 [ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0011821> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "An anatomical structure that has more than one cell as a part."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "CARO:0010000"^^xsd:string
+   owl:annotatedTarget "Connective tissue, which consists of a population of connective tissue cells, the intercellular matrix of which contains an irregular network of collagen and elastic fiber bundles. Examples: areolar tissue, mucoid tissue, connective tissue of peritoneum, connective tissue of fibrous pericardium."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:20107"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0011895
+<http://purl.obolibrary.org/obo/UBERON_0011895> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0004120> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0011821> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A layer of connective tissue that ensheaths a muscle fiber and is composed mostly from reticular fibers. It also contains capillaries, nerves and lymphatics. The term cardiac skeleton is sometimes considered synonymous with endomysium, but sometimes it refers to the combination of the endomysium and perimysium."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Endomysium> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0504097> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/91739007> ,
+                                                                                                         "FMA:9729"^^xsd:string ,
+                                                                                                         "NCIT:C32517"^^xsd:string ,
+                                                                                                         "UMLS:C0504097"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "fascia of muscle fiber"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0011895"^^xsd:string ;
+                                                rdfs:label "endomysium"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0011895> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A layer of connective tissue that ensheaths a muscle fiber and is composed mostly from reticular fibers. It also contains capillaries, nerves and lymphatics. The term cardiac skeleton is sometimes considered synonymous with endomysium, but sometimes it refers to the combination of the endomysium and perimysium."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Endomysium>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0011895> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0504097"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Endomysium"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0011895> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "fascia of muscle fiber"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:9729"^^xsd:string
  ] .
 
 

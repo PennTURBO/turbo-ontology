@@ -125,6 +125,40 @@ ontology_abbreviations = [sub.replace('.owl.txt', '') for sub in
 
 num_ontologies = len(termlist_filenames)
 
+# '--individuals',
+# 'include',
+# '--annotate-with-source',
+# 'true',
+
+# for i in range(0, num_ontologies):
+#     # print(i)
+#     current_onto_abbrev = ontology_abbreviations[i]
+#     current_onto_file = current_onto_abbrev + '.owl'
+#     current_termlist_file = current_onto_abbrev + '.owl.txt'
+#     current_extract_file = current_onto_abbrev + '.extract.ttl'
+#     print(current_onto_file)
+#     robot_array = [
+#         ROBOT_PATH,
+#         'extract',
+#         '--method',
+#         'STAR',
+#         '--force',
+#         'true',
+#         '--verbose',
+#         '--intermediates',
+#         'minimal',
+#         '--input',
+#         os.path.join(ONTO_DL_PATH, current_onto_file),
+#         '--term-file',
+#         os.path.join(TERMLIST_PATH, current_termlist_file),
+#         '--output',
+#         os.path.join(EXTRACTION_OUPUT_PATH, current_extract_file),
+#         ]
+#     robot_call = subprocess.run(robot_array, stdout=subprocess.PIPE,
+#                                 text=True, check=True)
+#     print(robot_call.stdout)
+#     # print(robot_call.stderr)
+
 for i in range(0, num_ontologies):
     # print(i)
     current_onto_abbrev = ontology_abbreviations[i]
@@ -135,20 +169,20 @@ for i in range(0, num_ontologies):
     robot_array = [
         ROBOT_PATH,
         'extract',
-        '--individuals',
-        'include',
+        '--verbose',
         '--method',
-        'STAR',
+        'MIREOT',
         '--force',
         'true',
-        '--verbose',
         '--intermediates',
         'minimal',
-        '--annotate-with-source',
-        'true',
+        '--individuals',
+        'definitions',
+        '--imports',
+        'exclude',
         '--input',
         os.path.join(ONTO_DL_PATH, current_onto_file),
-        '--term-file',
+        '--lower-terms',
         os.path.join(TERMLIST_PATH, current_termlist_file),
         '--output',
         os.path.join(EXTRACTION_OUPUT_PATH, current_extract_file),
@@ -156,24 +190,23 @@ for i in range(0, num_ontologies):
     robot_call = subprocess.run(robot_array, stdout=subprocess.PIPE,
                                 text=True, check=True)
     print(robot_call.stdout)
-
     # print(robot_call.stderr)
 
 ####
 
-pdro_merged_file = "pdro-merged.extract.ttl"
-pdro_merged_file_repaired = "pdro-merged-repaired.extract.ttl"
-pdro_merged_original_path = os.path.join(EXTRACTION_OUPUT_PATH, pdro_merged_file)
-pdro_merged_repaired_path = os.path.join(EXTRACTION_OUPUT_PATH, "repaired", pdro_merged_file)
-pdro_merged_stash_path = os.path.join(EXTRACTION_OUPUT_PATH, "original", pdro_merged_file)
-pdro_remove_survey_execution = [ROBOT_PATH, 'remove', '--input', pdro_merged_original_path, '--term', 'http://purl.obolibrary.org/obo/OMIABIS_0001035', '--output', pdro_merged_repaired_path]
+# pdro_merged_file = "pdro-merged.extract.ttl"
+# pdro_merged_file_repaired = "pdro-merged-repaired.extract.ttl"
+# pdro_merged_original_path = os.path.join(EXTRACTION_OUPUT_PATH, pdro_merged_file)
+# pdro_merged_repaired_path = os.path.join(EXTRACTION_OUPUT_PATH, "repaired", pdro_merged_file)
+# pdro_merged_stash_path = os.path.join(EXTRACTION_OUPUT_PATH, "original", pdro_merged_file)
+# pdro_remove_survey_execution = [ROBOT_PATH, 'remove', '--input', pdro_merged_original_path, '--term', 'http://purl.obolibrary.org/obo/OMIABIS_0001035', '--output', pdro_merged_repaired_path]
 
-robot_call = subprocess.run(pdro_remove_survey_execution, stdout=subprocess.PIPE, text=True, check=True)
-print(robot_call.stdout)
-print(robot_call.stderr)
+# robot_call = subprocess.run(pdro_remove_survey_execution, stdout=subprocess.PIPE, text=True, check=True)
+# print(robot_call.stdout)
+# print(robot_call.stderr)
 
-shutil.move(pdro_merged_original_path, pdro_merged_stash_path)
-shutil.move(pdro_merged_repaired_path, pdro_merged_original_path)
+# shutil.move(pdro_merged_original_path, pdro_merged_stash_path)
+# shutil.move(pdro_merged_repaired_path, pdro_merged_original_path)
 
 ####
 
