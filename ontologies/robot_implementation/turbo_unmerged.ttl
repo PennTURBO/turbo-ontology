@@ -3489,6 +3489,13 @@ James: broaden domain?  remove constraint?""" ;
 <http://purl.obolibrary.org/obo/UO_0000177> rdf:type owl:Class .
 
 
+###  http://purl.obolibrary.org/obo/UO_0000190
+<http://purl.obolibrary.org/obo/UO_0000190> rdf:type owl:Class ;
+                                            rdfs:comment """parent ratio
+
+child ratio = http://purl.obolibrary.org/obo/UO_0010006""" .
+
+
 ###  http://purl.obolibrary.org/obo/UO_0000270
 <http://purl.obolibrary.org/obo/UO_0000270> rdf:type owl:Class .
 
@@ -5962,7 +5969,7 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
 <http://transformunify.org/ontologies/TURBO_0022002> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000270> ;
                                                      rdfs:comment "LP6787-8, ArVRa, Volume Rate/Area" ;
-                                                     rdfs:label "valume/time*area flow rate"@en .
+                                                     rdfs:label "volume/time*area flow rate"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0022003
@@ -5993,6 +6000,51 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
                                                                        rdf:type owl:Class
                                                                      ] ;
                                                      rdfs:label "assay of specimen from organism"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0022119
+<http://transformunify.org/ontologies/TURBO_0022119> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000190> ;
+                                                     rdfs:comment """LOINC LP6854-6
+
+LOINC USERS GUIDE, JUNE 2020 
+Relative (Rel)
+
+Relative amount of component A in system 1 compared to system 0. By extension:
+
+REL should be used anywhere an actual measurement is divided by a measurement on a normal or control. It should also be used when a quotient is created by dividing a measured substance in Serum by the same substance measured in CSF, Urine, etc.""" ;
+                                                     rdfs:label "relative ratio"@en .
+
+
+###  http://transformunify.org/ontologies/TURBO_0022120
+<http://transformunify.org/ontologies/TURBO_0022120> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                                     rdfs:comment """LOINC LP6781-1
+
+LOINC USERS GUIDE,  JUNE 2020
+
+Arbitrary (Arb)
+
+\"Arbitrary concentration of items.\" If we are not measuring the activity of an enzyme then the units of measure and properties are as follows. Note that U is reserved for catalytic properties.
+
+*BUT*
+
+A representative use of this term can be found in LOINC 42938-1
+CFTR gene allele 1 [Presence] in Blood or Tissue by Molecular genetics 
+
+Component
+    CFTR gene allele 1
+Property
+    Arb
+Time
+    Pt
+System
+    Bld/Tiss
+Scale
+    Ord
+Method
+    Molgen""" ;
+                                                     rdfs:label "arbitrary unit"@en .
 
 
 ###  http://www.ebi.ac.uk/efo/EFO_0004950
