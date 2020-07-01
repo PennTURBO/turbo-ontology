@@ -54,6 +54,8 @@ more_specimens_annotations_file = "more-specimens_annotations.ttl"
 
 more_specimens_ontology_output_file = "more-specimens.ttl"
 
+turbo_pH_extract_file = "pH.static.extract.ttl"
+
 ####
 
 the_cwd = os.getcwd()
@@ -242,6 +244,9 @@ print(robot_call.stdout)
 turbo_UNmerged_ontology_path = os.path.join(ART_PATH,
                                             turbo_UNmerged_ontology_file)
 
+turbo_pH_extract_path = os.path.join(EXTRACTION_OUPUT_DIR,
+                                     turbo_pH_extract_file)
+
 turbo_with_extracts_ontology_path = \
     os.path.join(ART_PATH,
                  turbo_with_extracts_ontology_file)
@@ -253,6 +258,8 @@ next_merge_interleaved = [
     turbo_UNmerged_ontology_path,
     '--input',
     merge_output_path,
+    '--input',
+    turbo_pH_extract_path,
     '--output',
     turbo_with_extracts_ontology_path,
     ]
