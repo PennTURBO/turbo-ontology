@@ -50,13 +50,17 @@ rdfs:label rdf:type owl:AnnotationProperty ;
 ###  http://purl.obolibrary.org/obo/RO_0000056
 <http://purl.obolibrary.org/obo/RO_0000056> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf owl:topObjectProperty ;
-                                            rdfs:label "participates in"@en .
+                                            rdfs:label "participates in" ,
+                                                       "participates in"@en ,
+                                                       "participates_in"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0001000
 <http://purl.obolibrary.org/obo/RO_0001000> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf owl:topObjectProperty ;
-                                            rdfs:label "derives from"@en .
+                                            rdfs:label "derives from"@en ,
+                                                       "derives from"^^xsd:string ,
+                                                       "derives_from"^^xsd:string .
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
@@ -102,9 +106,9 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000040
 <http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ,
-                                                             <http://purl.obolibrary.org/obo/BFO_0000002> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
                                                              <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                             <http://www.ebi.ac.uk/efo/EFO_0000001> ,
                                                              owl:Thing ;
                                              rdfs:label "material entity"@en ,
                                                         "material entity"^^xsd:string .
@@ -189,10 +193,17 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                             rdfs:label "somatic cell"^^xsd:string .
 
 
+###  http://purl.obolibrary.org/obo/FOODON_03420127
+<http://purl.obolibrary.org/obo/FOODON_03420127> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                                 rdfs:label "animal body or body part"@en .
+
+
 ###  http://purl.obolibrary.org/obo/GO_0005623
 <http://purl.obolibrary.org/obo/GO_0005623> rdf:type owl:Class ;
                                             rdfs:subClassOf owl:Thing ;
-                                            rdfs:label "cell"^^xsd:string .
+                                            rdfs:label "cell"^^xsd:string ,
+                                                       "obsolete cell"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/OBI_0000011
@@ -273,15 +284,27 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                              rdfs:label "collecting specimen from organism"@en .
 
 
+###  http://purl.obolibrary.org/obo/UBERON_0000178
+<http://purl.obolibrary.org/obo/UBERON_0000178> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000179> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000463> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0006314> ;
+                                                rdfs:label "blood"^^xsd:string .
+
+
 ###  http://purl.obolibrary.org/obo/UBERON_0000179
 <http://purl.obolibrary.org/obo/UBERON_0000179> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0006314> ;
                                                 rdfs:label "haemolymphatic fluid"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000463
 <http://purl.obolibrary.org/obo/UBERON_0000463> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000465> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0001062> ;
                                                 rdfs:label "organism substance"^^xsd:string .
 
 
@@ -298,7 +321,9 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0001968
-<http://purl.obolibrary.org/obo/UBERON_0001968> rdf:type owl:Class .
+<http://purl.obolibrary.org/obo/UBERON_0001968> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
+                                                rdfs:label "semen"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0001969
@@ -314,23 +339,38 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0006314
-<http://purl.obolibrary.org/obo/UBERON_0006314> rdf:type owl:Class .
+<http://purl.obolibrary.org/obo/UBERON_0006314> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/FOODON_03420127> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000463> ,
+                                                                <http://www.ebi.ac.uk/efo/EFO_0000635> ;
+                                                rdfs:label "bodily fluid"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0012168
-<http://purl.obolibrary.org/obo/UBERON_0012168> rdf:type owl:Class .
+<http://purl.obolibrary.org/obo/UBERON_0012168> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000178> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0000463> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0006314> ;
+                                                rdfs:label "umbilical cord blood"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0013755
-<http://purl.obolibrary.org/obo/UBERON_0013755> rdf:type owl:Class .
+<http://purl.obolibrary.org/obo/UBERON_0013755> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000178> ;
+                                                rdfs:label "arterial blood"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0013756
-<http://purl.obolibrary.org/obo/UBERON_0013756> rdf:type owl:Class .
+<http://purl.obolibrary.org/obo/UBERON_0013756> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000178> ;
+                                                rdfs:label "venous blood"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0013757
-<http://purl.obolibrary.org/obo/UBERON_0013757> rdf:type owl:Class .
+<http://purl.obolibrary.org/obo/UBERON_0013757> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000178> ;
+                                                rdfs:label "capillary blood"^^xsd:string .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0000751
@@ -525,6 +565,18 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                                                                                   "ORCID:0000-0001-9076-6066"^^xsd:string ,
                                                                                                   "ORCID:0000-0002-5714-991X"^^xsd:string ;
                                                      rdfs:label "semen specimen"^^xsd:string .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0000001
+<http://www.ebi.ac.uk/efo/EFO_0000001> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
+                                       rdfs:label "experimental factor"^^xsd:string .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0000635
+<http://www.ebi.ac.uk/efo/EFO_0000635> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                       rdfs:label "organism part"^^xsd:string .
 
 
 ###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

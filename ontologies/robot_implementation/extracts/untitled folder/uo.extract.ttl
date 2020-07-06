@@ -1,0 +1,188 @@
+@prefix : <http://purl.obolibrary.org/obo/uo.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/uo.owl> .
+
+<http://purl.obolibrary.org/obo/uo.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/UO_0000000
+<http://purl.obolibrary.org/obo/UO_0000000> rdf:type owl:Class ;
+                                            rdfs:subClassOf owl:Thing ;
+                                            rdfs:comment "\"A unit of measurement is a standardized quantity of a physical quality.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000001
+<http://purl.obolibrary.org/obo/UO_0000001> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the distance between two points.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "length unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000002
+<http://purl.obolibrary.org/obo/UO_0000002> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the amount of matter/energy of a physical object.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "mass unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000003
+<http://purl.obolibrary.org/obo/UO_0000003> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the dimension in which events occur in sequence.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "time unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000005
+<http://purl.obolibrary.org/obo/UO_0000005> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the average kinetic energy of the particles in a sample of matter.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "temperature unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000051
+<http://purl.obolibrary.org/obo/UO_0000051> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which represents a standard measurement of how much of a given substance there is mixed with another substance.\" [UOC:GVG]"^^xsd:string ;
+                                            rdfs:label "concentration unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000054
+<http://purl.obolibrary.org/obo/UO_0000054> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000182> ;
+                                            rdfs:comment "\"A density unit which is a standard measure of the mass exerting an influence on a given area.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "area density unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000055
+<http://purl.obolibrary.org/obo/UO_0000055> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000002> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the mass of a homogeneous substance containing 6.02 x 1023 atoms or molecules.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "molar mass unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000061
+<http://purl.obolibrary.org/obo/UO_0000061> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
+                                            rdfs:comment "\"A concentration unit which is a standard measure of the number of moles of a given substance per liter of solution.\" [UOC:GVG]"^^xsd:string ;
+                                            rdfs:label "unit of molarity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000067
+<http://purl.obolibrary.org/obo/UO_0000067> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
+                                            rdfs:comment "\"A concentration unit which is a standard measure of the number of moles of a given substance per kilogram of solvent.\" [UOC:GVG]"^^xsd:string ;
+                                            rdfs:label "unit of molality"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000095
+<http://purl.obolibrary.org/obo/UO_0000095> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the amount of space occupied by any substance, whether solid, liquid, or gas.\" [NIST:NIST]"^^xsd:string ;
+                                            rdfs:label "volume unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000109
+<http://purl.obolibrary.org/obo/UO_0000109> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the force applied to a given area.\" [NIST:NIST]"^^xsd:string ;
+                                            rdfs:label "pressure unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000177
+<http://purl.obolibrary.org/obo/UO_0000177> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
+                                            rdfs:comment "\"A concentration unit which is a standard measure of the number of units, as an agreed arbitrary amount, of a given substance per a specific volume of solution.\" [Webmd:Webmd]"^^xsd:string ;
+                                            rdfs:label "unit per volume unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000182
+<http://purl.obolibrary.org/obo/UO_0000182> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the influence exerted by some mass.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "density unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000186
+<http://purl.obolibrary.org/obo/UO_0000186> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of physical quantity consisting of only a numerical number without any units.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "dimensionless unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000187
+<http://purl.obolibrary.org/obo/UO_0000187> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000190> ;
+                                            rdfs:comment "\"A dimensionless ratio unit which denotes numbers as fractions of 100.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "percent"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000189
+<http://purl.obolibrary.org/obo/UO_0000189> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000186> ;
+                                            rdfs:comment "\"A dimensionless unit which denotes a simple count of things.\" [MGED:MGED]"^^xsd:string ;
+                                            rdfs:label "count unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000190
+<http://purl.obolibrary.org/obo/UO_0000190> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000186> ;
+                                            rdfs:comment "\"A dimensionless unit which denotes an amount or magnitude of one quantity relative to another.\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "ratio"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000191
+<http://purl.obolibrary.org/obo/UO_0000191> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000190> ;
+                                            rdfs:comment "\"A dimensionless ratio unit which relates the part (the numerator) to the whole (the denominator).\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "fraction"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000202
+<http://purl.obolibrary.org/obo/UO_0000202> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ;
+                                            rdfs:comment "\"A concentration unit which is a standard measure of the amount of the action of a catalyst in a given volume.\" [UOC:GVG]"^^xsd:string ;
+                                            rdfs:label "catalytic (activity) concentration unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000270
+<http://purl.obolibrary.org/obo/UO_0000270> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000000> ;
+                                            rdfs:comment "\"A unit which is a standard measure of the volume of fluid which passes through a given surface per unit time .\" [Wikipedia:Wikipedia]"^^xsd:string ;
+                                            rdfs:label "volumetric flow rate unit"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_0010006
+<http://purl.obolibrary.org/obo/UO_0010006> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000190> ;
+                                            rdfs:comment "\"A dimensionless ratio unit which, given a pair of quantities a and b, for which b is a multiple of a, denotes b by giving the multiplier (coefficient) c for a to result in b.\" [UOB:LKSR]"^^xsd:string ;
+                                            rdfs:label "ratio"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UO_1000196
+<http://purl.obolibrary.org/obo/UO_1000196> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000051> ,
+                                                            <http://purl.obolibrary.org/obo/UO_0000186> ;
+                                            rdfs:label "pH based unit"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

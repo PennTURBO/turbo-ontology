@@ -1,0 +1,208 @@
+@prefix : <http://purl.obolibrary.org/obo/ontoneo/ontoneo.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/ontoneo/ontoneo.owl> .
+
+<http://purl.obolibrary.org/obo/ontoneo/ontoneo.owl> rdf:type owl:Ontology ;
+                                                      owl:versionIRI <http://purl.obolibrary.org/obo/ontoneo/releases/2017-03-04/ontoneo.owl> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000117
+<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000118
+<http://purl.obolibrary.org/obo/IAO_0000118> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000001
+<http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000001> rdf:type owl:AnnotationProperty ;
+                                                         <http://purl.obolibrary.org/obo/IAO_0000115> "A person how is responsible for translating the entity annotations from English to another language."@en ;
+                                                         <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Fernanda Farinelli"@en ;
+                                                         rdfs:isDefinedBy "http://purl.obolibrary.org/obo/ontoneo/ontoneo.owl"^^xsd:anyURI ;
+                                                         rdfs:label "translated by"@en .
+
+
+###  http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002
+<http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> rdf:type owl:AnnotationProperty ;
+                                                         <http://purl.obolibrary.org/obo/IAO_0000115> "A person how is responsible for translating the entity annotations from English to Portuguese."@en ;
+                                                         <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Fernanda Farinelli"@en ;
+                                                         rdfs:isDefinedBy "http://purl.obolibrary.org/obo/ontoneo/ontoneo.owl"^^xsd:anyURI ;
+                                                         rdfs:label "translated to Portuguese by"@en ;
+                                                         rdfs:subPropertyOf <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000001> .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#isDefinedBy
+rdfs:isDefinedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000050
+<http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000156
+<http://purl.obolibrary.org/obo/BFO_0000156> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020012
+<http://purl.obolibrary.org/obo/IAO_0020012> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020018
+<http://purl.obolibrary.org/obo/IAO_0020018> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000052
+<http://purl.obolibrary.org/obo/RO_0000052> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000053
+<http://purl.obolibrary.org/obo/RO_0000053> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000080
+<http://purl.obolibrary.org/obo/RO_0000080> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000052> .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000081
+<http://purl.obolibrary.org/obo/RO_0000081> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000052> .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000086
+<http://purl.obolibrary.org/obo/RO_0000086> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000053> .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000087
+<http://purl.obolibrary.org/obo/RO_0000087> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000053> .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002131
+<http://purl.obolibrary.org/obo/RO_0002131> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002323> .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002223
+<http://purl.obolibrary.org/obo/RO_0002223> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000050> .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002323
+<http://purl.obolibrary.org/obo/RO_0002323> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000001
+<http://purl.obolibrary.org/obo/BFO_0000001> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000002
+<http://purl.obolibrary.org/obo/BFO_0000002> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000030
+<http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020015
+<http://purl.obolibrary.org/obo/IAO_0020015> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Um nome próprio que identifica uma pessoa específica."@pt ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000118> "nome completo"@pt ,
+                                                                                          "nome da pessoa"@pt ;
+                                             <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                             rdfs:label "nome pessoal"@pt .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000010
+<http://purl.obolibrary.org/obo/OMRSE_00000010> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000024> .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000012
+<http://purl.obolibrary.org/obo/OMRSE_00000012> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000010> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "TO DO"@pt ;
+                                                <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                                rdfs:label "papel de prestador de cuidados de saúde"@pt .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000024
+<http://purl.obolibrary.org/obo/OMRSE_00000024> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000098
+<http://purl.obolibrary.org/obo/OMRSE_00000098> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000132> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "TO DO"@pt ;
+                                                <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                                rdfs:label "dado de identificação racial"@pt .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000100
+<http://purl.obolibrary.org/obo/OMRSE_00000100> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000132> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "TO DO"@pt ;
+                                                <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                                rdfs:label "dado de identificação étnica"@pt .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000132
+<http://purl.obolibrary.org/obo/OMRSE_00000132> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000133
+<http://purl.obolibrary.org/obo/OMRSE_00000133> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OMRSE_00000132> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "TO DO"@pt ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000118> "dado de identificação do gênero"@pt ;
+                                                <http://purl.obolibrary.org/obo/ontoneo/ONTONEO_1000002> "PERSON: Fernanda Farinelli"@en ;
+                                                rdfs:label "dado de identificação do gênero"@pt .
+
+
+###  http://purl.obolibrary.org/obo/OMRSE_00000134
+<http://purl.obolibrary.org/obo/OMRSE_00000134> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

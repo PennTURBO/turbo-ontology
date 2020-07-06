@@ -1,0 +1,529 @@
+@prefix : <http://purl.obolibrary.org/obo/ogg.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/ogg.owl> .
+
+<http://purl.obolibrary.org/obo/ogg.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000179
+<http://purl.obolibrary.org/obo/BFO_0000179> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Relates an entity in the ontology to the name of the variable that is used to represent it in the code that generates the BFO OWL file from the lispy specification."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000232> "Really of interest to developers only"@en ;
+                                             rdfs:label "BFO OWL specification label"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000180
+<http://purl.obolibrary.org/obo/BFO_0000180> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Relates an entity in the ontology to the term that is used to represent it in the the CLIF specification of BFO2"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "Person:Alan Ruttenberg" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000232> "Really of interest to developers only"@en ;
+                                             rdfs:label "BFO CLIF specification label"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000111
+<http://purl.obolibrary.org/obo/IAO_0000111> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "editor preferred term"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "The concise, meaningful, and human-friendly name for a class or property preferred by the ontology developers. (US-English)"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Daniel Schober"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "editor preferred term"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000112
+<http://purl.obolibrary.org/obo/IAO_0000112> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "example"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A phrase describing how a class name should be used. May also include other kinds of examples that facilitate immediate understanding of a class semantics, such as widely known prototypical subclasses or instances of the class. Although essential for high level terms, examples for low level terms (e.g., Affymetrix HU133 array) are not"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Daniel Schober"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "example of usage"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000114
+<http://purl.obolibrary.org/obo/IAO_0000114> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "has curation status"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Alan Ruttenberg"@en ,
+                                                                                          "PERSON:Bill Bug"@en ,
+                                                                                          "PERSON:Melanie Courtot"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "OBI_0000281"@en ;
+                                             rdfs:label "has curation status"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "definition"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Daniel Schober"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "definition"@en ,
+                                                        "definition"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000116
+<http://purl.obolibrary.org/obo/IAO_0000116> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "editor note"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Daniel Schober"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "GROUP:OBI:<http://purl.obfoundry.org/obo/obi>"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "editor note"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000117
+<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "term editor"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Name of editor entering the term in the file. The term editor is a point of contact for information regarding the term. The term editor may be, but is not always, the author of the definition, which may have been worked upon by several people"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "20110707, MC: label update to term editor and definition modified accordingly. See http://code.google.com/p/information-artifact-ontology/issues/detail?id=115."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Daniel Schober"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "term editor"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000118
+<http://purl.obolibrary.org/obo/IAO_0000118> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "alternative term"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000119
+<http://purl.obolibrary.org/obo/IAO_0000119> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "definition source"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "formal citation, e.g. identifier in external database to indicate / attribute source(s) for the definition. Free text indicate / attribute source(s) for the definition. EXAMPLE: Author Name, URI, MeSH Term C04, PUBMED ID, Wiki uri on 31.01.2007"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000117> "PERSON:Daniel Schober"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000119> "Discussion on obo-discuss mailing-list, see http://bit.ly/hgm99w"^^xsd:string ,
+                                                                                          "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "definition source"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000232
+<http://purl.obolibrary.org/obo/IAO_0000232> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "curator note"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000600
+<http://purl.obolibrary.org/obo/IAO_0000600> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "elucidation"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000601
+<http://purl.obolibrary.org/obo/IAO_0000601> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "has associated axiom(nl)"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000602
+<http://purl.obolibrary.org/obo/IAO_0000602> rdf:type owl:AnnotationProperty ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> ;
+                                             rdfs:label "has associated axiom(fol)"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0010000
+<http://purl.obolibrary.org/obo/IAO_0010000> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000004
+<http://purl.obolibrary.org/obo/OGG_0000000004> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "the symbol assigned by the nomenclature authority" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He, Yue Liu" ;
+                                                rdfs:label "symbol from nomenclature authority"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000005
+<http://purl.obolibrary.org/obo/OGG_0000000005> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "the full name assigned by the nomenclature authority" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He, Yue Liu" ;
+                                                rdfs:label "full name from nomenclature authority"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000006
+<http://purl.obolibrary.org/obo/OGG_0000000006> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A GeneID in the NCBI Gene database " ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He, Yue Liu" ;
+                                                rdfs:label "NCBI GeneID"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000007
+<http://purl.obolibrary.org/obo/OGG_0000000007> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "the NCBI LocusTag name of a gene " ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He, Yue Liu" ;
+                                                rdfs:label "NCBI LocusTag"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000008
+<http://purl.obolibrary.org/obo/OGG_0000000008> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "the map location of a gene" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He, Yue Liu" ;
+                                                rdfs:label "gene map location"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000009
+<http://purl.obolibrary.org/obo/OGG_0000000009> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "a date of content modification" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He, Yue Liu" ;
+                                                rdfs:label "modification date"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000015
+<http://purl.obolibrary.org/obo/OGG_0000000015> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "The NCBITaxon ontology ID of an organism." ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He, Yue Liu" ;
+                                                rdfs:label "organism NCBITaxon ID"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000017
+<http://purl.obolibrary.org/obo/OGG_0000000017> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A chromosome ID where a gene is located." ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He" ;
+                                                rdfs:label "chromosome ID of gene"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000018
+<http://purl.obolibrary.org/obo/OGG_0000000018> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "an annotation property that specifies the type of a gene" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He" ;
+                                                rdfs:label "type of gene"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000019
+<http://purl.obolibrary.org/obo/OGG_0000000019> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "an annotation property that specifies a nomenclature status" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He" ;
+                                                rdfs:label "nomenclature status"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000029
+<http://purl.obolibrary.org/obo/OGG_0000000029> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "an annotation property that shows the GO information associated with a specific gene. " ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yongqun He" ;
+                                                rdfs:comment """YH: use the convention: 
+GO_ID (EC: xx; Qualifier: xx; PMID: xxxxx;)
+where GO_ID is a GO ID, EC is the Evidence Code, Qualifier is a specific association type, and PMID is a PubMed ID of a paper that supports the gene-GO association. """ ;
+                                                rdfs:label "has GO association"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000030
+<http://purl.obolibrary.org/obo/OGG_0000000030> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An annotation property that represents a gene's association with PubMed publication(s). " ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Yongqun He" ;
+                                                rdfs:comment """YH: use the format: 
+PMID: pmid1, pmid2, ...
+where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). """ ;
+                                                rdfs:label "has PubMed association"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002422
+<http://purl.obolibrary.org/obo/RO_0002422> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty ;
+                                                         rdfs:label "database_cross_reference"^^xsd:string .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#isDefinedBy
+rdfs:isDefinedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000108
+<http://purl.obolibrary.org/obo/BFO_0000108> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000179> "exists-at" ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000180> "existsAt" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO2 Reference: entity" ,
+                                                                                          "BFO2 Reference: temporal region" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000600> "b exists_at t means: b is an entity which exists at some temporal region t. (axiom label in BFO2 Reference: [118-002])"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "exists at"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000108> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
+   owl:annotatedTarget "b exists_at t means: b is an entity which exists at some temporal region t. (axiom label in BFO2 Reference: [118-002])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/118-002>
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000155
+<http://purl.obolibrary.org/obo/BFO_0000155> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000108> ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000179> "spans" ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000180> "occupiesTemporalRegion" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000600> "p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "occupies temporal region"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000155> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
+   owl:annotatedTarget "p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/132-001>
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000156
+<http://purl.obolibrary.org/obo/BFO_0000156> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000157> ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000179> "span-of" ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000180> "spanOf" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000600> "[copied from inverse property 'occupies temporal region'] p occupies_temporal_region t. This is a primitive relation between an occurrent p and the temporal region t upon which the spatiotemporal region p occupies_spatiotemporal_region projects. (axiom label in BFO2 Reference: [132-001])" ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "has temporal occupant"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000157
+<http://purl.obolibrary.org/obo/BFO_0000157> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000179> "during-which-exists" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "[copied from inverse property 'exists at'] BFO2 Reference: entity" ,
+                                                                                          "[copied from inverse property 'exists at'] BFO2 Reference: temporal region" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000600> "[copied from inverse property 'exists at'] b exists_at t means: b is an entity which exists at some temporal region t. (axiom label in BFO2 Reference: [118-002])" ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "during which exists"@en .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000001
+<http://purl.obolibrary.org/obo/BFO_0000001> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000179> "entity" ;
+                                             <http://purl.obolibrary.org/obo/BFO_0000180> "Entity" ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000112> "Julius Caesar"@en ,
+                                                                                          "Verdi’s Requiem"@en ,
+                                                                                          "the Second World War"@en ,
+                                                                                          "your body mass index"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81"@en ,
+                                                                                          "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000600> "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/bfo.owl> ;
+                                             rdfs:label "entity"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000001> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000116> ;
+   owl:annotatedTarget "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/0000004> ;
+   rdfs:comment "per discussion with Barry Smith" ;
+   rdfs:seeAlso <http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/BFO_0000001> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000600> ;
+   owl:annotatedTarget "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"@en ;
+   <http://purl.obolibrary.org/obo/IAO_0010000> <http://purl.obolibrary.org/obo/bfo/axiom/001-001>
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/OGG_0000000002
+<http://purl.obolibrary.org/obo/OGG_0000000002> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene is a material entity that represents the entire DNA sequence required for synthesis of a functional protein or RNA molecule. " ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Oliver He" ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/books/NBK21640/" ;
+                                                rdfs:comment "In addition to the coding regions (exons), a gene includes transcription-control regions and sometimes introns. Although the majority of genes encode proteins, some encode tRNAs, rRNAs, and other types of RNA." ;
+                                                rdfs:label "gene"@en .
+
+
+###  http://purl.obolibrary.org/obo/OGG_2060009606
+<http://purl.obolibrary.org/obo/OGG_2060009606> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000002> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A gene of Homo sapiens that has a protein-coding gene disposition"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Oliver He"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "9606"^^xsd:string ;
+                                                rdfs:label "protein-coding gene of Homo sapiens"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OGG_3000000213
+<http://purl.obolibrary.org/obo/OGG_3000000213> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2060009606> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Yue Liu, Oliver He"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000118> "PRO0883"^^xsd:string ,
+                                                                                             "PRO0903"^^xsd:string ,
+                                                                                             "PRO1341"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/gene"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000004> "ALB"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000005> "albumin"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000006> "213"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000007> "GIG20"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000008> "4q13.3"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000009> "20140408"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "9606"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000017> "4"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000018> "protein-coding"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000019> "Official from a nomenclature committee"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000029> "GO_0001895 (EC: IEP); GO_0002576 (EC: TAS); GO_0003677 (EC: IDA, PMID: 16405401); GO_0005504 (EC: IDA, PMID: 16289007); GO_0005504 (EC: NAS, PMID: 9731778); GO_0005507 (EC: NAS, PMID: 14726550); GO_0005515 (EC: IPI, PMID: 16099937); GO_0005576 (EC: NAS, PMID: 14718574); GO_0005576 (EC: TAS); GO_0005604 (EC: IEA); GO_0005615 (EC: IDA, PMID: 19996109); GO_0006810 (EC: TAS, PMID: 12617161); GO_0007584 (EC: IEA); GO_0007596 (EC: TAS); GO_0008144 (EC: IDA, PMID: 16169013); GO_0008144 (EC: NAS, PMID: 10940303); GO_0008206 (EC: TAS); GO_0008270 (EC: IEA); GO_0009267 (EC: IDA, PMID: 16245148); GO_0010033 (EC: IEA); GO_0015643 (EC: IDA, PMID: 16169013); GO_0015721 (EC: TAS); GO_0016209 (EC: NAS, PMID: 14726550); GO_0019825 (EC: IDA, Qualifier: contributes_to, PMID: 16283771); GO_0019836 (EC: IDA, PMID: 16394536); GO_0019899 (EC: IEA); GO_0030168 (EC: TAS); GO_0030170 (EC: IDA, PMID: 16201370); GO_0031093 (EC: TAS); GO_0042157 (EC: TAS); GO_0043066 (EC: IDA, PMID: 16153637); GO_0043069 (EC: NAS, PMID: 14726550); GO_0043234 (EC: IDA, PMID: 16283771); GO_0043252 (EC: TAS); GO_0044281 (EC: TAS); GO_0046010 (EC: IEA); GO_0046689 (EC: IEA); GO_0051087 (EC: IPI, PMID: 19996109); GO_0051659 (EC: IDA, PMID: 16153637); GO_0055085 (EC: TAS); GO_0070062 (EC: IDA, PMID: 19056867); GO_0070541 (EC: IEA); GO_0072562 (EC: IDA)"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000030> "PMID: 325004; 571335; 656055; 683332; 955075; 1225573; 1347703; 1390939; 1518850; 1602151; 1630489; 1810199; 1819460; 1859851; 1946412; 2068071; 2104980; 2247440; 2339130; 2374930; 2404284; 2419329; 2437111; 2460858; 2564675; 2727704; 2762316; 2792379; 2898383; 2901102; 2911589; 2914956; 3009475; 3081519; 3087352; 3353369; 3474609; 3479777; 3759977; 3795040; 3828358; 4027254; 4062880; 6171778; 6173750; 6192711; 6275391; 6292049; 6324579; 6457647; 6864486; 6933567; 7297678; 7557095; 7576927; 7578225; 7852505; 7882997; 7895732; 7902134; 8022807; 8048949; 8063017; 8064810; 8132774; 8134387; 8312056; 8347685; 8513793; 8605586; 8889549; 8898021; 9168236; 9183005; 9329347; 9589637; 9618718; 9731778; 10086322; 10388840; 10580404; 10780709; 10811843; 10940303; 11140838; 11145723; 11158855; 11159893; 11168369; 11483580; 11680902; 11689002; 11734007; 11743520; 11743713; 11781148; 11810025; 11847277; 11906609; 11931649; 12007569; 12009306; 12118010; 12477932; 12480711; 12566415; 12601813; 12617161; 12665801; 12732844; 12815038; 12969171; 12970360; 12975309; 13677478; 14520007; 14579113; 14687905; 14718574; 14726550; 14759223; 14983239; 15137089; 15149953; 15174051; 15210122; 15324660; 15353599; 15489334; 15502818; 15604093; 15616580; 15646839; 15716124; 15740590; 15832324; 15837789; 15890566; 15913893; 15942949; 15952740; 15996651; 16037246; 16054887; 16099937; 16153637; 16156788; 16159939; 16169013; 16169070; 16201370; 16213467; 16245148; 16253963; 16283771; 16289007; 16307046; 16324740; 16329499; 16337614; 16344560; 16394536; 16405401; 16413734; 16413740; 16413837; 16454580; 16608438; 16703327; 16705651; 16721655; 16843720; 16892178; 16916777; 16939204; 16979183; 17002873; 17048273; 17048876; 17054386; 17058928; 17064838; 17067818; 17109502; 17184834; 17200780; 17301560; 17347578; 17438360; 17460892; 17467280; 17499233; 17575979; 17587712; 17603933; 17940721; 17987802; 18028874; 18029235; 18054940; 18068661; 18178096; 18192916; 18200582; 18200583; 18256067; 18287254; 18323672; 18337751; 18346470; 18386863; 18459107; 18464274; 18474236; 18513410; 18579803; 18791744; 18958405; 18979581; 19011736; 19056867; 19139584; 19212124; 19298387; 19318029; 19339807; 19375269; 19377253; 19404566; 19450464; 19484197; 19505594; 19520864; 19572666; 19588173; 19601929; 19615354; 19615732; 19664386; 19707690; 19711930; 19733855; 19734142; 19785033; 19883602; 19884191; 19955769; 19996109; 20006594; 20018394; 20018855; 20025859; 20160662; 20171595; 20211614; 20215742; 20306030; 20346571; 20381621; 20471030; 20473970; 20603593; 20692819; 20705604; 20716240; 20818804; 20828817; 20835227; 21139048; 21190025; 21190670; 21193536; 21228463; 21271345; 21326965; 21357544; 21439346; 21456469; 21488149; 21494773; 21521316; 21539799; 21565611; 21635915; 21832049; 21843484; 21890473; 21900206; 21950461; 21997768; 22079093; 22120732; 22209935; 22244477; 22286219; 22306656; 22351593; 22437883; 22440250; 22450170; 22513409; 22549788; 22613267; 22630368; 22642562; 22675238; 22685563; 22718756; 22797925; 22815976; 22832880; 22870899; 22878801; 22905377; 22968245; 22982313; 23099538; 23103397; 23104623; 23176518; 23182422; 23215783; 23285146; 23351092; 23360066; 23398456; 23455922; 23473402; 23531836; 23535732; 23538348; 23592780; 23673386; 23724004; 23732484; 23862649; 23888317; 23958299; 24076337; 24244333; 24627724"^^xsd:string ;
+                                                <http://purl.org/dc/elements/1.1/description> "albumin"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Ensembl:ENSG00000163631"^^xsd:string ,
+                                                                                                         "HGNC:399"^^xsd:string ,
+                                                                                                         "HPRD:00062"^^xsd:string ,
+                                                                                                         "MIM:103600"^^xsd:string ,
+                                                                                                         "Vega:OTTHUMG00000129919"^^xsd:string ;
+                                                rdfs:comment "Other designations: albumin (32 AA)|albumin (AA 34)|cell growth inhibiting protein 42|growth-inhibiting protein 20|serum albumin"^^xsd:string ;
+                                                rdfs:label "ALB"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OGG_3000000355
+<http://purl.obolibrary.org/obo/OGG_3000000355> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2060009606> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Yue Liu, Oliver He"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000118> "ALPS1A"^^xsd:string ,
+                                                                                             "APO-1"^^xsd:string ,
+                                                                                             "APT1"^^xsd:string ,
+                                                                                             "CD95"^^xsd:string ,
+                                                                                             "FAS1"^^xsd:string ,
+                                                                                             "FASTM"^^xsd:string ,
+                                                                                             "TNFRSF6"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/gene"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000004> "FAS"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000005> "Fas cell surface death receptor"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000006> "355"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000007> "RP11-399O19.7"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000008> "10q24.1"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000009> "20140408"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "9606"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000017> "10"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000018> "protein-coding"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000019> "Official from a nomenclature committee"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000029> "GO_0002377 (EC: IEA); GO_0003014 (EC: IEA); GO_0004871 (EC: TAS, PMID: 10875918); GO_0004872 (EC: NAS, PMID: 7533181); GO_0004888 (EC: IEA); GO_0005515 (EC: IPI, PMID: 10918185); GO_0005634 (EC: IDA); GO_0005737 (EC: IDA); GO_0005829 (EC: NAS, PMID: 7533181); GO_0005886 (EC: IDA); GO_0005886 (EC: IMP); GO_0005886 (EC: TAS); GO_0006461 (EC: TAS, PMID: 10875918); GO_0006915 (EC: IDA, PMID: 9681877); GO_0006915 (EC: TAS); GO_0006919 (EC: TAS); GO_0006924 (EC: IEA); GO_0006925 (EC: IEA); GO_0006927 (EC: IEA); GO_0007165 (EC: TAS, PMID: 9360929); GO_0008625 (EC: IEA); GO_0009636 (EC: IEA); GO_0009897 (EC: IEA); GO_0009986 (EC: IDA); GO_0016021 (EC: IEA); GO_0019724 (EC: IEA); GO_0019900 (EC: IPI, PMID: 7538908); GO_0031264 (EC: IDA, PMID: 11101870); GO_0031265 (EC: IDA); GO_0032464 (EC: IEA); GO_0042802 (EC: IPI); GO_0042981 (EC: NAS, PMID: 7533181); GO_0043065 (EC: IDA); GO_0043065 (EC: IMP); GO_0043066 (EC: IEA); GO_0045060 (EC: IEA); GO_0045121 (EC: IDA); GO_0045619 (EC: IEA); GO_0045637 (EC: IEA); GO_0048536 (EC: IEA); GO_0050869 (EC: IEA); GO_0051260 (EC: IEA); GO_0051384 (EC: IEA); GO_0070062 (EC: IDA); GO_0071260 (EC: IEP, PMID: 19593445); GO_0071285 (EC: IEA); GO_0071455 (EC: IMP); GO_0097049 (EC: IEA); GO_0097190 (EC: TAS); GO_0097191 (EC: IMP); GO_0097192 (EC: IEA); GO_0097527 (EC: IMP, PMID: 16507998); GO_2001239 (EC: TAS); GO_2001241 (EC: IEA)"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000030> "PMID: 1375228; 1385299; 1385309; 1713127; 2469768; 2787530; 7510905; 7514572; 7529798; 7530336; 7533181; 7536190; 7536343; 7538907; 7538908; 7539892; 7540117; 7542559; 7543095; 7575433; 7859281; 8521815; 8524870; 8598453; 8626376; 8648105; 8681376; 8780394; 8864141; 8906799; 8929361; 8940097; 8967952; 8976184; 9002959; 9028321; 9028957; 9039262; 9045686; 9079683; 9082980; 9126929; 9159204; 9199966; 9208847; 9215629; 9223324; 9226175; 9228058; 9247148; 9257699; 9263011; 9267021; 9268734; 9322534; 9325248; 9360929; 9427646; 9475352; 9560245; 9681877; 9721089; 9727492; 9740801; 9751072; 9787134; 9821419; 9835052; 9847311; 9857224; 9920849; 9927496; 9971775; 10068040; 10072505; 10090885; 10200300; 10235259; 10340403; 10462485; 10505674; 10506221; 10535980; 10542291; 10620127; 10625668; 10630977; 10671224; 10706119; 10709732; 10713117; 10799864; 10871852; 10875918; 10918185; 10978533; 11003656; 11034606; 11035039; 11036836; 11048727; 11048730; 11101867; 11101870; 11112409; 11129341; 11177389; 11193028; 11208609; 11298454; 11323689; 11418480; 11436125; 11483955; 11495919; 11550967; 11606059; 11692157; 11733515; 11771526; 11773067; 11779855; 11782802; 11786482; 11786908; 11788891; 11790791; 11809905; 11824955; 11830507; 11836578; 11857317; 11861273; 11864613; 11867183; 11877055; 11891278; 11895550; 11909874; 11920253; 11941452; 11949822; 11961305; 11965496; 11975981; 11986289; 11994542; 12021072; 12032668; 12034188; 12037669; 12040174; 12049185; 12060388; 12060768; 12064832; 12067476; 12096347; 12096925; 12098516; 12107169; 12131184; 12137598; 12139945; 12140383; 12150947; 12163388; 12169207; 12177303; 12185583; 12188927; 12196516; 12198154; 12207331; 12207908; 12220552; 12221075; 12234263; 12244143; 12270344; 12324452; 12372427; 12388693; 12393468; 12393649; 12393889; 12397013; 12414525; 12415011; 12419941; 12452031; 12455036; 12466128; 12477932; 12482410; 12482505; 12485855; 12497631; 12507389; 12513829; 12515395; 12515623; 12516573; 12557947; 12581154; 12583439; 12586732; 12587820; 12604424; 12623840; 12629150; 12646947; 12679613; 12698366; 12699879; 12702723; 12706861; 12710855; 12717632; 12724420; 12742662; 12742739; 12753742; 12757469; 12770553; 12783210; 12788915; 12794152; 12803240; 12824926; 12855571; 12855687; 12867600; 12874203; 12880639; 12883671; 12887920; 12907599; 12923319; 12952224; 12963547; 14506242; 14512182; 14514471; 14530312; 14533029; 14534720; 14557654; 14573612; 14585083; 14594800; 14625033; 14625298; 14625471; 14637155; 14638442; 14644092; 14644197; 14644318; 14647422; 14668794; 14672901; 14676203; 14694156; 14698859; 14714559; 14719092; 14719118; 14724564; 14736971; 14739003; 14739535; 14739941; 14745445; 14759258; 14967838; 14977837; 14981943; 14991945; 15016553; 15019807; 15039424; 15042330; 15054468; 15055260; 15078899; 15138553; 15159312; 15159409; 15160902; 15161716; 15183989; 15203866; 15207703; 15214041; 15215233; 15218339; 15220220; 15238425; 15240787; 15251990; 15277733; 15280387; 15287856; 15289903; 15297424; 15301860; 15345718; 15365741; 15383280; 15390286; 15459302; 15465831; 15467462; 15480430; 15489334; 15492869; 15497017; 15500551; 15502938; 15514680; 15542843; 15556626; 15556941; 15557123; 15563545; 15592292; 15617242; 15632129; 15637757; 15641141; 15645122; 15659383; 15665818; 15670977; 15672026; 15680394; 15688389; 15695771; 15704653; 15723707; 15726829; 15748958; 15786554; 15795317; 15803113; 15806311; 15808689; 15816832; 15818415; 15829968; 15833141; 15838728; 15843521; 15855233; 15858021; 15860671; 15894356; 15907374; 15911745; 15917238; 15929764; 15936090; 15937082; 15938782; 15944736; 15962371; 15963548; 15967797; 15968727; 15972662; 15975999; 15996722; 16000573; 16018969; 16081586; 16087126; 16091761; 16124644; 16129703; 16143308; 16148554; 16157125; 16158329; 16163374; 16169070; 16215672; 16215685; 16255757; 16273638; 16304056; 16306044; 16313826; 16343245; 16344560; 16358967; 16364925; 16368755; 16385451; 16393952; 16403915; 16436054; 16438619; 16441482; 16463650; 16469115; 16472594; 16473667; 16474169; 16507928; 16507998; 16515587; 16524887; 16538171; 16538172; 16643620; 16691186; 16723718; 16736614; 16741989; 16750039; 16765090; 16788566; 16808908; 16820946; 16822901; 16895904; 16899302; 16914910; 16917513; 16921240; 16936193; 16937440; 16948902; 16972019; 16987075; 17000697; 17006606; 17009393; 17014078; 17014925; 17053166; 17056024; 17062728; 17130290; 17135269; 17159907; 17159908; 17161551; 17174268; 17183065; 17194564; 17195092; 17198275; 17203787; 17219051; 17336828; 17376892; 17406980; 17465232; 17485109; 17487740; 17493146; 17504511; 17516614; 17544837; 17545588; 17559541; 17561354; 17564320; 17589525; 17597021; 17598974; 17603079; 17622942; 17657164; 17657791; 17667965; 17684774; 17692455; 17704746; 17704785; 17708363; 17724145; 17762757; 17853317; 17878356; 17891455; 17909299; 17912028; 17912957; 17916181; 17932249; 17938571; 17941899; 17962219; 17962369; 17970696; 17978477; 17982483; 17993614; 17997887; 18000680; 18003704; 18029348; 18045865; 18056484; 18057579; 18068525; 18078642; 18078929; 18088463; 18090928; 18162459; 18174230; 18208868; 18217400; 18220834; 18227168; 18234961; 18243739; 18268284; 18292515; 18302883; 18316328; 18324486; 18328427; 18337305; 18342935; 18361934; 18383830; 18411295; 18422813; 18427836; 18439588; 18441236; 18445624; 18463097; 18473402; 18483392; 18488389; 18494554; 18505906; 18508922; 18508927; 18512812; 18548110; 18552209; 18561948; 18582468; 18588573; 18609513; 18614439; 18635548; 18666137; 18676032; 18679533; 18685642; 18718055; 18727868; 18753860; 18754288; 18757527; 18787411; 18796602; 18800686; 18804468; 18813857; 18818748; 18844072; 18844210; 18851835; 18854777; 18923451; 18948840; 18949391; 18949744; 18972838; 19004284; 19009351; 19010354; 19012493; 19015953; 19019335; 19019483; 19020991; 19037097; 19043361; 19047119; 19067240; 19073786; 19076218; 19077906; 19103758; 19112091; 19118384; 19125371; 19141320; 19141860; 19146781; 19155494; 19161534; 19168581; 19170196; 19173804; 19181929; 19219602; 19225810; 19240174; 19241965; 19262492; 19263494; 19266094; 19270351; 19272297; 19293475; 19298528; 19305072; 19332441; 19336370; 19391241; 19404646; 19458913; 19480241; 19487421; 19509307; 19521670; 19527514; 19538867; 19538884; 19542541; 19561642; 19565204; 19572057; 19573080; 19593445; 19615968; 19625176; 19628789; 19634684; 19653342; 19669200; 19680267; 19692168; 19692467; 19698994; 19716115; 19718569; 19723039; 19726736; 19737931; 19751723; 19758996; 19759548; 19766542; 19773279; 19788921; 19789190; 19798106; 19810143; 19811416; 19812265; 19817952; 19826071; 19890662; 19895798; 19911702; 19913121; 19926197; 19927299; 19937732; 19940360; 19941645; 19950259; 19954064; 19966861; 20012528; 20052288; 20064083; 20074157; 20085233; 20101431; 20106900; 20137575; 20140262; 20164160; 20181888; 20187936; 20193111; 20204402; 20205514; 20219325; 20222173; 20237496; 20301287; 20352431; 20353032; 20359312; 20360470; 20378664; 20380574; 20385987; 20393185; 20394629; 20396760; 20396799; 20408337; 20416077; 20438363; 20438666; 20453000; 20470393; 20501759; 20505730; 20534173; 20547950; 20553075; 20558744; 20568250; 20572163; 20618494; 20620960; 20628086; 20629322; 20638642; 20658220; 20666744; 20673483; 20682001; 20694011; 20726226; 20737708; 20800603; 20802294; 20813889; 20819778; 20822933; 20842669; 20876301; 20934723; 20935634; 20936988; 20947025; 20951677; 20953611; 20959405; 20960177; 20981796; 21036138; 21041692; 21048031; 21049406; 21076068; 21081533; 21087335; 21103345; 21107705; 21120501; 21131755; 21145805; 21167737; 21173302; 21196076; 21233219; 21250890; 21257927; 21271302; 21286777; 21317766; 21321117; 21324892; 21354149; 21359408; 21382479; 21390503; 21430781; 21454681; 21466843; 21468569; 21485506; 21490157; 21516345; 21518761; 21526201; 21526501; 21528407; 21530489; 21549565; 21550977; 21557211; 21557277; 21613217; 21619451; 21625619; 21651830; 21691772; 21706480; 21717192; 21729539; 21741956; 21752354; 21757675; 21762074; 21792914; 21793106; 21803845; 21806408; 21808135; 21852034; 21864388; 21864851; 21869830; 21879377; 21885602; 21906983; 21910009; 21912376; 21917312; 21940365; 21961589; 21963094; 21971214; 21988832; 22027769; 22036455; 22042271; 22065776; 22076446; 22084312; 22095627; 22147197; 22173501; 22182632; 22183068; 22186140; 22194871; 22197557; 22199270; 22207003; 22211869; 22237435; 22252758; 22285488; 22299671; 22331638; 22344564; 22352690; 22357491; 22364882; 22386066; 22398398; 22422199; 22425739; 22431000; 22438247; 22492046; 22499988; 22508480; 22609371; 22622132; 22631677; 22645131; 22649200; 22669972; 22670178; 22677152; 22683265; 22698280; 22702044; 22706245; 22726303; 22752343; 22771321; 22805310; 22806078; 22815944; 22821704; 22842170; 22864571; 22891283; 22898262; 22934709; 22946667; 22983578; 22992806; 23033661; 23045958; 23053964; 23065220; 23114924; 23152563; 23153021; 23166734; 23234803; 23235765; 23240581; 23251661; 23269121; 23280017; 23285481; 23322903; 23326385; 23326448; 23326557; 23327061; 23330016; 23333919; 23338968; 23364796; 23372841; 23392773; 23420824; 23430061; 23434371; 23492187; 23499736; 23524443; 23580232; 23582102; 23582741; 23590971; 23618817; 23619472; 23636796; 23662689; 23667901; 23681795; 23697029; 23762329; 23770605; 23792529; 23846229; 23865866; 23880344; 23894399; 23900676; 23923075; 23932896; 23979975; 24014103; 24043286; 24091673; 24178789; 24331540"^^xsd:string ;
+                                                <http://purl.org/dc/elements/1.1/description> "Fas cell surface death receptor"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Ensembl:ENSG00000026103"^^xsd:string ,
+                                                                                                         "HGNC:11920"^^xsd:string ,
+                                                                                                         "HPRD:00609"^^xsd:string ,
+                                                                                                         "MIM:134637"^^xsd:string ,
+                                                                                                         "Vega:OTTHUMG00000018701"^^xsd:string ;
+                                                rdfs:comment "Other designations: APO-1 cell surface antigen|CD95 antigen|Delta Fas/APO-1/CD95|FAS 827dupA|FAS receptor variant 9|FASLG receptor|Fas (TNF receptor superfamily, member 6)|Fas AMA|TNF receptor superfamily member 6|apoptosis antigen 1|apoptosis-mediating surface antigen FAS|tumor necrosis factor receptor superfamily member 6|tumor necrosis factor receptor superfamily, member 6"^^xsd:string ;
+                                                rdfs:label "FAS"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OGG_3000000962
+<http://purl.obolibrary.org/obo/OGG_3000000962> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2060009606> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Yue Liu, Oliver He"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000118> "BCM1"^^xsd:string ,
+                                                                                             "BLAST"^^xsd:string ,
+                                                                                             "BLAST1"^^xsd:string ,
+                                                                                             "MEM-102"^^xsd:string ,
+                                                                                             "SLAMF2"^^xsd:string ,
+                                                                                             "hCD48"^^xsd:string ,
+                                                                                             "mCD48"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/gene"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000004> "CD48"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000005> "CD48 molecule"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000006> "962"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000007> "RP11-404F10.3"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000008> "1q21.3-q22"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000009> "20140408"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "9606"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000017> "1"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000018> "protein-coding"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000019> "Official from a nomenclature committee"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000029> "GO_0003823 (EC: IEA); GO_0004872 (EC: IEA); GO_0005515 (EC: IPI, PMID: 12356317); GO_0005886 (EC: TAS); GO_0005887 (EC: TAS, PMID: 1693656); GO_0006952 (EC: TAS, PMID: 2828034); GO_0007165 (EC: IEA); GO_0007596 (EC: TAS); GO_0009897 (EC: IEA); GO_0042110 (EC: IEA); GO_0043234 (EC: IEA); GO_0045121 (EC: IDA, PMID: 11313396); GO_0045576 (EC: IEA); GO_0046658 (EC: IEA); GO_0050900 (EC: TAS); GO_0070062 (EC: IDA)"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000030> "PMID: 1693656; 1827826; 1847502; 1999350; 1999351; 2828034; 8104794; 8125298; 8650218; 9418191; 9834056; 10359122; 11163399; 11313125; 11313396; 11513145; 12007789; 12072193; 12356317; 12477932; 12496412; 15356144; 15489334; 15760905; 16049493; 16081768; 16169070; 16585556; 16710414; 16785501; 16803907; 16866884; 17222190; 17599905; 18296487; 18617371; 19494291; 19913121; 20164429; 20237496; 20453000; 20628086; 20833258; 22495247; 23128233; 23225218"^^xsd:string ;
+                                                <http://purl.org/dc/elements/1.1/description> "CD48 molecule"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Ensembl:ENSG00000117091"^^xsd:string ,
+                                                                                                         "HGNC:1683"^^xsd:string ,
+                                                                                                         "HPRD:00177"^^xsd:string ,
+                                                                                                         "MIM:109530"^^xsd:string ,
+                                                                                                         "Vega:OTTHUMG00000024009"^^xsd:string ;
+                                                rdfs:comment "Other designations: B-lymphocyte activation marker BLAST-1|BCM1 surface antigen|CD48 antigen|CD48 antigen (B-cell membrane protein)|SLAM family member 2|TCT.1|leukocyte antigen MEM-102|signaling lymphocytic activation molecule 2"^^xsd:string ;
+                                                rdfs:label "CD48"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OGG_3000005788
+<http://purl.obolibrary.org/obo/OGG_3000005788> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_2060009606> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Yue Liu, Oliver He"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000118> "B220"^^xsd:string ,
+                                                                                             "CD45"^^xsd:string ,
+                                                                                             "CD45R"^^xsd:string ,
+                                                                                             "GP180"^^xsd:string ,
+                                                                                             "L-CA"^^xsd:string ,
+                                                                                             "LCA"^^xsd:string ,
+                                                                                             "LY5"^^xsd:string ,
+                                                                                             "T200"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/gene"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000004> "PTPRC"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000005> "protein tyrosine phosphatase, receptor type, C"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000006> "5788"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000007> "RP11-553K8.4"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000008> "1q31-q32"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000009> "20140408"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "9606"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000017> "1"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000018> "protein-coding"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000019> "Official from a nomenclature committee"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000029> "GO_0001915 (EC: ISS); GO_0001960 (EC: ISS); GO_0002244 (EC: IMP); GO_0002378 (EC: IMP, PMID: 1793833); GO_0004725 (EC: IDA, PMID: 2853967); GO_0005001 (EC: TAS, PMID: 2845400); GO_0005515 (EC: IPI, PMID: 10369126); GO_0005886 (EC: TAS); GO_0005887 (EC: ISS); GO_0005925 (EC: ISS); GO_0006469 (EC: IDA, PMID: 9197241); GO_0006469 (EC: ISS); GO_0006470 (EC: ISS); GO_0006933 (EC: IMP); GO_0007166 (EC: TAS, PMID: 2845400); GO_0007411 (EC: TAS); GO_0009897 (EC: IDA, PMID: 17213291); GO_0016311 (EC: ISS); GO_0019901 (EC: IPI, PMID: 14625311); GO_0030217 (EC: ISS); GO_0030890 (EC: IMP, PMID: 1793833); GO_0035335 (EC: IDA, PMID: 2853967); GO_0035335 (EC: TAS, PMID: 2845400); GO_0042100 (EC: ISS); GO_0042102 (EC: ISS); GO_0044770 (EC: IMP, PMID: 1793833); GO_0045121 (EC: IEA); GO_0045860 (EC: NAS, PMID: 15275963); GO_0048539 (EC: IMP); GO_0048864 (EC: IMP); GO_0050852 (EC: IDA, PMID: 10358156); GO_0050852 (EC: TAS); GO_0050853 (EC: ISS); GO_0050857 (EC: ISS); GO_0051209 (EC: ISS); GO_0051607 (EC: ISS); GO_0051726 (EC: ISS); GO_0070062 (EC: IDA, PMID: 12519789); GO_2000473 (EC: IMP); GO_2000648 (EC: IMP)"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000030> "PMID: 1355979; 1373652; 1648262; 1655467; 1680916; 1695146; 1793833; 1834739; 1970422; 1976695; 2169617; 2524382; 2531281; 2550143; 2824653; 2845400; 2853967; 2956090; 2971730; 7516335; 7526385; 7537381; 7539755; 7737297; 7961877; 8157290; 8473339; 8537410; 8557683; 8570203; 8576115; 8663450; 8703037; 8955171; 8980254; 9148925; 9197241; 9368621; 9403695; 9535845; 9573028; 9624153; 9973453; 10066810; 10228003; 10229804; 10330160; 10358156; 10369126; 10415030; 10473580; 10490978; 10683443; 10700239; 10702677; 10921916; 11101853; 11145714; 11201744; 11254687; 11369760; 11528386; 11548742; 11551930; 11564800; 11778694; 11804554; 11827988; 11841494; 11862398; 11877294; 11909961; 11975983; 11994288; 12008046; 12022705; 12028593; 12073144; 12100025; 12147336; 12354383; 12376545; 12386161; 12393728; 12430875; 12477932; 12499376; 12519755; 12519789; 12556471; 12560083; 12574355; 12589038; 12589045; 12595907; 12618866; 12626536; 12633939; 12716971; 12820694; 12864992; 12880639; 14525771; 14565647; 14625311; 14631169; 14636588; 14641523; 14684825; 14726805; 14979481; 14983037; 15014144; 15018649; 15057492; 15085197; 15214936; 15231748; 15240561; 15275963; 15302935; 15314282; 15333587; 15548260; 15584483; 15603882; 15624328; 15626731; 15684325; 15687496; 15808544; 15946252; 15960938; 15963758; 16172127; 16247487; 16269626; 16332974; 16341674; 16344560; 16360841; 16378074; 16393978; 16503409; 16505159; 16524887; 16538473; 16857986; 16955142; 16998493; 16999868; 17122895; 17172930; 17213291; 17242371; 17378731; 17524482; 17591854; 17635802; 17656643; 17692374; 17803443; 17823079; 17897956; 18029348; 18157742; 18174230; 18292296; 18312479; 18511809; 18634151; 18669861; 18680516; 18719244; 18840711; 18992193; 19059880; 19111528; 19167335; 19246294; 19332764; 19454697; 19481264; 19546439; 19585516; 19635795; 19850743; 19879912; 19898481; 20093141; 20119835; 20139978; 20156100; 20164196; 20191119; 20231690; 20309874; 20505149; 20932480; 21054833; 21067564; 21106704; 21179414; 21278234; 21507955; 21599592; 21768350; 21818290; 21890473; 21952639; 21952740; 22171268; 22174689; 22268729; 22386990; 22438252; 22458809; 22505724; 22524693; 22606231; 22689986; 22783574; 22821963; 22937208; 23065155; 23206327; 23394998; 23396948; 23733486; 23747721; 24211716; 24211831; 24231767"^^xsd:string ;
+                                                <http://purl.org/dc/elements/1.1/description> "protein tyrosine phosphatase, receptor type, C"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Ensembl:ENSG00000081237"^^xsd:string ,
+                                                                                                         "HGNC:9666"^^xsd:string ,
+                                                                                                         "HPRD:01050"^^xsd:string ,
+                                                                                                         "MIM:151460"^^xsd:string ,
+                                                                                                         "Vega:OTTHUMG00000035702"^^xsd:string ;
+                                                rdfs:comment "Other designations: CD45 antigen|T200 glycoprotein|T200 leukocyte common antigen|protein tyrosine phosphatase, receptor type, c polypeptide|receptor-type tyrosine-protein phosphatase C"^^xsd:string ;
+                                                rdfs:label "PTPRC"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/OGG_3001198867
+<http://purl.obolibrary.org/obo/OGG_3001198867> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/OGG_0000000002> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000117> "Bin Zhao, Yue Liu, Oliver He"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000119> "WEB: http://www.ncbi.nlm.nih.gov/gene"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000006> "1198867"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000007> "BMEII1095"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000009> "20140406"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000015> "224914"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000017> "II"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000018> "protein-coding"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000019> "NCBI-supplied"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/OGG_0000000030> "PMID: 11756688; 12271122"^^xsd:string ;
+                                                <http://purl.org/dc/elements/1.1/description> "aldolase"^^xsd:string ;
+                                                rdfs:label "BMEII1095"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

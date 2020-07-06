@@ -14,7 +14,7 @@ from datetime import datetime
 import subprocess
 from os import listdir
 import re
-import shutil
+# import shutil
 
 # timeit ?
 
@@ -82,19 +82,12 @@ for obo_abbreviation in obo_abbreviation_list:
     obo_file_path = 'ontology_downloads/' + obo_file_name
     obo_url = obo_url_prefix + obo_file_name
     print(obo_abbreviation)
-
-    # print(obo_file_name)
-    # print(obo_file_path)
-    # print(obo_url)
-
     now = datetime.now()
     current_time = now.strftime('%H:%M:%S')
     print('Current Time =', current_time)
-
     r = requests.get(obo_url, allow_redirects=True)
     open(obo_file_path, 'wb').write(r.content)
 
-    # print("\n")
 
 ####
 
@@ -179,7 +172,7 @@ for i in range(0, num_ontologies):
         '--intermediates',
         'minimal',
         '--individuals',
-        'definitions',
+        'minimal',
         '--imports',
         'exclude',
         '--input',
@@ -193,6 +186,57 @@ for i in range(0, num_ontologies):
                                 text=True, check=True)
     print(robot_call.stdout)
     # print(robot_call.stderr)
+
+robot_array = [
+    ROBOT_PATH,
+    'extract',
+    '--verbose',
+    '--method',
+    'STAR',
+    '--force',
+    'true',
+    '--intermediates',
+    'minimal',
+    '--individuals',
+    'minimal',
+    '--imports',
+    'exclude',
+    '--input',
+    'ontology_downloads/uo.owl',
+    '--term-file',
+    'term_lists/uo.owl.txt',
+    '--output',
+    'extracts/uo.extract.ttl'
+    ]
+robot_call = subprocess.run(robot_array, stdout=subprocess.PIPE,
+                            text=True, check=True)
+print(robot_call.stdout)
+print(robot_call.stderr)
+
+
+robot_array = [
+    ROBOT_PATH,
+    'extract',
+    '--verbose',
+    '--method',
+    'STAR',
+    '--force',
+    'true',
+    '--intermediates',
+    'minimal',
+    '--individuals',
+    'minimal',
+    '--input',
+    'ontology_downloads/foodon.owl',
+    '--term-file',
+    'term_lists/foodon.owl.txt',
+    '--output',
+    'extracts/foodon.extract.ttl'
+    ]
+robot_call = subprocess.run(robot_array, stdout=subprocess.PIPE,
+                            text=True, check=True)
+print(robot_call.stdout)
+print(robot_call.stderr)
 
 ####
 
@@ -250,6 +294,9 @@ turbo_pH_extract_path = os.path.join(EXTRACTION_OUPUT_DIR,
 turbo_with_extracts_ontology_path = \
     os.path.join(ART_PATH,
                  turbo_with_extracts_ontology_file)
+    
+    #     '--input',
+    # turbo_pH_extract_path,
 
 next_merge_interleaved = [
     ROBOT_PATH,
@@ -258,8 +305,6 @@ next_merge_interleaved = [
     turbo_UNmerged_ontology_path,
     '--input',
     merge_output_path,
-    '--input',
-    turbo_pH_extract_path,
     '--output',
     turbo_with_extracts_ontology_path,
     ]

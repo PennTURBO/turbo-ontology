@@ -1,0 +1,795 @@
+@prefix : <http://purl.obolibrary.org/obo/pato.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/pato.owl> .
+
+<http://purl.obolibrary.org/obo/pato.owl> rdf:type owl:Ontology ;
+                                           owl:versionIRI <http://purl.obolibrary.org/obo/pato/releases/2020-05-08/pato.owl> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000111
+<http://purl.obolibrary.org/obo/IAO_0000111> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000112
+<http://purl.obolibrary.org/obo/IAO_0000112> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000114
+<http://purl.obolibrary.org/obo/IAO_0000114> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                             rdfs:label "definition"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000116
+<http://purl.obolibrary.org/obo/IAO_0000116> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000117
+<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000118
+<http://purl.obolibrary.org/obo/IAO_0000118> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000119
+<http://purl.obolibrary.org/obo/IAO_0000119> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000231
+<http://purl.obolibrary.org/obo/IAO_0000231> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000232
+<http://purl.obolibrary.org/obo/IAO_0000232> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000424
+<http://purl.obolibrary.org/obo/IAO_0000424> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000589
+<http://purl.obolibrary.org/obo/IAO_0000589> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0100001
+<http://purl.obolibrary.org/obo/IAO_0100001> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "term replaced by"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/RO_0001900
+<http://purl.obolibrary.org/obo/RO_0001900> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002575
+<http://purl.obolibrary.org/obo/RO_0002575> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#created_by
+<http://www.geneontology.org/formats/oboInOwl#created_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#creation_date
+<http://www.geneontology.org/formats/oboInOwl#creation_date> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasAlternativeId
+<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:label "has_alternative_id"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_exact_synonym"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:label "has_narrow_synonym"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
+<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_obo_namespace"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:label "has_related_synonym"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#id
+<http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#inSubset
+<http://www.geneontology.org/formats/oboInOwl#inSubset> rdf:type owl:AnnotationProperty ;
+                                                        rdfs:label "in_subset"^^xsd:string .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#deprecated
+owl:deprecated rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000062
+<http://purl.obolibrary.org/obo/BFO_0000062> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002086> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "preceded by"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000116> "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other."@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000118> "is preceded by"@en ,
+                                                                                          "preceded_by"@en ;
+                                             <http://purl.org/dc/elements/1.1/source> "http://www.obofoundry.org/ro/#OBO_REL:preceded_by" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                             rdfs:label "preceded by"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000063
+<http://purl.obolibrary.org/obo/BFO_0000063> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002222> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000111> "precedes"@en ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point."@en ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                             rdfs:label "precedes"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000056
+<http://purl.obolibrary.org/obo/RO_0000056> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000111> "participates in"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000112> "this blood clot participates in this blood coagulation"@en ,
+                                                                                         "this input material (or this output material) participates in this process"@en ,
+                                                                                         "this investigator participates in this investigation"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a relation between a continuant and a process, in which the continuant is somehow involved in the process"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "participates_in"@en ;
+                                            rdfs:label "participates in"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000057
+<http://purl.obolibrary.org/obo/RO_0000057> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000111> "has participant"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000112> "this blood coagulation has participant this blood clot"@en ,
+                                                                                         "this investigation has participant this investigator"@en ,
+                                                                                         "this process has participant this input material (or this output material)"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "a relation between a process and a continuant, in which the continuant is somehow involved in the process"@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000116> "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time."@en ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "has_participant"@en ;
+                                            <http://purl.org/dc/elements/1.1/source> "http://www.obofoundry.org/ro/#OBO_REL:has_participant" ;
+                                            rdfs:label "has participant"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002086
+<http://purl.obolibrary.org/obo/RO_0002086> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002222> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "David Osumi-Sutherland" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:comment "X ends_after Y iff: end(Y) before_or_simultaneous_with end(X)"@en ;
+                                            rdfs:label "ends after"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002087
+<http://purl.obolibrary.org/obo/RO_0002087> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000062> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "David Osumi-Sutherland" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "starts_at_end_of" ;
+                                            rdfs:comment "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)"@en ;
+                                            rdfs:label "immediately preceded by"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002090
+<http://purl.obolibrary.org/obo/RO_0002090> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "David Osumi-Sutherland" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "ends_at_start_of" ,
+                                                                                         "meets" ;
+                                            <http://purl.obolibrary.org/obo/RO_0002575> <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:comment "X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)"@en ;
+                                            rdfs:label "immediately precedes"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002131
+<http://purl.obolibrary.org/obo/RO_0002131> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002323> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "x overlaps y if and only if there exists some z such that x has part z and z part of y" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000424> "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" ;
+                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:label "overlaps"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002202
+<http://purl.obolibrary.org/obo/RO_0002202> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002258> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall"@en ,
+                                                                                         "David Osumi-Sutherland"@en ,
+                                                                                         "Melissa Haendel" ,
+                                                                                         "Terry Meehan"@en ;
+                                            rdfs:comment "This is the transitive form of the develops from relation" ;
+                                            rdfs:label "develops from"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002222
+<http://purl.obolibrary.org/obo/RO_0002222> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000119> <https://en.wikipedia.org/wiki/Allen%27s_interval_algebra> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is ended as a grouping for relations between occurrents involving the relative timing of their starts and ends." ;
+                                            <http://purl.org/dc/terms/source> "https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1"^^xsd:anyURI ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:comment "A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations." ;
+                                            rdfs:label "temporally related to"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002233
+<http://purl.obolibrary.org/obo/RO_0002233> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000057> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000118> "consumes" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:label "has input"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002258
+<http://purl.obolibrary.org/obo/RO_0002258> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002324> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000116> "false"^^xsd:boolean ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000232> "In general you should not use this relation to make assertions - use one of the more specific relations below this one" ;
+                                            rdfs:comment "This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from" ;
+                                            rdfs:label "developmentally preceded by"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002323
+<http://purl.obolibrary.org/obo/RO_0002323> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A mereological relationship or a topological relationship" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" ;
+                                            <http://purl.obolibrary.org/obo/RO_0001900> <http://purl.obolibrary.org/obo/RO_0001901> ;
+                                            rdfs:label "mereotopologically related to"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002324
+<http://purl.obolibrary.org/obo/RO_0002324> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A relationship that holds between entities participating in some developmental process (GO:0032502)" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000232> "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" ;
+                                            rdfs:label "developmentally related to"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002328
+<http://purl.obolibrary.org/obo/RO_0002328> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000232> "This is a grouping relation that collects relations used for the purpose of connecting structure and function" ;
+                                            rdfs:label "functionally related to"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002352
+<http://purl.obolibrary.org/obo/RO_0002352> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ,
+                                                               <http://purl.obolibrary.org/obo/RO_0002328> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of has input" ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000117> "Chris Mungall" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/RO_0002259> ,
+                                                                                                    <http://purl.obolibrary.org/obo/ro/subsets#ro-eco> ;
+                                            rdfs:label "input of"@en .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000002
+<http://purl.obolibrary.org/obo/BFO_0000002> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts."@en ;
+                                             rdfs:label "continuant"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000020
+<http://purl.obolibrary.org/obo/BFO_0000020> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same."@en ;
+                                             rdfs:label "specifically dependent continuant"@en .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000011
+<http://purl.obolibrary.org/obo/PATO_0000011> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A time quality inhering in a bearer by virtue of how long the bearer has existed."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000011"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "age"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000011> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A time quality inhering in a bearer by virtue of how long the bearer has existed."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "WordNet:WordNet"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000033
+<http://purl.obolibrary.org/obo/PATO_0000033> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "concentration"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000033"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#relational_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "concentration of"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000033> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/concentration"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000047
+<http://purl.obolibrary.org/obo/PATO_0000047> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001995> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000047"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "biological sex"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000047> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MGED:MGED"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000051
+<http://purl.obolibrary.org/obo/PATO_0000051> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ,
+                                                              <http://purl.obolibrary.org/obo/PATO_0001241> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000051"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "morphology"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000051> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000117
+<http://purl.obolibrary.org/obo/PATO_0000117> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000051> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000117"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "size"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000117> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "WordNet:WordNet"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000119
+<http://purl.obolibrary.org/obo/PATO_0000119> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001708> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A 1-D extent quality inhering in a bearer by virtue of the bearer's vertical dimension of extension."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000119"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "height"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000119> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A 1-D extent quality inhering in a bearer by virtue of the bearer's vertical dimension of extension."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000122
+<http://purl.obolibrary.org/obo/PATO_0000122> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001708> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A 1-D extent quality which is equal to the distance between two points."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000122"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#mpath_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "length"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000122> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A 1-D extent quality which is equal to the distance between two points."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000125
+<http://purl.obolibrary.org/obo/PATO_0000125> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality that inheres in a bearer by virtue of the proportion of the bearer's amount of matter."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000125"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#relational_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "mass"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000125> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality that inheres in a bearer by virtue of the proportion of the bearer's amount of matter."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000128
+<http://purl.obolibrary.org/obo/PATO_0000128> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer that has mass near a gravitational body."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000128"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "weight"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000128> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer that has mass near a gravitational body."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Weight"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000383
+<http://purl.obolibrary.org/obo/PATO_0000383> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001894> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000383"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#mpath_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#value_slim> ;
+                                              rdfs:label "female"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000383> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MGED:MGED"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000384
+<http://purl.obolibrary.org/obo/PATO_0000384> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001894> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000384"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#mpath_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#value_slim> ;
+                                              rdfs:label "male"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000384> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MGED:MGED"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000918
+<http://purl.obolibrary.org/obo/PATO_0000918> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000117> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A 3-D extent quality inhering in a bearer by virtue of the bearer's amount of 3-dimensional space it occupies."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000918"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#mpath_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "volume"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000918> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A 3-D extent quality inhering in a bearer by virtue of the bearer's amount of 3-dimensional space it occupies."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001018
+<http://purl.obolibrary.org/obo/PATO_0001018> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0002079"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:Physical_property"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "relational physical quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001018"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "physical quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001018> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001019
+<http://purl.obolibrary.org/obo/PATO_0001019> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality which inheres in a bearer by virtue of some influence is exerted by the bearer's mass per unit size."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "density"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001019"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "mass density"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001019> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality which inheres in a bearer by virtue of some influence is exerted by the bearer's mass per unit size."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "WordNet:WordNet"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001025
+<http://purl.obolibrary.org/obo/PATO_0001025> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality that inheres in a bearer by virtue of the bearer's amount of force per unit area it exerts."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001025"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "pressure"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001025> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality that inheres in a bearer by virtue of the bearer's amount of force per unit area it exerts."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001237
+<http://purl.obolibrary.org/obo/PATO_0001237> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/IAO_0000227> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0100001> <http://purl.obolibrary.org/obo/PATO_0001241> ;
+                                              owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001241
+<http://purl.obolibrary.org/obo/PATO_0001241> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality which inheres in a continuant."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0001237"^^xsd:string ,
+                                                                                                              "PATO:0001238"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "snap:Quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "monadic quality of a continuant"^^xsd:string ,
+                                                                                                             "multiply inhering quality of a physical entity"^^xsd:string ,
+                                                                                                             "quality of a continuant"^^xsd:string ,
+                                                                                                             "quality of a single physical entity"^^xsd:string ,
+                                                                                                             "quality of an object"^^xsd:string ,
+                                                                                                             "quality of continuant"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "monadic quality of an object"^^xsd:string ,
+                                                                                                              "monadic quality of continuant"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001241"^^xsd:string ;
+                                              rdfs:comment "Relational qualities are qualities that hold between multiple entities. Normal (monadic) qualities such as the shape of a eyeball exist purely as a quality of that eyeball. A relational quality such as sensitivity to light is a quality of that eyeball (and connecting nervous system) as it relates to incoming light waves/particles."^^xsd:string ;
+                                              rdfs:label "physical object quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001241> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality which inheres in a continuant."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001351
+<http://purl.obolibrary.org/obo/PATO_0001351> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001019> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A density quality which inheres in a bearer by virtue of some influence exerted by the bearer's mass on a given area."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001351"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "area density"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001351> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A density quality which inheres in a bearer by virtue of some influence exerted by the bearer's mass on a given area."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Area_density"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001353
+<http://purl.obolibrary.org/obo/PATO_0001353> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001019> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A density quality which inheres in a bearer by virtue of some influence exerted by the bearer's mass on a given volume."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001353"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "volumetric density"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001353> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A density quality which inheres in a bearer by virtue of some influence exerted by the bearer's mass on a given volume."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Mass_density"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001428
+<http://purl.obolibrary.org/obo/PATO_0001428> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000033> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A concentration quality inhering in a medium by virtue of the bearer's tendency to hydronate a specific reference base."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001428"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "medium acidity"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001428> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A concentration quality inhering in a medium by virtue of the bearer's tendency to hydronate a specific reference base."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "chemicool:chemicool"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001674
+<http://purl.obolibrary.org/obo/PATO_0001674> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000033> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A concentration quality inhering in a bearer by virtue of the bearer's catalytic activity divided by the volume of the system."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001674"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#relational_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "catalytic (activity) concentration"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001674> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A concentration quality inhering in a bearer by virtue of the bearer's catalytic activity divided by the volume of the system."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "IUPAC:IUPAC"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001681
+<http://purl.obolibrary.org/obo/PATO_0001681> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000125> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality that inheres in a homogeneous substance containing 6.02 x 1023 atoms or molecules."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001681"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "molar mass"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001681> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality that inheres in a homogeneous substance containing 6.02 x 1023 atoms or molecules."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Molar_mass"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001708
+<http://purl.obolibrary.org/obo/PATO_0001708> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000117> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A size quality inhering in an bearer by virtue of the bearer's extension in one dimension."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "1-D size"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001708"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "1-D extent"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001708> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A size quality inhering in an bearer by virtue of the bearer's extension in one dimension."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001894
+<http://purl.obolibrary.org/obo/PATO_0001894> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000047> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001894"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "phenotypic sex"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001995
+<http://purl.obolibrary.org/obo/PATO_0001995> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality that inheres in an entire organism or part of an organism."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001995"^^xsd:string ;
+                                              rdfs:label "organismal quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001995> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality that inheres in an entire organism or part of an organism."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:CJM"^^xsd:string
+ ] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

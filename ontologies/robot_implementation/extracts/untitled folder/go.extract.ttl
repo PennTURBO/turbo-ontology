@@ -1,0 +1,357 @@
+@prefix : <http://purl.obolibrary.org/obo/go.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/go.owl> .
+
+<http://purl.obolibrary.org/obo/go.owl> rdf:type owl:Ontology ;
+                                         owl:versionIRI <http://purl.obolibrary.org/obo/go/releases/2020-06-01/go.owl> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "definition"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000589
+<http://purl.obolibrary.org/obo/IAO_0000589> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#created_by
+<http://www.geneontology.org/formats/oboInOwl#created_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#creation_date
+<http://www.geneontology.org/formats/oboInOwl#creation_date> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasAlternativeId
+<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:label "has_alternative_id"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_exact_synonym"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:label "has_narrow_synonym"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
+<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_obo_namespace"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:label "has_related_synonym"^^xsd:string .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#id
+<http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#inSubset
+<http://www.geneontology.org/formats/oboInOwl#inSubset> rdf:type owl:AnnotationProperty ;
+                                                        rdfs:label "in_subset"^^xsd:string .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#deprecated
+owl:deprecated rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/GO_0005575
+<http://purl.obolibrary.org/obo/GO_0005575> rdf:type owl:Class ;
+                                            rdfs:subClassOf owl:Thing ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "GO:0008372"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NIF_Subcellular:sao1337158144"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "cell or subcellular entity"^^xsd:string ,
+                                                                                                           "cellular component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "subcellular entity"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0005575"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/go#goslim_aspergillus> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_candida> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_chembl> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_generic> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_metagenomics> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_pir> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_plant> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_yeast> ;
+                                            rdfs:comment "Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this."^^xsd:string ;
+                                            rdfs:label "cellular_component"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0005575> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:pdt"^^xsd:string ,
+                                                            "NIF_Subcellular:sao1337158144"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0005575> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "subcellular entity"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NIF_Subcellular:nlx_subcell_100315"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0005623
+<http://purl.obolibrary.org/obo/GO_0005623> rdf:type owl:Class ;
+                                            rdfs:subClassOf owl:Thing ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "OBSOLETE. The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope."^^xsd:string ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000589> "cell and encapsulating structures"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NIF_Subcellular:sao1813327414"^^xsd:string ,
+                                                                                                     "Wikipedia:Cell_(biology)"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0005623"^^xsd:string ;
+                                            rdfs:comment "This term was obsoleted because it was redundant with the root class of the cell ontology, CL:0000000."^^xsd:string ;
+                                            rdfs:label "obsolete cell"^^xsd:string ;
+                                            owl:deprecated "true"^^xsd:boolean .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0005623> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "OBSOLETE. The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:go_curators"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0008150
+<http://purl.obolibrary.org/obo/GO_0008150> rdf:type owl:Class ;
+                                            rdfs:subClassOf owl:Thing ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "jl"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2012-09-19T15:05:24Z"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "GO:0000004"^^xsd:string ,
+                                                                                                            "GO:0007582"^^xsd:string ,
+                                                                                                            "GO:0044699"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:Biological_process"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "biological process"^^xsd:string ,
+                                                                                                           "physiological process"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "biological_process"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "single organism process"^^xsd:string ,
+                                                                                                             "single-organism process"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0008150"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/go#goslim_aspergillus> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_candida> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_chembl> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_generic> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_metagenomics> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_pir> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_plant> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_pombe> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_yeast> ;
+                                            rdfs:comment "Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this."^^xsd:string ;
+                                            rdfs:label "biological_process"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0008150> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:pdt"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0019814
+<http://purl.obolibrary.org/obo/GO_0019814> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0005575> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A protein complex that in its canonical form is composed of two identical immunoglobulin heavy chains and two identical immunoglobulin light chains, held together by disulfide bonds and sometimes complexed with additional proteins. An immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "antibody"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0019814"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/go#goslim_pir> ;
+                                            rdfs:comment "Note that an immunoglobulin complex has the function of antigen binding if a suitable antigen is available."^^xsd:string ;
+                                            rdfs:label "immunoglobulin complex"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0019814> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A protein complex that in its canonical form is composed of two identical immunoglobulin heavy chains and two identical immunoglobulin light chains, held together by disulfide bonds and sometimes complexed with additional proteins. An immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string ,
+                                                            "GOC:jl"^^xsd:string ,
+                                                            "ISBN:0781765196"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0071735
+<http://purl.obolibrary.org/obo/GO_0071735> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0019814> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A protein complex composed of two identical immunoglobulin heavy chains of an IgG isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgG immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "mah"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2010-03-24T01:44:53Z"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "IgG1"^^xsd:string ,
+                                                                                                            "IgG2"^^xsd:string ,
+                                                                                                            "IgG2a"^^xsd:string ,
+                                                                                                            "IgG2b"^^xsd:string ,
+                                                                                                            "IgG2c"^^xsd:string ,
+                                                                                                            "IgG3"^^xsd:string ,
+                                                                                                            "IgG4"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0071735"^^xsd:string ;
+                                            rdfs:comment "Note that an IgG immunoglobulin complex has the function of antigen binding if a suitable antigen is available. Also, IgG isotypes vary by species."^^xsd:string ;
+                                            rdfs:label "IgG immunoglobulin complex"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgG2b"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgG2c"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgG3"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgG4"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A protein complex composed of two identical immunoglobulin heavy chains of an IgG isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgG immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string ,
+                                                            "ISBN:0781765196"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgG1"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgG2"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071735> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgG2a"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0071742
+<http://purl.obolibrary.org/obo/GO_0071742> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0019814> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A protein complex composed of two identical immunoglobulin heavy chains of the IgE isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgE immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "mah"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2010-03-24T01:44:53Z"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0071742"^^xsd:string ;
+                                            rdfs:comment "Note that an IgE immunoglobulin complex has the function of antigen binding if a suitable antigen is available."^^xsd:string ;
+                                            rdfs:label "IgE immunoglobulin complex"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071742> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A protein complex composed of two identical immunoglobulin heavy chains of the IgE isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgE immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string ,
+                                                            "ISBN:0781765196"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0071745
+<http://purl.obolibrary.org/obo/GO_0071745> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0019814> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A protein complex composed of two identical immunoglobulin heavy chains of the IgA isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and sometimes complexed with J chain or J chain and secretory component. An IgA immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "mah"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2010-03-24T01:44:53Z"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "IgA1 antibody"^^xsd:string ,
+                                                                                                            "IgA2 antibody"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0071745"^^xsd:string ;
+                                            rdfs:comment "Note that an IgA immunoglobulin complex has the function of antigen binding if a suitable antigen is available."^^xsd:string ;
+                                            rdfs:label "IgA immunoglobulin complex"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071745> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A protein complex composed of two identical immunoglobulin heavy chains of the IgA isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and sometimes complexed with J chain or J chain and secretory component. An IgA immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string ,
+                                                            "ISBN:0781765196"^^xsd:string ,
+                                                            "PMID:16362985"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071745> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgA1 antibody"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071745> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+   owl:annotatedTarget "IgA2 antibody"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0071753
+<http://purl.obolibrary.org/obo/GO_0071753> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0019814> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A protein complex composed of two identical immunoglobulin heavy chains of the IgM isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and in its circulating form complexed with J chain in polymeric forms. An IgM immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "mah"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2010-03-24T01:44:53Z"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0071753"^^xsd:string ;
+                                            rdfs:comment "Note that an IgM immunoglobulin complex has the function of antigen binding if a suitable antigen is available."^^xsd:string ;
+                                            rdfs:label "IgM immunoglobulin complex"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0071753> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A protein complex composed of two identical immunoglobulin heavy chains of the IgM isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and in its circulating form complexed with J chain in polymeric forms. An IgM immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:add"^^xsd:string ,
+                                                            "ISBN:0781765196"^^xsd:string ,
+                                                            "PMID:20176268"^^xsd:string
+ ] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi
