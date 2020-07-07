@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select 
+distinct ?s
+where { 
+	?s ?p ?o .
+    minus {
+        ?s rdfs:label ?l
+    }
+    filter(isiri(?s))
+    values ?t { owl:Class }
+    ?s a ?t .
+    filter(strstarts(str(?s), "http://purl.obolibrary.org/obo/"))
+}
+order by (str(?s))
