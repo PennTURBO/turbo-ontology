@@ -148,6 +148,25 @@
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UBPROP_0000010
+<http://purl.obolibrary.org/obo/UBPROP_0000010> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Notes on the structure, composition or histology of instances of this class."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000116> "This annotation property may be replaced with an annotation property from an external ontology such as IAO"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UBPROP:0000010"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "structure_notes"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#is_metadata_tag> "true"^^xsd:boolean ;
+                                                <http://www.geneontology.org/formats/oboInOwl#shorthand> "structure_notes"^^xsd:string ;
+                                                rdfs:label "structure_notes"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBPROP_0000010> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Notes on the structure, composition or histology of instances of this class."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-6601-2165>
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UBPROP_0000012
 <http://purl.obolibrary.org/obo/UBPROP_0000012> rdf:type owl:AnnotationProperty ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "Notes on how similar or equivalent classes are represented in other ontologies."^^xsd:string ;
@@ -379,16 +398,16 @@ rdfs:seeAlso rdf:type owl:AnnotationProperty ;
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002087> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "is immediately preceded by"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SIO:000251"^^xsd:string
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "SIO:000251"^^xsd:string
  ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/RO_0002087> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
-   owl:annotatedTarget "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]."^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "SIO:000251"^^xsd:string
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "is immediately preceded by"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SIO:000251"^^xsd:string
  ] .
 
 
@@ -539,6 +558,200 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UBERON_0000002
+<http://purl.obolibrary.org/obo/UBERON_0000002> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000064> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0005156> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Lower, narrow portion of the uterus where it joins with the top end of the vagina."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000001> "The narrow caudal end of the uterus that opens into the vagina. [TFD][VHOG]"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000003> "The evolution of mammals is associated with radical changes in their reproductive biology, particularly the structure and function of the female reproductive organs. These changes include the evolution of the uterus, cervix, vagina, placenta and specialized cell types associated with each of those structures.[well established][VHOG]"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000007> "cervical"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> "cervix"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Cervix> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0007874> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/181453009> ,
+                                                                                                         "BTO:0001421"^^xsd:string ,
+                                                                                                         "BTO:0002249"^^xsd:string ,
+                                                                                                         "CALOHA:TS-0134"^^xsd:string ,
+                                                                                                         "EFO:0000979"^^xsd:string ,
+                                                                                                         "EMAPA:29927"^^xsd:string ,
+                                                                                                         "EV:0100114"^^xsd:string ,
+                                                                                                         "FMA:17740"^^xsd:string ,
+                                                                                                         "GAID:376"^^xsd:string ,
+                                                                                                         "MA:0000392"^^xsd:string ,
+                                                                                                         "MAT:0000292"^^xsd:string ,
+                                                                                                         "MESH:D002584"^^xsd:string ,
+                                                                                                         "NCIT:C12311"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4rvVipEJwpEbGdrcN5Y29ycA"^^xsd:string ,
+                                                                                                         "UMLS:C0007874"^^xsd:string ,
+                                                                                                         "VHOG:0001359"^^xsd:string ,
+                                                                                                         "galen:CervixUteri"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "canalis cervicis uteri"^^xsd:string ,
+                                                                                                               "caudal segment of uterus"^^xsd:string ,
+                                                                                                               "cervical canal of uterus"^^xsd:string ,
+                                                                                                               "cervix uteri"^^xsd:string ,
+                                                                                                               "neck of uterus"^^xsd:string ,
+                                                                                                               "uterine cervix"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "cervical canal"^^xsd:string ,
+                                                                                                                 "cervix of uterus"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000002"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#efo_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#pheno_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#uberon_slim> ;
+                                                rdfs:label "uterine cervix"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Lower, narrow portion of the uterus where it joins with the top end of the vagina."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Cervix> ,
+                                                            <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "The narrow caudal end of the uterus that opens into the vagina. [TFD][VHOG]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-09-17"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "VHOG:0001359"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "VHOG"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> <http://bgee.unil.ch/> ,
+                                                         <http://medical-dictionary.thefreedictionary.com/uterine+cervix>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000003> ;
+   owl:annotatedTarget "The evolution of mammals is associated with radical changes in their reproductive biology, particularly the structure and function of the female reproductive organs. These changes include the evolution of the uterus, cervix, vagina, placenta and specialized cell types associated with each of those structures.[well established][VHOG]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-09-17"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "VHOG:0001359"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "VHOG"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> <http://bgee.unil.ch/> ,
+                                                         "DOI:10.1098/rspb.2004.2848 Lynch VJ, Roth JJ, Takahashi K, Dunn CW, Nonaka DF, Stopper GF, Wagner GP, Adaptive evolution of HoxA-11 and HoxA-13 at the origin of the uterus in mammals. Proceedings of the Royal Society of London, Series B (2004)"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> ;
+   owl:annotatedTarget "cervix"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "EFO:0000979"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0007874"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Cervix"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "canalis cervicis uteri"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:17740"^^xsd:string ,
+                                                            "FMA:TA"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#LATIN>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "cervical canal of uterus"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:17740"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "cervix uteri"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "EMAPA:29927"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#LATIN>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "neck of uterus"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:17740"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "uterine cervix"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:17740"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "cervical canal"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:17740"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000002> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "cervix of uterus"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0001421"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000057
+<http://purl.obolibrary.org/obo/UBERON_0000057> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000062> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0004120> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "the fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000007> "urethral"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000008> "In human males, the urethra travels through the penis, and carries semen as well as urine. In females, the urethra is shorter and emerges above the vaginal opening."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Urethra> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0041967> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/302513006> ,
+                                                                                                         "BTO:0001426"^^xsd:string ,
+                                                                                                         "CALOHA:TS-1132"^^xsd:string ,
+                                                                                                         "EFO:0000931"^^xsd:string ,
+                                                                                                         "EMAPA:30901"^^xsd:string ,
+                                                                                                         "EV:0100099"^^xsd:string ,
+                                                                                                         "FMA:19667"^^xsd:string ,
+                                                                                                         "GAID:390"^^xsd:string ,
+                                                                                                         "MA:0000379"^^xsd:string ,
+                                                                                                         "MAT:0000121"^^xsd:string ,
+                                                                                                         "MESH:D014521"^^xsd:string ,
+                                                                                                         "MIAA:0000121"^^xsd:string ,
+                                                                                                         "NCIT:C12417"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4rvVjkypwpEbGdrcN5Y29ycA"^^xsd:string ,
+                                                                                                         "UMLS:C0041967"^^xsd:string ,
+                                                                                                         "VHOG:0001264"^^xsd:string ,
+                                                                                                         "XAO:0000153"^^xsd:string ,
+                                                                                                         "galen:Urethra"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000057"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#efo_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#major_organ> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#organ_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#pheno_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#uberon_slim> ;
+                                                rdfs:label "urethra"^^xsd:string ;
+                                                <http://xmlns.com/foaf/0.1/depicted_by> "Female:anatomy.png"^^xsd:anyURI .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000057> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "the fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MGI:anna"^^xsd:string ,
+                                                            "MP:0000537"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000057> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0041967"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Urethra"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UBERON_0000061
 <http://purl.obolibrary.org/obo/UBERON_0000061> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
@@ -643,6 +856,86 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UBERON_0000064
+<http://purl.obolibrary.org/obo/UBERON_0000064> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A multicellular structure that is a part of an organ."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000232> "currently defined in a very broad sense, may be replaced by more specific classes in the future"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://www.snomedbrowser.com/Codes/Details/113343008> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/91717005> ,
+                                                                                                         "AAO:0011124"^^xsd:string ,
+                                                                                                         "BIRNLEX:16"^^xsd:string ,
+                                                                                                         "EFO:0000635"^^xsd:string ,
+                                                                                                         "FMA:82472"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "cardinal organ part"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "regional part of organ"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000064"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#efo_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#non_informative> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#upper_level> ;
+                                                rdfs:label "organ part"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000064> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A multicellular structure that is a part of an organ."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000064> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "cardinal organ part"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:82472"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000064> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "regional part of organ"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BIRNLEX:16"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000072
+<http://purl.obolibrary.org/obo/UBERON_0000072> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000064> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0004119> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An section of a respiratory tract."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000012> "MA:0000434 has subclasses upper and lower, so it corresponds to a segment of the tract, rather than the tract as a whole"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "EMAPA:16737"^^xsd:string ,
+                                                                                                         "FMA:45660"^^xsd:string ,
+                                                                                                         "MA:0000434"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "respiratory tract"^^xsd:string ,
+                                                                                                                 "subdivision of respiratory tract"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000072"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#non_informative> ;
+                                                rdfs:label "proximo-distal subdivision of respiratory tract"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000072> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An section of a respiratory tract."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000072> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000012> ;
+   owl:annotatedTarget "MA:0000434 has subclasses upper and lower, so it corresponds to a segment of the tract, rather than the tract as a whole"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_ontology> "MA"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000072> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "respiratory tract"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MA:0000434"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UBERON_0000105
 <http://purl.obolibrary.org/obo/UBERON_0000105> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000000> ;
@@ -676,6 +969,56 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A spatiotemporal region encompassing some part of the life cycle of an organism."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-6601-2165>
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000174
+<http://purl.obolibrary.org/obo/UBERON_0000174> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "UBERON:0000324"^^xsd:string ,
+                                                                                                                "UBERON:0007550"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "AEO:0000184"^^xsd:string ,
+                                                                                                         "BTO:0000491"^^xsd:string ,
+                                                                                                         "EHDAA2_RETIRED:0003184"^^xsd:string ,
+                                                                                                         "ENVO:02000022"^^xsd:string ,
+                                                                                                         "FMA:9674"^^xsd:string ,
+                                                                                                         "galen:Excretion"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "excreted substance"^^xsd:string ,
+                                                                                                               "portion of excreted substance"^^xsd:string ,
+                                                                                                               "waste substance"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "excretion"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000174"^^xsd:string ;
+                                                rdfs:label "excreta"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000174> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165> ,
+                                                            "GO:0007588"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000174> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "portion of excreted substance"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:9674"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000174> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "waste substance"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "AEO:0000184"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000174> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "excretion"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000491"^^xsd:string
  ] .
 
 
@@ -814,7 +1157,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000310
 <http://purl.obolibrary.org/obo/UBERON_0000310> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0034929> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "The upper ventral region of the torso of an organism."^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/UBPROP_0000008> "The breasts of a female primate's body contain the mammary glands, which secrete milk used to feed infants. Both men and women develop breasts from the same embryological tissues. However, at puberty female sex hormones, mainly estrogens, promote breast development, which does not happen with men. As a result women's breasts become more prominent than men's."^^xsd:string ;
                                                 <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Breast> ,
@@ -879,6 +1222,87 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
    owl:annotatedTarget "mamma"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Breast> ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#LATIN>
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000316
+<http://purl.obolibrary.org/obo/UBERON_0000316> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0006314> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A substance produced by the cervix and endocervical glands[BTO]. Thick acidic mucus that blocks the cervical os after mestruation[WP]. This 'infertile' mucus blocks spermatozoa from entering the uterus."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Mucus#Reproductive_system> ,
+                                                                                                         "BTO:0000242"^^xsd:string ,
+                                                                                                         "FMA:83689"^^xsd:string ,
+                                                                                                         "MESH:D002582"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "cervix mucus"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000316"^^xsd:string ;
+                                                rdfs:label "cervical mucus"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000316> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A substance produced by the cervix and endocervical glands[BTO]. Thick acidic mucus that blocks the cervical os after mestruation[WP]. This 'infertile' mucus blocks spermatozoa from entering the uterus."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Cervix#Cervical_mucus> ,
+                                                            <http://en.wikipedia.org/wiki/Mucus#Reproductive_system> ,
+                                                            "BTO:0000242"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000316> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "cervix mucus"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "OBOL:automatic"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000341
+<http://purl.obolibrary.org/obo/UBERON_0000341> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0034929> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "In anatomy, the throat is the anterior part of the neck, in front of the vertebral column. It consists of the pharynx and larynx. An important feature of the throat is the epiglottis, a flap which separates the esophagus from the trachea and prevents inhalation of food or drink. The throat contains various blood vessels, various pharyngeal muscles, the trachea (windpipe) and the esophagus. The hyoid bone and the clavicle are the only bones located in the throat of mammals. It is sometimes considered a synonym for fauces. [WP,unvetted]."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000007> "gular"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000008> "The hyoid bone and the clavicle are the only bones located in the throat of mammals."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Throat> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0230069> ,
+                                                                                                         "BTO:0000828"^^xsd:string ,
+                                                                                                         "EMAPA:37973"^^xsd:string ,
+                                                                                                         "FMA:228738"^^xsd:string ,
+                                                                                                         "NCIT:C54272"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4rwQtO_JwpEbGdrcN5Y29ycA"^^xsd:string ,
+                                                                                                         "UMLS:C0230069"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "gula"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000341"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#pheno_slim> ;
+                                                rdfs:label "throat"^^xsd:string ;
+                                                <http://xmlns.com/foaf/0.1/depicted_by> "Throat:Diagram.png"^^xsd:anyURI .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000341> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "In anatomy, the throat is the anterior part of the neck, in front of the vertebral column. It consists of the pharynx and larynx. An important feature of the throat is the epiglottis, a flap which separates the esophagus from the trachea and prevents inhalation of food or drink. The throat contains various blood vessels, various pharyngeal muscles, the trachea (windpipe) and the esophagus. The hyoid bone and the clavicle are the only bones located in the throat of mammals. It is sometimes considered a synonym for fauces. [WP,unvetted]."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Throat>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000341> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "EMAPA:37973"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "MA:th"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000341> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0230069"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Throat"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000341> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "gula"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#LATIN>
  ] .
 
@@ -1087,6 +1511,156 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UBERON_0000970
+<http://purl.obolibrary.org/obo/UBERON_0000970> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000062> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An organ that detects light."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000232> "This class encompasses a variety of light-detecting structures from different phyla with no implication of homology, from the compound insect eye to the vertebrate camera-type eye (distinct classes are provided for each)"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000007> "ocular"^^xsd:string ,
+                                                                                                "optic"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000010> "Note that whilst this is classified as an organ, it is in fact more of a unit composed of different structures: in Drosophila, it includes the interommatidial bristle as a part; we consider here the vertebrate eye to include the eyeball/eye proper as a part, with the eye having as parts (when present): eyelids, conjuctiva,"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Eye> ,
+                                                                                                         "BILA:0000017"^^xsd:string ,
+                                                                                                         "BTO:0000439"^^xsd:string ,
+                                                                                                         "CALOHA:TS-0309"^^xsd:string ,
+                                                                                                         "EFO:0000827"^^xsd:string ,
+                                                                                                         "EV:0100336"^^xsd:string ,
+                                                                                                         "FBbt:00005162"^^xsd:string ,
+                                                                                                         "GAID:69"^^xsd:string ,
+                                                                                                         "MAT:0000140"^^xsd:string ,
+                                                                                                         "MESH:D005123"^^xsd:string ,
+                                                                                                         "MIAA:0000140"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4rvViTvpwpEbGdrcN5Y29ycA"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "light-detecting organ"^^xsd:string ,
+                                                                                                                 "visual apparatus"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0000970"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#efo_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#functional_classification> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#major_organ> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#organ_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#uberon_slim> ;
+                                                rdfs:label "eye"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000970> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An organ that detects light."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0000970> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "visual apparatus"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "EV:0100336"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0001004
+<http://purl.obolibrary.org/obo/UBERON_0001004> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000061> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Functional system which consists of structures involved in respiration."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000001> "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000003> "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Respiratory_system> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0035237> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/278197002> ,
+                                                                                                         "AAO:0000541"^^xsd:string ,
+                                                                                                         "BTO:0000203"^^xsd:string ,
+                                                                                                         "CALOHA:TS-1319"^^xsd:string ,
+                                                                                                         "EFO:0000804"^^xsd:string ,
+                                                                                                         "EHDAA2:0001604"^^xsd:string ,
+                                                                                                         "EHDAA:2203"^^xsd:string ,
+                                                                                                         "EMAPA:16727"^^xsd:string ,
+                                                                                                         "EV:0100036"^^xsd:string ,
+                                                                                                         "FMA:7158"^^xsd:string ,
+                                                                                                         "GAID:78"^^xsd:string ,
+                                                                                                         "MA:0000327"^^xsd:string ,
+                                                                                                         "MAT:0000030"^^xsd:string ,
+                                                                                                         "MESH:D012137"^^xsd:string ,
+                                                                                                         "MIAA:0000030"^^xsd:string ,
+                                                                                                         "NCIT:C12779"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4rvVjzFJwpEbGdrcN5Y29ycA"^^xsd:string ,
+                                                                                                         "TAO:0000272"^^xsd:string ,
+                                                                                                         "UMLS:C0035237"^^xsd:string ,
+                                                                                                         "VHOG:0000202"^^xsd:string ,
+                                                                                                         "XAO:0000117"^^xsd:string ,
+                                                                                                         "ZFA:0000272"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "apparatus respiratorius"^^xsd:string ,
+                                                                                                               "respiratory system"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "Atmungssystem"^^xsd:string ,
+                                                                                                                 "apparatus respiratorius"^^xsd:string ,
+                                                                                                                 "systema respiratorium"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0001004"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#efo_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#functional_classification> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#pheno_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#uberon_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#vertebrate_core> ;
+                                                rdfs:label "respiratory system"^^xsd:string ;
+                                                <http://xmlns.com/foaf/0.1/depicted_by> "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg"^^xsd:anyURI .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001004> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Functional system which consists of structures involved in respiration."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Respiratory_system> ,
+                                                            <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001004> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-06-20"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "AAO:0000541"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "AAO"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "AAO:BJB"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001004> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000003> ;
+   owl:annotatedTarget "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-09-17"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "VHOG:0000202"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "VHOG"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> <http://bgee.unil.ch/> ,
+                                                         "ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001004> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0035237"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Respiratory_System"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001004> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "Atmungssystem"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000203"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001004> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "apparatus respiratorius"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000203"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001004> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "systema respiratorium"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Respiratory_system> ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#LATIN>
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UBERON_0001013
 <http://purl.obolibrary.org/obo/UBERON_0001013> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0002384> ,
@@ -1271,7 +1845,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0001088
 <http://purl.obolibrary.org/obo/UBERON_0001088> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000174> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "Excretion that is the output of a kidney"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/UBPROP_0000008> "kidney excreta from some taxa (e.g. in aves) may not be liquid"^^xsd:string ;
                                                 <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Urine> ,
@@ -1300,17 +1874,140 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001088> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0042036"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Urine"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001088> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "Excretion that is the output of a kidney"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Urine> ,
                                                             <https://github.com/geneontology/go-ontology/issues/11025>
  ] .
 
+
+###  http://purl.obolibrary.org/obo/UBERON_0001557
+<http://purl.obolibrary.org/obo/UBERON_0001557> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000072> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0010314> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "The segment of the respiratory tract that starts proximally with the nose and ends distally with the cricoid cartilage, before continuing to the trachea."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000012> "Some specify that the glottis (vocal cords) is the defining line between the upper and lower respiratory tracts;[2] yet even others make the line at the cricoid cartilage. The FMA includes nose, nasopharynx, oropharynx and larynx[WP]"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Upper_respiratory_tract> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/361381009> ,
+                                                                                                         "EHDAA2:0002136"^^xsd:string ,
+                                                                                                         "EMAPA:17669"^^xsd:string ,
+                                                                                                         "FMA:45661"^^xsd:string ,
+                                                                                                         "MA:0000442"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4rtT2HwgJMEdyAAADggVbxzQ"^^xsd:string ,
+                                                                                                         "VHOG:0000406"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0001557"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#pheno_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#uberon_slim> ;
+                                                rdfs:label "upper respiratory tract"^^xsd:string ;
+                                                <http://xmlns.com/foaf/0.1/depicted_by> "http://upload.wikimedia.org/wikipedia/commons/9/9f/Illu_conducting_passages.svg"^^xsd:anyURI ,
+                                                                                        "http://upload.wikimedia.org/wikipedia/commons/c/c3/Illu_conducting_passages.jpg"^^xsd:anyURI .
+
 [ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001088> ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001557> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "The segment of the respiratory tract that starts proximally with the nose and ends distally with the cricoid cartilage, before continuing to the trachea."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001557> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000012> ;
+   owl:annotatedTarget "Some specify that the glottis (vocal cords) is the defining line between the upper and lower respiratory tracts;[2] yet even others make the line at the cricoid cartilage. The FMA includes nose, nasopharynx, oropharynx and larynx[WP]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_ontology> "FMA"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0001728
+<http://purl.obolibrary.org/obo/UBERON_0001728> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000072> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "the section of the pharynx that lies above the soft palate"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000001> "The uppermost of the three regions of the throat (pharynx), situated behind the nasal cavity and extending from the posterior nares to the level above the soft palate. [TFD][VHOG]"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000007> "nasopharyngeal"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000008> "In humans - in front it communicates through the choanae with the nasal cavities. On its lateral wall is the pharyngeal ostium of the auditory tube, somewhat triangular in shape, and bounded behind by a firm prominence, the torus tubarius or cushion, caused by the medial end of the cartilage of the tube which elevates the mucous membrane"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Nasopharynx> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0027442> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/181200003> ,
+                                                                                                         "BTO:0000662"^^xsd:string ,
+                                                                                                         "CALOHA:TS-0663"^^xsd:string ,
+                                                                                                         "EHDAA2:0001239"^^xsd:string ,
+                                                                                                         "EHDAA:7086"^^xsd:string ,
+                                                                                                         "EMAPA:17670"^^xsd:string ,
+                                                                                                         "EV:0100066"^^xsd:string ,
+                                                                                                         "FMA:54878"^^xsd:string ,
+                                                                                                         "GAID:339"^^xsd:string ,
+                                                                                                         "MA:0000443"^^xsd:string ,
+                                                                                                         "MAT:0000447"^^xsd:string ,
+                                                                                                         "MESH:A03.867.557"^^xsd:string ,
+                                                                                                         "NCIT:C12423"^^xsd:string ,
+                                                                                                         "OpenCyc:Mx4rwUPoDJwpEbGdrcN5Y29ycA"^^xsd:string ,
+                                                                                                         "UMLS:C0027442"^^xsd:string ,
+                                                                                                         "VHOG:0000375"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "nasal part of pharynx"^^xsd:string ,
+                                                                                                               "rhinopharynx"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "Nasenrachenraum"^^xsd:string ,
+                                                                                                                 "epipharynx"^^xsd:string ,
+                                                                                                                 "pars nasalis pharyngis"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0001728"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#pheno_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#uberon_slim> ;
+                                                rdfs:label "nasopharynx"^^xsd:string ;
+                                                <http://xmlns.com/foaf/0.1/depicted_by> "Illu:pharynx.jpg"^^xsd:anyURI .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001728> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "the section of the pharynx that lies above the soft palate"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MGI:cwg"^^xsd:string ,
+                                                            "MP:0002251"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001728> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "The uppermost of the three regions of the throat (pharynx), situated behind the nasal cavity and extending from the posterior nares to the level above the soft palate. [TFD][VHOG]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-09-17"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "VHOG:0000375"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "VHOG"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> <http://bgee.unil.ch/> ,
+                                                         <http://medical-dictionary.thefreedictionary.com/nasopharynx>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001728> ;
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
-   owl:annotatedTarget "UMLS:C0042036"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Urine"^^xsd:string
+   owl:annotatedTarget "UMLS:C0027442"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Nasopharynx"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001728> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "Nasenrachenraum"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000662"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001728> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "epipharynx"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Pharynx>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0001728> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "pars nasalis pharyngis"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Nasopharynx> ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#LATIN>
  ] .
 
 
@@ -1649,11 +2346,131 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/UBERON_0002050
+<http://purl.obolibrary.org/obo/UBERON_0002050> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0005423> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure that is part of an embryo."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000001> "Anatomical structure that is part of the embryo and is comprised of portions of tissue or cells.[AAO]"^^xsd:string ,
+                                                                                                "Anatomical structure that is part of the embryo and is comprised of portions of tissue or cells.[TAO]"^^xsd:string ,
+                                                                                                "Anatomical structure that is part of the embryo and is comprised of portions of tissue or cells.[VSAO]"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000012> "in FMA embryo is_a embryonic structure"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://linkedlifedata.com/resource/umls/id/C0013948> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/667009> ,
+                                                                                                         "AAO:0000138"^^xsd:string ,
+                                                                                                         "BILA:0000034"^^xsd:string ,
+                                                                                                         "BTO:0000174"^^xsd:string ,
+                                                                                                         "CALOHA:TS-2110"^^xsd:string ,
+                                                                                                         "EFO:0000461"^^xsd:string ,
+                                                                                                         "FBbt:00004208"^^xsd:string ,
+                                                                                                         "FMA:69067"^^xsd:string ,
+                                                                                                         "GAID:407"^^xsd:string ,
+                                                                                                         "MESH:D004628"^^xsd:string ,
+                                                                                                         "NCIT:C13229"^^xsd:string ,
+                                                                                                         "RETIRED_EHDAA2:0003169"^^xsd:string ,
+                                                                                                         "TAO:0001105"^^xsd:string ,
+                                                                                                         "UMLS:C0013948"^^xsd:string ,
+                                                                                                         "VSAO:0000178"^^xsd:string ,
+                                                                                                         "XAO:0003042"^^xsd:string ,
+                                                                                                         "ZFA:0001105"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "developing embryonic structure"^^xsd:string ,
+                                                                                                               "embryonic anatomical structure"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "developing structure"^^xsd:string ,
+                                                                                                                 "embryonale Struktur"^^xsd:string ,
+                                                                                                                 "embryonic structures"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0002050"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#efo_slim> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#inconsistent_with_fma> ,
+                                                                                                        <http://purl.obolibrary.org/obo/uberon/core#vertebrate_core> ;
+                                                rdfs:label "embryonic structure"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Anatomical structure that is part of an embryo."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000174"^^xsd:string ,
+                                                            "ZFIN:curator"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "Anatomical structure that is part of the embryo and is comprised of portions of tissue or cells.[AAO]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-06-20"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "AAO:0000138"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "AAO"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "AAO:BJB"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "Anatomical structure that is part of the embryo and is comprised of portions of tissue or cells.[TAO]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-08-14"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "TAO:0001105"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "TAO"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ZFIN:curator"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000001> ;
+   owl:annotatedTarget "Anatomical structure that is part of the embryo and is comprised of portions of tissue or cells.[VSAO]"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#date_retrieved> "2012-08-14"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_class> "VSAO:0000178"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#ontology> "VSAO"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ZFIN:curator"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/UBPROP_0000012> ;
+   owl:annotatedTarget "in FMA embryo is_a embryonic structure"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#external_ontology> "FMA"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0013948"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Embryonic_Structure"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "developing embryonic structure"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FBbt:00004208"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "embryonic anatomical structure"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RETIRED_EHDAA2:0003169"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "embryonale Struktur"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000174"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002050> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "embryonic structures"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ZFA:0001105"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#PLURAL>
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/UBERON_0002349
 <http://purl.obolibrary.org/obo/UBERON_0002349> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000061> ,
-                                                                <http://purl.obolibrary.org/obo/UBERON_0004120> ,
-                                                                <http://purl.obolibrary.org/obo/UBERON_0004923> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0004120> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0004923> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0010314> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "the middle layer of the heart, comprised mainly of striated cardiac muscle fibers"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000116> "TODO - check 'Myocardum proper' in FMA. We superclass the more generic class for now. FMA has is_a muscle layer - should we add this? ZFA and BTO both have is_a 'cardiac muscle' (tissue?). But in U we also follow FMA and have cardiac muscle tissue of myocardium (there is also Fibrocollagenous connective tissue of myocardium), which would be identical (see issue-10). Note that GO also treats left/right ventricular cardiac muscle tissue synonymous with ventricular myocardium"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/UBPROP_0000001> "Robust muscular tunic of the heart which forms the basic part of its walls. Its external surface is covered by the pericardium and its internal one by the endocardium. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]"^^xsd:string ,
@@ -1767,7 +2584,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                                                 <http://purl.obolibrary.org/obo/UBERON_0000062> ,
                                                                 <http://purl.obolibrary.org/obo/UBERON_0004119> ,
                                                                 <http://purl.obolibrary.org/obo/UBERON_0004120> ,
-                                                                <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                                <http://purl.obolibrary.org/obo/UBERON_0005156> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "The prostate gland is a partly muscular, partly glandular body that is situated near the base of the mammalian male urethra and secretes an alkaline viscid fluid which is a major constituent of the ejaculatory fluid."^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000116> "TODO - FMA treats the gland as part of the prostate - see also FMA:74119."^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/UBPROP_0000007> "prostatic"^^xsd:string ;
@@ -1877,13 +2694,6 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002384> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
-   owl:annotatedTarget "Bindegewebe"^^xsd:string ;
-   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000421"^^xsd:string
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002384> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "Tissue with cells that deposit non-polarized extracellular matrix including connective tissue fibers and ground substance."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://dx.plos.org/10.1371/journal.pone.0051070> ,
@@ -1945,6 +2755,13 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:9640"^^xsd:string
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0002384> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "Bindegewebe"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000421"^^xsd:string
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/UBERON_0004119
 <http://purl.obolibrary.org/obo/UBERON_0004119> rdf:type owl:Class ;
@@ -1993,7 +2810,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0004923
 <http://purl.obolibrary.org/obo/UBERON_0004923> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000064> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "A part of a wall of an organ that forms a layer."^^xsd:string ;
                                                 <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:82485"^^xsd:string ;
                                                 <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
@@ -2005,6 +2822,25 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0004923> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A part of a wall of an organ that forms a layer."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0005156
+<http://purl.obolibrary.org/obo/UBERON_0005156> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "Any anatomical structure that is part of the reproductive system."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "reproductive system element"^^xsd:string ,
+                                                                                                               "reproductive system structure"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0005156"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#grouping_class> ;
+                                                rdfs:label "reproductive structure"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0005156> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Any anatomical structure that is part of the reproductive system."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
  ] .
 
@@ -2041,6 +2877,30 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "trunk organ"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MA:0000516"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0005423
+<http://purl.obolibrary.org/obo/UBERON_0005423> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "AEO:0000125"^^xsd:string ,
+                                                                                                         "CALOHA:TS-2122"^^xsd:string ,
+                                                                                                         "EHDAA2:0003125"^^xsd:string ,
+                                                                                                         "FBbt:00007006"^^xsd:string ,
+                                                                                                         "FMA:292313"^^xsd:string ,
+                                                                                                         "MIAA:0000019"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "developing structure"^^xsd:string ,
+                                                                                                                 "developmental structure"^^xsd:string ,
+                                                                                                                 "developmental tissue"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0005423"^^xsd:string ;
+                                                rdfs:label "developing anatomical structure"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0005423> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "developmental tissue"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MIAA:0000019"^^xsd:string
  ] .
 
 
@@ -2082,6 +2942,137 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "body fluid"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GAID:266"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0007106
+<http://purl.obolibrary.org/obo/UBERON_0007106> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0002050> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0005423> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "One of the minute vascular projections of the fetal chorion that combines with maternal uterine tissue to form the placenta."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000008> "The mouse and human placentas have labyrinthine and villous types of interdigitation between maternal and fetal tissues, respectively"^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/UBPROP_0000010> "The bulk of the villi consist of connective tissues in which blood vessels are found. Most of the cells in the connective tissue core of the villi are fibroblasts. Macrophages known as Hofbauer cells are also present."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Chorionic_villi> ,
+                                                                                                         <http://linkedlifedata.com/resource/umls/id/C0008508> ,
+                                                                                                         <http://www.snomedbrowser.com/Codes/Details/360403003> ,
+                                                                                                         "BTO:0001161"^^xsd:string ,
+                                                                                                         "EHDAA2:0004717"^^xsd:string ,
+                                                                                                         "MESH:A16.254.403.473.200"^^xsd:string ,
+                                                                                                         "NCIT:C34125"^^xsd:string ,
+                                                                                                         "UMLS:C0008508"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "chorionic villi"^^xsd:string ,
+                                                                                                                 "chorionic villous"^^xsd:string ,
+                                                                                                                 "chorionic villus"^^xsd:string ,
+                                                                                                                 "embryonic part of placenta"^^xsd:string ,
+                                                                                                                 "embryonic placenta"^^xsd:string ,
+                                                                                                                 "fetal part of placenta"^^xsd:string ,
+                                                                                                                 "fetal placenta"^^xsd:string ,
+                                                                                                                 "placental villi"^^xsd:string ,
+                                                                                                                 "placental villous"^^xsd:string ,
+                                                                                                                 "placental villus"^^xsd:string ,
+                                                                                                                 "villous chorion"^^xsd:string ,
+                                                                                                                 "villous of placenta"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0007106"^^xsd:string ;
+                                                rdfs:label "chorionic villus"^^xsd:string ;
+                                                <http://xmlns.com/foaf/0.1/depicted_by> "http://upload.wikimedia.org/wikipedia/commons/1/1e/Gray29.png"^^xsd:anyURI .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "One of the minute vascular projections of the fetal chorion that combines with maternal uterine tissue to form the placenta."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Chorionic_villi> ,
+                                                            "BTO:0001161"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+   owl:annotatedTarget "UMLS:C0008508"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#source> "ncithesaurus:Chorionic_Villus"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "chorionic villi"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MESH:A16.254.403.473.200"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#PLURAL>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "chorionic villous"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://en.wikipedia.org/wiki/Chorionic_villi>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "chorionic villus"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GAID:1300"^^xsd:string
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "embryonic part of placenta"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "embryonic placenta"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "fetal part of placenta"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "fetal placenta"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "placental villi"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GAID:1300"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/uberon/core#PLURAL>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007106> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+   owl:annotatedTarget "placental villus"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GAID:1300"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0007109
+<http://purl.obolibrary.org/obo/UBERON_0007109> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000174> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A dark greenish mass that accumulates in the bowel during fetal life and is discharged shortly after birth."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000838"^^xsd:string ,
+                                                                                                         "ncithesaurus:Meconium"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0007109"^^xsd:string ;
+                                                rdfs:label "meconium"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0007109> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A dark greenish mass that accumulates in the bowel during fetal life and is discharged shortly after birth."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "BTO:0000838"^^xsd:string
  ] .
 
 
@@ -2203,7 +3194,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0007378
 <http://purl.obolibrary.org/obo/UBERON_0007378> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000465> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0002050> ;
                                                 <http://purl.obolibrary.org/obo/IAO_0000115> "The yellow spheroidal mass of stored food that forms the inner portion of the egg of a bird or reptile and is surrounded by the white."^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/UBPROP_0000001> "Extraembryonic structure that serves as a nutrient store for the embryo during development.[AAO]"^^xsd:string ;
                                                 <http://purl.obolibrary.org/obo/UBPROP_0000003> "The majority of animals develop from a spherical egg with a single axis, the animal-vegetal (an-veg) axis. The animal half of the egg usually contains the nucleus of the oocyte, while the vegetal half of the egg is the preferred site for the storage of yolk. Eggs with an-veg polarity are considered ancestral for the vertebrates. Frogs, for example, have eggs with vegetally concentrated yolk and the nucleus located in the animal cytoplasm.[well established][VHOG]"^^xsd:string ;
@@ -2330,6 +3321,24 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "multicellular structure"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FBbt:00100313"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0010314
+<http://purl.obolibrary.org/obo/UBERON_0010314> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000061> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical structure that has some part that develops from the neural crest."^^xsd:string ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000232> "Grouping term for query purposes"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0010314"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#grouping_class> ;
+                                                rdfs:label "structure with developmental contribution from neural crest"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0010314> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An anatomical structure that has some part that develops from the neural crest."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-6601-2165>
  ] .
 
 
@@ -2543,6 +3552,22 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "portion of blood in capillary"^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:263901"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0034929
+<http://purl.obolibrary.org/obo/UBERON_0034929> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0010000> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000115> "A region or zone on the surface of an organism that encompasses skin and any adnexa, down through muscles and bounded by underlying skeletal support structures."^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "uberon"^^xsd:string ;
+                                                <http://www.geneontology.org/formats/oboInOwl#id> "UBERON:0034929"^^xsd:string ;
+                                                rdfs:label "external soft tissue zone"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/UBERON_0034929> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A region or zone on the surface of an organism that encompasses skin and any adnexa, down through muscles and bounded by underlying skeletal support structures."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://orcid.org/0000-0002-6601-2165>
  ] .
 
 
