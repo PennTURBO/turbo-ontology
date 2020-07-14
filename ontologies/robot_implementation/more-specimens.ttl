@@ -106,7 +106,8 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/BFO_0000040
 <http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000002> ,
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ,
+                                                             <http://purl.obolibrary.org/obo/BFO_0000002> ,
                                                              <http://purl.obolibrary.org/obo/BFO_0000004> ,
                                                              <http://www.ebi.ac.uk/efo/EFO_0000001> ,
                                                              owl:Thing ;
@@ -197,12 +198,6 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 <http://purl.obolibrary.org/obo/CL_0002371> rdf:type owl:Class ;
                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/CL_0000003> ;
                                             rdfs:label "somatic cell"^^xsd:string .
-
-
-###  http://purl.obolibrary.org/obo/FOODON_03420127
-<http://purl.obolibrary.org/obo/FOODON_03420127> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
-                                                 rdfs:label "animal body or body part"@en .
 
 
 ###  http://purl.obolibrary.org/obo/GO_0005623
@@ -355,8 +350,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000316
 <http://purl.obolibrary.org/obo/UBERON_0000316> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ,
-                                                                <http://purl.obolibrary.org/obo/UBERON_0006314> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000912> ;
                                                 rdfs:label "cervical mucus"^^xsd:string .
 
 
@@ -378,6 +372,13 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 <http://purl.obolibrary.org/obo/UBERON_0000465> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0001062> ;
                                                 rdfs:label "material anatomical entity"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000912
+<http://purl.obolibrary.org/obo/UBERON_0000912> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000463> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0006314> ;
+                                                rdfs:label "mucus"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000970
@@ -461,7 +462,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0006314
 <http://purl.obolibrary.org/obo/UBERON_0006314> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/FOODON_03420127> ,
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
                                                                 <http://purl.obolibrary.org/obo/UBERON_0000463> ,
                                                                 <http://www.ebi.ac.uk/efo/EFO_0000635> ;
                                                 rdfs:label "bodily fluid"^^xsd:string .

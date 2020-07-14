@@ -39,6 +39,11 @@
                                                                 rdfs:label "has_alternative_id"^^xsd:string .
 
 
+###  http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_broad_synonym"^^xsd:string .
+
+
 ###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
 <http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty .
 
@@ -128,6 +133,29 @@ owl:deprecated rdf:type owl:AnnotationProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/GO_0000806
+<http://purl.obolibrary.org/obo/GO_0000806> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0043226> ,
+                                                            <http://purl.obolibrary.org/obo/GO_0043229> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "The sex chromosome present in males of species in which the male is the heterogametic sex; generally, the sex chromosome that pairs with the X chromosome in the heterogametic sex. The Y chromosome is absent from the cells of females and present in one copy in the somatic cells of males."^^xsd:string ;
+                                            <http://purl.obolibrary.org/obo/RO_0002161> <http://purl.obolibrary.org/obo/NCBITaxon_8782> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:Y_chromosome"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0000806"^^xsd:string ;
+                                            rdfs:label "Y chromosome"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0000806> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "The sex chromosome present in males of species in which the male is the heterogametic sex; generally, the sex chromosome that pairs with the X chromosome in the heterogametic sex. The Y chromosome is absent from the cells of females and present in one copy in the somatic cells of males."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:mah"^^xsd:string ,
+                                                            "GOC:mr"^^xsd:string ,
+                                                            "ISBN:0582227089"^^xsd:string ,
+                                                            "PMID:20622855"^^xsd:string ,
+                                                            "Wikipedia:XY_sex-determination_system"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/GO_0003094
 <http://purl.obolibrary.org/obo/GO_0003094> rdf:type owl:Class ;
                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0008150> ;
@@ -143,6 +171,33 @@ owl:deprecated rdf:type owl:AnnotationProperty .
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:mtg_cardio"^^xsd:string ,
                                                             "GOC:sart"^^xsd:string ,
                                                             "ISBN:0721643949"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0003674
+<http://purl.obolibrary.org/obo/GO_0003674> rdf:type owl:Class ;
+                                            rdfs:subClassOf owl:Thing ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "GO:0005554"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "molecular function"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "molecular_function"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0003674"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/go#goslim_aspergillus> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_candida> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_chembl> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_generic> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_metagenomics> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_pir> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_plant> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_yeast> ;
+                                            rdfs:comment "Note that, in addition to forming the root of the molecular function ontology, this term is recommended for use for the annotation of gene products whose molecular function is unknown. When this term is used for annotation, it indicates that no information was available about the molecular function of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this. Despite its name, this is not a type of 'function' in the sense typically defined by upper ontologies such as Basic Formal Ontology (BFO). It is instead a BFO:process carried out by a single gene product or complex."^^xsd:string ;
+                                            rdfs:label "molecular_function"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0003674> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:pdt"^^xsd:string
  ] .
 
 
@@ -229,6 +284,39 @@ owl:deprecated rdf:type owl:AnnotationProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/GO_0005739
+<http://purl.obolibrary.org/obo/GO_0005739> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0043226> ,
+                                                            <http://purl.obolibrary.org/obo/GO_0043229> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NIF_Subcellular:sao1860313010"^^xsd:string ,
+                                                                                                     "Wikipedia:Mitochondrion"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "mitochondria"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0005739"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/go#goslim_agr> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_aspergillus> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_candida> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_chembl> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_drosophila> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_generic> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_mouse> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_pir> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_plant> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_yeast> ;
+                                            rdfs:comment "Some anaerobic or microaerophilic organisms (e.g. Entamoeba histolytica, Giardia intestinalis and several Microsporidia species) do not have mitochondria, and contain mitochondrion-related organelles (MROs) instead, called mitosomes or hydrogenosomes, very likely derived from mitochondria. To annotate gene products located in these mitochondrial relics in species such as Entamoeba histolytica, Giardia intestinalis or others, please use GO:0032047 'mitosome' or GO:0042566 'hydrogenosome'. (See PMID:24316280 for a list of species currently known to contain mitochondrion-related organelles.)"^^xsd:string ;
+                                            rdfs:label "mitochondrion"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0005739> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:giardia"^^xsd:string ,
+                                                            "ISBN:0198506732"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/GO_0008150
 <http://purl.obolibrary.org/obo/GO_0008150> rdf:type owl:Class ;
                                             rdfs:subClassOf owl:Thing ;
@@ -312,6 +400,79 @@ owl:deprecated rdf:type owl:AnnotationProperty .
    owl:annotatedTarget "A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:dos"^^xsd:string ,
                                                             "GOC:mah"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0033130
+<http://purl.obolibrary.org/obo/GO_0033130> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0003674> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Interacting selectively and non-covalently with an acetylcholine receptor."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "molecular_function"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0033130"^^xsd:string ;
+                                            rdfs:label "acetylcholine receptor binding"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0033130> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Interacting selectively and non-covalently with an acetylcholine receptor."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:mah"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0042627
+<http://purl.obolibrary.org/obo/GO_0042627> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0032991> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A large lipoprotein particle (diameter 75-1200 nm) composed of a central core of triglycerides and cholesterol surrounded by a protein-phospholipid coating. The proteins include one molecule of apolipoprotein B-48 and may include a variety of apolipoproteins, including APOAs, APOCs and APOE. Chylomicrons are found in blood or lymph and carry lipids from the intestines into other body tissues."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:Chylomicron"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0042627"^^xsd:string ;
+                                            rdfs:label "chylomicron"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0042627> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A large lipoprotein particle (diameter 75-1200 nm) composed of a central core of triglycerides and cholesterol surrounded by a protein-phospholipid coating. The proteins include one molecule of apolipoprotein B-48 and may include a variety of apolipoproteins, including APOAs, APOCs and APOE. Chylomicrons are found in blood or lymph and carry lipids from the intestines into other body tissues."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:jl"^^xsd:string ,
+                                                            "GOC:rl"^^xsd:string ,
+                                                            "PMID:10580165"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0043226
+<http://purl.obolibrary.org/obo/GO_0043226> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0110165> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NIF_Subcellular:sao1539965131"^^xsd:string ,
+                                                                                                     "Wikipedia:Organelle"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0043226"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/go#goslim_chembl> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_generic> ,
+                                                                                                    <http://purl.obolibrary.org/obo/go#goslim_pir> ;
+                                            rdfs:label "organelle"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0043226> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:go_curators"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/GO_0043229
+<http://purl.obolibrary.org/obo/GO_0043229> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0043226> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane."^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cellular_component"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "GO:0043229"^^xsd:string ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/go#goslim_pir> ;
+                                            rdfs:label "intracellular organelle"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/GO_0043229> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:go_curators"^^xsd:string
  ] .
 
 
