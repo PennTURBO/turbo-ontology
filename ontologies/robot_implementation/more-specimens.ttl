@@ -33,8 +33,7 @@
 
 ###  http://www.w3.org/2000/01/rdf-schema#label
 rdfs:label rdf:type owl:AnnotationProperty ;
-           rdfs:label "label" ,
-                      "label"@en .
+           rdfs:label "label" .
 
 
 #################################################################
@@ -44,7 +43,8 @@ rdfs:label rdf:type owl:AnnotationProperty ;
 ###  http://purl.obolibrary.org/obo/OBI_0000312
 <http://purl.obolibrary.org/obo/OBI_0000312> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000056> ;
-                                             rdfs:label "is_specified_output_of"@en .
+                                             rdfs:label "is_specified_output_of"@en ,
+                                                        "is_specified_output_of"^^xsd:string .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0000056
@@ -117,7 +117,8 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/CL_0000000
 <http://purl.obolibrary.org/obo/CL_0000000> rdf:type owl:Class ;
-                                            rdfs:subClassOf owl:Thing ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                            owl:Thing ;
                                             rdfs:label "cell"@en ,
                                                        "cell"^^xsd:string .
 
@@ -370,7 +371,8 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/UBERON_0000465
 <http://purl.obolibrary.org/obo/UBERON_0000465> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0001062> ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                                                                <http://purl.obolibrary.org/obo/UBERON_0001062> ;
                                                 rdfs:label "material anatomical entity"^^xsd:string .
 
 

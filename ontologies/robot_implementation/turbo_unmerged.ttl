@@ -599,13 +599,6 @@ For example, if a patient identifier and an encounter identifier were found in t
 <http://transformunify.org/ontologies/TURBO_0000303> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
                                                      rdfs:range <http://purl.obolibrary.org/obo/UBERON_0035946> ;
-                                                     owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0000056>
-                                                                              <http://transformunify.org/ontologies/TURBO_0010242>
-                                                                              [ owl:inverseOf <http://transformunify.org/ontologies/TURBO_0010245>
-                                                                              ]
-                                                                              [ owl:inverseOf <http://transformunify.org/ontologies/TURBO_0010203>
-                                                                              ]
-                                                                            ) ;
                                                      <http://purl.obolibrary.org/obo/IAO_0000111> "has birth" ;
                                                      <http://purl.obolibrary.org/obo/IAO_0000115> "an object property chain 'shortcut':  if human H participates in a 'neonate stage' N that is started by 'start of neonate stage' S, then H 'born on' S" ;
                                                      <http://purl.obolibrary.org/obo/IAO_0000117> "Mark A. Miller" ;
@@ -972,45 +965,8 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
                                                      rdfs:subPropertyOf <http://purl.obolibrary.org/obo/IAO_0000136> ;
                                                      rdfs:domain <http://www.ebi.ac.uk/efo/EFO_0004950> ;
                                                      rdfs:range <http://purl.obolibrary.org/obo/UBERON_0035946> ;
-                                                     owl:propertyChainAxiom ( <http://purl.obolibrary.org/obo/RO_0000056>
-                                                                              <http://transformunify.org/ontologies/TURBO_0010242>
-                                                                              [ owl:inverseOf <http://transformunify.org/ontologies/TURBO_0010245>
-                                                                              ]
-                                                                              [ owl:inverseOf <http://transformunify.org/ontologies/TURBO_0010203>
-                                                                              ]
-                                                                            ) ,
-                                                                            ( <http://transformunify.org/ontologies/TURBO_0010198>
-                                                                              [ owl:inverseOf <http://transformunify.org/ontologies/TURBO_0010202>
-                                                                              ]
-                                                                              [ owl:inverseOf <http://transformunify.org/ontologies/TURBO_0010203>
-                                                                              ]
-                                                                            ) ;
                                                      rdfs:comment "'is about' o  inverse ('birth instance TPO birth day') o  inverse ('SNS OTR birth instant')" ;
                                                      rdfs:label "DOB about SNS"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010198
-<http://transformunify.org/ontologies/TURBO_0010198> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf <http://purl.obolibrary.org/obo/IAO_0000136> ;
-                                                     rdfs:domain <http://www.ebi.ac.uk/efo/EFO_0004950> ;
-                                                     rdfs:range <http://transformunify.org/ontologies/TURBO_0010199> ;
-                                                     rdfs:label "DOB about day of birth"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010202
-<http://transformunify.org/ontologies/TURBO_0010202> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000139> ;
-                                                     rdfs:domain <http://transformunify.org/ontologies/TURBO_0010201> ;
-                                                     rdfs:range <http://transformunify.org/ontologies/TURBO_0010199> ;
-                                                     rdfs:label "birth instant TPO birth day"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010203
-<http://transformunify.org/ontologies/TURBO_0010203> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000155> ;
-                                                     rdfs:domain <http://purl.obolibrary.org/obo/UBERON_0035946> ;
-                                                     rdfs:range <http://transformunify.org/ontologies/TURBO_0010201> ;
-                                                     rdfs:label "SNS OTR birth instant"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010241
@@ -1018,36 +974,13 @@ then at least one triple will be submitted to some RDF model/triplestore in whic
                                                      rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002223> ;
                                                      rdfs:domain <http://purl.obolibrary.org/obo/UBERON_0035946> ;
                                                      rdfs:range <http://purl.obolibrary.org/obo/UBERON_0007221> ;
-                                                     owl:propertyChainAxiom ( <http://transformunify.org/ontologies/TURBO_0010203>
-                                                                              <http://transformunify.org/ontologies/TURBO_0010245>
-                                                                              [ owl:inverseOf <http://transformunify.org/ontologies/TURBO_0010242>
-                                                                              ]
-                                                                            ) ;
                                                      rdfs:label "SNS starts neonate stage"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010242
-<http://transformunify.org/ontologies/TURBO_0010242> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000155> ;
-                                                     rdfs:domain <http://purl.obolibrary.org/obo/UBERON_0007221> ;
-                                                     rdfs:range <http://transformunify.org/ontologies/TURBO_0010200> ;
-                                                     rdfs:label "neonate stage OTR NTR"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010244
 <http://transformunify.org/ontologies/TURBO_0010244> rdf:type owl:ObjectProperty ;
                                                      rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000139> ;
-                                                     rdfs:domain <http://transformunify.org/ontologies/TURBO_0010201> ;
-                                                     rdfs:range <http://transformunify.org/ontologies/TURBO_0010200> ;
                                                      rdfs:label "birth instant TPO NTR"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010245
-<http://transformunify.org/ontologies/TURBO_0010245> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002223> ;
-                                                     rdfs:domain <http://transformunify.org/ontologies/TURBO_0010201> ;
-                                                     rdfs:range <http://transformunify.org/ontologies/TURBO_0010200> ;
-                                                     rdfs:label "birth instant starts NTR"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010260
@@ -4365,23 +4298,6 @@ http://www.referent-tracking.com/RTU/?page=reftrackparadigm.phtml""" ;
                                                      rdfs:label "referent tracking" .
 
 
-###  http://transformunify.org/ontologies/TURBO_0001541
-<http://transformunify.org/ontologies/TURBO_0001541> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0001931> ,
-                                                                     <http://purl.obolibrary.org/obo/OBI_0001933> ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty [ owl:inverseOf <http://purl.obolibrary.org/obo/OBI_0001938>
-                                                                                      ] ;
-                                                                       owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0002500>
-                                                                     ] ;
-                                                     <http://purl.obolibrary.org/obo/IAO_0000111> "conclusionation frequency threshold value specification" ;
-                                                     <http://purl.obolibrary.org/obo/IAO_0000115> "a value specification that specifies the minimum frequency at which a value must appear in order for a conclusionation process to conclude that it is the correct value" ;
-                                                     <http://purl.obolibrary.org/obo/IAO_0000117> "Mark A. Miller" ;
-                                                     <http://purl.obolibrary.org/obo/IAO_0000119> "Mark A. Miller/TURBO team" ;
-                                                     dc:date "2017-10-19T21:39:41Z"^^xsd:dateTime ;
-                                                     rdfs:label "conclusionation frequency threshold value specification" .
-
-
 ###  http://transformunify.org/ontologies/TURBO_0001542
 <http://transformunify.org/ontologies/TURBO_0001542> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0010181> ;
@@ -5019,29 +4935,6 @@ William D. Duncan Carmelo Gaudioso and Alexander D. Diehl""" ;
 <http://transformunify.org/ontologies/TURBO_0010191> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://transformunify.org/ontologies/TURBO_0010143> ;
                                                      rdfs:label "tumor data model"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010199
-<http://transformunify.org/ontologies/TURBO_0010199> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000038> ;
-                                                     rdfs:label "day of birth"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010200
-<http://transformunify.org/ontologies/TURBO_0010200> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000038> ;
-                                                     <http://purl.obolibrary.org/obo/IAO_0000118> "NTR" ;
-                                                     rdfs:label "neonate temporal region"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010201
-<http://transformunify.org/ontologies/TURBO_0010201> rdf:type owl:Class ;
-                                                     owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <http://transformunify.org/ontologies/TURBO_0010245> ;
-                                                                           owl:someValuesFrom <http://transformunify.org/ontologies/TURBO_0010200>
-                                                                         ] ;
-                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000148> ;
-                                                     rdfs:label "birth instant"@en .
 
 
 ###  http://transformunify.org/ontologies/TURBO_0010246
@@ -5978,30 +5871,6 @@ Urine samples, for example, are frequently collected in a cumulative fashion, ov
                                                      rdfs:label "log transformed molarity unit"@en .
 
 
-###  http://transformunify.org/ontologies/TURBO_0022089
-<http://transformunify.org/ontologies/TURBO_0022089> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000070> ,
-                                                                     [ owl:intersectionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000055> ;
-                                                                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
-                                                                                                                   ]
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0000052> ;
-                                                                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0001479>
-                                                                                                                   ]
-                                                                                                                 ) ;
-                                                                                              rdf:type owl:Class
-                                                                                            ]
-                                                                                            [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000293> ;
-                                                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0001479>
-                                                                                            ]
-                                                                                          ) ;
-                                                                       rdf:type owl:Class
-                                                                     ] ;
-                                                     rdfs:label "assay of specimen from organism"@en .
-
-
 ###  http://transformunify.org/ontologies/TURBO_0022119
 <http://transformunify.org/ontologies/TURBO_0022119> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000190> ;
@@ -6345,59 +6214,9 @@ Method
                                                      rdfs:label "Metriq/ORQID tumor registry"@en .
 
 
-###  http://transformunify.org/ontologies/TURBO_0010210
-<http://transformunify.org/ontologies/TURBO_0010210> rdf:type owl:NamedIndividual ,
-                                                              <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
-                                                     <http://purl.obolibrary.org/obo/RO_0000056> <http://transformunify.org/ontologies/TURBO_0010212> ;
-                                                     rdfs:label "Patient 946"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010212
-<http://transformunify.org/ontologies/TURBO_0010212> rdf:type owl:NamedIndividual ,
-                                                              <http://purl.obolibrary.org/obo/UBERON_0007221> ;
-                                                     <http://transformunify.org/ontologies/TURBO_0010242> <http://transformunify.org/ontologies/TURBO_0010243> ;
-                                                     rdfs:label "Neonate stage (process) 946"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010213
-<http://transformunify.org/ontologies/TURBO_0010213> rdf:type owl:NamedIndividual ,
-                                                              <http://purl.obolibrary.org/obo/UBERON_0035946> ;
-                                                     <http://purl.obolibrary.org/obo/BFO_0000139> <http://transformunify.org/ontologies/TURBO_0010212> ;
-                                                     <http://transformunify.org/ontologies/TURBO_0010203> <http://transformunify.org/ontologies/TURBO_0010240> ;
-                                                     rdfs:label "Start of neonate stage/birth 946"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010238
-<http://transformunify.org/ontologies/TURBO_0010238> rdf:type owl:NamedIndividual ,
-                                                              <http://www.ebi.ac.uk/efo/EFO_0004950> ;
-                                                     <http://transformunify.org/ontologies/TURBO_0010198> <http://transformunify.org/ontologies/TURBO_0010239> ;
-                                                     rdfs:label "DOB TMD 946"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010239
-<http://transformunify.org/ontologies/TURBO_0010239> rdf:type owl:NamedIndividual ,
-                                                              <http://transformunify.org/ontologies/TURBO_0010199> ;
-                                                     rdfs:label "Day of birth 946"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010240
-<http://transformunify.org/ontologies/TURBO_0010240> rdf:type owl:NamedIndividual ,
-                                                              <http://transformunify.org/ontologies/TURBO_0010201> ;
-                                                     <http://transformunify.org/ontologies/TURBO_0010202> <http://transformunify.org/ontologies/TURBO_0010239> ;
-                                                     <http://transformunify.org/ontologies/TURBO_0010245> <http://transformunify.org/ontologies/TURBO_0010243> ;
-                                                     rdfs:label "Birth instant 946"@en .
-
-
-###  http://transformunify.org/ontologies/TURBO_0010243
-<http://transformunify.org/ontologies/TURBO_0010243> rdf:type owl:NamedIndividual ,
-                                                              <http://transformunify.org/ontologies/TURBO_0010200> ;
-                                                     rdfs:label "Neonate stage temporal region 946"@en .
-
-
 ###  http://transformunify.org/ontologies/TURBO_0010252
 <http://transformunify.org/ontologies/TURBO_0010252> rdf:type owl:NamedIndividual ,
                                                               <http://purl.obolibrary.org/obo/OMRSE_00000141> ;
-                                                     <http://purl.obolibrary.org/obo/IAO_0000136> <http://transformunify.org/ontologies/TURBO_0010210> ;
                                                      rdfs:label "Male GID 946"@en .
 
 
