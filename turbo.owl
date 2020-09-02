@@ -21,7 +21,7 @@
      xmlns:Thesaurus="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#"
      xmlns:ontologies="http://transformunify.org/ontologies/">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/PennTURBO/turbo-ontology/dev/turbo.owl">
         <obo:IAO_0000116>Converting UO terms from classes to individuals (offline, in a triplestore):
 
 (Most recently did mmHg with Ontofox, then converted in text editor... may not survive next merge.)
@@ -101,9 +101,11 @@ Make  [molecular entity](http://purl.obolibrary.org/obo/CHEBI_23367) a direct su
 [specifically dependent continuant](http://purl.obolibrary.org/obo/BFO_0000020) isn&apos;t a  direct sbclasses of [entity](http://purl.obolibrary.org/obo/BFO_0000001), only [continuant](http://purl.obolibrary.org/obo/BFO_0000002)
 
 Haven&apos;t been using 
-[Anatomical location](http://purl.obolibrary.org/obo/FMA_50707)... hasn&apos;t appeared at all in recent ontoanimal exports
+[Anatomical location](http://purl.obolibrary.org/obo/FMA_50707)
+... hasn&apos;t appeared at all in recent ontoanimal exports
 
-GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI... hasn&apos;t appeared at all in recent ontoanimal exports
+GO cellular_component appearing as direct subclass of Thing... dragged into material entity a la OBI
+... hasn&apos;t appeared at all in recent ontoanimal exports
 
 ----
 
@@ -287,26 +289,6 @@ On the specifics of the proposed definition:
 We don&apos;t have definitions of &apos;meaning&apos; or &apos;expression&apos; or &apos;property&apos;. For &apos;reference&apos; in the intended sense I think we use the term &apos;denotation&apos;. For &apos;expression&apos;, I think we you mean symbol, or identifier. For &apos;meaning&apos; it differs for class and property. For class we want documentation that let&apos;s the intended reader determine whether an entity is instance of the class, or not. For property we want documentation that let&apos;s the intended reader determine, given a pair of potential relata, whether the assertion that the relation holds is true. The &apos;intended reader&apos; part suggests that we also specify who, we expect, would be able to understand the definition, and also generalizes over human and computer reader to include textual and logical definition.
 
 Personally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable.
-
-We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.  </obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">2012-04-05: 
-Barry Smith
-
-The official OBI definition, explaining the meaning of a class or property: &apos;Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions&apos;  is terrible.
-
-Can you fix to something like:
-
-A statement of necessary and sufficient conditions explaining the meaning of an expression referring to a class or property.
-
-Alan Ruttenberg
-
-Your proposed definition is a reasonable candidate, except that it is very common that necessary and sufficient conditions are not given. Mostly they are necessary, occasionally they are necessary and sufficient or just sufficient. Often they use terms that are not themselves defined and so they effectively can&apos;t be evaluated by those criteria. 
-
-On the specifics of the proposed definition:
-
-We don&apos;t have definitions of &apos;meaning&apos; or &apos;expression&apos; or &apos;property&apos;. For &apos;reference&apos; in the intended sense I think we use the term &apos;denotation&apos;. For &apos;expression&apos;, I think we you mean symbol, or identifier. For &apos;meaning&apos; it differs for class and property. For class we want documentation that let&apos;s the intended reader determine whether an entity is instance of the class, or not. For property we want documentation that let&apos;s the intended reader determine, given a pair of potential relata, whether the assertion that the relation holds is true. The &apos;intended reader&apos; part suggests that we also specify who, we expect, would be able to understand the definition, and also generalizes over human and computer reader to include textual and logical definition. 
-
-Personally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable. 
 
 We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.  </obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">2012-04-05: 
@@ -617,8 +599,6 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
         <obo:IAO_0000111 xml:lang="en">ISA alternative term</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115>An alternative term used by the ISA tools project (http://isa-tools.org).</obo:IAO_0000115>
-        <obo:IAO_0000116>Requested by Alejandra Gonzalez-Beltran
-https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891&amp;atid=886178</obo:IAO_0000116>
         <obo:IAO_0000116>Requested by Alejandra Gonzalez-Beltran
 https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891&amp;atid=886178</obo:IAO_0000116>
         <obo:IAO_0000117>Person: Alejandra Gonzalez-Beltran</obo:IAO_0000117>
@@ -996,11 +976,6 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
         <dc:description xml:lang="en-us">Examples of a Contributor include a person, an 
          organisation, or a service.  Typically, the name of a 
          Contributor should be used to indicate the entity.</dc:description>
-        <dc:description xml:lang="en-us">Examples of a Contributor include a person, an 
-         organisation, or a service.  Typically, the name of a 
-         Contributor should be used to indicate the entity.</dc:description>
-        <rdfs:comment xml:lang="en-us">An entity responsible for making contributions to the
-         content of the resource.</rdfs:comment>
         <rdfs:comment xml:lang="en-us">An entity responsible for making contributions to the
          content of the resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
@@ -1019,17 +994,12 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
         <dc:description xml:lang="en-us">Examples of a Creator include a person, an organisation,
          or a service.  Typically, the name of a Creator should 
          be used to indicate the entity.</dc:description>
-        <dc:description xml:lang="en-us">Examples of a Creator include a person, an organisation,
-         or a service.  Typically, the name of a Creator should 
-         be used to indicate the entity.</dc:description>
         <oboInOwl:hasDbXref rdf:resource="http://purl.org/dc/elements/1.1/creator"/>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-creator</oboInOwl:id>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-creator</oboInOwl:shorthand>
         <rdfs:comment xml:lang="en-us">An entity primarily responsible for making the content
-         of the resource.</rdfs:comment>
-        <rdfs:comment xml:lang="en-us">An entity primarily responsible for making the content 
          of the resource.</rdfs:comment>
         <rdfs:comment xml:lang="en-us">An entity primarily responsible for making the content 
          of the resource.</rdfs:comment>
@@ -1048,12 +1018,6 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
          availability of the resource.  Recommended best practice
          for encoding the date value is defined in a profile of
          ISO 8601 [W3CDTF] and follows the YYYY-MM-DD format.</dc:description>
-        <dc:description xml:lang="en-us">Typically, Date will be associated with the creation or
-         availability of the resource.  Recommended best practice
-         for encoding the date value is defined in a profile of
-         ISO 8601 [W3CDTF] and follows the YYYY-MM-DD format.</dc:description>
-        <rdfs:comment xml:lang="en-us">A date associated with an event in the life cycle of the
-         resource.</rdfs:comment>
         <rdfs:comment xml:lang="en-us">A date associated with an event in the life cycle of the
          resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
@@ -1069,9 +1033,6 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
         <dc:description xml:lang="en-us">Description may include but is not limited to: an abstract,
          table of contents, reference to a graphical representation
          of content or a free-text account of the content.</dc:description>
-        <dc:description xml:lang="en-us">Description may include but is not limited to: an abstract,
-         table of contents, reference to a graphical representation
-         of content or a free-text account of the content.</dc:description>
         <rdfs:comment xml:lang="en-us">An account of the content of the resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
         <rdfs:label>Description</rdfs:label>
@@ -1083,13 +1044,6 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
     <!-- http://purl.org/dc/elements/1.1/format -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/format">
-        <dc:description xml:lang="en-us">Typically, Format may include the media-type or dimensions of
-         the resource. Format may be used to determine the software,
-         hardware or other equipment needed to display or operate the
-         resource. Examples of dimensions include size and duration.
-         Recommended best practice is to select a value from a
-         controlled vocabulary (for example, the list of Internet Media
-         Types [MIME] defining computer media formats).</dc:description>
         <dc:description xml:lang="en-us">Typically, Format may include the media-type or dimensions of
          the resource. Format may be used to determine the software,
          hardware or other equipment needed to display or operate the
@@ -1136,12 +1090,6 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
          in whole or in part.  Recommended best practice is to reference
          the resource by means of a string or number conforming to a
          formal identification system.</dc:description>
-        <dc:description xml:lang="en-us">The present resource may be derived from the Source resource
-         in whole or in part.  Recommended best practice is to reference
-         the resource by means of a string or number conforming to a
-         formal identification system.</dc:description>
-        <rdfs:comment xml:lang="en-us">A reference to a resource from which the present resource
-         is derived.</rdfs:comment>
         <rdfs:comment xml:lang="en-us">A reference to a resource from which the present resource
          is derived.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
@@ -1154,11 +1102,6 @@ where pmid1 and pmid2 are specfic PubMed IDs (PMIDs). </rdfs:comment>
     <!-- http://purl.org/dc/elements/1.1/subject -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject">
-        <dc:description xml:lang="en-us">Typically, a Subject will be expressed as keywords,
-         key phrases or classification codes that describe a topic
-         of the resource.  Recommended best practice is to select 
-         a value from a controlled vocabulary or formal 
-         classification scheme.</dc:description>
         <dc:description xml:lang="en-us">Typically, a Subject will be expressed as keywords,
          key phrases or classification codes that describe a topic
          of the resource.  Recommended best practice is to select 
@@ -1930,9 +1873,6 @@ This has_mnemonic datatype property has been created to facilitate and maintain 
         <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
 
 A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
-
-A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.) A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">part of</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">part_of</obo:IAO_0000118>
@@ -1980,9 +1920,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
-
-A continuant cannot have an occurrent as part: use &apos;participates in&apos;. An occurrent cannot have a continuant as part: use &apos;has participant&apos;. An immaterial entity cannot have a material entity as part: use &apos;location of&apos;. An independent continuant cannot have a specifically dependent continuant as part: use &apos;bearer of&apos;. A specifically dependent continuant cannot have an independent continuant as part: use &apos;inheres in&apos;.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
 
 A continuant cannot have an occurrent as part: use &apos;participates in&apos;. An occurrent cannot have a continuant as part: use &apos;has participant&apos;. An immaterial entity cannot have a material entity as part: use &apos;location of&apos;. An independent continuant cannot have a specifically dependent continuant as part: use &apos;bearer of&apos;. A specifically dependent continuant cannot have an independent continuant as part: use &apos;inheres in&apos;.</obo:IAO_0000116>
@@ -2922,11 +2859,6 @@ Some currently missing phenomena that should be considered &quot;about&quot; are
 We will try to build it back up by elaborating the various subproperties that are more precisely defined.
 
 Some currently missing phenomena that should be considered &quot;about&quot; are predications - &quot;The only person who knows the answer is sitting beside me&quot; , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of &quot;mentions&quot; relation. Weaken the is_about relationship to be primitive. 
-
-We will try to build it back up by elaborating the various subproperties that are more precisely defined.
-
-Some currently missing phenomena that should be considered &quot;about&quot; are predications - &quot;The only person who knows the answer is sitting beside me&quot; , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">Smith, Ceusters, Ruttenberg, 2000 years of philosophy</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
@@ -2973,11 +2905,6 @@ g denotes r =def
 r is a portion of reality
 there is some c that is a concretization of g 
 every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">2009-11-10 Alan Ruttenberg. Old definition said the following to emphasize the generic nature of this relation. We no longer have &apos;specifically denotes&apos;, which would have been primitive, so make this relation primitive.
-g denotes r =def 
-r is a portion of reality
-there is some c that is a concretization of g 
-every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">Conversations with Barry Smith, Werner Ceusters, Bjoern Peters, Michel Dumontier, Melanie Courtot, James Malone, Bill Hogan</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
@@ -3002,9 +2929,6 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <obo:IAO_0000115 xml:lang="en">m is a quality measurement of q at t when
 q is a quality 
 there is a measurement process p that has specified output m, a measurement datum, that is about q</obo:IAO_0000115>
-        <obo:IAO_0000115 xml:lang="en">m is a quality measurement of q at t when
-q is a quality 
-there is a measurement process p that has specified output m, a measurement datum, that is about q</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">8/6/2009 Alan Ruttenberg: The strategy is to be rather specific with this relationship. There are other kinds of measurements that are not of qualities, such as those that measure time. We will add these as separate properties for the moment and see about generalizing later</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">From the second IAO workshop [Alan Ruttenberg 8/6/2009: not completely current, though bringing in comparison is probably important]
 
@@ -3026,29 +2950,6 @@ describe:
 a describes b means a is about b and a allows an inference of at least one quality of b
 
 We have had a long discussion about denotes versus describes.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">From the second IAO workshop [Alan Ruttenberg 8/6/2009: not completely current, though bringing in comparison is probably important]
-
-This one is the one we are struggling with at the moment. The issue is what a measurement measures. On the one hand saying that it measures the quality would include it &quot;measuring&quot; the bearer = referring to the bearer in the measurement. However this makes comparisons of two different things not possible. On the other hand not having it inhere in the bearer, on the face of it, breaks the audit trail.
-
-Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which we are awaiting details.
---
-From the second IAO workshop, various comments, [commented on by Alan Ruttenberg 8/6/2009]
-
-unit of measure is a quality, e.g. the length of a ruler.
-
-[We decided to hedge on what units of measure are, instead talking about measurement unit labels, which are the information content entities that are about whatever measurement units are. For IAO we need that information entity in any case. See the term measurement unit label]
-
-[Some struggling with the various subflavors of is_about. We subsequently removed the relation represents, and describes until and only when we have a better theory]
-
-a represents b means either a denotes b or a describes
-
-describe:
-a describes b means a is about b and a allows an inference of at least one quality of b
-
-We have had a long discussion about denotes versus describes.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">From the second IAO workshop: An attempt at tieing the quality to the measurement datum more carefully.
-
-a is a magnitude means a is a determinate quality particular inhering in some bearer b existing at a time t that can be represented/denoted by an information content entity e that has parts denoting a unit of measure, a number, and b. The unit of measure is an instance of the determinable quality.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">From the second IAO workshop: An attempt at tieing the quality to the measurement datum more carefully.
 
 a is a magnitude means a is a determinate quality particular inhering in some bearer b existing at a time t that can be represented/denoted by an information content entity e that has parts denoting a unit of measure, a number, and b. The unit of measure is an instance of the determinable quality.</obo:IAO_0000116>
@@ -3061,18 +2962,6 @@ process and has_input some material entity
 and has_output some information content entity 
 and which is such that instances of this process type reliably generate 
 outputs that describes the input.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">From the second meeting on IAO:
-
-An attempt at defining assay using Barry&apos;s &quot;reliability&quot; wording
-
-assay:
-process and has_input some material entity
-and has_output some information content entity 
-and which is such that instances of this process type reliably generate 
-outputs that describes the input.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">This one is the one we are struggling with at the moment. The issue is what a measurement measures. On the one hand saying that it measures the quality would include it &quot;measuring&quot; the bearer = referring to the bearer in the measurement. However this makes comparisons of two different things not possible. On the other hand not having it inhere in the bearer, on the face of it, breaks the audit trail.
-
-Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which we are awaiting details.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">This one is the one we are struggling with at the moment. The issue is what a measurement measures. On the one hand saying that it measures the quality would include it &quot;measuring&quot; the bearer = referring to the bearer in the measurement. However this makes comparisons of two different things not possible. On the other hand not having it inhere in the bearer, on the face of it, breaks the audit trail.
 
 Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which we are awaiting details.</obo:IAO_0000116>
@@ -10830,11 +10719,6 @@ proposed for OBI (OBI_0000176) , edited by Chris Stoeckert and
 Cristian Cocos, and subsequently moved to IAO where the objective for
 which the original term was defined was satisfied with the definition
 of this, different, term.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">2009-03-16: provenance: a term measurement unit was
-proposed for OBI (OBI_0000176) , edited by Chris Stoeckert and
-Cristian Cocos, and subsequently moved to IAO where the objective for
-which the original term was defined was satisfied with the definition
-of this, different, term.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">2009-03-16: review of this term done during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify this definition please notify OBI.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">PERSON: Melanie Courtot</obo:IAO_0000117>
@@ -10896,8 +10780,6 @@ of this, different, term.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">GROUP: IAO</obo:IAO_0000117>
         <obo:IAO_0000232>9/22/11 BP: changed the rdfs:label for this class from &apos;label&apos; to &apos;datum label&apos; to convey that this class is not intended to cover all kinds of labels (stickers, radiolabels, etc.), and not even all kind of textual labels, but rather the kind of labels occuring in a datum. 
 </obo:IAO_0000232>
-        <obo:IAO_0000232>9/22/11 BP: changed the rdfs:label for this class from &apos;label&apos; to &apos;datum label&apos; to convey that this class is not intended to cover all kinds of labels (stickers, radiolabels, etc.), and not even all kind of textual labels, but rather the kind of labels occuring in a datum. 
-</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <rdfs:label xml:lang="en">datum label</rdfs:label>
     </owl:Class>
@@ -10940,13 +10822,6 @@ interpreted by or directly executed by a processing unit.</obo:IAO_0000115>
 information-like stuff that might be put into a computer and that is
 meant, by someone, to denote and/or to be interpreted by some
 process... I would include lists, tables, sentences... I think I might
-defer to Barry, or to Brian Cantwell Smith
-
-JAR: A data item is an approximately justified approximately true approximate belief</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">JAR: datum     -- well, this will be very tricky to define, but maybe some 
-information-like stuff that might be put into a computer and that is 
-meant, by someone, to denote and/or to be interpreted by some 
-process... I would include lists, tables, sentences... I think I might 
 defer to Barry, or to Brian Cantwell Smith
 
 JAR: A data item is an approximately justified approximately true approximate belief</obo:IAO_0000116>
@@ -11017,9 +10892,6 @@ JAR: A data item is an approximately justified approximately true approximate be
         <obo:IAO_0000116 xml:lang="en">information_content_entity &apos;is_encoded_in&apos; some digital_entity in obi before split (040907). information_content_entity &apos;is_encoded_in&apos; some physical_document in obi before split (040907).
 
 Previous. An information content entity is a non-realizable information entity that &apos;is encoded in&apos; some digital or physical entity.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">information_content_entity &apos;is_encoded_in&apos; some digital_entity in obi before split (040907). information_content_entity &apos;is_encoded_in&apos; some physical_document in obi before split (040907).
-
-Previous. An information content entity is a non-realizable information entity that &apos;is encoded in&apos; some digital or physical entity.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI_0000142</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
@@ -11061,8 +10933,6 @@ Previous. An information content entity is a non-realizable information entity t
         <obo:IAO_0000112 xml:lang="en">10 feet. 3 ml.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 xml:lang="en">a scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">2009-03-16: we decided to keep datum singular in scalar measurement datum, as in
-this case we explicitly refer to the singular form</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">2009-03-16: we decided to keep datum singular in scalar measurement datum, as in
 this case we explicitly refer to the singular form</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Would write this as: has_part some &apos;measurement unit label&apos; and has_part some numeral and has_part exactly 2, except for the fact that this won&apos;t let us take advantage of OWL reasoning over the numbers. Instead use has measurment value property to represent the same. Use has measurement unit label (subproperty of has_part) so we can easily say that there is only one of them.</obo:IAO_0000116>
@@ -11242,13 +11112,6 @@ this case we explicitly refer to the singular form</obo:IAO_0000116>
         <obo:IAO_0000119 xml:lang="en">OBI_0000344</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-        <rdfs:comment xml:lang="en">2/3/2009 Comment from OBI review.
-
-Action specification not well enough specified.
-Conditional specification not well enough specified.
-Question whether all plan specifications have objective specifications.
-
-Request that IAO either clarify these or change definitions not to use them</rdfs:comment>
         <rdfs:comment xml:lang="en">2/3/2009 Comment from OBI review.
 
 Action specification not well enough specified.
@@ -11731,8 +11594,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
         <obo:IAO_0000115 xml:lang="en">An information content entity that consists of a CRID symbol and additional information about which CRID registry it belongs. </obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">2014-05-05: In defining this term we take no position on what the CRID denotes. In particular do not assume it denotes a *record* in the CRID registry (since the registry might not have &apos;records&apos;).</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation.
-</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation. 
 </obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation. 
 </obo:IAO_0000116>
@@ -13050,8 +12911,6 @@ where {
 objectives is a planned process.</obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
 objectives is a planned process.</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
-objectives is a planned process.</obo:IAO_0000116>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branch derived</obo:IAO_0000119>
         <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6/11/9: Edited at workshop. Used to include: is initiated by an agent</obo:IAO_0000232>
@@ -13356,8 +13215,6 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a processed material that provides the needed nourishment for microorganisms or cells grown in vitro.</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">changed from a role to a processed material based on on Aug 22, 2011 dev call. Details see the tracker item: http://sourceforge.net/tracker/?func=detail&amp;aid=3325270&amp;group_id=177891&amp;atid=886178
 Modification made by JZ.</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">changed from a role to a processed material based on on Aug 22, 2011 dev call. Details see the tracker item: http://sourceforge.net/tracker/?func=detail&amp;aid=3325270&amp;group_id=177891&amp;atid=886178
-Modification made by JZ.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Person: Jennifer Fostel, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -13381,17 +13238,7 @@ Modification made by JZ.</obo:IAO_0000116>
 
 May 28 2013. Updated definition taken from ReO based on discussions initiated in Philly 2011 workshop.  Former defnition described a narrower view of reagents in chemistry that restricts bearers of the role to be chemical entities (&quot;a role played by a molecular entity used to produce a chemical reaction to detect, measure, or produce other substances&quot;).  Updated definition allows for broader view of reagents in the domain of biomedical research to include larger materials that have parts that participate chemically in a molecular reaction or interaction.
 </obo:IAO_0000232>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.
-
-May 28 2013. Updated definition taken from ReO based on discussions initiated in Philly 2011 workshop.  Former defnition described a narrower view of reagents in chemistry that restricts bearers of the role to be chemical entities (&quot;a role played by a molecular entity used to produce a chemical reaction to detect, measure, or produce other substances&quot;).  Updated definition allows for broader view of reagents in the domain of biomedical research to include larger materials that have parts that participate chemically in a molecular reaction or interaction.
-</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-        <rdfs:comment>(copied from ReO)
-Reagents are distinguished from instruments or devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in or have parts that participate in some chemical interaction or reaction during their intended participation in some technique.  By contrast, instruments do not participate in a chemical reaction/interaction during the technique.
-
-Reagents are distinguished from study subjects/evaluants in that study subjects and evaluants are that about which conclusions are drawn and knowledge is sought in an investigation - while reagents, by definition, are not.  It should be noted, however, that reagent and study subject/evaluant roles can be borne by instances of the same type of material entity - but a given instance will realize only one of these roles in the execution of a given assay or technique. For example, taq polymerase can bear a reagent role or an evaluant role.  In a DNA sequencing assay aimed at generating sequence data about some plasmid, the reagent role of the taq polymerase is realized. In an assay to evaluate the quality of the taq polymerase itself, the evaluant/study subject role of the taq is realized, but not the reagent role since the taq is the subject about which data is generated.
-
-In regard to the statement that reagents are &apos;distinct&apos; from the specified outputs of a technique, note that a reagent may be incorporated into a material output of a technique, as long as the IDENTITY of this output is distinct from that of the bearer of the reagent role.  For example, dNTPs input into a PCR are reagents that become part of the material output of this technique, but this output has a new identity (ie that of a &apos;nucleic acid molecule&apos;) that is distinct from the identity of the dNTPs that comprise it.  Similarly, a biotin molecule input into a cell labeling technique are reagents that become part of the specified output, but the identity of the output is that of some modified cell specimen which shares identity with the input unmodified cell specimen, and not with the biotin label. Thus, we see that an important criteria of &apos;reagent-ness&apos; is that it is a facilitator, and not the primary focus of an investigation or material processing technique (ie not the specified subject/evaluant about which knowledge is sought, or the specified output material of the technique).</rdfs:comment>
         <rdfs:comment>(copied from ReO)
 Reagents are distinguished from instruments or devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in or have parts that participate in some chemical interaction or reaction during their intended participation in some technique.  By contrast, instruments do not participate in a chemical reaction/interaction during the technique.
 
@@ -13526,12 +13373,6 @@ editor = PRS
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">blood taken from animal: animal continues in study, whereas blood has role specimen.
 something taken from study subject, leaves the study and becomes the specimen.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">blood taken from animal: animal continues in study, whereas blood has role specimen.
-something taken from study subject, leaves the study and becomes the specimen.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">parasite example
-- when parasite in people we study people, people are subjects and parasites are specimen
-- when parasite extracted, they become subject in the following study
-specimen can later be subject.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">parasite example
 - when parasite in people we study people, people are subjects and parasites are specimen
 - when parasite extracted, they become subject in the following study
@@ -13709,33 +13550,6 @@ http://code.google.com/p/popcomm-ontology/</obo:IAO_0000116>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">An entity that can bear roles, has members, and has a set of organization rules. Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">An organization is a continuant entity which can play roles,  has members, and has a set of organization rules.  Members of organizations are either organizations themselves or individual people. Members can bear specific organization member roles that are determined in the organization rules. The organization rules also determine how decisions are made on behalf of the organization by the organization members.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
-
-1) there are organization_member_roles (president, treasurer, branch
-editor), with individual persons as bearers
-
-2) there are organization_roles (employer, owner, vendor, patent holder)
-
-3) an organization has a charter / rules / bylaws, which specify what roles
-there are, how they should be realized, and how to modify the
-charter/rules/bylaws themselves.
-
-It is debatable what the organization itself is (some kind of dependent
-continuant or an aggregate of people). This also determines who/what the
-bearer of organization_roles&apos; are. My personal favorite is still to define
-organization as a kind of &apos;legal entity&apos;, but thinking it through leads to
-all kinds of questions that are clearly outside the scope of OBI.
-
-Interestingly enough, it does not seem to matter much where we place
-organization itself, as long as we can subclass it (University, Corporation,
-Government Agency, Hospital), instantiate it (Affymetrix, NCBI, NIH, ISO,
-W3C, University of Oklahoma), and have it play roles.
-
-This leads to my proposal: We define organization through the statements 1 -
-3 above, but without an &apos;is a&apos; statement for now. We can leave it in its
-current place in the is_a hierarchy (material entity) or move it up to
-&apos;continuant&apos;. We leave further clarifications to BFO, and close this issue
-for now.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">BP: The definition summarizes long email discussions on the OBI developer, roles, biomaterial and denrie branches. It leaves open if an organization is a material entity or a dependent continuant, as no consensus was reached on that.  The current placement as material is therefore temporary, in order to move forward with development. Here is the entire email summary, on which the definition is based:
 
 1) there are organization_member_roles (president, treasurer, branch
@@ -14958,8 +14772,6 @@ for now.</obo:IAO_0000116>
         <obo:IAO_0000116>Philly2013: The specimen_role for the specimen is created during the specimen collection process.</obo:IAO_0000116>
         <obo:IAO_0000116>label  changed to &apos;specimen collection process&apos; on 10/27/2014, details see tracker:
 http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
-        <obo:IAO_0000116>label  changed to &apos;specimen collection process&apos; on 10/27/2014, details see tracker:
-http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000118>specimen collection</obo:IAO_0000118>
         <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5/31/2012: This process is not necessarily an acquisition, as specimens may be collected from materials already in posession</obo:IAO_0000232>
@@ -15396,8 +15208,6 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processed specimen</obo:IAO_0000111>
         <obo:IAO_0000112>A tissue sample that has been sliced and stained for a histology study.
 A blood specimen that has been centrifuged to obtain the white blood cells.</obo:IAO_0000112>
-        <obo:IAO_0000112>A tissue sample that has been sliced and stained for a histology study.
-A blood specimen that has been centrifuged to obtain the white blood cells.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specimen that has been intentionally physically modified.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
@@ -15430,17 +15240,6 @@ A blood specimen that has been centrifuged to obtain the white blood cells.</obo
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An autoclave is a device that sterlizes instruments or contaminated waste by applying high temperature and pressure.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material entity that is designed to perform a function in a scientific investigation, but is not a reagent.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of &quot;device&quot;, and are enumerating the types of roles that a reagent can perform.
-
-2013-6-5 MHB: The following clarifications are outcomes of the May 2013 Philly Workshop. Reagents are distinguished from devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in some chemical interaction or reaction during the realization of their experimental role. By contrast, devices do not participate in such chemical reactions/interactions.  Note that there are cases where devices use reagent components during their operation, where the reagent-device distinction is less clear.  For example:
-
-(1) An HPLC machine is considered a device, but has a column that holds a stationary phase resin as an operational component.  This resin qualifies as a device if it participates purely in size exclusion, but bears a reagent role that is realized in the running of a column if it interacts electrostatically or chemically with the evaluant. The container the resin is in (“the column”) considered alone is a device. So the entire column as well as the entire HPLC machine are devices that have a reagent as an operating part.
-
-(2) A pH meter is a device, but its electrode component bears a reagent role in virtue of its interacting directly with the evaluant in execution of an assay.
-
-(3) A gel running  box  is a device that has a metallic lead as a component that participates in a chemical reaction with the running buffer when a charge is passed through it.  This metallic lead is considered to have a reagent role as a component of this device realized in the running of a gel.
-
-In the examples above, a reagent is an operational component of a device, but the device itself does not realize a reagent role (as bearing a reagent role is not transitive across the part_of relation).  In this way, the asserted disjointness between a reagent and device holds, as both roles are never realized in the same bearer during execution of an assay.  </obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of &quot;device&quot;, and are enumerating the types of roles that a reagent can perform.
 
 2013-6-5 MHB: The following clarifications are outcomes of the May 2013 Philly Workshop. Reagents are distinguished from devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in some chemical interaction or reaction during the realization of their experimental role. By contrast, devices do not participate in such chemical reactions/interactions.  Note that there are cases where devices use reagent components during their operation, where the reagent-device distinction is less clear.  For example:
@@ -15817,19 +15616,6 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">a data item that is about genetic material including polymorphisms, disease alleles, and haplotypes.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">MO_66 IndividualGeneticCharacteristics</obo:IAO_0000119>
-        <obo:IAO_0000232 xml:lang="en">MO definition:
-The genotype of the individual organism from which the biomaterial was derived. Individual genetic characteristics include polymorphisms, disease alleles, and haplotypes.
-
-examples in ArrayExpress
-wild_type
-MutaMouse (CD2F1 mice with lambda-gt10LacZ integration)
-AlfpCre; SNF5 flox/knockout
-p53 knock out
-C57Bl/6 gp130lox/lox MLC2vCRE/+
-fer-15; fem-1
-df/df
-pat1-114/pat1-114 ade6-M210/ade6-M216 h+/h+ (cells are diploid)
-</obo:IAO_0000232>
         <obo:IAO_0000232 xml:lang="en">MO definition:
 The genotype of the individual organism from which the biomaterial was derived. Individual genetic characteristics include polymorphisms, disease alleles, and haplotypes.
 
@@ -16617,9 +16403,6 @@ The following are NOT conclusions based on data: data themselves; results from p
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13-02-2009:
 OBI doesn&apos;t take position as to  when an organism starts or ends being an organism - e.g. sperm, foetus.
 This issue is outside the scope of OBI.</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13-02-2009:
-OBI doesn&apos;t take position as to  when an organism starts or ends being an organism - e.g. sperm, foetus.
-This issue is outside the scope of OBI.</obo:IAO_0000116>
         <obo:IAO_0000116>Stub class to serve as root of hierarchy for imports from NCBI Taxonomy.</obo:IAO_0000116>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GROUP: OBI Biomaterial Branch</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">WEB: http://en.wikipedia.org/wiki/Organism</obo:IAO_0000119>
@@ -16694,9 +16477,6 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cultured cell population</obo:IAO_0000111>
-        <obo:IAO_0000112>A cultured cell population applied in an experiment: &quot;293 cells expressing TrkA were serum-starved for 18 hours and then neurotrophins were added for 10 min before cell harvest.&quot;  (Lee, Ramee, et al. &quot;Regulation of cell survival by secreted proneurotrophins.&quot; Science 294.5548 (2001): 1945-1948).
-
-A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 15 day embryos are grown in dissociated cell culture and maintained in vitro for 8–12 weeks&quot; (Dichter, Marc A. &quot;Rat cortical neurons in cell culture: culture methods, cell morphology, electrophysiology, and synapse formation.&quot; Brain Research 149.2 (1978): 279-293).</obo:IAO_0000112>
         <obo:IAO_0000112>A cultured cell population applied in an experiment: &quot;293 cells expressing TrkA were serum-starved for 18 hours and then neurotrophins were added for 10 min before cell harvest.&quot;  (Lee, Ramee, et al. &quot;Regulation of cell survival by secreted proneurotrophins.&quot; Science 294.5548 (2001): 1945-1948).
 
 A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 15 day embryos are grown in dissociated cell culture and maintained in vitro for 8–12 weeks&quot; (Dichter, Marc A. &quot;Rat cortical neurons in cell culture: culture methods, cell morphology, electrophysiology, and synapse formation.&quot; Brain Research 149.2 (1978): 279-293).</obo:IAO_0000112>
@@ -16874,8 +16654,6 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleic acid extraction using phenol chloroform</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material separation in which a desired component of an input material is separated from the remainder</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">Current the output of material processing defined as the molecular entity, main component in the output material entity, rather than the material entity that have grain molecular entity. 
-&apos;nucleic acid extract&apos; is the output of &apos;nucleic acid extraction&apos; and has grain &apos;nucleic acid&apos;. However, the output of &apos;nucleic acid extraction&apos; is &apos;nucleic acid&apos; rather than &apos;nucleic acid extract&apos;. We are aware of this issue and will work it out in the future.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Current the output of material processing defined as the molecular entity, main component in the output material entity, rather than the material entity that have grain molecular entity. 
 &apos;nucleic acid extract&apos; is the output of &apos;nucleic acid extraction&apos; and has grain &apos;nucleic acid&apos;. However, the output of &apos;nucleic acid extraction&apos; is &apos;nucleic acid&apos; rather than &apos;nucleic acid extract&apos;. We are aware of this issue and will work it out in the future.</obo:IAO_0000116>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person:Bjoern Peters</obo:IAO_0000117>
@@ -18834,8 +18612,6 @@ http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
         <ontoneo:ONTONEO_1000002 xml:lang="en">PERSON: Fernanda Farinelli</ontoneo:ONTONEO_1000002>
         <rdfs:comment>It is a chronological written account of examination, treatment, medical history or complaints.</rdfs:comment>
-        <rdfs:comment>It is used interchangeably with health record and medical chart.
-https://en.wikipedia.org/wiki/Medical_record</rdfs:comment>
         <rdfs:comment>It is used interchangeably with health record and medical chart.
 https://en.wikipedia.org/wiki/Medical_record</rdfs:comment>
         <rdfs:label xml:lang="en">medical record</rdfs:label>
@@ -28104,37 +27880,6 @@ all instantiation predicates and predicates that use this relation.
 This interpretation is *not* the same as an at-all-times relation
 
 </obo:IAO_0000115>
-        <obo:IAO_0000115>
-
-## Elucidation
-
-This is used when the statement/axiom is assumed to hold true &apos;eternally&apos;
-
-## How to interpret (informal)
-
-First the &quot;atemporal&quot; FOL is derived from the OWL using the standard
-interpretation. This axiom is temporalized by embedding the axiom
-within a for-all-times quantified sentence. The t argument is added to
-all instantiation predicates and predicates that use this relation.
-
-## Example
-
-    Class: nucleus
-    SubClassOf: part_of some cell
-
-    forall t :
-      forall n :
-        instance_of(n,Nucleus,t)
-         implies
-        exists c :
-          instance_of(c,Cell,t)
-          part_of(n,c,t)
-
-## Notes
-
-This interpretation is *not* the same as an at-all-times relation
-
-</obo:IAO_0000115>
         <rdfs:label xml:lang="en">axiom holds for all times</rdfs:label>
     </owl:NamedIndividual>
     
@@ -30580,63 +30325,6 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -30647,18 +30335,6 @@ TO {
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -30673,22 +30349,7 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
@@ -30701,18 +30362,6 @@ TO {
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
@@ -30733,9 +30382,6 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -30745,6 +30391,15 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -30757,6 +30412,9 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -30764,6 +30422,243 @@ TO {
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -30787,9 +30682,6 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -30805,21 +30697,6 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
@@ -30830,9 +30707,6 @@ TO {
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ontoneo.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -30859,19 +30733,7 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -30886,136 +30748,19 @@ TO {
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
     </rdf:Description>
     <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </rdf:Description>
+    <rdf:Description>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ico.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogg.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-    </rdf:Description>
-    <rdf:Description>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
     </rdf:Description>
     <rdf:Description>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -31048,9 +30793,9 @@ TO {
         <oboInOwl:hasExactSynonym>Primary Gleason Pattern</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
         <obo:IAO_0000115>The most prevalent Gleason pattern in a prostate biopsy or prostatectomy specimen. The Gleason score is defined by adding the most prevalent (primary) and second most prevalent (secondary) patterns.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C125922"/>
         <rdfs:label>Primary Gleason Pattern</rdfs:label>
+        <oboInOwl:hasExactSynonym>GLEASON PRIMARY SCORE</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48604">
@@ -31063,8 +30808,8 @@ TO {
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C48605">
-        <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
         <oboInOwl:hasExactSynonym>Tertiary Gleason Pattern</oboInOwl:hasExactSynonym>
+        <rdfs:label>Tertiary Gleason Pattern</rdfs:label>
         <obo:IAO_0000115>Prostate carcinoma patterns occupying less than 5% of the tumor.</obo:IAO_0000115>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000009">
@@ -31078,8 +30823,8 @@ TO {
         <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000015">
-        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>centimeter</rdfs:label>
+        <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:hasExactSynonym>cm</oboInOwl:hasExactSynonym>
         <oboInOwl:id>UO:0000015</oboInOwl:id>
         <oboInOwl:hasExactSynonym>centimetre</oboInOwl:hasExactSynonym>
@@ -31089,24 +30834,24 @@ TO {
         <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000016">
-        <oboInOwl:hasExactSynonym>micrometre</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A length unit which is equal to one thousandth of a meter or 10^[-3] m.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>micrometre</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
         <oboInOwl:hasExactSynonym>mm</oboInOwl:hasExactSynonym>
         <oboInOwl:id>UO:0000016</oboInOwl:id>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8588</ontologies:TURBO_0010147>
-        <rdfs:label>millimeter</rdfs:label>
         <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
+        <rdfs:label>millimeter</rdfs:label>
         <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000025">
         <oboInOwl:id>UO:0000025</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8564</ontologies:TURBO_0010147>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
         <obo:IAO_0000115>A mass unit which is equal to 10^[-12] g.</obo:IAO_0000115>
-        <rdfs:label>picogram</rdfs:label>
-        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>pg</oboInOwl:hasExactSynonym>
+        <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
+        <rdfs:label>picogram</rdfs:label>
         <oboInOwl:hasOBONamespace>unit.ontology</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000063">
@@ -31115,13 +30860,13 @@ TO {
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8753</ontologies:TURBO_0010147>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unit of molarity which is equal to one thousandth of a molar or 10^[-3] M.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mM</oboInOwl:hasExactSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000063</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mM</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimolar</rdfs:label>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mM</obo:IAO_0000118>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimolar</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000086">
         <efo:IAO_0000115>
@@ -31131,17 +30876,17 @@ An area density unit which is equal to the mass of an object in kilograms divide
         <obo:created_by>george gkoutos</obo:created_by>
         <rdfs:label>kilogram per square meter</rdfs:label>
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9531</ontologies:TURBO_0010147>
+        <obo:id>UO:0000086</obo:id>
         <obo:hasExactSynonym>kilogram per square metre</obo:hasExactSynonym>
         <obo:hasExactSynonym>Body Mass Index (BMI)</obo:hasExactSynonym>
-        <obo:id>UO:0000086</obo:id>
         <obo:hasExactSynonym>kg/m^[2]</obo:hasExactSynonym>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_slim"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000187">
-        <obo:id>UO:0000187</obo:id>
         <efo:IAO_0000115>
 A dimensionless ratio unit which denotes numbers as fractions of 100.
 </efo:IAO_0000115>
+        <obo:id>UO:0000187</obo:id>
         <rdfs:comment>MAM manually copied class definition from UO, change from a class definition with a superclass to a named individual definition with a type, and pasted into TURBO ontology</rdfs:comment>
         <rdfs:label>percent</rdfs:label>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uo#unit_group_slim"/>
@@ -31166,8 +30911,8 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <ontologies:TURBO_0010147 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8713</ontologies:TURBO_0010147>
         <oboInOwl:created_by>george gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>gram per decilitre</oboInOwl:hasExactSynonym>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass density unit which is equal to mass of an object in grams divided by the volume in deciliters.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gram per deciliter</rdfs:label>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass density unit which is equal to mass of an object in grams divided by the volume in deciliters.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
         <obo:IAO_0000118>g/dl</obo:IAO_0000118>
     </rdf:Description>
@@ -31176,8 +30921,8 @@ A dimensionless ratio unit which denotes numbers as fractions of 100.
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mmHg</oboInOwl:hasExactSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000272</oboInOwl:id>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mmHg</obo:IAO_0000118>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimetres of mercury</rdfs:label>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimeters of mercury</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">millimetres of mercury</rdfs:label>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
@@ -31207,10 +30952,10 @@ Documentation is under development as well, and for now a slidedeck is available
         <dc:creator>Albert Goldfain</dc:creator>
         <dc:creator>Alexander Diehl</dc:creator>
         <dc:creator>Bjoern Peters</dc:creator>
-        <rdfs:comment xml:lang="en">The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as &apos;pathogen&apos;, &apos;host&apos;, &apos;vector&apos;, and &apos;vaccine&apos;.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. </rdfs:comment>
         <dc:creator>Alan Ruttenberg</dc:creator>
-        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+        <rdfs:comment xml:lang="en">The core Infectious Disease Ontology is an ontology of entities generally relevant to both the biomedical and clinical aspects of infectious diseases, including terms such as &apos;pathogen&apos;, &apos;host&apos;, &apos;vector&apos;, and &apos;vaccine&apos;.  The structure of IDO adheres to the Basic Formal Ontology.  Terms in IDO that are within the scope of other OBO Foundry ontologies, such as the Gene Ontology, are derived from those ontologies.  Other terms are defined as cross-products of terms from Foundry ontologies to the extent possible. For more information, see http://www.infectiousdiseaseontology.org/Home.html. </rdfs:comment>
         <protege:defaultLanguage>en</protege:defaultLanguage>
+        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <dc:creator>Barry Smith</dc:creator>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017-11-03</owl:versionInfo>
         <dc:creator>Lindsay Cowell</dc:creator>
@@ -31219,19 +30964,19 @@ Documentation is under development as well, and for now a slidedeck is available
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ogg.owl">
         <owl:versionInfo xml:lang="en">Vision Release: 1.0.59</owl:versionInfo>
         <dc:description xml:lang="en">OGG is a biological ontology in the area of genes and genomes. OGG uses the Basic Formal Ontology (BFO) as its upper level ontology. This OGG document contains the genes and genomes of a list of selected organisms, including human, two viruses (HIV and influenza virus), and bacteria (B. melitensis strain 16M, E. coli strain K-12 substrain MG1655, M. tuberculosis strain H37Rv, and P. aeruginosa strain PAO1). More OGG information for other organisms (e.g., mouse, zebrafish, fruit fly, yeast, etc.) may be found in other OGG subsets. </dc:description>
-        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <foaf:mbox rdf:resource="mailto:yongqunh@med.umich.edu"/>
+        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/omrse.owl">
         <dc:creator xml:lang="en">William Hogan</dc:creator>
         <rdfs:comment xml:lang="en">This ontology grew out of efforts to represent the reality underlying the demographic information required by the US federal government&apos;s &quot;meaningful use&quot; criteria for electronic medical records and a presentation by Dr. William Hogan at the Electronic Health Record of the Future conference in Buffalo, NY http://ontology.buffalo.edu/EHR/Demographics_Hogan_Buffalo_2010_09_22.ppt</rdfs:comment>
-        <dc:creator>Amanda Hicks</dc:creator>
         <dc:creator xml:lang="en">Mathias Brochhausen</dc:creator>
+        <dc:creator>Amanda Hicks</dc:creator>
         <dc:creator xml:lang="en">Swetha Garimalla</dc:creator>
-        <rdfs:label xml:lang="en">The Ontology of Medically Related Social Entities</rdfs:label>
         <dc:contributor>Daniel Welch</dc:contributor>
-        <owl:versionInfo>2019-21-02</owl:versionInfo>
+        <rdfs:label xml:lang="en">The Ontology of Medically Related Social Entities</rdfs:label>
         <dc:license>CC-BY 4.0</dc:license>
+        <owl:versionInfo>2019-21-02</owl:versionInfo>
         <dc:creator xml:lang="en">Shariq Tariq</dc:creator>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pdro.owl">
@@ -31244,10 +30989,10 @@ Documentation is under development as well, and for now a slidedeck is available
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pr.owl">
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <oboInOwl:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23:09:2019 10:14</oboInOwl:date>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details.</rdfs:comment>
+        <oboInOwl:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23:09:2019 10:14</oboInOwl:date>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Use reasoner in OBO Edit to see the correct hierarchy.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The PRotein Ontology is licensed under CC BY 4.0. Please see http://obofoundry.org/ontology/pr for details.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ro.owl">
         <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
