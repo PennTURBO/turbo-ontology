@@ -19,11 +19,11 @@
 @prefix Thesaurus: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 @prefix ncbitaxon: <http://purl.obolibrary.org/obo/ncbitaxon#> .
 @prefix ontologies: <http://transformunify.org/ontologies/> .
-@base <https://raw.githubusercontent.com/PennTURBO/turbo-ontology/turbo.owl> .
+@base <https://raw.githubusercontent.com/PennTURBO/turbo-ontology/master/turbo.owl> .
 
-<https://raw.githubusercontent.com/PennTURBO/turbo-ontology/turbo.owl> rdf:type owl:Ontology ;
-                                                                        owl:versionIRI <https://raw.githubusercontent.com/PennTURBO/turbo-ontology/releases/2020-07-21/turbo.owl> ;
-                                                                        obo:IAO_0000116 """Converting UO terms from classes to individuals (offline, in a triplestore):
+<https://raw.githubusercontent.com/PennTURBO/turbo-ontology/master/turbo.owl> rdf:type owl:Ontology ;
+                                                                               owl:versionIRI <https://raw.githubusercontent.com/PennTURBO/turbo-ontology/master/releases/2020-07-21/turbo.owl> ;
+                                                                               obo:IAO_0000116 """Converting UO terms from classes to individuals (offline, in a triplestore):
 
 (Most recently did mmHg with Ontofox, then converted in text editor... may not survive next merge.)
 
@@ -84,11 +84,11 @@ save results of construct statement to uo_individualized.ttl and import into TUR
 Used a similar strategy for Gleason terms from NCIT: asserted (though inserts into a new named graph)  that the subclasses of http://purl.obolibrary.org/obo/NCIT_C28107 and http://purl.obolibrary.org/obo/NCIT_C28084  are instances of NCIT_C28107 and NCIT_C28084.  Then constructed those assertions, along with all annotations on the terms except for subClassOf, into a turtle file.
 
 Other NCIT terms were imported earlier on just by cutting and pasting between RDF files.  That's the case for any term that isn't native to TURBO or didn't come from OntoFox or OntoDog (including parent terms imported to satisfy  MIREOT)""" ;
-                                                                        dc:contributor "Chris Stoeckert" ,
-                                                                                       "Mark A. Miller" ;
-                                                                        dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
-                                                                        dc:title "The TURBO application ontology" ;
-                                                                        rdfs:comment """Basic approach: used ontodog to extract a base ontology view from OBIB
+                                                                               dc:contributor "Chris Stoeckert" ,
+                                                                                              "Mark A. Miller" ;
+                                                                               dc:source "OBO foundry ontologies, especially the ontology for biobanking, OBIB." ;
+                                                                               dc:title "The TURBO application ontology" ;
+                                                                               rdfs:comment """Basic approach: used ontodog to extract a base ontology view from OBIB
 Then used ontofox to get additional classes and properties from other OBO foundry ontologies
 
 After merging and tidying up, save as turbo_merged.owl (AND turbo_merged.rdf or turbo_merged.ttl for TopBraid Composer)
@@ -122,8 +122,8 @@ April 2019 manual changes (attributed to OntoFox extract, possibly from hyperten
 removed [physical object quality](http://purl.obolibrary.org/obo/PATO_0001241) from [Phenotypic abnormality](http://purl.obolibrary.org/obo/HP_0000118)
 
 removed [blood pressure](http://purl.obolibrary.org/obo/VSO_0000004) from [vital sign](http://purl.obolibrary.org/obo/OGMS_0000029)""" ,
-                                                                                     "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ,
-                                                                                     """todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals.
+                                                                                            "This ontology is intended to support a semantic linked data reimplementation of biobanking and related data, typically originating in a relational format.  The first implementation will be at the Penn Medicine Biobank." ,
+                                                                                            """todo: make a better log of terms pasted into turbo.owl with text editor or merged through any route other than ontodog or ontofox.  may include BMI, DOB, mmHg, systolic blood pressure measurement datum.  ICD-9 and ICD-10 as individuals.
 
 ----
 
@@ -163,7 +163,8 @@ Moved to ontofox import:
 - **http://purl.obolibrary.org/obo/IAO_0000010**
 - **http://purl.obolibrary.org/obo/IAO_0000594**
 - **http://purl.obolibrary.org/obo/UBERON_0001013**""" ;
-                                                                        foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" .
+                                                                               owl:versionInfo "2020-07-21"^^xsd:string ;
+                                                                               foaf:homepage "https://raw.githubusercontent.com/PennTURBO/Turbo-Ontology/master/ontologies/turbo_merged.owl" .
 
 #################################################################
 #    Annotation properties
