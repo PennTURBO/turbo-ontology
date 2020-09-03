@@ -373,6 +373,77 @@ print(robot_call.stdout)
 
 ####
 
+robot_sparql = [
+    ROBOT_PATH,
+    'query',
+    '--input',
+    turbo_merged_ontology_path,
+    '--update',
+    'SPARQL/deprecated_to_obsolete.rq',
+    '--output',
+    'robot_sparql.ttl'
+    ]
+
+
+robot_call = subprocess.run(robot_sparql,
+                            stdout=subprocess.PIPE,
+                            text=True,
+                            check=True)
+print(robot_call.stdout)
+print(robot_call.stderr)
+
+
+robot_sparql = [
+    ROBOT_PATH,
+    'query',
+    '--input',
+    'robot_sparql.ttl',
+    '--update',
+    'SPARQL/deprecated_not_thing.rq',
+    '--output',
+    'robot_sparql.ttl'
+    ]
+
+robot_call = subprocess.run(robot_sparql,
+                            stdout=subprocess.PIPE, text=True,
+                            check=True)
+print(robot_call.stdout)
+
+robot_sparql = [
+    ROBOT_PATH,
+    'query',
+    '--input',
+    'robot_sparql.ttl',
+    '--update',
+    'SPARQL/anything_not_thing.rq',
+    '--output',
+    'robot_sparql.ttl'
+    ]
+
+robot_call = subprocess.run(robot_sparql,
+                            stdout=subprocess.PIPE, text=True,
+                            check=True)
+print(robot_call.stdout)
+
+
+uo_merge = [
+    ROBOT_PATH,
+    'merge',
+    '--input',
+    'robot_sparql.ttl',
+    '--input',
+    'ontology_downloads/uo.owl',
+    '--output',
+    turbo_merged_ontology_path
+    ]
+
+robot_call = subprocess.run(uo_merge,
+                            stdout=subprocess.PIPE, text=True,
+                            check=True)
+print(robot_call.stdout)
+
+####
+
 turbo_reasoned_ontology_path = \
     os.path.join(ART_PATH,
                  turbo_reasoned_ontology_file)
@@ -395,78 +466,6 @@ reasoning = [
     ]
 
 robot_call = subprocess.run(reasoning,
-                            stdout=subprocess.PIPE, text=True,
-                            check=True)
-print(robot_call.stdout)
-
-
-####
-
-post_reasoning = [
-    ROBOT_PATH,
-    'query',
-    '--input',
-    turbo_merged_ontology_path,
-    '--update',
-    'SPARQL/deprecated_to_obsolete.rq',
-    '--output',
-    'post_reasoning.ttl'
-    ]
-
-
-robot_call = subprocess.run(post_reasoning,
-                            stdout=subprocess.PIPE,
-                            text=True,
-                            check=True)
-print(robot_call.stdout)
-print(robot_call.stderr)
-
-
-post_reasoning = [
-    ROBOT_PATH,
-    'query',
-    '--input',
-    'post_reasoning.ttl',
-    '--update',
-    'SPARQL/deprecated_not_thing.rq',
-    '--output',
-    'post_reasoning.ttl'
-    ]
-
-robot_call = subprocess.run(post_reasoning,
-                            stdout=subprocess.PIPE, text=True,
-                            check=True)
-print(robot_call.stdout)
-
-post_reasoning = [
-    ROBOT_PATH,
-    'query',
-    '--input',
-    'post_reasoning.ttl',
-    '--update',
-    'SPARQL/anything_not_thing.rq',
-    '--output',
-    'post_reasoning.ttl'
-    ]
-
-robot_call = subprocess.run(post_reasoning,
-                            stdout=subprocess.PIPE, text=True,
-                            check=True)
-print(robot_call.stdout)
-
-
-uo_merge = [
-    ROBOT_PATH,
-    'merge',
-    '--input',
-    'post_reasoning.ttl',
-    '--input',
-    'ontology_downloads/uo.owl',
-    '--output',
-    'post_reasoning.ttl'
-    ]
-
-robot_call = subprocess.run(uo_merge,
                             stdout=subprocess.PIPE, text=True,
                             check=True)
 print(robot_call.stdout)
