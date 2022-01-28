@@ -7,7 +7,7 @@
 @base <http://purl.obolibrary.org/obo/ncit.owl> .
 
 <http://purl.obolibrary.org/obo/ncit.owl> rdf:type owl:Ontology ;
-                                           owl:versionIRI <http://purl.obolibrary.org/obo/ncit/releases/2019-11-26/ncit.owl> .
+                                           owl:versionIRI <http://purl.obolibrary.org/obo/ncit/releases/2020-07-17/ncit.owl> .
 
 #################################################################
 #    Annotation properties
@@ -69,6 +69,7 @@
                                            <http://protege.stanford.edu/plugins/owl/protege#readOnly> "true" ;
                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A property representing a concept unique identifier within the NCI Enterprise Vocabulary Service's NCI Thesaurus." ;
                                            <http://purl.obolibrary.org/obo/NCIT_NHC0> "NHC0" ;
+                                           <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
                                            <http://purl.obolibrary.org/obo/NCIT_P108> "code" ;
                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "code" ;
                                            rdfs:label "code" .
@@ -340,8 +341,9 @@
                                            <http://purl.obolibrary.org/obo/NCIT_NHC0> "P366" ;
                                            <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
                                            <http://purl.obolibrary.org/obo/NCIT_P108> "Legacy Concept Name" ;
-                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Legacy Concept Name" ;
-                                           rdfs:label "Legacy_Concept_Name" .
+                                           <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Legacy Concept Name" ,
+                                                                                                          "Legacy_Concept_Name" ;
+                                           rdfs:label "Legacy Concept Name" .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P366> ;
@@ -355,6 +357,14 @@
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "Legacy Concept Name" ;
    <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_P366> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Legacy_Concept_Name" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
@@ -1119,15 +1129,19 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                               <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Grade Group 1" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P208> "CL525030" ;
-                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ,
+                                                                                         "GDC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P375> "Group 1" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "1" ,
                                                                                                              "Gleason Grade Group 1" ,
                                                                                                              "Gleason Score Less Than or Equal to 6" ,
-                                                                                                             "Grade Group 1" ;
+                                                                                                             "Grade Group 1" ,
+                                                                                                             "Group 1" ;
                                               <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C156952> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C156953> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C157530> ,
-                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C166390> ;
                                               rdfs:label "Gleason Grade Group 1" .
 
 [ rdf:type owl:Axiom ;
@@ -1135,6 +1149,16 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "Only individual discrete well-formed glands." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137992> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Group 1" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "GGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -1169,6 +1193,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137992> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Group 1" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/NCIT_C137993
 <http://purl.obolibrary.org/obo/NCIT_C137993> rdf:type owl:Class ;
@@ -1178,22 +1210,60 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                               <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Grade Group 2" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P208> "CL525029" ;
-                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ,
+                                                                                         "GDC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P375> "Group 2" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "2" ,
                                                                                                              "Gleason Grade Group 2" ,
                                                                                                              "Gleason Score 7: (3 plus 4)" ,
-                                                                                                             "Grade Group 2" ;
+                                                                                                             "Grade Group 2" ,
+                                                                                                             "Group 2" ;
                                               <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C156952> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C156953> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C157530> ,
-                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C166390> ;
                                               rdfs:label "Gleason Grade Group 2" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137993> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Gleason Score 7: (3 plus 4)" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137993> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Grade Group 2" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137993> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Group 2" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137993> ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "Predominantly well-formed glands with lesser component of poorly-formed/fused/cribriform glands." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137993> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Group 2" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "GGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -1212,22 +1282,6 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137993> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "Gleason Score 7: (3 plus 4)" ;
-   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
-   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137993> ;
-   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "Grade Group 2" ;
-   <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
-   <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
- ] .
-
 
 ###  http://purl.obolibrary.org/obo/NCIT_C137994
 <http://purl.obolibrary.org/obo/NCIT_C137994> rdf:type owl:Class ;
@@ -1237,16 +1291,45 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                               <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Grade Group 3" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P208> "CL525028" ;
-                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ,
+                                                                                         "GDC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P375> "Group 3" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "3" ,
                                                                                                              "Gleason Grade Group 3" ,
                                                                                                              "Gleason Score 7: (4 plus 3)" ,
-                                                                                                             "Grade Group 3" ;
+                                                                                                             "Grade Group 3" ,
+                                                                                                             "Group 3" ;
                                               <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C156952> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C156953> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C157530> ,
-                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C166390> ;
                                               rdfs:label "Gleason Grade Group 3" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "Predominantly poorly-formed/fused/cribriform glands with a lesser component of well-formed glands." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Group 3" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "GGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "3" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "CPTAC"
+ ] .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
@@ -1274,17 +1357,10 @@ rdfs:label rdf:type owl:AnnotationProperty ;
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
-   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
-   owl:annotatedTarget "Predominantly poorly-formed/fused/cribriform glands with a lesser component of well-formed glands." ;
-   <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
- ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137994> ;
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
-   owl:annotatedTarget "3" ;
+   owl:annotatedTarget "Group 3" ;
    <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
-   <http://purl.obolibrary.org/obo/NCIT_P384> "CPTAC"
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
  ] .
 
 
@@ -1298,17 +1374,21 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                               <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Grade Group 4" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P208> "CL525035" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ,
-                                                                                         "CTRP" ;
+                                                                                         "CTRP" ,
+                                                                                         "GDC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P375> "Group 4" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "4" ,
                                                                                                              "Gleason Grade Group 4" ,
                                                                                                              "Gleason Score 8: (4 plus 4) or (3 plus 5) or (5 plus 3)" ,
-                                                                                                             "Grade Group 4" ;
+                                                                                                             "Grade Group 4" ,
+                                                                                                             "Group 4" ;
                                               <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C116977> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C118168> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C156952> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C156953> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C157530> ,
-                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C166390> ;
                                               rdfs:label "Gleason Grade Group 4" .
 
 [ rdf:type owl:Axiom ;
@@ -1316,6 +1396,16 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "Only poorly-formed/fused/cribriform glands or Predominantly well-formed glands and lesser component lacking glands or Predominantly lacking glands and lesser component of well-formed gland. Poorly-formed/fused/cribriform glands can be a more minor component." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137995> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Group 4" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "GGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -1358,6 +1448,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137995> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Group 4" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/NCIT_C137996
 <http://purl.obolibrary.org/obo/NCIT_C137996> rdf:type owl:Class ;
@@ -1367,15 +1465,19 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                               <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Grade Group 5" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P208> "CL525034" ;
-                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CPTAC" ,
+                                                                                         "GDC" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P375> "Group 5" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "5" ,
                                                                                                              "Gleason Grade Group 5" ,
                                                                                                              "Gleason Score 9 or 10" ,
-                                                                                                             "Grade Group 5" ;
+                                                                                                             "Grade Group 5" ,
+                                                                                                             "Group 5" ;
                                               <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C156952> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C156953> ,
                                                                                                       <http://purl.obolibrary.org/obo/NCIT_C157530> ,
-                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C166390> ;
                                               rdfs:label "Gleason Grade Group 5" .
 
 [ rdf:type owl:Axiom ;
@@ -1383,6 +1485,16 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "Lacks gland formation (or with necrosis) with or without poorly formed/fused/cribriform glands. For cases with greater than 95% poorly formed/fused/cribriform glands or lack of glands on a core or at RP, the component of less than 5% well-formed glands is not factored into the grade." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137996> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Group 5" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "GGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -1415,6 +1527,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedTarget "Grade Group 5" ;
    <http://purl.obolibrary.org/obo/NCIT_P383> "SY" ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C137996> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Group 5" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
  ] .
 
 
@@ -1870,10 +1990,15 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Pattern 1" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P207> "C1276439" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "GDC" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P366> "Gleason_Grade_1" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P375> "Pattern 1" ;
                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Gleason Grade 1" ,
-                                                                                                            "Gleason Pattern 1" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                            "Gleason Pattern 1" ,
+                                                                                                            "Pattern 1" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166397> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166404> ;
                                              rdfs:label "Gleason Pattern 1" .
 
 [ rdf:type owl:Axiom ;
@@ -1881,6 +2006,26 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A pattern of prostate carcinoma characterized by the presence of a well circumscribed nodule of separate glands which are closely packed. There is no infiltration of the surrounding parenchyma. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28085> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 1" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "PGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28085> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 1" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "SGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -1899,6 +2044,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28085> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Pattern 1" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/NCIT_C28086
 <http://purl.obolibrary.org/obo/NCIT_C28086> rdf:type owl:Class ;
@@ -1908,10 +2061,15 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Pattern 2" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P207> "C1276440" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "GDC" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P366> "Gleason_Grade_2" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P375> "Pattern 2" ;
                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Gleason Grade 2" ,
-                                                                                                            "Gleason Pattern 2" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                            "Gleason Pattern 2" ,
+                                                                                                            "Pattern 2" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166397> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166404> ;
                                              rdfs:label "Gleason Pattern 2" .
 
 [ rdf:type owl:Axiom ;
@@ -1919,6 +2077,26 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A pattern of prostate carcinoma characterized by the presence of glands that are more loosely arranged and less uniform compared to Gleason pattern 1. Minimal invasion of the surrounding parenchyma may be present. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28086> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 2" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "PGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28086> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 2" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "SGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -1937,6 +2115,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28086> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Pattern 2" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/NCIT_C28087
 <http://purl.obolibrary.org/obo/NCIT_C28087> rdf:type owl:Class ;
@@ -1946,10 +2132,15 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Pattern 3" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P207> "C1276441" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "GDC" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P366> "Gleason_Grade_3" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P375> "Pattern 3" ;
                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Gleason Grade 3" ,
-                                                                                                            "Gleason Pattern 3" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                            "Gleason Pattern 3" ,
+                                                                                                            "Pattern 3" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166397> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166404> ;
                                              rdfs:label "Gleason Pattern 3" .
 
 [ rdf:type owl:Axiom ;
@@ -1957,6 +2148,26 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A pattern of prostate carcinoma characterized by the presence of glands that are infiltrative and vary in size and shape. The epithelial polarity of the malignant cells is preserved and luminal differentiation is present in all glands." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28087> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 3" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "PGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28087> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 3" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "SGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -1975,6 +2186,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28087> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Pattern 3" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/NCIT_C28088
 <http://purl.obolibrary.org/obo/NCIT_C28088> rdf:type owl:Class ;
@@ -1984,10 +2203,16 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Pattern 4" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P207> "C0332329" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "GDC" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P366> "Gleason_Grade_4" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P375> "Pattern 4" ;
                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Gleason Grade 4" ,
-                                                                                                            "Gleason Pattern 4" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                            "Gleason Pattern 4" ,
+                                                                                                            "Pattern 4" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166397> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166404> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C171106> ;
                                              rdfs:label "Gleason Pattern 4" .
 
 [ rdf:type owl:Axiom ;
@@ -1995,6 +2220,36 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A pattern of prostate carcinoma characterized by the presence of fused, cribriform, or poorly defined glands. There is partial loss of normal epithelial polarity." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28088> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 4" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "GGT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28088> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 4" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "PGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28088> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 4" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "SGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -2013,6 +2268,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
  ] .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28088> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Pattern 4" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
+ ] .
+
 
 ###  http://purl.obolibrary.org/obo/NCIT_C28089
 <http://purl.obolibrary.org/obo/NCIT_C28089> rdf:type owl:Class ;
@@ -2022,10 +2285,16 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Classification" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Gleason Pattern 5" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P207> "C1276443" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "GDC" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P366> "Gleason_Grade_5" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P375> "Pattern 5" ;
                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Gleason Grade 5" ,
-                                                                                                            "Gleason Pattern 5" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ;
+                                                                                                            "Gleason Pattern 5" ,
+                                                                                                            "Pattern 5" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166397> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C166404> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C171106> ;
                                              rdfs:label "Gleason Pattern 5" .
 
 [ rdf:type owl:Axiom ;
@@ -2033,6 +2302,36 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A pattern of prostate carcinoma characterized by almost complete loss of epithelial polarity and luminal differentiation." ;
    <http://purl.obolibrary.org/obo/NCIT_P378> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28089> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 5" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "GGT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28089> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 5" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "PGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28089> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P375> ;
+   owl:annotatedTarget "Pattern 5" ;
+   <http://purl.obolibrary.org/obo/NCIT_P393> "Has Synonym" ;
+   <http://purl.obolibrary.org/obo/NCIT_P394> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P395> "SGG" ;
+   <http://purl.obolibrary.org/obo/NCIT_P396> "GDC"
  ] .
 
 [ rdf:type owl:Axiom ;
@@ -2049,6 +2348,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
    owl:annotatedTarget "Gleason Pattern 5" ;
    <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C28089> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "Pattern 5" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "GDC"
  ] .
 
 
@@ -2420,6 +2727,7 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C107675> ,
                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C128689> ,
                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C157711> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C159096> ,
                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C54452> ,
                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C61410> ,
                                                                                                      <http://purl.obolibrary.org/obo/NCIT_C66830> ,
@@ -3118,12 +3426,16 @@ rdfs:label rdf:type owl:AnnotationProperty ;
                                              <http://purl.obolibrary.org/obo/NCIT_P108> "CDISC SDTM Terminology" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P207> "C1879948" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "The terminology subset that includes terms pertaining to the Clinical Data Interchange Standards Consortium (CDISC) Study Data Tabulation Model (SDTM)." ;
                                              <http://purl.obolibrary.org/obo/NCIT_P366> "CDISC_SDTM_Terminology" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P372> "Yes" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P376> "The terminology subset that includes terms pertaining to the CDISC Standard Data Tabulation Model (SDTM). The text, pdf, Microsoft Excel, odm.xml, html and OWL versions of this subset can be downloaded from here: <a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM\" alt=\"CDISC SDTM ftp\">CDISC SDTM ftp</a>" ;
                                              <http://purl.obolibrary.org/obo/NCIT_P398> "No" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "CDISC SDTM Terminology" ;
-                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C61410> ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "CDISC SDTM Terminology" ,
+                                                                                                            "SDTM" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/NCIT_C165634> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C172331> ,
+                                                                                                     <http://purl.obolibrary.org/obo/NCIT_C61410> ;
                                              rdfs:label "CDISC SDTM Terminology" .
 
 [ rdf:type owl:Axiom ;
@@ -3135,10 +3447,25 @@ rdfs:label rdf:type owl:AnnotationProperty ;
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C66830> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/NCIT_P325> ;
+   owl:annotatedTarget "The terminology subset that includes terms pertaining to the Clinical Data Interchange Standards Consortium (CDISC) Study Data Tabulation Model (SDTM)." ;
+   <http://purl.obolibrary.org/obo/NCIT_P378> "CDISC"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C66830> ;
    owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
    owl:annotatedTarget "CDISC SDTM Terminology" ;
    <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
    <http://purl.obolibrary.org/obo/NCIT_P384> "NCI"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/NCIT_C66830> ;
+   owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+   owl:annotatedTarget "SDTM" ;
+   <http://purl.obolibrary.org/obo/NCIT_P383> "PT" ;
+   <http://purl.obolibrary.org/obo/NCIT_P384> "CDISC"
  ] .
 
 
