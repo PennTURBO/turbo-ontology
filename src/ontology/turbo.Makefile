@@ -3,6 +3,7 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
+
 # ----------------------------------------
 # Standard Constants
 # ----------------------------------------
@@ -43,7 +44,7 @@ FORMATS = $(sort  owl obo owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 RELEASE_ARTEFACTS = $(sort $(ONT)-full $(ONT)-base $(ONT)-base $(ONT)-full)
 
-IMPORTS =  pdro ncbitaxon
+IMPORTS =  ncbitaxon
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -51,14 +52,6 @@ IMPORT_FILES = $(IMPORT_OWL_FILES)
 
 .PHONY: all_imports
 all_imports: $(IMPORT_FILES)
-
-## ONTOLOGY: pdro
-## Copy of pdro is re-downloaded whenever source changes
-mirror/pdro.trigger: $(SRC)
-
-mirror/pdro.owl: mirror/pdro.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = false ]; then curl -L $(URIBASE)/pdro.owl --create-dirs -o mirror/pdro.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/pdro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: mirror/pdro.owl
 
 IMP_LARGE=false # Global parameter to bypass handling of large imports
 
