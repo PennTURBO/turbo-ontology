@@ -34,6 +34,12 @@ dependencies:
 - id: bfo
 - id: iao
 - id: pdro
+- id: ico
+- id: obi
+- id: ogms
+- id: pato
+- id: omrse
+- id: ncbitaxon
 
 tracker: https://github.com/PennTURBO/turbo-ontology/issues
 license:
