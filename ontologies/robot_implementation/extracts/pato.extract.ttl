@@ -7,7 +7,7 @@
 @base <http://purl.obolibrary.org/obo/pato.owl> .
 
 <http://purl.obolibrary.org/obo/pato.owl> rdf:type owl:Ontology ;
-                                           owl:versionIRI <http://purl.obolibrary.org/obo/pato/releases/2020-05-08/pato.owl> .
+                                           owl:versionIRI <http://purl.obolibrary.org/obo/pato/releases/2020-08-02/pato.owl> .
 
 #################################################################
 #    Annotation properties
@@ -350,6 +350,43 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                              rdfs:label "specifically dependent continuant"@en .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0000001
+<http://purl.obolibrary.org/obo/PATO_0000001> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities"^^xsd:string ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000589> "quality (PATO)" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0000072"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000001"^^xsd:string ;
+                                              rdfs:label "quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000001> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities"^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000008
+<http://purl.obolibrary.org/obo/PATO_0000008> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001906> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's scalar absolute value of the rate of change of the bearer's position."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "velocity"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000008"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "speed"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000008> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's scalar absolute value of the rate of change of the bearer's position."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Velocity"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0000011
 <http://purl.obolibrary.org/obo/PATO_0000011> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
@@ -371,7 +408,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 ###  http://purl.obolibrary.org/obo/PATO_0000014
 <http://purl.obolibrary.org/obo/PATO_0000014> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000051> ,
-                                                              <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                                              <http://purl.obolibrary.org/obo/PATO_0001300> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A composite chromatic quality composed of hue, saturation and intensity parts."^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0000020"^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "colour"^^xsd:string ,
@@ -430,6 +467,24 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/concentration"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000044
+<http://purl.obolibrary.org/obo/PATO_0000044> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0002062> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality which inheres in a bearer by virtue of the number of the bearer's repetitive actions in a particular time."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000044"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "frequency"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000044> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality which inheres in a bearer by virtue of the number of the bearer's repetitive actions in a particular time."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/frequency"^^xsd:string
  ] .
 
 
@@ -544,7 +599,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/PATO_0000128
 <http://purl.obolibrary.org/obo/PATO_0000128> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001035> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer that has mass near a gravitational body."^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000128"^^xsd:string ;
@@ -557,6 +612,48 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A physical quality inhering in a bearer that has mass near a gravitational body."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Weight"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000133
+<http://purl.obolibrary.org/obo/PATO_0000133> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A spatial quality inhering in a bearer by virtue of the bearer's placement which is defined by the angle between the bearer and an axis, or the angle between the bearer and another object."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0000137"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "angular placement"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "amount of rotation"^^xsd:string ,
+                                                                                                               "angle"^^xsd:string ,
+                                                                                                               "angular magnitude"^^xsd:string ,
+                                                                                                               "plane angle"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000133"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#relational_slim> ;
+                                              rdfs:label "orientation"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000133> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A spatial quality inhering in a bearer by virtue of the bearer's placement which is defined by the angle between the bearer and an axis, or the angle between the bearer and another object."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:JE"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000146
+<http://purl.obolibrary.org/obo/PATO_0000146> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality of the thermal energy of a system."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000146"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "temperature"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0000146> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality of the thermal energy of a system."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
  ] .
 
 
@@ -690,6 +787,77 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0001021
+<http://purl.obolibrary.org/obo/PATO_0001021> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's capacity to do work."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001021"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "energy"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001021> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's capacity to do work."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Energy"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001022
+<http://purl.obolibrary.org/obo/PATO_0001022> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the amount of momentum caused a certain force will produce over time."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001022"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "impulse"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001022> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the amount of momentum caused a certain force will produce over time."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "url:http://www.wikipremed.com/home_resources/010104_momentum_concepts.pdf"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001023
+<http://purl.obolibrary.org/obo/PATO_0001023> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001906> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's velocity multiplied by its mass."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001023"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "momentum"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001023> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's velocity multiplied by its mass."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001024
+<http://purl.obolibrary.org/obo/PATO_0001024> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's rate of doing work."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001024"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "power"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001024> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's rate of doing work."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Power"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001025
 <http://purl.obolibrary.org/obo/PATO_0001025> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
@@ -707,6 +875,70 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0001026
+<http://purl.obolibrary.org/obo/PATO_0001026> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality which is equal to the energy transferred by a force to a moving object."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "W"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001026"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "work"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001026> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality which is equal to the energy transferred by a force to a moving object."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Work"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001028
+<http://purl.obolibrary.org/obo/PATO_0001028> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001906> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the rate of change of the bearer's velocity in either speed or direction."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001028"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "acceleration"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001028> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the rate of change of the bearer's velocity in either speed or direction."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Acceleration"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001035
+<http://purl.obolibrary.org/obo/PATO_0001035> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's rate of change of momentum."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "force amplitude"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001035"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "force"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001035> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's rate of change of momentum."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "thesaurus.maths:thesaurus.maths"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001235
+<http://purl.obolibrary.org/obo/PATO_0001235> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001235"^^xsd:string ;
+                                              rdfs:label "obsolete strength value"^^xsd:string ;
+                                              owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001237
 <http://purl.obolibrary.org/obo/PATO_0001237> rdf:type owl:Class ;
                                               rdfs:subClassOf owl:Thing ;
@@ -717,7 +949,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://purl.obolibrary.org/obo/PATO_0001241
 <http://purl.obolibrary.org/obo/PATO_0001241> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000020> ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000001> ;
                                               <http://purl.obolibrary.org/obo/IAO_0000115> "A quality which inheres in a continuant."^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0001237"^^xsd:string ,
                                                                                                               "PATO:0001238"^^xsd:string ;
@@ -743,6 +975,113 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0001291
+<http://purl.obolibrary.org/obo/PATO_0001291> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001739> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001291"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "electromagnetic (EM) radiation quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001291> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Electromagnetic_radiation"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001296
+<http://purl.obolibrary.org/obo/PATO_0001296> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001300> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A scalar optical quality which obtains by the magnitude of the light emitted by the bearer."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001296"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "luminous flux"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001296> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A scalar optical quality which obtains by the magnitude of the light emitted by the bearer."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001299
+<http://purl.obolibrary.org/obo/PATO_0001299> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001291> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A scalar EM radiation quality which obtains by the capacity of the bearer to emit radiation."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001299"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "radiation emitting quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001299> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A scalar EM radiation quality which obtains by the capacity of the bearer to emit radiation."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001300
+<http://purl.obolibrary.org/obo/PATO_0001300> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001291> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001300"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "optical quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001300> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001309
+<http://purl.obolibrary.org/obo/PATO_0001309> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0002062> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0000081"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "period"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "time"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001309"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#hpo_slim> ;
+                                              rdfs:label "duration"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001309> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:mellybelly"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001350
+<http://purl.obolibrary.org/obo/PATO_0001350> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001028> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the rate of change of the bearer's angular velocity."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001350"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "angular acceleration"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001350> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the rate of change of the bearer's angular velocity."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Angular_acceleration"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001351
 <http://purl.obolibrary.org/obo/PATO_0001351> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001019> ;
@@ -758,6 +1097,24 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A density quality which inheres in a bearer by virtue of some influence exerted by the bearer's mass on a given area."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Area_density"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001352
+<http://purl.obolibrary.org/obo/PATO_0001352> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001019> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A density quality which is equal to the mass exerting an influence on a one-dimensional object."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001352"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "linear density"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001352> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A density quality which is equal to the mass exerting an influence on a one-dimensional object."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Linear_density"^^xsd:string
  ] .
 
 
@@ -779,6 +1136,42 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0001413
+<http://purl.obolibrary.org/obo/PATO_0001413> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001906> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the rate of the bearer's angular movement about an axis; the angle rotated in a given time."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001413"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "angular velocity"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001413> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the rate of the bearer's angular movement about an axis; the angle rotated in a given time."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Angular_velocity"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001414
+<http://purl.obolibrary.org/obo/PATO_0001414> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a catalyst by virtue of the amount of the catalyst's action."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001414"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "catalytic activity"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001414> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a catalyst by virtue of the amount of the catalyst's action."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001428
 <http://purl.obolibrary.org/obo/PATO_0001428> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000033> ;
@@ -794,6 +1187,99 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A concentration quality inhering in a medium by virtue of the bearer's tendency to hydronate a specific reference base."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "chemicool:chemicool"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001461
+<http://purl.obolibrary.org/obo/PATO_0001461> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a liquid by virtue of the bearer's ability to attraction of molecules at its surface as a result of unbalanced molecular cohesive forces."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001461"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#disposition_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "surface tension"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001461> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a liquid by virtue of the bearer's ability to attraction of molecules at its surface as a result of unbalanced molecular cohesive forces."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Surface_tension"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001464
+<http://purl.obolibrary.org/obo/PATO_0001464> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality that is equal to the potential energy per unit charge associated with a static (time-invariant) electric field, also called the electrostatic potential."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001464"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "electric potential"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001464> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality that is equal to the potential energy per unit charge associated with a static (time-invariant) electric field, also called the electrostatic potential."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Electric_potential"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001521
+<http://purl.obolibrary.org/obo/PATO_0001521> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0002062> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a sound wave by virtue of the maximum magnitude (value without regard to sign) of its disturbance."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> "loudness"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001521"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "sound amplitude"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001521> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a sound wave by virtue of the maximum magnitude (value without regard to sign) of its disturbance."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "answers.com:answers.com"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001574
+<http://purl.obolibrary.org/obo/PATO_0001574> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001906> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's motion characteristic."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001574"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "flow rate"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001574> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's motion characteristic."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "WordNet:WordNet"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001585
+<http://purl.obolibrary.org/obo/PATO_0001585> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's disposition to transmit of an entity through a medium."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001585"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#disposition_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:comment "Examples could be heat or electricity or sound."^^xsd:string ;
+                                              rdfs:label "conductivity"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001585> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's disposition to transmit of an entity through a medium."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
  ] .
 
 
@@ -834,6 +1320,24 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0001680
+<http://purl.obolibrary.org/obo/PATO_0001680> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000918> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A volume quality inhering in a homogeneous substance containing 6.02 x 1023 atoms or molecules by virtue of the amount of 3-dimensional space it occupies."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001680"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "molar volume"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001680> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A volume quality inhering in a homogeneous substance containing 6.02 x 1023 atoms or molecules by virtue of the amount of 3-dimensional space it occupies."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Molar_volume"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001681
 <http://purl.obolibrary.org/obo/PATO_0001681> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000125> ;
@@ -849,6 +1353,25 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
    owl:annotatedTarget "A physical quality that inheres in a homogeneous substance containing 6.02 x 1023 atoms or molecules."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Molar_mass"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001682
+<http://purl.obolibrary.org/obo/PATO_0001682> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's disposition to exert an attractive or repulsive force on other entities."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001682"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#disposition_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "magnetism"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001682> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's disposition to exert an attractive or repulsive force on other entities."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Magnetism"^^xsd:string
  ] .
 
 
@@ -870,6 +1393,202 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
  ] .
 
 
+###  http://purl.obolibrary.org/obo/PATO_0001709
+<http://purl.obolibrary.org/obo/PATO_0001709> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000117> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A size quality inhering in an bearer by virtue of the bearer's extension in two dimensions."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "2-D size"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001709"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "2-D extent"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001709> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A size quality inhering in an bearer by virtue of the bearer's extension in two dimensions."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001717
+<http://purl.obolibrary.org/obo/PATO_0001717> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001299> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A radiation emitting quality which obtains by the intensity of the bearer emitted radiation."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001717"^^xsd:string ;
+                                              rdfs:label "radiation emitting intensity quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001717> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A radiation emitting quality which obtains by the intensity of the bearer emitted radiation."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001718
+<http://purl.obolibrary.org/obo/PATO_0001718> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001296> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality that exists by virtue of the luminous intensity per unit area projected in a given direction."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001718"^^xsd:string ;
+                                              rdfs:label "luminance"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001718> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality that exists by virtue of the luminous intensity per unit area projected in a given direction."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Luminance"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001739
+<http://purl.obolibrary.org/obo/PATO_0001739> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001739"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "radiation quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001739> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001740
+<http://purl.obolibrary.org/obo/PATO_0001740> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001739> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "radioactivity"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001740"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "activity (of a radionuclide)"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001740> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001744
+<http://purl.obolibrary.org/obo/PATO_0001744> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001739> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A radiation quality inhering in a bearer by virtue of what the bearer receives as a result of being exposed to ionizing radiation."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001744"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "radiation exposure"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001744> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A radiation quality inhering in a bearer by virtue of what the bearer receives as a result of being exposed to ionizing radiation."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "hps:hps"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001745
+<http://purl.obolibrary.org/obo/PATO_0001745> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001744> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A radiation exposure quality inhering in a substance by virtue of the radiation energy \"deposited\" in a kilogram of a substance."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001745"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "radiation absorbed dose"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001745> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A radiation exposure quality inhering in a substance by virtue of the radiation energy \"deposited\" in a kilogram of a substance."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "arpansa:arpansa"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001746
+<http://purl.obolibrary.org/obo/PATO_0001746> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001744> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A radiation exposure quality inhering in a tissue by virtue of the relation between the absorbed dose to the effective biological damage of the radiation to that tissue."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001746"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "radiation equivalent dose"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001746> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A radiation exposure quality inhering in a tissue by virtue of the relation between the absorbed dose to the effective biological damage of the radiation to that tissue."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "arpansa:arpansa"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001747
+<http://purl.obolibrary.org/obo/PATO_0001747> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001744> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A radiation exposure quality inhering in an organ by virtue of the multiplication of an equivalent dose to that organ multiplied by the tissue weighting factor for that organ."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001747"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "radiation effective dose"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001747> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A radiation exposure quality inhering in an organ by virtue of the multiplication of an equivalent dose to that organ multiplied by the tissue weighting factor for that organ."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "arpansa:arpansa"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001756
+<http://purl.obolibrary.org/obo/PATO_0001756> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001585> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A conductivity quality inhering in a bearer by virtue of the bearer's disposition to spontaneous transfer of thermal energy from a region of higher temperature to a region of lower temperature."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "thermal conduction"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001756"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#disposition_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "heat conductivity"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001756> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A conductivity quality inhering in a bearer by virtue of the bearer's disposition to spontaneous transfer of thermal energy from a region of higher temperature to a region of lower temperature."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Heat_conduction"^^xsd:string
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001757
+<http://purl.obolibrary.org/obo/PATO_0001757> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001585> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A conductivity quality inhering in a bearer by virtue of the bearer's ability to convey electricity."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001757"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#disposition_slim> ,
+                                                                                                      <http://purl.obolibrary.org/obo/pato#scalar_slim> ;
+                                              rdfs:label "electrical conductivity"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001757> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A conductivity quality inhering in a bearer by virtue of the bearer's ability to convey electricity."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Electrical_conduction"^^xsd:string
+ ] .
+
+
 ###  http://purl.obolibrary.org/obo/PATO_0001894
 <http://purl.obolibrary.org/obo/PATO_0001894> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000047> ;
@@ -878,6 +1597,23 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
                                               <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001894"^^xsd:string ;
                                               <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
                                               rdfs:label "phenotypic sex"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001906
+<http://purl.obolibrary.org/obo/PATO_0001906> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality inhering in a bearer by virtue of the bearer's participation in movement."^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001906"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "movement quality"^^xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://purl.obolibrary.org/obo/PATO_0001906> ;
+   owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+   owl:annotatedTarget "A physical quality inhering in a bearer by virtue of the bearer's participation in movement."^^xsd:string ;
+   <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PATOC:GVG"^^xsd:string
+ ] .
 
 
 ###  http://purl.obolibrary.org/obo/PATO_0001995
@@ -915,6 +1651,17 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
    owl:annotatedTarget "A concentration quality inhering in a bearer by virtue of the bearer's amount of osmoles of solute per kilogram of solvent."^^xsd:string ;
    <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Wikipedia:http://en.wikipedia.org/wiki/Osmolarity"^^xsd:string
  ] .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0002062
+<http://purl.obolibrary.org/obo/PATO_0002062> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000001> ;
+                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "george"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#creation_date> "2009-06-05T09:16:46Z"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0002062"^^xsd:string ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/pato#attribute_slim> ;
+                                              rdfs:label "physical quality of a process"^^xsd:string .
 
 
 ###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

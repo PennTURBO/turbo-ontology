@@ -14,16 +14,13 @@ from datetime import datetime
 import subprocess
 from os import listdir
 import re
-# import shutil
-
-# timeit ?
 
 obo_abbreviations_byte_estimates_file = \
     'obo_abbreviations_byte_estimates.csv'
 
 non_obo_url_file = 'non_obo_urls.txt'
 
-max_estimate = 10000000000
+max_estimate = 564000000
 
 ART_PATH = '.'
 TERMLIST_DIR = 'term_lists'
@@ -62,9 +59,6 @@ the_cwd = os.getcwd()
 
 obo_abbreviations_byte_estimates = \
     pd.read_csv(obo_abbreviations_byte_estimates_file)
-
-# for col in obo_abbreviations_byte_estimates.columns:
-#     print(col)
 
 smaller_obo_ontologies = \
     obo_abbreviations_byte_estimates[
@@ -115,47 +109,14 @@ termlist_filenames_as_is = [fn for fn in listdir(TERMLIST_PATH)
 
 termlist_filenames = sorted(termlist_filenames_as_is)
 
+termlist_filenames.remove('uo.owl.txt')
+
 ontology_abbreviations = [sub.replace('.owl.txt', '') for sub in
                           termlist_filenames]
 
 num_ontologies = len(termlist_filenames)
 
-# '--individuals',
-# 'include',
-# '--annotate-with-source',
-# 'true',
-
-# for i in range(0, num_ontologies):
-#     # print(i)
-#     current_onto_abbrev = ontology_abbreviations[i]
-#     current_onto_file = current_onto_abbrev + '.owl'
-#     current_termlist_file = current_onto_abbrev + '.owl.txt'
-#     current_extract_file = current_onto_abbrev + '.extract.ttl'
-#     print(current_onto_file)
-#     robot_array = [
-#         ROBOT_PATH,
-#         'extract',
-#         '--method',
-#         'STAR',
-#         '--force',
-#         'true',
-#         '--verbose',
-#         '--intermediates',
-#         'minimal',
-#         '--input',
-#         os.path.join(ONTO_DL_PATH, current_onto_file),
-#         '--term-file',
-#         os.path.join(TERMLIST_PATH, current_termlist_file),
-#         '--output',
-#         os.path.join(EXTRACTION_OUPUT_PATH, current_extract_file),
-#         ]
-#     robot_call = subprocess.run(robot_array, stdout=subprocess.PIPE,
-#                                 text=True, check=True)
-#     print(robot_call.stdout)
-#     # print(robot_call.stderr)
-
-# '--imports',
-# 'exclude',
+# gave up on STAR due to size
 
 for i in range(0, num_ontologies):
     # print(i)
@@ -221,34 +182,34 @@ print(robot_call.stdout)
 
 ####
 
-current_onto_abbrev = "uo"
-current_onto_file = current_onto_abbrev + '.owl'
-current_termlist_file = current_onto_abbrev + '.owl.txt'
-current_extract_file = current_onto_abbrev + '.extract.ttl'
-print(current_onto_file)
-robot_array = [
-    ROBOT_PATH,
-    'extract',
-    '--verbose',
-    '--method',
-    'STAR',
-    '--force',
-    'true',
-    '--intermediates',
-    'all',
-    '--individuals',
-    'include',
-    '--input',
-    os.path.join(ONTO_DL_PATH, current_onto_file),
-    '--term-file',
-    os.path.join(TERMLIST_PATH, current_termlist_file),
-    '--output',
-    os.path.join(EXTRACTION_OUPUT_PATH, current_extract_file),
-    ]
-robot_call = subprocess.run(robot_array, stdout=subprocess.PIPE,
-                            text=True, check=True)
-print(robot_call.stdout)
-# print(robot_call.stderr)
+# current_onto_abbrev = "uo"
+# current_onto_file = current_onto_abbrev + '.owl'
+# current_termlist_file = current_onto_abbrev + '.owl.txt'
+# current_extract_file = current_onto_abbrev + '.extract.ttl'
+# print(current_onto_file)
+# robot_array = [
+#     ROBOT_PATH,
+#     'extract',
+#     '--verbose',
+#     '--method',
+#     'STAR',
+#     '--force',
+#     'true',
+#     '--intermediates',
+#     'all',
+#     '--individuals',
+#     'include',
+#     '--input',
+#     os.path.join(ONTO_DL_PATH, current_onto_file),
+#     '--term-file',
+#     os.path.join(TERMLIST_PATH, current_termlist_file),
+#     '--output',
+#     os.path.join(EXTRACTION_OUPUT_PATH, current_extract_file),
+#     ]
+# robot_call = subprocess.run(robot_array, stdout=subprocess.PIPE,
+#                             text=True, check=True)
+# print(robot_call.stdout)
+# # print(robot_call.stderr)
 
 ####
 
@@ -338,9 +299,7 @@ turbo_with_extracts_ontology_path = \
     os.path.join(ART_PATH,
                  turbo_with_extracts_ontology_file)
 
-    # '--input',
-    # turbo_pH_extract_path,
-    
+
 next_merge_interleaved = [
     ROBOT_PATH,
     'merge',
@@ -408,6 +367,77 @@ last_merge_interleaved = [
     ]
 
 robot_call = subprocess.run(last_merge_interleaved,
+                            stdout=subprocess.PIPE, text=True,
+                            check=True)
+print(robot_call.stdout)
+
+####
+
+robot_sparql = [
+    ROBOT_PATH,
+    'query',
+    '--input',
+    turbo_merged_ontology_path,
+    '--update',
+    'SPARQL/deprecated_to_obsolete.rq',
+    '--output',
+    'robot_sparql.ttl'
+    ]
+
+
+robot_call = subprocess.run(robot_sparql,
+                            stdout=subprocess.PIPE,
+                            text=True,
+                            check=True)
+print(robot_call.stdout)
+print(robot_call.stderr)
+
+
+robot_sparql = [
+    ROBOT_PATH,
+    'query',
+    '--input',
+    'robot_sparql.ttl',
+    '--update',
+    'SPARQL/deprecated_not_thing.rq',
+    '--output',
+    'robot_sparql.ttl'
+    ]
+
+robot_call = subprocess.run(robot_sparql,
+                            stdout=subprocess.PIPE, text=True,
+                            check=True)
+print(robot_call.stdout)
+
+robot_sparql = [
+    ROBOT_PATH,
+    'query',
+    '--input',
+    'robot_sparql.ttl',
+    '--update',
+    'SPARQL/anything_not_thing.rq',
+    '--output',
+    'robot_sparql.ttl'
+    ]
+
+robot_call = subprocess.run(robot_sparql,
+                            stdout=subprocess.PIPE, text=True,
+                            check=True)
+print(robot_call.stdout)
+
+
+uo_merge = [
+    ROBOT_PATH,
+    'merge',
+    '--input',
+    'robot_sparql.ttl',
+    '--input',
+    'ontology_downloads/uo.owl',
+    '--output',
+    turbo_merged_ontology_path
+    ]
+
+robot_call = subprocess.run(uo_merge,
                             stdout=subprocess.PIPE, text=True,
                             check=True)
 print(robot_call.stdout)
