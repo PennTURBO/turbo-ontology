@@ -4,13 +4,14 @@ These notes are a combination describing the migration of the TURBO ontology to 
 
 The following steps were taken before copying the contents of the src/ folder to this repo and committing.
 
- 1. Ran ./seed-via-docker.sh with docker on Jan 20, 2022. The project.yaml file used is the same as turbo-odk.yaml. This generated the directory tree structure with BFO, IAO, and RO.
+ 1. Ran ./seed-via-docker.sh with docker on Jan 20, 2022. The project.yaml file used just contained ro, bfo and iao as import group products. This generated the directory tree structure with BFO, IAO, and RO.
  2. The seed turbo-edit.owl was replaced with one based on ontologies/turbo.ttl. That file was loaded into Protege and exported without imports as an RDF/XML owl file. A comment was added to that effect in the ontology. 
- 3. Used ODK Makefile version: v1.2.32 and ROBOT version 1.8.3 to regenerate the different release artifacts. Inconsistencies were identified with "make all". These were tracked to domain/range constraints of object properties by running ELK in Protege. 'birth instant starts NTR' and 'SNS starts neonate stage' were moved from 'starts'. 'derives from' was replaced with 'is about' for property assertions of 'omop drug_exposure plus vocabulary' and 'omop measurements query result, including vocab and manually asserted mmHg units for BP'.
+ 3. Used ODK Makefile version: v1.2.32 (updated to v1.3.0 on Feb. 24, 2022) and ROBOT version 1.8.3 to regenerate the different release artifacts. Inconsistencies were identified with "make all". These were tracked to domain/range constraints of object properties by running ELK in Protege. 'birth instant starts NTR' and 'SNS starts neonate stage' were moved from 'starts'. 'derives from' was replaced with 'is about' for property assertions of 'omop drug_exposure plus vocabulary' and 'omop measurements query result, including vocab and manually asserted mmHg units for BP'.
  4. Edited turbo-odk.yaml to add pdro, ico, obi, ogms, pato, omrse, and ncbitaxon. Provided a mirror_from and is_large command for ncbitaxon. Ran "sh run.sh make update_repo" to add this. The terms.txt files were populated based on terms in ontodog and ontofox files associated with the released turbo_merged.owl. If these were already in turbo-edit then did not need to add. 
 NOTE: previously added pdro and ncbitaxon through turbo.makefile but currently moving to using update_repo and docker for make so use of turbo.makefile not necessary yet. 
  6. Updated turbo-edit.owl for direct imports of all owl files in imports.
  7. Ran "sh run.sh make all_imports" and "sh run.sh make all_main". Reasoner identified problems with obsolete omrse terms. This was addressed as in https://github.com/PennTURBO/turbo-ontology/issues/13. The make runs created the files that were copied over and committed to the odk-imports branch on Feb 21, 2022. 
+ 8. Added chebi, go, pr, cl, and uberon to turbo-odk.yaml, updated repo, and ran make all_imports, all_main.
 NOTE: previously ran make all in GitHub directory and not in docker. Those files were committed to master on Jan 21, 2022. The current turbo ontology files made using the update_repo and make in docker appear to be equivalent.
 
 ## For the EDITORS of turbo

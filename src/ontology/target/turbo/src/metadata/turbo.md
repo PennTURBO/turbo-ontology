@@ -40,6 +40,11 @@ dependencies:
 - id: pato
 - id: omrse
 - id: ncbitaxon
+- id: chebi
+- id: go
+- id: uberon
+- id: cl
+- id: pr
 
 tracker: https://github.com/PennTURBO/turbo-ontology/issues
 license:

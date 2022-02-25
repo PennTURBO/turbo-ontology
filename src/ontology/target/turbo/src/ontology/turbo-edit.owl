@@ -1,11 +1,11 @@
 
 Prefix(:=<http://purl.obolibrary.org/obo/turbo.owl#>)
+Prefix(dce:=<http://purl.org/dc/elements/1.1/>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
 Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
-Prefix(dce:=<http://purl.org/dc/elements/1.1/>)
 Prefix(dcterms:=<http://purl.org/dc/terms/>)
 
 
@@ -31,22 +31,42 @@ Import(<http://purl.obolibrary.org/obo/turbo/imports/omrse_import.owl>)
 
 Import(<http://purl.obolibrary.org/obo/turbo/imports/ncbitaxon_import.owl>)
 
+Import(<http://purl.obolibrary.org/obo/turbo/imports/chebi_import.owl>)
+
+Import(<http://purl.obolibrary.org/obo/turbo/imports/go_import.owl>)
+
+Import(<http://purl.obolibrary.org/obo/turbo/imports/uberon_import.owl>)
+
+Import(<http://purl.obolibrary.org/obo/turbo/imports/cl_import.owl>)
+
+Import(<http://purl.obolibrary.org/obo/turbo/imports/pr_import.owl>)
 
 
-Annotation(dce:title "TURBO ontology")
+Annotation(dcterms:description "None")
 Annotation(dcterms:license <https://creativecommons.org/licenses/unspecified>)
-Annotation(dce:description "None")
+Annotation(dcterms:title "TURBO ontology")
 
-Declaration(Class(<http://purl.obolibrary.org/obo/TURBO_00000000>))
 
+Declaration(Class(<http://purl.obolibrary.org/obo/TURBO_0000000>))
+Declaration(AnnotationProperty(dcterms:description))
+Declaration(AnnotationProperty(dcterms:license))
+Declaration(AnnotationProperty(dcterms:title))
+
+############################
+#   Annotation Properties
+############################
+
+AnnotationAssertion(rdfs:label dcterms:description "description")
+AnnotationAssertion(rdfs:label dcterms:license "license")
+AnnotationAssertion(rdfs:label dcterms:title "title")
 
 ############################
 #   Classes
 ############################
 
-# Class: <http://purl.obolibrary.org/obo/TURBO_00000000>
+# Class: <http://purl.obolibrary.org/obo/TURBO_0000000> (root node)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/TURBO_00000000> "root node"@en)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/TURBO_0000000> "root node"@en)
 
 
 )
