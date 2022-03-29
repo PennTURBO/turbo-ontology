@@ -9,6 +9,18 @@
 # ----------------------------------------
 # these can be overwritten on the command line
 
+$(IMPORTDIR)/htn_import.owl: $(MIRRORDIR)/htn.owl $(IMPORTDIR)/htn_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T $(IMPORTDIR)/htn_terms_combined.txt --force true --intermediates minimal --copy-ontology-annotations true --individuals include --method STAR \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+$(IMPORTDIR)/osci_import.owl: $(MIRRORDIR)/osci.owl $(IMPORTDIR)/osci_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T $(IMPORTDIR)/osci_terms_combined.txt --force true --intermediates minimal --copy-ontology-annotations true --individuals include --method STAR \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
 $(IMPORTDIR)/obi_import.owl: $(MIRRORDIR)/obi.owl $(IMPORTDIR)/obi_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
 		extract -T $(IMPORTDIR)/obi_terms_combined.txt --force true --intermediates minimal --copy-ontology-annotations true --individuals include --method STAR \
@@ -30,6 +42,11 @@ $(IMPORTDIR)/ogms_import.owl: $(MIRRORDIR)/ogms.owl $(IMPORTDIR)/ogms_terms_comb
 $(IMPORTDIR)/pdro_import.owl: $(MIRRORDIR)/pdro.owl $(IMPORTDIR)/pdro_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
 		extract -T $(IMPORTDIR)/pdro_terms_combined.txt --force true --intermediates minimal --copy-ontology-annotations true --individuals include --method STAR \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+$(IMPORTDIR)/ncbitaxon_import.owl: $(MIRRORDIR)/ncbitaxon.owl $(IMPORTDIR)/ncbitaxon_terms_combined.txt
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T $(IMPORTDIR)/ncbitaxon_terms_combined.txt --force true --upper-terms $(IMPORTDIR)/ncbitaxon_terms.txt --lower-term NCBITaxon:9606 --individuals include --method MIREOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 

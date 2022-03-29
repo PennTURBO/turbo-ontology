@@ -91,7 +91,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  mondo ro bfo iao pdro ico obi ogms pato omrse ncbitaxon chebi go uberon cl pr
+IMPORTS =  ogg geno htn osci mondo ro bfo iao pdro ico obi ogms pato omrse ncbitaxon chebi go uberon cl pr
 
 IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -223,10 +223,22 @@ $(PRESEED): $(SRCMERGED)
 	$(ROBOT) query -f csv -i $< --query ../sparql/terms.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@
 
+ 
+IMPORT_MODULE_TEMPLATE=$(TEMPLATEDIR)/external_import.tsv
+IMPORT_MODULE_SIGNATURE=$(TMPDIR)/external_import_terms.txt
+IMPORT_MODULE=$(IMPORTDIR)/external_import.owl
+$(IMPORT_MODULE): $(IMPORT_MODULE_TEMPLATE) | $(TMPDIR)
+	$(ROBOT) template --template $< \
+  --ontology-iri "$(ONTBASE)/external_import.owl" \
+  --output $@
+
+$(IMPORT_MODULE_SIGNATURE): $(IMPORT_MODULE) | $(TMPDIR)
+	$(ROBOT) query -f csv -i $< --query ../sparql/terms.sparql $@.tmp &&\
+	cat $@.tmp | sort | uniq >  $@
 
 
 ALLSEED = $(PRESEED) \
-
+ $(IMPORT_MODULE_SIGNATURE) 
 
 $(IMPORTSEED): $(ALLSEED) | $(TMPDIR)
 	if [ $(IMP) = true ]; then cat $(ALLSEED) | sort | uniq > $@; fi
@@ -319,6 +331,34 @@ IMP=true # Global parameter to bypass import generation
 MIR=true # Global parameter to bypass mirror generation
 IMP_LARGE=true # Global parameter to bypass handling of large imports
 
+
+
+## ONTOLOGY: ogg
+.PHONY: mirror-ogg
+.PRECIOUS: $(MIRRORDIR)/ogg.owl
+mirror-ogg: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ogg.owl --create-dirs -o $(MIRRORDIR)/ogg.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/ogg.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: geno
+.PHONY: mirror-geno
+.PRECIOUS: $(MIRRORDIR)/geno.owl
+mirror-geno: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/geno.owl --create-dirs -o $(MIRRORDIR)/geno.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/geno.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: htn
+.PHONY: mirror-htn
+.PRECIOUS: $(MIRRORDIR)/htn.owl
+mirror-htn: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/htn.owl --create-dirs -o $(MIRRORDIR)/htn.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/htn.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: osci
+.PHONY: mirror-osci
+.PRECIOUS: $(MIRRORDIR)/osci.owl
+mirror-osci: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/stemcellontologyresource/OSCI/master/src/ontology/osci.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
 ## ONTOLOGY: mondo
