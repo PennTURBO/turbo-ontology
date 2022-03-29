@@ -1,0 +1,43 @@
+id: turbo
+title: TURBO ontology
+github_org: PennTURBO
+repo: turbo-ontology
+export_formats:
+  - owl
+import_group:
+  products:
+    - id: ogg
+    - id: geno
+    - id: htn
+    - id: osci
+      mirror_from: https://raw.githubusercontent.com/stemcellontologyresource/OSCI/master/src/ontology/osci.owl
+    - id: mondo
+      is_large: TRUE
+    - id: ro
+    - id: bfo
+    - id: iao
+    - id: pdro
+    - id: ico
+    - id: obi
+    - id: ogms
+    - id: pato
+    - id: omrse
+    - id: ncbitaxon
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+      is_large: TRUE
+    - id: chebi
+      use_gzipped: TRUE
+      is_large: TRUE
+    - id: go
+      is_large: TRUE
+    - id: uberon
+    - id: cl
+    - id: pr
+      mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
+      is_large: TRUE
+# use custom to place odd terms
+use_custom_import_module: TRUE
+robot_java_args: '-Xmx6G'
+
+
+
