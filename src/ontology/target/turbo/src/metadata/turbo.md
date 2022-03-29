@@ -30,6 +30,10 @@ products:
   - id: turbo/turbo-base.json
     name: "TURBO ontology additional release in OBOJSon format"
 dependencies:
+- id: ogg
+- id: geno
+- id: htn
+- id: osci
 - id: mondo
 - id: ro
 - id: bfo

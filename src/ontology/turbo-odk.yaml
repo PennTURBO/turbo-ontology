@@ -6,6 +6,11 @@ export_formats:
   - owl
 import_group:
   products:
+    - id: ogg
+    - id: geno
+    - id: htn
+    - id: osci
+      mirror_from: https://raw.githubusercontent.com/stemcellontologyresource/OSCI/master/src/ontology/osci.owl
     - id: mondo
       is_large: TRUE
     - id: ro
@@ -30,6 +35,8 @@ import_group:
     - id: pr
       mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
       is_large: TRUE
+# use custom to place odd terms
+use_custom_import_module: TRUE
 robot_java_args: '-Xmx6G'
 
 
