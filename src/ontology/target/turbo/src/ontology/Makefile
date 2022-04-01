@@ -91,7 +91,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  ogg geno htn osci mondo ro bfo iao pdro ico obi ogms pato omrse ncbitaxon chebi go uberon cl pr
+IMPORTS =  obib ogg geno htn osci mondo ro bfo iao pdro ico obi ogms pato omrse ncbitaxon chebi go uberon cl pr
 
 IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -331,6 +331,13 @@ IMP=true # Global parameter to bypass import generation
 MIR=true # Global parameter to bypass mirror generation
 IMP_LARGE=true # Global parameter to bypass handling of large imports
 
+
+
+## ONTOLOGY: obib
+.PHONY: mirror-obib
+.PRECIOUS: $(MIRRORDIR)/obib.owl
+mirror-obib: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/obib.owl --create-dirs -o $(MIRRORDIR)/obib.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/obib.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
 ## ONTOLOGY: ogg
