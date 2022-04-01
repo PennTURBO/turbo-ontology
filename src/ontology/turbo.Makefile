@@ -9,6 +9,12 @@
 # ----------------------------------------
 # these can be overwritten on the command line
 
+$(IMPORTDIR)/obib_import.owl: $(MIRRORDIR)/obib.owl $(IMPORTDIR)/obib_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T $(IMPORTDIR)/obib_terms_combined.txt --force true --intermediates minimal --copy-ontology-annotations true --individuals include --method STAR \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
 $(IMPORTDIR)/htn_import.owl: $(MIRRORDIR)/htn.owl $(IMPORTDIR)/htn_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
 		extract -T $(IMPORTDIR)/htn_terms_combined.txt --force true --intermediates minimal --copy-ontology-annotations true --individuals include --method STAR \
@@ -41,7 +47,7 @@ $(IMPORTDIR)/ogms_import.owl: $(MIRRORDIR)/ogms.owl $(IMPORTDIR)/ogms_terms_comb
 
 $(IMPORTDIR)/pdro_import.owl: $(MIRRORDIR)/pdro.owl $(IMPORTDIR)/pdro_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T $(IMPORTDIR)/pdro_terms_combined.txt --force true --intermediates minimal --copy-ontology-annotations true --individuals include --method STAR \
+		extract -T $(IMPORTDIR)/pdro_terms_combined.txt --force true --lower-terms $(IMPORTDIR)/pdro_terms.txt --copy-ontology-annotations true --individuals include --method MIREOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
