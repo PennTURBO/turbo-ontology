@@ -17,10 +17,16 @@ The terms.txt files were populated based on terms in the released turbo_merged.o
 NOTE: previously added pdro and ncbitaxon only through turbo.makefile but currently using update_repo and docker for make. Also previously just used default slme BOT. This led to a total of close to 8000 classes and inconsistencies from the extra classes. Using MIREOT addressed this and STAR helped.  
  7. Updated turbo-edit.owl for direct imports of all owl files in imports.
  8. Ran "sh run.sh make prepare_release". 
-Many punning errors identified in OWL 2 DL profile that need to be looked in to but turbo_full and turbo.owl successfully generated.
+Many punning errors identified in OWL 2 DL profile that need to be looked in to but turbo_full and turbo.owl generated in src file but errors prevented successful completion and placing files in top level of directory. Errors were caused by object properties duplicated as annotation properties mainly coming in from HTN but also 'has time stamp' in turbo-edit. These were deleted as annotation properties in turbo-edit and htn.owl and labels added back to object properties. Another error was presence of owl:qualifiedCardinality - didn't appear to be used although also in turbo_merged - so deleted. 
+Also fixed errors reported for turbo-edit.owl including:
+- remove usage of deprecated data property has_literal_value, removed all subproperty associations of deprecated data properties
+- changed a comment to dc:description
+- added http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
+Plus deleted CARO_0000006 material anatomical entity (known issue from CL).
+Ran "sh run.sh make IMP=FALSE prepare_release" so imports were not updated and resolved errors (except missing labels) and violations. 
 Note: In previous runs, reasoner identified problems with obsolete omrse terms. This was addressed as in https://github.com/PennTURBO/turbo-ontology/issues/13. Also in previous runs just used all_imports and all_main but these did not do all the tests. 
- 9. turbo-edit and catalog updated for direct import all refreshed owl imports. 
-10. Cleaned out tmp directory and large mirrors then copied src directory in target to replace src contents in GitHub (first in odk-imports branch).
+9. Cleaned out tmp directory and large mirrors then copied src directory in target to replace src contents in GitHub (first in odk-imports branch).
+10. Copy *.owl (turbo, turbo-base, turbo-full) to GitHub directly under turbo-ontology. 
 
 ## For the EDITORS of turbo
 
